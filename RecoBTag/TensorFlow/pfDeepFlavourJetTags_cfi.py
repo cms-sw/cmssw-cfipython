@@ -9,8 +9,8 @@ pfDeepFlavourJetTags = cms.EDProducer('DeepFlavourTFJetTagsProducer',
     'input_4',
     'input_5'
   ),
-  graph_path = cms.FileInPath('RecoBTag/Combined/data/DeepFlavourV01_GraphDef_PtCut/constant_graph.pb'),
-  lp_names = cms.vstring('globals_input_batchnorm/keras_learning_phase'),
+  graph_path = cms.FileInPath('RecoBTag/Combined/data/DeepFlavourV03_10X_training/constant_graph.pb'),
+  lp_names = cms.vstring('cpf_input_batchnorm/keras_learning_phase'),
   output_names = cms.vstring(
     'ID_pred/Softmax',
     'regression_pred/BiasAdd'
