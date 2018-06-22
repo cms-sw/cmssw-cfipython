@@ -7,5 +7,6 @@ l1tStage2RegionalMuonCandComp = cms.EDProducer('L1TStage2RegionalMuonCandComp',
   summaryTitle = cms.untracked.string('Summary'),
   ignoreBadTrackAddress = cms.untracked.bool(False),
   ignoreBin = cms.untracked.vint32(),
-  verbose = cms.untracked.bool(False)
+  verbose = cms.untracked.bool(False),
+  kalman = cms.untracked.bool(False)
 )
