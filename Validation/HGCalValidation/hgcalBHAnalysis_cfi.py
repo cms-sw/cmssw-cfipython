@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hgcalBHValidation = cms.EDAnalyzer('HGCalBHValidation',
+hgcalBHAnalysis = cms.EDAnalyzer('HGCalBHValidation',
   ModuleLabel = cms.untracked.string('g4SimHits'),
   HitCollection = cms.untracked.string('HcalHits'),
   DigiCollection = cms.untracked.InputTag('hgcalDigis', 'HEback'),
