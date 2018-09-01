@@ -24,7 +24,7 @@ alcaIsoTracksFilter = cms.EDFilter('AlCaIsoTracksFilter',
   coneRadius = cms.double(34.98),
   minimumTrackP = cms.double(20),
   coneRadiusMIP = cms.double(14),
-  maximumEcalEnergy = cms.double(2),
+  maximumEcalEnergy = cms.double(100),
   maxTrackP = cms.double(8),
   slopeTrackP = cms.double(0.05090504066),
   isolationEnergy = cms.double(10),
@@ -35,5 +35,7 @@ alcaIsoTracksFilter = cms.EDFilter('AlCaIsoTracksFilter',
   EEHitEnergyThreshold3 = cms.double(7.04303),
   momentumRangeLow = cms.double(20),
   momentumRangeHigh = cms.double(40),
-  preScaleFactor = cms.int32(2)
+  preScaleFactor = cms.int32(10),
+  momentumHigh = cms.double(60),
+  preScaleHigh = cms.int32(2)
 )
