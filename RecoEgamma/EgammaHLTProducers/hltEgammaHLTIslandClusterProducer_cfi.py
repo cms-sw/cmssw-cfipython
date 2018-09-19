@@ -17,5 +17,9 @@ hltEgammaHLTIslandClusterProducer = cms.EDProducer('EgammaHLTIslandClusterProduc
   l1UpperThr = cms.double(9999),
   l1LowerThrIgnoreIsolation = cms.double(9999),
   regionEtaMargin = cms.double(0.3),
-  regionPhiMargin = cms.double(0.4)
+  regionPhiMargin = cms.double(0.4),
+  SeedRecHitFlagToBeExcludedEB = cms.vstring(),
+  SeedRecHitFlagToBeExcludedEE = cms.vstring(),
+  RecHitFlagToBeExcludedEB = cms.vstring(),
+  RecHitFlagToBeExcludedEE = cms.vstring()
 )
