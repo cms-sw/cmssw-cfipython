@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-RPCTwinMuxRawToDigi = cms.EDProducer('RPCTwinMuxRawToDigi',
+rpcTwinMuxRawToDigi = cms.EDProducer('RPCTwinMuxRawToDigi',
   inputTag = cms.InputTag('rawDataCollector'),
   calculateCRC = cms.bool(True),
   fillCounters = cms.bool(True),
