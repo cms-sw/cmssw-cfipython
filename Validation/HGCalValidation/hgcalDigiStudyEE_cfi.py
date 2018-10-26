@@ -11,6 +11,9 @@ hgcalDigiStudyEE = cms.EDAnalyzer('HGCalDigiStudy',
   rMax = cms.untracked.double(300),
   zMin = cms.untracked.double(300),
   zMax = cms.untracked.double(600),
+  etaMin = cms.untracked.double(1),
+  etaMax = cms.untracked.double(3),
   nBinR = cms.untracked.int32(300),
-  nBinZ = cms.untracked.int32(300)
+  nBinZ = cms.untracked.int32(300),
+  nBinEta = cms.untracked.int32(200)
 )
