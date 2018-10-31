@@ -9,6 +9,6 @@ particleFlowEGamma = cms.EDProducer('PFEGammaProducer',
   blocks = cms.InputTag('particleFlowBlock'),
   EEtoPS_source = cms.InputTag('particleFlowClusterECAL'),
   vertexCollection = cms.InputTag('offlinePrimaryVertices'),
-  pf_electronID_mvaWeightFile = cms.FileInPath('RecoParticleFlow/PFProducer/data/MVAnalysis_BDT.weights_PfElectrons23Jan_IntToFloat.txt'),
-  pf_convID_mvaWeightFile = cms.FileInPath('RecoParticleFlow/PFProducer/data/MVAnalysis_BDT.weights_pfConversionAug0411.txt')
+  pf_electronID_mvaWeightFile = cms.FileInPath('RecoParticleFlow/PFProducer/data/PfElectrons23Jan_BDT.weights.xml.gz'),
+  pf_convID_mvaWeightFile = cms.FileInPath('RecoParticleFlow/PFProducer/data/pfConversionAug0411_BDT.weights.xml.gz')
 )
