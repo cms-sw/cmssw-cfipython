@@ -7,5 +7,6 @@ printContent = cms.EDAnalyzer('EventContentAnalyzer',
   verboseForModuleLabels = cms.untracked.vstring(),
   getData = cms.untracked.bool(False),
   getDataForModuleLabels = cms.untracked.vstring(),
-  listContent = cms.untracked.bool(True)
+  listContent = cms.untracked.bool(True),
+  listProvenance = cms.untracked.bool(False)
 )
