@@ -10,5 +10,6 @@ siPixelRawToDigi = cms.EDProducer('SiPixelRawToDigi',
   Timing = cms.untracked.bool(False),
   UsePilotBlade = cms.bool(False),
   UsePhase1 = cms.bool(False),
-  CablingMapLabel = cms.string('')
+  CablingMapLabel = cms.string(''),
+  BadPixelFEDChannelsInputLabel = cms.InputTag('mix')
 )
