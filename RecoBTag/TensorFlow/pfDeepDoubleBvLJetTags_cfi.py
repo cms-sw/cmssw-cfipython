@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-pfDeepDoubleBJetTags = cms.EDProducer('DeepDoubleXTFJetTagsProducer',
+pfDeepDoubleBvLJetTags = cms.EDProducer('DeepDoubleXTFJetTagsProducer',
   input_names = cms.vstring(
     'input_1',
     'input_2',
@@ -11,11 +11,11 @@ pfDeepDoubleBJetTags = cms.EDProducer('DeepDoubleXTFJetTagsProducer',
   batch_eval = cms.bool(False),
   nThreads = cms.uint32(1),
   singleThreadPool = cms.string('no_threads'),
-  flavor = cms.string('B'),
+  flavor = cms.string('BvL'),
   flav_table = cms.PSet(
-    probQ = cms.vuint32(0),
-    probH = cms.vuint32(1)
+    probQCD = cms.vuint32(0),
+    probHbb = cms.vuint32(1)
   ),
-  src = cms.InputTag('pfDeepDoubleXTagInfosNopt'),
-  graph_path = cms.FileInPath('RecoBTag/Combined/data/DeepDoubleB/V01/constant_graph_PtCut_MassSculptPen.pb')
+  src = cms.InputTag('pfDeepDoubleXTagInfos'),
+  graph_path = cms.FileInPath('RecoBTag/Combined/data/DeepDoubleX/94X/V01/DDB.pb')
 )
