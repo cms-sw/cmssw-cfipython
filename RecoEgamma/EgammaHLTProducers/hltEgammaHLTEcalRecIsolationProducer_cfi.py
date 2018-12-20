@@ -1,0 +1,25 @@
+import FWCore.ParameterSet.Config as cms
+
+hltEgammaHLTEcalRecIsolationProducer = cms.EDProducer('EgammaHLTEcalRecIsolationProducer',
+  recoEcalCandidateProducer = cms.InputTag('hltL1SeededRecoEcalCandidate'),
+  ecalBarrelRecHitProducer = cms.InputTag('hltEcalRegionalEgammaRecHit', 'EcalRecHitsEB'),
+  ecalEndcapRecHitProducer = cms.InputTag('hltEcalRegionalEgammaRecHit', 'EcalRecHitsEE'),
+  rhoProducer = cms.InputTag('fixedGridRhoFastjetAllCalo'),
+  doRhoCorrection = cms.bool(False),
+  rhoMax = cms.double(99999999),
+  rhoScale = cms.double(1),
+  etMinBarrel = cms.double(-9999),
+  eMinBarrel = cms.double(0.095),
+  etMinEndcap = cms.double(0.11),
+  eMinEndcap = cms.double(-9999),
+  intRadiusBarrel = cms.double(3),
+  intRadiusEndcap = cms.double(3),
+  extRadius = cms.double(0.3),
+  jurassicWidth = cms.double(3),
+  effectiveAreaBarrel = cms.double(0.101),
+  effectiveAreaEndcap = cms.double(0.046),
+  useIsolEt = cms.bool(True),
+  tryBoth = cms.bool(True),
+  subtract = cms.bool(False),
+  useNumCrystals = cms.bool(True)
+)
