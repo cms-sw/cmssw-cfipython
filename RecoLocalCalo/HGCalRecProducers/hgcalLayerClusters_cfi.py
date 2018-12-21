@@ -3,6 +3,16 @@ import FWCore.ParameterSet.Config as cms
 hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
   detector = cms.string('all'),
   doSharing = cms.bool(False),
+  thresholdW0 = cms.vdouble(
+    2.9,
+    2.9,
+    2.9
+  ),
+  positionDeltaRho_c = cms.vdouble(
+    1.3,
+    1.3,
+    1.3
+  ),
   deltac = cms.vdouble(
     2,
     2,
