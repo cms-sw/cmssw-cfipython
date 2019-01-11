@@ -105,12 +105,13 @@ L3MuonProducer = cms.EDProducer('L3MuonProducer',
     TrackTransformer = cms.PSet(
       DoPredictionsOnly = cms.bool(False),
       Fitter = cms.string('hltESPL3MuKFTrajectoryFitter'),
-      TrackerRecHitBuilder = cms.string('hltESPTTRHBWithTrackAngle'),
       Smoother = cms.string('hltESPKFTrajectorySmootherForMuonTrackLoader'),
-      MuonRecHitBuilder = cms.string('hltESPMuonTransientTrackingRecHitBuilder'),
+      Propagator = cms.string('hltESPSmartPropagatorAny'),
       RefitDirection = cms.string('insideOut'),
       RefitRPCHits = cms.bool(True),
-      Propagator = cms.string('hltESPSmartPropagatorAny')
+      TrackerRecHitBuilder = cms.string('hltESPTTRHBWithTrackAngle'),
+      MuonRecHitBuilder = cms.string('hltESPMuonTransientTrackingRecHitBuilder'),
+      MTDRecHitBuilder = cms.string('MTDRecHitBuilder')
     ),
     GlobalMuonTrackMatcher = cms.PSet(
       Quality_3 = cms.double(7),
