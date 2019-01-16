@@ -8,5 +8,6 @@ mtdClusterProducer = cms.EDProducer('MTDClusterProducer',
   ClusterMode = cms.string('MTDThresholdClusterizer'),
   HitThreshold = cms.double(0),
   SeedThreshold = cms.double(0),
-  ClusterThreshold = cms.double(0)
+  ClusterThreshold = cms.double(0),
+  TimeThreshold = cms.double(10)
 )
