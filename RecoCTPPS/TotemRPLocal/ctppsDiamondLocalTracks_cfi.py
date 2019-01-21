@@ -10,7 +10,7 @@ ctppsDiamondLocalTracks = cms.EDProducer('CTPPSDiamondLocalTrackFitter',
     sigma = cms.double(0.1),
     startFromX = cms.double(-0.5),
     stopAtX = cms.double(19.5),
-    pixelEfficiencyFunction = cms.string('(TMath::Erf((x-[0]+0.5*[1])/([2]/4)+2)+1)*TMath::Erfc((x-[0]-0.5*[1])/([2]/4)-2)/4'),
+    pixelEfficiencyFunction = cms.string('(x>[0]-0.5*[1])*(x<[0]+0.5*[1])+0*[2]'),
     yPosition = cms.double(0),
     yWidth = cms.double(0)
   )
