@@ -8,12 +8,8 @@ ctppsLocalTrackLiteDefaultProducer = cms.EDProducer('CTPPSLocalTrackLiteProducer
   includePixels = cms.bool(True),
   tagPixelTrack = cms.InputTag('ctppsPixelLocalTracks'),
   doNothing = cms.bool(True),
-  pixelTrackTxRange = cms.vdouble(
-    -0.03,
-    0.03
-  ),
-  pixelTrackTyRange = cms.vdouble(
-    -0.04,
-    0.04
-  )
+  pixelTrackTxMin = cms.double(-10),
+  pixelTrackTxMax = cms.double(10),
+  pixelTrackTyMin = cms.double(-10),
+  pixelTrackTyMax = cms.double(10)
 )
