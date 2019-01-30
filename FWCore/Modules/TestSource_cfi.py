@@ -7,6 +7,7 @@ source = cms.Source('TestSource',
   firstEvent = cms.untracked.uint32(1),
   firstLuminosityBlock = cms.untracked.uint32(1),
   firstRun = cms.untracked.uint32(1),
+  firstLuminosityBlockForEachRun = cms.untracked.VLuminosityBlockID(),
   processingMode = cms.untracked.string('RunsLumisAndEvents'),
   writeStatusFile = cms.untracked.bool(False),
   transitions = cms.untracked.VPSet(
