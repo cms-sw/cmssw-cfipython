@@ -1,12 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-produceLowPtGsfElectronSeeds = cms.EDProducer('LowPtGsfElectronSeedProducer',
+lowPtGsfElectronSeeds = cms.EDProducer('LowPtGsfElectronSeedProducer',
   tracks = cms.InputTag('generalTracks'),
   pfTracks = cms.InputTag('lowPtGsfElePfTracks'),
   ecalClusters = cms.InputTag('particleFlowClusterECAL'),
   hcalClusters = cms.InputTag('particleFlowClusterHCAL'),
-  EBRecHits = cms.InputTag('reducedEcalRecHitsEB'),
-  EERecHits = cms.InputTag('reducedEcalRecHitsEE'),
+  EBRecHits = cms.InputTag('ecalRecHit', 'EcalRecHitsEB'),
+  EERecHits = cms.InputTag('ecalRecHit', 'EcalRecHitsEE'),
   rho = cms.InputTag('fixedGridRhoFastjetAllTmp'),
   BeamSpot = cms.InputTag('offlineBeamSpot'),
   Fitter = cms.string('GsfTrajectoryFitter_forPreId'),
@@ -16,7 +16,7 @@ produceLowPtGsfElectronSeeds = cms.EDProducer('LowPtGsfElectronSeedProducer',
   ModelWeights = cms.vstring(),
   ModelThresholds = cms.vdouble(),
   PassThrough = cms.bool(False),
-  UsePfTracks = cms.bool(False),
-  MinPtThreshold = cms.double(0.5),
+  UsePfTracks = cms.bool(True),
+  MinPtThreshold = cms.double(1),
   MaxPtThreshold = cms.double(15)
 )
