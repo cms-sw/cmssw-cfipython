@@ -6,6 +6,5 @@ simGtExtFakeProd = cms.EDProducer('L1TExtCondProducer',
   bxFirst = cms.int32(-2),
   setBptxOR = cms.bool(True),
   bxLast = cms.int32(2),
-  setBptxPlus = cms.bool(True),
-  tcdsRecordLabel = cms.InputTag('tcdsDigis', 'tcdsRecord')
+  setBptxPlus = cms.bool(True)
 )
