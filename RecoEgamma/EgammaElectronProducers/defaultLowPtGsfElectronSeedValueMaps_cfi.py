@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 defaultLowPtGsfElectronSeedValueMaps = cms.EDProducer('LowPtGsfElectronSeedValueMapsProducer',
-  electrons = cms.InputTag('lowPtGsfElectrons'),
+  gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks'),
   preIdsValueMap = cms.InputTag('lowPtGsfElectronSeeds'),
-  ModelNames = cms.vstring('default')
+  ModelNames = cms.vstring()
 )
