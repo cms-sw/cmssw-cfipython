@@ -1,0 +1,11 @@
+import FWCore.ParameterSet.Config as cms
+
+SiStripDigiToRawModule = cms.EDProducer('SiStripDigiToRawModule',
+  InputModuleLabel = cms.string('simSiStripDigis'),
+  InputDigiLabel = cms.string('ZeroSuppressed'),
+  FedReadoutMode = cms.string('ZERO_SUPPRESSED'),
+  UseFedKey = cms.bool(False),
+  UseWrongDigiType = cms.bool(False),
+  CopyBufferHeader = cms.bool(False),
+  RawDataTag = cms.InputTag('rawDataCollector')
+)
