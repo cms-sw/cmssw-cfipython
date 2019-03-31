@@ -1,13 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
 ctppsLocalTrackLiteDefaultProducer = cms.EDProducer('CTPPSLocalTrackLiteProducer',
-  includeStrips = cms.bool(True),
+  includeStrips = cms.bool(False),
   tagSiStripTrack = cms.InputTag('totemRPLocalTrackFitter'),
-  includeDiamonds = cms.bool(True),
+  includeDiamonds = cms.bool(False),
   tagDiamondTrack = cms.InputTag('ctppsDiamondLocalTracks'),
-  includePixels = cms.bool(True),
+  includePixels = cms.bool(False),
   tagPixelTrack = cms.InputTag('ctppsPixelLocalTracks'),
-  doNothing = cms.bool(True),
+  doNothing = cms.bool(False),
   pixelTrackTxMin = cms.double(-10),
   pixelTrackTxMax = cms.double(10),
   pixelTrackTyMin = cms.double(-10),
