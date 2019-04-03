@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 hgcHitAnalysis = cms.EDAnalyzer('HGCHitValidation',
+  makeTree = cms.untracked.bool(True),
   geometrySource = cms.untracked.vstring(
     'HGCalEESensitive',
     'HGCalHESiliconSensitive',
