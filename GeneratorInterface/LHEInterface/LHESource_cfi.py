@@ -11,5 +11,6 @@ source = cms.Source('LHESource',
   processingMode = cms.untracked.string('RunsLumisAndEvents'),
   writeStatusFile = cms.untracked.bool(False),
   fileNames = cms.untracked.vstring(),
-  overrideCatalog = cms.untracked.string('')
+  overrideCatalog = cms.untracked.string(''),
+  skipEvents = cms.untracked.uint32(0)
 )
