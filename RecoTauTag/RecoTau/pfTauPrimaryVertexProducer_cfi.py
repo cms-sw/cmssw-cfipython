@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-PFTauPrimaryVertexProducer = cms.EDProducer('PFTauPrimaryVertexProducer',
+pfTauPrimaryVertexProducer = cms.EDProducer('PFTauPrimaryVertexProducer',
   qualityCuts = cms.PSet(
     signalQualityCuts = cms.PSet(
       maxDeltaZ = cms.double(0.4),
