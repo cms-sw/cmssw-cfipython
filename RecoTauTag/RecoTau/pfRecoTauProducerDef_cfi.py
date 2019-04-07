@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-pfRecoTauProducer = cms.EDProducer('PFRecoTauProducer',
+pfRecoTauProducerDef = cms.EDProducer('PFRecoTauProducer',
   Rphi = cms.double(2),
   LeadTrack_minPt = cms.double(0),
   PVProducer = cms.InputTag('offlinePrimaryVertices'),

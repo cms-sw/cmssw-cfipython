@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ak4PFJetsLegacyHPSPiZerosDefault = cms.EDProducer('RecoTauPiZeroProducer',
+recoTauPiZeroProducer = cms.EDProducer('RecoTauPiZeroProducer',
   massHypothesis = cms.double(0.136),
   ranking = cms.VPSet(
     cms.PSet(
@@ -20,7 +20,8 @@ ak4PFJetsLegacyHPSPiZerosDefault = cms.EDProducer('RecoTauPiZeroProducer',
     cms.PSet(
       name = cms.string(''),
       plugin = cms.string(''),
-      verbosity = cms.int32(0)
+      verbosity = cms.int32(0),
+      qualityCuts = cms.PSet()
     )
   )
 )
