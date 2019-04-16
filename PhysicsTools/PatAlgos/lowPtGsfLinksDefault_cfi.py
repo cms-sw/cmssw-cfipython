@@ -5,6 +5,6 @@ lowPtGsfLinksDefault = cms.EDProducer('LowPtGSFToPackedCandidateLinker',
   packedCandidates = cms.InputTag('packedPFCandidates'),
   lostTracks = cms.InputTag('lostTracks'),
   tracks = cms.InputTag('generalTracks'),
-  gsfPreID = cms.InputTag('lowPtGsfElectronSeeds'),
+  gsfToTrack = cms.InputTag('lowPtGsfToTrackLinks'),
   gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks')
 )
