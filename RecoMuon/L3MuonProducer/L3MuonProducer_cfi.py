@@ -55,6 +55,37 @@ L3MuonProducer = cms.EDProducer('L3MuonProducer',
         30,
         15
       ),
+      DYTselector = cms.int32(1),
+      DYTupdator = cms.bool(False),
+      DYTuseAPE = cms.bool(False),
+      DYTuseThrsParametrization = cms.bool(False),
+      DYTthrsParameters = cms.PSet(
+        eta0p8 = cms.vdouble(
+          1,
+          -0.919853,
+          0.990742
+        ),
+        eta1p2 = cms.vdouble(
+          1,
+          -0.897354,
+          0.987738
+        ),
+        eta2p0 = cms.vdouble(
+          1,
+          -0.986855,
+          0.998516
+        ),
+        eta2p2 = cms.vdouble(
+          1,
+          -0.940342,
+          0.992955
+        ),
+        eta2p4 = cms.vdouble(
+          1,
+          -0.947633,
+          0.993762
+        )
+      ),
       Chi2CutCSC = cms.double(150),
       Chi2CutDT = cms.double(10),
       Chi2CutGEM = cms.double(1),
