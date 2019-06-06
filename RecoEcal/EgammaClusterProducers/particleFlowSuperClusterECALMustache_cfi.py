@@ -19,6 +19,7 @@ particleFlowSuperClusterECALMustache = cms.EDProducer('PFECALSuperClusterProduce
   PFSuperClusterCollectionBarrel = cms.string('particleFlowSuperClusterECALBarrel'),
   regressionConfig = cms.PSet(
     isHLT = cms.bool(False),
+    applySigmaIetaIphiBug = cms.bool(False),
     ecalRecHitsEE = cms.InputTag('ecalRecHit', 'EcalRecHitsEE'),
     ecalRecHitsEB = cms.InputTag('ecalRecHit', 'EcalRecHitsEB'),
     regressionKeyEB = cms.string('pfscecal_EBCorrection_offline_v1'),

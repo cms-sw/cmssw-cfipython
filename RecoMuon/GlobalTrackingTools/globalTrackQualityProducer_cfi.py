@@ -28,7 +28,7 @@ globalTrackQualityProducer = cms.EDProducer('GlobalTrackQualityProducer',
     DYTselector = cms.int32(1),
     DYTupdator = cms.bool(False),
     DYTuseAPE = cms.bool(False),
-    DYTuseThrsParametrization = cms.bool(False),
+    DYTuseThrsParametrization = cms.bool(True),
     DYTthrsParameters = cms.PSet(
       eta0p8 = cms.vdouble(
         1,
