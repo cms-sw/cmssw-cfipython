@@ -7,5 +7,6 @@ hltHcalLaserFilter = cms.EDFilter('HLTHcalLaserFilter',
   thresholdsfC = cms.vdouble(),
   CalibCountFilterValues = cms.vint32(),
   CalibChargeFilterValues = cms.vdouble(),
-  maxAllowedHFcalib = cms.int32(-1)
+  maxAllowedHFcalib = cms.int32(-1),
+  mightGet = cms.optional.untracked.vstring
 )

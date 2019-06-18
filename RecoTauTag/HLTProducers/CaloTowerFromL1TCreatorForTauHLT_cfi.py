@@ -8,5 +8,6 @@ CaloTowerFromL1TCreatorForTauHLT = cms.EDProducer('CaloTowerFromL1TCreatorForTau
   minimumE = cms.double(0.8),
   minimumEt = cms.double(0.5),
   BX = cms.int32(0),
-  verbose = cms.untracked.int32(0)
+  verbose = cms.untracked.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

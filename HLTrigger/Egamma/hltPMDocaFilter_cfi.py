@@ -5,5 +5,6 @@ hltPMDocaFilter = cms.EDFilter('HLTPMDocaFilter',
   candTag = cms.InputTag('HltZeePMMassFilter'),
   docaDiffPerpCutHigh = cms.double(0.055691),
   docaDiffPerpCutLow = cms.double(0),
-  nZcandcut = cms.int32(1)
+  nZcandcut = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

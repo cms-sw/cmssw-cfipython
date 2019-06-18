@@ -8,5 +8,6 @@ hltElectronEoverpFilter = cms.EDFilter('HLTElectronEoverpFilterRegional',
   eoverpbarrelcut = cms.double(1.5),
   eoverpendcapcut = cms.double(2.45),
   ncandcut = cms.int32(1),
-  doIsolated = cms.bool(True)
+  doIsolated = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

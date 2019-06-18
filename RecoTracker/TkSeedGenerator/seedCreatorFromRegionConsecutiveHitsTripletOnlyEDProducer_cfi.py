@@ -11,5 +11,6 @@ seedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer = cms.EDProducer('Seed
   forceKinematicWithRegionDirection = cms.bool(False),
   SeedComparitorPSet = cms.PSet(
     ComponentName = cms.string('none')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

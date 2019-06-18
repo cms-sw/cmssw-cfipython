@@ -8,5 +8,6 @@ hltTrackWithHits = cms.EDFilter('HLTTrackWithHits',
   MinBPX = cms.int32(0),
   MinFPX = cms.int32(0),
   MinPXL = cms.int32(0),
-  MinPT = cms.double(0)
+  MinPT = cms.double(0),
+  mightGet = cms.optional.untracked.vstring
 )

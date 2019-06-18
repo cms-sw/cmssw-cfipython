@@ -8,5 +8,6 @@ hltCA8TopTagFilter = cms.EDFilter('HLTCATopTagFilter',
   minMinMass = cms.double(50),
   src = cms.InputTag('hltParticleFlow'),
   pfsrc = cms.InputTag('selectedPFJets'),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

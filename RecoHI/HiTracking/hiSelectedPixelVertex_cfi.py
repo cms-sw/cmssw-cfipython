@@ -5,5 +5,6 @@ hiSelectedPixelVertex = cms.EDProducer('HIBestVertexProducer',
   adaptiveVertexCollection = cms.InputTag('hiBestAdaptiveVertex'),
   medianVertexCollection = cms.InputTag('hiPixelMedianVertex'),
   useFinalAdaptiveVertexCollection = cms.bool(False),
-  finalAdaptiveVertexCollection = cms.InputTag('hiBestOfflinePrimaryVertex')
+  finalAdaptiveVertexCollection = cms.InputTag('hiBestOfflinePrimaryVertex'),
+  mightGet = cms.optional.untracked.vstring
 )

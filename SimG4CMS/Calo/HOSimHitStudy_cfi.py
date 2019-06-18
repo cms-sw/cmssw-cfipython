@@ -11,5 +11,6 @@ HOSimHitStudy = cms.EDAnalyzer('HOSimHitStudy',
   ScaleHO = cms.untracked.double(2.33),
   TimeCut = cms.untracked.double(100),
   PrintExcessEnergy = cms.untracked.bool(True),
-  TestNumbering = cms.untracked.bool(False)
+  TestNumbering = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

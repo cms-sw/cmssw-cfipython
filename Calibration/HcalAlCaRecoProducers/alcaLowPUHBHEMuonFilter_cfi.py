@@ -10,5 +10,6 @@ alcaLowPUHBHEMuonFilter = cms.EDFilter('AlCaLowPUHBHEMuonFilter',
     'HLT_L1DoubleMu',
     'HLT_L1SingleMu'
   ),
-  pfIsolationCut = cms.double(0.15)
+  pfIsolationCut = cms.double(0.15),
+  mightGet = cms.optional.untracked.vstring
 )

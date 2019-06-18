@@ -1,6 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
 source = cms.Source('DQMProtobufReader',
+  numberEventsInRun = cms.optional.untracked.uint32,
+  numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
   firstTime = cms.untracked.uint64(1),
   timeBetweenEvents = cms.untracked.uint64(5000000),
   eventCreationDelay = cms.untracked.uint32(0),
@@ -14,7 +16,11 @@ source = cms.Source('DQMProtobufReader',
   deleteDatFiles = cms.untracked.bool(False),
   endOfRunKills = cms.untracked.bool(False),
   loadFiles = cms.untracked.bool(True),
+  runNumber = cms.required.untracked.uint32,
   datafnPosition = cms.untracked.uint32(3),
+  streamLabel = cms.required.untracked.string,
+  delayMillis = cms.required.untracked.uint32,
   nextLumiTimeoutMillis = cms.untracked.int32(-1),
-  scanOnce = cms.untracked.bool(False)
+  scanOnce = cms.untracked.bool(False),
+  runInputDir = cms.required.untracked.string
 )

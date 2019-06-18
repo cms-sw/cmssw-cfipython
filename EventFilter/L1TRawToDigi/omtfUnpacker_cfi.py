@@ -8,5 +8,6 @@ omtfUnpacker = cms.EDProducer('OmtfUnpacker',
   skipMuon = cms.bool(False),
   useRpcConnectionFile = cms.bool(False),
   rpcConnectionFile = cms.string(''),
-  outputTag = cms.string('')
+  outputTag = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -5,5 +5,6 @@ pfTauDecayModeIndexProducer = cms.EDProducer('PFRecoTauDecayModeIndexProducer',
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and')
   ),
-  PFTauProducer = cms.InputTag('pfRecoTauProducer')
+  PFTauProducer = cms.InputTag('pfRecoTauProducer'),
+  mightGet = cms.optional.untracked.vstring
 )

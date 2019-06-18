@@ -8,5 +8,6 @@ ctppsPixelClusters = cms.EDProducer('CTPPSPixelClusterProducer',
   ElectronADCGain = cms.double(135),
   VCaltoElectronGain = cms.int32(50),
   VCaltoElectronOffset = cms.int32(-411),
-  doSingleCalibration = cms.bool(False)
+  doSingleCalibration = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

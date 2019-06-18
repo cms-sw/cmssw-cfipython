@@ -7,5 +7,6 @@ hltMhtProducer = cms.EDProducer('HLTMhtProducer',
   minPtJet = cms.double(0),
   maxEtaJet = cms.double(999),
   jetsLabel = cms.InputTag('hltAntiKT4PFJets'),
-  pfCandidatesLabel = cms.InputTag('hltParticleFlow')
+  pfCandidatesLabel = cms.InputTag('hltParticleFlow'),
+  mightGet = cms.optional.untracked.vstring
 )

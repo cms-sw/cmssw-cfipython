@@ -43,5 +43,6 @@ DeepTau = cms.EDProducer('DeepTauId',
     VTight = cms.string('0'),
     VVTight = cms.string('0'),
     VVVTight = cms.string('0')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -38,5 +38,6 @@ pixelInactiveAreaTrackingRegionsAndSeedingLayers = cms.EDProducer('PixelInactive
   MTIB = cms.PSet(),
   MTID = cms.PSet(),
   MTOB = cms.PSet(),
-  MTEC = cms.PSet()
+  MTEC = cms.PSet(),
+  mightGet = cms.optional.untracked.vstring
 )

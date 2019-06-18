@@ -4,5 +4,6 @@ hltEventAnalyzerAOD = cms.EDAnalyzer('HLTEventAnalyzerAOD',
   processName = cms.string('HLT'),
   triggerName = cms.string('@'),
   triggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
-  triggerEvent = cms.InputTag('hltTriggerSummaryAOD', '', 'HLT')
+  triggerEvent = cms.InputTag('hltTriggerSummaryAOD', '', 'HLT'),
+  mightGet = cms.optional.untracked.vstring
 )

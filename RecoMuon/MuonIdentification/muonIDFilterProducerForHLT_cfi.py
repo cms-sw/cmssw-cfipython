@@ -13,5 +13,6 @@ muonIDFilterProducerForHLT = cms.EDProducer('MuonIDFilterProducerForHLT',
   minPixLayer = cms.int32(0),
   minPixHits = cms.int32(0),
   minPt = cms.double(0),
-  maxNormalizedChi2 = cms.double(9999)
+  maxNormalizedChi2 = cms.double(9999),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -5,5 +5,6 @@ PFTauL1TJetsMatching = cms.EDProducer('PFTauL1TJetsMatching',
   TauSrc = cms.InputTag('hltSelectedPFTausTrackFindingLooseChargedIsolationAgainstMuon'),
   MatchingdR = cms.double(0.5),
   MinTauPt = cms.double(20),
-  MinL1TPt = cms.double(115)
+  MinL1TPt = cms.double(115),
+  mightGet = cms.optional.untracked.vstring
 )

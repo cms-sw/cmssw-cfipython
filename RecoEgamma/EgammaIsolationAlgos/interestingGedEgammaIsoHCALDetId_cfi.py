@@ -15,5 +15,6 @@ interestingGedEgammaIsoHCALDetId = cms.EDProducer('EgammaIsoHcalDetIdCollectionP
     minEnergyHB = cms.double(0.8),
     minEnergyHEDepth1 = cms.double(0.1),
     minEnergyHEDefault = cms.double(0.2)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

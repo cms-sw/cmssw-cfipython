@@ -25,5 +25,6 @@ fastTimerServiceClient = cms.EDProducer('FastTimerServiceClient',
     nbins = cms.int32(260),
     xmin = cms.double(0),
     xmax = cms.double(130)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

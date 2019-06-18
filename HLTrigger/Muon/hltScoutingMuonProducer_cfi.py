@@ -10,5 +10,6 @@ hltScoutingMuonProducer = cms.EDProducer('HLTScoutingMuonProducer',
   muonPtCut = cms.double(4),
   muonEtaCut = cms.double(2.4),
   minVtxProbCut = cms.double(0.001),
-  InputLinks = cms.InputTag('hltL3MuonsIterL3LinksNoVtx')
+  InputLinks = cms.InputTag('hltL3MuonsIterL3LinksNoVtx'),
+  mightGet = cms.optional.untracked.vstring
 )

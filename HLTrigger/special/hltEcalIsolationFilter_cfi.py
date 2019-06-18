@@ -7,5 +7,6 @@ hltEcalIsolationFilter = cms.EDFilter('HLTEcalIsolationFilter',
   MaxNhitOuterCone = cms.int32(0),
   MaxEnergyOuterCone = cms.double(10000),
   MaxEnergyInnerCone = cms.double(10000),
-  MaxEtaCandidate = cms.double(1.3)
+  MaxEtaCandidate = cms.double(1.3),
+  mightGet = cms.optional.untracked.vstring
 )

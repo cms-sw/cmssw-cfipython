@@ -39,6 +39,7 @@ topMonitoring = cms.EDProducer('TopMonitor',
   enablePhotonPlot = cms.bool(False),
   enableMETplot = cms.bool(False),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -52,6 +53,7 @@ topMonitoring = cms.EDProducer('TopMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -65,15 +67,51 @@ topMonitoring = cms.EDProducer('TopMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    metPSet = cms.PSet(),
-    etaPSet = cms.PSet(),
-    phiPSet = cms.PSet(),
-    ptPSet = cms.PSet(),
-    htPSet = cms.PSet(),
-    DRPSet = cms.PSet(),
-    csvPSet = cms.PSet(),
-    invMassPSet = cms.PSet(),
-    MHTPSet = cms.PSet(),
+    metPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    etaPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    phiPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    ptPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    htPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    DRPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    csvPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    invMassPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    MHTPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     metBinning = cms.vdouble(
       0,
       20,
@@ -453,5 +491,6 @@ topMonitoring = cms.EDProducer('TopMonitor',
   leptonPVcuts = cms.PSet(
     dxy = cms.double(9999),
     dz = cms.double(9999)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

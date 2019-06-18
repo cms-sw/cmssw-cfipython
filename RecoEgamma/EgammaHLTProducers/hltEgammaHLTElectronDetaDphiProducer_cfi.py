@@ -6,5 +6,6 @@ hltEgammaHLTElectronDetaDphiProducer = cms.EDProducer('EgammaHLTElectronDetaDphi
   recoEcalCandidateProducer = cms.InputTag(''),
   useSCRefs = cms.bool(False),
   useTrackProjectionToEcal = cms.bool(False),
-  variablesAtVtx = cms.bool(True)
+  variablesAtVtx = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

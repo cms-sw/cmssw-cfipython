@@ -11,5 +11,6 @@ hiFJGridEmptyAreaCalculator = cms.EDProducer('HiFJGridEmptyAreaCalculator',
   bandWidth = cms.double(0.2),
   doCentrality = cms.bool(True),
   hiBinCut = cms.int32(100),
-  keepGridInfo = cms.bool(False)
+  keepGridInfo = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

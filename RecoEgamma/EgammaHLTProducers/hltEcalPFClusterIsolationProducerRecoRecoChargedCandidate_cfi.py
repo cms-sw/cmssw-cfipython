@@ -21,5 +21,6 @@ hltEcalPFClusterIsolationProducerRecoRecoChargedCandidate = cms.EDProducer('Muon
   absEtaLowEdges = cms.vdouble(
     0,
     1.479
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

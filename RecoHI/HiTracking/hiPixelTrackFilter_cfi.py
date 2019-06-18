@@ -10,5 +10,6 @@ hiPixelTrackFilter = cms.EDProducer('HIPixelTrackFilterProducer',
   lipMax = cms.double(0.3),
   nSigmaLipMaxTolerance = cms.double(0),
   chi2 = cms.double(1000),
-  useClusterShape = cms.bool(False)
+  useClusterShape = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

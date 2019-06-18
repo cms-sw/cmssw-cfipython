@@ -10,5 +10,6 @@ hltMinDPhiMETFilter = cms.EDFilter('HLTMinDPhiMETFilter',
   minDPhi = cms.double(0.5),
   metLabel = cms.InputTag('hltPFMETProducer'),
   calometLabel = cms.InputTag(''),
-  jetsLabel = cms.InputTag('hltAK4PFJetL1FastL2L3Corrected')
+  jetsLabel = cms.InputTag('hltAK4PFJetL1FastL2L3Corrected'),
+  mightGet = cms.optional.untracked.vstring
 )

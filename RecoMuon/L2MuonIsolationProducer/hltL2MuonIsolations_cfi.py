@@ -37,5 +37,6 @@ hltL2MuonIsolations = cms.EDProducer('L2MuonIsolationProducer',
     RhoMax = cms.double(99999999),
     UseRhoCorrection = cms.bool(True)
   ),
-  WriteIsolatorFloat = cms.bool(False)
+  WriteIsolatorFloat = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

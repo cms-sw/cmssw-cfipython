@@ -20,5 +20,6 @@ hltLevel1Pattern = cms.EDFilter('HLTLevel1Pattern',
     1,
     0,
     0
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ SimG4FluxAnalyzer = cms.EDAnalyzer('SimG4FluxAnalyzer',
     'TotemT2Part1',
     'TotemT2Part2',
     'TotemT2Part3'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

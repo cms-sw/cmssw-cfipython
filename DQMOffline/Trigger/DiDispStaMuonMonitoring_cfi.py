@@ -10,6 +10,7 @@ DiDispStaMuonMonitoring = cms.EDProducer('DiDispStaMuonMonitor',
     dxy = cms.string('pt > 0')
   ),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -23,6 +24,7 @@ DiDispStaMuonMonitoring = cms.EDProducer('DiDispStaMuonMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -89,5 +91,6 @@ DiDispStaMuonMonitoring = cms.EDProducer('DiDispStaMuonMonitor',
       450,
       1000
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

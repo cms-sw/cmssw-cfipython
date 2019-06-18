@@ -49,5 +49,6 @@ hltL3MuonIsolations = cms.EDProducer('L3MuonCombinedRelativeIsolationProducer',
     DepositLabel = cms.untracked.string('EcalPlusHcal'),
     CaloTowerCollectionLabel = cms.InputTag('hltTowerMakerForMuons'),
     Weight_H = cms.double(1)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

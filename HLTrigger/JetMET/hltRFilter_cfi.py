@@ -11,5 +11,6 @@ hltRFilter = cms.EDFilter('HLTRFilter',
   acceptNJ = cms.bool(True),
   R2Offset = cms.double(0),
   MROffset = cms.double(0),
-  RMRCut = cms.double(-999999)
+  RMRCut = cms.double(-999999),
+  mightGet = cms.optional.untracked.vstring
 )

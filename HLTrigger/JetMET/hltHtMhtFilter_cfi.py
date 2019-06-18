@@ -7,5 +7,6 @@ hltHtMhtFilter = cms.EDFilter('HLTHtMhtFilter',
   minHt = cms.vdouble(250),
   minMht = cms.vdouble(70),
   minMeff = cms.vdouble(0),
-  meffSlope = cms.vdouble(1)
+  meffSlope = cms.vdouble(1),
+  mightGet = cms.optional.untracked.vstring
 )

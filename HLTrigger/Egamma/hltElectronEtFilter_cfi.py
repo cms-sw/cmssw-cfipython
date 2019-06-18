@@ -6,5 +6,6 @@ hltElectronEtFilter = cms.EDFilter('HLTElectronEtFilter',
   EtCutEB = cms.double(0),
   EtCutEE = cms.double(0),
   ncandcut = cms.int32(1),
-  l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate')
+  l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate'),
+  mightGet = cms.optional.untracked.vstring
 )

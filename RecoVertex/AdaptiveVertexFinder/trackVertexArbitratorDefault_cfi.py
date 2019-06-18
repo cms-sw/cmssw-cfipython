@@ -15,5 +15,6 @@ trackVertexArbitratorDefault = cms.EDProducer('TrackVertexArbitrator',
   trackMinLayers = cms.int32(4),
   trackMinPt = cms.double(0.4),
   trackMinPixels = cms.int32(1),
-  maxTimeSignificance = cms.double(3.5)
+  maxTimeSignificance = cms.double(3.5),
+  mightGet = cms.optional.untracked.vstring
 )

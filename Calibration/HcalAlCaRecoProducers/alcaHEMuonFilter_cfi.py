@@ -15,5 +15,6 @@ alcaHEMuonFilter = cms.EDFilter('AlCaHEMuonFilter',
   pfIsolationCut = cms.double(0.15),
   trackIsolationCut = cms.double(3),
   caloIsolationCut = cms.double(5),
-  preScale = cms.int32(1)
+  preScale = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

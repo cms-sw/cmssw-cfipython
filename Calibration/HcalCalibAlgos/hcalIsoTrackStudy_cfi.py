@@ -69,5 +69,6 @@ hcalIsoTrackStudy = cms.EDAnalyzer('HcalIsoTrackStudy',
   matrixECAL = cms.untracked.int32(5),
   matrixHCAL = cms.untracked.int32(3),
   mapRadius = cms.untracked.double(34.98),
-  get2Ddist = cms.untracked.bool(False)
+  get2Ddist = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

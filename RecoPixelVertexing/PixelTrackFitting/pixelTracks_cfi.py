@@ -5,5 +5,6 @@ pixelTracks = cms.EDProducer('PixelTrackProducer',
   SeedingHitSets = cms.InputTag('pixelTracksHitTriplets'),
   Fitter = cms.InputTag('pixelFitterByHelixProjections'),
   Filter = cms.InputTag('pixelTrackFilterByKinematics'),
-  Cleaner = cms.string('pixelTrackCleanerBySharedHits')
+  Cleaner = cms.string('pixelTrackCleanerBySharedHits'),
+  mightGet = cms.optional.untracked.vstring
 )

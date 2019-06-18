@@ -13,5 +13,6 @@ DeDxEstimatorProducer = cms.EDProducer('DeDxEstimatorProducer',
   Reccord = cms.string('SiStripDeDxMip_3D_Rcd'),
   ProbabilityMode = cms.string('Accumulation'),
   fraction = cms.double(0.4),
-  exponent = cms.double(-2)
+  exponent = cms.double(-2),
+  mightGet = cms.optional.untracked.vstring
 )

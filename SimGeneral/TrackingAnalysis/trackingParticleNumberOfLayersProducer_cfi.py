@@ -15,5 +15,6 @@ trackingParticleNumberOfLayersProducer = cms.EDProducer('TrackingParticleNumberO
     'g4SimHits:TrackerHitsTOBHighTof',
     'g4SimHits:TrackerHitsTECLowTof',
     'g4SimHits:TrackerHitsTECHighTof'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

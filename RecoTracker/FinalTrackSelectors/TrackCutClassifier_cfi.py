@@ -132,5 +132,6 @@ TrackCutClassifier = cms.EDProducer('TrackCutClassifier',
         3.4028234663852886e+38
       )
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

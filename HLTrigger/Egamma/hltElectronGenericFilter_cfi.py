@@ -12,5 +12,6 @@ hltElectronGenericFilter = cms.EDFilter('HLTElectronGenericFilter',
   thrTimesPtEB = cms.double(-1),
   thrTimesPtEE = cms.double(-1),
   ncandcut = cms.int32(1),
-  l1EGCand = cms.InputTag('hltPixelMatchElectronsL1Iso')
+  l1EGCand = cms.InputTag('hltPixelMatchElectronsL1Iso'),
+  mightGet = cms.optional.untracked.vstring
 )

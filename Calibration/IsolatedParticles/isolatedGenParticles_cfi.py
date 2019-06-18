@@ -19,5 +19,6 @@ isolatedGenParticles = cms.EDAnalyzer('IsolatedGenParticles',
   L1extraIsoEmSource = cms.untracked.InputTag('l1extraParticles', 'Isolated'),
   L1extraNonIsoEmSource = cms.untracked.InputTag('l1extraParticles', 'NonIsolated'),
   L1GTReadoutRcdSource = cms.untracked.InputTag('gtDigis'),
-  L1GTObjectMapRcdSource = cms.untracked.InputTag('hltL1GtObjectMap')
+  L1GTObjectMapRcdSource = cms.untracked.InputTag('hltL1GtObjectMap'),
+  mightGet = cms.optional.untracked.vstring
 )

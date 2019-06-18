@@ -10,5 +10,6 @@ pfJetMETcorrInputProducerTPatJetPATJetCorrExtractor = cms.EDProducer('PATPFJetME
   skipEM = cms.bool(True),
   skipEMfractionThreshold = cms.double(0.9),
   skipMuons = cms.bool(True),
-  skipMuonSelection = cms.string('isGlobalMuon | isStandAloneMuon')
+  skipMuonSelection = cms.string('isGlobalMuon | isStandAloneMuon'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ trackstersProducer = cms.EDProducer('TrackstersProducer',
   min_cos_theta = cms.double(0.915),
   min_cos_pointing = cms.double(-1),
   missing_layers = cms.int32(0),
-  min_clusters_per_ntuplet = cms.int32(10)
+  min_clusters_per_ntuplet = cms.int32(10),
+  mightGet = cms.optional.untracked.vstring
 )

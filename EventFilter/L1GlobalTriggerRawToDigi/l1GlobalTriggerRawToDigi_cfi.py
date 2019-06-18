@@ -5,5 +5,6 @@ l1GlobalTriggerRawToDigi = cms.EDProducer('L1GlobalTriggerRawToDigi',
   DaqGtFedId = cms.untracked.int32(813),
   ActiveBoardsMask = cms.uint32(65535),
   UnpackBxInEvent = cms.int32(-1),
-  Verbosity = cms.untracked.int32(0)
+  Verbosity = cms.untracked.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

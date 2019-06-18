@@ -11,5 +11,6 @@ alCaHcalPhiSymStream = cms.EDFilter('HLTHcalPhiSymFilter',
   eCut_HO = cms.double(-10),
   phiSymHOHitCollection = cms.string('phiSymHcalRecHitsHO'),
   phiSymHBHEHitCollection = cms.string('phiSymHcalRecHitsHBHE'),
-  phiSymHFHitCollection = cms.string('phiSymHcalRecHitsHF')
+  phiSymHFHitCollection = cms.string('phiSymHcalRecHitsHF'),
+  mightGet = cms.optional.untracked.vstring
 )

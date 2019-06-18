@@ -121,5 +121,6 @@ hgcalTopologyTesterEE = cms.EDAnalyzer('HGCalTopologyTester',
     9,
     12,
     15
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

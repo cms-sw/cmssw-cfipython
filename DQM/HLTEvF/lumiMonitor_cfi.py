@@ -9,12 +9,29 @@ lumiMonitor = cms.EDAnalyzer('LumiMonitor',
   minNumberOfPixelsPerCluster = cms.int32(2),
   minPixelClusterCharge = cms.double(15000),
   histoPSet = cms.PSet(
-    pixelClusterPSet = cms.PSet(),
-    lumiPSet = cms.PSet(),
-    puPSet = cms.PSet(),
-    pixellumiPSet = cms.PSet(),
+    pixelClusterPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    lumiPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    puPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    pixellumiPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     lsPSet = cms.PSet(
       nbins = cms.int32(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

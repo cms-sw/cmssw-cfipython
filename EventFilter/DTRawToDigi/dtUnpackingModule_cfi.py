@@ -6,6 +6,7 @@ dtUnpackingModule = cms.EDProducer('DTUnpackingModule',
   useStandardFEDid = cms.bool(True),
   minFEDid = cms.untracked.int32(770),
   maxFEDid = cms.untracked.int32(779),
+  fedbyType = cms.optional.bool,
   readOutParameters = cms.PSet(
     debug = cms.untracked.bool(False),
     rosParameters = cms.PSet(
@@ -19,5 +20,6 @@ dtUnpackingModule = cms.EDProducer('DTUnpackingModule',
     performDataIntegrityMonitor = cms.untracked.bool(False),
     localDAQ = cms.untracked.bool(False)
   ),
-  dqmOnly = cms.bool(False)
+  dqmOnly = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

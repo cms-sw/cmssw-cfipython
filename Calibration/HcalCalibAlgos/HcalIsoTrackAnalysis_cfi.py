@@ -71,5 +71,6 @@ HcalIsoTrackAnalysis = cms.EDAnalyzer('HcalIsoTrackAnalysis',
   useRaw = cms.untracked.int32(0),
   dataType = cms.untracked.int32(0),
   etaMin = cms.untracked.int32(-1),
-  etaMax = cms.untracked.int32(10)
+  etaMax = cms.untracked.int32(10),
+  mightGet = cms.optional.untracked.vstring
 )

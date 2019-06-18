@@ -14,5 +14,6 @@ egammaHLTFilteredSuperClusterProducer = cms.EDProducer('EgammaHLTFilteredSuperCl
         useEt = cms.double(0)
       )
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

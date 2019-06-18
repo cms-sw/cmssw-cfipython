@@ -1,6 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
 pfTauDecayModeCutMultiplexer = cms.EDProducer('PFTauDecayModeCutMultiplexer',
+  PFTauDecayModeSrc = cms.required.InputTag,
+  PFTauDiscriminantToMultiplex = cms.required.InputTag,
+  computers = cms.required.VPSet,
   PFTauProducer = cms.InputTag('fixme'),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('AND'),
@@ -12,5 +15,6 @@ pfTauDecayModeCutMultiplexer = cms.EDProducer('PFTauDecayModeCutMultiplexer',
       cut = cms.double(0),
       Producer = cms.InputTag('fixme')
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

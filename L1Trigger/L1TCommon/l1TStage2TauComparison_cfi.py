@@ -5,5 +5,6 @@ l1TStage2TauComparison = cms.EDProducer('L1TStage2TauComparison',
   collection2 = cms.InputTag('collection2'),
   checkBxRange = cms.bool(True),
   checkCollSizePerBx = cms.bool(True),
-  checkObject = cms.bool(True)
+  checkObject = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

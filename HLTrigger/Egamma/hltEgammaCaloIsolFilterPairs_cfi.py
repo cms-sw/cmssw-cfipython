@@ -18,5 +18,6 @@ hltEgammaCaloIsolFilterPairs = cms.EDFilter('HLTEgammaCaloIsolFilterPairs',
   IsoOverEtCutEE2 = cms.double(0),
   IsoOverEt2CutEE2 = cms.double(0),
   AlsoNonIso1 = cms.bool(False),
-  AlsoNonIso2 = cms.bool(False)
+  AlsoNonIso2 = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

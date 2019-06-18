@@ -18,5 +18,6 @@ hltMuonL3SimplePreFilter = cms.EDFilter('HLTMuonL3SimplePreFilter',
   MinNmuonHits = cms.int32(0),
   MaxPtDifference = cms.double(9999),
   MinTrackPt = cms.double(0),
-  MatchToPreviousCand = cms.bool(True)
+  MatchToPreviousCand = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

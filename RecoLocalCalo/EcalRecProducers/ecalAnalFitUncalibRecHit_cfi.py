@@ -6,5 +6,6 @@ ecalAnalFitUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
   EEdigiCollection = cms.InputTag('ecalDigis', 'eeDigis'),
   EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
   algo = cms.string('EcalUncalibRecHitWorkerAnalFit'),
-  algoPSet = cms.PSet()
+  algoPSet = cms.PSet(),
+  mightGet = cms.optional.untracked.vstring
 )

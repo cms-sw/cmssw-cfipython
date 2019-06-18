@@ -15,5 +15,6 @@ trackingRegionsFromBeamSpotAndL2Tau = cms.EDProducer('TrackingRegionsFromBeamSpo
     precise = cms.bool(True),
     howToUseMeasurementTracker = cms.string('Never'),
     measurementTrackerName = cms.InputTag('MeasurementTrackerEvent')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

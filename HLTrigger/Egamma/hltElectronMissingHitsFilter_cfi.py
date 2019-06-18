@@ -6,5 +6,6 @@ hltElectronMissingHitsFilter = cms.EDFilter('HLTElectronMissingHitsFilter',
   electronProducer = cms.InputTag('hltL1NonIsoHLTNonIsoSingleElectronEt15LTIPixelMatchFilte'),
   barrelcut = cms.int32(0),
   endcapcut = cms.int32(0),
-  ncandcut = cms.int32(1)
+  ncandcut = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

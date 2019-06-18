@@ -32,5 +32,6 @@ multiHitFromChi2EDProducerDefault = cms.EDProducer('MultiHitFromChi2EDProducer',
     0,
     0,
     0
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

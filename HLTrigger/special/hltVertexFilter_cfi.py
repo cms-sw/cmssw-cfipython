@@ -7,5 +7,6 @@ hltVertexFilter = cms.EDFilter('HLTVertexFilter',
   maxChi2 = cms.double(99999),
   maxD0 = cms.double(1),
   maxZ = cms.double(15),
-  minVertices = cms.uint32(1)
+  minVertices = cms.uint32(1),
+  mightGet = cms.optional.untracked.vstring
 )

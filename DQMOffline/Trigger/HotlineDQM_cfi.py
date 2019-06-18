@@ -14,5 +14,6 @@ HotlineDQM = cms.EDProducer('HotlineDQM',
   usePhotons = cms.bool(False),
   useMet = cms.bool(False),
   usePFMet = cms.bool(False),
-  useHT = cms.bool(False)
+  useHT = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

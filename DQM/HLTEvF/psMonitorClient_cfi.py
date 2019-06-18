@@ -5,5 +5,6 @@ psMonitorClient = cms.EDProducer('PSMonitorClient',
   me = cms.PSet(
     folder = cms.string('HLT/PSMonitoring'),
     name = cms.string('psColumnVSlumi')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

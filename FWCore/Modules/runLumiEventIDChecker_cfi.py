@@ -1,5 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 runLumiEventIDChecker = cms.EDAnalyzer('RunLumiEventChecker',
-  unorderedEvents = cms.untracked.bool(False)
+  eventSequence = cms.required.untracked.VEventID,
+  unorderedEvents = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

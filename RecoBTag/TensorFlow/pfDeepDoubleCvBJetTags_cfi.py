@@ -17,5 +17,6 @@ pfDeepDoubleCvBJetTags = cms.EDProducer('DeepDoubleXTFJetTagsProducer',
     probHbb = cms.vuint32(0),
     probHcc = cms.vuint32(1)
   ),
-  graph_path = cms.FileInPath('RecoBTag/Combined/data/DeepDoubleX/94X/V01/DDCvB.pb')
+  graph_path = cms.FileInPath('RecoBTag/Combined/data/DeepDoubleX/94X/V01/DDCvB.pb'),
+  mightGet = cms.optional.untracked.vstring
 )

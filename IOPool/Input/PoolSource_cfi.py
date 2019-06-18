@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 source = cms.Source('PoolSource',
+  fileNames = cms.required.untracked.vstring,
   secondaryFileNames = cms.untracked.vstring(),
   needSecondaryFileNames = cms.untracked.bool(False),
   overrideCatalog = cms.untracked.string(''),

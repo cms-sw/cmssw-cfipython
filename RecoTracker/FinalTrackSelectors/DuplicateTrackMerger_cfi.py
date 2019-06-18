@@ -20,5 +20,6 @@ DuplicateTrackMerger = cms.EDProducer('DuplicateTrackMerger',
   useInnermostState = cms.bool(True),
   ttrhBuilderName = cms.string('WithAngleAndTemplate'),
   propagatorName = cms.string('PropagatorWithMaterial'),
-  chi2EstimatorName = cms.string('DuplicateTrackMergerChi2Est')
+  chi2EstimatorName = cms.string('DuplicateTrackMergerChi2Est'),
+  mightGet = cms.optional.untracked.vstring
 )

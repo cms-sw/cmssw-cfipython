@@ -7,5 +7,6 @@ hltEgammaEtFilterPairs = cms.EDFilter('HLTEgammaEtFilterPairs',
   etcut1EB = cms.double(1),
   etcut1EE = cms.double(1),
   etcut2EB = cms.double(1),
-  etcut2EE = cms.double(1)
+  etcut2EE = cms.double(1),
+  mightGet = cms.optional.untracked.vstring
 )

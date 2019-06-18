@@ -19,5 +19,6 @@ hltDiMuonGlbTrkFilter = cms.EDFilter('HLTDiMuonGlbTrkFilter',
   maxMass = cms.double(1e+99),
   ChargeOpt = cms.int32(0),
   maxDCAMuMu = cms.double(1e+99),
-  maxdEtaMuMu = cms.double(1e+99)
+  maxdEtaMuMu = cms.double(1e+99),
+  mightGet = cms.optional.untracked.vstring
 )

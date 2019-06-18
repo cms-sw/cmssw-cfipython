@@ -14,8 +14,14 @@ pfRecoTauDiscriminationAgainstElectronMVA6 = cms.EDProducer('PFRecoTauDiscrimina
   loadMVAfromDB = cms.bool(True),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet(),
-    decayMode = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    ),
+    decayMode = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   mvaName_NoEleMatch_woGwoGSF_BL = cms.string('gbr_NoEleMatch_woGwoGSF_BL'),
   vetoEcalCracks = cms.bool(True),
@@ -29,5 +35,6 @@ pfRecoTauDiscriminationAgainstElectronMVA6 = cms.EDProducer('PFRecoTauDiscrimina
   method = cms.string('BDTG'),
   srcGsfElectrons = cms.InputTag('gedGsfElectrons'),
   mvaName_NoEleMatch_woGwoGSF_EC = cms.string('gbr_NoEleMatch_woGwoGSF_EC'),
-  minMVANoEleMatchWgWOgsfEC = cms.double(0)
+  minMVANoEleMatchWgWOgsfEC = cms.double(0),
+  mightGet = cms.optional.untracked.vstring
 )

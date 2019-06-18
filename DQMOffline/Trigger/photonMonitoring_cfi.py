@@ -14,6 +14,7 @@ photonMonitoring = cms.EDProducer('PhotonMonitor',
   nelectrons = cms.uint32(0),
   nphotons = cms.uint32(0),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -27,6 +28,7 @@ photonMonitoring = cms.EDProducer('PhotonMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -40,7 +42,11 @@ photonMonitoring = cms.EDProducer('PhotonMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    photonPSet = cms.PSet(),
+    photonPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     photonBinning = cms.vdouble(
       0,
       20,
@@ -102,5 +108,6 @@ photonMonitoring = cms.EDProducer('PhotonMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -120,5 +120,6 @@ CATopJetProducer = cms.EDProducer('CATopJetProducer',
   maxProblematicHcalCells = cms.uint32(9999999),
   maxRecoveredEcalCells = cms.uint32(9999999),
   maxRecoveredHcalCells = cms.uint32(9999999),
-  puCenters = cms.vdouble()
+  puCenters = cms.vdouble(),
+  mightGet = cms.optional.untracked.vstring
 )

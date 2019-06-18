@@ -8,5 +8,6 @@ hcalDigiToRawuHTR = cms.EDProducer('HcalDigiToRawuHTR',
   HBHEqie8 = cms.InputTag('simHcalDigis'),
   HFqie8 = cms.InputTag('simHcalDigis'),
   TP = cms.InputTag('simHcalTriggerPrimitiveDigis'),
-  premix = cms.bool(False)
+  premix = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

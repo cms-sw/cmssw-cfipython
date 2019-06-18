@@ -11,5 +11,6 @@ hltMuonL1TtoL3TkPreFilter = cms.EDFilter('HLTMuonL1TtoL3TkPreFilter',
   MaxDr = cms.double(9999),
   MaxDz = cms.double(9999),
   MinPt = cms.double(0),
-  NSigmaPt = cms.double(9999)
+  NSigmaPt = cms.double(9999),
+  mightGet = cms.optional.untracked.vstring
 )

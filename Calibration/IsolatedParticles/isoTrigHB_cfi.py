@@ -51,5 +51,6 @@ isoTrigHB = cms.EDAnalyzer('IsoTrig',
   vertexCutSeed = cms.untracked.double(101),
   vertexCutIsol = cms.untracked.double(101),
   tauUnbiasCone = cms.untracked.double(1.2),
-  prelimCone = cms.untracked.double(1)
+  prelimCone = cms.untracked.double(1),
+  mightGet = cms.optional.untracked.vstring
 )

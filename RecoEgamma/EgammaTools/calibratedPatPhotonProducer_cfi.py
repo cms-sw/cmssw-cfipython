@@ -30,5 +30,6 @@ calibratedPatPhotonProducer = cms.EDProducer('CalibratedPatPhotonProducer',
     'ecalEnergyErrPreCorr',
     'ecalEnergyPostCorr',
     'ecalEnergyErrPostCorr'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

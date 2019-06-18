@@ -11,5 +11,6 @@ hltVertexFromTrackProducer = cms.EDProducer('VertexFromTrackProducer',
   beamSpotLabel = cms.InputTag('hltOnlineBeamSpot'),
   useVertex = cms.bool(True),
   vertexLabel = cms.InputTag('hltPixelVertices'),
-  verbose = cms.untracked.bool(False)
+  verbose = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

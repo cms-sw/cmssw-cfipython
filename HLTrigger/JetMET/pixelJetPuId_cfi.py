@@ -11,5 +11,6 @@ pixelJetPuId = cms.EDProducer('PixelJetPuId',
   MaxTrackChi2 = cms.double(20),
   UseForwardJetsAsNoPU = cms.bool(True),
   MinEtaForwardJets = cms.double(2.4),
-  MinEtForwardJets = cms.double(40)
+  MinEtForwardJets = cms.double(40),
+  mightGet = cms.optional.untracked.vstring
 )

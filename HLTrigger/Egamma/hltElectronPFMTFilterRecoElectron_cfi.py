@@ -8,5 +8,6 @@ hltElectronPFMTFilterRecoElectron = cms.EDFilter('HLTGsfElectronPFMTFilter',
   minN = cms.int32(0),
   minMht = cms.double(0),
   lowerMTCut = cms.double(0),
-  upperMTCut = cms.double(9999)
+  upperMTCut = cms.double(9999),
+  mightGet = cms.optional.untracked.vstring
 )

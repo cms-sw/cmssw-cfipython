@@ -53,5 +53,6 @@ HGCalTBAnalyzer = cms.EDAnalyzer('HGCalTBAnalyzer',
   SampleIndex = cms.int32(0),
   DoTree = cms.untracked.bool(True),
   DoTreeCell = cms.untracked.bool(True),
-  DoPassive = cms.untracked.bool(False)
+  DoPassive = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

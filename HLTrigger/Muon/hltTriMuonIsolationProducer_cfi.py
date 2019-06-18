@@ -20,5 +20,6 @@ hltTriMuonIsolationProducer = cms.EDProducer('HLTTriMuonIsolation',
   TriMuonAbsCharge = cms.int32(-1),
   MaxDZ = cms.double(0.3),
   EnableRelIso = cms.bool(False),
-  EnableAbsIso = cms.bool(True)
+  EnableAbsIso = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -6,5 +6,6 @@ hltNVFilter = cms.EDFilter('HLTNVFilter',
   inputMETTag = cms.InputTag('hlt1MET60'),
   minEtJet2 = cms.double(20),
   minEtJet1 = cms.double(80),
-  minNV = cms.double(0.1)
+  minNV = cms.double(0.1),
+  mightGet = cms.optional.untracked.vstring
 )

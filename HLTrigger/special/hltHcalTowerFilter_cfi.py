@@ -11,5 +11,6 @@ hltHcalTowerFilter = cms.EDFilter('HLTHcalTowerFilter',
   MaxN_HF = cms.int32(8),
   MinN_HF = cms.int32(-1),
   MinN_HFM = cms.int32(-1),
-  MinN_HFP = cms.int32(-1)
+  MinN_HFP = cms.int32(-1),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -31,22 +31,59 @@ PATElectronProducer = cms.EDProducer('PATElectronProducer',
   pfCandsForMiniIso = cms.InputTag('packedPFCandidates'),
   miniIsoParamsE = cms.vdouble(),
   miniIsoParamsB = cms.vdouble(),
-  isoDeposits = cms.PSet(),
-  isolationValues = cms.PSet(),
-  isolationValuesNoPFId = cms.PSet(),
+  isoDeposits = cms.PSet(
+    tracker = cms.optional.InputTag,
+    ecal = cms.optional.InputTag,
+    hcal = cms.optional.InputTag,
+    pfAllParticles = cms.optional.InputTag,
+    pfChargedHadrons = cms.optional.InputTag,
+    pfChargedAll = cms.optional.InputTag,
+    pfPUChargedHadrons = cms.optional.InputTag,
+    pfNeutralHadrons = cms.optional.InputTag,
+    pfPhotons = cms.optional.InputTag,
+    user = cms.optional.VInputTag
+  ),
+  isolationValues = cms.PSet(
+    tracker = cms.optional.InputTag,
+    ecal = cms.optional.InputTag,
+    hcal = cms.optional.InputTag,
+    pfAllParticles = cms.optional.InputTag,
+    pfChargedHadrons = cms.optional.InputTag,
+    pfChargedAll = cms.optional.InputTag,
+    pfPUChargedHadrons = cms.optional.InputTag,
+    pfNeutralHadrons = cms.optional.InputTag,
+    pfPhotons = cms.optional.InputTag,
+    user = cms.optional.VInputTag
+  ),
+  isolationValuesNoPFId = cms.PSet(
+    tracker = cms.optional.InputTag,
+    ecal = cms.optional.InputTag,
+    hcal = cms.optional.InputTag,
+    pfAllParticles = cms.optional.InputTag,
+    pfChargedHadrons = cms.optional.InputTag,
+    pfChargedAll = cms.optional.InputTag,
+    pfPUChargedHadrons = cms.optional.InputTag,
+    pfNeutralHadrons = cms.optional.InputTag,
+    pfPhotons = cms.optional.InputTag,
+    user = cms.optional.VInputTag
+  ),
   efficiencies = cms.PSet(),
   addEfficiencies = cms.bool(False),
   userData = cms.PSet(
     userClasses = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userFloats = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userInts = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userCands = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userFunctions = cms.vstring(),
@@ -60,5 +97,6 @@ PATElectronProducer = cms.EDProducer('PATElectronProducer',
   resolutions = cms.PSet(),
   embedHighLevelSelection = cms.bool(True),
   beamLineSrc = cms.InputTag(''),
-  pvSrc = cms.InputTag('')
+  pvSrc = cms.InputTag(''),
+  mightGet = cms.optional.untracked.vstring
 )

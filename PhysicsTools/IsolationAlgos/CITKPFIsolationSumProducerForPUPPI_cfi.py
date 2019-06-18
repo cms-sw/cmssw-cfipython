@@ -9,5 +9,6 @@ CITKPFIsolationSumProducerForPUPPI = cms.EDProducer('CITKPFIsolationSumProducerF
     cms.PSet(),
     cms.PSet()
   ),
-  usePUPPINoLepton = cms.bool(False)
+  usePUPPINoLepton = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

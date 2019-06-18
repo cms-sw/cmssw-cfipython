@@ -12,5 +12,6 @@ recAnalyzerHF = cms.EDAnalyzer('RecAnalyzerHF',
   HcalIeta = cms.untracked.vint32(),
   HcalIphi = cms.untracked.vint32(),
   HcalDepth = cms.untracked.vint32(),
-  hfInput = cms.InputTag('hfprereco')
+  hfInput = cms.InputTag('hfprereco'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -228,5 +228,6 @@ hcalnoise = cms.EDProducer('HcalNoiseInfoProducer',
     14,
     15,
     27
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

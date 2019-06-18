@@ -5,5 +5,6 @@ PATJetSelector = cms.EDFilter('PATJetSelector',
   cut = cms.string(''),
   cutLoose = cms.string(''),
   filter = cms.bool(False),
-  nLoose = cms.uint32(0)
+  nLoose = cms.uint32(0),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -6,5 +6,6 @@ hgcalShowerSeparationDefault = cms.EDProducer('HGCalShowerSeparation',
   caloParticles = cms.InputTag('mix', 'MergedCaloTruth'),
   recHitsEE = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
   recHitsFH = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
-  recHitsBH = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits')
+  recHitsBH = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -19,5 +19,6 @@ hltMuonL2FromL1TPreFilter = cms.EDFilter('HLTMuonL2FromL1TPreFilter',
   MinDxySig = cms.double(-1),
   MinPt = cms.double(0),
   NSigmaPt = cms.double(0),
-  MatchToPreviousCand = cms.bool(True)
+  MatchToPreviousCand = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -7,5 +7,6 @@ triggerBxVsOrbitMonitor = cms.EDAnalyzer('TriggerBxVsOrbitMonitor',
   minLS = cms.untracked.int32(134),
   maxLS = cms.untracked.int32(136),
   minBX = cms.untracked.int32(894),
-  maxBX = cms.untracked.int32(912)
+  maxBX = cms.untracked.int32(912),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -19,5 +19,6 @@ hiTrackingRegionFromClusterVtx = cms.EDProducer('HITrackingRegionForPrimaryVtxED
     useFixedError = cms.bool(True),
     fixedError = cms.double(3),
     sigmaZVertex = cms.double(3)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -6,5 +6,6 @@ hltPixlMBForAlignmentFilter = cms.EDFilter('HLTPixlMBForAlignmentFilter',
   MinPt = cms.double(5),
   MinTrks = cms.uint32(2),
   MinSep = cms.double(1),
-  MinIsol = cms.double(0.05)
+  MinIsol = cms.double(0.05),
+  mightGet = cms.optional.untracked.vstring
 )

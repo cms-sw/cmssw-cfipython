@@ -14,5 +14,6 @@ hltEgammaHLTElectronTrackIsolationProducers = cms.EDProducer('EgammaHLTElectronT
   egTrkIsoStripBarrel = cms.double(0.03),
   egTrkIsoStripEndcap = cms.double(0.03),
   useGsfTrack = cms.bool(False),
-  useSCRefs = cms.bool(False)
+  useSCRefs = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

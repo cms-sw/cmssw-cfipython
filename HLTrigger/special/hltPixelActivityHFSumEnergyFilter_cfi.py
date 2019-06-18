@@ -6,5 +6,6 @@ hltPixelActivityHFSumEnergyFilter = cms.EDFilter('HLTPixelActivityHFSumEnergyFil
   eCut_HF = cms.double(0),
   eMin_HF = cms.double(10000),
   offset = cms.double(-1000),
-  slope = cms.double(0.5)
+  slope = cms.double(0.5),
+  mightGet = cms.optional.untracked.vstring
 )

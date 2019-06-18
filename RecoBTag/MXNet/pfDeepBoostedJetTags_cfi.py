@@ -24,5 +24,6 @@ pfDeepBoostedJetTags = cms.EDProducer('DeepBoostedJetTagsProducer',
     'probQCDc',
     'probQCDothers'
   ),
-  debugMode = cms.untracked.bool(False)
+  debugMode = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

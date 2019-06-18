@@ -8,8 +8,12 @@ caloRecoTauDiscriminationAgainstMuon = cms.EDProducer('CaloRecoTauDiscrimination
   dRmatch = cms.double(0.5),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   discriminatorOption = cms.string('noSegMatch'),
-  caloCompCoefficient = cms.double(0.5)
+  caloCompCoefficient = cms.double(0.5),
+  mightGet = cms.optional.untracked.vstring
 )

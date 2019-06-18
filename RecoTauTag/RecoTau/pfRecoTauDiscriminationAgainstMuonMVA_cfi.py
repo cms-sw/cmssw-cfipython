@@ -10,8 +10,12 @@ pfRecoTauDiscriminationAgainstMuonMVA = cms.EDProducer('PFRecoTauDiscriminationA
   loadMVAfromDB = cms.bool(True),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   dRmuonMatch = cms.double(0.3),
-  srcMuons = cms.InputTag('muons')
+  srcMuons = cms.InputTag('muons'),
+  mightGet = cms.optional.untracked.vstring
 )

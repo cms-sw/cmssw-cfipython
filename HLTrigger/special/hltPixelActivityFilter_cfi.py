@@ -12,5 +12,6 @@ hltPixelActivityFilter = cms.EDFilter('HLTPixelActivityFilter',
   minLayersBPix = cms.uint32(0),
   maxLayersBPix = cms.uint32(0),
   minLayersFPix = cms.uint32(0),
-  maxLayersFPix = cms.uint32(0)
+  maxLayersFPix = cms.uint32(0),
+  mightGet = cms.optional.untracked.vstring
 )

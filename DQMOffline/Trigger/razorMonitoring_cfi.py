@@ -11,6 +11,7 @@ razorMonitoring = cms.EDProducer('RazorMonitor',
   mrCut = cms.double(300),
   rsqCut = cms.double(0.15),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -24,6 +25,7 @@ razorMonitoring = cms.EDProducer('RazorMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -78,5 +80,6 @@ razorMonitoring = cms.EDProducer('RazorMonitor',
       3,
       3.2
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

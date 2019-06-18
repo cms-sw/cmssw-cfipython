@@ -7,5 +7,6 @@ hltCA8WZTagFilter = cms.EDFilter('HLTCAWZTagFilter',
   massdropcut = cms.double(0.4),
   src = cms.InputTag('hltParticleFlow'),
   pfsrc = cms.InputTag('selectedPFJets'),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

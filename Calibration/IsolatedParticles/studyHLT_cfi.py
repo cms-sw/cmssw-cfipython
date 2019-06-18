@@ -30,5 +30,6 @@ studyHLT = cms.EDAnalyzer('StudyHLT',
   isItAOD = cms.untracked.bool(False),
   vetoTrigger = cms.untracked.bool(False),
   doTree = cms.untracked.bool(False),
-  puWeights = cms.untracked.vdouble()
+  puWeights = cms.untracked.vdouble(),
+  mightGet = cms.optional.untracked.vstring
 )

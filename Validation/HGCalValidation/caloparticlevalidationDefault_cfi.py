@@ -20,5 +20,6 @@ caloparticlevalidationDefault = cms.EDAnalyzer('CaloParticleValidation',
   simPFCandidates = cms.InputTag('simPFProducer'),
   recHitsEE = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
   recHitsFH = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
-  recHitsBH = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits')
+  recHitsBH = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -22,21 +22,47 @@ PATPhotonProducer = cms.EDProducer('PATPhotonProducer',
   resolutions = cms.PSet(),
   addPhotonID = cms.bool(True),
   photonIDSource = cms.InputTag(''),
-  isoDeposits = cms.PSet(),
-  isolationValues = cms.PSet(),
+  isoDeposits = cms.PSet(
+    tracker = cms.optional.InputTag,
+    ecal = cms.optional.InputTag,
+    hcal = cms.optional.InputTag,
+    pfAllParticles = cms.optional.InputTag,
+    pfChargedHadrons = cms.optional.InputTag,
+    pfChargedAll = cms.optional.InputTag,
+    pfPUChargedHadrons = cms.optional.InputTag,
+    pfNeutralHadrons = cms.optional.InputTag,
+    pfPhotons = cms.optional.InputTag,
+    user = cms.optional.VInputTag
+  ),
+  isolationValues = cms.PSet(
+    tracker = cms.optional.InputTag,
+    ecal = cms.optional.InputTag,
+    hcal = cms.optional.InputTag,
+    pfAllParticles = cms.optional.InputTag,
+    pfChargedHadrons = cms.optional.InputTag,
+    pfChargedAll = cms.optional.InputTag,
+    pfPUChargedHadrons = cms.optional.InputTag,
+    pfNeutralHadrons = cms.optional.InputTag,
+    pfPhotons = cms.optional.InputTag,
+    user = cms.optional.VInputTag
+  ),
   efficiencies = cms.PSet(),
   addEfficiencies = cms.bool(False),
   userData = cms.PSet(
     userClasses = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userFloats = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userInts = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userCands = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userFunctions = cms.vstring(),
@@ -44,5 +70,6 @@ PATPhotonProducer = cms.EDProducer('PATPhotonProducer',
   ),
   userIsolation = cms.PSet(),
   beamLineSrc = cms.InputTag(''),
-  saveRegressionData = cms.bool(True)
+  saveRegressionData = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

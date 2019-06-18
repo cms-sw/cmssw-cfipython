@@ -8,5 +8,6 @@ SUSY_HLT_Razor_Main = cms.EDProducer('SUSY_HLT_Razor',
   TriggerPath = cms.string('HLT_RsqMR300_Rsq0p09_MR200_v'),
   TriggerFilter = cms.InputTag('hltRsqMR300Rsq0p09MR200', '', 'HLT'),
   TriggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
-  trigSummary = cms.InputTag('hltTriggerSummaryAOD')
+  trigSummary = cms.InputTag('hltTriggerSummaryAOD'),
+  mightGet = cms.optional.untracked.vstring
 )

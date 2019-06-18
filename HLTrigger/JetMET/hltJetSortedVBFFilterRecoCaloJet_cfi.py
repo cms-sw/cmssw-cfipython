@@ -13,5 +13,6 @@ hltJetSortedVBFFilterRecoCaloJet = cms.EDFilter('HLTCaloJetSortedVBFFilter',
   Etaq1Etaq2 = cms.double(40),
   value = cms.string('second'),
   triggerType = cms.int32(85),
-  njets = cms.int32(4)
+  njets = cms.int32(4),
+  mightGet = cms.optional.untracked.vstring
 )

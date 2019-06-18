@@ -1,6 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
 source = cms.Source('ThingExtSource',
+  numberEventsInRun = cms.optional.untracked.uint32,
+  numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
   firstTime = cms.untracked.uint64(1),
   timeBetweenEvents = cms.untracked.uint64(5000000),
   eventCreationDelay = cms.untracked.uint32(0),

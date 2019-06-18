@@ -23,5 +23,6 @@ recoTauPiZeroProducer = cms.EDProducer('RecoTauPiZeroProducer',
       verbosity = cms.int32(0),
       qualityCuts = cms.PSet()
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -7,5 +7,6 @@ CITKPFIsolationSumProducer = cms.EDProducer('CITKPFIsolationSumProducer',
     cms.PSet(),
     cms.PSet(),
     cms.PSet()
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

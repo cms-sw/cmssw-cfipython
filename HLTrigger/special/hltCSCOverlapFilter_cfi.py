@@ -8,5 +8,6 @@ hltCSCOverlapFilter = cms.EDFilter('HLTCSCOverlapFilter',
   yWindow = cms.double(1000),
   ring1 = cms.bool(True),
   ring2 = cms.bool(False),
-  fillHists = cms.bool(False)
+  fillHists = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

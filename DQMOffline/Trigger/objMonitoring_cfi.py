@@ -22,6 +22,7 @@ objMonitoring = cms.EDProducer('ObjMonitor',
   nphotons = cms.int32(0),
   nmesons = cms.int32(0),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -35,6 +36,7 @@ objMonitoring = cms.EDProducer('ObjMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -52,7 +54,11 @@ objMonitoring = cms.EDProducer('ObjMonitor',
   doHTHistos = cms.bool(True),
   doHMesonGammaHistos = cms.bool(True),
   histoPSet = cms.PSet(
-    metPSet = cms.PSet(),
+    metPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     metBinning = cms.vdouble(
       0,
       20,
@@ -81,16 +87,36 @@ objMonitoring = cms.EDProducer('ObjMonitor',
       450,
       1000
     ),
-    phiPSet = cms.PSet(),
+    phiPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     lsPSet = cms.PSet(
       nbins = cms.uint32(2500),
       xmin = cms.double(0),
       xmax = cms.double(2500)
     ),
-    jetetaPSet = cms.PSet(),
-    detajjPSet = cms.PSet(),
-    dphijjPSet = cms.PSet(),
-    mindphijmetPSet = cms.PSet(),
+    jetetaPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    detajjPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    dphijjPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    mindphijmetPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     jetptBinning = cms.vdouble(
       0,
       20,
@@ -203,7 +229,11 @@ objMonitoring = cms.EDProducer('ObjMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     ),
-    htPSet = cms.PSet(),
+    htPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     htBinning = cms.vdouble(
       0,
       50,
@@ -259,7 +289,11 @@ objMonitoring = cms.EDProducer('ObjMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     ),
-    hmgetaPSet = cms.PSet(),
+    hmgetaPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     gammaptBinning = cms.vdouble(
       0,
       20,
@@ -318,5 +352,6 @@ objMonitoring = cms.EDProducer('ObjMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

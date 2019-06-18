@@ -5,5 +5,6 @@ mcMisalignmentScaler = cms.EDAnalyzer('MCMisalignmentScaler',
     cms.PSet()
   ),
   pullBadModulesToIdeal = cms.untracked.bool(False),
-  outlierPullToIdealCut = cms.untracked.double(-1)
+  outlierPullToIdealCut = cms.untracked.double(-1),
+  mightGet = cms.optional.untracked.vstring
 )

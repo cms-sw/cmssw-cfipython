@@ -24,5 +24,6 @@ L2MuonSeedGeneratorFromL1T = cms.EDProducer('L2MuonSeedGeneratorFromL1T',
     Propagators = cms.untracked.vstring('SteppingHelixPropagatorAny'),
     RPCLayers = cms.bool(True),
     UseMuonNavigation = cms.untracked.bool(True)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

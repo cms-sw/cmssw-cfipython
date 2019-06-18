@@ -8,5 +8,6 @@ hltJetTagWithMatchingRecoPFJet = cms.EDFilter('HLTPFJetTagWithMatching',
   MaxTag = cms.double(999999),
   MinJets = cms.int32(1),
   TriggerType = cms.int32(0),
-  deltaR = cms.double(0.1)
+  deltaR = cms.double(0.1),
+  mightGet = cms.optional.untracked.vstring
 )

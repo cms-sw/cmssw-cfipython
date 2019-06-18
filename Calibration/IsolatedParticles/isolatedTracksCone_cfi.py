@@ -46,5 +46,6 @@ isolatedTracksCone = cms.EDAnalyzer('IsolatedTracksCone',
     usePreshower = cms.bool(False),
     dRPreshowerPreselection = cms.double(0.2),
     trajectoryUncertaintyTolerance = cms.double(1)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

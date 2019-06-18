@@ -27,5 +27,6 @@ hltEcalListOfFEDSProducer = cms.EDProducer('EcalListOfFEDSProducer',
   JETS_doCentral = cms.bool(True),
   JETS_doForward = cms.bool(True),
   JETS_doTau = cms.bool(True),
-  OutputLabel = cms.string('')
+  OutputLabel = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

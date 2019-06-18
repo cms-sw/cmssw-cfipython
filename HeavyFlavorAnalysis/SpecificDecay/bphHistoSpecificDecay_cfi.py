@@ -6,5 +6,6 @@ bphHistoSpecificDecay = cms.EDAnalyzer('BPHHistoSpecificDecay',
   ssCandsLabel = cms.string(''),
   buCandsLabel = cms.string(''),
   bdCandsLabel = cms.string(''),
-  bsCandsLabel = cms.string('')
+  bsCandsLabel = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

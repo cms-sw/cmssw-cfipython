@@ -9,5 +9,6 @@ hltEgammaDoubleEtPhiFilter = cms.EDFilter('HLTEgammaDoubleEtPhiFilter',
   MaxAcop = cms.double(0.6),
   MinEtBalance = cms.double(-1),
   MaxEtBalance = cms.double(10),
-  npaircut = cms.int32(1)
+  npaircut = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

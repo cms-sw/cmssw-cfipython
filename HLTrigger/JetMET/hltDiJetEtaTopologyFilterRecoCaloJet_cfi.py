@@ -15,5 +15,6 @@ hltDiJetEtaTopologyFilterRecoCaloJet = cms.EDFilter('HLTDiCaloJetEtaTopologyFilt
   applyAbsToTag = cms.bool(False),
   applyAbsToProbe = cms.bool(False),
   oppositeEta = cms.bool(False),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

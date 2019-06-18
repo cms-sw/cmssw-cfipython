@@ -4,5 +4,6 @@ PFTauTransverseImpactParameters = cms.EDProducer('PFTauTransverseImpactParameter
   PFTauPVATag = cms.InputTag('PFTauPrimaryVertexProducer'),
   useFullCalculation = cms.bool(False),
   PFTauTag = cms.InputTag('hpsPFTauProducer'),
-  PFTauSVATag = cms.InputTag('PFTauSecondaryVertexProducer')
+  PFTauSVATag = cms.InputTag('PFTauSecondaryVertexProducer'),
+  mightGet = cms.optional.untracked.vstring
 )

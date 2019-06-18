@@ -2,5 +2,6 @@ import FWCore.ParameterSet.Config as cms
 
 hltPhysicsDeclared = cms.EDFilter('HLTPhysicsDeclared',
   L1GtReadoutRecordTag = cms.InputTag('hltGtDigis'),
-  invert = cms.bool(False)
+  invert = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

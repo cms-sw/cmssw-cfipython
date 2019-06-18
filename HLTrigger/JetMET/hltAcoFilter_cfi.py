@@ -8,5 +8,6 @@ hltAcoFilter = cms.EDFilter('HLTAcoFilter',
   maxDeltaPhi = cms.double(2),
   minEtJet1 = cms.double(20),
   minEtJet2 = cms.double(20),
-  Acoplanar = cms.string('Jet1Jet2')
+  Acoplanar = cms.string('Jet1Jet2'),
+  mightGet = cms.optional.untracked.vstring
 )

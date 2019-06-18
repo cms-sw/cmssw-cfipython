@@ -57,5 +57,6 @@ RecoTauCleaner = cms.EDProducer('RecoTauCleaner',
     )
   ),
   verbosity = cms.int32(0),
-  src = cms.InputTag('combinatoricRecoTaus')
+  src = cms.InputTag('combinatoricRecoTaus'),
+  mightGet = cms.optional.untracked.vstring
 )

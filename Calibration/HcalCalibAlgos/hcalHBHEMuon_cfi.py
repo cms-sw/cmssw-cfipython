@@ -27,5 +27,6 @@ hcalHBHEMuon = cms.EDAnalyzer('HcalHBHEMuonAnalyzer',
   processName = cms.untracked.string(''),
   maxDepth = cms.untracked.int32(4),
   fileInCorr = cms.untracked.string(''),
-  writeRespCorr = cms.untracked.bool(False)
+  writeRespCorr = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

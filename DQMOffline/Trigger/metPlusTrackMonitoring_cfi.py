@@ -21,6 +21,7 @@ metPlusTrackMonitoring = cms.EDProducer('METplusTrackMonitor',
   requireLeadMatched = cms.bool(True),
   maxMatchDeltaR = cms.double(0.1),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -34,6 +35,7 @@ metPlusTrackMonitoring = cms.EDProducer('METplusTrackMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -47,10 +49,26 @@ metPlusTrackMonitoring = cms.EDProducer('METplusTrackMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    metPSet = cms.PSet(),
-    phiPSet = cms.PSet(),
-    ptPSet = cms.PSet(),
-    etaPSet = cms.PSet(),
+    metPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    phiPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    ptPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    etaPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     metBinning = cms.vdouble(
       0,
       20,
@@ -112,5 +130,6 @@ metPlusTrackMonitoring = cms.EDProducer('METplusTrackMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

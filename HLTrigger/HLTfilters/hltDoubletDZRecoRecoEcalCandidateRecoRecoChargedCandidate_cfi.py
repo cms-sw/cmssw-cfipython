@@ -13,5 +13,6 @@ hltDoubletDZRecoRecoEcalCandidateRecoRecoChargedCandidate = cms.EDFilter('HLT2Ph
   MaxDZ = cms.double(0.2),
   MinPixHitsForDZ = cms.int32(0),
   checkSC = cms.bool(False),
-  MinN = cms.int32(1)
+  MinN = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

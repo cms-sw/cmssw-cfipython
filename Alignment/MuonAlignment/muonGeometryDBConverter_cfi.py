@@ -27,5 +27,6 @@ muonGeometryDBConverter = cms.EDAnalyzer('MuonGeometryDBConverter',
     suppressCSCRings = cms.untracked.bool(True),
     suppressCSCChambers = cms.untracked.bool(False),
     suppressCSCLayers = cms.untracked.bool(False)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

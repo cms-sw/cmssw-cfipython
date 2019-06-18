@@ -5,5 +5,6 @@ triggerResultsFilterFromDB = cms.EDFilter('TriggerResultsFilterFromDB',
   l1tResults = cms.InputTag('hltGtStage2Digis'),
   l1tIgnoreMaskAndPrescale = cms.bool(False),
   throw = cms.bool(True),
-  eventSetupPathsKey = cms.string('')
+  eventSetupPathsKey = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

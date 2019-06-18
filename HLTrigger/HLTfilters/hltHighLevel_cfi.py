@@ -5,5 +5,6 @@ hltHighLevel = cms.EDFilter('HLTHighLevel',
   HLTPaths = cms.vstring(),
   eventSetupPathsKey = cms.string(''),
   andOr = cms.bool(True),
-  throw = cms.bool(True)
+  throw = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

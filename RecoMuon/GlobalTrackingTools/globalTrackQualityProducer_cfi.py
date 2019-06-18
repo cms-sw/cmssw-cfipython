@@ -62,5 +62,6 @@ globalTrackQualityProducer = cms.EDProducer('GlobalTrackQualityProducer',
     RefitFlag = cms.bool(True)
   ),
   nSigma = cms.double(3),
-  MaxChi2 = cms.double(100000)
+  MaxChi2 = cms.double(100000),
+  mightGet = cms.optional.untracked.vstring
 )

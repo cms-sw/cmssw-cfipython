@@ -15,5 +15,8 @@ HLLHCEvtVtxGenerator = cms.EDProducer('HLLHCEvtVtxGenerator',
   BetaSeparationPlaneInm = cms.double(0.2),
   HorizontalEmittance = cms.double(2.5e-06),
   VerticalEmittance = cms.double(2.05e-06),
-  BunchLengthInm = cms.double(0.09)
+  BunchLengthInm = cms.double(0.09),
+  src = cms.required.InputTag,
+  readDB = cms.required.bool,
+  mightGet = cms.optional.untracked.vstring
 )

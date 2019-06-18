@@ -10,5 +10,6 @@ pixelTripletLargeTipEDProducerDefault = cms.EDProducer('PixelTripletLargeTipEDPr
   useMultScattering = cms.bool(True),
   useBending = cms.bool(True),
   useFixedPreFiltering = cms.bool(False),
-  phiPreFiltering = cms.double(0.3)
+  phiPreFiltering = cms.double(0.3),
+  mightGet = cms.optional.untracked.vstring
 )

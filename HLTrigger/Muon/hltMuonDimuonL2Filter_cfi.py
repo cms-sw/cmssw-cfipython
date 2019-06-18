@@ -25,5 +25,6 @@ hltMuonDimuonL2Filter = cms.EDFilter('HLTMuonDimuonL2Filter',
   MaxAngle = cms.double(2.5),
   MinPtBalance = cms.double(-1),
   MaxPtBalance = cms.double(999999),
-  NSigmaPt = cms.double(0)
+  NSigmaPt = cms.double(0),
+  mightGet = cms.optional.untracked.vstring
 )

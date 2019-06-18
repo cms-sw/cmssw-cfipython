@@ -7,5 +7,6 @@ hltPFTauPairLeadTrackDzMatchFilter = cms.EDFilter('HLTPFTauPairLeadTrackDzMatchF
   tauMaxEta = cms.double(2.5),
   tauMinDR = cms.double(0.1),
   tauLeadTrackMaxDZ = cms.double(0.2),
-  triggerType = cms.int32(84)
+  triggerType = cms.int32(84),
+  mightGet = cms.optional.untracked.vstring
 )

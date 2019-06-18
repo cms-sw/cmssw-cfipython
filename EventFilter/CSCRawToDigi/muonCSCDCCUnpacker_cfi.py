@@ -14,5 +14,6 @@ muonCSCDCCUnpacker = cms.EDProducer('CSCDCCUnpacker',
   VisualFEDInspect = cms.untracked.bool(False),
   VisualFEDShort = cms.untracked.bool(False),
   FormatedEventDump = cms.untracked.bool(False),
-  SuppressZeroLCT = cms.untracked.bool(True)
+  SuppressZeroLCT = cms.untracked.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -7,5 +7,6 @@ hltEgammaDoubleLegCombFilter = cms.EDFilter('HLTEgammaDoubleLegCombFilter',
   nrRequiredFirstLeg = cms.int32(0),
   nrRequiredSecondLeg = cms.int32(0),
   nrRequiredUniqueLeg = cms.int32(0),
-  maxMatchDR = cms.double(0.01)
+  maxMatchDR = cms.double(0.01),
+  mightGet = cms.optional.untracked.vstring
 )

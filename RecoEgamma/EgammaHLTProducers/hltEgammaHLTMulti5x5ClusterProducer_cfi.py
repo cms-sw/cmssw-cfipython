@@ -26,5 +26,6 @@ hltEgammaHLTMulti5x5ClusterProducer = cms.EDProducer('EgammaHLTMulti5x5ClusterPr
   l1LowerThrIgnoreIsolation = cms.double(999),
   regionEtaMargin = cms.double(0.3),
   regionPhiMargin = cms.double(0.4),
-  RecHitFlagToBeExcluded = cms.vstring()
+  RecHitFlagToBeExcluded = cms.vstring(),
+  mightGet = cms.optional.untracked.vstring
 )

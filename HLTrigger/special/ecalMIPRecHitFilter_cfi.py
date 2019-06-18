@@ -6,5 +6,6 @@ ecalMIPRecHitFilter = cms.EDFilter('EcalMIPRecHitFilter',
   AmpMin2 = cms.untracked.double(0.045),
   SingleAmpMin = cms.untracked.double(0.108),
   maskedChannels = cms.untracked.vint32(),
-  side = cms.untracked.int32(3)
+  side = cms.untracked.int32(3),
+  mightGet = cms.optional.untracked.vstring
 )

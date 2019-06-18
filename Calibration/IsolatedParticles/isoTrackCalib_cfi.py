@@ -21,5 +21,6 @@ isoTrackCalib = cms.EDAnalyzer('IsoTrackCalib',
   MaxOutMiss = cms.untracked.int32(0),
   ConeRadius = cms.untracked.double(34.98),
   ConeRadiusMIP = cms.untracked.double(14),
-  IsItAOD = cms.untracked.bool(False)
+  IsItAOD = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

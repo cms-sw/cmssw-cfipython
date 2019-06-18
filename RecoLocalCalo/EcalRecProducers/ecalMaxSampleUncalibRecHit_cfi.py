@@ -6,5 +6,6 @@ ecalMaxSampleUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
   EEdigiCollection = cms.InputTag('ecalDigis', 'eeDigis'),
   EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
   algo = cms.string('EcalUncalibRecHitWorkerMaxSample'),
-  algoPSet = cms.PSet()
+  algoPSet = cms.PSet(),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -14,5 +14,6 @@ ecalDetIdToBeRecovered = cms.EDProducer('EcalDetIdToBeRecoveredProducer',
   ebSrFlagCollection = cms.InputTag('ecalDigis'),
   eeFEToBeRecovered = cms.string('eeFE'),
   integrityBlockSizeErrors = cms.InputTag('ecalDigis', 'EcalIntegrityBlockSizeErrors'),
-  eeSrFlagCollection = cms.InputTag('ecalDigis')
+  eeSrFlagCollection = cms.InputTag('ecalDigis'),
+  mightGet = cms.optional.untracked.vstring
 )

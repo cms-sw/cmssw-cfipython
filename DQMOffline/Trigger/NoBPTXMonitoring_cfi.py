@@ -9,6 +9,7 @@ NoBPTXMonitoring = cms.EDProducer('NoBPTXMonitor',
   njets = cms.uint32(0),
   nmuons = cms.uint32(0),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -22,6 +23,7 @@ NoBPTXMonitoring = cms.EDProducer('NoBPTXMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -129,5 +131,6 @@ NoBPTXMonitoring = cms.EDProducer('NoBPTXMonitor',
       450,
       1000
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

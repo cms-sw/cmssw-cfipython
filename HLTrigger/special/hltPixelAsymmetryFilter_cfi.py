@@ -6,5 +6,6 @@ hltPixelAsymmetryFilter = cms.EDFilter('HLTPixelAsymmetryFilter',
   MinAsym = cms.double(0),
   MaxAsym = cms.double(1),
   MinCharge = cms.double(4000),
-  MinBarrel = cms.double(10000)
+  MinBarrel = cms.double(10000),
+  mightGet = cms.optional.untracked.vstring
 )

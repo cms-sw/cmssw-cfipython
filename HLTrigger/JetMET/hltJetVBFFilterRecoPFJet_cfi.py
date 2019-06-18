@@ -10,5 +10,6 @@ hltJetVBFFilterRecoPFJet = cms.EDFilter('HLTPFJetVBFFilter',
   minInvMass = cms.double(1000),
   maxEta = cms.double(5),
   leadingJetOnly = cms.bool(False),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

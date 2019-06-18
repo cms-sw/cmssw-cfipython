@@ -14,5 +14,6 @@ jetVertexChecker = cms.EDFilter('JetVertexChecker',
   maxETA = cms.double(2.4),
   pvErr_x = cms.double(0.0015),
   pvErr_y = cms.double(0.0015),
-  pvErr_z = cms.double(1.5)
+  pvErr_z = cms.double(1.5),
+  mightGet = cms.optional.untracked.vstring
 )

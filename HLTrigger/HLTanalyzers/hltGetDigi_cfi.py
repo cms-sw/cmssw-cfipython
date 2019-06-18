@@ -46,5 +46,6 @@ hltGetDigi = cms.EDAnalyzer('HLTGetDigi',
   getEcal = cms.untracked.bool(True),
   getGmtReadout = cms.untracked.bool(True),
   getEcalES = cms.untracked.bool(True),
-  getCSC = cms.untracked.bool(True)
+  getCSC = cms.untracked.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

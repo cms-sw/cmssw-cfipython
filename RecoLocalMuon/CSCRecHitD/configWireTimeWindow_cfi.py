@@ -49,5 +49,6 @@ configWireTimeWindow = cms.EDProducer('CSCRecHitDProducer',
   NoiseLevel_ME41 = cms.double(5),
   CSCUseReducedWireTimeWindow = cms.bool(False),
   CSCWireTimeWindowLow = cms.int32(0),
-  CSCWireTimeWindowHigh = cms.int32(15)
+  CSCWireTimeWindowHigh = cms.int32(15),
+  mightGet = cms.optional.untracked.vstring
 )

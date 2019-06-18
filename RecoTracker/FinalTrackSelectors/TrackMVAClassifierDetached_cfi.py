@@ -13,5 +13,6 @@ TrackMVAClassifierDetached = cms.EDProducer('TrackMVAClassifierDetached',
   mva = cms.PSet(
     GBRForestLabel = cms.string(''),
     GBRForestFileName = cms.string('')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

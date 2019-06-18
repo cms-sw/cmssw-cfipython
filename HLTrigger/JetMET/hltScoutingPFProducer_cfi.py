@@ -12,5 +12,6 @@ hltScoutingPFProducer = cms.EDProducer('HLTScoutingPFProducer',
   pfCandidatePtCut = cms.double(0.6),
   doJetTags = cms.bool(True),
   doCandidates = cms.bool(True),
-  doMet = cms.bool(True)
+  doMet = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

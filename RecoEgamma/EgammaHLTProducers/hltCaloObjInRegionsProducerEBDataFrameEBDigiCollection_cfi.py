@@ -13,5 +13,6 @@ hltCaloObjInRegionsProducerEBDataFrameEBDigiCollection = cms.EDProducer('HLTEcal
       minEt = cms.double(-1),
       type = cms.string('RecoEcalCandidate')
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

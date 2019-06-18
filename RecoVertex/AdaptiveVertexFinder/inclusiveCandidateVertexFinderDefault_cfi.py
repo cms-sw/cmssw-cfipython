@@ -33,5 +33,6 @@ inclusiveCandidateVertexFinderDefault = cms.EDProducer('InclusiveCandidateVertex
     primcut = cms.double(1),
     seccut = cms.double(3),
     smoothing = cms.bool(True)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -13,5 +13,6 @@ hgcalMultiClusters = cms.EDProducer('HGCalMultiClusterProducer',
   ),
   HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
   HGCLayerClustersSharing = cms.InputTag('hgcalLayerClusters', 'sharing'),
-  minClusters = cms.uint32(3)
+  minClusters = cms.uint32(3),
+  mightGet = cms.optional.untracked.vstring
 )

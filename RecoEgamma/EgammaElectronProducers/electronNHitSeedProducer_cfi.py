@@ -62,5 +62,6 @@ electronNHitSeedProducer = cms.EDProducer('ElectronNHitSeedProducer',
         version = cms.int32(1)
       )
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

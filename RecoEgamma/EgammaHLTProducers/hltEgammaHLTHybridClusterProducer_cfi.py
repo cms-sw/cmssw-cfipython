@@ -35,5 +35,6 @@ hltEgammaHLTHybridClusterProducer = cms.EDProducer('EgammaHLTHybridClusterProduc
   eThreshA = cms.double(0.003),
   eThreshB = cms.double(0.1),
   excludeFlagged = cms.bool(False),
-  dynamicPhiRoad = cms.bool(False)
+  dynamicPhiRoad = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

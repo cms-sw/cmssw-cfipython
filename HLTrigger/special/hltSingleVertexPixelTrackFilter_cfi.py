@@ -9,5 +9,6 @@ hltSingleVertexPixelTrackFilter = cms.EDFilter('HLTSingleVertexPixelTrackFilter'
   MaxEta = cms.double(1),
   MaxVz = cms.double(10),
   MinTrks = cms.int32(30),
-  MinSep = cms.double(0.12)
+  MinSep = cms.double(0.12),
+  mightGet = cms.optional.untracked.vstring
 )

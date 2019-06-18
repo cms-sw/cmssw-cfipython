@@ -11,5 +11,6 @@ hcallaserevent = cms.EDFilter('HcalLaserEventFilter',
   taggingMode = cms.bool(False),
   forceUseRecHitCollection = cms.bool(False),
   forceUseHcalNoiseSummary = cms.bool(False),
-  BadRunEventNumbers = cms.vuint32()
+  BadRunEventNumbers = cms.vuint32(),
+  mightGet = cms.optional.untracked.vstring
 )

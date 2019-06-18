@@ -18,7 +18,10 @@ pfRecoTauDiscriminationAgainstElectron = cms.EDProducer('PFRecoTauDiscrimination
   ApplyCut_HcalMaxOverPLead = cms.bool(False),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   ApplyCut_BremCombined = cms.bool(False),
   Hcal3x3OverPLead_minValue = cms.double(0.1),
@@ -33,5 +36,6 @@ pfRecoTauDiscriminationAgainstElectron = cms.EDProducer('PFRecoTauDiscrimination
   ApplyCut_Hcal3x3OverPLead = cms.bool(False),
   ApplyCut_EOverPLead = cms.bool(False),
   BremCombined_Fraction = cms.double(0.99),
-  BremsRecoveryEOverPLead_maxValue = cms.double(1.8)
+  BremsRecoveryEOverPLead_maxValue = cms.double(1.8),
+  mightGet = cms.optional.untracked.vstring
 )

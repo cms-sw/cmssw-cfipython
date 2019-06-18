@@ -197,5 +197,6 @@ l1GTPrescaler = cms.EDFilter('L1GTPrescaler',
     1,
     1,
     1
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

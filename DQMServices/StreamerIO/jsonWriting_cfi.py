@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 jsonWriting = cms.OutputModule('JsonWritingTimeoutPoolOutputModule',
+  fileName = cms.required.untracked.string,
   logicalFileName = cms.untracked.string(''),
   catalog = cms.untracked.string(''),
   maxSize = cms.untracked.int32(2130706432),
@@ -19,7 +20,9 @@ jsonWriting = cms.OutputModule('JsonWritingTimeoutPoolOutputModule',
   overrideBranchesSplitLevel = cms.untracked.VPSet(
   ),
   outputCommands = cms.untracked.vstring('keep *'),
-  SelectEvents = cms.untracked.PSet(),
+  SelectEvents = cms.untracked.PSet(
+    SelectEvents = cms.optional.vstring
+  ),
   runNumber = cms.untracked.uint32(0),
   outputPath = cms.untracked.string('./'),
   streamLabel = cms.untracked.string('streamEvDOutput')

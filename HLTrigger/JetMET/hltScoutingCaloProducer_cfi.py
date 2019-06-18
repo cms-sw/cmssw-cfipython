@@ -11,5 +11,6 @@ hltScoutingCaloProducer = cms.EDProducer('HLTScoutingCaloProducer',
   caloJetEtaCut = cms.double(3),
   doMet = cms.bool(True),
   doJetBTags = cms.bool(False),
-  doJetIDTags = cms.bool(False)
+  doJetIDTags = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

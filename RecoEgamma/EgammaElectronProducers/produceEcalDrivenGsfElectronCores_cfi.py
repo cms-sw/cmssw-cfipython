@@ -5,5 +5,6 @@ produceEcalDrivenGsfElectronCores = cms.EDProducer('GEDGsfElectronCoreProducer',
   gsfTracks = cms.InputTag('electronGsfTracks'),
   ctfTracks = cms.InputTag('generalTracks'),
   useGsfPfRecTracks = cms.bool(True),
-  GEDEMUnbiased = cms.InputTag('GEDPFCandidates')
+  GEDEMUnbiased = cms.InputTag('GEDPFCandidates'),
+  mightGet = cms.optional.untracked.vstring
 )

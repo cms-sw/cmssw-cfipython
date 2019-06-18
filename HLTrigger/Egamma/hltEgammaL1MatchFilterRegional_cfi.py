@@ -14,5 +14,6 @@ hltEgammaL1MatchFilterRegional = cms.EDFilter('HLTEgammaL1MatchFilterRegional',
   region_eta_size_ecap = cms.double(1),
   region_phi_size = cms.double(1.044),
   barrel_end = cms.double(1.4791),
-  endcap_end = cms.double(2.65)
+  endcap_end = cms.double(2.65),
+  mightGet = cms.optional.untracked.vstring
 )

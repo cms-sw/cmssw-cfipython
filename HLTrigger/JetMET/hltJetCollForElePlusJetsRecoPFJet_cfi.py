@@ -8,5 +8,6 @@ hltJetCollForElePlusJetsRecoPFJet = cms.EDProducer('HLTPFJetCollForElePlusJets',
   MinNJets = cms.uint32(1),
   minDeltaR = cms.double(0.5),
   MinSoftJetPt = cms.double(25),
-  MinDeltaEta = cms.double(-1)
+  MinDeltaEta = cms.double(-1),
+  mightGet = cms.optional.untracked.vstring
 )

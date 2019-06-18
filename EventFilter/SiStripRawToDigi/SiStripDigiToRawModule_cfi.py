@@ -7,5 +7,6 @@ SiStripDigiToRawModule = cms.EDProducer('SiStripDigiToRawModule',
   UseWrongDigiType = cms.bool(False),
   CopyBufferHeader = cms.bool(False),
   InputDigis = cms.InputTag('simSiStripDigis', 'ZeroSuppressed'),
-  RawDataTag = cms.InputTag('rawDataCollector')
+  RawDataTag = cms.InputTag('rawDataCollector'),
+  mightGet = cms.optional.untracked.vstring
 )

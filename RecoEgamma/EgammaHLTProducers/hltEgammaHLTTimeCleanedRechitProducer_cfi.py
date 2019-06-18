@@ -10,5 +10,6 @@ hltEgammaHLTTimeCleanedRechitProducer = cms.EDProducer('EgammaHLTTimeCleanedRech
     'hltEcalRecHitAll:EcalRecHitsEE'
   ),
   TimeMax = cms.double(10),
-  TimeMin = cms.double(-10)
+  TimeMin = cms.double(-10),
+  mightGet = cms.optional.untracked.vstring
 )

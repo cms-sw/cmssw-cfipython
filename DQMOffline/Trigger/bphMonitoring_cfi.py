@@ -42,6 +42,7 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
   mincos = cms.double(0.95),
   minDS = cms.double(3),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     hltInputTag = cms.InputTag('TriggerResults', '', 'HLT'),
     dcsPartitions = cms.vint32(),
@@ -59,6 +60,7 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
     verbosityLevel = cms.uint32(0)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     hltInputTag = cms.InputTag('TriggerResults', '', 'HLT'),
     dcsPartitions = cms.vint32(),
@@ -76,18 +78,71 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
     verbosityLevel = cms.uint32(0)
   ),
   histoPSet = cms.PSet(
-    d0PSet = cms.PSet(),
-    etaPSet = cms.PSet(),
-    phiPSet = cms.PSet(),
-    ptPSet = cms.PSet(),
-    dMu_ptPSet = cms.PSet(),
-    z0PSet = cms.PSet(),
-    dRPSet = cms.PSet(),
-    massPSet = cms.PSet(),
-    BmassPSet = cms.PSet(),
-    dcaPSet = cms.PSet(),
-    dsPSet = cms.PSet(),
-    cosPSet = cms.PSet(),
-    probPSet = cms.PSet()
-  )
+    d0PSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    etaPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    phiPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    ptPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    dMu_ptPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    z0PSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    dRPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    massPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    BmassPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    dcaPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    dsPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    cosPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    probPSet = cms.PSet(
+      nbins = cms.required.int32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

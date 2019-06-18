@@ -5,5 +5,6 @@ esRawToDigi = cms.EDProducer('ESRawToDigi',
   debugMode = cms.untracked.bool(False),
   InstanceES = cms.string(''),
   LookupTable = cms.FileInPath('EventFilter/ESDigiToRaw/data/ES_lookup_table.dat'),
-  ESdigiCollection = cms.string('')
+  ESdigiCollection = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

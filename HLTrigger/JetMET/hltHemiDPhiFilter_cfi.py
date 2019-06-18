@@ -4,5 +4,6 @@ hltHemiDPhiFilter = cms.EDFilter('HLTHemiDPhiFilter',
   saveTags = cms.bool(True),
   inputTag = cms.InputTag('hltRHemisphere'),
   minDPhi = cms.double(2.9415),
-  acceptNJ = cms.bool(True)
+  acceptNJ = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

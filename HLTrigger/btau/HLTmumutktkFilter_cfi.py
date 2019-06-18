@@ -11,5 +11,6 @@ HLTmumutktkFilter = cms.EDFilter('HLTmumutktkFilter',
   MuonTag = cms.InputTag('hltL3MuonCandidates'),
   TrackTag = cms.InputTag('hltMumukAllConeTracks'),
   MuMuTkVertexTag = cms.InputTag('hltDisplacedmumuVtxProducerDoubleMu4Jpsi'),
-  BeamSpotTag = cms.InputTag('hltOnineBeamSpot')
+  BeamSpotTag = cms.InputTag('hltOnineBeamSpot'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -36,18 +36,23 @@ PATJetProducer = cms.EDProducer('PATJetProducer',
   addEfficiencies = cms.bool(False),
   userData = cms.PSet(
     userClasses = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userFloats = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userInts = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userCands = cms.PSet(
+      src = cms.required.VInputTag,
       labelPostfixesToStrip = cms.vstring()
     ),
     userFunctions = cms.vstring(),
     userFunctionLabels = cms.vstring()
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

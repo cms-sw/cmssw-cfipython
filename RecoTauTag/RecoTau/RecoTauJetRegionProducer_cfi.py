@@ -7,5 +7,6 @@ RecoTauJetRegionProducer = cms.EDProducer('RecoTauJetRegionProducer',
   verbosity = cms.int32(0),
   maxJetAbsEta = cms.double(2.5),
   minJetPt = cms.double(14),
-  pfCandSrc = cms.InputTag('particleFlow')
+  pfCandSrc = cms.InputTag('particleFlow'),
+  mightGet = cms.optional.untracked.vstring
 )

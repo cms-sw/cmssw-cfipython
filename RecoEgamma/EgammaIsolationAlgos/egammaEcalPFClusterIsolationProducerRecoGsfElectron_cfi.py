@@ -9,5 +9,6 @@ egammaEcalPFClusterIsolationProducerRecoGsfElectron = cms.EDProducer('ElectronEc
   etaStripBarrel = cms.double(0),
   etaStripEndcap = cms.double(0),
   energyBarrel = cms.double(0),
-  energyEndcap = cms.double(0)
+  energyEndcap = cms.double(0),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -11,5 +11,6 @@ hltDisplacedtktkFilter = cms.EDFilter('HLTDisplacedtktkFilter',
   triggerTypeDaughters = cms.int32(0),
   DisplacedVertexTag = cms.InputTag('hltDisplacedtktkVtx'),
   BeamSpotTag = cms.InputTag('hltOnlineBeamSpot'),
-  TrackTag = cms.InputTag('hltL3MuonCandidates')
+  TrackTag = cms.InputTag('hltL3MuonCandidates'),
+  mightGet = cms.optional.untracked.vstring
 )

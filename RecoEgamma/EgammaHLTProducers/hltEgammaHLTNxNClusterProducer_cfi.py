@@ -25,5 +25,6 @@ hltEgammaHLTNxNClusterProducer = cms.EDProducer('EgammaHLTNxNClusterProducer',
   ),
   maxNumberofSeeds = cms.int32(1000),
   maxNumberofClusters = cms.int32(200),
-  debugLevel = cms.int32(0)
+  debugLevel = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

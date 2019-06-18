@@ -27,5 +27,6 @@ TSGForOI = cms.EDProducer('TSGForOI',
   SF4 = cms.double(7),
   SF5 = cms.double(10),
   tsosDiff = cms.double(0.03),
-  propagatorName = cms.string('PropagatorWithMaterial')
+  propagatorName = cms.string('PropagatorWithMaterial'),
+  mightGet = cms.optional.untracked.vstring
 )

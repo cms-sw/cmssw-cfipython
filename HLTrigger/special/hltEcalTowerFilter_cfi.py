@@ -5,5 +5,6 @@ hltEcalTowerFilter = cms.EDFilter('HLTEcalTowerFilter',
   inputTag = cms.InputTag('hltTowerMakerForEcal'),
   MinE = cms.double(10),
   MaxEta = cms.double(3),
-  MinN = cms.int32(1)
+  MinN = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

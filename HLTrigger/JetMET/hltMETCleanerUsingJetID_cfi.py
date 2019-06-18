@@ -5,5 +5,6 @@ hltMETCleanerUsingJetID = cms.EDProducer('HLTMETCleanerUsingJetID',
   maxEta = cms.double(5),
   metLabel = cms.InputTag('hltMet'),
   jetsLabel = cms.InputTag('hltAntiKT4CaloJets'),
-  goodJetsLabel = cms.InputTag('hltCaloJetIDPassed')
+  goodJetsLabel = cms.InputTag('hltCaloJetIDPassed'),
+  mightGet = cms.optional.untracked.vstring
 )

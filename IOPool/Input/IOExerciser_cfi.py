@@ -5,5 +5,7 @@ IOExerciser = cms.OutputModule('IOExerciser',
   selectionStrategy = cms.untracked.string('smallestFirst'),
   triggerFactor = cms.untracked.uint32(0),
   outputCommands = cms.untracked.vstring('keep *'),
-  SelectEvents = cms.untracked.PSet()
+  SelectEvents = cms.untracked.PSet(
+    SelectEvents = cms.optional.vstring
+  )
 )

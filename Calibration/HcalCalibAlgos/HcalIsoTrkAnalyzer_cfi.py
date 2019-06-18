@@ -71,5 +71,6 @@ HcalIsoTrkAnalyzer = cms.EDAnalyzer('HcalIsoTrkAnalyzer',
   outMode = cms.untracked.int32(11),
   unCorrect = cms.untracked.bool(False),
   collapseDepth = cms.untracked.bool(False),
-  l1TrigName = cms.untracked.string('L1_SingleJet60')
+  l1TrigName = cms.untracked.string('L1_SingleJet60'),
+  mightGet = cms.optional.untracked.vstring
 )

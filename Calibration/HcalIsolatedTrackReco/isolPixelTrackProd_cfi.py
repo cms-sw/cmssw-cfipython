@@ -14,5 +14,6 @@ isolPixelTrackProd = cms.EDProducer('IsolatedPixelTrackCandidateProducer',
   MagFieldRecordName = cms.string('VolumeBasedMagneticField'),
   minPTrack = cms.double(5),
   maxPTrackForIsolation = cms.double(3),
-  EBEtaBoundary = cms.double(1.479)
+  EBEtaBoundary = cms.double(1.479),
+  mightGet = cms.optional.untracked.vstring
 )

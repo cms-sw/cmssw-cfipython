@@ -5,5 +5,6 @@ EvFFEDSelector = cms.EDProducer('EvFFEDSelector',
   fedList = cms.vuint32(
     812,
     1023
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

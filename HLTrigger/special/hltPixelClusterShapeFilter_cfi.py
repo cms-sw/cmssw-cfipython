@@ -11,5 +11,6 @@ hltPixelClusterShapeFilter = cms.EDFilter('HLTPixelClusterShapeFilter',
     0.0045
   ),
   nhitsTrunc = cms.int32(150),
-  clusterTrunc = cms.double(2)
+  clusterTrunc = cms.double(2),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -18,6 +18,7 @@ htMonitoring = cms.EDProducer('HTMonitor',
   nmuons = cms.uint32(0),
   dEtaCut = cms.double(1.3),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -31,6 +32,7 @@ htMonitoring = cms.EDProducer('HTMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -44,7 +46,11 @@ htMonitoring = cms.EDProducer('HTMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    htPSet = cms.PSet(),
+    htPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     htBinning = cms.vdouble(
       0,
       20,
@@ -96,5 +102,6 @@ htMonitoring = cms.EDProducer('HTMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

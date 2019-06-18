@@ -44,5 +44,6 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
   HGCFHInput = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
   HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
   timeClname = cms.string('timeLayerCluster'),
-  timeOffset = cms.double(0)
+  timeOffset = cms.double(0),
+  mightGet = cms.optional.untracked.vstring
 )

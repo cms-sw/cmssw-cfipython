@@ -8,5 +8,6 @@ VertexAssociatorByPositionAndTracks = cms.EDProducer('VertexAssociatorByPosition
   sigmaT = cms.double(-1),
   maxRecoT = cms.double(-1),
   sharedTrackFraction = cms.double(-1),
-  trackAssociation = cms.InputTag('trackingParticleRecoTrackAsssociation')
+  trackAssociation = cms.InputTag('trackingParticleRecoTrackAsssociation'),
+  mightGet = cms.optional.untracked.vstring
 )

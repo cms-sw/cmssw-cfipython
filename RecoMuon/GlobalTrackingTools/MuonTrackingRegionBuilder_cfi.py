@@ -26,5 +26,6 @@ MuonTrackingRegionBuilder = cms.EDProducer('MuonTrackingRegionEDProducer',
   DeltaPhi = cms.double(0.2),
   maxRegions = cms.int32(1),
   precise = cms.bool(True),
-  input = cms.InputTag('')
+  input = cms.InputTag(''),
+  mightGet = cms.optional.untracked.vstring
 )

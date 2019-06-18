@@ -6,5 +6,6 @@ HLTMuonTrackSelector = cms.EDProducer('HLTMuonTrackSelector',
   originalMVAVals = cms.InputTag(''),
   copyMVA = cms.bool(False),
   copyExtras = cms.untracked.bool(True),
-  copyTrajectories = cms.untracked.bool(False)
+  copyTrajectories = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

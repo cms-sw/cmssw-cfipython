@@ -21,5 +21,6 @@ L1TGlobalProducer = cms.EDProducer('L1TGlobalProducer',
   Verbosity = cms.untracked.int32(0),
   PrintL1Menu = cms.untracked.bool(False),
   TriggerMenuLuminosity = cms.string('startup'),
-  PrescaleCSVFile = cms.string('prescale_L1TGlobal.csv')
+  PrescaleCSVFile = cms.string('prescale_L1TGlobal.csv'),
+  mightGet = cms.optional.untracked.vstring
 )

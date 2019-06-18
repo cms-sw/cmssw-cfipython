@@ -5,5 +5,6 @@ caloRecHitsBeamHaloCleaned = cms.EDProducer('CaloRecHitsBeamHaloCleaned',
   EERecHitsLabel = cms.InputTag('EcalRecHit', 'EcalRecHitsEE'),
   HBHERecHitsLabel = cms.InputTag('hbhereco'),
   GlobalHaloDataLabel = cms.InputTag('GlobalHaloData'),
-  IsHLT = cms.bool(False)
+  IsHLT = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

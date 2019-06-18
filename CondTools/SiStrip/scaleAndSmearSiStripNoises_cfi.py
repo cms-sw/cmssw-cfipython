@@ -5,5 +5,6 @@ scaleAndSmearSiStripNoises = cms.EDAnalyzer('SiStripNoisesFromDBMiscalibrator',
     cms.PSet()
   ),
   fillDefaults = cms.untracked.bool(False),
-  saveMaps = cms.untracked.bool(True)
+  saveMaps = cms.untracked.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

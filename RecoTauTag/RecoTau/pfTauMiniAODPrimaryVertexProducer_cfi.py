@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 pfTauMiniAODPrimaryVertexProducer = cms.EDProducer('PFTauMiniAODPrimaryVertexProducer',
+  discriminators = cms.required.VPSet,
   qualityCuts = cms.PSet(
     signalQualityCuts = cms.PSet(
       maxDeltaZ = cms.double(0.4),
@@ -11,7 +12,8 @@ pfTauMiniAODPrimaryVertexProducer = cms.EDProducer('PFTauMiniAODPrimaryVertexPro
       minGammaEt = cms.double(1),
       minTrackHits = cms.uint32(3),
       minNeutralHadronEt = cms.double(30),
-      maxTransverseImpactParameter = cms.double(0.1)
+      maxTransverseImpactParameter = cms.double(0.1),
+      useTracksInsteadOfPFHadrons = cms.optional.bool
     ),
     vxAssocQualityCuts = cms.PSet(
       minTrackPt = cms.double(0.5),
@@ -20,7 +22,8 @@ pfTauMiniAODPrimaryVertexProducer = cms.EDProducer('PFTauMiniAODPrimaryVertexPro
       minTrackPixelHits = cms.uint32(0),
       minGammaEt = cms.double(1),
       minTrackHits = cms.uint32(3),
-      maxTransverseImpactParameter = cms.double(0.1)
+      maxTransverseImpactParameter = cms.double(0.1),
+      useTracksInsteadOfPFHadrons = cms.optional.bool
     ),
     isolationQualityCuts = cms.PSet(
       maxDeltaZ = cms.double(0.2),
@@ -30,7 +33,8 @@ pfTauMiniAODPrimaryVertexProducer = cms.EDProducer('PFTauMiniAODPrimaryVertexPro
       minTrackPixelHits = cms.uint32(0),
       minGammaEt = cms.double(1.5),
       minTrackHits = cms.uint32(8),
-      maxTransverseImpactParameter = cms.double(0.03)
+      maxTransverseImpactParameter = cms.double(0.03),
+      useTracksInsteadOfPFHadrons = cms.optional.bool
     ),
     leadingTrkOrPFCandOption = cms.string('leadPFCand'),
     pvFindingAlgo = cms.string('closestInDeltaZ'),
@@ -50,5 +54,6 @@ pfTauMiniAODPrimaryVertexProducer = cms.EDProducer('PFTauMiniAODPrimaryVertexPro
   MuonTag = cms.InputTag('MyMuons'),
   PVTag = cms.InputTag('offlinePrimaryVertices'),
   lostCandidatesTag = cms.InputTag('lostTracks'),
-  packedCandidatesTag = cms.InputTag('packedPFCandidates')
+  packedCandidatesTag = cms.InputTag('packedPFCandidates'),
+  mightGet = cms.optional.untracked.vstring
 )

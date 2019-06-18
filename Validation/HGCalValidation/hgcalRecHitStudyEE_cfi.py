@@ -14,5 +14,6 @@ hgcalRecHitStudyEE = cms.EDAnalyzer('HGCalRecHitStudy',
   zMin = cms.untracked.double(300),
   zMax = cms.untracked.double(600),
   etaMin = cms.untracked.double(1),
-  etaMax = cms.untracked.double(3)
+  etaMax = cms.untracked.double(3),
+  mightGet = cms.optional.untracked.vstring
 )

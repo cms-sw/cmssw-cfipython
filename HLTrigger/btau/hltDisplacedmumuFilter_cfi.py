@@ -10,5 +10,6 @@ hltDisplacedmumuFilter = cms.EDFilter('HLTDisplacedmumuFilter',
   MinCosinePointingAngle = cms.double(-2),
   DisplacedVertexTag = cms.InputTag('hltDisplacedmumuVtx'),
   BeamSpotTag = cms.InputTag('hltOnlineBeamSpot'),
-  MuonTag = cms.InputTag('hltL3MuonCandidates')
+  MuonTag = cms.InputTag('hltL3MuonCandidates'),
+  mightGet = cms.optional.untracked.vstring
 )

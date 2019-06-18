@@ -102,5 +102,6 @@ L2MuonProducer = cms.EDProducer('L2MuonProducer',
     VertexConstraint = cms.bool(True),
     TTRHBuilder = cms.string('hltESPTTRHBWithTrackAngle')
   ),
-  MuonTrajectoryBuilder = cms.string('Exhaustive')
+  MuonTrajectoryBuilder = cms.string('Exhaustive'),
+  mightGet = cms.optional.untracked.vstring
 )

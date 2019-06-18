@@ -38,5 +38,6 @@ hltDTActivityFilter = cms.EDFilter('HLTDTActivityFilter',
     10,
     11,
     12
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

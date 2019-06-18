@@ -7,5 +7,6 @@ hltExclDiJetFilterRecoPFJet = cms.EDFilter('HLTExclDiPFJetFilter',
   minPtJet = cms.double(30),
   minHFe = cms.double(50),
   HF_OR = cms.bool(False),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

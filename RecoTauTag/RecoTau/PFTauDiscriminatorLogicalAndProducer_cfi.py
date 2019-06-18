@@ -14,5 +14,6 @@ PFTauDiscriminatorLogicalAndProducer = cms.EDProducer('PFTauDiscriminatorLogical
   ),
   PassValue = cms.double(1),
   FailValue = cms.double(0),
-  PFTauProducer = cms.InputTag('pfRecoTauProducer')
+  PFTauProducer = cms.InputTag('pfRecoTauProducer'),
+  mightGet = cms.optional.untracked.vstring
 )

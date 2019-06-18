@@ -14,5 +14,6 @@ ctppsDiamondLocalTracks = cms.EDProducer('CTPPSDiamondLocalTrackFitter',
     yPosition = cms.double(0),
     yWidth = cms.double(0),
     excludeSingleEdgeHits = cms.bool(True)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

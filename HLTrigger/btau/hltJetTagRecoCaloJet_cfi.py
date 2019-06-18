@@ -7,5 +7,6 @@ hltJetTagRecoCaloJet = cms.EDFilter('HLTCaloJetTag',
   MinTag = cms.double(2),
   MaxTag = cms.double(999999),
   MinJets = cms.int32(1),
-  TriggerType = cms.int32(0)
+  TriggerType = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

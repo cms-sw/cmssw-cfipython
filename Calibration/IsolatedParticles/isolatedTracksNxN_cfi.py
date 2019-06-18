@@ -26,5 +26,6 @@ isolatedTracksNxN = cms.EDAnalyzer('IsolatedTracksNxN',
   timeMinCutECAL = cms.untracked.double(-500),
   timeMaxCutECAL = cms.untracked.double(500),
   timeMinCutHCAL = cms.untracked.double(-500),
-  timeMaxCutHCAL = cms.untracked.double(500)
+  timeMaxCutHCAL = cms.untracked.double(500),
+  mightGet = cms.optional.untracked.vstring
 )

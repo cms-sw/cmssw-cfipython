@@ -16,5 +16,6 @@ pfDeepFlavourTagInfos = cms.EDProducer('DeepFlavourTagInfoProducer',
   run_deepVertex = cms.bool(False),
   compute_probabilities = cms.bool(False),
   min_jet_pt = cms.double(15),
-  max_jet_eta = cms.double(2.5)
+  max_jet_eta = cms.double(2.5),
+  mightGet = cms.optional.untracked.vstring
 )

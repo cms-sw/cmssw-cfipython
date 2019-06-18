@@ -9,5 +9,6 @@ gctRawToDigi = cms.EDProducer('GctRawToDigi',
   unpackerVersion = cms.uint32(0),
   gctFedId = cms.untracked.int32(745),
   checkHeaders = cms.untracked.bool(False),
-  verbose = cms.untracked.bool(False)
+  verbose = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

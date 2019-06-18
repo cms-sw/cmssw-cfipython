@@ -7,5 +7,6 @@ l1ECALPrefiringWeightProducer = cms.EDProducer('L1ECALPrefiringWeightProducer',
   DataEra = cms.string('2017BtoF'),
   UseJetEMPt = cms.bool(False),
   PrefiringRateSystematicUncty = cms.double(0.2),
-  SkipWarnings = cms.bool(True)
+  SkipWarnings = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

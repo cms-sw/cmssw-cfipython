@@ -7,5 +7,6 @@ pfDeepDoubleXTagInfos = cms.EDProducer('DeepDoubleXTagInfoProducer',
   min_candidate_pt = cms.double(0.95),
   vertices = cms.InputTag('offlinePrimaryVertices'),
   secondary_vertices = cms.InputTag('inclusiveCandidateSecondaryVertices'),
-  jets = cms.InputTag('ak8PFJetsCHS')
+  jets = cms.InputTag('ak8PFJetsCHS'),
+  mightGet = cms.optional.untracked.vstring
 )

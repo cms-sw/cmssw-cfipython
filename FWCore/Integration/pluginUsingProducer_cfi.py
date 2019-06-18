@@ -5,5 +5,6 @@ pluginUsingProducer = cms.EDProducer('PluginUsingProducer',
     value = cms.int32(5),
     type = cms.string('edmtestValueMaker')
   
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

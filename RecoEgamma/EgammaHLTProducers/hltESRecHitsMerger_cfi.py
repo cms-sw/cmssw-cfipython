@@ -10,5 +10,6 @@ hltESRecHitsMerger = cms.EDProducer('ESRecHitsMerger',
   Pi0Source_ES = cms.InputTag('dummyPi0'),
   EtaSource_ES = cms.InputTag('dummyEta'),
   OutputLabel_ES = cms.string('EcalRecHitsES'),
-  EcalRecHitCollectionES = cms.string('EcalRecHitsES')
+  EcalRecHitCollectionES = cms.string('EcalRecHitsES'),
+  mightGet = cms.optional.untracked.vstring
 )

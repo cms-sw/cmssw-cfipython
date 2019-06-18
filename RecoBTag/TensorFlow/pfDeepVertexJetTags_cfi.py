@@ -29,5 +29,6 @@ pfDeepVertexJetTags = cms.EDProducer('DeepVertexTFJetTagsProducer',
   min_jet_pt = cms.double(15),
   max_jet_eta = cms.double(2.5),
   nThreads = cms.uint32(1),
-  singleThreadPool = cms.string('no_threads')
+  singleThreadPool = cms.string('no_threads'),
+  mightGet = cms.optional.untracked.vstring
 )

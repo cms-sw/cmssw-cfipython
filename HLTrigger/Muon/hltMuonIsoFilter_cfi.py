@@ -6,5 +6,6 @@ hltMuonIsoFilter = cms.EDFilter('HLTMuonIsoFilter',
   PreviousCandTag = cms.InputTag(''),
   MinN = cms.int32(1),
   DepTag = cms.VInputTag('hltL3MuonIsolations'),
-  IsolatorPSet = cms.PSet()
+  IsolatorPSet = cms.PSet(),
+  mightGet = cms.optional.untracked.vstring
 )

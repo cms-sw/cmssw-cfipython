@@ -10,5 +10,6 @@ dqmBeamSpotProblemMonitor = cms.EDProducer('BeamSpotProblemMonitor',
   OnlineMode = cms.untracked.bool(True),
   doTest = cms.untracked.bool(False),
   AlarmONThreshold = cms.untracked.int32(10),
-  AlarmOFFThreshold = cms.untracked.int32(40)
+  AlarmOFFThreshold = cms.untracked.int32(40),
+  mightGet = cms.optional.untracked.vstring
 )

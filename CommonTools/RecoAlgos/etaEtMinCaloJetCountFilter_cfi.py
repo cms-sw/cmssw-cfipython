@@ -5,5 +5,6 @@ etaEtMinCaloJetCountFilter = cms.EDFilter('EtaEtMinCaloJetCountFilter',
   etMin = cms.double(0),
   etaMin = cms.double(0),
   etaMax = cms.double(0),
-  minNumber = cms.uint32(0)
+  minNumber = cms.uint32(0),
+  mightGet = cms.optional.untracked.vstring
 )

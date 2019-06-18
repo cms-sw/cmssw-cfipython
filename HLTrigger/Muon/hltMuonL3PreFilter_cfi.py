@@ -31,5 +31,6 @@ hltMuonL3PreFilter = cms.EDFilter('HLTMuonL3PreFilter',
   trkMuonId = cms.uint32(0),
   L1MatchingdR = cms.double(0.3),
   MatchToPreviousCand = cms.bool(True),
-  InputLinks = cms.InputTag('')
+  InputLinks = cms.InputTag(''),
+  mightGet = cms.optional.untracked.vstring
 )

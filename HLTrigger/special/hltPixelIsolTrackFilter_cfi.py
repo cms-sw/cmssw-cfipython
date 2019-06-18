@@ -12,5 +12,6 @@ hltPixelIsolTrackFilter = cms.EDFilter('HLTPixelIsolTrackFilter',
   MinDeltaPtL1Jet = cms.double(-40000),
   filterTrackEnergy = cms.bool(True),
   NMaxTrackCandidates = cms.int32(10),
-  DropMultiL2Event = cms.bool(False)
+  DropMultiL2Event = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

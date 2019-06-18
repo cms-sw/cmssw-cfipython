@@ -41,5 +41,6 @@ ecalRatioUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
       -50.35761,
       11.05621
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

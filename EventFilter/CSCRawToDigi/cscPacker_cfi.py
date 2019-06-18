@@ -16,5 +16,6 @@ cscPacker = cms.EDProducer('CSCDigiToRawModule',
   clctWindowMin = cms.int32(-3),
   clctWindowMax = cms.int32(3),
   preTriggerWindowMin = cms.int32(-3),
-  preTriggerWindowMax = cms.int32(1)
+  preTriggerWindowMax = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

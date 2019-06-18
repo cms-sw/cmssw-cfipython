@@ -10,5 +10,6 @@ photonIsolationHIProducer = cms.EDProducer('photonIsolationHIProducer',
   basicClusterBarrel = cms.InputTag('islandBasicClusters', 'islandBarrelBasicClusters'),
   basicClusterEndcap = cms.InputTag('islandBasicClusters', 'islandEndcapBasicClusters'),
   trackCollection = cms.InputTag('hiGeneralTracks'),
-  trackQuality = cms.string('highPurity')
+  trackQuality = cms.string('highPurity'),
+  mightGet = cms.optional.untracked.vstring
 )

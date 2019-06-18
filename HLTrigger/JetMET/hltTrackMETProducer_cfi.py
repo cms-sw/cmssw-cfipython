@@ -13,5 +13,6 @@ hltTrackMETProducer = cms.EDProducer('HLTTrackMETProducer',
   jetsLabel = cms.InputTag('hltAntiKT4PFJets'),
   tracksLabel = cms.InputTag('hltL3Muons'),
   pfRecTracksLabel = cms.InputTag('hltLightPFTracks'),
-  pfCandidatesLabel = cms.InputTag('hltParticleFlow')
+  pfCandidatesLabel = cms.InputTag('hltParticleFlow'),
+  mightGet = cms.optional.untracked.vstring
 )

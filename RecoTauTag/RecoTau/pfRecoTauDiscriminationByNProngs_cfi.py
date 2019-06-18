@@ -11,7 +11,8 @@ pfRecoTauDiscriminationByNProngs = cms.EDProducer('PFRecoTauDiscriminationByNPro
       minGammaEt = cms.double(1),
       minTrackHits = cms.uint32(3),
       minNeutralHadronEt = cms.double(30),
-      maxTransverseImpactParameter = cms.double(0.1)
+      maxTransverseImpactParameter = cms.double(0.1),
+      useTracksInsteadOfPFHadrons = cms.optional.bool
     ),
     vxAssocQualityCuts = cms.PSet(
       minTrackPt = cms.double(0.5),
@@ -20,7 +21,8 @@ pfRecoTauDiscriminationByNProngs = cms.EDProducer('PFRecoTauDiscriminationByNPro
       minTrackPixelHits = cms.uint32(0),
       minGammaEt = cms.double(1),
       minTrackHits = cms.uint32(3),
-      maxTransverseImpactParameter = cms.double(0.1)
+      maxTransverseImpactParameter = cms.double(0.1),
+      useTracksInsteadOfPFHadrons = cms.optional.bool
     ),
     isolationQualityCuts = cms.PSet(
       maxDeltaZ = cms.double(0.2),
@@ -30,7 +32,8 @@ pfRecoTauDiscriminationByNProngs = cms.EDProducer('PFRecoTauDiscriminationByNPro
       minTrackPixelHits = cms.uint32(0),
       minGammaEt = cms.double(1.5),
       minTrackHits = cms.uint32(8),
-      maxTransverseImpactParameter = cms.double(0.03)
+      maxTransverseImpactParameter = cms.double(0.03),
+      useTracksInsteadOfPFHadrons = cms.optional.bool
     ),
     leadingTrkOrPFCandOption = cms.string('leadPFCand'),
     pvFindingAlgo = cms.string('closestInDeltaZ'),
@@ -44,5 +47,6 @@ pfRecoTauDiscriminationByNProngs = cms.EDProducer('PFRecoTauDiscriminationByNPro
   BooleanOutput = cms.bool(True),
   PFTauProducer = cms.InputTag('combinatoricRecoTaus'),
   MinN = cms.uint32(1),
-  MaxN = cms.uint32(0)
+  MaxN = cms.uint32(0),
+  mightGet = cms.optional.untracked.vstring
 )

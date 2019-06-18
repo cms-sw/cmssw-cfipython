@@ -10,5 +10,6 @@ globalTrackingRegion = cms.EDProducer('GlobalTrackingRegionEDProducer',
     originYPos = cms.double(0),
     originZPos = cms.double(0),
     ptMin = cms.double(0.9)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

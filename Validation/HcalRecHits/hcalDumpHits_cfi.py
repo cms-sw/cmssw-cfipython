@@ -7,5 +7,6 @@ hcalDumpHits = cms.EDAnalyzer('HcalDumpHits',
   hoDigiSource = cms.InputTag('hcalDigis'),
   hbheRecHitSource = cms.InputTag('hbhereco'),
   hfRecHitSource = cms.InputTag('hfreco'),
-  hoRecHitSource = cms.InputTag('horeco')
+  hoRecHitSource = cms.InputTag('horeco'),
+  mightGet = cms.optional.untracked.vstring
 )

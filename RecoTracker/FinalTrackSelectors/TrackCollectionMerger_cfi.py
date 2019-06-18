@@ -12,5 +12,6 @@ TrackCollectionMerger = cms.EDProducer('TrackCollectionMerger',
   enableMerging = cms.bool(True),
   minQuality = cms.string('loose'),
   copyExtras = cms.untracked.bool(True),
-  copyTrajectories = cms.untracked.bool(False)
+  copyTrajectories = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

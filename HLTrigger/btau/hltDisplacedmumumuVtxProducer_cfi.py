@@ -8,5 +8,6 @@ hltDisplacedmumumuVtxProducer = cms.EDProducer('HLTDisplacedmumumuVtxProducer',
   MinPtTriplet = cms.double(0),
   MinInvMass = cms.double(1),
   MaxInvMass = cms.double(20),
-  ChargeOpt = cms.int32(-1)
+  ChargeOpt = cms.int32(-1),
+  mightGet = cms.optional.untracked.vstring
 )

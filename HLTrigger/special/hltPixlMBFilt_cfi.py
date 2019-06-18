@@ -5,5 +5,6 @@ hltPixlMBFilt = cms.EDFilter('HLTPixlMBFilt',
   pixlTag = cms.InputTag('hltPixelCands'),
   MinPt = cms.double(0),
   MinTrks = cms.uint32(2),
-  MinSep = cms.double(1)
+  MinSep = cms.double(1),
+  mightGet = cms.optional.untracked.vstring
 )

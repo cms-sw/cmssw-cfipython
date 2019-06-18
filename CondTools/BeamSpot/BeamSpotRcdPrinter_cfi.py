@@ -12,5 +12,6 @@ BeamSpotRcdPrinter = cms.EDAnalyzer('BeamSpotRcdPrinter',
     authenticationSystem = cms.untracked.int32(0),
     security = cms.untracked.string(''),
     messageLevel = cms.untracked.int32(0)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ hltEgammaHLTEcalIsolationProducersRegional = cms.EDProducer('EgammaHLTEcalIsolat
   recoEcalCandidateProducer = cms.InputTag(''),
   egEcalIsoEtMin = cms.double(0),
   egEcalIsoConeSize = cms.double(0.3),
-  SCAlgoType = cms.int32(1)
+  SCAlgoType = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

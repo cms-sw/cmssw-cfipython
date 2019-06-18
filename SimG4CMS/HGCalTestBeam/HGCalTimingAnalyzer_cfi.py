@@ -15,5 +15,6 @@ HGCalTimingAnalyzer = cms.EDAnalyzer('HGCalTimingAnalyzer',
   DoTree = cms.untracked.bool(True),
   GeneratorSrc = cms.InputTag('generatorSmeared'),
   CaloHitSrcEE = cms.string('HGCHitsEE'),
-  CaloHitSrcBeam = cms.string('HcalTB06BeamHits')
+  CaloHitSrcBeam = cms.string('HcalTB06BeamHits'),
+  mightGet = cms.optional.untracked.vstring
 )

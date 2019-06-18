@@ -18,5 +18,6 @@ hltAlphaTFilterRecoCaloJet = cms.EDFilter('HLTAlphaTCaloJetFilter',
   minAlphaT = cms.double(0),
   triggerType = cms.int32(85),
   dynamicAlphaT = cms.bool(True),
-  setDHtZero = cms.bool(False)
+  setDHtZero = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

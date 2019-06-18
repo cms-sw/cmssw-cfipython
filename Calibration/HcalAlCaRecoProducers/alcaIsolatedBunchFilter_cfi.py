@@ -21,5 +21,6 @@ alcaIsolatedBunchFilter = cms.EDFilter('AlCaIsolatedBunchFilter',
     'HLT_AK8DiPFJet',
     'HLT_AK4CaloJet',
     'HLT_AK4PFJet'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

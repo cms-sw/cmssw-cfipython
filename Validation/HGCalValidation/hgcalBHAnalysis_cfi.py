@@ -7,5 +7,6 @@ hgcalBHAnalysis = cms.EDAnalyzer('HGCalBHValidation',
   Sample = cms.untracked.int32(5),
   GeometryType = cms.untracked.int32(0),
   Threshold = cms.untracked.double(15),
-  ifHCAL = cms.untracked.bool(False)
+  ifHCAL = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -12,5 +12,6 @@ isolEcalPixelTrackProd = cms.EDProducer('IsolatedEcalPixelTrackCandidateProducer
   EEHitEnergyThreshold3 = cms.double(7.04303),
   EEFacHitCountEnergyThreshold = cms.double(10),
   EcalConeSizeEta0 = cms.double(0.09),
-  EcalConeSizeEta1 = cms.double(0.14)
+  EcalConeSizeEta1 = cms.double(0.14),
+  mightGet = cms.optional.untracked.vstring
 )

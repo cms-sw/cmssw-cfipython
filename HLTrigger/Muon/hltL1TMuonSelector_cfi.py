@@ -5,5 +5,6 @@ hltL1TMuonSelector = cms.EDProducer('HLTL1TMuonSelector',
   L1MinPt = cms.double(-1),
   L1MaxEta = cms.double(5),
   L1MinQuality = cms.uint32(0),
-  CentralBxOnly = cms.bool(True)
+  CentralBxOnly = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

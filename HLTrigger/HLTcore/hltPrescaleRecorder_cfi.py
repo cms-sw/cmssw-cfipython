@@ -8,5 +8,6 @@ hltPrescaleRecorder = cms.EDProducer('HLTPrescaleRecorder',
   condDB = cms.bool(True),
   psetName = cms.string(''),
   hltInputTag = cms.InputTag(''),
-  hltDBTag = cms.string('')
+  hltDBTag = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

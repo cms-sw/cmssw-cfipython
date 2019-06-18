@@ -43,10 +43,12 @@ hgcalElectronIDValueMap = cms.EDProducer('HGCalElectronIDValueMapProducer',
     'caloIsoRing3',
     'caloIsoRing4'
   ),
+  dEdXWeights = cms.required.vdouble,
   isoNRings = cms.uint32(5),
   isoDeltaR = cms.double(0.15),
   isoDeltaRmin = cms.double(0),
   EERecHits = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
   FHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
-  BHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits')
+  BHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+  mightGet = cms.optional.untracked.vstring
 )

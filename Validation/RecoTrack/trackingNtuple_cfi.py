@@ -51,5 +51,6 @@ trackingNtuple = cms.EDAnalyzer('TrackingNtuple',
   includeSeeds = cms.untracked.bool(False),
   includeAllHits = cms.untracked.bool(False),
   includeMVA = cms.untracked.bool(True),
-  includeTrackingParticles = cms.untracked.bool(True)
+  includeTrackingParticles = cms.untracked.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

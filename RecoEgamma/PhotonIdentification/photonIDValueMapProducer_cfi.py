@@ -8,5 +8,6 @@ photonIDValueMapProducer = cms.EDProducer('PhotonIDValueMapProducer',
   eeReducedRecHitCollection = cms.InputTag('reducedEgamma', 'reducedEERecHits'),
   pfCandidates = cms.InputTag('packedPFCandidates'),
   vertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
-  isAOD = cms.bool(False)
+  isAOD = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

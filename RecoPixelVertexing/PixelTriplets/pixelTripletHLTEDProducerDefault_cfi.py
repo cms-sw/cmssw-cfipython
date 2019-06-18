@@ -13,5 +13,6 @@ pixelTripletHLTEDProducerDefault = cms.EDProducer('PixelTripletHLTEDProducer',
   phiPreFiltering = cms.double(0.3),
   SeedComparitorPSet = cms.PSet(
     ComponentName = cms.string('none')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

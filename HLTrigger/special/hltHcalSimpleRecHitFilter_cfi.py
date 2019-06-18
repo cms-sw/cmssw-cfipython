@@ -7,5 +7,6 @@ hltHcalSimpleRecHitFilter = cms.EDFilter('HLTHcalSimpleRecHitFilter',
   minNHitsNeg = cms.int32(1),
   minNHitsPos = cms.int32(1),
   doCoincidence = cms.bool(True),
-  maskedChannels = cms.vuint32()
+  maskedChannels = cms.vuint32(),
+  mightGet = cms.optional.untracked.vstring
 )

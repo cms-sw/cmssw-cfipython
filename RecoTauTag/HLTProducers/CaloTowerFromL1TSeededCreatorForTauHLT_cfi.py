@@ -6,5 +6,6 @@ CaloTowerFromL1TSeededCreatorForTauHLT = cms.EDProducer('CaloTowerFromL1TSeededC
   UseTowersInCone = cms.double(0.8),
   minimumE = cms.double(0.8),
   minimumEt = cms.double(0.5),
-  verbose = cms.untracked.int32(0)
+  verbose = cms.untracked.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

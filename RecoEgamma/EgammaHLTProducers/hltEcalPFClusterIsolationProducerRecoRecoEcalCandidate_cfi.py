@@ -21,5 +21,6 @@ hltEcalPFClusterIsolationProducerRecoRecoEcalCandidate = cms.EDProducer('EgammaH
   absEtaLowEdges = cms.vdouble(
     0,
     1.479
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

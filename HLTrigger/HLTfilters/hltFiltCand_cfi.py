@@ -11,5 +11,6 @@ hltFiltCand = cms.EDFilter('HLTFiltCand',
   mhtsTag = cms.InputTag('mhtsCollection'),
   trckTag = cms.InputTag('trckCollection'),
   ecalTag = cms.InputTag('ecalCollection'),
-  MinPt = cms.double(-1)
+  MinPt = cms.double(-1),
+  mightGet = cms.optional.untracked.vstring
 )

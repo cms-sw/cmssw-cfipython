@@ -80,5 +80,6 @@ FastjetJetProducer = cms.EDProducer('FastjetJetProducer',
   maxRecoveredHcalCells = cms.uint32(9999999),
   puCenters = cms.vdouble(),
   jetCollInstanceName = cms.string(''),
-  sumRecHits = cms.bool(False)
+  sumRecHits = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

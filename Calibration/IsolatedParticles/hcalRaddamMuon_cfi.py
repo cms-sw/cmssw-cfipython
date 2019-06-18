@@ -6,5 +6,6 @@ hcalRaddamMuon = cms.EDAnalyzer('HcalRaddamMuon',
   verbosity = cms.untracked.int32(0),
   useRaw = cms.untracked.int32(0),
   isAOD = cms.bool(False),
-  maxDepth = cms.untracked.int32(4)
+  maxDepth = cms.untracked.int32(4),
+  mightGet = cms.optional.untracked.vstring
 )

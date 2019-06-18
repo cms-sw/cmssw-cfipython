@@ -11,5 +11,6 @@ hltDisplacedtktkVtxProducer = cms.EDProducer('HLTDisplacedtktkVtxProducer',
   massParticle1 = cms.double(0.1396),
   massParticle2 = cms.double(0.4937),
   ChargeOpt = cms.int32(-1),
-  triggerTypeDaughters = cms.int32(0)
+  triggerTypeDaughters = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

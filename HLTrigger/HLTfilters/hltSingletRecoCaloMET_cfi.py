@@ -10,5 +10,6 @@ hltSingletRecoCaloMET = cms.EDFilter('HLT1CaloMET',
   MaxMass = cms.double(-1),
   MinEta = cms.double(-1),
   MaxEta = cms.double(-1),
-  MinN = cms.int32(1)
+  MinN = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

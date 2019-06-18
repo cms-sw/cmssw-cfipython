@@ -168,5 +168,6 @@ L3MuonProducer = cms.EDProducer('L3MuonProducer',
     PtCut = cms.double(1),
     matchToSeeds = cms.bool(True),
     tkTrajLabel = cms.InputTag('hltBRSMuonSeededTracksOutIn')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

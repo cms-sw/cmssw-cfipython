@@ -10,5 +10,6 @@ hltPixelVertexCollectionTrimmer = cms.EDProducer('PixelVertexCollectionTrimmer',
     track_pt_max = cms.double(10),
     track_chi2_max = cms.double(99999),
     track_prob_min = cms.double(-1)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -64,5 +64,6 @@ hltHcalTowerNoiseCleanerWithrechit = cms.EDProducer('HLTHcalTowerNoiseCleanerWit
     0,
     1,
     -1
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

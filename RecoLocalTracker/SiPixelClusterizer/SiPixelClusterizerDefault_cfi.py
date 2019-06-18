@@ -19,5 +19,6 @@ SiPixelClusterizerDefault = cms.EDProducer('SiPixelClusterProducer',
   Phase2Calibration = cms.bool(False),
   Phase2ReadoutMode = cms.int32(-1),
   Phase2DigiBaseline = cms.double(1200),
-  Phase2KinkADC = cms.int32(8)
+  Phase2KinkADC = cms.int32(8),
+  mightGet = cms.optional.untracked.vstring
 )

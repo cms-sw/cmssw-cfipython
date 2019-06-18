@@ -10,5 +10,6 @@ DuplicateListMerger = cms.EDProducer('DuplicateListMerger',
   trackAlgoPriorityOrder = cms.string('trackAlgoPriorityOrder'),
   diffHitsCut = cms.int32(5),
   copyExtras = cms.untracked.bool(True),
-  copyTrajectories = cms.untracked.bool(False)
+  copyTrajectories = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

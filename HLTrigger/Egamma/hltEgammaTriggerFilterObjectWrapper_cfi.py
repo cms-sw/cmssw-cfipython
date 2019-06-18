@@ -4,5 +4,6 @@ hltEgammaTriggerFilterObjectWrapper = cms.EDFilter('HLTEgammaTriggerFilterObject
   saveTags = cms.bool(True),
   candIsolatedTag = cms.InputTag('hltL1IsoRecoEcalCandidate'),
   candNonIsolatedTag = cms.InputTag('hltL1NonIsoRecoEcalCandidate'),
-  doIsolated = cms.bool(False)
+  doIsolated = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

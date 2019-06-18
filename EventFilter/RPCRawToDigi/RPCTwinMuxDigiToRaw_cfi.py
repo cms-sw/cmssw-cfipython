@@ -6,5 +6,6 @@ RPCTwinMuxDigiToRaw = cms.EDProducer('RPCTwinMuxDigiToRaw',
   bxMax = cms.int32(2),
   ignoreEOD = cms.bool(True),
   eventType = cms.int32(1),
-  uFOV = cms.uint32(1)
+  uFOV = cms.uint32(1),
+  mightGet = cms.optional.untracked.vstring
 )

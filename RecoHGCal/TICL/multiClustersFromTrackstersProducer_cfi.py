@@ -4,5 +4,6 @@ multiClustersFromTrackstersProducer = cms.EDProducer('MultiClustersFromTrackster
   Tracksters = cms.InputTag('Tracksters', 'TrackstersByCA'),
   LayerClusters = cms.InputTag('hgcalLayerClusters'),
   label = cms.string('MultiClustersFromTracksterByCA'),
-  verbosity = cms.untracked.uint32(3)
+  verbosity = cms.untracked.uint32(3),
+  mightGet = cms.optional.untracked.vstring
 )

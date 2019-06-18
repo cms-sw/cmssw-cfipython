@@ -4,5 +4,6 @@ hltJetsCleanedFromLeadingLeptonsRecoCaloJet = cms.EDProducer('HLTCaloJetsCleaned
   leptons = cms.InputTag('triggerFilterObjectWithRefs'),
   jets = cms.InputTag('jetCollection'),
   minDeltaR = cms.double(0.3),
-  numLeptons = cms.uint32(1)
+  numLeptons = cms.uint32(1),
+  mightGet = cms.optional.untracked.vstring
 )

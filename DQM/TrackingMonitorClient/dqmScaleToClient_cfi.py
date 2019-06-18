@@ -9,5 +9,6 @@ dqmScaleToClient = cms.EDProducer('DQMScaleToClient',
   inputme = cms.PSet(
     folder = cms.string(''),
     name = cms.string('')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

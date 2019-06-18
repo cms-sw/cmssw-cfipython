@@ -9,7 +9,10 @@ pfRecoTauDiscriminationAgainstElectron2 = cms.EDProducer('PFRecoTauDiscriminatio
   keepTausInEcalCrack = cms.bool(True),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   applyCut_GammaPhiMom = cms.bool(False),
   GammaPhiMom_endcap_max = cms.double(1.5),
@@ -35,5 +38,6 @@ pfRecoTauDiscriminationAgainstElectron2 = cms.EDProducer('PFRecoTauDiscriminatio
     '1.127:1.163',
     '1.460:1.558'
   ),
-  Hcal3x3OverPLead_barrel_max = cms.double(0.2)
+  Hcal3x3OverPLead_barrel_max = cms.double(0.2),
+  mightGet = cms.optional.untracked.vstring
 )

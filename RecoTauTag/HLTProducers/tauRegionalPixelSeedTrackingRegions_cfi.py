@@ -12,5 +12,6 @@ tauRegionalPixelSeedTrackingRegions = cms.EDProducer('TauRegionalPixelSeedTracki
     searchOpt = cms.bool(False),
     howToUseMeasurementTracker = cms.string('ForSiStrips'),
     measurementTrackerName = cms.InputTag('MeasurementTrackerEvent')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

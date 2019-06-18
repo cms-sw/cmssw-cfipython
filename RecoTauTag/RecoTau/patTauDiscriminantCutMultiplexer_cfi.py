@@ -28,5 +28,6 @@ patTauDiscriminantCutMultiplexer = cms.EDProducer('PATTauDiscriminantCutMultiple
     )
   ),
   mvaOutput_normalization = cms.string(''),
-  key = cms.InputTag('fixme')
+  key = cms.InputTag('fixme'),
+  mightGet = cms.optional.untracked.vstring
 )

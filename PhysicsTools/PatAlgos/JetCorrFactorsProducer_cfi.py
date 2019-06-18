@@ -17,5 +17,6 @@ JetCorrFactorsProducer = cms.EDProducer('JetCorrFactorsProducer',
     'L2L3Residual',
     'L5Flavor',
     'L7Parton'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

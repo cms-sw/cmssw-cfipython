@@ -7,5 +7,6 @@ L2TauJetsMerger = cms.EDProducer('L2TauJetsMerger',
     'hltAkIsoTau3Regional',
     'hltAkIsoTau4Regional'
   ),
-  EtMin = cms.double(20)
+  EtMin = cms.double(20),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ zMuMuMassConstraintParameterFinder = cms.EDAnalyzer('ZMuMuMassConstraintParamete
   phiMin = cms.double(-3.1416),
   phiMax = cms.double(3.1416),
   minMassPair = cms.double(85.8),
-  maxMassPair = cms.double(95.8)
+  maxMassPair = cms.double(95.8),
+  mightGet = cms.optional.untracked.vstring
 )

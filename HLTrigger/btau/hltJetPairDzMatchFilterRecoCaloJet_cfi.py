@@ -7,5 +7,6 @@ hltJetPairDzMatchFilterRecoCaloJet = cms.EDFilter('HLTCaloJetPairDzMatchFilter',
   JetMaxEta = cms.double(2.4),
   JetMinDR = cms.double(0.2),
   JetMaxDZ = cms.double(0.2),
-  TriggerType = cms.int32(84)
+  TriggerType = cms.int32(84),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -6,5 +6,6 @@ hltCaloTowerHtMhtProducer = cms.EDProducer('HLTCaloTowerHtMhtProducer',
   minPtTowerMht = cms.double(1),
   maxEtaTowerHt = cms.double(5),
   maxEtaTowerMht = cms.double(5),
-  towersLabel = cms.InputTag('hltTowerMakerForAll')
+  towersLabel = cms.InputTag('hltTowerMakerForAll'),
+  mightGet = cms.optional.untracked.vstring
 )

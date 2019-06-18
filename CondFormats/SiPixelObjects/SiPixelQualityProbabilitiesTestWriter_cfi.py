@@ -4,5 +4,6 @@ SiPixelQualityProbabilitiesTestWriter = cms.EDAnalyzer('SiPixelQualityProbabilit
   printDebug = cms.untracked.bool(True),
   record = cms.string('SiPixelStatusScenarioProbabilityRcd'),
   snapshots = cms.string(''),
-  probabilities = cms.string('')
+  probabilities = cms.string(''),
+  mightGet = cms.optional.untracked.vstring
 )

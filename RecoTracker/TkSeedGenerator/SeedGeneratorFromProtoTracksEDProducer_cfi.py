@@ -18,5 +18,6 @@ SeedGeneratorFromProtoTracksEDProducer = cms.EDProducer('SeedGeneratorFromProtoT
     magneticField = cms.string(''),
     TTRHBuilder = cms.string('WithTrackAngle'),
     forceKinematicWithRegionDirection = cms.bool(False)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

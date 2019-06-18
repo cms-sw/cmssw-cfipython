@@ -6,5 +6,6 @@ hcalCollapseAnalyzer = cms.EDProducer('HcalCollapseAnalyzer',
   recHitHBHE = cms.untracked.InputTag('hbhereco'),
   preRecHitHBHE = cms.untracked.InputTag('hbheprereco'),
   doHE = cms.untracked.bool(True),
-  doHB = cms.untracked.bool(False)
+  doHB = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

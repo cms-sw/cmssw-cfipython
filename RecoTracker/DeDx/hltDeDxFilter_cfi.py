@@ -15,5 +15,6 @@ hltDeDxFilter = cms.EDFilter('HLTDeDxFilter',
   maxAssocCaloEDeltaRSize = cms.double(0.5),
   caloTowersTag = cms.InputTag('hltTowerMakerForAll'),
   inputTracksTag = cms.InputTag('hltL3Mouns'),
-  inputDeDxTag = cms.InputTag('HLTdedxHarm2')
+  inputDeDxTag = cms.InputTag('HLTdedxHarm2'),
+  mightGet = cms.optional.untracked.vstring
 )

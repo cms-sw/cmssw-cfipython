@@ -18,5 +18,6 @@ hltRechitInRegionsProducerL1extraL1EmParticle = cms.EDProducer('EgammaHLTRechitI
   l1UpperThr = cms.double(999),
   l1LowerThrIgnoreIsolation = cms.double(0),
   regionEtaMargin = cms.double(0.14),
-  regionPhiMargin = cms.double(0.4)
+  regionPhiMargin = cms.double(0.4),
+  mightGet = cms.optional.untracked.vstring
 )

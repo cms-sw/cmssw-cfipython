@@ -24,5 +24,6 @@ selectedElectronFEDListProducerRecoElectronRecoRecoEcalCandidate = cms.EDProduce
   maxZPixelRegion = cms.double(24),
   dumpAllTrackerFed = cms.bool(False),
   dumpAllEcalFed = cms.bool(False),
-  dumpAllHcalFed = cms.bool(False)
+  dumpAllHcalFed = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

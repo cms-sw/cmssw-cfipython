@@ -10,5 +10,6 @@ hltEgammaHLTPhotonTrackIsolationProducersRegional = cms.EDProducer('EgammaHLTPho
   egTrkIsoRSpan = cms.double(999999),
   egTrkIsoVetoConeSize = cms.double(0.06),
   egTrkIsoStripBarrel = cms.double(0.03),
-  egTrkIsoStripEndcap = cms.double(0.03)
+  egTrkIsoStripEndcap = cms.double(0.03),
+  mightGet = cms.optional.untracked.vstring
 )

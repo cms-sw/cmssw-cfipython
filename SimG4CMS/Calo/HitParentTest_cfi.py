@@ -6,5 +6,6 @@ HitParentTest = cms.EDAnalyzer('HitParentTest',
   EBCollection = cms.untracked.string('EcalHitsEB'),
   EECollection = cms.untracked.string('EcalHitsEE'),
   ESCollection = cms.untracked.string('EcalHitsES'),
-  HCCollection = cms.untracked.string('HcalHits')
+  HCCollection = cms.untracked.string('HcalHits'),
+  mightGet = cms.optional.untracked.vstring
 )

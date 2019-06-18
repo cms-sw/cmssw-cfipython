@@ -18,5 +18,6 @@ VertexAssociatorByTracks = cms.EDProducer('VertexAssociatorByTracksProducer',
     maxRapidityTP = cms.double(2.4),
     tipTP = cms.double(3.5)
   ),
-  trackAssociation = cms.InputTag('trackingParticleRecoTrackAsssociation')
+  trackAssociation = cms.InputTag('trackingParticleRecoTrackAsssociation'),
+  mightGet = cms.optional.untracked.vstring
 )

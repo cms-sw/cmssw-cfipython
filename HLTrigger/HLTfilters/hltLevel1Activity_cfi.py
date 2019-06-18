@@ -12,5 +12,6 @@ hltLevel1Activity = cms.EDFilter('HLTLevel1Activity',
   invert = cms.bool(False),
   physicsLoBits = cms.uint64(1),
   physicsHiBits = cms.uint64(262144),
-  technicalBits = cms.uint64(1)
+  technicalBits = cms.uint64(1),
+  mightGet = cms.optional.untracked.vstring
 )

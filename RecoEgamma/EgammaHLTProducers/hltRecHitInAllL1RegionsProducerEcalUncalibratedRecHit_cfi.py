@@ -43,5 +43,6 @@ hltRecHitInAllL1RegionsProducerEcalUncalibratedRecHit = cms.EDProducer('HLTEcalU
       regionPhiMargin = cms.double(0.5),
       type = cms.string('EGamma')
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

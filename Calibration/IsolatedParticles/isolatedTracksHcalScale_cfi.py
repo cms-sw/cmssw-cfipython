@@ -16,5 +16,6 @@ isolatedTracksHcalScale = cms.EDAnalyzer('IsolatedTracksHcalScale',
   ConeRadius = cms.untracked.double(34.98),
   ConeRadiusMIP = cms.untracked.double(14),
   TimeMinCutECAL = cms.untracked.double(-500),
-  TimeMaxCutECAL = cms.untracked.double(500)
+  TimeMaxCutECAL = cms.untracked.double(500),
+  mightGet = cms.optional.untracked.vstring
 )

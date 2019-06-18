@@ -23,5 +23,6 @@ IslandClusterProducer = cms.EDProducer('IslandClusterProducer',
   SeedRecHitFlagToBeExcludedEB = cms.vstring(),
   SeedRecHitFlagToBeExcludedEE = cms.vstring(),
   RecHitFlagToBeExcludedEB = cms.vstring(),
-  RecHitFlagToBeExcludedEE = cms.vstring()
+  RecHitFlagToBeExcludedEE = cms.vstring(),
+  mightGet = cms.optional.untracked.vstring
 )

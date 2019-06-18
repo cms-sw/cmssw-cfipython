@@ -10,5 +10,6 @@ measurementTrackerEventDefault = cms.EDProducer('MeasurementTrackerEventProducer
   badPixelFEDChannelCollectionLabels = cms.VInputTag(),
   pixelCablingMapLabel = cms.string(''),
   inactiveStripDetectorLabels = cms.VInputTag('siStripDigis'),
-  switchOffPixelsIfEmpty = cms.bool(True)
+  switchOffPixelsIfEmpty = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

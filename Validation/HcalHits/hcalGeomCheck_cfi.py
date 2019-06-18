@@ -11,5 +11,6 @@ hcalGeomCheck = cms.EDAnalyzer('HcalGeomCheck',
   zMax = cms.untracked.double(12500),
   nBinR = cms.untracked.int32(550),
   nBinZ = cms.untracked.int32(250),
-  verbosity = cms.untracked.int32(0)
+  verbosity = cms.untracked.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

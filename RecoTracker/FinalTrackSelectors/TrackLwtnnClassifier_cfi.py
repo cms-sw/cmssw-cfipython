@@ -12,5 +12,6 @@ TrackLwtnnClassifier = cms.EDProducer('TrackLwtnnClassifier',
   ),
   mva = cms.PSet(
     lwtnnLabel = cms.string('trackSelectionLwtnn')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

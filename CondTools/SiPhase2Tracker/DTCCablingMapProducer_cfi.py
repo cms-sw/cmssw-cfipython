@@ -10,5 +10,6 @@ DTCCablingMapProducer = cms.EDAnalyzer('DTCCablingMapProducer',
   csvFormat_ielinkid = cms.uint32(12),
   iovBeginTime = cms.uint64(1),
   record = cms.string('TrackerDTCCablingMapRcd'),
-  modulesToDTCCablingCSVFileNames = cms.vstring()
+  modulesToDTCCablingCSVFileNames = cms.vstring(),
+  mightGet = cms.optional.untracked.vstring
 )

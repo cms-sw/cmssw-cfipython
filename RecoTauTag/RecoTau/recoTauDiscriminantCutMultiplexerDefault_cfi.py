@@ -24,5 +24,6 @@ recoTauDiscriminantCutMultiplexerDefault = cms.EDProducer('RecoTauDiscriminantCu
     )
   ),
   mvaOutput_normalization = cms.string(''),
-  key = cms.InputTag('fixme')
+  key = cms.InputTag('fixme'),
+  mightGet = cms.optional.untracked.vstring
 )

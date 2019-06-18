@@ -21,5 +21,6 @@ hgcalSimHitStudy = cms.EDAnalyzer('HGCalSimHitStudy',
   nBinZ = cms.untracked.int32(300),
   nBinEta = cms.untracked.int32(200),
   verbosity = cms.untracked.int32(0),
-  ifNose = cms.untracked.bool(False)
+  ifNose = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

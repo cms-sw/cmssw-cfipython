@@ -37,5 +37,6 @@ fastPrimaryVertexWithWeightsProducer = cms.EDProducer('FastPrimaryVertexWithWeig
   weightCut_step3 = cms.double(0.1),
   ptWeighting = cms.bool(False),
   ptWeighting_slope = cms.double(0.05),
-  ptWeighting_offset = cms.double(-1)
+  ptWeighting_offset = cms.double(-1),
+  mightGet = cms.optional.untracked.vstring
 )

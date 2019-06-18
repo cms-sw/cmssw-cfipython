@@ -8,5 +8,6 @@ hltRHemisphere = cms.EDFilter('HLTRHemisphere',
   minJetPt = cms.double(30),
   maxEta = cms.double(3),
   maxNJ = cms.int32(7),
-  acceptNJ = cms.bool(True)
+  acceptNJ = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -13,5 +13,6 @@ hltEgammaHLTPFChargedIsolationProducer = cms.EDProducer('EgammaHLTPFChargedIsola
   ptMin = cms.double(0),
   dzMax = cms.double(0.2),
   dxyMax = cms.double(0.1),
-  pfCandidateType = cms.int32(1)
+  pfCandidateType = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

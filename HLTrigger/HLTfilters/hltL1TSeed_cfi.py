@@ -9,5 +9,6 @@ hltL1TSeed = cms.EDFilter('HLTL1TSeed',
   L1EGammaInputTag = cms.InputTag('hltCaloStage2Digis', 'EGamma'),
   L1JetInputTag = cms.InputTag('hltCaloStage2Digis', 'Jet'),
   L1TauInputTag = cms.InputTag('hltCaloStage2Digis', 'Tau'),
-  L1EtSumInputTag = cms.InputTag('hltCaloStage2Digis', 'EtSum')
+  L1EtSumInputTag = cms.InputTag('hltCaloStage2Digis', 'EtSum'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -21,5 +21,6 @@ hltEgammaHLTEcalRecIsolationProducer = cms.EDProducer('EgammaHLTEcalRecIsolation
   useIsolEt = cms.bool(True),
   tryBoth = cms.bool(True),
   subtract = cms.bool(False),
-  useNumCrystals = cms.bool(True)
+  useNumCrystals = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

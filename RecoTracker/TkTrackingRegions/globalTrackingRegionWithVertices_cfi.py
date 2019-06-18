@@ -24,5 +24,6 @@ globalTrackingRegionWithVertices = cms.EDProducer('GlobalTrackingRegionWithVerti
     minHalfLength = cms.double(0),
     scalingStartNPix = cms.double(0),
     scalingEndNPix = cms.double(1)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

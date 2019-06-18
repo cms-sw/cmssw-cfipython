@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 edmOutput = cms.OutputModule('PoolOutputModule',
+  fileName = cms.required.untracked.string,
   logicalFileName = cms.untracked.string(''),
   catalog = cms.untracked.string(''),
   maxSize = cms.untracked.int32(2130706432),
@@ -19,5 +20,7 @@ edmOutput = cms.OutputModule('PoolOutputModule',
   overrideBranchesSplitLevel = cms.untracked.VPSet(
   ),
   outputCommands = cms.untracked.vstring('keep *'),
-  SelectEvents = cms.untracked.PSet()
+  SelectEvents = cms.untracked.PSet(
+    SelectEvents = cms.optional.vstring
+  )
 )

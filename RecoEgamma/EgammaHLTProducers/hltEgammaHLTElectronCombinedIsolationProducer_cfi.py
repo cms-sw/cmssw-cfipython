@@ -6,5 +6,6 @@ hltEgammaHLTElectronCombinedIsolationProducer = cms.EDProducer('EgammaHLTElectro
   CaloIsolationMapTags = cms.VInputTag(),
   TrackIsolationMapTag = cms.InputTag(''),
   CaloIsolationWeight = cms.vdouble(),
-  TrackIsolationWeight = cms.double(0)
+  TrackIsolationWeight = cms.double(0),
+  mightGet = cms.optional.untracked.vstring
 )

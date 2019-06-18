@@ -9,5 +9,6 @@ hltHcalNoiseFilter = cms.EDFilter('HLTHcalNoiseFilter',
   UseMET = cms.bool(False),
   MetCut = cms.double(0),
   JetMinE = cms.double(20),
-  JetHCALminEnergyFraction = cms.double(0.98)
+  JetHCALminEnergyFraction = cms.double(0.98),
+  mightGet = cms.optional.untracked.vstring
 )

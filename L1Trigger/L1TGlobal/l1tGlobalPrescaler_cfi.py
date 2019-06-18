@@ -516,5 +516,6 @@ l1tGlobalPrescaler = cms.EDFilter('L1TGlobalPrescaler',
     1,
     1,
     1
-  ) )
+  ) ),
+  mightGet = cms.optional.untracked.vstring
 )

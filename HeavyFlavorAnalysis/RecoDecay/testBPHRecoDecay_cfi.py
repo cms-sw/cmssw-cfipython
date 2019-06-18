@@ -7,5 +7,6 @@ testBPHRecoDecay = cms.EDAnalyzer('TestBPHRecoDecay',
   pcCandsLabel = cms.string(''),
   gpCandsLabel = cms.string(''),
   outDump = cms.string('dump.txt'),
-  outHist = cms.string('hist.root')
+  outHist = cms.string('hist.root'),
+  mightGet = cms.optional.untracked.vstring
 )

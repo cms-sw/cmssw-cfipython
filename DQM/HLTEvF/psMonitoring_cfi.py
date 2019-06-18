@@ -10,5 +10,6 @@ psMonitoring = cms.EDAnalyzer('PSMonitor',
     lsPSet = cms.PSet(
       nbins = cms.int32(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

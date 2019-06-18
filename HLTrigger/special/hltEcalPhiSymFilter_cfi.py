@@ -266,5 +266,6 @@ hltEcalPhiSymFilter = cms.EDFilter('HLTEcalPhiSymFilter',
     12
   ),
   phiSymBarrelDigiCollection = cms.string('phiSymEcalDigisEB'),
-  phiSymEndcapDigiCollection = cms.string('phiSymEcalDigisEE')
+  phiSymEndcapDigiCollection = cms.string('phiSymEcalDigisEE'),
+  mightGet = cms.optional.untracked.vstring
 )

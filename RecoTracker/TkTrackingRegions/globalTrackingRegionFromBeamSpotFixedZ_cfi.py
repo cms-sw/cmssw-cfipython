@@ -9,5 +9,6 @@ globalTrackingRegionFromBeamSpotFixedZ = cms.EDProducer('GlobalTrackingRegionFro
     originRadius = cms.double(0.2),
     ptMin = cms.double(0.9),
     beamSpot = cms.InputTag('offlineBeamSpot')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

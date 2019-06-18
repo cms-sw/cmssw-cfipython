@@ -5,5 +5,6 @@ thingAnalyzer = cms.EDAnalyzer('edmtest::ThingAnalyzer',
   beginLumi = cms.untracked.InputTag('thing', 'beginLumi'),
   event = cms.untracked.InputTag('thing'),
   endLumi = cms.untracked.InputTag('thing', 'endLumi'),
-  endRun = cms.untracked.InputTag('thing', 'endRun')
+  endRun = cms.untracked.InputTag('thing', 'endRun'),
+  mightGet = cms.optional.untracked.vstring
 )

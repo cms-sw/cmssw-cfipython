@@ -6,5 +6,6 @@ rawDataMapperByLabel = cms.EDProducer('RawDataMapperByLabel',
     'rawDataRepacker',
     'rawDataReducedFormat'
   ),
-  mainCollection = cms.InputTag('rawDataCollector')
+  mainCollection = cms.InputTag('rawDataCollector'),
+  mightGet = cms.optional.untracked.vstring
 )

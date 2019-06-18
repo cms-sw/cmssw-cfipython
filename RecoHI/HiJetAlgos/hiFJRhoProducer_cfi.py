@@ -8,5 +8,6 @@ hiFJRhoProducer = cms.EDProducer('HiFJRhoProducer',
   nExcl2 = cms.int32(2),
   etaMaxExcl2 = cms.double(2),
   ptMinExcl2 = cms.double(20),
-  etaRanges = cms.vdouble()
+  etaRanges = cms.vdouble(),
+  mightGet = cms.optional.untracked.vstring
 )

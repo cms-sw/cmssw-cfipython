@@ -23,5 +23,6 @@ recAnalyzerMinbias = cms.EDAnalyzer('RecAnalyzerMinbias',
   hbheInputMB = cms.InputTag('hbherecoMB'),
   hfInputMB = cms.InputTag('hfrecoMB'),
   gtDigisAlCaMB = cms.InputTag('gtDigisAlCaMB'),
-  hcalDigiCollectionTag = cms.InputTag('hcalDigis')
+  hcalDigiCollectionTag = cms.InputTag('hcalDigis'),
+  mightGet = cms.optional.untracked.vstring
 )

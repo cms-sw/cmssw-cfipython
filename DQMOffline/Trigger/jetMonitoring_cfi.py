@@ -12,6 +12,7 @@ jetMonitoring = cms.EDProducer('JetMonitor',
   ispfjettrg = cms.bool(True),
   iscalojettrg = cms.bool(False),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -24,6 +25,7 @@ jetMonitoring = cms.EDProducer('JetMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -36,8 +38,16 @@ jetMonitoring = cms.EDProducer('JetMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    jetPSet = cms.PSet(),
-    jetPtThrPSet = cms.PSet(),
+    jetPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    jetPtThrPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     jetptBinning = cms.vdouble(
       0,
       20,
@@ -71,5 +81,6 @@ jetMonitoring = cms.EDProducer('JetMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -12,5 +12,6 @@ L2TauPixelIsoTagProducer = cms.EDProducer('L2TauPixelIsoTagProducer',
   TrackMaxNChi2 = cms.double(100),
   TrackPVMaxDZ = cms.double(0.1),
   TrackMaxDxy = cms.double(0.2),
-  TrackSrc = cms.InputTag('')
+  TrackSrc = cms.InputTag(''),
+  mightGet = cms.optional.untracked.vstring
 )

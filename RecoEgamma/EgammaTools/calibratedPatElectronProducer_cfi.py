@@ -64,5 +64,6 @@ calibratedPatElectronProducer = cms.EDProducer('CalibratedPatElectronProducer',
     'ecalTrkEnergyErrPreCorr',
     'ecalTrkEnergyPostCorr',
     'ecalTrkEnergyErrPostCorr'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

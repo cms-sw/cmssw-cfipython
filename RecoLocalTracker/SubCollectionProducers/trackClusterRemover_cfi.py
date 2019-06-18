@@ -9,5 +9,6 @@ trackClusterRemover = cms.EDProducer('TrackClusterRemover',
   TrackQuality = cms.string('highPurity'),
   maxChi2 = cms.double(30),
   minNumberOfLayersWithMeasBeforeFiltering = cms.int32(0),
-  overrideTrkQuals = cms.InputTag('')
+  overrideTrkQuals = cms.InputTag(''),
+  mightGet = cms.optional.untracked.vstring
 )

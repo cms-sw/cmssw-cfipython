@@ -5,5 +5,6 @@ defaultLowPtGsfElectronCores = cms.EDProducer('LowPtGsfElectronCoreProducer',
   gsfTracks = cms.InputTag('electronGsfTracks'),
   ctfTracks = cms.InputTag('generalTracks'),
   useGsfPfRecTracks = cms.bool(True),
-  superClusters = cms.InputTag('lowPtGsfElectronSuperClusters')
+  superClusters = cms.InputTag('lowPtGsfElectronSuperClusters'),
+  mightGet = cms.optional.untracked.vstring
 )

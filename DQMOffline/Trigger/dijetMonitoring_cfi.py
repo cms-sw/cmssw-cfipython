@@ -10,6 +10,7 @@ dijetMonitoring = cms.EDProducer('DiJetMonitor',
   nelectrons = cms.int32(0),
   ptcut = cms.double(20),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -22,6 +23,7 @@ dijetMonitoring = cms.EDProducer('DiJetMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -34,8 +36,16 @@ dijetMonitoring = cms.EDProducer('DiJetMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    dijetPSet = cms.PSet(),
-    dijetPtThrPSet = cms.PSet(),
+    dijetPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
+    dijetPtThrPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     jetptBinning = cms.vdouble(
       0,
       20,
@@ -69,5 +79,6 @@ dijetMonitoring = cms.EDProducer('DiJetMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

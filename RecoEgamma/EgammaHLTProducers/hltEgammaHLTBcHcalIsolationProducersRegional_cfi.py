@@ -20,5 +20,6 @@ hltEgammaHLTBcHcalIsolationProducersRegional = cms.EDProducer('EgammaHLTBcHcalIs
   absEtaLowEdges = cms.vdouble(
     0,
     1.479
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

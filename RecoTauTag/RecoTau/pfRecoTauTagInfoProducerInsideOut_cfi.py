@@ -22,5 +22,6 @@ pfRecoTauTagInfoProducerInsideOut = cms.EDProducer('PFRecoTauTagInfoProducer',
   smearedPVsigmaX = cms.double(0.0015),
   smearedPVsigmaZ = cms.double(0.005),
   ChargedHadrCand_tkPVmaxDZ = cms.double(0.2),
-  tkmaxipt = cms.double(0.03)
+  tkmaxipt = cms.double(0.03),
+  mightGet = cms.optional.untracked.vstring
 )

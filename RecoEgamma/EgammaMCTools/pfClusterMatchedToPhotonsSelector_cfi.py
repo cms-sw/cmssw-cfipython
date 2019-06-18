@@ -8,5 +8,6 @@ pfClusterMatchedToPhotonsSelector = cms.EDProducer('PFClusterMatchedToPhotonsSel
   maxDEDR2 = cms.double(0.25),
   volumeZ_EB = cms.double(304.5),
   volumeRadius_EB = cms.double(123.8),
-  volumeZ_EE = cms.double(317)
+  volumeZ_EE = cms.double(317),
+  mightGet = cms.optional.untracked.vstring
 )

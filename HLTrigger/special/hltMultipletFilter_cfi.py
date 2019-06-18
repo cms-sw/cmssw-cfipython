@@ -14,5 +14,6 @@ hltMultipletFilter = cms.EDFilter('HLTMultipletFilter',
   MaxEta = cms.double(3),
   MinPhi = cms.double(5.4105),
   MaxPhi = cms.double(5.5796),
-  MinPt = cms.double(20)
+  MinPt = cms.double(20),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -14,5 +14,6 @@ hltJetHbbFilterRecoCaloJet = cms.EDFilter('HLTCaloJetHbbFilter',
   minTag1 = cms.double(0.5),
   minTag2 = cms.double(0.2),
   maxTag = cms.double(99999),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

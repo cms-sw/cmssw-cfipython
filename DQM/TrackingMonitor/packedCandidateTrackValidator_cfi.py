@@ -5,5 +5,6 @@ packedCandidateTrackValidator = cms.EDProducer('PackedCandidateTrackValidator',
   vertices = cms.untracked.InputTag('offlinePrimaryVertices'),
   trackToPackedCandidateAssociation = cms.untracked.InputTag('packedPFCandidates'),
   rootFolder = cms.untracked.string('Tracking/PackedCandidate'),
-  debug = cms.untracked.bool(False)
+  debug = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ hltFatJetMassFilterRecoCaloJet = cms.EDFilter('HLTFatCaloJetMassFilter',
   maxDeltaEta = cms.double(10),
   maxJetEta = cms.double(3),
   minJetPt = cms.double(30),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

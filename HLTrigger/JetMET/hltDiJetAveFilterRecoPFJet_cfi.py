@@ -6,5 +6,6 @@ hltDiJetAveFilterRecoPFJet = cms.EDFilter('HLTDiPFJetAveFilter',
   minPtAve = cms.double(100),
   minPtJet3 = cms.double(99999),
   minDphi = cms.double(-1),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

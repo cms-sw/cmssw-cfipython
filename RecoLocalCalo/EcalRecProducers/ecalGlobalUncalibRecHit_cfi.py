@@ -94,5 +94,6 @@ ecalGlobalUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
     EEtimeConstantTerm = cms.double(1),
     chi2ThreshEE_ = cms.double(95),
     EBtimeFitLimits_Upper = cms.double(1.4)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

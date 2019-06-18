@@ -86,5 +86,6 @@ ecalDrivenElectronSeeds = cms.EDProducer('ElectronSeedProducer',
       forceKinematicWithRegionDirection = cms.bool(False)
     )
   ),
-  barrelSuperClusters = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowSuperClusterECALBarrel')
+  barrelSuperClusters = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowSuperClusterECALBarrel'),
+  mightGet = cms.optional.untracked.vstring
 )

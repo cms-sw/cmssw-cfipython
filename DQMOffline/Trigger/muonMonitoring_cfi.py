@@ -12,6 +12,7 @@ muonMonitoring = cms.EDProducer('MuonMonitor',
   nmuons = cms.uint32(0),
   nelectrons = cms.uint32(0),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -29,6 +30,7 @@ muonMonitoring = cms.EDProducer('MuonMonitor',
     l1Algorithms = cms.vstring()
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -46,7 +48,11 @@ muonMonitoring = cms.EDProducer('MuonMonitor',
     l1Algorithms = cms.vstring()
   ),
   histoPSet = cms.PSet(
-    muonPSet = cms.PSet(),
+    muonPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     muonBinning = cms.vdouble(
       0,
       20,
@@ -145,5 +151,6 @@ muonMonitoring = cms.EDProducer('MuonMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

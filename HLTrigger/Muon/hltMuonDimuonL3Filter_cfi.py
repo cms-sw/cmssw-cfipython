@@ -32,5 +32,6 @@ hltMuonDimuonL3Filter = cms.EDFilter('HLTMuonDimuonL3Filter',
   CutCowboys = cms.bool(False),
   InputLinks = cms.InputTag(''),
   L1MatchingdR = cms.double(0.3),
-  MatchToPreviousCand = cms.bool(True)
+  MatchToPreviousCand = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

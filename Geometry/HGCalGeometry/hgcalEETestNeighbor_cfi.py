@@ -19,5 +19,6 @@ hgcalEETestNeighbor = cms.EDAnalyzer('HGCalTestNeighbor',
     5,
     20,
     50
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

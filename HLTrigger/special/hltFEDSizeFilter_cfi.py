@@ -6,5 +6,6 @@ hltFEDSizeFilter = cms.EDFilter('HLTFEDSizeFilter',
   threshold = cms.uint32(0),
   firstFED = cms.uint32(0),
   lastFED = cms.uint32(39),
-  requireAllFEDs = cms.bool(False)
+  requireAllFEDs = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

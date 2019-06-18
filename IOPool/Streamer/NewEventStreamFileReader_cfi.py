@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 source = cms.Source('NewEventStreamFileReader',
+  fileNames = cms.required.untracked.vstring,
   skipEvents = cms.untracked.uint32(0),
   overrideCatalog = cms.untracked.string(''),
   inputFileTransitionsEachEvent = cms.untracked.bool(False),

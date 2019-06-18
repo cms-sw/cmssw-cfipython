@@ -4,10 +4,17 @@ pfRecoTauDiscriminationAgainstElectronDeadECAL = cms.EDProducer('PFRecoTauDiscri
   verbosity = cms.int32(0),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet(),
-    decayMode = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    ),
+    decayMode = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   dR = cms.double(0.08),
   PFTauProducer = cms.InputTag('pfTauProducer'),
-  minStatus = cms.uint32(12)
+  minStatus = cms.uint32(12),
+  mightGet = cms.optional.untracked.vstring
 )

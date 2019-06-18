@@ -46,5 +46,6 @@ particleFlowSuperClusterECALMustache = cms.EDProducer('PFECALSuperClusterProduce
   barrelRecHits = cms.InputTag('ecalRecHit', 'EcalRecHitsEE'),
   endcapRecHits = cms.InputTag('ecalRecHit', 'EcalRecHitsEB'),
   PFSuperClusterCollectionEndcapWithPreshower = cms.string('particleFlowSuperClusterECALEndcapWithPreshower'),
-  dropUnseedable = cms.bool(False)
+  dropUnseedable = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

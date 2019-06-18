@@ -5,5 +5,6 @@ gemChamberMasker = cms.EDProducer('GEMChamberMasker',
   ge11Minus = cms.bool(True),
   ge11Plus = cms.bool(True),
   ge21Minus = cms.bool(True),
-  ge21Plus = cms.bool(True)
+  ge21Plus = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ hltTrigReport = cms.EDAnalyzer('HLTrigReport',
   CustomDatasets = cms.untracked.PSet(),
   CustomStreams = cms.untracked.PSet(),
   ReferencePath = cms.untracked.string('HLTriggerFinalPath'),
-  ReferenceRate = cms.untracked.double(100)
+  ReferenceRate = cms.untracked.double(100),
+  mightGet = cms.optional.untracked.vstring
 )

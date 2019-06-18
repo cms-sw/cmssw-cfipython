@@ -18,5 +18,6 @@ lowPtGsfElectronSeeds = cms.EDProducer('LowPtGsfElectronSeedProducer',
   PassThrough = cms.bool(False),
   UsePfTracks = cms.bool(True),
   MinPtThreshold = cms.double(1),
-  MaxPtThreshold = cms.double(15)
+  MaxPtThreshold = cms.double(15),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -17,5 +17,6 @@ hltDisplacedEgammaFilter = cms.EDFilter('HLTDisplacedEgammaFilter',
   seedTimeMax = cms.double(25),
   maxTrackCut = cms.int32(0),
   trackPtCut = cms.double(3),
-  trackdRCut = cms.double(0.5)
+  trackdRCut = cms.double(0.5),
+  mightGet = cms.optional.untracked.vstring
 )

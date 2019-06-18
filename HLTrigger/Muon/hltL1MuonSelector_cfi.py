@@ -4,5 +4,6 @@ hltL1MuonSelector = cms.EDProducer('HLTL1MuonSelector',
   InputObjects = cms.InputTag(''),
   L1MinPt = cms.double(-1),
   L1MaxEta = cms.double(5),
-  L1MinQuality = cms.uint32(0)
+  L1MinQuality = cms.uint32(0),
+  mightGet = cms.optional.untracked.vstring
 )

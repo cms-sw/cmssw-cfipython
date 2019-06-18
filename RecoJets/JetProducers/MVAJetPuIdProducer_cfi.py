@@ -12,5 +12,6 @@ MVAJetPuIdProducer = cms.EDProducer('MVAJetPuIdProducer',
   rho = cms.InputTag('hltFixedGridRhoFastjetAll'),
   jets = cms.InputTag('hltAK4PFJetsCorrected'),
   algos = cms.VPSet(
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

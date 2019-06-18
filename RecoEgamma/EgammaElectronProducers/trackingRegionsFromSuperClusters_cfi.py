@@ -18,5 +18,6 @@ trackingRegionsFromSuperClusters = cms.EDProducer('TrackingRegionsFromSuperClust
     vertices = cms.InputTag(''),
     superClusters = cms.VInputTag('hltEgammaSuperClustersToPixelMatch'),
     measurementTrackerEvent = cms.InputTag('')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -183,5 +183,6 @@ ecalRawToDigi = cms.EDProducer('EcalRawToDigi',
   feUnpacking = cms.bool(True),
   forceToKeepFRData = cms.bool(False),
   headerUnpacking = cms.bool(True),
-  memUnpacking = cms.bool(True)
+  memUnpacking = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

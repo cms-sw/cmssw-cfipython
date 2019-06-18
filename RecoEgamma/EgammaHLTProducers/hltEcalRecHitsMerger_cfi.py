@@ -17,5 +17,6 @@ hltEcalRecHitsMerger = cms.EDProducer('EcalRecHitsMerger',
   OutputLabel_EB = cms.string('EcalRecHitsEB'),
   OutputLabel_EE = cms.string('EcalRecHitsEE'),
   EcalRecHitCollectionEB = cms.string('EcalRecHitsEB'),
-  EcalRecHitCollectionEE = cms.string('EcalRecHitsEE')
+  EcalRecHitCollectionEE = cms.string('EcalRecHitsEE'),
+  mightGet = cms.optional.untracked.vstring
 )

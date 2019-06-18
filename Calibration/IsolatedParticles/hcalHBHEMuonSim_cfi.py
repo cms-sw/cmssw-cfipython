@@ -11,5 +11,6 @@ hcalHBHEMuonSim = cms.EDAnalyzer('HcalHBHEMuonSimAnalyzer',
   TimeMinCutECAL = cms.untracked.double(-500),
   TimeMaxCutECAL = cms.untracked.double(500),
   TimeMinCutHCAL = cms.untracked.double(-500),
-  TimeMaxCutHCAL = cms.untracked.double(500)
+  TimeMaxCutHCAL = cms.untracked.double(500),
+  mightGet = cms.optional.untracked.vstring
 )

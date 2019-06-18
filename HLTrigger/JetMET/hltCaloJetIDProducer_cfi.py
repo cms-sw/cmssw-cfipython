@@ -13,5 +13,6 @@ hltCaloJetIDProducer = cms.EDProducer('HLTCaloJetIDProducer',
     hfRecHitsColl = cms.InputTag('hltHfreco'),
     ebRecHitsColl = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEB'),
     eeRecHitsColl = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEE')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

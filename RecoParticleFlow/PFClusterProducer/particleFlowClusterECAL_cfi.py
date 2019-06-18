@@ -18,5 +18,6 @@ particleFlowClusterECAL = cms.EDProducer('CorrectedECALPFClusterProducer',
     ebSrFlagLabel = cms.InputTag('ecalDigis'),
     eeSrFlagLabel = cms.InputTag('ecalDigis')
   ),
-  inputECAL = cms.InputTag('particleFlowClusterECALUncorrected')
+  inputECAL = cms.InputTag('particleFlowClusterECALUncorrected'),
+  mightGet = cms.optional.untracked.vstring
 )

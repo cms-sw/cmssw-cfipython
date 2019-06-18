@@ -18,5 +18,6 @@ hpsSelectionDiscriminator = cms.EDProducer('PFRecoTauDiscriminationByHPSSelectio
   ),
   matchingCone = cms.double(0.5),
   minPixelHits = cms.int32(1),
-  requireTauChargedHadronsToBeChargedPFCands = cms.bool(False)
+  requireTauChargedHadronsToBeChargedPFCands = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

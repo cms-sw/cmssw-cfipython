@@ -8,5 +8,6 @@ hltMuonL1TFilter = cms.EDFilter('HLTMuonL1TFilter',
   MinPt = cms.double(0),
   MinN = cms.int32(1),
   CentralBxOnly = cms.bool(True),
-  SelectQualities = cms.vint32()
+  SelectQualities = cms.vint32(),
+  mightGet = cms.optional.untracked.vstring
 )

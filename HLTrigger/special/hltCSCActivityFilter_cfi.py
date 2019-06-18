@@ -5,5 +5,6 @@ hltCSCActivityFilter = cms.EDFilter('HLTCSCActivityFilter',
   cscStripDigiTag = cms.InputTag('hltMuonCSCDigis', 'MuonCSCStripDigi'),
   skipStationRing = cms.bool(True),
   skipRingNumber = cms.int32(1),
-  skipStationNumber = cms.int32(4)
+  skipStationNumber = cms.int32(4),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -13,5 +13,6 @@ hgcalGeometryCheck = cms.EDAnalyzer('HGCalGeometryCheck',
   nBinR = cms.untracked.int32(300),
   nBinZ = cms.untracked.int32(600),
   ifNose = cms.untracked.bool(False),
-  verbosity = cms.untracked.bool(False)
+  verbosity = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -21,5 +21,6 @@ coneIsolationTauJetTags = cms.EDProducer('ConeIsolation',
   UseFixedSizeCone = cms.bool(True),
   VariableConeParameter = cms.double(3.5),
   VariableMaxCone = cms.double(0.17),
-  VariableMinCone = cms.double(0.05)
+  VariableMinCone = cms.double(0.05),
+  mightGet = cms.optional.untracked.vstring
 )

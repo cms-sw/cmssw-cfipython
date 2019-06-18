@@ -6,5 +6,6 @@ pfRecoTauDiscriminationByLeadingObjectPtCut = cms.EDProducer('PFRecoTauDiscrimin
     BooleanOperator = cms.string('and')
   ),
   UseOnlyChargedHadrons = cms.bool(False),
-  PFTauProducer = cms.InputTag('pfRecoTauProducer')
+  PFTauProducer = cms.InputTag('pfRecoTauProducer'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -18,5 +18,6 @@ hltEgammaHLTPFNeutralIsolationProducer = cms.EDProducer('EgammaHLTPFNeutralIsola
   etaStripEndcap = cms.double(0),
   energyBarrel = cms.double(0),
   energyEndcap = cms.double(0),
-  pfCandidateType = cms.int32(5)
+  pfCandidateType = cms.int32(5),
+  mightGet = cms.optional.untracked.vstring
 )

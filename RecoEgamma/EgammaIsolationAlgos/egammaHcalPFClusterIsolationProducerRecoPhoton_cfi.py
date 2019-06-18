@@ -13,5 +13,6 @@ egammaHcalPFClusterIsolationProducerRecoPhoton = cms.EDProducer('PhotonHcalPFClu
   etaStripEndcap = cms.double(0),
   energyBarrel = cms.double(0),
   energyEndcap = cms.double(0),
-  useEt = cms.bool(True)
+  useEt = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

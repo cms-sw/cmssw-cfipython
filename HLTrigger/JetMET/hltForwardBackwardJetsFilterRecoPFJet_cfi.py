@@ -9,5 +9,6 @@ hltForwardBackwardJetsFilterRecoPFJet = cms.EDFilter('HLTForwardBackwardPFJetsFi
   nNeg = cms.uint32(1),
   nPos = cms.uint32(1),
   nTot = cms.uint32(0),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

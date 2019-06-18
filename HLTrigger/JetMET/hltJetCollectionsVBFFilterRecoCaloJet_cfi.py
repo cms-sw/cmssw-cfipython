@@ -11,5 +11,6 @@ hltJetCollectionsVBFFilterRecoCaloJet = cms.EDFilter('HLTCaloJetCollectionsVBFFi
   MaxAbsJetEta = cms.double(9999),
   MaxAbsThirdJetEta = cms.double(2.6),
   MinNJets = cms.uint32(2),
-  TriggerType = cms.int32(85)
+  TriggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

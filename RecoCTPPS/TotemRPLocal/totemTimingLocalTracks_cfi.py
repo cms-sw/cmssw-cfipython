@@ -12,5 +12,6 @@ totemTimingLocalTracks = cms.EDProducer('TotemTimingLocalTrackFitter',
     pixelEfficiencyFunction = cms.string('(x>[0]-0.5*[1]-0.05)*(x<[0]+0.5*[1]-0.05)+0*[2]'),
     yPosition = cms.double(0),
     yWidth = cms.double(0)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

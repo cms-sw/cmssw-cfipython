@@ -26,5 +26,6 @@ hltEgammaGenericQuadraticFilter = cms.EDFilter('HLTEgammaGenericQuadraticFilter'
     0,
     1.479
   ),
-  l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate')
+  l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -15,5 +15,6 @@ hltmmkkFilter = cms.EDFilter('HLTmmkkFilter',
   MinCosinePointingAngle = cms.double(0.9),
   MinD0Significance = cms.double(0),
   FastAccept = cms.bool(False),
-  BeamSpotTag = cms.InputTag('hltOfflineBeamSpot')
+  BeamSpotTag = cms.InputTag('hltOfflineBeamSpot'),
+  mightGet = cms.optional.untracked.vstring
 )

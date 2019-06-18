@@ -9,5 +9,6 @@ hfsimplereco = cms.EDProducer('HcalSimpleReconstructor',
   correctForTimeslew = cms.bool(False),
   dropZSmarkedPassed = cms.bool(True),
   correctForPhaseContainment = cms.bool(False),
-  firstSample = cms.int32(4)
+  firstSample = cms.int32(4),
+  mightGet = cms.optional.untracked.vstring
 )

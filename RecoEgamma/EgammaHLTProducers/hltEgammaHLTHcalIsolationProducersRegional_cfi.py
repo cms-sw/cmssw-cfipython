@@ -16,5 +16,6 @@ hltEgammaHLTHcalIsolationProducersRegional = cms.EDProducer('EgammaHLTHcalIsolat
   depth = cms.int32(-1),
   doEtSum = cms.bool(False),
   effectiveAreaBarrel = cms.double(0.105),
-  effectiveAreaEndcap = cms.double(0.17)
+  effectiveAreaEndcap = cms.double(0.17),
+  mightGet = cms.optional.untracked.vstring
 )

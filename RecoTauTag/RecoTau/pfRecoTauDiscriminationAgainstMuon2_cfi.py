@@ -38,7 +38,10 @@ pfRecoTauDiscriminationAgainstMuon2 = cms.EDProducer('PFRecoTauDiscriminationAga
   dRmuonMatchLimitedToJetArea = cms.bool(False),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('and'),
-    leadTrack = cms.PSet()
+    leadTrack = cms.PSet(
+      cut = cms.required.double,
+      Producer = cms.required.InputTag
+    )
   ),
   maskHitsDT = cms.vint32(
     0,
@@ -51,5 +54,6 @@ pfRecoTauDiscriminationAgainstMuon2 = cms.EDProducer('PFRecoTauDiscriminationAga
   discriminatorOption = cms.string('loose'),
   dRmuonMatch = cms.double(0.3),
   srcMuons = cms.InputTag('muons'),
-  doCaloMuonVeto = cms.bool(False)
+  doCaloMuonVeto = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

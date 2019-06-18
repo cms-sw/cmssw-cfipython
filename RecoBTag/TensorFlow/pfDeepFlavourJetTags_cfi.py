@@ -25,5 +25,6 @@ pfDeepFlavourJetTags = cms.EDProducer('DeepFlavourTFJetTagsProducer',
   ),
   batch_eval = cms.bool(False),
   nThreads = cms.uint32(1),
-  singleThreadPool = cms.string('no_threads')
+  singleThreadPool = cms.string('no_threads'),
+  mightGet = cms.optional.untracked.vstring
 )

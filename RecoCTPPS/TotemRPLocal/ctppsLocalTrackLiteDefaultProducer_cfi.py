@@ -12,5 +12,6 @@ ctppsLocalTrackLiteDefaultProducer = cms.EDProducer('CTPPSLocalTrackLiteProducer
   pixelTrackTxMin = cms.double(-10),
   pixelTrackTxMax = cms.double(10),
   pixelTrackTyMin = cms.double(-10),
-  pixelTrackTyMax = cms.double(10)
+  pixelTrackTyMax = cms.double(10),
+  mightGet = cms.optional.untracked.vstring
 )

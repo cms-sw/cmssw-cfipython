@@ -15,6 +15,7 @@ metMonitoring = cms.EDProducer('METMonitor',
   nelectrons = cms.uint32(0),
   nmuons = cms.uint32(0),
   numGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -28,6 +29,7 @@ metMonitoring = cms.EDProducer('METMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   denGenericTriggerEventPSet = cms.PSet(
+    andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
     dcsPartitions = cms.vint32(),
     andOrDcs = cms.bool(False),
@@ -41,7 +43,11 @@ metMonitoring = cms.EDProducer('METMonitor',
     verbosityLevel = cms.uint32(1)
   ),
   histoPSet = cms.PSet(
-    metPSet = cms.PSet(),
+    metPSet = cms.PSet(
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
+    ),
     metBinning = cms.vdouble(
       0,
       20,
@@ -75,5 +81,6 @@ metMonitoring = cms.EDProducer('METMonitor',
       xmin = cms.double(0),
       xmax = cms.double(2500)
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

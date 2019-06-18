@@ -36,5 +36,6 @@ hltMuonL1RegionalFilter = cms.EDFilter('HLTMuonL1RegionalFilter',
         7
       )
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

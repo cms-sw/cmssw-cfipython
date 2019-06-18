@@ -13,5 +13,6 @@ gsfTrackProducer = cms.EDProducer('GsfTrackProducer',
   MeasurementTracker = cms.string(''),
   MeasurementTrackerEvent = cms.InputTag('MeasurementTrackerEvent'),
   GeometricInnerState = cms.bool(False),
-  AlgorithmName = cms.string('gsf')
+  AlgorithmName = cms.string('gsf'),
+  mightGet = cms.optional.untracked.vstring
 )

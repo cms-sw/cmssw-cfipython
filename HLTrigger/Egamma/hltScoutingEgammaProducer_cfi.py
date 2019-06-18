@@ -14,5 +14,6 @@ hltScoutingEgammaProducer = cms.EDProducer('HLTScoutingEgammaProducer',
   HcalPFClusterIsoMap = cms.InputTag('hltEgammaHcalPFClusterIso'),
   egammaPtCut = cms.double(4),
   egammaEtaCut = cms.double(2.5),
-  egammaHoverECut = cms.double(1)
+  egammaHoverECut = cms.double(1),
+  mightGet = cms.optional.untracked.vstring
 )

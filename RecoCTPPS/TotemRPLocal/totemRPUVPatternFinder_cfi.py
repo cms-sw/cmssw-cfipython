@@ -12,5 +12,6 @@ totemRPUVPatternFinder = cms.EDProducer('TotemRPUVPatternFinder',
   allowAmbiguousCombination = cms.bool(False),
   max_a_toFit = cms.double(10),
   exceptionalSettings = cms.VPSet(
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

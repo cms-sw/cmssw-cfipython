@@ -6,5 +6,6 @@ hltEgammaHLTHcalIsolationDoubleConeProducers = cms.EDProducer('EgammaHLTHcalIsol
   hfRecHitProducer = cms.InputTag('hltHfreco'),
   egHcalIsoPtMin = cms.double(0),
   egHcalIsoConeSize = cms.double(0.3),
-  egHcalExclusion = cms.double(0.15)
+  egHcalExclusion = cms.double(0.15),
+  mightGet = cms.optional.untracked.vstring
 )

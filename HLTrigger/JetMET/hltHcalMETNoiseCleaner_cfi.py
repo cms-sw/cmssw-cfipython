@@ -55,5 +55,6 @@ hltHcalMETNoiseCleaner = cms.EDFilter('HLTHcalMETNoiseCleaner',
     -0.08,
     0,
     0.1
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

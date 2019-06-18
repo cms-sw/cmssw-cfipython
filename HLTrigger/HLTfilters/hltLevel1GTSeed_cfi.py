@@ -10,5 +10,6 @@ hltLevel1GTSeed = cms.EDFilter('HLTLevel1GTSeed',
   L1GtReadoutRecordTag = cms.InputTag('gtDigis'),
   L1GtObjectMapTag = cms.InputTag('l1GtObjectMap'),
   L1CollectionsTag = cms.InputTag('l1extraParticles'),
-  L1MuonCollectionTag = cms.InputTag('l1extraParticles')
+  L1MuonCollectionTag = cms.InputTag('l1extraParticles'),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ HLTMuonL2SelectorForL3IO = cms.EDProducer('HLTMuonL2SelectorForL3IO',
   MinNhits = cms.int32(1),
   MaxNormalizedChi2 = cms.double(20),
   MinNmuonHits = cms.int32(0),
-  MaxPtDifference = cms.double(999)
+  MaxPtDifference = cms.double(999),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -15,5 +15,8 @@ FastTrackDeDxProducer = cms.EDProducer('FastTrackDeDxProducer',
   fraction = cms.double(0.4),
   exponent = cms.double(-2),
   convertFromGeV2MeV = cms.bool(True),
-  nothick = cms.bool(False)
+  nothick = cms.bool(False),
+  simHits = cms.required.InputTag,
+  simHit2RecHitMap = cms.required.InputTag,
+  mightGet = cms.optional.untracked.vstring
 )

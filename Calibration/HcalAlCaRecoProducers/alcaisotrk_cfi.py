@@ -35,5 +35,6 @@ alcaisotrk = cms.EDProducer('AlCaIsoTracksProducer',
   isolationEnergy = cms.double(10),
   momentumRangeLow = cms.double(20),
   momentumRangeHigh = cms.double(40),
-  preScaleFactor = cms.int32(10)
+  preScaleFactor = cms.int32(10),
+  mightGet = cms.optional.untracked.vstring
 )

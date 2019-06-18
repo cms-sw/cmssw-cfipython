@@ -23,5 +23,6 @@ primaryVertexResolution = cms.EDProducer('PrimaryVertexResolution',
   minPt = cms.untracked.double(1),
   maxPt = cms.untracked.double(1000),
   minLumi = cms.untracked.double(200),
-  maxLumi = cms.untracked.double(20000)
+  maxLumi = cms.untracked.double(20000),
+  mightGet = cms.optional.untracked.vstring
 )

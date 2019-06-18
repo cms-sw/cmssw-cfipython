@@ -10,5 +10,6 @@ L1TGlobalSummary = cms.EDAnalyzer('L1TGlobalSummary',
   DumpTrigSummary = cms.bool(True),
   ReadPrescalesFromFile = cms.bool(False),
   psFileName = cms.string('prescale_L1TGlobal.csv'),
-  psColumn = cms.int32(0)
+  psColumn = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

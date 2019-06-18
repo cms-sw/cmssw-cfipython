@@ -36,5 +36,6 @@ hgcalWaferStudy = cms.EDAnalyzer('HGCalWaferStudy',
   layerMinDig = cms.untracked.vint32(
     1,
     1
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

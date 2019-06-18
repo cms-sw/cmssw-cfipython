@@ -20,5 +20,6 @@ trackExtenderWithMTDBase = cms.EDProducer('TrackExtenderWithMTD',
     TrackerRecHitBuilder = cms.string('WithTrackAngle'),
     MuonRecHitBuilder = cms.string('MuonRecHitBuilder'),
     MTDRecHitBuilder = cms.string('MTDRecHitBuilder')
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

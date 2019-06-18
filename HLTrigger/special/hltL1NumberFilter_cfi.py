@@ -5,5 +5,6 @@ hltL1NumberFilter = cms.EDFilter('HLTL1NumberFilter',
   period = cms.uint32(4096),
   invert = cms.bool(True),
   fedId = cms.int32(812),
-  useTCDSEventNumber = cms.bool(False)
+  useTCDSEventNumber = cms.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

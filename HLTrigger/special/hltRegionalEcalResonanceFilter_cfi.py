@@ -77,5 +77,6 @@ hltRegionalEcalResonanceFilter = cms.EDFilter('HLTRegionalEcalResonanceFilter',
     preshCalibMIP = cms.double(9e-05),
     debugLevelES = cms.string('')
   ),
-  debugLevel = cms.int32(0)
+  debugLevel = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

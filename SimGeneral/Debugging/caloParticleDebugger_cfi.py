@@ -11,5 +11,6 @@ caloParticleDebugger = cms.EDAnalyzer('CaloParticleDebugger',
     'g4SimHits:HGCHitsEE',
     'g4SimHits:HGCHitsHEfront',
     'g4SimHits:HcalHits'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

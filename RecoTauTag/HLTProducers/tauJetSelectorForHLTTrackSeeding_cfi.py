@@ -12,5 +12,6 @@ tauJetSelectorForHLTTrackSeeding = cms.EDProducer('TauJetSelectorForHLTTrackSeed
   fractionMinCaloInTauCone = cms.double(0.8),
   fractionMaxChargedPUInCaloCone = cms.double(0.2),
   ptTrkMaxInCaloCone = cms.double(1),
-  nTrkMaxInCaloCone = cms.int32(0)
+  nTrkMaxInCaloCone = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

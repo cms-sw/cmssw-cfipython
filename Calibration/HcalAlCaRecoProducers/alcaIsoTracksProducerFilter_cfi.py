@@ -6,5 +6,6 @@ alcaIsoTracksProducerFilter = cms.EDFilter('AlCaIsoTracksProducerFilter',
     'HLT_IsoTrackHB',
     'HLT_IsoTrackHE'
   ),
-  processName = cms.string('HLT')
+  processName = cms.string('HLT'),
+  mightGet = cms.optional.untracked.vstring
 )

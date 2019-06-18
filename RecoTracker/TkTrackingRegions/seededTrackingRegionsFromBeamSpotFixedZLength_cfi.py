@@ -20,5 +20,6 @@ seededTrackingRegionsFromBeamSpotFixedZLength = cms.EDProducer('CandidateSeededT
     whereToUseMeasurementTracker = cms.string('ForSiStrips'),
     measurementTrackerName = cms.InputTag(''),
     searchOpt = cms.bool(False)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

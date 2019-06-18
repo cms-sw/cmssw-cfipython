@@ -5,5 +5,6 @@ hltJetL1MatchProducerRecoCaloJet = cms.EDProducer('HLTCaloJetL1MatchProducer',
   L1TauJets = cms.InputTag('hltL1extraParticles', 'Tau'),
   L1CenJets = cms.InputTag('hltL1extraParticles', 'Central'),
   L1ForJets = cms.InputTag('hltL1extraParticles', 'Forward'),
-  DeltaR = cms.double(0.5)
+  DeltaR = cms.double(0.5),
+  mightGet = cms.optional.untracked.vstring
 )

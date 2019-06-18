@@ -18,5 +18,6 @@ hltDoubletRecoElectronRecoPFMET = cms.EDFilter('HLT2ElectronPFMET',
   MaxDelR = cms.double(-1),
   MinPt = cms.double(1),
   MaxPt = cms.double(-1),
-  MinN = cms.int32(1)
+  MinN = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

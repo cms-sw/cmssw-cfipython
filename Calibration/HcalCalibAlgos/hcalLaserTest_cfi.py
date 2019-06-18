@@ -8,5 +8,6 @@ hcalLaserTest = cms.EDAnalyzer('HcalLaserTest',
   minADCHF = cms.int32(10),
   minFracDiffHBHELaser = cms.double(0.3),
   minFracHFLaser = cms.double(0.3),
-  testMode = cms.untracked.bool(False)
+  testMode = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

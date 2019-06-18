@@ -10,5 +10,6 @@ hltElectronMuonInvMassFilter = cms.EDFilter('HLTElectronMuonInvMassFilter',
   electronRelaxed = cms.untracked.bool(True),
   ElectronL1IsoCand = cms.InputTag('hltPixelMatchElectronsActivity'),
   ElectronL1NonIsoCand = cms.InputTag('hltPixelMatchElectronsActivity'),
-  MuonCand = cms.InputTag('hltL3MuonCandidates')
+  MuonCand = cms.InputTag('hltL3MuonCandidates'),
+  mightGet = cms.optional.untracked.vstring
 )

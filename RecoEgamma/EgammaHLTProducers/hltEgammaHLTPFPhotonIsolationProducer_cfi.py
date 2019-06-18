@@ -18,5 +18,6 @@ hltEgammaHLTPFPhotonIsolationProducer = cms.EDProducer('EgammaHLTPFPhotonIsolati
   etaStripEndcap = cms.double(0),
   energyBarrel = cms.double(0),
   energyEndcap = cms.double(0),
-  pfCandidateType = cms.int32(4)
+  pfCandidateType = cms.int32(4),
+  mightGet = cms.optional.untracked.vstring
 )

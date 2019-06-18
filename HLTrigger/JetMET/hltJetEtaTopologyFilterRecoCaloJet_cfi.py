@@ -7,5 +7,6 @@ hltJetEtaTopologyFilterRecoCaloJet = cms.EDFilter('HLTCaloJetEtaTopologyFilter',
   minJetEta = cms.double(-1),
   maxJetEta = cms.double(1.4),
   applyAbsToJet = cms.bool(False),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

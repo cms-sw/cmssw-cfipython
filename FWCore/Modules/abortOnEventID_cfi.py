@@ -1,5 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 abortOnEventID = cms.EDAnalyzer('AbortOnEventIDAnalyzer',
-  throwExceptionInsteadOfAbort = cms.untracked.bool(False)
+  eventsToAbort = cms.required.untracked.VEventID,
+  throwExceptionInsteadOfAbort = cms.untracked.bool(False),
+  mightGet = cms.optional.untracked.vstring
 )

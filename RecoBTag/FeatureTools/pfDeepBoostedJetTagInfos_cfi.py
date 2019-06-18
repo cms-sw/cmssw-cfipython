@@ -9,5 +9,6 @@ pfDeepBoostedJetTagInfos = cms.EDProducer('DeepBoostedJetTagInfoProducer',
   secondary_vertices = cms.InputTag('inclusiveCandidateSecondaryVertices'),
   jets = cms.InputTag('ak8PFJetsPuppi'),
   puppi_value_map = cms.InputTag('puppi'),
-  vertex_associator = cms.InputTag('primaryVertexAssociation', 'original')
+  vertex_associator = cms.InputTag('primaryVertexAssociation', 'original'),
+  mightGet = cms.optional.untracked.vstring
 )

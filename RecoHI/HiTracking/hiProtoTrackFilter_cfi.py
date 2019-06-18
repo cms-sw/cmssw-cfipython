@@ -6,5 +6,6 @@ hiProtoTrackFilter = cms.EDProducer('HIProtoTrackFilterProducer',
   ptMin = cms.double(1),
   tipMax = cms.double(1),
   chi2 = cms.double(1000),
-  doVariablePtMin = cms.bool(True)
+  doVariablePtMin = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

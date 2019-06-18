@@ -5,5 +5,6 @@ kfBasedPixelFitter = cms.EDProducer('KFBasedPixelFitterProducer',
   beamSpotConstraint = cms.InputTag('offlineBeamSpot'),
   propagator = cms.string('PropagatorWithMaterial'),
   propagatorOpposite = cms.string('PropagatorWithMaterialOpposite'),
-  TTRHBuilder = cms.string('PixelTTRHBuilderWithoutAngle')
+  TTRHBuilder = cms.string('PixelTTRHBuilderWithoutAngle'),
+  mightGet = cms.optional.untracked.vstring
 )

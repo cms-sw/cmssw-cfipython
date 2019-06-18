@@ -8,5 +8,6 @@ defaultLowPtGsfElectronID = cms.EDProducer('LowPtGsfElectronIDProducer',
   ModelThresholds = cms.vdouble(),
   PassThrough = cms.bool(False),
   MinPtThreshold = cms.double(0.5),
-  MaxPtThreshold = cms.double(15)
+  MaxPtThreshold = cms.double(15),
+  mightGet = cms.optional.untracked.vstring
 )

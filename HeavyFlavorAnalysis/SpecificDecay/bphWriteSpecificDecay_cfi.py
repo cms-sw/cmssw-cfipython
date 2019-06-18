@@ -16,5 +16,6 @@ bphWriteSpecificDecay = cms.EDProducer('BPHWriteSpecificDecay',
   writeVertex = cms.bool(True),
   writeMomentum = cms.bool(True),
   recoSelect = cms.VPSet(
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

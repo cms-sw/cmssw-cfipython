@@ -9,5 +9,6 @@ hltMuonL1Filter = cms.EDFilter('HLTMuonL1Filter',
   MinN = cms.int32(1),
   ExcludeSingleSegmentCSC = cms.bool(False),
   CSCTFtag = cms.InputTag('csctfDigis'),
-  SelectQualities = cms.vint32()
+  SelectQualities = cms.vint32(),
+  mightGet = cms.optional.untracked.vstring
 )

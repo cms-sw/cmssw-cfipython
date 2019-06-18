@@ -30,5 +30,6 @@ HiTrackingRegionEDProducer = cms.EDProducer('HIMuonTrackingRegionEDProducer',
     precise = cms.bool(True),
     input = cms.InputTag('')
   ),
-  ServiceParameters = cms.PSet()
+  ServiceParameters = cms.PSet(),
+  mightGet = cms.optional.untracked.vstring
 )

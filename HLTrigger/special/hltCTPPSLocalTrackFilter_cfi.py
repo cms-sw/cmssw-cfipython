@@ -12,5 +12,6 @@ hltCTPPSLocalTrackFilter = cms.EDFilter('HLTCTPPSLocalTrackFilter',
   maxTracks = cms.int32(-1),
   maxTracksPerArm = cms.int32(-1),
   maxTracksPerPot = cms.int32(-1),
-  triggerType = cms.int32(91)
+  triggerType = cms.int32(91),
+  mightGet = cms.optional.untracked.vstring
 )

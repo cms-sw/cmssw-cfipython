@@ -64,5 +64,6 @@ calibratedElectronProducer = cms.EDProducer('CalibratedElectronProducer',
     'ecalTrkEnergyErrPreCorr',
     'ecalTrkEnergyPostCorr',
     'ecalTrkEnergyErrPostCorr'
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

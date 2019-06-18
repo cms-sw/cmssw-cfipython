@@ -6,5 +6,6 @@ hgcGeomCheck = cms.EDAnalyzer('HGCGeometryCheck',
     'HGCalHESiliconSensitive',
     'Hcal'
   ),
-  g4Source = cms.InputTag('g4SimHits', 'HGCalInfoLayer')
+  g4Source = cms.InputTag('g4SimHits', 'HGCalInfoLayer'),
+  mightGet = cms.optional.untracked.vstring
 )

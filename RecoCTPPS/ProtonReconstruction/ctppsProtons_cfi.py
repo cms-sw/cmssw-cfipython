@@ -34,5 +34,6 @@ ctppsProtons = cms.EDProducer('CTPPSProtonProducer',
   ),
   max_n_timing_tracks = cms.uint32(5),
   fitVtxY = cms.bool(True),
-  useImprovedInitialEstimate = cms.bool(True)
+  useImprovedInitialEstimate = cms.bool(True),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -8,5 +8,6 @@ hltTrackerHaloFilter = cms.EDFilter('HLTTrackerHaloFilter',
   SignalAccumulation = cms.int32(5),
   MaxClustersTEC = cms.int32(60),
   MaxAccus = cms.int32(4),
-  FastProcessing = cms.int32(1)
+  FastProcessing = cms.int32(1),
+  mightGet = cms.optional.untracked.vstring
 )

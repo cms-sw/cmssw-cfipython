@@ -3,6 +3,8 @@ import FWCore.ParameterSet.Config as cms
 dqmCorrelationClient = cms.EDProducer('DQMCorrelationClient',
   me1onX = cms.bool(True),
   me = cms.PSet(
+    folder = cms.required.string,
+    name = cms.required.string,
     doXaxis = cms.bool(True),
     nbinsX = cms.int32(2500),
     xminX = cms.double(0),
@@ -21,5 +23,6 @@ dqmCorrelationClient = cms.EDProducer('DQMCorrelationClient',
     folder = cms.string(''),
     name = cms.string(''),
     profileX = cms.bool(True)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

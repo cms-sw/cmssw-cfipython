@@ -12,5 +12,6 @@ tofPIDProducer = cms.EDProducer('TOFPIDProducer',
   vtxMaxSigmaT = cms.double(0.025),
   maxDz = cms.double(0.1),
   maxDtSignificance = cms.double(5),
-  minProbHeavy = cms.double(0.75)
+  minProbHeavy = cms.double(0.75),
+  mightGet = cms.optional.untracked.vstring
 )

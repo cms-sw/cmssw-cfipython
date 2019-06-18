@@ -15,5 +15,6 @@ ecalFixedAlphaBetaFitUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
     MinAmplBarrel = cms.double(8),
     betaEE = cms.double(1.4),
     UseDynamicPedestal = cms.bool(True)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

@@ -10,5 +10,6 @@ hltPMMassFilter = cms.EDFilter('HLTPMMassFilter',
   reqOppCharge = cms.untracked.bool(True),
   isElectron1 = cms.untracked.bool(False),
   isElectron2 = cms.untracked.bool(False),
-  l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate')
+  l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate'),
+  mightGet = cms.optional.untracked.vstring
 )

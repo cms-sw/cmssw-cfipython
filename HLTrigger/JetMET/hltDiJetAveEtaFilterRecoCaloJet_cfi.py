@@ -10,5 +10,6 @@ hltDiJetAveEtaFilterRecoCaloJet = cms.EDFilter('HLTDiCaloJetAveEtaFilter',
   maxTagEta = cms.double(1.4),
   minProbeEta = cms.double(2.7),
   maxProbeEta = cms.double(5.5),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

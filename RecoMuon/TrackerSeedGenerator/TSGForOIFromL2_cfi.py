@@ -37,5 +37,6 @@ TSGForOIFromL2 = cms.EDProducer('TSGForOIFromL2',
   SF6 = cms.double(2),
   tsosDiff1 = cms.double(0.2),
   tsosDiff2 = cms.double(0.02),
-  propagatorName = cms.string('PropagatorWithMaterialParabolicMf')
+  propagatorName = cms.string('PropagatorWithMaterialParabolicMf'),
+  mightGet = cms.optional.untracked.vstring
 )

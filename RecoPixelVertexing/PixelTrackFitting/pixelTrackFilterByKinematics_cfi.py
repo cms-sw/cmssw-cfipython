@@ -5,5 +5,6 @@ pixelTrackFilterByKinematics = cms.EDProducer('PixelTrackFilterByKinematicsProdu
   nSigmaInvPtTolerance = cms.double(0),
   tipMax = cms.double(1),
   nSigmaTipMaxTolerance = cms.double(0),
-  chi2 = cms.double(1000)
+  chi2 = cms.double(1000),
+  mightGet = cms.optional.untracked.vstring
 )

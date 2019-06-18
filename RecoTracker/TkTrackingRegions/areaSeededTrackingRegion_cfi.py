@@ -24,5 +24,6 @@ areaSeededTrackingRegion = cms.EDProducer('AreaSeededTrackingRegionsEDProducer',
     deltaEta_Cand = cms.double(-1),
     deltaPhi_Cand = cms.double(-1),
     searchOpt = cms.bool(False)
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

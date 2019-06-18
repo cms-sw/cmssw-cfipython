@@ -7,5 +7,11 @@ genWeightsTable = cms.EDProducer('GenWeightsTableProducer',
     'source'
   ),
   preferredPDFs = cms.VPSet(
-  )
+  ),
+  namedWeightIDs = cms.required.vstring,
+  namedWeightLabels = cms.required.vstring,
+  lheWeightPrecision = cms.required.int32,
+  maxPdfWeights = cms.required.uint32,
+  debug = cms.optional.untracked.bool,
+  mightGet = cms.optional.untracked.vstring
 )

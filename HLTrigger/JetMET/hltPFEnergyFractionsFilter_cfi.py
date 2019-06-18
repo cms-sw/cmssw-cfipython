@@ -12,5 +12,6 @@ hltPFEnergyFractionsFilter = cms.EDFilter('HLTPFEnergyFractionsFilter',
   max_CHEF = cms.double(99),
   min_NHEF = cms.double(-99),
   max_NHEF = cms.double(99),
-  triggerType = cms.int32(85)
+  triggerType = cms.int32(85),
+  mightGet = cms.optional.untracked.vstring
 )

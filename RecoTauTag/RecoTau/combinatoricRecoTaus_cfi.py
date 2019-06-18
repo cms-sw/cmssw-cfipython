@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 combinatoricRecoTaus = cms.EDProducer('RecoTauProducer',
   piZeroSrc = cms.InputTag('ak4PFJetsRecoTauPiZeros'),
+  modifiers = cms.required.VPSet,
   jetRegionSrc = cms.InputTag('recoTauAK4PFJets08Region'),
   maxJetAbsEta = cms.double(2.5),
   outputSelection = cms.string('leadPFChargedHadrCand().isNonnull()'),
@@ -19,5 +20,6 @@ combinatoricRecoTaus = cms.EDProducer('RecoTauProducer',
     )
   ),
   buildNullTaus = cms.bool(False),
-  verbosity = cms.int32(0)
+  verbosity = cms.int32(0),
+  mightGet = cms.optional.untracked.vstring
 )

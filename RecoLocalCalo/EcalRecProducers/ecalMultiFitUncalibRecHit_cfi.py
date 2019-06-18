@@ -513,5 +513,6 @@ ecalMultiFitUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
         7.027e-07
       )
     )
-  )
+  ),
+  mightGet = cms.optional.untracked.vstring
 )

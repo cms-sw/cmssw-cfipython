@@ -10,5 +10,6 @@ hltMuonPFIsoFilter = cms.EDFilter('HLTMuonPFIsoFilter',
   MinN = cms.int32(1),
   onlyCharged = cms.bool(False),
   applyRhoCorrection = cms.bool(True),
-  EffectiveArea = cms.double(1)
+  EffectiveArea = cms.double(1),
+  mightGet = cms.optional.untracked.vstring
 )
