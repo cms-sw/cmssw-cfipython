@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 SiteLocalConfigService = cms.Service('SiteLocalConfigService',
+  siteLocalConfigFileUrl = cms.untracked.string(''),
   overrideSourceCacheTempDir = cms.optional.untracked.string,
   overrideSourceCacheMinFree = cms.optional.untracked.double,
   overrideSourceCacheHintDir = cms.optional.untracked.string,
