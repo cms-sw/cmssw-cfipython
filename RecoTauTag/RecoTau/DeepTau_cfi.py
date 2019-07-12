@@ -1,11 +1,16 @@
 import FWCore.ParameterSet.Config as cms
 
-DeepTau2017v1 = cms.EDProducer('DeepTauId',
+DeepTau = cms.EDProducer('DeepTauId',
   electrons = cms.InputTag('slimmedElectrons'),
   muons = cms.InputTag('slimmedMuons'),
   taus = cms.InputTag('slimmedTaus'),
-  graph_file = cms.string('RecoTauTag/TrainingFiles/data/DeepTauId/deepTau_2017v1_20L1024N_quantized.pb'),
+  pfcands = cms.InputTag('packedPFCandidates'),
+  vertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
+  rho = cms.InputTag('fixedGridRhoAll'),
+  graph_file = cms.vstring('RecoTauTag/TrainingFiles/data/DeepTauId/deepTau_2017v2p6_e6.pb'),
   mem_mapped = cms.bool(False),
+  version = cms.uint32(2),
+  debug_level = cms.int32(0),
   VSeWP = cms.PSet(
     VVVLoose = cms.string('0'),
     VVLoose = cms.string('0'),
