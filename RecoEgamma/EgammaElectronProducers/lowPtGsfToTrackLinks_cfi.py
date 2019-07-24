@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-lowPtGsfToTrackLinksDefault = cms.EDProducer('LowPtGSFToTrackLinker',
+lowPtGsfToTrackLinks = cms.EDProducer('LowPtGSFToTrackLinker',
   tracks = cms.InputTag('generalTracks'),
   gsfPreID = cms.InputTag('lowPtGsfElectronSeeds'),
   gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks'),

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-defaultLowPtGsfElectronSuperClusters = cms.EDProducer('LowPtGsfElectronSCProducer',
+lowPtGsfElectronSuperClusters = cms.EDProducer('LowPtGsfElectronSCProducer',
   gsfPfRecTracks = cms.InputTag('lowPtGsfElePfGsfTracks'),
   ecalClusters = cms.InputTag('particleFlowClusterECAL'),
   hcalClusters = cms.InputTag('particleFlowClusterHCAL'),

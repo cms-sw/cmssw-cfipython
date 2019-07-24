@@ -1,8 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-defaultLowPtGsfElectronSeedValueMaps = cms.EDProducer('LowPtGsfElectronSeedValueMapsProducer',
+lowPtGsfElectronSeedValueMaps = cms.EDProducer('LowPtGsfElectronSeedValueMapsProducer',
   gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks'),
   preIdsValueMap = cms.InputTag('lowPtGsfElectronSeeds'),
-  ModelNames = cms.vstring(),
+  ModelNames = cms.vstring(
+    'unbiased',
+    'ptbiased'
+  ),
   mightGet = cms.optional.untracked.vstring
 )

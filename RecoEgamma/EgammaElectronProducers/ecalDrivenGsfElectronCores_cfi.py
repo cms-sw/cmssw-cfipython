@@ -1,10 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
-produceEcalDrivenGsfElectronCores = cms.EDProducer('GEDGsfElectronCoreProducer',
+ecalDrivenGsfElectronCores = cms.EDProducer('GsfElectronCoreEcalDrivenProducer',
   gsfPfRecTracks = cms.InputTag('pfTrackElec'),
   gsfTracks = cms.InputTag('electronGsfTracks'),
   ctfTracks = cms.InputTag('generalTracks'),
   useGsfPfRecTracks = cms.bool(True),
-  GEDEMUnbiased = cms.InputTag('GEDPFCandidates'),
   mightGet = cms.optional.untracked.vstring
 )
