@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 simMuonGEMDigisDef = cms.EDProducer('GEMDigiProducer',
   inputCollection = cms.string('g4SimHitsMuonGEMHits'),
   mixLabel = cms.string('mix'),
-  signalPropagationSpeed = cms.double(6.6),
+  signalPropagationSpeed = cms.double(0.66),
   timeResolution = cms.double(5),
   timeJitter = cms.double(1),
   averageShapingTime = cms.double(50),

@@ -10,7 +10,8 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
     deltac = cms.vdouble(
       1.3,
       1.3,
-      5
+      5,
+      0.0315
     ),
     dependSensor = cms.bool(True),
     ecut = cms.double(3),
@@ -35,6 +36,7 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
       doseMap = cms.string(''),
       noise_MIP = cms.double(0.01)
     ),
+    use2x2 = cms.bool(True),
     type = cms.string('CLUE')
   
   ),
