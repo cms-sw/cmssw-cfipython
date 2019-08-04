@@ -16,6 +16,8 @@ caloSimHitAnalysis = cms.EDAnalyzer('CaloSimHitAnalysis',
   maxTime = cms.untracked.double(1000),
   timeCut = cms.untracked.double(100),
   timeScale = cms.untracked.double(1),
+  timeThreshold = cms.untracked.double(15),
   testNumbering = cms.untracked.bool(False),
+  passiveHits = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
