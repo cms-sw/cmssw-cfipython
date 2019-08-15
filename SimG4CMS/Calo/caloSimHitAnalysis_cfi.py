@@ -19,5 +19,13 @@ caloSimHitAnalysis = cms.EDAnalyzer('CaloSimHitAnalysis',
   timeThreshold = cms.untracked.double(15),
   testNumbering = cms.untracked.bool(False),
   passiveHits = cms.untracked.bool(False),
+  detNames = cms.untracked.vstring(
+    'PixelBarrel',
+    'PixelForward',
+    'TIB',
+    'TID',
+    'TOB',
+    'TEC'
+  ),
   mightGet = cms.optional.untracked.vstring
 )
