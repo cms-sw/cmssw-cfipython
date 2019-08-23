@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 topMonitoring = cms.EDProducer('TopMonitor',
   FolderName = cms.string('HLT/TOP'),
+  requireValidHLTPaths = cms.bool(False),
   met = cms.InputTag('pfMet'),
   jets = cms.InputTag('ak4PFJetsCHS'),
   electrons = cms.InputTag('gedGsfElectrons'),
