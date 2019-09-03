@@ -11,6 +11,7 @@ DeepTau = cms.EDProducer('DeepTauId',
   mem_mapped = cms.bool(False),
   version = cms.uint32(2),
   debug_level = cms.int32(0),
+  disable_dxy_pca = cms.bool(False),
   VSeWP = cms.PSet(
     VVVLoose = cms.string('0'),
     VVLoose = cms.string('0'),
