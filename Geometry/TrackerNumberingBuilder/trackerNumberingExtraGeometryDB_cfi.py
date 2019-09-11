@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-trackerNumberingGeometryDB = cms.ESProducer('TrackerGeometricDetESModule',
+trackerNumberingExtraGeometryDB = cms.ESProducer('TrackerGeometricDetExtraESModule',
   fromDDD = cms.bool(False),
   fromDD4hep = cms.bool(False),
   appendToDataLabel = cms.string('')
