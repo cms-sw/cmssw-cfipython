@@ -13,5 +13,7 @@ trackstersProducer = cms.EDProducer('TrackstersProducer',
   missing_layers = cms.int32(0),
   min_clusters_per_ntuplet = cms.int32(10),
   max_delta_time = cms.double(0.09),
+  out_in_dfs = cms.bool(True),
+  max_out_in_hops = cms.int32(10),
   mightGet = cms.optional.untracked.vstring
 )
