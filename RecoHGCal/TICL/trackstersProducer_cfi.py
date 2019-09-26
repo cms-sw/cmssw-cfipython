@@ -15,5 +15,12 @@ trackstersProducer = cms.EDProducer('TrackstersProducer',
   max_delta_time = cms.double(0.09),
   out_in_dfs = cms.bool(True),
   max_out_in_hops = cms.int32(10),
+  eid_graph_path = cms.string('RecoHGCal/TICL/data/tf_models/energy_id_v0.pb'),
+  eid_input_name = cms.string('input'),
+  eid_output_name_energy = cms.string('output/regressed_energy'),
+  eid_output_name_id = cms.string('output/id_probabilities'),
+  eid_min_cluster_energy = cms.double(1),
+  eid_n_layers = cms.int32(50),
+  eid_n_clusters = cms.int32(10),
   mightGet = cms.optional.untracked.vstring
 )
