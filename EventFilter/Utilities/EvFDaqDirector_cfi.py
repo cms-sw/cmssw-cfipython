@@ -1,11 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
 EvFDaqDirector = cms.Service('EvFDaqDirector',
-  baseDir = cms.untracked.string('.'),
-  buBaseDir = cms.untracked.string('.'),
-  runNumber = cms.untracked.uint32(0),
-  useFileBroker = cms.untracked.bool(False),
-  fileBrokerHost = cms.untracked.string(''),
+  baseDir = cms.string('.'),
+  buBaseDir = cms.string('.'),
+  runNumber = cms.uint32(0),
+  useFileBroker = cms.bool(False),
+  fileBrokerHost = cms.string(''),
   fileBrokerPort = cms.untracked.string('8080'),
   fileBrokerKeepAlive = cms.untracked.bool(True),
   fileBrokerUseLocalLock = cms.untracked.bool(True),
