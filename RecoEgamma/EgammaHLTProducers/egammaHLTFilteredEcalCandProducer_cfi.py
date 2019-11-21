@@ -2,6 +2,8 @@ import FWCore.ParameterSet.Config as cms
 
 egammaHLTFilteredEcalCandProducer = cms.EDProducer('EgammaHLTFilteredEcalCandProducer',
   cands = cms.InputTag('hltEgammaCandidates'),
+  minEtCutEB = cms.double(0),
+  minEtCutEE = cms.double(0),
   cuts = cms.VPSet(
     cms.PSet(
       var = cms.InputTag('hltEgammaHoverE'),
