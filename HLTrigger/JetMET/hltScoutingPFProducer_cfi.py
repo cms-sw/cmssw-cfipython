@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 hltScoutingPFProducer = cms.EDProducer('HLTScoutingPFProducer',
   pfJetCollection = cms.InputTag('hltAK4PFJets'),
-  pfJetTagCollection = cms.InputTag('hltCombinedSecondaryVertexBJetTagsPF'),
+  pfJetTagCollection = cms.InputTag('hltDeepCombinedSecondaryVertexBJetTagsPF'),
   pfCandidateCollection = cms.InputTag('hltParticleFlow'),
   vertexCollection = cms.InputTag('hltPixelVertices'),
   metCollection = cms.InputTag('hltPFMETProducer'),
