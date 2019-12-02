@@ -1,0 +1,78 @@
+import FWCore.ParameterSet.Config as cms
+
+ecalDrivenElectronSeeds = cms.EDProducer('ElectronSeedProducer',
+  endcapSuperClusters = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowSuperClusterECALEndcapWithPreshower'),
+  SeedConfiguration = cms.PSet(
+    OrderedHitsFactoryPSet = cms.PSet(
+      ComponentName = cms.string('StandardHitPairGenerator'),
+      useOnDemandTracker = cms.untracked.int32(0)
+    ),
+    RegionPSet = cms.PSet(
+      deltaPhiRegion = cms.double(0.4),
+      originHalfLength = cms.double(15),
+      useZInVertex = cms.bool(True),
+      deltaEtaRegion = cms.double(0.1),
+      ptMin = cms.double(1.5),
+      originRadius = cms.double(0.2),
+      VertexProducer = cms.InputTag('dummyVertices')
+    ),
+    initialSeeds = cms.InputTag(''),
+    initialSeedsVector = cms.VInputTag(),
+    preFilteredSeeds = cms.bool(False),
+    useRecoVertex = cms.bool(False),
+    vertices = cms.InputTag('offlinePrimaryVerticesWithBS'),
+    beamSpot = cms.InputTag('offlineBeamSpot'),
+    dynamicPhiRoad = cms.bool(True),
+    measurementTrackerEvent = cms.InputTag('MeasurementTrackerEvent'),
+    SCEtCut = cms.double(0),
+    applyHOverECut = cms.bool(True),
+    hOverEConeSize = cms.double(0.15),
+    maxHOverEBarrel = cms.double(0.15),
+    maxHOverEEndcaps = cms.double(0.15),
+    maxHBarrel = cms.double(0),
+    maxHEndcaps = cms.double(0),
+    hcalTowers = cms.InputTag('towerMaker'),
+    hOverEPtMin = cms.double(0),
+    allowHGCal = cms.bool(False),
+    HGCalConfig = cms.PSet(
+      HGCEEInput = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
+      HGCFHInput = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
+      HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits')
+    ),
+    nSigmasDeltaZ1 = cms.double(5),
+    deltaZ1WithVertex = cms.double(25),
+    z2MinB = cms.double(-0.09),
+    z2MaxB = cms.double(0.09),
+    r2MinF = cms.double(-0.15),
+    r2MaxF = cms.double(0.15),
+    rMinI = cms.double(-0.2),
+    rMaxI = cms.double(0.2),
+    LowPtThreshold = cms.double(5),
+    HighPtThreshold = cms.double(35),
+    SizeWindowENeg = cms.double(0.675),
+    DeltaPhi1Low = cms.double(0.23),
+    DeltaPhi1High = cms.double(0.08),
+    DeltaPhi2B = cms.double(0.008),
+    DeltaPhi2F = cms.double(0.012),
+    ePhiMin1 = cms.double(-0.125),
+    ePhiMax1 = cms.double(0.075),
+    pPhiMin1 = cms.double(-0.075),
+    pPhiMax1 = cms.double(0.125),
+    PhiMin2B = cms.double(-0.002),
+    PhiMax2B = cms.double(0.002),
+    PhiMin2F = cms.double(-0.003),
+    PhiMax2F = cms.double(0.003),
+    SeedCreatorPSet = cms.PSet(
+      ComponentName = cms.string('SeedFromConsecutiveHitsCreator'),
+      propagator = cms.string('PropagatorWithMaterial'),
+      SeedMomentumForBOFF = cms.double(5),
+      OriginTransverseErrorMultiplier = cms.double(1),
+      MinOneOverPtError = cms.double(1),
+      magneticField = cms.string(''),
+      TTRHBuilder = cms.string('WithTrackAngle'),
+      forceKinematicWithRegionDirection = cms.bool(False)
+    )
+  ),
+  barrelSuperClusters = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowSuperClusterECALBarrel'),
+  mightGet = cms.optional.untracked.vstring
+)
