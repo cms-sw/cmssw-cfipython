@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 ctppsProtons = cms.EDProducer('CTPPSProtonProducer',
   tagLocalTrackLite = cms.InputTag('ctppsLocalTrackLiteProducer'),
   lhcInfoLabel = cms.string(''),
+  opticsLabel = cms.string(''),
   verbosity = cms.untracked.uint32(0),
   doSingleRPReconstruction = cms.bool(True),
   doMultiRPReconstruction = cms.bool(True),
