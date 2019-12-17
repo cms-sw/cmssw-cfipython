@@ -21,7 +21,9 @@ ctppsProtons = cms.EDProducer('CTPPSProtonProducer',
     xi_cut_apply = cms.bool(True),
     xi_cut_value = cms.double(0.013),
     th_y_cut_apply = cms.bool(True),
-    th_y_cut_value = cms.double(2e-05)
+    th_y_cut_value = cms.double(2e-05),
+    ti_tr_min = cms.double(-1),
+    ti_tr_max = cms.double(1)
   ),
   association_cuts_56 = cms.PSet(
     x_cut_apply = cms.bool(False),
@@ -31,7 +33,9 @@ ctppsProtons = cms.EDProducer('CTPPSProtonProducer',
     xi_cut_apply = cms.bool(True),
     xi_cut_value = cms.double(0.013),
     th_y_cut_apply = cms.bool(True),
-    th_y_cut_value = cms.double(2e-05)
+    th_y_cut_value = cms.double(2e-05),
+    ti_tr_min = cms.double(-1),
+    ti_tr_max = cms.double(1)
   ),
   max_n_timing_tracks = cms.uint32(5),
   fitVtxY = cms.bool(True),
