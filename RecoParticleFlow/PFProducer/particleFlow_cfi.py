@@ -187,6 +187,8 @@ particleFlow = cms.EDProducer('PFProducer',
   goodPixelTrackDeadHcal_dz = cms.double(0.05),
   pf_nsigma_ECAL = cms.double(0),
   pf_nsigma_HCAL = cms.double(1),
+  pf_nsigma_HFEM = cms.double(1),
+  pf_nsigma_HFHAD = cms.double(1),
   useCalibrationsFromDB = cms.bool(True),
   calibrationsLabel = cms.string(''),
   postHFCleaning = cms.bool(False),
@@ -262,6 +264,11 @@ particleFlow = cms.EDProducer('PFProducer',
     1,
     1,
     1
+  ),
+  resolHF_square = cms.vdouble(
+    7.834401,
+    0.012996,
+    0
   ),
   mightGet = cms.optional.untracked.vstring
 )
