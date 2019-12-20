@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-isoTrigHB = cms.EDAnalyzer('IsoTrig',
+isoTrigDefault = cms.EDAnalyzer('IsoTrig',
   Triggers = cms.untracked.vstring('HLT_IsoTrackHB'),
   pixCandTag = cms.untracked.InputTag(' '),
   l1CandTag = cms.untracked.InputTag('hltL1sV0SingleJet60'),
@@ -52,5 +52,6 @@ isoTrigHB = cms.EDAnalyzer('IsoTrig',
   vertexCutIsol = cms.untracked.double(101),
   tauUnbiasCone = cms.untracked.double(1.2),
   prelimCone = cms.untracked.double(1),
+  stageL1Trigger = cms.uint32(1),
   mightGet = cms.optional.untracked.vstring
 )

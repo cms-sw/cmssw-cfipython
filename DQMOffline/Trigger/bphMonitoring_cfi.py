@@ -41,6 +41,7 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
   minprob = cms.double(0.005),
   mincos = cms.double(0.95),
   minDS = cms.double(3),
+  stageL1Trigger = cms.uint32(1),
   numGenericTriggerEventPSet = cms.PSet(
     andOr = cms.required.bool,
     dcsInputTag = cms.InputTag('scalersRawToDigi'),
