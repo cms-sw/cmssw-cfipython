@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-psMonitoring = cms.EDAnalyzer('PSMonitor',
+psMonitoring = cms.EDProducer('PSMonitor',
   ugtBXInputTag = cms.InputTag('hltGtStage2Digis'),
   FolderName = cms.string('HLT/PSMonitoring'),
   histoPSet = cms.PSet(

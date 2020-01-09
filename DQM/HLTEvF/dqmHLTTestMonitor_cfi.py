@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-dqmHLTTestMonitor = cms.EDAnalyzer('DaqTestHistograms',
+dqmHLTTestMonitor = cms.EDProducer('DaqTestHistograms',
   dqmPath = cms.untracked.string('DAQTEST/Test'),
   lumisectionRange = cms.untracked.uint32(25),
   numberOfHistograms = cms.untracked.uint32(10),

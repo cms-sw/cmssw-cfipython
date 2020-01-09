@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-triggerRatesMonitor = cms.EDAnalyzer('TriggerRatesMonitor',
+triggerRatesMonitor = cms.EDProducer('TriggerRatesMonitor',
   l1tResults = cms.untracked.InputTag('gtStage2Digis'),
   hltResults = cms.untracked.InputTag('TriggerResults'),
   dqmPath = cms.untracked.string('HLT/TriggerRates'),

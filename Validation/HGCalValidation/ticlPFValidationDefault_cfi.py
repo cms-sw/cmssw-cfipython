@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ticlPFValidationDefault = cms.EDAnalyzer('TICLPFValidation',
+ticlPFValidationDefault = cms.EDProducer('TICLPFValidation',
   folder = cms.string('HGCAL/'),
   ticlPFCandidates = cms.InputTag('pfTICLProducer'),
   mightGet = cms.optional.untracked.vstring

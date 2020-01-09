@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-caloparticlevalidationDefault = cms.EDAnalyzer('CaloParticleValidation',
+caloparticlevalidationDefault = cms.EDProducer('CaloParticleValidation',
   folder = cms.string('HGCAL/'),
   particles_to_monitor = cms.vint32(
     11,
