@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 htMonitoring = cms.EDProducer('HTMonitor',
   FolderName = cms.string('HLT/HT'),
-  quantity = cms.string('HT'),
+  requireValidHLTPaths = cms.bool(True),
   met = cms.InputTag('pfMet'),
   jets = cms.InputTag('ak4PFJetsCHS'),
   electrons = cms.InputTag('gedGsfElectrons'),
@@ -103,5 +103,6 @@ htMonitoring = cms.EDProducer('HTMonitor',
       xmax = cms.double(2500)
     )
   ),
+  quantity = cms.string('HT'),
   mightGet = cms.optional.untracked.vstring
 )

@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 metPlusTrackMonitoring = cms.EDProducer('METplusTrackMonitor',
   FolderName = cms.string('HLT/MET'),
+  requireValidHLTPaths = cms.bool(True),
   met = cms.InputTag('caloMet'),
   jets = cms.InputTag('ak4PFJetsCHS'),
   electrons = cms.InputTag('gedGsfElectrons'),

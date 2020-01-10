@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 bphMonitoring = cms.EDProducer('BPHMonitor',
   FolderName = cms.string('HLT/BPH/'),
+  requireValidHLTPaths = cms.bool(True),
   tracks = cms.InputTag('generalTracks'),
   photons = cms.InputTag('photons'),
   offlinePVs = cms.InputTag('offlinePrimaryVertices'),
@@ -79,68 +80,99 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
     verbosityLevel = cms.uint32(0)
   ),
   histoPSet = cms.PSet(
+    ptBinning = cms.vdouble(
+      -0.5,
+      0,
+      2,
+      4,
+      8,
+      10,
+      12,
+      16,
+      20,
+      25,
+      30,
+      35,
+      40,
+      50
+    ),
+    dMuPtBinning = cms.vdouble(
+      6,
+      8,
+      12,
+      16,
+      20,
+      25,
+      30,
+      35,
+      40,
+      50,
+      70
+    ),
+    probBinning = cms.vdouble(
+      0.01,
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1
+    ),
     d0PSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     etaPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     phiPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
-    ptPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
-    dMu_ptPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     z0PSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     dRPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     massPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     BmassPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     dcaPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     dsPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     ),
     cosPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
-    probPSet = cms.PSet(
-      nbins = cms.required.int32,
+      nbins = cms.required.uint32,
       xmin = cms.required.double,
       xmax = cms.required.double
     )

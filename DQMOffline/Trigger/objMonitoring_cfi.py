@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 objMonitoring = cms.EDProducer('ObjMonitor',
   FolderName = cms.string('HLT/OBJ'),
+  requireValidHLTPaths = cms.bool(True),
   met = cms.InputTag('pfMet'),
   jets = cms.InputTag('ak4PFJetsCHS'),
   electrons = cms.InputTag('gedGsfElectrons'),

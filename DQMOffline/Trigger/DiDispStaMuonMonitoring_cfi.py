@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 DiDispStaMuonMonitoring = cms.EDProducer('DiDispStaMuonMonitor',
   FolderName = cms.string('HLT/EXO/DiDispStaMuon'),
+  requireValidHLTPaths = cms.bool(True),
   muons = cms.InputTag('displacedStandAloneMuons'),
   nmuons = cms.uint32(2),
   muonSelection = cms.PSet(
@@ -39,29 +40,29 @@ DiDispStaMuonMonitoring = cms.EDProducer('DiDispStaMuonMonitor',
   ),
   histoPSet = cms.PSet(
     muonPtPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonEtaPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonPhiPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonDxyPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     lsPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonPtBinning = cms.vdouble(
       0,

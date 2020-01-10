@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 NoBPTXMonitoring = cms.EDProducer('NoBPTXMonitor',
   FolderName = cms.string('HLT/NoBPTX'),
+  requireValidHLTPaths = cms.bool(True),
   jets = cms.InputTag('ak4CaloJets'),
   muons = cms.InputTag('displacedStandAloneMuons'),
   jetSelection = cms.string('pt > 0'),
@@ -38,42 +39,44 @@ NoBPTXMonitoring = cms.EDProducer('NoBPTXMonitor',
   ),
   histoPSet = cms.PSet(
     jetEPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     jetEtaPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     jetPhiPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonPtPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonEtaPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     muonPhiPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     lsPSet = cms.PSet(
-      nbins = cms.uint32(200),
-      xmin = cms.double(-0.5),
-      xmax = cms.double(19999.5)
+      nbins = cms.required.uint32,
+      xmin = cms.required.double,
+      xmax = cms.required.double
     ),
     bxPSet = cms.PSet(
-      nbins = cms.uint32(2000)
+      nbins = cms.uint32(2500),
+      xmin = cms.double(0),
+      xmax = cms.double(2500)
     ),
     jetEBinning = cms.vdouble(
       0,

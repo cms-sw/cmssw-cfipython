@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 photonMonitoring = cms.EDProducer('PhotonMonitor',
   FolderName = cms.string('HLT/Photon'),
+  requireValidHLTPaths = cms.bool(True),
   met = cms.InputTag('pfMet'),
   jets = cms.InputTag('ak4PFJetsCHS'),
   electrons = cms.InputTag('gedGsfElectrons'),

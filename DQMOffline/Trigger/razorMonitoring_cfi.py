@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 razorMonitoring = cms.EDProducer('RazorMonitor',
   FolderName = cms.string('HLT/SUSY/Razor'),
+  requireValidHLTPaths = cms.bool(True),
   met = cms.InputTag('pfMet'),
   jets = cms.InputTag('ak4PFJetsCHS'),
   hemispheres = cms.InputTag('hemispheresDQM'),

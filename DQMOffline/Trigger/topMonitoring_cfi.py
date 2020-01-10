@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 topMonitoring = cms.EDProducer('TopMonitor',
   FolderName = cms.string('HLT/TOP'),
-  requireValidHLTPaths = cms.bool(False),
+  requireValidHLTPaths = cms.bool(True),
   vertices = cms.InputTag('offlinePrimaryVertices'),
   muons = cms.InputTag('muons'),
   electrons = cms.InputTag('gedGsfElectrons'),

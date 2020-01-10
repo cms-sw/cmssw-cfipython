@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 dijetMonitoring = cms.EDProducer('DiJetMonitor',
   FolderName = cms.string('HLT/JME/Jets/AK4/PF'),
+  requireValidHLTPaths = cms.bool(True),
   met = cms.InputTag('pfMet'),
   dijetSrc = cms.InputTag('ak4PFJets'),
   electrons = cms.InputTag('gedGsfElectrons'),

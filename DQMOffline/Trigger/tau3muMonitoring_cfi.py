@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 tau3muMonitoring = cms.EDProducer('Tau3MuMonitor',
   FolderName = cms.string('HLT/BPH/'),
+  requireValidHLTPaths = cms.bool(True),
   taus = cms.InputTag('hltTauPt10MuPts511Mass1p2to2p3Iso', 'Taus'),
   histoPSet = cms.PSet(
     ptPSet = cms.PSet(
