@@ -27,5 +27,6 @@ caloSimHitAnalysis = cms.EDAnalyzer('CaloSimHitAnalysis',
     'TOB',
     'TEC'
   ),
+  allStep = cms.untracked.int32(100),
   mightGet = cms.optional.untracked.vstring
 )
