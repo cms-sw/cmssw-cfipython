@@ -8,10 +8,11 @@ tofPIDProducer = cms.EDProducer('TOFPIDProducer',
   sigmatmtdSrc = cms.InputTag('trackExtenderWithMTD', 'generalTracksigmatmtd'),
   pathLengthSrc = cms.InputTag('trackExtenderWithMTD', 'generalTrackPathLength'),
   pSrc = cms.InputTag('trackExtenderWithMTD', 'generalTrackp'),
-  vtxsSrc = cms.InputTag('unsortedOfflinePrimaryVertices4DnoPID'),
+  vtxsSrc = cms.InputTag('unsortedOfflinePrimaryVertices4DwithPID'),
   vtxMaxSigmaT = cms.double(0.025),
   maxDz = cms.double(0.1),
   maxDtSignificance = cms.double(5),
   minProbHeavy = cms.double(0.75),
+  fixedT0Error = cms.double(0),
   mightGet = cms.optional.untracked.vstring
 )
