@@ -15,5 +15,6 @@ ECFAdder = cms.EDProducer('ECFAdder',
   alpha = cms.double(1),
   beta = cms.double(1),
   ecftype = cms.string(''),
+  srcWeights = cms.InputTag('puppi'),
   mightGet = cms.optional.untracked.vstring
 )

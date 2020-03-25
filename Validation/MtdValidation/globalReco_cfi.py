@@ -1,12 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-btlReco = cms.EDProducer('BtlRecoValidation',
-  folder = cms.string('MTD/BTL/Reco'),
-  inputTagC = cms.InputTag('mtdClusters', 'FTLBarrel'),
+globalReco = cms.EDProducer('MtdGlobalRecoValidation',
+  folder = cms.string('MTD/GlobalReco'),
   inputTagT = cms.InputTag('trackExtenderWithMTD'),
   inputTagV = cms.InputTag('offlinePrimaryVertices4D'),
-  hitMinimumEnergy = cms.double(1),
   trackMinimumEnergy = cms.double(1),
   trackMinimumEta = cms.double(1.5),
+  trackMaximumEta = cms.double(3.2),
   mightGet = cms.optional.untracked.vstring
 )
