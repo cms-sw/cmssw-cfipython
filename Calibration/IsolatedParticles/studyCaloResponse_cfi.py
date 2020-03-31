@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-studyHLT = cms.EDAnalyzer('StudyHLT',
+studyCaloResponse = cms.EDAnalyzer('StudyCaloResponse',
   particleSource = cms.InputTag('genParticles'),
   verbosity = cms.untracked.int32(0),
   triggers = cms.untracked.vstring(),
