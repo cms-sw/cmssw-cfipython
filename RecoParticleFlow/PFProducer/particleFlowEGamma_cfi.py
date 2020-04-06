@@ -1,7 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
 particleFlowEGamma = cms.EDProducer('PFEGammaProducer',
-  useVerticesForNeutral = cms.bool(True),
   produceEGCandsWithNoSuperCluster = cms.bool(False),
   pf_electron_mvaCut = cms.double(-0.1),
   pf_electronID_crackCorrection = cms.bool(False),
