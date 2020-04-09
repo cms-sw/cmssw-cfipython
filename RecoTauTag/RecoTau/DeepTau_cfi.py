@@ -12,38 +12,8 @@ DeepTau = cms.EDProducer('DeepTauId',
   version = cms.uint32(2),
   debug_level = cms.int32(0),
   disable_dxy_pca = cms.bool(False),
-  VSeWP = cms.PSet(
-    VVVLoose = cms.string('0'),
-    VVLoose = cms.string('0'),
-    VLoose = cms.string('0'),
-    Loose = cms.string('0'),
-    Medium = cms.string('0'),
-    Tight = cms.string('0'),
-    VTight = cms.string('0'),
-    VVTight = cms.string('0'),
-    VVVTight = cms.string('0')
-  ),
-  VSmuWP = cms.PSet(
-    VVVLoose = cms.string('0'),
-    VVLoose = cms.string('0'),
-    VLoose = cms.string('0'),
-    Loose = cms.string('0'),
-    Medium = cms.string('0'),
-    Tight = cms.string('0'),
-    VTight = cms.string('0'),
-    VVTight = cms.string('0'),
-    VVVTight = cms.string('0')
-  ),
-  VSjetWP = cms.PSet(
-    VVVLoose = cms.string('0'),
-    VVLoose = cms.string('0'),
-    VLoose = cms.string('0'),
-    Loose = cms.string('0'),
-    Medium = cms.string('0'),
-    Tight = cms.string('0'),
-    VTight = cms.string('0'),
-    VVTight = cms.string('0'),
-    VVVTight = cms.string('0')
-  ),
+  VSeWP = cms.required.vstring,
+  VSmuWP = cms.required.vstring,
+  VSjetWP = cms.required.vstring,
   mightGet = cms.optional.untracked.vstring
 )

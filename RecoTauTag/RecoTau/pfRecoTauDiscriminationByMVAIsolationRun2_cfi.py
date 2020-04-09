@@ -1,16 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
 pfRecoTauDiscriminationByMVAIsolationRun2 = cms.EDProducer('PFRecoTauDiscriminationByMVAIsolationRun2',
-  mvaName = cms.required.string,
-  loadMVAfromDB = cms.required.bool,
+  mvaName = cms.string('tauIdMVAnewDMwLT'),
+  loadMVAfromDB = cms.bool(True),
   inputFileName = cms.optional.FileInPath,
-  mvaOpt = cms.required.string,
-  srcTauTransverseImpactParameters = cms.required.InputTag,
-  srcChargedIsoPtSum = cms.required.InputTag,
-  srcNeutralIsoPtSum = cms.required.InputTag,
-  srcPUcorrPtSum = cms.required.InputTag,
-  srcPhotonPtSumOutsideSignalCone = cms.required.InputTag,
-  srcFootprintCorrection = cms.required.InputTag,
+  mvaOpt = cms.string('newDMwLT'),
+  srcTauTransverseImpactParameters = cms.InputTag(''),
+  srcBasicTauDiscriminators = cms.InputTag('hpsPFTauBasicDiscriminators'),
+  inputIDNameSuffix = cms.string(''),
   verbosity = cms.int32(0),
   PFTauProducer = cms.InputTag('fixme'),
   Prediscriminants = cms.PSet(

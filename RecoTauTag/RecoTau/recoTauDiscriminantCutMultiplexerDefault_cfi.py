@@ -6,9 +6,11 @@ recoTauDiscriminantCutMultiplexerDefault = cms.EDProducer('RecoTauDiscriminantCu
   mapping = cms.VPSet(
     cms.PSet(
       category = cms.uint32(0),
-      cut = cms.double(0)
+      cut = cms.string('fixme')
     )
   ),
+  rawValues = cms.vstring('discriminator'),
+  workingPoints = cms.vdouble(0),
   inputFileName = cms.FileInPath('RecoTauTag/RecoTau/data/emptyMVAinputFile'),
   loadMVAfromDB = cms.bool(True),
   PFTauProducer = cms.InputTag('fixme'),
@@ -24,6 +26,5 @@ recoTauDiscriminantCutMultiplexerDefault = cms.EDProducer('RecoTauDiscriminantCu
     )
   ),
   mvaOutput_normalization = cms.string(''),
-  key = cms.InputTag('fixme'),
   mightGet = cms.optional.untracked.vstring
 )
