@@ -60,5 +60,7 @@ pfRecoTauDiscriminationAgainstMuon2Container = cms.EDProducer('PFRecoTauDiscrimi
       maxNumberOfMatches = cms.int32(0)
     )
   ),
+  IDdefinitions = cms.VPSet(
+  ),
   mightGet = cms.optional.untracked.vstring
 )
