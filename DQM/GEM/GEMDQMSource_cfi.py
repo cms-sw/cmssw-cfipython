@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 GEMDQMSource = cms.EDProducer('GEMDQMSource',
   recHitsInputLabel = cms.InputTag('gemRecHits'),
   idxFirstStrip = cms.int32(0),
+  ClusterSizeBinNum = cms.int32(9),
   global_x_bound_min = cms.double(-350),
   global_x_bound_max = cms.double(350),
   global_y_bound_min = cms.double(-260),
