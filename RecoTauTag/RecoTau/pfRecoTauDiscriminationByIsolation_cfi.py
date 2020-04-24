@@ -53,7 +53,8 @@ pfRecoTauDiscriminationByIsolation = cms.EDProducer('PFRecoTauDiscriminationByIs
   ApplyDiscriminationByTrackerIsolation = cms.bool(True),
   storeRawPhotonSumPt_outsideSignalCone = cms.bool(False),
   rhoProducer = cms.InputTag('fixedGridRhoFastjetAll'),
-  footprintCorrections = cms.required.VPSet,
+  footprintCorrections = cms.VPSet(
+  ),
   deltaBetaFactor = cms.string('0.38'),
   applyFootprintCorrection = cms.bool(False),
   UseAllPFCandsForWeights = cms.bool(False),
