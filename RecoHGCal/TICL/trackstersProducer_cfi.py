@@ -1,11 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
 trackstersProducer = cms.EDProducer('TrackstersProducer',
+  detector = cms.string('HGCAL'),
   layer_clusters = cms.InputTag('hgcalLayerClusters'),
   filtered_mask = cms.InputTag('filteredLayerClusters', 'iterationLabelGoesHere'),
   original_mask = cms.InputTag('hgcalLayerClusters', 'InitialLayerClustersMask'),
   time_layerclusters = cms.InputTag('hgcalLayerClusters', 'timeLayerCluster'),
   layer_clusters_tiles = cms.InputTag('ticlLayerTileProducer'),
+  layer_clusters_hfnose_tiles = cms.InputTag('ticlLayerTileHFNose'),
   seeding_regions = cms.InputTag('ticlSeedingRegionProducer'),
   filter_on_categories = cms.vint32(0),
   pid_threshold = cms.double(0),
