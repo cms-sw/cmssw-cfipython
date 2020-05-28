@@ -1,11 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-pfRecoTauDiscriminationAgainstElectronDeadECAL = cms.EDProducer('PFRecoTauDiscriminationAgainstElectronDeadECAL',
+patTauDiscriminationAgainstElectronDeadECAL = cms.EDProducer('PATTauDiscriminationAgainstElectronDeadECAL',
   dR = cms.double(0.08),
   minStatus = cms.uint32(12),
   extrapolateToECalEntrance = cms.bool(True),
   verbosity = cms.int32(0),
-  PFTauProducer = cms.InputTag('fixme'),
+  PATTauProducer = cms.InputTag('fixme'),
   Prediscriminants = cms.PSet(
     BooleanOperator = cms.string('AND'),
     leadTrack = cms.PSet(
