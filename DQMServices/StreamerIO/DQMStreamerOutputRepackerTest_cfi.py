@@ -10,7 +10,7 @@ DQMStreamerOutputRepackerTest = cms.OutputModule('DQMStreamerOutputRepackerTest'
   SelectEvents = cms.untracked.PSet(
     SelectEvents = cms.optional.vstring
   ),
-  psetMap = cms.untracked.InputTag('psetMap'),
+  psetMap = cms.untracked.InputTag('hltPSetMap'),
   outputPath = cms.untracked.string('./output/'),
   streamLabel = cms.untracked.string('DQM')
 )
