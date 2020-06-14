@@ -49,6 +49,7 @@ CSJetProducer = cms.EDProducer('CSJetProducer',
   puCenters = cms.vdouble(),
   applyWeight = cms.bool(False),
   srcWeights = cms.InputTag(''),
+  minimumTowersFraction = cms.double(0),
   sumRecHits = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

@@ -123,5 +123,6 @@ CATopJetProducer = cms.EDProducer('CATopJetProducer',
   puCenters = cms.vdouble(),
   applyWeight = cms.bool(False),
   srcWeights = cms.InputTag(''),
+  minimumTowersFraction = cms.double(0),
   mightGet = cms.optional.untracked.vstring
 )

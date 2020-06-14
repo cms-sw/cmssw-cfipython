@@ -81,6 +81,7 @@ FastjetJetProducer = cms.EDProducer('FastjetJetProducer',
   puCenters = cms.vdouble(),
   applyWeight = cms.bool(False),
   srcWeights = cms.InputTag(''),
+  minimumTowersFraction = cms.double(0),
   jetCollInstanceName = cms.string(''),
   sumRecHits = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
