@@ -42,5 +42,6 @@ hgcalPhotonIDValueMap = cms.EDProducer('HGCalPhotonIDValueMapProducer',
   EERecHits = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
   FHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
   BHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+  hitMapTag = cms.InputTag('hgcalRecHitMapProducer'),
   mightGet = cms.optional.untracked.vstring
 )

@@ -18,8 +18,6 @@ caloparticlevalidationDefault = cms.EDProducer('CaloParticleValidation',
   caloParticles = cms.InputTag('mix', 'MergedCaloTruth'),
   simPFClusters = cms.InputTag('simPFProducer', 'perfect'),
   simPFCandidates = cms.InputTag('simPFProducer'),
-  recHitsEE = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
-  recHitsFH = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
-  recHitsBH = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+  hitMapTag = cms.InputTag('hgcalRecHitMapProducer'),
   mightGet = cms.optional.untracked.vstring
 )
