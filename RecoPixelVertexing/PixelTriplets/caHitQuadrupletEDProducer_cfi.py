@@ -8,6 +8,18 @@ caHitQuadrupletEDProducer = cms.EDProducer('CAHitQuadrupletEDProducer',
   useBendingCorrection = cms.bool(False),
   CAThetaCut = cms.double(0.00125),
   CAPhiCut = cms.double(10),
+  CAThetaCut_byTriplets = cms.VPSet(
+    cms.PSet(
+      cut = cms.double(-1),
+      seedingLayers = cms.string('')
+    )
+  ),
+  CAPhiCut_byTriplets = cms.VPSet(
+    cms.PSet(
+      cut = cms.double(-1),
+      seedingLayers = cms.string('')
+    )
+  ),
   CAHardPtCut = cms.double(0),
   CAOnlyOneLastHitPerLayerFilter = cms.optional.bool,
   maxChi2 = cms.PSet(
