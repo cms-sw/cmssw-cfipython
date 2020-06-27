@@ -10,5 +10,6 @@ mtdClusterProducer = cms.EDProducer('MTDClusterProducer',
   SeedThreshold = cms.double(0),
   ClusterThreshold = cms.double(0),
   TimeThreshold = cms.double(10),
+  PositionThreshold = cms.double(-1),
   mightGet = cms.optional.untracked.vstring
 )
