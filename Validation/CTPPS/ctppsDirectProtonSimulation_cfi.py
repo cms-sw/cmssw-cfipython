@@ -23,5 +23,7 @@ ctppsDirectProtonSimulation = cms.EDProducer('CTPPSDirectProtonSimulation',
   insensitiveMarginStrips = cms.double(0.034),
   pitchPixelsHor = cms.double(0.1),
   pitchPixelsVer = cms.double(0.15),
+  timeResolutionDiamonds45 = cms.string('0.200'),
+  timeResolutionDiamonds56 = cms.string('0.200'),
   mightGet = cms.optional.untracked.vstring
 )

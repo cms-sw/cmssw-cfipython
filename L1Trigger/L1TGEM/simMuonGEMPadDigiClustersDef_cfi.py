@@ -7,5 +7,6 @@ simMuonGEMPadDigiClustersDef = cms.EDProducer('GEMPadDigiClusterProducer',
   nOHGE11 = cms.uint32(2),
   nOHGE21 = cms.uint32(4),
   maxClusterSize = cms.uint32(8),
+  sendOverflowClusters = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
