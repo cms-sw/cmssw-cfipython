@@ -8,6 +8,7 @@ pfDeepDoubleBvLJetTags = cms.EDProducer('DeepDoubleXONNXJetTagsProducer',
     'input_3'
   ),
   output_names = cms.vstring(),
+  version = cms.string('V1'),
   flavor = cms.string('BvL'),
   flav_names = cms.vstring(
     'probQCD',
