@@ -27,6 +27,7 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
     noiseMip = cms.PSet(
       scaleByDose = cms.bool(False),
       scaleByDoseAlgo = cms.uint32(0),
+      scaleByDoseFactor = cms.double(1),
       doseMap = cms.string(''),
       noise_MIP = cms.double(0.01)
     ),
