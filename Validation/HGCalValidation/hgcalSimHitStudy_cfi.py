@@ -4,12 +4,12 @@ hgcalSimHitStudy = cms.EDAnalyzer('HGCalSimHitStudy',
   detectorNames = cms.vstring(
     'HGCalEESensitive',
     'HGCalHESiliconSensitive',
-    'Hcal'
+    'HGCalHEScintillatorSensitive'
   ),
   caloHitSources = cms.vstring(
     'HGCHitsEE',
     'HGCHitsHEfront',
-    'HcalHits'
+    'HGCHitsHEback'
   ),
   rMin = cms.untracked.double(0),
   rMax = cms.untracked.double(3000),
