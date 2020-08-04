@@ -10,7 +10,8 @@ tritonGraphProducer = cms.EDProducer('TritonGraphProducer',
     address = cms.required.untracked.string,
     port = cms.required.untracked.uint32,
     timeout = cms.required.untracked.uint32,
-    verbose = cms.untracked.bool(False)
+    verbose = cms.untracked.bool(False),
+    outputs = cms.untracked.vstring()
   ),
   mightGet = cms.optional.untracked.vstring
 )

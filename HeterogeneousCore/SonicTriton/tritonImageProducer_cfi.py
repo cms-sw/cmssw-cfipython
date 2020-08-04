@@ -10,7 +10,8 @@ tritonImageProducer = cms.EDProducer('TritonImageProducer',
     address = cms.required.untracked.string,
     port = cms.required.untracked.uint32,
     timeout = cms.required.untracked.uint32,
-    verbose = cms.untracked.bool(False)
+    verbose = cms.untracked.bool(False),
+    outputs = cms.untracked.vstring()
   ),
   topN = cms.uint32(5),
   imageList = cms.required.string,
