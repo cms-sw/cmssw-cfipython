@@ -88,63 +88,25 @@ particleFlow = cms.EDProducer('PFProducer',
     0.9
   ),
   PFMuonAlgoParameters = cms.PSet(
-    electron_iso_pt = cms.double(10),
-    electron_iso_mva_barrel = cms.double(-0.1875),
-    electron_iso_mva_endcap = cms.double(-0.1075),
-    electron_iso_combIso_barrel = cms.double(10),
-    electron_iso_combIso_endcap = cms.double(10),
-    electron_noniso_mvaCut = cms.double(-0.1),
-    electron_missinghits = cms.uint32(1),
-    electron_ecalDrivenHademPreselCut = cms.double(0.15),
-    electron_maxElePtForOnlyMVAPresel = cms.double(50),
-    electron_protectionsForJetMET = cms.PSet(
-      maxNtracks = cms.double(3),
-      maxHcalE = cms.double(10),
-      maxTrackPOverEele = cms.double(1),
-      maxE = cms.double(50),
-      maxEleHcalEOverEcalE = cms.double(0.1),
-      maxEcalEOverPRes = cms.double(0.2),
-      maxEeleOverPoutRes = cms.double(0.5),
-      maxHcalEOverP = cms.double(1),
-      maxHcalEOverEcalE = cms.double(0.1),
-      maxEcalEOverP_1 = cms.double(0.5),
-      maxEcalEOverP_2 = cms.double(0.2),
-      maxEeleOverPout = cms.double(0.2),
-      maxDPhiIN = cms.double(0.1)
-    ),
-    electron_protectionsForBadHcal = cms.PSet(
-      enableProtections = cms.bool(False),
-      full5x5_sigmaIetaIeta = cms.vdouble(
-        0.0106,
-        0.0387
-      ),
-      eInvPInv = cms.vdouble(
-        0.184,
-        0.0721
-      ),
-      dEta = cms.vdouble(
-        0.0064,
-        0.01264
-      ),
-      dPhi = cms.vdouble(
-        0.0547,
-        0.0394
-      )
-    ),
-    photon_MinEt = cms.double(10),
-    photon_combIso = cms.double(10),
-    photon_HoE = cms.double(0.05),
-    photon_SigmaiEtaiEta_barrel = cms.double(0.0125),
-    photon_SigmaiEtaiEta_endcap = cms.double(0.034),
-    photon_protectionsForJetMET = cms.PSet(
-      sumPtTrackIso = cms.double(4),
-      sumPtTrackIsoSlope = cms.double(0.001)
-    ),
-    photon_protectionsForBadHcal = cms.PSet(
-      solidConeTrkIsoSlope = cms.double(0.3),
-      enableProtections = cms.bool(False),
-      solidConeTrkIsoOffset = cms.double(10)
-    )
+    maxDPtOPt = cms.double(1),
+    trackQuality = cms.string('highPurity'),
+    ptErrorScale = cms.double(8),
+    eventFractionForCleaning = cms.double(0.5),
+    minPtForPostCleaning = cms.double(20),
+    eventFactorForCosmics = cms.double(10),
+    metSignificanceForCleaning = cms.double(3),
+    metSignificanceForRejection = cms.double(4),
+    metFactorForCleaning = cms.double(4),
+    eventFractionForRejection = cms.double(0.8),
+    metFactorForRejection = cms.double(4),
+    metFactorForHighEta = cms.double(25),
+    ptFactorForHighEta = cms.double(2),
+    metFactorForFakes = cms.double(4),
+    minMomentumForPunchThrough = cms.double(100),
+    minEnergyForPunchThrough = cms.double(100),
+    punchThroughFactor = cms.double(3),
+    punchThroughMETFactor = cms.double(4),
+    cosmicRejectionDistance = cms.double(1)
   ),
   rejectTracks_Bad = cms.bool(True),
   rejectTracks_Step45 = cms.bool(True),
