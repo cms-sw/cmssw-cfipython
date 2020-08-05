@@ -60,5 +60,6 @@ PATElectronProducer = cms.EDProducer('PATElectronProducer',
   resolutions = cms.PSet(),
   embedHighLevelSelection = cms.bool(True),
   beamLineSrc = cms.InputTag(''),
-  pvSrc = cms.InputTag('')
+  pvSrc = cms.InputTag(''),
+  getdBFromTrack = cms.bool(False)
 )
