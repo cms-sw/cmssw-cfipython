@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 me0Geometry = cms.ESProducer('ME0GeometryESModule',
-  useDDD = cms.bool(True),
-  useDD4Hep = cms.bool(False),
+  fromDDD = cms.bool(True),
+  fromDD4hep = cms.bool(False),
   appendToDataLabel = cms.string('')
 )
