@@ -1,8 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
 CSCGeometryESModule = cms.ESProducer('CSCGeometryESModule',
-  useDDD = cms.bool(True),
-  useDD4hep = cms.bool(False),
+  fromDDD = cms.bool(True),
+  fromDD4hep = cms.bool(False),
   alignmentsLabel = cms.string(''),
   appendToDataLabel = cms.string(''),
   useRealWireGeometry = cms.bool(True),
