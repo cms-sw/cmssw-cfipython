@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 lowPtGsfElectronID = cms.EDProducer('LowPtGsfElectronIDProducer',
   electrons = cms.InputTag('lowPtGsfElectrons'),
+  unbiased = cms.InputTag('lowPtGsfElectronSeedValueMaps', 'unbiased'),
   rho = cms.InputTag('fixedGridRhoFastjetAllTmp'),
   ModelNames = cms.vstring(''),
   ModelWeights = cms.vstring('RecoEgamma/ElectronIdentification/data/LowPtElectrons/RunII_Autumn18_LowPtElectrons_mva_id.xml.gz'),
