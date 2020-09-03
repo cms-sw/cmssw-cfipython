@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-DoodadESSource = cms.ESProducer('CTPPSGeometryESModule',
+PPSGeometryESProducer = cms.ESProducer('PPSGeometryESProducer',
   verbosity = cms.untracked.uint32(1),
-  compactViewTag = cms.string(''),
+  detectorTag = cms.string(''),
   appendToDataLabel = cms.string('')
 )

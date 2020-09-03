@@ -6,6 +6,5 @@ DMRChecker = cms.EDAnalyzer('DMRChecker',
   BeamSpotTag = cms.InputTag('offlineBeamSpot'),
   VerticesTag = cms.InputTag('offlinePrimaryVertices'),
   isCosmics = cms.bool(False),
-  isPhase1 = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )

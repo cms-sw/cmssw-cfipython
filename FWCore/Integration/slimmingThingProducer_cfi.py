@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-thinningThingProducer = cms.EDProducer('ThinningThingProducer',
+slimmingThingProducer = cms.EDProducer('SlimmingThingProducer',
   inputTag = cms.required.InputTag,
   trackTag = cms.required.InputTag,
   offsetToThinnedKey = cms.required.uint32,
