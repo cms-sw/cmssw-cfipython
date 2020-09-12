@@ -176,9 +176,7 @@ gsfElectronProducer = cms.EDProducer('GsfElectronProducer',
     isEndcaps = cms.bool(False),
     isFiducial = cms.bool(False),
     seedFromTEC = cms.bool(True),
-    maxTIP = cms.double(999999999),
-    minMVA = cms.double(-0.4),
-    minMvaByPassForIsolated = cms.double(-0.4)
+    maxTIP = cms.double(999999999)
   ),
   superClusterErrorFunction = cms.string('EcalClusterEnergyUncertaintyObjectSpecific'),
   crackCorrectionFunction = cms.string('EcalClusterCrackCorrection'),
