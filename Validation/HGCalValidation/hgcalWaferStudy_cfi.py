@@ -10,8 +10,8 @@ hgcalWaferStudy = cms.EDAnalyzer('HGCalWaferStudy',
     'HGCHitsHEfront'
   ),
   digiSources = cms.VInputTag(
-    'hgcalDigis:EE',
-    'hgcalDigis:HEfront'
+    'simHGCalUnsuppressedDigis:EE',
+    'simHGCalUnsuppressedDigis:HEfront'
   ),
   verbosity = cms.untracked.int32(0),
   nBinHit = cms.untracked.int32(600),

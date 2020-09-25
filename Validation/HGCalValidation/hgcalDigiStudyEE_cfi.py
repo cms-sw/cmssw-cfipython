@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 hgcalDigiStudyEE = cms.EDAnalyzer('HGCalDigiStudy',
   detectorName = cms.string('HGCalEESensitive'),
-  digiSource = cms.InputTag('hgcalDigis', 'EE'),
+  digiSource = cms.InputTag('simHGCalUnsuppressedDigis', 'EE'),
   ifNose = cms.untracked.bool(False),
   ifHCAL = cms.untracked.bool(False),
   ifLayer = cms.untracked.bool(False),
