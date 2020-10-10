@@ -4,9 +4,8 @@ ctppsLHCInfoRandomXangleESSource = cms.ESSource('CTPPSLHCInfoRandomXangleESSourc
   label = cms.string(''),
   seed = cms.uint32(1),
   generateEveryNEvents = cms.uint32(1),
-  xangleHistogramFile = cms.string(''),
-  xangleHistogramObject = cms.string(''),
+  xangleBetaStarHistogramFile = cms.string(''),
+  xangleBetaStarHistogramObject = cms.string(''),
   beamEnergy = cms.double(0),
-  betaStar = cms.double(0),
   appendToDataLabel = cms.string('')
 )
