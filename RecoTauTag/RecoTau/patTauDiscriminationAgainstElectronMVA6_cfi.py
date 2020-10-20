@@ -20,6 +20,7 @@ patTauDiscriminationAgainstElectronMVA6 = cms.EDProducer('PATTauDiscriminationAg
   minMVANoEleMatchWgWOgsfEC = cms.double(0),
   minMVAWOgWgsfEC = cms.double(0),
   minMVAWgWgsfEC = cms.double(0),
+  isPhase2 = cms.bool(False),
   srcElectrons = cms.InputTag('fixme'),
   vetoEcalCracks = cms.bool(True),
   usePhiAtEcalEntranceExtrapolation = cms.bool(False),
