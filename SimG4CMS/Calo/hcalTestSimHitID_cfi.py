@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hcalGeometryDetIdTester = cms.EDAnalyzer('HcalTestSimHitID',
+hcalTestSimHitID = cms.EDAnalyzer('HcalTestSimHitID',
   moduleLabel = cms.untracked.string('g4SimHits'),
   hcCollection = cms.untracked.string('HcalHits'),
   testNumbering = cms.untracked.bool(False),
