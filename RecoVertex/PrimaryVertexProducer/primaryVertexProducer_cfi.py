@@ -66,5 +66,7 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
     ),
     algorithm = cms.string('DA_vect')
   ),
+  isRecoveryIteration = cms.bool(False),
+  recoveryVtxCollection = cms.InputTag(''),
   mightGet = cms.optional.untracked.vstring
 )
