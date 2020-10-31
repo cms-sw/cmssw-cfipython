@@ -13,5 +13,8 @@ SiteLocalConfigService = cms.Service('SiteLocalConfigService',
   debugLevel = cms.optional.untracked.uint32,
   overridePrefetching = cms.optional.untracked.bool,
   overrideStatisticsDestination = cms.optional.untracked.string,
-  overrideStatisticsInfo = cms.optional.untracked.vstring
+  overrideStatisticsInfo = cms.optional.untracked.vstring,
+  overrideUseLocalConnectString = cms.optional.untracked.bool,
+  overrideLocalConnectPrefix = cms.optional.untracked.string,
+  overrideLocalConnectSuffix = cms.optional.untracked.string
 )
