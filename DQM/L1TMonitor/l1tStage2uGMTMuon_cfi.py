@@ -6,5 +6,6 @@ l1tStage2uGMTMuon = cms.EDProducer('L1TStage2uGMTMuon',
   titlePrefix = cms.untracked.string(''),
   verbose = cms.untracked.bool(False),
   makeMuonAtVtxPlots = cms.untracked.bool(False),
+  displacedQuantities = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
