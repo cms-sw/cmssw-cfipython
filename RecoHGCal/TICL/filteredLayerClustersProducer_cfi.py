@@ -8,5 +8,7 @@ filteredLayerClustersProducer = cms.EDProducer('FilteredLayerClustersProducer',
   algo_number = cms.int32(9),
   min_cluster_size = cms.int32(0),
   max_cluster_size = cms.int32(9999),
+  min_layerId = cms.int32(0),
+  max_layerId = cms.int32(9999),
   mightGet = cms.optional.untracked.vstring
 )
