@@ -7,6 +7,7 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
       2.9,
       2.9
     ),
+    positionDeltaRho2 = cms.double(1.69),
     deltac = cms.vdouble(
       1.3,
       1.3,
