@@ -10,5 +10,6 @@ l1tStage2MuonComp = cms.EDProducer('L1TStage2MuonComp',
   ignoreBin = cms.untracked.vint32(),
   verbose = cms.untracked.bool(False),
   enable2DComp = cms.untracked.bool(False),
+  displacedQuantities = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
