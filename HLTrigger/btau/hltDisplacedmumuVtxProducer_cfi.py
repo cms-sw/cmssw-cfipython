@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 hltDisplacedmumuVtxProducer = cms.EDProducer('HLTDisplacedmumuVtxProducer',
   Src = cms.InputTag('hltL3MuonCandidates'),
   PreviousCandTag = cms.InputTag(''),
+  matchToPrevious = cms.bool(True),
   MaxEta = cms.double(2.5),
   MinPt = cms.double(0),
   MinPtPair = cms.double(0),
