@@ -25,9 +25,7 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
     maxNumberOfThickIndices = cms.uint32(6),
     fcPerMip = cms.vdouble(),
     fcPerEle = cms.double(0),
-    noises = cms.PSet(
-      values = cms.vdouble()
-    ),
+    noises = cms.vdouble(),
     noiseMip = cms.PSet(
       scaleByDose = cms.bool(False),
       scaleByDoseAlgo = cms.uint32(0),
