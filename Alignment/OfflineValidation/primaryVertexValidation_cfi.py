@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
+  compressionSettings = cms.untracked.int32(-1),
   storeNtuple = cms.bool(False),
   isLightNtuple = cms.bool(True),
   useTracksFromRecoVtx = cms.bool(False),
