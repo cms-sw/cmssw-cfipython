@@ -7,6 +7,7 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
       2.9,
       2.9
     ),
+    positionDeltaRho2 = cms.double(1.69),
     deltac = cms.vdouble(
       1.3,
       1.3,
@@ -19,11 +20,12 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
     verbosity = cms.untracked.uint32(3),
     dEdXweights = cms.vdouble(),
     thicknessCorrection = cms.vdouble(),
+    sciThicknessCorrection = cms.double(0.9),
+    deltasi_index_regemfac = cms.int32(3),
+    maxNumberOfThickIndices = cms.uint32(6),
     fcPerMip = cms.vdouble(),
     fcPerEle = cms.double(0),
-    noises = cms.PSet(
-      values = cms.vdouble()
-    ),
+    noises = cms.vdouble(),
     noiseMip = cms.PSet(
       scaleByDose = cms.bool(False),
       scaleByDoseAlgo = cms.uint32(0),
