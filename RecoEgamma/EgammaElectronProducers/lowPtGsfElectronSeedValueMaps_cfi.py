@@ -7,5 +7,8 @@ lowPtGsfElectronSeedValueMaps = cms.EDProducer('LowPtGsfElectronSeedValueMapsPro
     'unbiased',
     'ptbiased'
   ),
+  rekey = cms.bool(False),
+  gsfElectrons = cms.InputTag(''),
+  floatValueMaps = cms.VInputTag(),
   mightGet = cms.optional.untracked.vstring
 )

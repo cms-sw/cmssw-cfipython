@@ -7,5 +7,6 @@ lowPtGsfLinksDefault = cms.EDProducer('LowPtGSFToPackedCandidateLinker',
   tracks = cms.InputTag('generalTracks'),
   gsfToTrack = cms.InputTag('lowPtGsfToTrackLinks'),
   gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks'),
+  electrons = cms.InputTag('selectedPatLowPtElectrons'),
   mightGet = cms.optional.untracked.vstring
 )
