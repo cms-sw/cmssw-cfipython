@@ -25,6 +25,8 @@ PuppiProducer = cms.EDProducer('PuppiProducer',
   invertPuppi = cms.bool(False),
   useExp = cms.bool(False),
   MinPuppiWeight = cms.double(0.01),
+  usePUProxyValue = cms.bool(False),
+  PUProxyValue = cms.InputTag(''),
   algos = cms.VPSet(
     cms.PSet(
       EtaMaxExtrap = cms.double(2),
