@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 PATJetUpdater = cms.EDProducer('PATJetUpdater',
   jetSource = cms.InputTag('no default'),
+  sort = cms.bool(True),
   addTagInfos = cms.bool(True),
   tagInfoSources = cms.VInputTag(),
   addJetCorrFactors = cms.bool(True),
