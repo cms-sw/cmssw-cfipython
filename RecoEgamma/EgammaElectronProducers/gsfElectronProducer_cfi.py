@@ -180,7 +180,6 @@ gsfElectronProducer = cms.EDProducer('GsfElectronProducer',
     seedFromTEC = cms.bool(True),
     maxTIP = cms.double(999999999)
   ),
-  superClusterErrorFunction = cms.string('EcalClusterEnergyUncertaintyObjectSpecific'),
   crackCorrectionFunction = cms.string('EcalClusterCrackCorrection'),
   ecalWeightsFromDB = cms.bool(True),
   ecalRefinedRegressionWeightFiles = cms.vstring(),
