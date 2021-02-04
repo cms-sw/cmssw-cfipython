@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-tritonImageProducer = cms.EDProducer('TritonImageProducer',
+tritonGraphFilter = cms.EDFilter('TritonGraphFilter',
   Client = cms.PSet(
     mode = cms.string('PseudoAsync'),
     allowedTries = cms.untracked.uint32(0),
@@ -12,8 +12,9 @@ tritonImageProducer = cms.EDProducer('TritonImageProducer',
     verbose = cms.untracked.bool(False),
     outputs = cms.untracked.vstring()
   ),
-  batchSize = cms.uint32(1),
-  topN = cms.uint32(5),
-  imageList = cms.required.FileInPath,
+  nodeMin = cms.uint32(100),
+  nodeMax = cms.uint32(4000),
+  edgeMin = cms.uint32(8000),
+  edgeMax = cms.uint32(15000),
   mightGet = cms.optional.untracked.vstring
 )

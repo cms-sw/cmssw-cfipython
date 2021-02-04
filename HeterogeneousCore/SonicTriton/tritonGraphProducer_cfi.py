@@ -6,12 +6,15 @@ tritonGraphProducer = cms.EDProducer('TritonGraphProducer',
     allowedTries = cms.untracked.uint32(0),
     modelName = cms.required.string,
     modelVersion = cms.string(''),
-    batchSize = cms.required.untracked.uint32,
-    address = cms.required.untracked.string,
-    port = cms.required.untracked.uint32,
+    modelConfigPath = cms.required.FileInPath,
+    preferredServer = cms.untracked.string(''),
     timeout = cms.required.untracked.uint32,
     verbose = cms.untracked.bool(False),
     outputs = cms.untracked.vstring()
   ),
+  nodeMin = cms.uint32(100),
+  nodeMax = cms.uint32(4000),
+  edgeMin = cms.uint32(8000),
+  edgeMax = cms.uint32(15000),
   mightGet = cms.optional.untracked.vstring
 )

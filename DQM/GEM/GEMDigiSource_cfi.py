@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-GEMDQMSourceDigi = cms.EDProducer('GEMDQMSourceDigi',
+GEMDigiSource = cms.EDProducer('GEMDigiSource',
   digisInputLabel = cms.InputTag('muonGEMDigis'),
+  logCategory = cms.untracked.string('GEMDigiSource'),
   mightGet = cms.optional.untracked.vstring
 )
