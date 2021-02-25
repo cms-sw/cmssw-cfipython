@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 ctppsPixelLocalTracks = cms.EDProducer('CTPPSPixelLocalTrackProducer',
-  label = cms.string('ctppsPixelRecHits'),
+  tag = cms.InputTag('ctppsPixelRecHits'),
   patternFinderAlgorithm = cms.string('RPixRoadFinder'),
   trackFinderAlgorithm = cms.string('RPixPlaneCombinatoryTracking'),
   trackMinNumberOfPoints = cms.uint32(3),
