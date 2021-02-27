@@ -4,6 +4,13 @@ hltEgammaHLTExtraProducer = cms.EDProducer('EgammaHLTExtraProducer',
   minPtToSaveHits = cms.double(0),
   saveHitsPlusPi = cms.bool(False),
   saveHitsPlusHalfPi = cms.bool(True),
+  recHitCountThresholds = cms.vdouble(
+    0,
+    0.5,
+    1,
+    1.5,
+    2
+  ),
   egCands = cms.VPSet(
     cms.PSet(
       ecalCands = cms.InputTag('hltEgammaCandidates'),
