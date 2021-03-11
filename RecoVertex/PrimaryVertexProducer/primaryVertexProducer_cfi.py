@@ -39,10 +39,8 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
   TrackTimesLabel = cms.InputTag('dummy_default'),
   TkClusParameters = cms.PSet(
     TkDAClusParameters = cms.PSet(
-      verbose = cms.untracked.bool(False),
       zdumpcenter = cms.untracked.double(0),
       zdumpwidth = cms.untracked.double(20),
-      use_vdt = cms.untracked.bool(False),
       d0CutOff = cms.double(3),
       Tmin = cms.double(2),
       delta_lowT = cms.double(0.001),
@@ -63,7 +61,8 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
       vertexSizeTime = cms.double(0.008)
     ),
     TkGapClusParameters = cms.PSet(
-      zSeparation = cms.double(1)
+      zSeparation = cms.double(1),
+      verbose = cms.untracked.bool(False)
     ),
     algorithm = cms.string('DA_vect')
   ),

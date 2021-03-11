@@ -25,11 +25,11 @@ primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
   VertexCollectionTag = cms.InputTag('offlinePrimaryVertices'),
   BeamSpotTag = cms.InputTag('offlineBeamSpot'),
   TkFilterParameters = cms.PSet(
-    maxNormalizedChi2 = cms.double(5),
+    maxNormalizedChi2 = cms.double(10),
     minPt = cms.double(0),
     algorithm = cms.string('filter'),
-    maxEta = cms.double(5),
-    maxD0Significance = cms.double(5),
+    maxEta = cms.double(2.4),
+    maxD0Significance = cms.double(4),
     maxD0Error = cms.double(1),
     maxDzError = cms.double(1),
     trackQuality = cms.string('any'),
@@ -39,10 +39,8 @@ primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
   ),
   TkClusParameters = cms.PSet(
     TkDAClusParameters = cms.PSet(
-      verbose = cms.untracked.bool(False),
       zdumpcenter = cms.untracked.double(0),
       zdumpwidth = cms.untracked.double(20),
-      use_vdt = cms.untracked.bool(False),
       d0CutOff = cms.double(3),
       Tmin = cms.double(2),
       delta_lowT = cms.double(0.001),
@@ -56,14 +54,11 @@ primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
       vertexSize = cms.double(0.006),
       uniquetrkweight = cms.double(0.8),
       uniquetrkminp = cms.double(0),
-      zrange = cms.double(4),
-      tmerge = cms.double(0.01),
-      dtCutOff = cms.double(4),
-      t0Max = cms.double(1),
-      vertexSizeTime = cms.double(0.008)
+      zrange = cms.double(4)
     ),
     TkGapClusParameters = cms.PSet(
-      zSeparation = cms.double(1)
+      zSeparation = cms.double(1),
+      verbose = cms.untracked.bool(False)
     ),
     algorithm = cms.string('DA_vect')
   ),
