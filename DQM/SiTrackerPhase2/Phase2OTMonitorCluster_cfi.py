@@ -6,8 +6,8 @@ Phase2OTMonitorCluster = cms.EDProducer('Phase2OTMonitorCluster',
     title = cms.string(';Number of clusters per event;'),
     xmin = cms.double(0),
     switch = cms.bool(True),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50)
+    xmax = cms.double(350000),
+    NxBins = cms.int32(150)
   ),
   GlobalPositionXY_P = cms.PSet(
     name = cms.string('Global_ClusterPosition_XY_P'),
@@ -57,16 +57,16 @@ Phase2OTMonitorCluster = cms.EDProducer('Phase2OTMonitorCluster',
     name = cms.string('NumberOfClustersLayerP'),
     title = cms.string(';Number of clusters per event(macro pixel sensor);'),
     xmin = cms.double(0),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50),
+    xmax = cms.double(28000),
+    NxBins = cms.int32(150),
     switch = cms.bool(True)
   ),
   NClustersLayer_S = cms.PSet(
     name = cms.string('NumberOfClustersLayerS'),
     title = cms.string(';Number of clusters per event(strip sensor);'),
     xmin = cms.double(0),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50),
+    xmax = cms.double(28000),
+    NxBins = cms.int32(150),
     switch = cms.bool(True)
   ),
   ClusterSize_P = cms.PSet(

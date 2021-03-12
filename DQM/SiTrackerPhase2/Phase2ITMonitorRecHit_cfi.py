@@ -6,8 +6,8 @@ Phase2ITMonitorRecHit = cms.EDProducer('Phase2ITMonitorRecHit',
     title = cms.string('NumberRecHits;Number of RecHits;'),
     xmin = cms.double(0),
     switch = cms.bool(True),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50)
+    xmax = cms.double(250000),
+    NxBins = cms.int32(250)
   ),
   GlobalPositionRZ_PXB = cms.PSet(
     name = cms.string('Global_Position_RZ_IT_barrel'),
@@ -58,8 +58,8 @@ Phase2ITMonitorRecHit = cms.EDProducer('Phase2ITMonitorRecHit',
     title = cms.string('NumberRecHits;Number of RecHits;'),
     xmin = cms.double(0),
     switch = cms.bool(True),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50)
+    xmax = cms.double(150000),
+    NxBins = cms.int32(150)
   ),
   GlobalPositionRZ_perlayer = cms.PSet(
     name = cms.string('Global_Position_RZ'),
@@ -107,8 +107,8 @@ Phase2ITMonitorRecHit = cms.EDProducer('Phase2ITMonitorRecHit',
     title = cms.string('Cluster_SizeY;cluster size y;'),
     xmin = cms.double(-0.5),
     switch = cms.bool(True),
-    xmax = cms.double(20.5),
-    NxBins = cms.int32(21)
+    xmax = cms.double(25.5),
+    NxBins = cms.int32(26)
   ),
   RecHitPosX = cms.PSet(
     name = cms.string('RecHit_X'),
@@ -128,7 +128,7 @@ Phase2ITMonitorRecHit = cms.EDProducer('Phase2ITMonitorRecHit',
   ),
   RecHitPosErrorX_Eta = cms.PSet(
     name = cms.string('RecHit_X_error_Vs_eta'),
-    title = cms.string('RecHit_X_error_Vs_eta;#eta;x error #times 10^{6}'),
+    title = cms.string('RecHit_X_error_Vs_eta;#eta;x error [#mum]'),
     switch = cms.bool(True),
     NxBins = cms.int32(82),
     xmax = cms.double(4.1),
@@ -138,7 +138,7 @@ Phase2ITMonitorRecHit = cms.EDProducer('Phase2ITMonitorRecHit',
   ),
   RecHitPosErrorY_Eta = cms.PSet(
     name = cms.string('RecHit_Y_error_Vs_eta'),
-    title = cms.string('RecHit_Y_error_Vs_eta;#eta;y error #times 10^{6}'),
+    title = cms.string('RecHit_Y_error_Vs_eta;#eta;y error [#mum]'),
     switch = cms.bool(True),
     NxBins = cms.int32(82),
     xmax = cms.double(4.1),

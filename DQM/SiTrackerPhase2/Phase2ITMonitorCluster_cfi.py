@@ -6,8 +6,8 @@ Phase2ITMonitorCluster = cms.EDProducer('Phase2ITMonitorCluster',
     title = cms.string('NumberClusters;Number of Clusters;'),
     xmin = cms.double(0),
     switch = cms.bool(True),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50)
+    xmax = cms.double(300000),
+    NxBins = cms.int32(150)
   ),
   GlobalPositionRZ_PXB = cms.PSet(
     name = cms.string('Global_Position_RZ_IT_barrel'),
@@ -58,8 +58,8 @@ Phase2ITMonitorCluster = cms.EDProducer('Phase2ITMonitorCluster',
     title = cms.string('NumberOfClutsers;Number of Clusters;'),
     xmin = cms.double(0),
     switch = cms.bool(True),
-    xmax = cms.double(0),
-    NxBins = cms.int32(50)
+    xmax = cms.double(20000),
+    NxBins = cms.int32(150)
   ),
   ClusterCharge = cms.PSet(
     name = cms.string('ClusterCharge'),
