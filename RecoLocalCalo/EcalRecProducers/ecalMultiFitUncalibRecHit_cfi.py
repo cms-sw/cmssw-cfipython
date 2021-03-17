@@ -113,6 +113,9 @@ ecalMultiFitUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
     kPoorRecoFlagEE = cms.bool(False),
     chi2ThreshEB_ = cms.double(65),
     chi2ThreshEE_ = cms.double(50),
+    crossCorrelationStartTime = cms.double(-25),
+    crossCorrelationStopTime = cms.double(25),
+    crossCorrelationTargetTimePrecision = cms.double(0.01),
     EcalPulseShapeParameters = cms.PSet(
       EBPulseShapeTemplate = cms.vdouble(
         0.0113979,
