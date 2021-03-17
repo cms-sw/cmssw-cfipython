@@ -10,6 +10,6 @@ l1tStage2RegionalMuonCandComp = cms.EDProducer('L1TStage2RegionalMuonCandComp',
   ignoreBadTrackAddress = cms.untracked.bool(False),
   ignoreBin = cms.untracked.vint32(),
   verbose = cms.untracked.bool(False),
-  isBmtf = cms.untracked.bool(False),
+  hasDisplacementInfo = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
