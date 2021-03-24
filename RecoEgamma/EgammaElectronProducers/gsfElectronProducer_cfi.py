@@ -178,7 +178,9 @@ gsfElectronProducer = cms.EDProducer('GsfElectronProducer',
     isEndcaps = cms.bool(False),
     isFiducial = cms.bool(False),
     seedFromTEC = cms.bool(True),
-    maxTIP = cms.double(999999999)
+    maxTIP = cms.double(999999999),
+    multThresEB = cms.double(1),
+    multThresEE = cms.double(1.25)
   ),
   crackCorrectionFunction = cms.string('EcalClusterCrackCorrection'),
   ecalWeightsFromDB = cms.bool(True),

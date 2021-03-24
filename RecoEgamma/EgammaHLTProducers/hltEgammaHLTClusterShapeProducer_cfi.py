@@ -5,5 +5,7 @@ hltEgammaHLTClusterShapeProducer = cms.EDProducer('EgammaHLTClusterShapeProducer
   ecalRechitEB = cms.InputTag('hltEcalRegionalEgammaRecHit', 'EcalRecHitsEB'),
   ecalRechitEE = cms.InputTag('hltEcalRegionalEgammaRecHit', 'EcalRecHitsEE'),
   isIeta = cms.bool(True),
+  multThresEB = cms.double(1),
+  multThresEE = cms.double(1.25),
   mightGet = cms.optional.untracked.vstring
 )
