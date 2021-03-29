@@ -6,5 +6,6 @@ btlLocalReco = cms.EDProducer('BtlLocalRecoValidation',
   simHitsTag = cms.InputTag('mix', 'g4SimHitsFastTimerHitsBarrel'),
   recCluTag = cms.InputTag('mtdClusters', 'FTLBarrel'),
   hitMinimumEnergy = cms.double(1),
+  LocalPositionDebug = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
