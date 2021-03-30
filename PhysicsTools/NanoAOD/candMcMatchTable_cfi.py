@@ -8,5 +8,8 @@ candMcMatchTable = cms.EDProducer('CandMCMatchTableProducer',
   mcMap = cms.required.InputTag,
   objType = cms.required.string,
   mcMapVisTau = cms.optional.InputTag,
+  mcMapDressedLep = cms.optional.InputTag,
+  mapTauAnc = cms.optional.InputTag,
+  genparticles = cms.optional.InputTag,
   mightGet = cms.optional.untracked.vstring
 )
