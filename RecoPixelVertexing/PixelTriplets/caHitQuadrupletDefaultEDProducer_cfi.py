@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-caHitQuadrupletEDProducer = cms.EDProducer('CAHitQuadrupletEDProducer',
+caHitQuadrupletDefaultEDProducer = cms.EDProducer('CAHitQuadrupletEDProducer',
   doublets = cms.InputTag('hitPairEDProducer'),
   extraHitRPhitolerance = cms.double(0.1),
   fitFastCircle = cms.bool(False),
