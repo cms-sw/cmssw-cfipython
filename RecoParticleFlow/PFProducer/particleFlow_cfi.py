@@ -43,7 +43,7 @@ particleFlow = cms.EDProducer('PFProducer',
       maxDPhiIN = cms.double(0.1)
     ),
     electron_protectionsForBadHcal = cms.PSet(
-      enableProtections = cms.bool(False),
+      enableProtections = cms.bool(True),
       full5x5_sigmaIetaIeta = cms.vdouble(
         0.0106,
         0.0387
@@ -72,7 +72,7 @@ particleFlow = cms.EDProducer('PFProducer',
     ),
     photon_protectionsForBadHcal = cms.PSet(
       solidConeTrkIsoSlope = cms.double(0.3),
-      enableProtections = cms.bool(False),
+      enableProtections = cms.bool(True),
       solidConeTrkIsoOffset = cms.double(10)
     )
   ),
