@@ -29,8 +29,8 @@ Phase2OTValidateCluster = cms.EDProducer('Phase2OTValidateCluster',
     name = cms.string('Delta_Y_Pixel_Primary'),
     title = cms.string('#Delta Y macro-pixel sensor;cluster resolution Y coordinate [#mum]'),
     switch = cms.bool(True),
-    xmin = cms.double(-500),
-    xmax = cms.double(500),
+    xmin = cms.double(-1500),
+    xmax = cms.double(1500),
     NxBins = cms.int32(100)
   ),
   Delta_X_Strip = cms.PSet(
