@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 triggerResultsFilter = cms.EDFilter('TriggerResultsFilter',
+  usePathStatus = cms.bool(False),
   hltResults = cms.InputTag('TriggerResults'),
   l1tResults = cms.InputTag('hltGtStage2Digis'),
   l1tIgnoreMaskAndPrescale = cms.bool(False),
