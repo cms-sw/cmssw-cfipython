@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-configWireTimeWindow = cms.EDProducer('CSCRecHitDProducer',
+cscRecHitDProducer = cms.EDProducer('CSCRecHitDProducer',
   CSCStripPeakThreshold = cms.double(10),
   CSCStripClusterChargeCut = cms.double(25),
   CSCStripxtalksOffset = cms.double(0.03),
@@ -19,7 +19,6 @@ configWireTimeWindow = cms.EDProducer('CSCRecHitDProducer',
   CSCUseGasGainCorrections = cms.bool(True),
   CSCDebug = cms.untracked.bool(False),
   CSCstripWireDeltaTime = cms.int32(8),
-  CSCStripClusterSize = cms.untracked.int32(3),
   XTasymmetry_ME1a = cms.double(0.023),
   XTasymmetry_ME1b = cms.double(0.01),
   XTasymmetry_ME12 = cms.double(0.015),
