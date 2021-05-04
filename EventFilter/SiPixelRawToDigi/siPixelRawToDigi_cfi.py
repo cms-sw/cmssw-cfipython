@@ -12,10 +12,8 @@ siPixelRawToDigi = cms.EDProducer('SiPixelRawToDigi',
     maxZ = cms.optional.vdouble,
     beamSpot = cms.optional.InputTag
   ),
-  Timing = cms.untracked.bool(False),
   UsePilotBlade = cms.bool(False),
   UsePhase1 = cms.bool(False),
   CablingMapLabel = cms.string(''),
-  CheckPixelOrder = cms.optional.bool,
   mightGet = cms.optional.untracked.vstring
 )

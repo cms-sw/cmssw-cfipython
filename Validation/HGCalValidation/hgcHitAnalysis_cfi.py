@@ -14,6 +14,5 @@ hgcHitAnalysis = cms.EDAnalyzer('HGCHitValidation',
   fhRecHitSource = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
   bhRecHitSource = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
   ietaExcludeBH = cms.vint32(),
-  ifHCAL = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
