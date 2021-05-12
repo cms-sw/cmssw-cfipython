@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-caHitNtupletCUDA = cms.EDProducer('CAHitNtupletCUDA',
+pixelTracksCUDA = cms.EDProducer('CAHitNtupletCUDA',
   onGPU = cms.bool(True),
   pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingCUDA'),
   ptmin = cms.double(0.89999997615814209),
