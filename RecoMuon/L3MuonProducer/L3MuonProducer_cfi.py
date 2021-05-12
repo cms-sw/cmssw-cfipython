@@ -128,7 +128,6 @@ L3MuonProducer = cms.EDProducer('L3MuonProducer',
       EtaR_UpperLimit_Par1 = cms.double(0.25),
       EtaR_UpperLimit_Par2 = cms.double(0.15),
       beamSpot = cms.InputTag('hltOnlineBeamSpot'),
-      EscapePt = cms.double(3),
       Pt_fixed = cms.bool(False)
     ),
     RefitRPCHits = cms.bool(True),
