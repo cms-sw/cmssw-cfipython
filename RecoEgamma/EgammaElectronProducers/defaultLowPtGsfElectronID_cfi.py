@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 defaultLowPtGsfElectronID = cms.EDProducer('LowPtGsfElectronIDProducer',
+  usePAT = cms.bool(False),
   electrons = cms.InputTag('lowPtGsfElectrons'),
   unbiased = cms.InputTag('lowPtGsfElectronSeedValueMaps', 'unbiased'),
   rho = cms.InputTag('fixedGridRhoFastjetAll'),
