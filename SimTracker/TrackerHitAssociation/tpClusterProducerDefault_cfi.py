@@ -9,5 +9,6 @@ tpClusterProducerDefault = cms.EDProducer('ClusterTPAssociationProducer',
   stripClusterSrc = cms.InputTag('siStripClusters'),
   phase2OTClusterSrc = cms.InputTag('siPhase2Clusters'),
   trackingParticleSrc = cms.InputTag('mix', 'MergedTrackTruth'),
+  throwOnMissingCollections = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
