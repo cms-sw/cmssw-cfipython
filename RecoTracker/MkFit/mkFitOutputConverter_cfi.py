@@ -1,13 +1,14 @@
 import FWCore.ParameterSet.Config as cms
 
 mkFitOutputConverter = cms.EDProducer('MkFitOutputConverter',
-  hitsSeeds = cms.InputTag('mkFitInputConverter'),
+  mkFitEventOfHits = cms.InputTag('mkFitEventOfHits'),
+  mkFitPixelHits = cms.InputTag('mkFitSiPixelHits'),
+  mkFitStripHits = cms.InputTag('mkFitSiStripHits'),
+  mkFitSeeds = cms.InputTag('mkFitSeedConverter'),
   tracks = cms.InputTag('mkFitProducer'),
   seeds = cms.InputTag('initialStepSeeds'),
-  measurementTrackerEvent = cms.InputTag('MeasurementTrackerEvent'),
   ttrhBuilder = cms.ESInputTag('', 'WithTrackAngle'),
   propagatorAlong = cms.ESInputTag('', 'PropagatorWithMaterial'),
   propagatorOpposite = cms.ESInputTag('', 'PropagatorWithMaterialOpposite'),
-  backwardFitInCMSSW = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
