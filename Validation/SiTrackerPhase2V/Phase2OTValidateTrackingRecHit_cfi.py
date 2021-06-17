@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-Phase2OTValidateRecHit = cms.EDProducer('Phase2OTValidateRecHit',
+Phase2OTValidateTrackingRecHit = cms.EDProducer('Phase2OTValidateTrackingRecHit',
   Delta_X_Pixel = cms.PSet(
     name = cms.string('Delta_X_Pixel'),
     title = cms.string('#Delta X macro-pixel sensor;Cluster resolution X coordinate [#mum]'),
@@ -275,7 +275,6 @@ Phase2OTValidateRecHit = cms.EDProducer('Phase2OTValidateRecHit',
   ),
   SimVertexSource = cms.InputTag('g4SimHits'),
   associatePixel = cms.bool(False),
-  TopFolderName = cms.string('TrackerPhase2OTRecHitV'),
   associateHitbySimTrack = cms.bool(True),
   Verbosity = cms.bool(False),
   associateStrip = cms.bool(True),
@@ -314,5 +313,7 @@ Phase2OTValidateRecHit = cms.EDProducer('Phase2OTValidateRecHit',
     'TrackerHitsTECLowTof',
     'TrackerHitsTECHighTof'
   ),
+  tracksSrc = cms.InputTag('generalTracks'),
+  TopFolderName = cms.string('TrackerPhase2OTTrackingRecHitV'),
   mightGet = cms.optional.untracked.vstring
 )

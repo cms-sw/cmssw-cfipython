@@ -35,23 +35,47 @@ Phase2ITValidateRecHit = cms.EDProducer('Phase2ITValidateRecHit',
   ),
   DeltaX_eta = cms.PSet(
     name = cms.string('Delta_X_vs_Eta'),
-    title = cms.string('Delta_X_vs_Eta;#eta;#Delta x [#mum]'),
+    title = cms.string('Delta_X_vs_Eta;|#eta|;#Delta x [#mum]'),
+    NyBins = cms.int32(100),
     ymin = cms.double(-100),
     ymax = cms.double(100),
-    NxBins = cms.int32(82),
+    NxBins = cms.int32(41),
     switch = cms.bool(True),
     xmax = cms.double(4.1),
-    xmin = cms.double(-4.1)
+    xmin = cms.double(0)
+  ),
+  DeltaX_phi = cms.PSet(
+    name = cms.string('Delta_X_vs_Phi'),
+    title = cms.string('Delta_X_vs_Phi;#phi;#Delta x [#mum]'),
+    NyBins = cms.int32(100),
+    ymin = cms.double(-100),
+    ymax = cms.double(100),
+    NxBins = cms.int32(36),
+    switch = cms.bool(True),
+    xmax = cms.double(3.1415926535897931),
+    xmin = cms.double(-3.1415926535897931)
   ),
   DeltaY_eta = cms.PSet(
     name = cms.string('Delta_Y_vs_Eta'),
-    title = cms.string('Delta_Y_vs_Eta;#eta;#Delta y [#mum]'),
+    title = cms.string('Delta_Y_vs_Eta;|#eta|;#Delta y [#mum]'),
+    NyBins = cms.int32(100),
     ymin = cms.double(-100),
     ymax = cms.double(100),
-    NxBins = cms.int32(82),
+    NxBins = cms.int32(41),
     switch = cms.bool(True),
     xmax = cms.double(4.1),
-    xmin = cms.double(-4.1)
+    xmin = cms.double(0)
+  ),
+  DeltaY_phi = cms.PSet(
+    name = cms.string('Delta_Y_vs_Phi'),
+    title = cms.string('Delta_Y_vs_Phi;#phi;#Delta y [#mum]'),
+    NyBins = cms.int32(100),
+    ymin = cms.double(-100),
+    ymax = cms.double(100),
+    NxBins = cms.int32(36),
+    switch = cms.bool(True),
+    xmax = cms.double(3.1415926535897931),
+    xmin = cms.double(-3.1415926535897931)
   ),
   DeltaX_clsizex = cms.PSet(
     name = cms.string('Delta_X_vs_ClusterSizeX'),
