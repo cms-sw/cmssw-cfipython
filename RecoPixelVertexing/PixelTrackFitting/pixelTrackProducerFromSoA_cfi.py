@@ -5,5 +5,6 @@ pixelTrackProducerFromSoA = cms.EDProducer('PixelTrackProducerFromSoA',
   trackSrc = cms.InputTag('pixelTracksSoA'),
   pixelRecHitLegacySrc = cms.InputTag('siPixelRecHitsPreSplittingLegacy'),
   minNumberOfHits = cms.int32(0),
+  minQuality = cms.string('loose'),
   mightGet = cms.optional.untracked.vstring
 )

@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 particleFlowClusterECAL = cms.EDProducer('CorrectedECALPFClusterProducer',
   minimumPSEnergy = cms.double(0),
+  skipPS = cms.bool(False),
   inputPS = cms.InputTag('particleFlowClusterPS'),
   energyCorrector = cms.PSet(
     applyCrackCorrections = cms.bool(False),
