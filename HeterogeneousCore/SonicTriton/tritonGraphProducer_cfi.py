@@ -10,11 +10,13 @@ tritonGraphProducer = cms.EDProducer('TritonGraphProducer',
     preferredServer = cms.untracked.string(''),
     timeout = cms.required.untracked.uint32,
     verbose = cms.untracked.bool(False),
+    useSharedMemory = cms.untracked.bool(True),
     outputs = cms.untracked.vstring()
   ),
   nodeMin = cms.uint32(100),
   nodeMax = cms.uint32(4000),
   edgeMin = cms.uint32(8000),
   edgeMax = cms.uint32(15000),
+  brief = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

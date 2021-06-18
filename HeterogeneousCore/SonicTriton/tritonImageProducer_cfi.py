@@ -10,9 +10,10 @@ tritonImageProducer = cms.EDProducer('TritonImageProducer',
     preferredServer = cms.untracked.string(''),
     timeout = cms.required.untracked.uint32,
     verbose = cms.untracked.bool(False),
+    useSharedMemory = cms.untracked.bool(True),
     outputs = cms.untracked.vstring()
   ),
-  batchSize = cms.uint32(1),
+  batchSize = cms.int32(1),
   topN = cms.uint32(5),
   imageList = cms.required.FileInPath,
   mightGet = cms.optional.untracked.vstring
