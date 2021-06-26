@@ -1,13 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-diMuonVertexValidation = cms.EDAnalyzer('DiMuonVertexValidation',
-  useReco = cms.bool(True),
-  muons = cms.InputTag('muons'),
-  tracks = cms.InputTag('generalTracks'),
+diElectronVertexValidation = cms.EDAnalyzer('DiElectronVertexValidation',
+  gsfTracks = cms.InputTag('electronGsfTracks'),
   vertices = cms.InputTag('offlinePrimaryVertices'),
+  electrons = cms.InputTag('gedGsfElectrons'),
   pTThresholds = cms.vdouble(
-    30,
-    10
+    25,
+    15
   ),
   maxSVdist = cms.double(50),
   DiMuMassConfig = cms.PSet(
