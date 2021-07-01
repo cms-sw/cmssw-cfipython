@@ -27,6 +27,44 @@ trackingNtuple = cms.EDAnalyzer('TrackingNtuple',
   ),
   tracks = cms.untracked.InputTag('generalTracks'),
   trackMVAs = cms.untracked.vstring('generalTracks'),
+  clusterMasks = cms.untracked.VPSet(
+    cms.PSet(
+      index = cms.untracked.uint32(24),
+      src = cms.untracked.InputTag('detachedQuadStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(22),
+      src = cms.untracked.InputTag('highPtTripletStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(7),
+      src = cms.untracked.InputTag('detachedTripletStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(23),
+      src = cms.untracked.InputTag('lowPtQuadStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(5),
+      src = cms.untracked.InputTag('lowPtTripletStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(8),
+      src = cms.untracked.InputTag('mixedTripletStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(9),
+      src = cms.untracked.InputTag('pixelLessStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(6),
+      src = cms.untracked.InputTag('pixelPairStepClusters')
+    ),
+    cms.PSet(
+      index = cms.untracked.uint32(10),
+      src = cms.untracked.InputTag('tobTecStepClusters')
+    )
+  ),
   trackingParticles = cms.untracked.InputTag('mix', 'MergedTrackTruth'),
   trackingParticlesRef = cms.untracked.bool(False),
   clusterTPMap = cms.untracked.InputTag('tpClusterProducer'),
@@ -49,8 +87,13 @@ trackingNtuple = cms.EDAnalyzer('TrackingNtuple',
   TTRHBuilder = cms.untracked.string('WithTrackAngle'),
   parametersDefiner = cms.untracked.string('LhcParametersDefinerForTP'),
   includeSeeds = cms.untracked.bool(False),
+  addSeedCurvCov = cms.untracked.bool(False),
   includeAllHits = cms.untracked.bool(False),
   includeMVA = cms.untracked.bool(True),
   includeTrackingParticles = cms.untracked.bool(True),
+  includeOOT = cms.untracked.bool(False),
+  keepEleSimHits = cms.untracked.bool(False),
+  saveSimHitsP3 = cms.untracked.bool(False),
+  simHitBySignificance = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
