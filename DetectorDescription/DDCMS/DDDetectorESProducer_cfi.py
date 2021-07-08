@@ -5,5 +5,6 @@ DDDetectorESProducer = cms.ESSource('DDDetectorESProducer',
   rootDDName = cms.string('cms:OCMS'),
   label = cms.string(''),
   fromDB = cms.bool(False),
+  makePayload = cms.bool(False),
   appendToDataLabel = cms.string('')
 )
