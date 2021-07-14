@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ecalDrivenElectronSeeds = cms.EDProducer('ElectronSeedProducer',
+ecalDrivenElectronSeedsDefault = cms.EDProducer('ElectronSeedProducer',
   initialSeedsVector = cms.VInputTag(),
   useRecoVertex = cms.bool(False),
   vertices = cms.InputTag('offlinePrimaryVerticesWithBS'),
@@ -11,8 +11,23 @@ ecalDrivenElectronSeeds = cms.EDProducer('ElectronSeedProducer',
   hOverEConeSize = cms.double(0.15),
   maxHOverEBarrel = cms.double(0.15),
   maxHOverEEndcaps = cms.double(0.15),
-  hcalTowers = cms.InputTag('towerMaker'),
-  hOverEPtMin = cms.double(0),
+  hbheRecHits = cms.InputTag('hbhereco'),
+  recHitEThresholdHB = cms.vdouble(
+    0,
+    0,
+    0,
+    0
+  ),
+  recHitEThresholdHE = cms.vdouble(
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ),
+  maxHcalRecHitSeverity = cms.int32(999999),
   allowHGCal = cms.bool(False),
   HGCalConfig = cms.PSet(
     HGCEEInput = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),

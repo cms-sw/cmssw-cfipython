@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-conversionTrackCandidates = cms.EDProducer('ConversionTrackCandidateProducer',
+conversionTrackCandidatesDefault = cms.EDProducer('ConversionTrackCandidateProducer',
   bcBarrelCollection = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowBasicClusterECALBarrel'),
   bcEndcapCollection = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowBasicClusterECALEndcap'),
   scHybridBarrelProducer = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowSuperClusterECALBarrel'),
@@ -20,7 +20,23 @@ conversionTrackCandidates = cms.EDProducer('ConversionTrackCandidateProducer',
   bcEtCut = cms.double(1.5),
   bcECut = cms.double(1.5),
   useEtCut = cms.bool(True),
-  hcalTowers = cms.InputTag('towerMaker'),
+  hbheRecHits = cms.InputTag('hbhereco'),
+  recHitEThresholdHB = cms.vdouble(
+    0,
+    0,
+    0,
+    0
+  ),
+  recHitEThresholdHE = cms.vdouble(
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ),
+  maxHcalRecHitSeverity = cms.int32(999999),
   minSCEt = cms.double(20),
   hOverEConeSize = cms.double(0.15),
   maxHOverE = cms.double(0.15),
