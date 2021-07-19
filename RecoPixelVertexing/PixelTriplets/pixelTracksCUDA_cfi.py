@@ -28,12 +28,10 @@ pixelTracksCUDA = cms.EDProducer('CAHitNtupletCUDA',
   trackQualityCuts = cms.PSet(
     chi2MaxPt = cms.double(10),
     chi2Coeff = cms.vdouble(
-      1,
-      0,
-      0,
-      0
+      0.9,
+      1.8
     ),
-    chi2Scale = cms.double(25),
+    chi2Scale = cms.double(8),
     tripletMinPt = cms.double(0.5),
     tripletMaxTip = cms.double(0.3),
     tripletMaxZip = cms.double(12),
