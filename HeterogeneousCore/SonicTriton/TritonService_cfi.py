@@ -13,6 +13,8 @@ TritonService = cms.Service('TritonService',
     retries = cms.untracked.int32(-1),
     wait = cms.untracked.int32(-1),
     instanceName = cms.untracked.string(''),
-    tempDir = cms.untracked.string('')
+    tempDir = cms.untracked.string(''),
+    imageName = cms.untracked.string(''),
+    sandboxName = cms.untracked.string('')
   )
 )

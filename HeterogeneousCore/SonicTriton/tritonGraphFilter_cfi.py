@@ -11,6 +11,7 @@ tritonGraphFilter = cms.EDFilter('TritonGraphFilter',
     timeout = cms.required.untracked.uint32,
     verbose = cms.untracked.bool(False),
     useSharedMemory = cms.untracked.bool(True),
+    compression = cms.untracked.string(''),
     outputs = cms.untracked.vstring()
   ),
   nodeMin = cms.uint32(100),
