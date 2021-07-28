@@ -37,8 +37,8 @@ alcaIsoTracksFilter = cms.EDFilter('AlCaIsoTracksFilter',
   EEHitEnergyThresholdHigh = cms.double(0.3),
   momentumRangeLow = cms.double(20),
   momentumRangeHigh = cms.double(40),
-  preScaleFactor = cms.int32(10),
+  preScaleFactor = cms.int32(1),
   momentumHigh = cms.double(60),
-  preScaleHigh = cms.int32(2),
+  preScaleHigh = cms.int32(1),
   mightGet = cms.optional.untracked.vstring
 )
