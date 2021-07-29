@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 cscPackerDef = cms.EDProducer('CSCDigiToRawModule',
-  useFormatVersion = cms.uint32(2005),
+  formatVersion = cms.uint32(2005),
   usePreTriggers = cms.bool(True),
   packEverything = cms.bool(False),
   useGEMs = cms.bool(False),
