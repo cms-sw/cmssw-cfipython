@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-cleanedEcalDrivenGsfElectronsFromMultiCl = cms.EDProducer('HGCalElectronFilter',
-  inputGsfElectrons = cms.InputTag('ecalDrivenGsfElectronsFromMultiCl'),
+cleanedEcalDrivenGsfElectronsHGC = cms.EDProducer('HGCalElectronFilter',
+  inputGsfElectrons = cms.InputTag('ecalDrivenGsfElectronsHGC'),
   cleanBarrel = cms.bool(False),
   outputCollection = cms.string(''),
   mightGet = cms.optional.untracked.vstring

@@ -5,5 +5,6 @@ ecalDrivenGsfElectronCores = cms.EDProducer('GsfElectronCoreEcalDrivenProducer',
   gsfTracks = cms.InputTag('electronGsfTracks'),
   ctfTracks = cms.InputTag('generalTracks'),
   useGsfPfRecTracks = cms.bool(True),
+  hgcalOnly = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

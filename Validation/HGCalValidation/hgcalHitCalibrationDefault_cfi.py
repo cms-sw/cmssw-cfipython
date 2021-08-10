@@ -9,8 +9,8 @@ hgcalHitCalibrationDefault = cms.EDProducer('HGCalHitCalibration',
   recHitsEE = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
   recHitsFH = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
   recHitsBH = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
-  hgcalMultiClusters = cms.InputTag('particleFlowClusterHGCalFromMultiCl'),
-  electrons = cms.InputTag('ecalDrivenGsfElectronsFromMultiCl'),
-  photons = cms.InputTag('photonsFromMultiCl'),
+  hgcalMultiClusters = cms.InputTag('particleFlowClusterHGCal'),
+  electrons = cms.InputTag('ecalDrivenGsfElectronsHGC'),
+  photons = cms.InputTag('photonsHGC'),
   mightGet = cms.optional.untracked.vstring
 )

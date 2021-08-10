@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 hgcalElectronIDValueMap = cms.EDProducer('HGCalElectronIDValueMapProducer',
-  electrons = cms.InputTag('ecalDrivenGsfElectronsFromMultiCl'),
+  electrons = cms.InputTag('ecalDrivenGsfElectronsHGC'),
   pcaRadius = cms.double(3),
   variables = cms.vstring(
     'ecOrigEt',

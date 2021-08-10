@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 hgcalPhotonIDValueMap = cms.EDProducer('HGCalPhotonIDValueMapProducer',
-  photons = cms.InputTag('photonsFromMultiCl'),
+  photons = cms.InputTag('photonsHGC'),
   pcaRadius = cms.double(3),
   variables = cms.vstring(
     'seedEt',

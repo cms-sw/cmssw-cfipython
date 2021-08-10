@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 simPFProducer = cms.EDProducer('SimPFProducer',
-  simClustersSrc = cms.InputTag('particleFlowClusterHGCal'),
+  simClustersSrc = cms.InputTag('particleFlowClusterHGCalFromSimCl'),
   trackSrc = cms.InputTag('generalTracks'),
   associators = cms.VInputTag('quickTrackAssociatorByHits'),
   pfRecTrackSrc = cms.InputTag('hgcalTrackCollection', 'TracksInHGCal'),
