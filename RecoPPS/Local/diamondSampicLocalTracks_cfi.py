@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-totemTimingLocalTracks = cms.EDProducer('TotemTimingLocalTrackFitter<TotemTimingDetId>',
+diamondSampicLocalTracks = cms.EDProducer('TotemTimingLocalTrackFitter<CTPPSDiamondDetId>',
   recHitsTag = cms.InputTag('totemTimingRecHits'),
   maxPlaneActiveChannels = cms.int32(2),
   trackingAlgorithmParams = cms.PSet(
