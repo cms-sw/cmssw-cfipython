@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-trackstersFromSimClustersProducer = cms.EDProducer('TrackstersFromSimClustersProducer',
+simTrackstersProducer = cms.EDProducer('SimTrackstersProducer',
   detector = cms.string('HGCAL'),
   layer_clusters = cms.InputTag('hgcalLayerClusters'),
   time_layerclusters = cms.InputTag('hgcalLayerClusters', 'timeLayerCluster'),
