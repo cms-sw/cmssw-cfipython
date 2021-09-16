@@ -14,5 +14,6 @@ AlcaHBHEMuonFilter = cms.EDFilter('AlCaHBHEMuonFilter',
   TrackIsolationCut = cms.double(3),
   CaloIsolationCut = cms.double(5),
   PreScale = cms.int32(2),
+  OnlyOuterTrack = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
