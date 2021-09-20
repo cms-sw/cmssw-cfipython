@@ -9,6 +9,5 @@ hltHcalCalibTypeFilter = cms.EDFilter('HLTHcalCalibTypeFilter',
     4,
     5
   ),
-  FilterSummary = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

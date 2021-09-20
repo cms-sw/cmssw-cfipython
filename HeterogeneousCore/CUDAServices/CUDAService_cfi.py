@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 CUDAService = cms.Service('CUDAService',
   enabled = cms.untracked.bool(True),
+  verbose = cms.untracked.bool(False),
   limits = cms.untracked.PSet(
     cudaLimitPrintfFifoSize = cms.untracked.int32(-1),
     cudaLimitStackSize = cms.untracked.int32(-1),
