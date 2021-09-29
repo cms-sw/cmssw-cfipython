@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 CTPPSGeometryESModule = cms.ESProducer('CTPPSGeometryESModule',
   verbosity = cms.untracked.uint32(1),
+  buildMisalignedGeometry = cms.bool(False),
   isRun2 = cms.bool(False),
   dbTag = cms.string(''),
   compactViewTag = cms.string(''),
