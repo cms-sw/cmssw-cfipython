@@ -27,6 +27,7 @@ particleFlow = cms.EDProducer('PFProducer',
     electron_missinghits = cms.uint32(1),
     electron_ecalDrivenHademPreselCut = cms.double(0.15),
     electron_maxElePtForOnlyMVAPresel = cms.double(50),
+    allowEEEinPF = cms.bool(False),
     electron_protectionsForJetMET = cms.PSet(
       maxNtracks = cms.double(3),
       maxHcalE = cms.double(10),
