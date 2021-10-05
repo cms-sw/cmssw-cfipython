@@ -5,5 +5,7 @@ muonGEMDigisDefault = cms.EDProducer('GEMRawToDigiModule',
   useDBEMap = cms.bool(False),
   keepDAQStatus = cms.bool(False),
   readMultiBX = cms.bool(False),
+  fedIdStart = cms.uint32(1467),
+  fedIdEnd = cms.uint32(1478),
   mightGet = cms.optional.untracked.vstring
 )
