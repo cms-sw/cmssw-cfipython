@@ -212,5 +212,46 @@ gsfElectronProducerDefault = cms.EDProducer('GsfElectronProducer',
     'RecoEgamma/ElectronIdentification/data/TMVA_Category_BDTSimpleCat_22_17Feb2011.weights.xml'
   ),
   SoftElecMVAFilesString = cms.vstring('RecoEgamma/ElectronIdentification/data/TMVA_BDTSoftElectrons_7Feb2014.weights.xml'),
+  EleDNNPFid = cms.PSet(
+    enabled = cms.bool(False),
+    inputTensorName = cms.string('FirstLayer_input'),
+    outputTensorName = cms.string('sequential/FinalLayer/Softmax'),
+    outputDim = cms.uint32(3),
+    modelsFiles = cms.vstring(
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/lowpT/lowpT_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEB/highpTEB_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEE/highpTEE_modelDNN.pb'
+    ),
+    scalersFiles = cms.vstring(
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/lowpT/lowpT_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEB/highpTEB_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEE/highpTEE_scaler.txt'
+    ),
+    useEBModelInGap = cms.bool(True)
+  ),
+  pfECALClusIsolCfg = cms.PSet(
+    pfClusterProducer = cms.InputTag('particleFlowClusterECAL'),
+    drMax = cms.double(0.3),
+    drVetoBarrel = cms.double(0),
+    drVetoEndcap = cms.double(0),
+    etaStripBarrel = cms.double(0),
+    etaStripEndcap = cms.double(0),
+    energyBarrel = cms.double(0),
+    energyEndcap = cms.double(0)
+  ),
+  pfHCALClusIsolCfg = cms.PSet(
+    pfClusterProducerHCAL = cms.InputTag('particleFlowClusterHCAL'),
+    pfClusterProducerHFEM = cms.InputTag(''),
+    pfClusterProducerHFHAD = cms.InputTag(''),
+    useHF = cms.bool(False),
+    drMax = cms.double(0.3),
+    drVetoBarrel = cms.double(0),
+    drVetoEndcap = cms.double(0),
+    etaStripBarrel = cms.double(0),
+    etaStripEndcap = cms.double(0),
+    energyBarrel = cms.double(0),
+    energyEndcap = cms.double(0),
+    useEt = cms.bool(True)
+  ),
   mightGet = cms.optional.untracked.vstring
 )

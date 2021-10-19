@@ -28,6 +28,18 @@ particleFlow = cms.EDProducer('PFProducer',
     electron_ecalDrivenHademPreselCut = cms.double(0.15),
     electron_maxElePtForOnlyMVAPresel = cms.double(50),
     allowEEEinPF = cms.bool(False),
+    useElePFidDnn = cms.bool(False),
+    electronDnnThresholds = cms.PSet(
+      electronDnnLowPtThr = cms.double(0.5),
+      electronDnnHighPtBarrelThr = cms.double(0.5),
+      electronDnnHighPtEndcapThr = cms.double(0.5)
+    ),
+    usePhotonPFidDnn = cms.bool(False),
+    photonDnnThresholds = cms.PSet(
+      photonDnnBarrelThr = cms.double(0.5),
+      photonDnnEndcapThr = cms.double(0.5)
+    ),
+    useEBModelInGap = cms.bool(True),
     electron_protectionsForJetMET = cms.PSet(
       maxNtracks = cms.double(3),
       maxHcalE = cms.double(10),
