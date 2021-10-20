@@ -11,7 +11,7 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
     deltac = cms.vdouble(
       1.3,
       1.3,
-      5,
+      1.3,
       0.0315
     ),
     dependSensor = cms.bool(True),
