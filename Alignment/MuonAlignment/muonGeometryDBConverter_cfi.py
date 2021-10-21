@@ -13,8 +13,8 @@ muonGeometryDBConverter = cms.EDAnalyzer('MuonGeometryDBConverter',
   outputXML = cms.PSet(
     fileName = cms.string('REPLACEME.xml'),
     relativeto = cms.string('ideal'),
-    survey = cms.bool(False),
     rawIds = cms.bool(False),
+    survey = cms.bool(False),
     eulerAngles = cms.bool(False),
     precision = cms.int32(10),
     suppressDTBarrel = cms.untracked.bool(True),
@@ -27,7 +27,13 @@ muonGeometryDBConverter = cms.EDAnalyzer('MuonGeometryDBConverter',
     suppressCSCStations = cms.untracked.bool(True),
     suppressCSCRings = cms.untracked.bool(True),
     suppressCSCChambers = cms.untracked.bool(False),
-    suppressCSCLayers = cms.untracked.bool(False)
+    suppressCSCLayers = cms.untracked.bool(False),
+    suppressGEMEndcaps = cms.untracked.bool(True),
+    suppressGEMStations = cms.untracked.bool(True),
+    suppressGEMRings = cms.untracked.bool(True),
+    suppressGEMSuperChambers = cms.untracked.bool(False),
+    suppressGEMChambers = cms.untracked.bool(True),
+    suppressGEMEtaPartitions = cms.untracked.bool(True)
   ),
   mightGet = cms.optional.untracked.vstring
 )
