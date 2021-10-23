@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-TrackTfClassifier = cms.EDProducer('TrackTfClassifier',
+trackTfClassifierDefault = cms.EDProducer('TrackTfClassifier',
   src = cms.InputTag(''),
   beamspot = cms.InputTag('offlineBeamSpot'),
   vertices = cms.InputTag('firstStepPrimaryVertices'),
