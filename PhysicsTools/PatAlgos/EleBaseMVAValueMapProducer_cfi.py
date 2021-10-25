@@ -12,7 +12,6 @@ EleBaseMVAValueMapProducer = cms.EDProducer('EleBaseMVAValueMapProducer',
   outputTensorName = cms.string(''),
   outputNames = cms.vstring(),
   outputFormulas = cms.vstring(),
-  nThreads = cms.uint32(1),
-  singleThreadPool = cms.string('no_threads'),
+  batch_eval = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
