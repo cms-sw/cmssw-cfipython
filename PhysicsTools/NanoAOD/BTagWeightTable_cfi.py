@@ -11,5 +11,6 @@ BTagWeightTable = cms.EDProducer('BTagSFProducer',
   measurementTypesC = cms.required.vstring,
   measurementTypesUDSG = cms.required.vstring,
   sysTypes = cms.required.vstring,
+  validate = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
