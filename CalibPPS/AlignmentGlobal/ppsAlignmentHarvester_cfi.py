@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 ppsAlignmentHarvester = cms.EDProducer('PPSAlignmentHarvester',
-  folder = cms.string('CalibPPS/Common'),
+  folder = cms.string('AlCaReco/PPSAlignment'),
   sequence = cms.vstring(
     'x_alignment',
     'x_alignment_relative',
