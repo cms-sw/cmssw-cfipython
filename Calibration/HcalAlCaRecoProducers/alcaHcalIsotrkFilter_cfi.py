@@ -6,5 +6,6 @@ alcaHcalIsotrkFilter = cms.EDFilter('AlCaHcalIsotrkFilter',
   prescaleLow = cms.int32(1),
   prescaleHigh = cms.int32(1),
   isoTrackLabel = cms.InputTag('alcaHcalIsotrkProducer', 'HcalIsoTrack'),
+  debugEvents = cms.vint32(),
   mightGet = cms.optional.untracked.vstring
 )

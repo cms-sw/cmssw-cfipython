@@ -7,5 +7,6 @@ hcalIsoTrackAnalyzer = cms.EDAnalyzer('HcalIsoTrackAnalyzer',
   dataType = cms.untracked.int32(0),
   isoTrackVarLabel = cms.InputTag('alcaHcalIsotrkProducer', 'HcalIsoTrack'),
   isoTrackEvtLabel = cms.InputTag('alcaHcalIsotrkProducer', 'HcalIsoTrackEvent'),
+  debugEvents = cms.vint32(),
   mightGet = cms.optional.untracked.vstring
 )
