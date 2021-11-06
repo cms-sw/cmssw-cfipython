@@ -7,6 +7,6 @@ hgcalEEParametersInitialize = cms.ESProducer('HGCalParametersESModule',
   nameC = cms.string('HGCalEECell'),
   nameT = cms.string('HGCal'),
   nameX = cms.string('HGCalEESensitive'),
-  fromDD4Hep = cms.bool(False),
+  fromDD4hep = cms.bool(False),
   appendToDataLabel = cms.string('')
 )

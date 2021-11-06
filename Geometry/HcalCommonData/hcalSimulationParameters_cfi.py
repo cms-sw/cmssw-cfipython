@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
 hcalSimulationParameters = cms.ESProducer('HcalSimParametersESModule',
-  fromDD4Hep = cms.bool(False),
+  fromDD4hep = cms.bool(False),
   appendToDataLabel = cms.string('')
 )

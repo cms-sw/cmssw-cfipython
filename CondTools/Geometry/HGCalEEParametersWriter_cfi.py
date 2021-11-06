@@ -6,6 +6,6 @@ HGCalEEParametersWriter = cms.EDAnalyzer('PHGCalParametersDBBuilder',
   nameW = cms.string('HGCalEEWafer'),
   nameC = cms.string('HGCalEECell'),
   nameT = cms.string('HGCal'),
-  fromDD4Hep = cms.bool(False),
+  fromDD4hep = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

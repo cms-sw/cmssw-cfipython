@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 muonOffsetESProducer = cms.ESProducer('MuonOffsetESProducer',
-  fromDD4Hep = cms.bool(False),
+  fromDD4hep = cms.bool(False),
   names = cms.vstring(
     'MuonCommonNumbering',
     'MuonBarrel',
