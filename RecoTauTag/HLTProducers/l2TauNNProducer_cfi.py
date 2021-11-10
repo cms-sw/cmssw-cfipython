@@ -2,14 +2,19 @@ import FWCore.ParameterSet.Config as cms
 
 l2TauNNProducer = cms.EDProducer('L2TauNNProducer',
   debugLevel = cms.int32(0),
-  L1Taus = cms.required.VPSet,
-  hbheInput = cms.InputTag(''),
-  hoInput = cms.InputTag(''),
-  ebInput = cms.InputTag(''),
-  eeInput = cms.InputTag(''),
+  L1Taus = cms.VPSet(
+    cms.PSet(
+      L1CollectionName = cms.string('DoubleTau'),
+      L1TauTrigger = cms.InputTag('hltL1sDoubleTauBigOR')
+    )
+  ),
+  hbheInput = cms.InputTag('hltHbhereco'),
+  hoInput = cms.InputTag('hltHoreco'),
+  ebInput = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEB'),
+  eeInput = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEE'),
   pataVertices = cms.InputTag('hltPixelVerticesSoA'),
   pataTracks = cms.InputTag('hltPixelTracksSoA'),
-  BeamSpot = cms.InputTag(''),
+  BeamSpot = cms.InputTag('hltOnlineBeamSpot'),
   maxVtx = cms.uint32(100),
   fractionSumPt2 = cms.double(0.3),
   minSumPt2 = cms.double(0),

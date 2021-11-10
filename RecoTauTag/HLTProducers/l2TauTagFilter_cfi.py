@@ -6,5 +6,6 @@ l2TauTagFilter = cms.EDFilter('L2TauTagFilter',
   L1TauSrc = cms.InputTag(''),
   L2Outcomes = cms.InputTag(''),
   DiscrWP = cms.double(0.1227),
+  l1TauPtThreshold = cms.double(250),
   mightGet = cms.optional.untracked.vstring
 )
