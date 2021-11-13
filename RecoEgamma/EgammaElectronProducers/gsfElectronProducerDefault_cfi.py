@@ -216,7 +216,7 @@ gsfElectronProducerDefault = cms.EDProducer('GsfElectronProducer',
     enabled = cms.bool(False),
     inputTensorName = cms.string('FirstLayer_input'),
     outputTensorName = cms.string('sequential/FinalLayer/Softmax'),
-    outputDim = cms.uint32(3),
+    outputDim = cms.uint32(5),
     modelsFiles = cms.vstring(
       'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/lowpT/lowpT_modelDNN.pb',
       'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEB/highpTEB_modelDNN.pb',
