@@ -13,7 +13,7 @@ splitVertexResolution = cms.EDAnalyzer('SplitVertexResolution',
   runControlNumber = cms.untracked.vuint32(),
   sumpTStartScale = cms.untracked.double(1),
   sumpTEndScale = cms.untracked.double(1000),
-  nTrackBins = cms.untracked.double(60),
-  nVtxBins = cms.untracked.double(40),
+  nTrackBins = cms.untracked.double(120),
+  nVtxBins = cms.untracked.double(60),
   mightGet = cms.optional.untracked.vstring
 )
