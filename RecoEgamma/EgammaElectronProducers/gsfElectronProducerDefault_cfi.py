@@ -218,14 +218,14 @@ gsfElectronProducerDefault = cms.EDProducer('GsfElectronProducer',
     outputTensorName = cms.string('sequential/FinalLayer/Softmax'),
     outputDim = cms.uint32(5),
     modelsFiles = cms.vstring(
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/lowpT/lowpT_modelDNN.pb',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEB/highpTEB_modelDNN.pb',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEE/highpTEE_modelDNN.pb'
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/lowpT/lowpT_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEB/highpTEB_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEE/highpTEE_modelDNN.pb'
     ),
     scalersFiles = cms.vstring(
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/lowpT/lowpT_scaler.txt',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEB/highpTEB_scaler.txt',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/highpTEE/highpTEE_scaler.txt'
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/lowpT/lowpT_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEB/highpTEB_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEE/highpTEE_scaler.txt'
     ),
     useEBModelInGap = cms.bool(True)
   ),

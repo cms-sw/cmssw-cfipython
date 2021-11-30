@@ -34,6 +34,11 @@ particleFlow = cms.EDProducer('PFProducer',
       electronDnnHighPtBarrelThr = cms.double(0.5),
       electronDnnHighPtEndcapThr = cms.double(0.5)
     ),
+    electronDnnBkgThresholds = cms.PSet(
+      electronDnnBkgLowPtThr = cms.double(1),
+      electronDnnBkgHighPtBarrelThr = cms.double(1),
+      electronDnnBkgHighPtEndcapThr = cms.double(1)
+    ),
     usePhotonPFidDnn = cms.bool(False),
     photonDnnThresholds = cms.PSet(
       photonDnnBarrelThr = cms.double(0.5),
