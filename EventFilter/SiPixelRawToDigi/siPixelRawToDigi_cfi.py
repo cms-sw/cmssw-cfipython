@@ -15,5 +15,6 @@ siPixelRawToDigi = cms.EDProducer('SiPixelRawToDigi',
   UsePilotBlade = cms.bool(False),
   UsePhase1 = cms.bool(False),
   CablingMapLabel = cms.string(''),
+  SiPixelQualityLabel = cms.string(''),
   mightGet = cms.optional.untracked.vstring
 )
