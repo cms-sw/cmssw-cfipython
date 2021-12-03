@@ -4,6 +4,7 @@ scaleAndSmearSiStripGains = cms.EDAnalyzer('SiStripChannelGainFromDBMiscalibrato
   params = cms.VPSet(
     cms.PSet()
   ),
+  printDebug = cms.untracked.uint32(1),
   record = cms.untracked.string('SiStripApvGainRcd'),
   gainType = cms.untracked.uint32(1),
   saveMaps = cms.untracked.bool(True),
