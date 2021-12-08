@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 ppsAlignmentHarvester = cms.EDProducer('PPSAlignmentHarvester',
-  folder = cms.string('AlCaReco/PPSAlignment'),
+  dqm_dir = cms.string('AlCaReco/PPSAlignment'),
   sequence = cms.vstring(
     'x_alignment',
     'x_alignment_relative',
@@ -12,6 +12,10 @@ ppsAlignmentHarvester = cms.EDProducer('PPSAlignmentHarvester',
   write_sqlite_results = cms.bool(False),
   x_ali_rel_final_slope_fixed = cms.bool(True),
   y_ali_final_slope_fixed = cms.bool(True),
+  x_corr_min = cms.double(-1000000),
+  x_corr_max = cms.double(1000000),
+  y_corr_min = cms.double(-1000000),
+  y_corr_max = cms.double(1000000),
   debug = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
