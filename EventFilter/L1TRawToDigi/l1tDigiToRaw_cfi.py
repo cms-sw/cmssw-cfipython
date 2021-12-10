@@ -36,5 +36,7 @@ l1tDigiToRaw = cms.EDProducer('L1TDigiToRaw',
   ImdInputLabelEMTFPos = cms.optional.InputTag,
   ImdInputLabelOMTFNeg = cms.optional.InputTag,
   ImdInputLabelOMTFPos = cms.optional.InputTag,
+  ShowerInputLabel = cms.optional.InputTag,
+  EMTFShowerInputLabel = cms.optional.InputTag,
   mightGet = cms.optional.untracked.vstring
 )
