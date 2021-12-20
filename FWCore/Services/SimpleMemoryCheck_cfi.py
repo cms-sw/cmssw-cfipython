@@ -7,9 +7,5 @@ SimpleMemoryCheck = cms.Service('SimpleMemoryCheck',
   jobReportOutputOnly = cms.untracked.bool(False),
   monitorPssAndPrivate = cms.untracked.bool(False),
   moduleMemorySummary = cms.untracked.bool(False),
-  M_MMAP_MAX = cms.untracked.int32(-1),
-  M_TRIM_THRESHOLD = cms.untracked.int32(-1),
-  M_TOP_PAD = cms.untracked.int32(-1),
-  M_MMAP_THRESHOLD = cms.untracked.int32(-1),
   dump = cms.untracked.bool(False)
 )
