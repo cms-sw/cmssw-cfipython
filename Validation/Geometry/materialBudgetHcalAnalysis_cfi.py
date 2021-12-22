@@ -14,6 +14,6 @@ materialBudgetHcalAnalysis = cms.EDAnalyzer('MaterialBudgetHcalAnalysis',
   etaMidMax = cms.double(2.868),
   etaHighMin = cms.double(2.868),
   etaHighMax = cms.double(3),
-  labelMBCalo_ = cms.InputTag('g4SimHits', 'HcalMatBCalo'),
+  labelMBCaloLabel = cms.InputTag('g4SimHits', 'HcalMatBCalo'),
   mightGet = cms.optional.untracked.vstring
 )
