@@ -89,7 +89,7 @@ Phase2ITValidateTrackingRecHit = cms.EDProducer('Phase2ITValidateTrackingRecHit'
   ),
   DeltaX_clsizey = cms.PSet(
     name = cms.string('Delta_X_vs_ClusterSizeY'),
-    title = cms.string(';Cluster size Y;#Delta y [#mum]'),
+    title = cms.string(';Cluster size Y;#Delta x [#mum]'),
     ymin = cms.double(-100),
     ymax = cms.double(100),
     NxBins = cms.int32(21),
@@ -99,7 +99,7 @@ Phase2ITValidateTrackingRecHit = cms.EDProducer('Phase2ITValidateTrackingRecHit'
   ),
   DeltaY_clsizex = cms.PSet(
     name = cms.string('Delta_Y_vs_ClusterSizeX'),
-    title = cms.string(';Cluster size Y;#Delta y [#mum]'),
+    title = cms.string(';Cluster size X;#Delta y [#mum]'),
     ymin = cms.double(-100),
     ymax = cms.double(100),
     NxBins = cms.int32(21),

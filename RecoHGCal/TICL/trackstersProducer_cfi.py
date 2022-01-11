@@ -63,5 +63,18 @@ trackstersProducer = cms.EDProducer('TrackstersProducer',
     type = cms.string('CLUE3D')
   
   ),
+  pluginPatternRecognitionByFastJet = cms.PSet(
+    algo_verbosity = cms.int32(0),
+    antikt_radius = cms.double(0.09),
+    minNumLayerCluster = cms.int32(5),
+    eid_input_name = cms.string('input'),
+    eid_output_name_energy = cms.string('output/regressed_energy'),
+    eid_output_name_id = cms.string('output/id_probabilities'),
+    eid_min_cluster_energy = cms.double(1),
+    eid_n_layers = cms.int32(50),
+    eid_n_clusters = cms.int32(10),
+    type = cms.string('FastJet')
+  
+  ),
   mightGet = cms.optional.untracked.vstring
 )
