@@ -14,6 +14,6 @@ siPixelLorentzAnglePCLWorker = cms.EDProducer('SiPixelLorentzAnglePCLWorker',
   residualMax = cms.double(0.005),
   clustChargeMaxPerLength = cms.double(50000),
   binsDepth = cms.int32(50),
-  binsDrift = cms.int32(200),
+  binsDrift = cms.int32(100),
   mightGet = cms.optional.untracked.vstring
 )
