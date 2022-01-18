@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-HcalIsoTrackAnalysis = cms.EDAnalyzer('HcalIsoTrackAnalysis',
+hcalIsoTrackAnalysis = cms.EDAnalyzer('HcalIsoTrackAnalysis',
   trackQuality = cms.string('highPurity'),
   minTrackPt = cms.double(1),
   maxDxyPV = cms.vdouble(
@@ -72,5 +72,6 @@ HcalIsoTrackAnalysis = cms.EDAnalyzer('HcalIsoTrackAnalysis',
   dataType = cms.untracked.int32(0),
   etaMin = cms.untracked.int32(-1),
   etaMax = cms.untracked.int32(10),
+  usePFThreshold = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )

@@ -63,5 +63,6 @@ alcaHcalIsotrkProducer = cms.EDProducer('AlCaHcalIsotrkProducer',
   newDepth = cms.untracked.vint32(),
   hep17 = cms.untracked.bool(False),
   debugEvents = cms.vint32(),
+  usePFThreshold = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )

@@ -41,5 +41,6 @@ alcaIsoTracksFilter = cms.EDFilter('AlCaIsoTracksFilter',
   momentumHigh = cms.double(60),
   preScaleHigh = cms.int32(1),
   debugEvents = cms.vint32(),
+  usePFThreshold = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )

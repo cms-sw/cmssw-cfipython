@@ -67,5 +67,6 @@ hcalIsoTrkSimAnalyzer = cms.EDAnalyzer('HcalIsoTrkSimAnalyzer',
   oldID = cms.untracked.vint32(),
   newDepth = cms.untracked.vint32(),
   hep17 = cms.untracked.bool(False),
+  usePFThreshold = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
