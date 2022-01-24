@@ -11,6 +11,6 @@ CaloSimHitStudy = cms.EDAnalyzer('CaloSimHitStudy',
   TimeCut = cms.untracked.double(100),
   MIPCut = cms.untracked.double(0.7),
   StoreRL = cms.untracked.bool(False),
-  TestNumbering = cms.untracked.bool(False),
+  TestNumbering = cms.untracked.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
