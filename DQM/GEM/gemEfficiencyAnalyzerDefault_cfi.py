@@ -29,6 +29,9 @@ gemEfficiencyAnalyzerDefault = cms.EDProducer('GEMEfficiencyAnalyzer',
   etaNbins = cms.untracked.int32(9),
   etaLow = cms.untracked.double(1.4),
   etaUp = cms.untracked.double(2.3),
+  monitorGE11 = cms.untracked.bool(True),
+  monitorGE21 = cms.untracked.bool(False),
+  monitorGE0 = cms.untracked.bool(False),
   ServiceParameters = cms.PSet(),
   mightGet = cms.optional.untracked.vstring
 )
