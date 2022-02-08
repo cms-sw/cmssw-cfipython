@@ -5,5 +5,6 @@ hltScoutingTrackProducer = cms.EDProducer('HLTScoutingTrackProducer',
   vertexCollection = cms.InputTag('hltPixelVertices'),
   mantissaPrecision = cms.int32(10),
   vtxMinDist = cms.double(0.01),
+  ptMin = cms.double(0.3),
   mightGet = cms.optional.untracked.vstring
 )
