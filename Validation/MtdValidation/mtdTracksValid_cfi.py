@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-mtdTracks = cms.EDProducer('MtdTracksValidation',
+mtdTracksValid = cms.EDProducer('MtdTracksValidation',
   folder = cms.string('MTD/Tracks'),
   inputTagG = cms.InputTag('generalTracks'),
   inputTagT = cms.InputTag('trackExtenderWithMTD'),

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-btlLocalReco = cms.EDProducer('BtlLocalRecoValidation',
+btlLocalRecoValid = cms.EDProducer('BtlLocalRecoValidation',
   folder = cms.string('MTD/BTL/LocalReco'),
   recHitsTag = cms.InputTag('mtdRecHits', 'FTLBarrel'),
   uncalibRecHitsTag = cms.InputTag('mtdUncalibratedRecHits', 'FTLBarrel'),

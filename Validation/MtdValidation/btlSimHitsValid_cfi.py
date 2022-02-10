@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-btlSimHits = cms.EDProducer('BtlSimHitsValidation',
+btlSimHitsValid = cms.EDProducer('BtlSimHitsValidation',
   folder = cms.string('MTD/BTL/SimHits'),
   inputTag = cms.InputTag('mix', 'g4SimHitsFastTimerHitsBarrel'),
   hitMinimumEnergy = cms.double(1),

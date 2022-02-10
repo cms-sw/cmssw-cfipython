@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-etlSimHits = cms.EDProducer('EtlSimHitsValidation',
+etlSimHitsValid = cms.EDProducer('EtlSimHitsValidation',
   folder = cms.string('MTD/ETL/SimHits'),
   inputTag = cms.InputTag('mix', 'g4SimHitsFastTimerHitsEndcap'),
   hitMinimumEnergy1Dis = cms.double(0.1),

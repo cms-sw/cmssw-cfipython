@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-vertices4D = cms.EDProducer('Primary4DVertexValidation',
+vertices4DValid = cms.EDProducer('Primary4DVertexValidation',
   folder = cms.string('MTD/Vertices'),
   TPtoRecoTrackAssoc = cms.InputTag('trackingParticleRecoTrackAsssociation'),
   mtdTracks = cms.InputTag('trackExtenderWithMTD'),
