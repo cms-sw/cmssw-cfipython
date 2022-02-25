@@ -27,7 +27,11 @@ metMonitoring = cms.EDProducer('METMonitor',
     hltPaths = cms.vstring(),
     hltDBKey = cms.string(''),
     errorReplyHlt = cms.bool(False),
-    verbosityLevel = cms.uint32(1)
+    verbosityLevel = cms.uint32(1),
+    stage2 = cms.bool(False),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    ReadPrescalesFromFile = cms.bool(False)
   ),
   denGenericTriggerEventPSet = cms.PSet(
     andOr = cms.required.bool,
@@ -41,7 +45,11 @@ metMonitoring = cms.EDProducer('METMonitor',
     hltPaths = cms.vstring(),
     hltDBKey = cms.string(''),
     errorReplyHlt = cms.bool(False),
-    verbosityLevel = cms.uint32(1)
+    verbosityLevel = cms.uint32(1),
+    stage2 = cms.bool(False),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    ReadPrescalesFromFile = cms.bool(False)
   ),
   histoPSet = cms.PSet(
     metPSet = cms.PSet(

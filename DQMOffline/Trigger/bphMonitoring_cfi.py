@@ -59,7 +59,11 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
     errorReplyHlt = cms.bool(False),
     errorReplyL1 = cms.bool(True),
     l1BeforeMask = cms.bool(True),
-    verbosityLevel = cms.uint32(0)
+    verbosityLevel = cms.uint32(0),
+    stage2 = cms.bool(False),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    ReadPrescalesFromFile = cms.bool(False)
   ),
   denGenericTriggerEventPSet = cms.PSet(
     andOr = cms.required.bool,
@@ -77,7 +81,11 @@ bphMonitoring = cms.EDProducer('BPHMonitor',
     errorReplyHlt = cms.bool(False),
     errorReplyL1 = cms.bool(True),
     l1BeforeMask = cms.bool(True),
-    verbosityLevel = cms.uint32(0)
+    verbosityLevel = cms.uint32(0),
+    stage2 = cms.bool(False),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    ReadPrescalesFromFile = cms.bool(False)
   ),
   histoPSet = cms.PSet(
     ptBinning = cms.vdouble(

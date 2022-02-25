@@ -28,6 +28,10 @@ muonMonitoring = cms.EDProducer('MuonMonitor',
     verbosityLevel = cms.uint32(1),
     andOrL1 = cms.bool(False),
     l1BeforeMask = cms.bool(False),
+    stage2 = cms.bool(False),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    ReadPrescalesFromFile = cms.bool(False),
     l1Algorithms = cms.vstring()
   ),
   denGenericTriggerEventPSet = cms.PSet(
@@ -46,6 +50,10 @@ muonMonitoring = cms.EDProducer('MuonMonitor',
     verbosityLevel = cms.uint32(1),
     andOrL1 = cms.bool(False),
     l1BeforeMask = cms.bool(False),
+    stage2 = cms.bool(False),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    ReadPrescalesFromFile = cms.bool(False),
     l1Algorithms = cms.vstring()
   ),
   histoPSet = cms.PSet(
