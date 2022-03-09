@@ -6,6 +6,7 @@ pfTICLProducer = cms.EDProducer('PFTICLProducer',
   trackTimeErrorMap = cms.InputTag('tofPID', 'sigmat0'),
   trackTimeQualityMap = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
   timingQualityThreshold = cms.double(0.5),
+  useMTDTiming = cms.bool(True),
   useTimingAverage = cms.bool(False),
   muonSrc = cms.InputTag('muons1stStep'),
   pfMuonAlgoParameters = cms.PSet(
