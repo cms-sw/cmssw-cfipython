@@ -11,6 +11,7 @@ pixelVerticesCUDA = cms.EDProducer('PixelVertexProducerCUDA',
   errmax = cms.double(0.01),
   chi2max = cms.double(9),
   PtMin = cms.double(0.5),
+  PtMax = cms.double(75),
   pixelTrackSrc = cms.InputTag('pixelTracksCUDA'),
   mightGet = cms.optional.untracked.vstring
 )
