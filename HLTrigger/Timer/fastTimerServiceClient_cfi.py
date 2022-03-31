@@ -26,5 +26,6 @@ fastTimerServiceClient = cms.EDProducer('FastTimerServiceClient',
     xmin = cms.double(0),
     xmax = cms.double(130)
   ),
+  fillEveryLumiSection = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
