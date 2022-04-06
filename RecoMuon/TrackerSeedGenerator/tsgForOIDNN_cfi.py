@@ -19,7 +19,6 @@ tsgForOIDNN = cms.EDProducer('TSGForOIDNN',
   maxHitDoubletSeeds = cms.uint32(0),
   getStrategyFromDNN = cms.bool(False),
   useRegressor = cms.bool(False),
-  etaSplitForDnn = cms.double(1),
   dnnMetadataPath = cms.string(''),
   mightGet = cms.optional.untracked.vstring
 )
