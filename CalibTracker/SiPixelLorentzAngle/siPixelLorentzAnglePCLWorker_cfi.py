@@ -10,7 +10,7 @@ siPixelLorentzAnglePCLWorker = cms.EDProducer('SiPixelLorentzAnglePCLWorker',
   normChi2Max = cms.double(2),
   clustSizeYMin = cms.vint32(
     4,
-    4,
+    3,
     3,
     2
   ),
