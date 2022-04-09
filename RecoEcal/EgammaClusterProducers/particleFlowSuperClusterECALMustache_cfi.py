@@ -20,6 +20,7 @@ particleFlowSuperClusterECALMustache = cms.EDProducer('PFECALSuperClusterProduce
   regressionConfig = cms.PSet(
     isHLT = cms.bool(False),
     isPhaseII = cms.bool(False),
+    regTrainedWithPS = cms.bool(False),
     applySigmaIetaIphiBug = cms.bool(False),
     ecalRecHitsEE = cms.InputTag('ecalRecHit', 'EcalRecHitsEE'),
     ecalRecHitsEB = cms.InputTag('ecalRecHit', 'EcalRecHitsEB'),
