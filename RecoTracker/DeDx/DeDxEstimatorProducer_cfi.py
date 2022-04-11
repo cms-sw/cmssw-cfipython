@@ -14,5 +14,6 @@ DeDxEstimatorProducer = cms.EDProducer('DeDxEstimatorProducer',
   ProbabilityMode = cms.string('Accumulation'),
   fraction = cms.double(0.4),
   exponent = cms.double(-2),
+  truncate = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
