@@ -16,5 +16,6 @@ mkFitOutputConverter = cms.EDProducer('MkFitOutputConverter',
   qualityMaxZ = cms.double(280),
   qualityMaxPosErr = cms.double(100),
   qualitySignPt = cms.bool(True),
+  doErrorRescale = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
