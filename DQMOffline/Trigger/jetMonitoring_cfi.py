@@ -7,6 +7,7 @@ jetMonitoring = cms.EDProducer('JetMonitor',
   ptcut = cms.double(20),
   ispfjettrg = cms.bool(True),
   iscalojettrg = cms.bool(False),
+  enableFullMonitoring = cms.bool(True),
   numGenericTriggerEventPSet = cms.PSet(
     ReadPrescalesFromFile = cms.bool(False),
     andOr = cms.bool(False),
