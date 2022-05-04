@@ -19,6 +19,7 @@ hltScoutingEgammaProducer = cms.EDProducer('HLTScoutingEgammaProducer',
   saveRecHitTiming = cms.bool(False),
   mantissaPrecision = cms.int32(10),
   rechitMatrixSize = cms.int32(10),
+  rechitZeroSuppression = cms.bool(True),
   ecalRechitEB = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEB'),
   ecalRechitEE = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEE'),
   mightGet = cms.optional.untracked.vstring
