@@ -10,7 +10,6 @@ particleFlowSuperClusterECALMustache = cms.EDProducer('PFECALSuperClusterProduce
   thresh_PFClusterEndcap = cms.double(0),
   ESAssociation = cms.InputTag('particleFlowClusterECAL'),
   PFBasicClusterCollectionPreshower = cms.string('particleFlowBasicClusterECALPreshower'),
-  use_preshower = cms.bool(True),
   verbose = cms.untracked.bool(False),
   thresh_SCEt = cms.double(4),
   etawidth_SuperClusterEndcap = cms.double(0.04),
