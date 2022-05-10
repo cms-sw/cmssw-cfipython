@@ -6,6 +6,7 @@ GEMDAQStatusSource = cms.EDProducer('GEMDAQStatusSource',
   AMCInputLabel = cms.InputTag('muonGEMDigis', 'AMCStatus'),
   AMC13InputLabel = cms.InputTag('muonGEMDigis', 'AMC13Status'),
   AMCSlots = cms.int32(13),
+  runType = cms.untracked.string('online'),
   logCategory = cms.untracked.string('GEMDAQStatusSource'),
   mightGet = cms.optional.untracked.vstring
 )
