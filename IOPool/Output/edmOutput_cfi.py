@@ -19,6 +19,7 @@ edmOutput = cms.OutputModule('PoolOutputModule',
   overrideInputFileSplitLevels = cms.untracked.bool(False),
   writeStatusFile = cms.untracked.bool(False),
   dropMetaData = cms.untracked.string(''),
+  overrideGUID = cms.untracked.string(''),
   dataset = cms.untracked.PSet(),
   overrideBranchesSplitLevel = cms.untracked.VPSet(
   ),

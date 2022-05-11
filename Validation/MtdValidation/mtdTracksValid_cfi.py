@@ -17,8 +17,9 @@ mtdTracksValid = cms.EDProducer('MtdTracksValidation',
   sigmat0PID = cms.InputTag('tofPID', 'sigmat0'),
   t0PID = cms.InputTag('tofPID', 't0'),
   trackMVAQual = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
-  trackMinimumPt = cms.double(1),
-  trackMinimumEta = cms.double(1.5),
-  trackMaximumEta = cms.double(3.2),
+  trackMinimumPt = cms.double(0.7),
+  trackMaximumBtlEta = cms.double(1.5),
+  trackMinimumEtlEta = cms.double(1.6),
+  trackMaximumEtlEta = cms.double(3),
   mightGet = cms.optional.untracked.vstring
 )
