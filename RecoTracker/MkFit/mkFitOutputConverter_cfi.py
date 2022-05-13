@@ -17,5 +17,9 @@ mkFitOutputConverter = cms.EDProducer('MkFitOutputConverter',
   qualityMaxPosErr = cms.double(100),
   qualitySignPt = cms.bool(True),
   doErrorRescale = cms.bool(True),
+  tfDnnLabel = cms.string('trackSelectionTf'),
+  candMVASel = cms.bool(False),
+  candWP = cms.double(0),
+  batchSize = cms.int32(16),
   mightGet = cms.optional.untracked.vstring
 )
