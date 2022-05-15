@@ -214,18 +214,29 @@ gsfElectronProducerDefault = cms.EDProducer('GsfElectronProducer',
   SoftElecMVAFilesString = cms.vstring('RecoEgamma/ElectronIdentification/data/TMVA_BDTSoftElectrons_7Feb2014.weights.xml'),
   EleDNNPFid = cms.PSet(
     enabled = cms.bool(False),
+    extetaboundary = cms.double(2.65),
     inputTensorName = cms.string('FirstLayer_input'),
     outputTensorName = cms.string('sequential/FinalLayer/Softmax'),
-    outputDim = cms.uint32(5),
     modelsFiles = cms.vstring(
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/lowpT/lowpT_modelDNN.pb',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEB/highpTEB_modelDNN.pb',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEE/highpTEE_modelDNN.pb'
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/lowpT/lowpT_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEB/highpTEB_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEE/highpTEE_modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta1/modelDNN.pb',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta2/modelDNN.pb'
     ),
     scalersFiles = cms.vstring(
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/lowpT/lowpT_scaler.txt',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEB/highpTEB_scaler.txt',
-      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/v1/highpTEE/highpTEE_scaler.txt'
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/lowpT/lowpT_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEB/highpTEB_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEE/highpTEE_scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta1/scaler.txt',
+      'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta2/scaler.txt'
+    ),
+    outputDim = cms.vuint32(
+      5,
+      5,
+      5,
+      5,
+      3
     ),
     useEBModelInGap = cms.bool(True)
   ),
