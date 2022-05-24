@@ -11,7 +11,8 @@ trackTfClassifierDefault = cms.EDProducer('TrackTfClassifier',
     0.7
   ),
   mva = cms.PSet(
-    tfDnnLabel = cms.string('trackSelectionTf')
+    tfDnnLabel = cms.string('trackSelectionTf'),
+    batchSize = cms.int32(16)
   ),
   mightGet = cms.optional.untracked.vstring
 )
