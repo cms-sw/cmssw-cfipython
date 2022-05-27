@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 siStripHitEfficiencyHarvester = cms.EDProducer('SiStripHitEfficiencyHarvester',
+  inputFolder = cms.string('AlCaReco/SiStripHitEfficiency'),
   isAtPCL = cms.bool(False),
   doStoreOnDB = cms.bool(False),
   Record = cms.string('SiStripBadStrip'),

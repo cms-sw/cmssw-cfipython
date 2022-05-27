@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 siStripHitEfficiencyWorker = cms.EDProducer('SiStripHitEfficiencyWorker',
+  dqmDir = cms.string('AlCaReco/SiStripHitEfficiency'),
   UseOnlyHighPurityTracks = cms.bool(True),
   cutOnTracks = cms.bool(False),
   useAllHitsFromTracksWithMissingHits = cms.bool(False),
