@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 ecalRawToDigiGPU = cms.EDProducer('EcalRawToDigiGPU',
   InputLabel = cms.InputTag('rawDataCollector'),
-  maxFedSize = cms.uint32(10240),
+  maxFedSize = cms.uint32(41616),
   FEDs = cms.vint32(
     601,
     602,
