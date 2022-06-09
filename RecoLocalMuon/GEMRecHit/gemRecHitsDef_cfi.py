@@ -5,6 +5,7 @@ gemRecHitsDef = cms.EDProducer('GEMRecHitProducer',
   recAlgo = cms.string('GEMRecHitStandardAlgo'),
   gemDigiLabel = cms.InputTag('muonGEMDigis'),
   applyMasking = cms.bool(False),
+  ge21Off = cms.bool(False),
   maskFile = cms.optional.FileInPath,
   deadFile = cms.optional.FileInPath,
   mightGet = cms.optional.untracked.vstring
