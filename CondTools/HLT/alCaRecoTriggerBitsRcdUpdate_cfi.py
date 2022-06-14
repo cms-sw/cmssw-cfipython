@@ -9,5 +9,9 @@ alCaRecoTriggerBitsRcdUpdate = cms.EDAnalyzer('AlCaRecoTriggerBitsRcdUpdate',
   ),
   alcarecoToReplace = cms.VPSet(
   ),
+  pathsToAdd = cms.VPSet(
+  ),
+  pathsToRemove = cms.VPSet(
+  ),
   mightGet = cms.optional.untracked.vstring
 )
