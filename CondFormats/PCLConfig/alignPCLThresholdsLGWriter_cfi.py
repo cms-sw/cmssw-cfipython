@@ -1,8 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-alignPCLThresholdsWriter = cms.EDAnalyzer('AlignPCLThresholdsWriter',
-  record = cms.string('AlignPCLThresholdsRcd'),
+alignPCLThresholdsLGWriter = cms.EDAnalyzer('AlignPCLThresholdsLGWriter',
   minNRecords = cms.uint32(25000),
+  record = cms.string('AlignPCLThresholdsRcd'),
   thresholds = cms.VPSet(
     cms.PSet()
   ),
