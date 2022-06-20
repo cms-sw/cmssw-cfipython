@@ -10,5 +10,6 @@ hiPuRhoProducer = cms.EDProducer('HiPuRhoProducer',
   radiusPU = cms.double(0.5),
   minimumTowersFraction = cms.double(0.7),
   dropZeroTowers = cms.bool(True),
+  reMiniAODBugFix = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
