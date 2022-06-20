@@ -46,7 +46,6 @@ particleFlowSuperClusterECALMustache = cms.EDProducer('PFECALSuperClusterProduce
   PFBasicClusterCollectionEndcap = cms.string('particleFlowBasicClusterECALEndcap'),
   PFClusters = cms.InputTag('particleFlowClusterECAL'),
   thresh_PFClusterSeedBarrel = cms.double(1),
-  ClusteringType = cms.string('Mustache'),
   EnergyWeight = cms.string('Raw'),
   BeamSpot = cms.InputTag('offlineBeamSpot'),
   thresh_PFClusterSeedEndcap = cms.double(1),
@@ -58,5 +57,6 @@ particleFlowSuperClusterECALMustache = cms.EDProducer('PFECALSuperClusterProduce
   endcapRecHits = cms.InputTag('ecalRecHit', 'EcalRecHitsEE'),
   PFSuperClusterCollectionEndcapWithPreshower = cms.string('particleFlowSuperClusterECALEndcapWithPreshower'),
   dropUnseedable = cms.bool(False),
+  ClusteringType = cms.string('Mustache'),
   mightGet = cms.optional.untracked.vstring
 )
