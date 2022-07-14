@@ -16,6 +16,14 @@ hltScoutingEgammaProducer = cms.EDProducer('HLTScoutingEgammaProducer',
   egammaPtCut = cms.double(4),
   egammaEtaCut = cms.double(2.5),
   egammaHoverECut = cms.double(1),
+  egammaSigmaIEtaIEtaCut = cms.vdouble(
+    99999,
+    99999
+  ),
+  absEtaBinUpperEdges = cms.vdouble(
+    1.479,
+    5
+  ),
   saveRecHitTiming = cms.bool(False),
   mantissaPrecision = cms.int32(10),
   rechitMatrixSize = cms.int32(10),
