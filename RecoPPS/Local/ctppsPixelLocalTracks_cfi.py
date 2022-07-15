@@ -17,5 +17,6 @@ ctppsPixelLocalTracks = cms.EDProducer('CTPPSPixelLocalTrackProducer',
   roadRadius = cms.double(1),
   minRoadSize = cms.int32(3),
   maxRoadSize = cms.int32(20),
+  roadRadiusBadPot = cms.double(0.5),
   mightGet = cms.optional.untracked.vstring
 )
