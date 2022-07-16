@@ -5,6 +5,6 @@ deepMETProducer = cms.EDProducer('DeepMETProducer',
   ignore_leptons = cms.bool(False),
   norm_factor = cms.double(50),
   max_n_pf = cms.uint32(4500),
-  graph_path = cms.string('RecoMET/METPUSubtraction/data/deepmet/deepmet_v1_2018.pb'),
+  graph_path = cms.string('RecoMET/METPUSubtraction/data/models/deepmet/deepmet_v1_2018/model.graphdef'),
   mightGet = cms.optional.untracked.vstring
 )
