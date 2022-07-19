@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hgcalHitPartialEE = cms.EDAnalyzer('HGCalHitPartial',
+hgcalToolTesterPartialWaferEE = cms.EDAnalyzer('HGCalToolTesterPartialWafer',
   moduleLabel = cms.string('g4SimHits'),
   caloHitSource = cms.string('HGCHitsEE'),
   nameSense = cms.string('HGCalEESensitive'),
