@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 HeavyFlavorDQMAnalyzer = cms.EDProducer('HeavyFlavorDQMAnalyzer',
   folder = cms.string('Physics/HeavyFlavor'),
   pvCollection = cms.required.InputTag,
+  beamSpot = cms.required.InputTag,
   OniaToMuMuCands = cms.optional.InputTag,
   Kx0ToKPiCands = cms.optional.InputTag,
   PhiToKKCands = cms.optional.InputTag,
