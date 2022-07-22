@@ -20,5 +20,7 @@ muonCSCDCCUnpacker = cms.EDProducer('CSCDCCUnpacker',
   SuppressZeroLCT = cms.untracked.bool(True),
   DisableMappingCheck = cms.untracked.bool(False),
   B904Setup = cms.untracked.bool(False),
+  B904vmecrate = cms.untracked.int32(1),
+  B904dmb = cms.untracked.int32(3),
   mightGet = cms.optional.untracked.vstring
 )
