@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hgcalCellHitSumEE = cms.EDAnalyzer('HGCalCellHitSum',
+hgcalCellHitSum = cms.EDAnalyzer('HGCalCellHitSum',
   simtrack = cms.InputTag('g4SimHits'),
   simhits = cms.InputTag('g4SimHits', 'HGCHitsEE'),
   detector = cms.string('HGCalEESensitive'),
