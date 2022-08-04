@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ctppsDirectProtonSimulation = cms.EDProducer('CTPPSDirectProtonSimulation',
+ppsDirectProtonSimulation = cms.EDProducer('PPSDirectProtonSimulation',
   verbosity = cms.untracked.uint32(0),
   lhcInfoLabel = cms.string(''),
   opticsLabel = cms.string(''),
