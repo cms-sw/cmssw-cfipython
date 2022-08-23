@@ -31,7 +31,9 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
     trackQuality = cms.string('any'),
     minPixelLayersWithHits = cms.int32(2),
     minSiliconLayersWithHits = cms.int32(5),
-    numTracksThreshold = cms.int32(0)
+    numTracksThreshold = cms.int32(0),
+    maxNumTracksThreshold = cms.int32(10000000),
+    minPtTight = cms.double(0)
   ),
   beamSpotLabel = cms.InputTag('offlineBeamSpot'),
   TrackLabel = cms.InputTag('generalTracks'),
