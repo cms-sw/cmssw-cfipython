@@ -1,6 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
 totemTimingRecHits = cms.EDProducer('TotemTimingRecHitProducer',
+  applyCalibration = cms.bool(False),
+  timeSliceNs = cms.double(0),
   digiTag = cms.InputTag('totemTimingRawToDigi', 'TotemTiming'),
   timingCalibrationTag = cms.string('GlobalTag:TotemTimingCalibration'),
   baselinePoints = cms.int32(8),
