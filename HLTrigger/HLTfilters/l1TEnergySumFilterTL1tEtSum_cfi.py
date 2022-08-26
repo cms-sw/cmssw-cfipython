@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-l1TEnergySumFilterTRecoMET = cms.EDFilter('L1TEnergySumFilter',
+l1TEnergySumFilterTL1tEtSum = cms.EDFilter('L1TEnergySumFilter',
   saveTags = cms.bool(True),
   inputTag = cms.InputTag('L1PFEnergySums'),
   Scalings = cms.PSet(

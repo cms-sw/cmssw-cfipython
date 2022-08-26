@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hltDoubletDZL1tTkMuonL1tTkMuon = cms.EDFilter('HLT2L1TkMuonL1TkMuonDZ',
+hltDoubletDZL1tTrackerMuonL1tTrackerMuon = cms.EDFilter('HLT2L1TkMuonL1TkMuonDZ',
   saveTags = cms.bool(True),
   originTag1 = cms.VInputTag('hltOriginal1'),
   originTag2 = cms.VInputTag('hltOriginal2'),
