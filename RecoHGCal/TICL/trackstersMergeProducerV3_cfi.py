@@ -1,33 +1,14 @@
 import FWCore.ParameterSet.Config as cms
 
-trackstersMergeProducer = cms.EDProducer('TrackstersMergeProducer',
-  linkingPSet = cms.PSet(
-    cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
-    delta_tk_ts_layer1 = cms.double(0.02),
-    delta_tk_ts_interface = cms.double(0.03),
-    delta_ts_em_had = cms.double(0.03),
-    delta_ts_had_had = cms.double(0.03),
-    track_time_quality_threshold = cms.double(0.5),
-    pid_threshold = cms.double(0.5),
-    energy_em_over_total_threshold = cms.double(0.9),
-    filter_hadronic_on_categories = cms.vint32(
-      0,
-      1
-    ),
-    algo_verbosity = cms.int32(0),
-    type = cms.string('LinkingAlgoByDirectionGeometric')
-  
-  ),
-  trackstersclue3d = cms.InputTag('ticlTrackstersCLUE3DHigh'),
+trackstersMergeProducerV3 = cms.EDProducer('TrackstersMergeProducerV3',
+  tracksterstrkem = cms.InputTag('ticlTrackstersTrkEM'),
+  trackstersem = cms.InputTag('ticlTrackstersEM'),
+  tracksterstrk = cms.InputTag('ticlTrackstersTrk'),
+  trackstershad = cms.InputTag('ticlTrackstersHAD'),
+  seedingTrk = cms.InputTag('ticlSeedingTrk'),
   layer_clusters = cms.InputTag('hgcalLayerClusters'),
   layer_clustersTime = cms.InputTag('hgcalLayerClusters', 'timeLayerCluster'),
   tracks = cms.InputTag('generalTracks'),
-  tracksTime = cms.InputTag('tofPID', 't0'),
-  tracksTimeQual = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
-  tracksTimeErr = cms.InputTag('tofPID', 'sigmat0'),
-  muons = cms.InputTag('muons1stStep'),
-  detector = cms.string('HGCAL'),
-  propagator = cms.string('PropagatorWithMaterial'),
   optimiseAcrossTracksters = cms.bool(True),
   eta_bin_window = cms.int32(1),
   phi_bin_window = cms.int32(1),
