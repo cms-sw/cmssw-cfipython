@@ -9,18 +9,7 @@ L1TTkMuonFilter = cms.EDFilter('L1TTkMuonFilter',
   inputTag = cms.InputTag('L1TkMuons'),
   applyQuality = cms.bool(False),
   applyDuplicateRemoval = cms.bool(True),
-  qualities = cms.PSet(
-    values = cms.VPSet(
-      cms.PSet(
-        detectors = cms.vint32(-99),
-        qualities = cms.vint32(
-          -99,
-          -99,
-          -99
-        )
-      )
-    )
-  ),
+  qualities = cms.vint32(),
   Scalings = cms.PSet(
     barrel = cms.vdouble(
       0,
