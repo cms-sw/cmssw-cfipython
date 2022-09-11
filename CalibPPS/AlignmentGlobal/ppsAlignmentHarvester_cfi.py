@@ -16,6 +16,8 @@ ppsAlignmentHarvester = cms.EDProducer('PPSAlignmentHarvester',
   x_corr_max = cms.double(1000000),
   y_corr_min = cms.double(-1000000),
   y_corr_max = cms.double(1000000),
+  detector_id = cms.uint32(7),
+  subdetector_id = cms.uint32(4),
   debug = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
