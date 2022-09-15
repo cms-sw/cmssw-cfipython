@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 seedGeneratorFromL1TTracksEDProducer = cms.EDProducer('SeedGeneratorFromL1TTracksEDProducer',
-  InputCollection = cms.InputTag('TTTracksFromTrackletEmulation', 'Level1TTTracks'),
+  InputCollection = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
   estimator = cms.string(''),
   propagator = cms.string(''),
   MeasurementTrackerEvent = cms.InputTag(''),

@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 hltEgammaHLTPhase2ExtraProducer = cms.EDProducer('EgammaHLTPhase2ExtraProducer',
   egTrigObjs = cms.InputTag('hltEgammaHLTExtra'),
-  l1Trks = cms.InputTag('TTTracksFromTrackletEmulation', 'Level1TTTracks'),
+  l1Trks = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
   trkParts = cms.InputTag('mix', 'MergedTrackTruth'),
   l1TrkToTrkPartMap = cms.InputTag('TTTrackAssociatorFromPixelDigis', 'Level1TTTracks'),
   hgcalLayerClusters = cms.InputTag('hgcalLayerClusters'),
