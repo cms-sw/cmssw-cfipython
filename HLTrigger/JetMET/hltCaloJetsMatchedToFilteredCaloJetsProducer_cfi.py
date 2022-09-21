@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hltpfJetsMatchedToFilteredCaloJetsProducer = cms.EDProducer('HLTPFJetsMatchedToFilteredCaloJetsProducer',
+hltCaloJetsMatchedToFilteredCaloJetsProducer = cms.EDProducer('HLTCaloJetsMatchedToFilteredCaloJetsProducer',
   src = cms.InputTag('hltJets'),
   triggerJetsFilter = cms.InputTag('hltCaloJetsFiltered'),
   triggerJetsType = cms.int32(85),

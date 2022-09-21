@@ -8,12 +8,6 @@ trackstersMergeProducer = cms.EDProducer('TrackstersMergeProducer',
     delta_ts_em_had = cms.double(0.03),
     delta_ts_had_had = cms.double(0.03),
     track_time_quality_threshold = cms.double(0.5),
-    pid_threshold = cms.double(0.5),
-    energy_em_over_total_threshold = cms.double(0.9),
-    filter_hadronic_on_categories = cms.vint32(
-      0,
-      1
-    ),
     algo_verbosity = cms.int32(0),
     type = cms.string('LinkingAlgoByDirectionGeometric')
   
@@ -49,7 +43,7 @@ trackstersMergeProducer = cms.EDProducer('TrackstersMergeProducer',
   eid_input_name = cms.string('input'),
   eid_output_name_energy = cms.string('output/regressed_energy'),
   eid_output_name_id = cms.string('output/id_probabilities'),
-  eid_min_cluster_energy = cms.double(1),
+  eid_min_cluster_energy = cms.double(2.5),
   eid_n_layers = cms.int32(50),
   eid_n_clusters = cms.int32(10),
   mightGet = cms.optional.untracked.vstring
