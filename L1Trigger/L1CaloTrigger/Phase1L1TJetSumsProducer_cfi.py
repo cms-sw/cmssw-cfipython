@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 Phase1L1TJetSumsProducer = cms.EDProducer('Phase1L1TJetSumsProducer',
-  inputJetCollectionTag = cms.InputTag('Phase1L1TJetCalibrator', 'Phase1L1TJetFromPfCandidates'),
+  inputJetCollectionTag = cms.InputTag('l1tPhase1JetCalibrator', 'Phase1L1TJetFromPfCandidates'),
   sinPhi = cms.required.vdouble,
   cosPhi = cms.required.vdouble,
   nBinsPhi = cms.uint32(72),
