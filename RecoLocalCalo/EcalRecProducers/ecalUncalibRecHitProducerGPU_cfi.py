@@ -23,8 +23,6 @@ ecalUncalibRecHitProducerGPU = cms.EDProducer('EcalUncalibRecHitProducerGPU',
   outOfTimeThresholdGain61mEE = cms.double(1000),
   amplitudeThresholdEB = cms.double(10),
   amplitudeThresholdEE = cms.double(10),
-  maxNumberHitsEB = cms.uint32(61200),
-  maxNumberHitsEE = cms.uint32(14648),
   kernelMinimizeThreads = cms.untracked.vuint32(
     32,
     1,
