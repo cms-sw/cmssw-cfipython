@@ -1,7 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
 hbheRecHitProducerGPU = cms.EDProducer('HBHERecHitProducerGPU',
-  maxChannels = cms.uint32(10000),
   maxTimeSamples = cms.uint32(10),
   kprep1dChannelsPerBlock = cms.uint32(32),
   digisLabelF01HE = cms.InputTag('hcalRawToDigiGPU', 'f01HEDigisGPU'),
