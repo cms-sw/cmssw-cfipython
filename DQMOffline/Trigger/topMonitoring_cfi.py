@@ -41,6 +41,7 @@ topMonitoring = cms.EDProducer('TopMonitor',
   invMassCutInAllMuPairs = cms.bool(False),
   enablePhotonPlot = cms.bool(False),
   enableMETPlot = cms.bool(False),
+  enable2DPlots = cms.bool(True),
   numGenericTriggerEventPSet = cms.PSet(
     ReadPrescalesFromFile = cms.bool(False),
     andOr = cms.bool(False),
