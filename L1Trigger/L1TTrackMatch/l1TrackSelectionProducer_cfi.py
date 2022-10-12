@@ -1,9 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
 l1TrackSelectionProducer = cms.EDProducer('L1TrackSelectionProducer',
-  l1TracksInputTag = cms.InputTag('TTTracksFromTrackletEmulation', 'Level1TTTracks'),
-  l1VerticesInputTag = cms.InputTag('L1VertexFinder', 'l1vertices'),
-  l1VerticesEmulationInputTag = cms.InputTag('L1VertexFinderEmulator', 'l1verticesEmulation'),
+  l1TracksInputTag = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
+  l1VerticesInputTag = cms.InputTag('l1tVertexFinder', 'l1vertices'),
+  l1VerticesEmulationInputTag = cms.InputTag('l1tVertexFinderEmulator', 'l1verticesEmulation'),
   outputCollectionName = cms.string('Level1TTTracksSelected'),
   cutSet = cms.PSet(
     ptMin = cms.double(2),
