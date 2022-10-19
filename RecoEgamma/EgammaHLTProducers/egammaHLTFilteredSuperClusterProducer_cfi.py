@@ -9,10 +9,12 @@ egammaHLTFilteredSuperClusterProducer = cms.EDProducer('EgammaHLTFilteredSuperCl
       var = cms.InputTag('hltEgammaHoverE'),
       barrelCut = cms.PSet(
         cutOverE = cms.double(0.2),
+        doAnd = cms.double(0),
         useEt = cms.double(0)
       ),
       endcapCut = cms.PSet(
         cutOverE = cms.double(0.2),
+        doAnd = cms.double(0),
         useEt = cms.double(0)
       )
     )
