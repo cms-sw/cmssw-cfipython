@@ -4,6 +4,7 @@ rawDataMapperByLabel = cms.EDProducer('RawDataMapperByLabel',
   rawCollectionList = cms.VInputTag(
     'rawDataCollector::@skipCurrentProcess',
     'rawDataRepacker',
+    'rawPrimeDataRepacker',
     'rawDataReducedFormat'
   ),
   mainCollection = cms.InputTag('rawDataCollector'),
