@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 lumiMonitor = cms.EDProducer('LumiMonitor',
   pixelClusters = cms.InputTag('hltSiPixelClusters'),
   scalers = cms.InputTag('hltScalersRawToDigi'),
+  onlineMetaDataDigis = cms.InputTag('hltOnlineMetaDataDigis'),
   FolderName = cms.string('HLT/LumiMonitoring'),
   doPixelLumi = cms.bool(False),
   useBPixLayer1 = cms.bool(False),

@@ -2,10 +2,10 @@ import FWCore.ParameterSet.Config as cms
 
 fastTimerServiceClient = cms.EDProducer('FastTimerServiceClient',
   dqmPath = cms.untracked.string('HLT/TimerService'),
-  doPlotsVsScalLumi = cms.bool(True),
+  doPlotsVsOnlineLumi = cms.bool(True),
   doPlotsVsPixelLumi = cms.bool(False),
   doPlotsVsPU = cms.bool(True),
-  scalLumiME = cms.PSet(
+  onlineLumiME = cms.PSet(
     folder = cms.string('HLT/LumiMonitoring'),
     name = cms.string('lumiVsLS'),
     nbins = cms.int32(440),
