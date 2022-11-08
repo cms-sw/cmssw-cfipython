@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-LepInJetProducer = cms.EDProducer('LepInJetProducer',
+lepInJetProducer = cms.EDProducer('LepInJetProducer',
   src = cms.required.InputTag,
   srcEle = cms.required.InputTag,
   srcMu = cms.required.InputTag,
