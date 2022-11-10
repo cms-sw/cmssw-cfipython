@@ -14,7 +14,8 @@ diMuonMassBiasMonitor = cms.EDProducer('DiMuonMassBiasMonitor',
     NxBins = cms.int32(24),
     NyBins = cms.int32(50),
     ymin = cms.double(65),
-    ymax = cms.double(115)
+    ymax = cms.double(115),
+    maxDeltaEta = cms.double(3.7)
   ),
   mightGet = cms.optional.untracked.vstring
 )

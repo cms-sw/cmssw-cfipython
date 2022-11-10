@@ -3,6 +3,8 @@ import FWCore.ParameterSet.Config as cms
 diMuonMassBiasClient = cms.EDProducer('DiMuonMassBiasClient',
   FolderName = cms.string('DiMuonMassBiasMonitor'),
   fitBackground = cms.bool(False),
+  useRooCMSShape = cms.bool(False),
+  useRooCBShape = cms.bool(False),
   debugMode = cms.bool(False),
   fit_par = cms.PSet(
     mean_par = cms.vdouble(
