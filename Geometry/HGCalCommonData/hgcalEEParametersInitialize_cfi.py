@@ -1,10 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
 hgcalEEParametersInitialize = cms.ESProducer('HGCalParametersESModule',
-  name = cms.string('HGCalEESensitive'),
-  name2 = cms.string('HGCalEE'),
+  name = cms.string('HGCalEELayer'),
+  name2 = cms.string('HGCalEESensitive'),
   nameW = cms.string('HGCalEEWafer'),
-  nameC = cms.string('HGCalEECell'),
+  nameC = cms.string('HGCalEESensitive'),
   nameT = cms.string('HGCal'),
   nameX = cms.string('HGCalEESensitive'),
   fromDD4hep = cms.bool(False),
