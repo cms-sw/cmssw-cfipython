@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 simpleTrackFlatTableProducer = cms.EDProducer('SimpleTrackFlatTableProducer',
   name = cms.required.string,
-  doc = cms.optional.string,
+  doc = cms.string(''),
   extension = cms.bool(False),
   skipNonExistingSrc = cms.bool(False),
   src = cms.required.InputTag,
