@@ -54,7 +54,10 @@ primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
       vertexSize = cms.double(0.006),
       uniquetrkweight = cms.double(0.8),
       uniquetrkminp = cms.double(0),
-      zrange = cms.double(4)
+      zrange = cms.double(4),
+      runInBlocks = cms.bool(False),
+      block_size = cms.uint32(512),
+      overlap_frac = cms.double(0.5)
     ),
     TkGapClusParameters = cms.PSet(
       zSeparation = cms.double(1),
