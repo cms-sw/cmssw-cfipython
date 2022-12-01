@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-siPixelDigisClustersFromSoA = cms.EDProducer('SiPixelDigisClustersFromSoA',
+siPixelDigisClustersFromSoAPhase2 = cms.EDProducer('SiPixelDigisClustersFromSoAPhase2',
   src = cms.InputTag('siPixelDigisSoA'),
   clusterThreshold_layer1 = cms.int32(2000),
   clusterThreshold_otherLayers = cms.int32(4000),

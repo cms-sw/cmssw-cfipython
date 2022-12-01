@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-pixelVerticesCUDA = cms.EDProducer('PixelVertexProducerCUDA',
+pixelVertexProducerCUDA = cms.EDProducer('PixelVertexProducerCUDA',
   onGPU = cms.bool(True),
   oneKernel = cms.bool(True),
   useDensity = cms.bool(True),

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-siPixelRecHitSoAFromLegacy = cms.EDProducer('SiPixelRecHitSoAFromLegacy',
+siPixelRecHitSoAFromLegacyPhase1 = cms.EDProducer('SiPixelRecHitSoAFromLegacyPhase1',
   beamSpot = cms.InputTag('offlineBeamSpot'),
   src = cms.InputTag('siPixelClustersPreSplitting'),
   CPE = cms.string('PixelCPEFast'),
