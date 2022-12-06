@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-pixelCPEFastESProducerPhase2 = cms.ESProducer('PixelCPEFastESProducerPhase2',
+PixelCPEFastESProducer = cms.ESProducer('PixelCPEFastESProducer',
   LoadTemplatesFromDB = cms.bool(True),
   Alpha2Order = cms.bool(True),
   ClusterProbComputationFlag = cms.int32(0),
@@ -53,11 +53,12 @@ pixelCPEFastESProducerPhase2 = cms.ESProducer('PixelCPEFastESProducerPhase2',
   yerr_barrel_ln_def = cms.double(0.0021),
   xerr_endcap_def = cms.double(0.002),
   yerr_endcap_def = cms.double(0.00075),
+  isPhase2 = cms.bool(False),
   EdgeClusterErrorX = cms.double(50),
   EdgeClusterErrorY = cms.double(85),
   UseErrorsFromTemplates = cms.bool(True),
   TruncatePixelCharge = cms.bool(True),
-  ComponentName = cms.string('PixelCPEFastPhase2'),
+  ComponentName = cms.string('PixelCPEFast'),
   MagneticFieldRecord = cms.ESInputTag('', ''),
   appendToDataLabel = cms.string('')
 )

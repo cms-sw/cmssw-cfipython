@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-generalPurposeTrackAnalyzer = cms.EDAnalyzer('GeneralPurposeTrackAnalyzer',
+DMRChecker = cms.EDAnalyzer('DMRChecker',
   TkTag = cms.InputTag('generalTracks'),
   TriggerResultsTag = cms.InputTag('TriggerResults', '', 'HLT'),
   BeamSpotTag = cms.InputTag('offlineBeamSpot'),

@@ -6,5 +6,6 @@ siPixelDigisClustersFromSoA = cms.EDProducer('SiPixelDigisClustersFromSoA',
   clusterThreshold_otherLayers = cms.int32(4000),
   produceDigis = cms.bool(True),
   storeDigis = cms.bool(True),
+  isPhase2 = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
