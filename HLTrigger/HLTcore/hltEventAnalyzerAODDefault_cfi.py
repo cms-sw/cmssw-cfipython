@@ -6,5 +6,6 @@ hltEventAnalyzerAODDefault = cms.EDAnalyzer('HLTEventAnalyzerAOD',
   triggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
   triggerEvent = cms.InputTag('hltTriggerSummaryAOD', '', 'HLT'),
   stageL1Trigger = cms.uint32(1),
+  verbose = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
