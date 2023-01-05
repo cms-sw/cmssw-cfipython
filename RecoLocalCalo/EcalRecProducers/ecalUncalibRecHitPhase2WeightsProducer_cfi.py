@@ -4,7 +4,7 @@ ecalUncalibRecHitPhase2WeightsProducer = cms.EDProducer('EcalUncalibRecHitPhase2
   EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
   tRise = cms.double(0.2),
   tFall = cms.double(2),
-  weights = cms.vdouble(
+  ampWeights = cms.vdouble(
     -0.121016,
     -0.119899,
     -0.120923,
@@ -21,6 +21,24 @@ ecalUncalibRecHitPhase2WeightsProducer = cms.EDProducer('EcalUncalibRecHitPhase2
     -0.121737,
     -0.121737,
     -0.121737
+  ),
+  timeWeights = cms.vdouble(
+    0.429452,
+    0.442762,
+    0.413327,
+    0.858327,
+    4.42324,
+    2.04369,
+    -3.42426,
+    -4.16258,
+    -2.36061,
+    -0.725371,
+    0.0727267,
+    0.326005,
+    0.402035,
+    0.404287,
+    0.434207,
+    0.422775
   ),
   BarrelDigis = cms.InputTag('simEcalUnsuppressedDigis'),
   mightGet = cms.optional.untracked.vstring
