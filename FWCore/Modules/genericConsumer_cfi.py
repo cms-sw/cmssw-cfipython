@@ -4,5 +4,6 @@ genericConsumer = cms.EDAnalyzer('GenericConsumer',
   eventProducts = cms.untracked.vstring(),
   lumiProducts = cms.untracked.vstring(),
   runProducts = cms.untracked.vstring(),
+  processProducts = cms.untracked.vstring(),
   mightGet = cms.optional.untracked.vstring
 )
