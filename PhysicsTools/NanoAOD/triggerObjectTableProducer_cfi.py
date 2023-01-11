@@ -8,6 +8,6 @@ triggerObjectTableProducer = cms.EDProducer('TriggerObjectTableProducer',
   l1Jet = cms.required.InputTag,
   l1Muon = cms.required.InputTag,
   l1Tau = cms.required.InputTag,
-  selections = cms.required.VPSet,
+  selections = cms.PSet(),
   mightGet = cms.optional.untracked.vstring
 )
