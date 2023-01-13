@@ -84,9 +84,13 @@ ecalMultiFitUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
     outOfTimeThresholdGain61mEE = cms.double(1000),
     amplitudeThresholdEB = cms.double(10),
     amplitudeThresholdEE = cms.double(10),
-    crossCorrelationStartTime = cms.double(-25),
+    crossCorrelationStartTime = cms.double(-15),
     crossCorrelationStopTime = cms.double(25),
-    crossCorrelationTargetTimePrecision = cms.double(0.01)
+    crossCorrelationTargetTimePrecision = cms.double(0.01),
+    crossCorrelationTargetTimePrecisionForDelayedPulses = cms.double(0.05),
+    crossCorrelationTimeShiftWrtRations = cms.double(1),
+    crossCorrelationMinTimeToBeLateMin = cms.double(2),
+    crossCorrelationMinTimeToBeLateMax = cms.double(5)
   ),
   mightGet = cms.optional.untracked.vstring
 )
