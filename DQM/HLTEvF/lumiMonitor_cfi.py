@@ -10,28 +10,28 @@ lumiMonitor = cms.EDProducer('LumiMonitor',
   minNumberOfPixelsPerCluster = cms.int32(2),
   minPixelClusterCharge = cms.double(15000),
   histoPSet = cms.PSet(
-    pixelClusterPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
-    lumiPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
-    puPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
-    pixellumiPSet = cms.PSet(
-      nbins = cms.required.int32,
-      xmin = cms.required.double,
-      xmax = cms.required.double
-    ),
     lsPSet = cms.PSet(
       nbins = cms.int32(2500)
+    ),
+    puPSet = cms.PSet(
+      nbins = cms.int32(130),
+      xmin = cms.double(0),
+      xmax = cms.double(130)
+    ),
+    lumiPSet = cms.PSet(
+      nbins = cms.int32(5000),
+      xmin = cms.double(0),
+      xmax = cms.double(20000)
+    ),
+    pixellumiPSet = cms.PSet(
+      nbins = cms.int32(300),
+      xmin = cms.double(0),
+      xmax = cms.double(3)
+    ),
+    pixelClusterPSet = cms.PSet(
+      nbins = cms.int32(200),
+      xmin = cms.double(-0.5),
+      xmax = cms.double(19999.5)
     )
   ),
   mightGet = cms.optional.untracked.vstring
