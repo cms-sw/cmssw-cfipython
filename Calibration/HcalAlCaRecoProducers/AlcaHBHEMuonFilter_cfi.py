@@ -4,7 +4,7 @@ AlcaHBHEMuonFilter = cms.EDFilter('AlCaHBHEMuonFilter',
   ProcessName = cms.string('HLT'),
   TriggerResultLabel = cms.InputTag('TriggerResults', '', 'HLT'),
   MuonLabel = cms.InputTag('muons'),
-  MinimumMuonP = cms.double(10),
+  MinimumMuonP = cms.double(5),
   Triggers = cms.vstring(
     'HLT_IsoMu',
     'HLT_Mu'

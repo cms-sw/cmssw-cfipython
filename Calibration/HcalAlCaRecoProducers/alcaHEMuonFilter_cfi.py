@@ -8,7 +8,7 @@ alcaHEMuonFilter = cms.EDFilter('AlCaHEMuonFilter',
     'HLT_IsoMu',
     'HLT_Mu'
   ),
-  muonPtCut = cms.double(20),
+  muonPtCut = cms.double(5),
   muonEtaCut = cms.double(1.305),
   pfCut = cms.bool(True),
   pfIsolationCut = cms.double(0.15),

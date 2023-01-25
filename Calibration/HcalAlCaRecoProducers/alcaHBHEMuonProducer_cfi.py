@@ -7,6 +7,6 @@ alcaHBHEMuonProducer = cms.EDProducer('AlCaHBHEMuonProducer',
   EERecHitLabel = cms.InputTag('ecalRecHit', 'EcalRecHitsEE'),
   HBHERecHitLabel = cms.InputTag('hbhereco'),
   MuonLabel = cms.InputTag('muons'),
-  MinimumMuonP = cms.double(10),
+  MinimumMuonP = cms.double(5),
   mightGet = cms.optional.untracked.vstring
 )
