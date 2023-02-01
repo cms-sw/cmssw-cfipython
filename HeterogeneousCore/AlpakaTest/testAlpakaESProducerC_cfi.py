@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_serial_syncTestAlpakaESProducerB = cms.ESProducer('alpaka_serial_sync::TestAlpakaESProducerB',
+testAlpakaESProducerC = cms.ESProducer('TestAlpakaESProducerC@alpaka',
   appendToDataLabel = cms.string(''),
   alpaka = cms.untracked.PSet(
     backend = cms.untracked.string('')
