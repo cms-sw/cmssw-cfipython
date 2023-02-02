@@ -13,5 +13,6 @@ JetBaseMVAValueMapProducer = cms.EDProducer('JetBaseMVAValueMapProducer',
   outputNames = cms.vstring(),
   outputFormulas = cms.vstring(),
   batch_eval = cms.bool(False),
+  disableONNXGraphOpt = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
