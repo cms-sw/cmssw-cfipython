@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hltDoubletDZRecoElectronRecoElectron = cms.EDFilter('HLT2ElectronElectronDZ',
+hlT2L1PFTauL1PFTauDZ = cms.EDFilter('HLT2L1PFTauL1PFTauDZ',
   saveTags = cms.bool(True),
   originTag1 = cms.VInputTag('hltOriginal1'),
   originTag2 = cms.VInputTag('hltOriginal2'),
@@ -10,8 +10,6 @@ hltDoubletDZRecoElectronRecoElectron = cms.EDFilter('HLT2ElectronElectronDZ',
   triggerType2 = cms.int32(0),
   MinDR = cms.double(-1),
   MaxDZ = cms.double(0.2),
-  MinPixHitsForDZ = cms.int32(0),
-  checkSC = cms.bool(False),
   MinN = cms.int32(1),
   mightGet = cms.optional.untracked.vstring
 )
