@@ -4,10 +4,10 @@ jetHTAnalyzer = cms.EDAnalyzer('JetHTAnalyzer',
   vtxCollection = cms.InputTag('offlinePrimaryVerticesFromRefittedTrks'),
   triggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
   trackCollection = cms.InputTag('TrackRefitter'),
-  printTriggerTable = cms.int32(0),
-  minVertexNdf = cms.double(10),
-  minVertexMeanWeight = cms.double(0.5),
-  profilePtBorders = cms.vdouble(
+  printTriggerTable = cms.untracked.int32(0),
+  minVertexNdf = cms.untracked.double(10),
+  minVertexMeanWeight = cms.untracked.double(0.5),
+  profilePtBorders = cms.untracked.vdouble(
     3,
     5,
     10,
@@ -15,7 +15,7 @@ jetHTAnalyzer = cms.EDAnalyzer('JetHTAnalyzer',
     50,
     100
   ),
-  iovList = cms.vdouble(
+  iovList = cms.untracked.vint32(
     0,
     500000
   ),
