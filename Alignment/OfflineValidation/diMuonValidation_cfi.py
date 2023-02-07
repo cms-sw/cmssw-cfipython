@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-DiMuonValidation = cms.EDAnalyzer('DiMuonValidation',
+diMuonValidation = cms.EDAnalyzer('DiMuonValidation',
   compressionSettings = cms.untracked.int32(-1),
   eBeam = cms.double(3500),
   TkTag = cms.string('ALCARECOTkAlZMuMu'),
