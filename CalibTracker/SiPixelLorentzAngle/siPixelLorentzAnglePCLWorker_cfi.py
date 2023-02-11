@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 siPixelLorentzAnglePCLWorker = cms.EDProducer('SiPixelLorentzAnglePCLWorker',
+  analysisType = cms.string('GrazingAngle'),
   folder = cms.string('AlCaReco/SiPixelLorentzAngle'),
   notInPCL = cms.bool(False),
   fileName = cms.string('testrun.root'),
