@@ -1,12 +1,14 @@
 import FWCore.ParameterSet.Config as cms
 
 QGTagger = cms.EDProducer('QGTagger',
-  srcJets = cms.required.InputTag,
-  srcRho = cms.required.InputTag,
-  jetsLabel = cms.required.string,
+  srcJets = cms.InputTag('ak4PFJetsCHS'),
+  srcRho = cms.InputTag('fixedGridRhoFastjetAll'),
+  computeLikelihood = cms.bool(True),
+  jetsLabel = cms.string('QGL_AK4PFchs'),
   systematicsLabel = cms.string(''),
-  useQualityCuts = cms.required.bool,
+  useQualityCuts = cms.bool(False),
   jec = cms.InputTag(''),
-  srcVertexCollection = cms.required.InputTag,
+  srcVertexCollection = cms.InputTag('offlinePrimaryVerticesWithBS'),
+  srcConstituentWeights = cms.InputTag(''),
   mightGet = cms.optional.untracked.vstring
 )
