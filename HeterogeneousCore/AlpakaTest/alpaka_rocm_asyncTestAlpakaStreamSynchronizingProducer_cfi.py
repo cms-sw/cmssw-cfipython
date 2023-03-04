@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_serial_syncTestAlpakaStreamSynchronizingProducer = cms.EDProducer('alpaka_serial_sync::TestAlpakaStreamSynchronizingProducer',
+alpaka_rocm_asyncTestAlpakaStreamSynchronizingProducer = cms.EDProducer('alpaka_rocm_async::TestAlpakaStreamSynchronizingProducer',
   source = cms.required.InputTag,
   intSource = cms.required.InputTag,
   expectedInt = cms.required.int32,
