@@ -10,6 +10,7 @@ SeedGeneratorFromProtoTracksEDProducer = cms.EDProducer('SeedGeneratorFromProtoT
   TTRHBuilder = cms.string('TTRHBuilderWithoutAngle4PixelTriplets'),
   usePV = cms.bool(False),
   includeFourthHit = cms.bool(False),
+  produceComplement = cms.bool(False),
   SeedCreatorPSet = cms.PSet(
     ComponentName = cms.string('SeedFromConsecutiveHitsCreator'),
     propagator = cms.string('PropagatorWithMaterial'),
