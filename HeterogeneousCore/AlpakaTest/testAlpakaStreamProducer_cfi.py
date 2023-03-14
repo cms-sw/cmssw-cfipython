@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 testAlpakaStreamProducer = cms.EDProducer('TestAlpakaStreamProducer@alpaka',
   source = cms.required.InputTag,
+  eventSetupSource = cms.ESInputTag('', ''),
   productInstanceName = cms.string(''),
   size = cms.PSet(
     alpaka_serial_sync = cms.required.int32,
