@@ -11,5 +11,6 @@ streamerOutput = cms.OutputModule('EventStreamFileWriter',
     SelectEvents = cms.optional.vstring
   ),
   psetMap = cms.untracked.InputTag('hltPSetMap'),
-  fileName = cms.untracked.string('teststreamfile.dat')
+  fileName = cms.untracked.string('teststreamfile.dat'),
+  padding = cms.untracked.uint32(0)
 )
