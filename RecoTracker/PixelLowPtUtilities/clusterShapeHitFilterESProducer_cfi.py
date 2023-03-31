@@ -1,8 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
 clusterShapeHitFilterESProducer = cms.ESProducer('ClusterShapeHitFilterESProducer',
-  PixelShapeFile = cms.string('RecoPixelVertexing/PixelLowPtUtilities/data/pixelShapePhase0.par'),
-  PixelShapeFileL1 = cms.string('RecoPixelVertexing/PixelLowPtUtilities/data/pixelShapePhase0.par'),
+  PixelShapeFile = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
+  PixelShapeFileL1 = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
   ComponentName = cms.string(''),
   isPhase2 = cms.bool(False),
   doPixelShapeCut = cms.bool(True),
