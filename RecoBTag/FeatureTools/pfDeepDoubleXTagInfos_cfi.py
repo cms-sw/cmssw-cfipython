@@ -6,7 +6,10 @@ pfDeepDoubleXTagInfos = cms.EDProducer('DeepDoubleXTagInfoProducer',
   min_jet_pt = cms.double(150),
   min_candidate_pt = cms.double(0.95),
   vertices = cms.InputTag('offlinePrimaryVertices'),
+  puppi_value_map = cms.InputTag('puppi'),
   secondary_vertices = cms.InputTag('inclusiveCandidateSecondaryVertices'),
   jets = cms.InputTag('ak8PFJetsPuppi'),
+  fallback_puppi_weight = cms.bool(False),
+  is_weighted_jet = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
