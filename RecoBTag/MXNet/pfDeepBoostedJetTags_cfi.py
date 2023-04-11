@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-boostedJetMXNetJetTagsProducer = cms.EDProducer('BoostedJetMXNetJetTagsProducer',
+pfDeepBoostedJetTags = cms.EDProducer('DeepBoostedJetTagsProducer',
   src = cms.InputTag('pfDeepBoostedJetTagInfos'),
   preprocessParams = cms.PSet(),
   model_path = cms.FileInPath('RecoBTag/Combined/data/DeepBoostedJet/V01/full/resnet-symbol.json'),
