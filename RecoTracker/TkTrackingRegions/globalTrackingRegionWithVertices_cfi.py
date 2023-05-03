@@ -19,6 +19,7 @@ globalTrackingRegionWithVertices = cms.EDProducer('GlobalTrackingRegionWithVerti
     originRScaling4BigEvts = cms.bool(False),
     ptMinScaling4BigEvts = cms.bool(False),
     halfLengthScaling4BigEvts = cms.bool(False),
+    allowEmpty = cms.bool(False),
     minOriginR = cms.double(0),
     maxPtMin = cms.double(1000),
     minHalfLength = cms.double(0),
