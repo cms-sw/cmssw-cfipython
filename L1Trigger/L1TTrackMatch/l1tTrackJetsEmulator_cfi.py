@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-l1tTrackJets = cms.EDProducer('L1TrackJetProducer',
+l1tTrackJetsEmulator = cms.EDProducer('L1TrackJetEmulatorProducer',
   L1TrackInputTag = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
   L1PVertexInputTag = cms.InputTag('l1tVertexFinderEmulator', 'l1verticesEmulation'),
   MaxDzTrackPV = cms.double(1),
