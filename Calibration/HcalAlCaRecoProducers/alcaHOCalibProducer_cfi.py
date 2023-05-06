@@ -15,5 +15,6 @@ alcaHOCalibProducer = cms.EDProducer('AlCaHOCalibProducer',
   muons = cms.untracked.InputTag('muons'),
   vertexTags = cms.InputTag('offlinePrimaryVertices'),
   lumiTags = cms.InputTag('scalersRawToDigi'),
+  metadata = cms.InputTag('onlineMetaDataDigis'),
   mightGet = cms.optional.untracked.vstring
 )
