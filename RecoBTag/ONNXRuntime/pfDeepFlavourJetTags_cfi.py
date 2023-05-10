@@ -9,7 +9,7 @@ pfDeepFlavourJetTags = cms.EDProducer('DeepFlavourONNXJetTagsProducer',
     'input_4',
     'input_5'
   ),
-  model_path = cms.FileInPath('RecoBTag/Combined/data/DeepFlavourV03_10X_training/model.onnx'),
+  model_path = cms.FileInPath('RecoBTag/Combined/data/DeepFlavourV04_12X_training/DeepJet_Run3_122X.onnx'),
   output_names = cms.vstring('ID_pred/Softmax:0'),
   flav_names = cms.vstring(
     'probb',
