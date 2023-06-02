@@ -12,7 +12,7 @@ ticlCandidateFromTrackstersProducer = cms.EDProducer('TICLCandidateFromTrackster
     plugin = cms.string('TracksterP4FromEnergySum'),
     energyFromRegression = cms.bool(False),
     vertices = cms.InputTag('offlinePrimaryVertices'),
-    layerClusters = cms.InputTag('hgcalLayerClusters'),
+    layerClusters = cms.InputTag('hgcalMergeLayerClusters'),
     tracks = cms.InputTag('generalTracks')
   ),
   trackPlugin = cms.PSet(

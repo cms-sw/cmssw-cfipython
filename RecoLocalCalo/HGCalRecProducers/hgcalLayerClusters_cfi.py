@@ -37,17 +37,12 @@ hgcalLayerClusters = cms.EDProducer('HGCalLayerClusterProducer',
       noise_MIP = cms.double(0.01)
     ),
     use2x2 = cms.bool(True),
-    type = cms.string('CLUE')
+    type = cms.string('SiCLUE')
   
   ),
-  detector = cms.string('all'),
-  doSharing = cms.bool(False),
-  HFNoseInput = cms.InputTag('HGCalRecHit', 'HGCHFNoseRecHits'),
-  HGCEEInput = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
-  HGCFHInput = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
-  HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+  detector = cms.string('EE'),
+  recHits = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
   timeClname = cms.string('timeLayerCluster'),
-  timeOffset = cms.double(0),
   nHitsTime = cms.uint32(3),
   mightGet = cms.optional.untracked.vstring
 )

@@ -8,7 +8,7 @@ ticlTrackstersEdgesValidationDefault = cms.EDProducer('TICLTrackstersEdgesValida
     'ticlTrackstersHAD',
     'ticlTrackstersMerge'
   ),
-  layerClusters = cms.InputTag('hgcalLayerClusters'),
+  layerClusters = cms.InputTag('hgcalMergeLayerClusters'),
   ticlSeedingGlobal = cms.InputTag('ticlSeedingGlobal'),
   ticlSeedingTrk = cms.InputTag('ticlSeedingTrk'),
   folder = cms.string('HGCAL/'),
