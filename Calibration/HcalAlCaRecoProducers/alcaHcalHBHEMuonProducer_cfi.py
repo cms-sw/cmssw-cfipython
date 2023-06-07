@@ -20,5 +20,6 @@ alcaHcalHBHEMuonProducer = cms.EDProducer('AlCaHcalHBHEMuonProducer',
   writeRespCorr = cms.untracked.bool(False),
   fileInCorr = cms.untracked.string(''),
   maxDepth = cms.untracked.int32(7),
+  usePFThreshold = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
