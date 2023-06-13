@@ -14,6 +14,7 @@ eopTreeWriter = cms.EDAnalyzer('EopTreeWriter',
     useME0 = cms.bool(False),
     useMuon = cms.bool(True),
     usePreshower = cms.bool(False),
+    preselectMuonTracks = cms.bool(False),
     dREcal = cms.double(9999),
     dREcalPreselection = cms.double(0.05),
     dRHcal = cms.double(9999),
@@ -34,7 +35,10 @@ eopTreeWriter = cms.EDAnalyzer('EopTreeWriter',
     GEMSegmentCollectionLabel = cms.InputTag('gemSegments'),
     HBHERecHitCollectionLabel = cms.InputTag('hbreco'),
     HORecHitCollectionLabel = cms.InputTag('horeco'),
-    ME0SegmentCollectionLabel = cms.InputTag('me0Segments')
+    ME0SegmentCollectionLabel = cms.InputTag('me0Segments'),
+    RPCHitCollectionLabel = cms.InputTag('rpcRecHits'),
+    GEMHitCollectionLabel = cms.InputTag('gemRecHits'),
+    ME0HitCollectionLabel = cms.InputTag('me0RecHits')
   ),
   mightGet = cms.optional.untracked.vstring
 )
