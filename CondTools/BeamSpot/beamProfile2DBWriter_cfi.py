@@ -1,6 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 beamProfile2DBWriter = cms.EDAnalyzer('BeamProfile2DBWriter',
+  recordName = cms.string('SimBeamSpotObjectsRcd'),
   X0 = cms.required.double,
   Y0 = cms.required.double,
   Z0 = cms.required.double,
