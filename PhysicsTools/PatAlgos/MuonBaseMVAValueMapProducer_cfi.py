@@ -8,5 +8,7 @@ MuonBaseMVAValueMapProducer = cms.EDProducer('MuonBaseMVAValueMapProducer',
   outputNames = cms.vstring(),
   outputFormulas = cms.vstring(),
   nThreads = cms.uint32(1),
-  singleThreadPool = cms.string('no_threads')
+  singleThreadPool = cms.string('no_threads'),
+  batch_eval = cms.bool(False),
+  disableONNXGraphOpt = cms.bool(False)
 )
