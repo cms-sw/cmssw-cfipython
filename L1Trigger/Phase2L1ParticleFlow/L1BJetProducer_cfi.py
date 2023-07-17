@@ -10,6 +10,6 @@ L1BJetProducer = cms.EDProducer('L1BJetProducer',
   nParticles = cms.int32(10),
   minPt = cms.double(20),
   maxEta = cms.double(2.4),
-  vtx = cms.InputTag('L1VertexFinderEmulator', 'l1verticesEmulation'),
+  vtx = cms.InputTag('L1VertexFinderEmulator', 'L1VerticesEmulation'),
   mightGet = cms.optional.untracked.vstring
 )
