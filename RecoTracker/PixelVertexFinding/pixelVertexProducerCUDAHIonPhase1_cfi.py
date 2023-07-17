@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-pixelVertexProducerCUDAPhase2 = cms.EDProducer('PixelVertexProducerCUDAPhase2',
+pixelVertexProducerCUDAHIonPhase1 = cms.EDProducer('PixelVertexProducerCUDAHIonPhase1',
   onGPU = cms.bool(True),
   oneKernel = cms.bool(True),
   useDensity = cms.bool(True),

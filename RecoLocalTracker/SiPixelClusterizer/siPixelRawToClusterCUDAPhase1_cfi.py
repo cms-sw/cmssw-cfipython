@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-siPixelRawToClusterCUDA = cms.EDProducer('SiPixelRawToClusterCUDA',
+siPixelRawToClusterCUDAPhase1 = cms.EDProducer('SiPixelRawToClusterCUDAPhase1',
   isRun2 = cms.bool(True),
   IncludeErrors = cms.bool(True),
   UseQualityInfo = cms.bool(False),
