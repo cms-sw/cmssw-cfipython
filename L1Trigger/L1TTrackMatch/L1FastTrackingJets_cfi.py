@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 L1FastTrackingJets = cms.EDProducer('L1FastTrackingJetProducer',
   L1TrackInputTag = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
-  L1PrimaryVertexTag = cms.string('L1Vertices'),
+  L1PrimaryVertexTag = cms.string('l1vertices'),
   GenInfo = cms.InputTag('TTTrackAssociatorFromPixelDigis', 'Level1TTTracks'),
   trk_zMax = cms.double(15),
   trk_chi2dofMax = cms.double(10),
