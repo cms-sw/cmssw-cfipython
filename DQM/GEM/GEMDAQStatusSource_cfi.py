@@ -8,5 +8,6 @@ GEMDAQStatusSource = cms.EDProducer('GEMDAQStatusSource',
   AMCSlots = cms.int32(13),
   runType = cms.untracked.string('relval'),
   logCategory = cms.untracked.string('GEMDAQStatusSource'),
+  useDBEMap = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
