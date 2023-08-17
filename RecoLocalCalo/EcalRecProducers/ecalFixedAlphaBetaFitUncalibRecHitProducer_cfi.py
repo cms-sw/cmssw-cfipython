@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ecalFixedAlphaBetaFitUncalibRecHit = cms.EDProducer('EcalUncalibRecHitProducer',
+ecalFixedAlphaBetaFitUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
   EBdigiCollection = cms.InputTag('ecalDigis', 'ebDigis'),
   EEhitCollection = cms.string('EcalUncalibRecHitsEE'),
   EEdigiCollection = cms.InputTag('ecalDigis', 'eeDigis'),
