@@ -6,5 +6,6 @@ GEMDigiSource = cms.EDProducer('GEMDigiSource',
   logCategory = cms.untracked.string('GEMDigiSource'),
   bxMin = cms.int32(-10),
   bxMax = cms.int32(10),
+  useDBEMap = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )
