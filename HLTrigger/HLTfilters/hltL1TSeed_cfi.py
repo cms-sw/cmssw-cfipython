@@ -11,5 +11,6 @@ hltL1TSeed = cms.EDFilter('HLTL1TSeed',
   L1JetInputTag = cms.InputTag('hltGtStage2Digis', 'Jet'),
   L1TauInputTag = cms.InputTag('hltGtStage2Digis', 'Tau'),
   L1EtSumInputTag = cms.InputTag('hltGtStage2Digis', 'EtSum'),
+  L1EtSumZdcInputTag = cms.InputTag('hltGtStage2Digis', 'EtSumZDC'),
   mightGet = cms.optional.untracked.vstring
 )
