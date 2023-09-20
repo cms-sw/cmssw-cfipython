@@ -66,6 +66,8 @@ ecalMultiFitUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
       1.89,
       1.4
     ),
+    timeCalibTag = cms.ESInputTag('', ''),
+    timeOffsetTag = cms.ESInputTag('', ''),
     EBtimeFitLimits_Lower = cms.double(0.2),
     EBtimeFitLimits_Upper = cms.double(1.4),
     EEtimeFitLimits_Lower = cms.double(0.2),
