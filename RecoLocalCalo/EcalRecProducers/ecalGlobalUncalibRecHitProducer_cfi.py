@@ -51,6 +51,8 @@ ecalGlobalUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
     EBtimeFitLimits_Lower = cms.double(0.2),
     kPoorRecoFlagEE = cms.bool(False),
     chi2ThreshEB_ = cms.double(36),
+    timeCalibTag = cms.ESInputTag('', ''),
+    timeOffsetTag = cms.ESInputTag('', ''),
     EEtimeFitParameters = cms.vdouble(
       -2.390548,
       3.553628,
