@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 trackerClusterCheckDefault = cms.EDProducer('ClusterCheckerEDProducer',
   doClusterCheck = cms.bool(True),
-  MaxNumberOfCosmicClusters = cms.uint32(400000),
+  MaxNumberOfStripClusters = cms.uint32(400000),
   ClusterCollectionLabel = cms.InputTag('siStripClusters'),
   MaxNumberOfPixelClusters = cms.uint32(40000),
   PixelClusterCollectionLabel = cms.InputTag('siPixelClusters'),
