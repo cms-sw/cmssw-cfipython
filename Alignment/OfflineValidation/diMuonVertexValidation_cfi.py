@@ -9,6 +9,7 @@ diMuonVertexValidation = cms.EDAnalyzer('DiMuonVertexValidation',
     30,
     10
   ),
+  useClosestVertex = cms.bool(True),
   maxSVdist = cms.double(50),
   DiMuMassConfig = cms.PSet(
     name = cms.string('DiMuMass'),

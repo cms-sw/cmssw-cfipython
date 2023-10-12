@@ -24,6 +24,8 @@ boostedJetONNXJetTagsProducer = cms.EDProducer('BoostedJetONNXJetTagsProducer',
     'probQCDc',
     'probQCDothers'
   ),
+  jets = cms.InputTag(''),
+  produceValueMap = cms.untracked.bool(False),
   debugMode = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )
