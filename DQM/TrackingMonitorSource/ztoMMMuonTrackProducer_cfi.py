@@ -15,7 +15,7 @@ ztoMMMuonTrackProducer = cms.EDProducer('ZtoMMMuonTrackProducer',
   minMatchedStations = cms.untracked.double(2),
   maxIso = cms.untracked.double(0.3),
   minPtHighest = cms.untracked.double(24),
-  minInvMass = cms.untracked.double(60),
-  maxInvMass = cms.untracked.double(120),
+  minInvMass = cms.untracked.double(75),
+  maxInvMass = cms.untracked.double(105),
   mightGet = cms.optional.untracked.vstring
 )

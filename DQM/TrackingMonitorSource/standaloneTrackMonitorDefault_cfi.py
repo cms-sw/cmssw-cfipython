@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 standaloneTrackMonitorDefault = cms.EDProducer('StandaloneTrackMonitor',
   moduleName = cms.untracked.string('StandaloneTrackMonitor'),
   folderName = cms.untracked.string('highPurityTracks'),
+  isRECO = cms.untracked.bool(False),
   trackInputTag = cms.untracked.InputTag('generalTracks'),
   offlineBeamSpot = cms.untracked.InputTag('offlineBeamSpot'),
   vertexTag = cms.untracked.InputTag('offlinePrimaryVertices'),
