@@ -6,5 +6,6 @@ Tracer = cms.Service('Tracer',
   dumpNonModuleContext = cms.untracked.bool(False),
   dumpPathsAndConsumes = cms.untracked.bool(False),
   printTimestamps = cms.untracked.bool(False),
-  dumpEventSetupInfo = cms.untracked.bool(False)
+  dumpEventSetupInfo = cms.untracked.bool(False),
+  fileName = cms.untracked.string('')
 )
