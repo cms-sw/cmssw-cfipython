@@ -6,6 +6,7 @@ hgcalPartialCellTester = cms.EDAnalyzer('HGCalPartialCellTester',
   cellPlacementIndex = cms.int32(3),
   partialType = cms.int32(25),
   numbberOfTrials = cms.int32(1000),
+  v17OrLess = cms.bool(False),
   modeUV = cms.int32(0),
   mightGet = cms.optional.untracked.vstring
 )
