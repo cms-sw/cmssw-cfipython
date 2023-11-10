@@ -7,5 +7,6 @@ Tracer = cms.Service('Tracer',
   dumpPathsAndConsumes = cms.untracked.bool(False),
   printTimestamps = cms.untracked.bool(False),
   dumpEventSetupInfo = cms.untracked.bool(False),
+  useMessageLogger = cms.untracked.bool(True),
   fileName = cms.untracked.string('')
 )
