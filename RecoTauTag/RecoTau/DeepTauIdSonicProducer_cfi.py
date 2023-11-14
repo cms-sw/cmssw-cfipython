@@ -1,6 +1,19 @@
 import FWCore.ParameterSet.Config as cms
 
-DeepTau = cms.EDProducer('DeepTauId',
+DeepTauIdSonicProducer = cms.EDProducer('DeepTauIdSonicProducer',
+  Client = cms.PSet(
+    mode = cms.string('PseudoAsync'),
+    allowedTries = cms.untracked.uint32(0),
+    verbose = cms.untracked.bool(False),
+    modelName = cms.required.string,
+    modelVersion = cms.string(''),
+    modelConfigPath = cms.required.FileInPath,
+    preferredServer = cms.untracked.string(''),
+    timeout = cms.required.untracked.uint32,
+    useSharedMemory = cms.untracked.bool(True),
+    compression = cms.untracked.string(''),
+    outputs = cms.untracked.vstring()
+  ),
   electrons = cms.InputTag('slimmedElectrons'),
   muons = cms.InputTag('slimmedMuons'),
   taus = cms.InputTag('slimmedTaus'),
@@ -30,6 +43,5 @@ DeepTau = cms.EDProducer('DeepTauId',
       Producer = cms.required.InputTag
     )
   ),
-  graph_file = cms.vstring('RecoTauTag/TrainingFiles/data/DeepTauId/deepTau_2017v2p6_e6.pb'),
   mightGet = cms.optional.untracked.vstring
 )
