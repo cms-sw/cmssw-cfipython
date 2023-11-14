@@ -14,7 +14,8 @@ materialBudgetVolumeAnalysis = cms.EDAnalyzer('MaterialBudgetVolumeAnalysis',
     'VCAL',
     'MGNT',
     'OQUA',
-    'CALOEC'
+    'CALOEC',
+    'HFNoseVol'
   ),
   inputTag = cms.InputTag('g4SimHits', 'MaterialInformation'),
   nBinEta = cms.int32(300),
