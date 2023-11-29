@@ -5,5 +5,6 @@ genericConsumer = cms.EDAnalyzer('GenericConsumer',
   lumiProducts = cms.untracked.vstring(),
   runProducts = cms.untracked.vstring(),
   processProducts = cms.untracked.vstring(),
+  verbose = cms.untracked.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

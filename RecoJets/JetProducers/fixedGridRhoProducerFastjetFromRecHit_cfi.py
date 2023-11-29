@@ -23,5 +23,6 @@ fixedGridRhoProducerFastjetFromRecHit = cms.EDProducer('FixedGridRhoProducerFast
   ),
   maxRapidity = cms.double(2.5),
   gridSpacing = cms.double(0.55),
+  usePFThresholdsFromDB = cms.bool(True),
   mightGet = cms.optional.untracked.vstring
 )

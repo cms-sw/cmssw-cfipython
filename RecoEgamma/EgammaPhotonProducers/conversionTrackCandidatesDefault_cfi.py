@@ -36,6 +36,7 @@ conversionTrackCandidatesDefault = cms.EDProducer('ConversionTrackCandidateProdu
     0,
     0
   ),
+  usePFThresholdsFromDB = cms.bool(False),
   maxHcalRecHitSeverity = cms.int32(999999),
   minSCEt = cms.double(20),
   hOverEConeSize = cms.double(0.15),

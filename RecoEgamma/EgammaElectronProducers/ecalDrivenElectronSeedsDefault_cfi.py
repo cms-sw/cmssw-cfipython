@@ -28,6 +28,7 @@ ecalDrivenElectronSeedsDefault = cms.EDProducer('ElectronSeedProducer',
     0
   ),
   maxHcalRecHitSeverity = cms.int32(999999),
+  usePFThresholdsFromDB = cms.bool(False),
   allowHGCal = cms.bool(False),
   HGCalConfig = cms.PSet(
     HGCEEInput = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),

@@ -37,6 +37,7 @@ hltEgammaHLTHcalVarProducerFromRecHit = cms.EDProducer('EgammaHLTHcalVarProducer
     0,
     0
   ),
+  usePFThresholdsFromDB = cms.bool(True),
   innerCone = cms.double(0),
   outerCone = cms.double(0.14),
   depth = cms.int32(0),

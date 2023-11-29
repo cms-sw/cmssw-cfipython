@@ -47,6 +47,7 @@ gsfElectronProducerDefault = cms.EDProducer('GsfElectronProducer',
   ),
   maxHcalRecHitSeverity = cms.int32(999999),
   hcalRun2EffDepth = cms.bool(False),
+  usePFThresholdsFromDB = cms.bool(False),
   trkIsol03Cfg = cms.PSet(
     barrelCuts = cms.PSet(
       minPt = cms.double(1),
