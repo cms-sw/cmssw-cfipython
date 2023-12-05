@@ -101,29 +101,25 @@ l1tCorrelatorLayer1 = cms.EDProducer('L1TCorrelatorLayer1Producer',
       tkQualityPtMin = cms.required.double,
       dZ = cms.double(0.6),
       dRMin = cms.required.double,
-      dRMax = cms.required.double,
-      tkQualityChi2Max = cms.required.double
+      dRMax = cms.required.double
     ),
     tkIsoParametersTkEle = cms.PSet(
       tkQualityPtMin = cms.required.double,
       dZ = cms.double(0.6),
       dRMin = cms.required.double,
-      dRMax = cms.required.double,
-      tkQualityChi2Max = cms.required.double
+      dRMax = cms.required.double
     ),
     pfIsoParametersTkEm = cms.PSet(
       tkQualityPtMin = cms.required.double,
       dZ = cms.double(0.6),
       dRMin = cms.required.double,
-      dRMax = cms.required.double,
-      tkQualityChi2Max = cms.required.double
+      dRMax = cms.required.double
     ),
     pfIsoParametersTkEle = cms.PSet(
       tkQualityPtMin = cms.required.double,
       dZ = cms.double(0.6),
       dRMin = cms.required.double,
-      dRMax = cms.required.double,
-      tkQualityChi2Max = cms.required.double
+      dRMax = cms.required.double
     ),
     doTkIso = cms.bool(True),
     doPfIso = cms.bool(True),
