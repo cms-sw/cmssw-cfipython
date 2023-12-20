@@ -5,6 +5,7 @@ legacyPFClusterProducer = cms.EDProducer('LegacyPFClusterProducer',
   PFRecHitsLabelIn = cms.required.InputTag,
   pfClusterParams = cms.required.ESInputTag,
   recHitsSource = cms.required.InputTag,
+  usePFThresholdsFromDB = cms.bool(True),
   pfClusterBuilder = cms.PSet(
     maxIterations = cms.uint32(5),
     minFracTot = cms.double(1e-20),
