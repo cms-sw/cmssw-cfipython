@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ctppsLHCInfoPlotter = cms.EDAnalyzer('CTPPSLHCInfoPlotter',
+ctppsHepMCDistributionPlotterDefault = cms.EDAnalyzer('CTPPSHepMCDistributionPlotter',
   lhcInfoLabel = cms.string(''),
   lhcInfoPerLSLabel = cms.string(''),
   lhcInfoPerFillLabel = cms.string(''),

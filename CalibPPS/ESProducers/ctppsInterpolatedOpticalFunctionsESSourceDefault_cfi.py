@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ctppsInterpolatedOpticalFunctionsESSource = cms.ESProducer('CTPPSInterpolatedOpticalFunctionsESSource',
+ctppsInterpolatedOpticalFunctionsESSourceDefault = cms.ESProducer('CTPPSInterpolatedOpticalFunctionsESSource',
   lhcInfoLabel = cms.string(''),
   lhcInfoPerFillLabel = cms.string(''),
   lhcInfoPerLSLabel = cms.string(''),

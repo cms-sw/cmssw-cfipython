@@ -1,7 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-ctppsBeamParametersFromLHCInfoESSource = cms.ESProducer('CTPPSBeamParametersFromLHCInfoESSource',
+ctppsBeamParametersFromLHCInfoESSourceDefault = cms.ESProducer('CTPPSBeamParametersFromLHCInfoESSource',
   lhcInfoLabel = cms.string(''),
+  lhcInfoPerLSLabel = cms.string(''),
+  lhcInfoPerFillLabel = cms.string(''),
+  useNewLHCInfo = cms.bool(False),
   beamDivX45 = cms.double(0.1),
   beamDivY45 = cms.double(0.1),
   beamDivX56 = cms.double(0.1),

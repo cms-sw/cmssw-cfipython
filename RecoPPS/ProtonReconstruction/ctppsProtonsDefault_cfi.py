@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-ctppsProtons = cms.EDProducer('CTPPSProtonProducer',
+ctppsProtonsDefault = cms.EDProducer('CTPPSProtonProducer',
   tagLocalTrackLite = cms.InputTag('ctppsLocalTrackLiteProducer'),
   pixelDiscardBXShiftedTracks = cms.bool(False),
   lhcInfoPerFillLabel = cms.string(''),

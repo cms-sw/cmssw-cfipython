@@ -1,9 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-ctppsProtonReconstructionEfficiencyEstimatorData = cms.EDAnalyzer('CTPPSProtonReconstructionEfficiencyEstimatorData',
+ctppsProtonReconstructionEfficiencyEstimatorDataDefault = cms.EDAnalyzer('CTPPSProtonReconstructionEfficiencyEstimatorData',
   tagTracks = cms.InputTag(''),
   tagRecoProtonsMultiRP = cms.InputTag(''),
   lhcInfoLabel = cms.string(''),
+  lhcInfoPerLSLabel = cms.string(''),
+  lhcInfoPerFillLabel = cms.string(''),
+  useNewLHCInfo = cms.bool(False),
   opticsLabel = cms.string(''),
   ppsAssociationCutsLabel = cms.string(''),
   pixelDiscardBXShiftedTracks = cms.bool(False),
