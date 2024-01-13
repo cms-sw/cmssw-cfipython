@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 vertexTableProducer = cms.EDProducer('VertexTableProducer',
   pvSrc = cms.required.InputTag,
+  pfcSrc = cms.required.InputTag,
   goodPvCut = cms.required.string,
   svSrc = cms.required.InputTag,
   svCut = cms.required.string,

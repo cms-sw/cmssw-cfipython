@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-hltDoubletRecoPFJetRecoPFJet = cms.EDFilter('HLT2PFJetPFJet',
+hltDoubletRecoRecoEcalCandidateRecoPFJet = cms.EDFilter('HLT2PhotonPFJet',
   saveTags = cms.bool(True),
   originTag1 = cms.VInputTag('hltOriginal1'),
   originTag2 = cms.VInputTag('hltOriginal2'),
