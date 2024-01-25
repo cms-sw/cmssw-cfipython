@@ -8,5 +8,6 @@ hltEgammaHLTGsfTrackVarProducer = cms.EDProducer('EgammaHLTGsfTrackVarProducer',
   lowerTrackNrToRemoveCut = cms.int32(-1),
   useDefaultValuesForBarrel = cms.bool(False),
   useDefaultValuesForEndcap = cms.bool(False),
+  produceAbsValues = cms.bool(False),
   mightGet = cms.optional.untracked.vstring
 )

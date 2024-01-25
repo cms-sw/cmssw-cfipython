@@ -8,6 +8,7 @@ hltEgammaGenericQuadraticEtaFilter = cms.EDFilter('HLTEgammaGenericQuadraticEtaF
   energyLowEdges = cms.vdouble(0),
   lessThan = cms.bool(True),
   useEt = cms.bool(True),
+  useAbs = cms.bool(False),
   etaBoundaryEB12 = cms.double(1),
   etaBoundaryEE12 = cms.double(2),
   thrRegularEB1 = cms.vdouble(4),
