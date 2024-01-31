@@ -8,7 +8,12 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
       label = cms.string(''),
       maxDistanceToBeam = cms.double(1),
       minNdof = cms.double(0),
-      useBeamConstraint = cms.bool(False)
+      mintrkweight = cms.double(0),
+      useBeamConstraint = cms.bool(False),
+      zcutoff = cms.double(1),
+      vertexTimeParameters = cms.PSet(
+        algorithm = cms.string('')
+      )
     ),
     cms.PSet(
       algorithm = cms.string('AdaptiveVertexFitter'),
@@ -16,7 +21,12 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
       label = cms.string('WithBS'),
       maxDistanceToBeam = cms.double(1),
       minNdof = cms.double(2),
-      useBeamConstraint = cms.bool(True)
+      mintrkweight = cms.double(0),
+      useBeamConstraint = cms.bool(True),
+      zcutoff = cms.double(1),
+      vertexTimeParameters = cms.PSet(
+        algorithm = cms.string('')
+      )
     )
   ),
   verbose = cms.untracked.bool(False),
@@ -32,13 +42,14 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
     minPixelLayersWithHits = cms.int32(2),
     minSiliconLayersWithHits = cms.int32(5),
     numTracksThreshold = cms.int32(0),
-    maxNumTracksThreshold = cms.int32(10000000),
+    maxNumTracksThreshold = cms.int32(2147483647),
     minPtTight = cms.double(0)
   ),
   beamSpotLabel = cms.InputTag('offlineBeamSpot'),
   TrackLabel = cms.InputTag('generalTracks'),
   TrackTimeResosLabel = cms.InputTag('dummy_default'),
   TrackTimesLabel = cms.InputTag('dummy_default'),
+  trackMTDTimeQualityVMapTag = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
   TkClusParameters = cms.PSet(
     TkDAClusParameters = cms.PSet(
       zdumpcenter = cms.untracked.double(0),
@@ -58,9 +69,9 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
       uniquetrkminp = cms.double(0),
       zrange = cms.double(4),
       runInBlocks = cms.bool(False),
-      block_size = cms.uint32(512),
-      overlap_frac = cms.double(0.5),
-      tmerge = cms.double(0.01),
+      block_size = cms.uint32(10000),
+      overlap_frac = cms.double(0),
+      tmerge = cms.double(0.1),
       dtCutOff = cms.double(4),
       t0Max = cms.double(1),
       vertexSizeTime = cms.double(0.008)
@@ -73,5 +84,7 @@ primaryVertexProducer = cms.EDProducer('PrimaryVertexProducer',
   ),
   isRecoveryIteration = cms.bool(False),
   recoveryVtxCollection = cms.InputTag(''),
+  useMVACut = cms.bool(False),
+  minTrackTimeQuality = cms.double(0.8),
   mightGet = cms.optional.untracked.vstring
 )
