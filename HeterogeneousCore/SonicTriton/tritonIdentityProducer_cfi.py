@@ -10,6 +10,7 @@ tritonIdentityProducer = cms.EDProducer('TritonIdentityProducer',
     modelConfigPath = cms.required.FileInPath,
     preferredServer = cms.untracked.string(''),
     timeout = cms.required.untracked.uint32,
+    timeoutUnit = cms.untracked.string('seconds'),
     useSharedMemory = cms.untracked.bool(True),
     compression = cms.untracked.string(''),
     outputs = cms.untracked.vstring()
