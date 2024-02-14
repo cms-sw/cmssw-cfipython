@@ -30,5 +30,13 @@ pfDeepBoostedJetTagInfos = cms.EDProducer('DeepBoostedJetTagInfoProducer',
   trkPt_value_map = cms.InputTag(''),
   trkEta_value_map = cms.InputTag(''),
   trkPhi_value_map = cms.InputTag(''),
+  covarianceVersion = cms.int32(0),
+  covariancePackingSchemas = cms.vint32(
+    8,
+    264,
+    520,
+    776,
+    0
+  ),
   mightGet = cms.optional.untracked.vstring
 )
