@@ -35,9 +35,7 @@ primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
     trackQuality = cms.string('any'),
     minPixelLayersWithHits = cms.int32(2),
     minSiliconLayersWithHits = cms.int32(5),
-    numTracksThreshold = cms.int32(0),
-    maxNumTracksThreshold = cms.int32(2147483647),
-    minPtTight = cms.double(0)
+    numTracksThreshold = cms.int32(0)
   ),
   TkClusParameters = cms.PSet(
     TkDAClusParameters = cms.PSet(
@@ -59,11 +57,7 @@ primaryVertexValidation = cms.EDAnalyzer('PrimaryVertexValidation',
       zrange = cms.double(4),
       runInBlocks = cms.bool(False),
       block_size = cms.uint32(10000),
-      overlap_frac = cms.double(0),
-      tmerge = cms.double(0.1),
-      dtCutOff = cms.double(4),
-      t0Max = cms.double(1),
-      vertexSizeTime = cms.double(0.008)
+      overlap_frac = cms.double(0)
     ),
     TkGapClusParameters = cms.PSet(
       zSeparation = cms.double(1),
