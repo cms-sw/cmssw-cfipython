@@ -6,6 +6,12 @@ simpleBeamspotFlatTableProducer = cms.EDProducer('SimpleBeamspotFlatTableProduce
   extension = cms.bool(False),
   skipNonExistingSrc = cms.bool(False),
   src = cms.required.InputTag,
-  variables = cms.PSet(),
+  variables = cms.PSet(
+    allowAnyLabel_ = cms.required.PSetTemplate(
+      expr = cms.required.string,
+      doc = cms.required.string,
+      type = cms.string('int')
+    )
+  ),
   mightGet = cms.optional.untracked.vstring
 )
