@@ -1,10 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
 legacyPFClusterProducer = cms.EDProducer('LegacyPFClusterProducer',
-  src = cms.required.InputTag,
-  PFRecHitsLabelIn = cms.required.InputTag,
-  pfClusterParams = cms.required.ESInputTag,
-  recHitsSource = cms.required.InputTag,
+  src = cms.InputTag('pfClusterSoAProducer'),
+  PFRecHitsLabelIn = cms.InputTag('pfRecHitSoAProducerHCAL'),
+  recHitsSource = cms.InputTag('legacyPFRecHitProducer'),
   usePFThresholdsFromDB = cms.bool(True),
   pfClusterBuilder = cms.PSet(
     maxIterations = cms.uint32(5),
