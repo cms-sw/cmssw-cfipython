@@ -2,8 +2,12 @@ import FWCore.ParameterSet.Config as cms
 
 def PFRecHitSoAProducerECAL_alpaka(**kwargs):
   mod = cms.EDProducer('PFRecHitSoAProducerECAL@alpaka',
-    producers = cms.required.VPSet,
-    topology = cms.required.ESInputTag,
+    producers = cms.VPSet(
+      cms.PSet(
+        src = cms.InputTag('')
+      )
+    ),
+    topology = cms.ESInputTag('', ''),
     synchronise = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(

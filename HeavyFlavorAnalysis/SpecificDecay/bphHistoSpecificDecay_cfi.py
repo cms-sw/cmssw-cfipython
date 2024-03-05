@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-process.bphHistoSpecificDecay = cms.EDAnalyzer('BPHHistoSpecificDecay',
+bphHistoSpecificDecay = cms.EDAnalyzer('BPHHistoSpecificDecay',
   trigResultsLabel = cms.string(''),
   oniaCandsLabel = cms.string(''),
   sdCandsLabel = cms.string(''),

@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def ECALRecHitSoAProducer_alpaka(**kwargs):
   mod = cms.EDProducer('ECALRecHitSoAProducer@alpaka',
-    src = cms.required.InputTag,
+    src = cms.InputTag(''),
     synchronise = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(

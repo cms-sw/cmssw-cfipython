@@ -1,10 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
 alpaka_cuda_asyncPFClusterSoAProducer = cms.EDProducer('alpaka_cuda_async::PFClusterSoAProducer',
-  pfRecHits = cms.required.InputTag,
-  pfClusterParams = cms.required.ESInputTag,
-  topology = cms.required.ESInputTag,
-  synchronise = cms.required.bool,
+  pfRecHits = cms.InputTag(''),
+  pfClusterParams = cms.ESInputTag('', ''),
+  topology = cms.ESInputTag('', ''),
+  synchronise = cms.bool(False),
   pfRecHitFractionAllocation = cms.int32(120),
   mightGet = cms.optional.untracked.vstring,
   alpaka = cms.untracked.PSet(
