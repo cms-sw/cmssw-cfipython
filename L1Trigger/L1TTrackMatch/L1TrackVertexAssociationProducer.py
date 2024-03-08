@@ -31,6 +31,12 @@ def L1TrackVertexAssociationProducer(**kwargs):
     processSimulatedTracks = cms.bool(True),
     processEmulatedTracks = cms.bool(True),
     fwNTrackSetsTVA = cms.uint32(94),
+    useAssociationNetwork = cms.bool(False),
+    associationThreshold = cms.double(0),
+    associationGraph = cms.optional.FileInPath,
+    associationNetworkZ0binning = cms.vdouble(),
+    associationNetworkEtaBounds = cms.vdouble(),
+    associationNetworkZ0ResBins = cms.vdouble(),
     debug = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
