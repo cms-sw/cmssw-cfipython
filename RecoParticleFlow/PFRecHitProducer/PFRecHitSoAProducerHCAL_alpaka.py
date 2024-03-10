@@ -4,6 +4,7 @@ def PFRecHitSoAProducerHCAL_alpaka(**kwargs):
   mod = cms.EDProducer('PFRecHitSoAProducerHCAL@alpaka',
     producers = cms.VPSet(
       cms.PSet(
+        params = cms.ESInputTag('', ''),
         src = cms.InputTag('')
       )
     ),
