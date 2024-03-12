@@ -3,7 +3,6 @@ import FWCore.ParameterSet.Config as cms
 alpaka_rocm_asyncPFRecHitSoAProducerECAL = cms.EDProducer('alpaka_rocm_async::PFRecHitSoAProducerECAL',
   producers = cms.VPSet(
     cms.PSet(
-      params = cms.ESInputTag('', ''),
       src = cms.InputTag('')
     )
   ),

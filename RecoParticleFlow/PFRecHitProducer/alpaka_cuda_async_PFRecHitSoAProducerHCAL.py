@@ -4,7 +4,6 @@ def alpaka_cuda_async_PFRecHitSoAProducerHCAL(**kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::PFRecHitSoAProducerHCAL',
     producers = cms.VPSet(
       cms.PSet(
-        params = cms.ESInputTag('', ''),
         src = cms.InputTag('')
       )
     ),

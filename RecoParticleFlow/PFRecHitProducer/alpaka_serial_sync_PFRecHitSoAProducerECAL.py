@@ -4,7 +4,6 @@ def alpaka_serial_sync_PFRecHitSoAProducerECAL(**kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::PFRecHitSoAProducerECAL',
     producers = cms.VPSet(
       cms.PSet(
-        params = cms.ESInputTag('', ''),
         src = cms.InputTag('')
       )
     ),

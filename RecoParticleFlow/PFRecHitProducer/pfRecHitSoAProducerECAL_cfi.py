@@ -3,7 +3,6 @@ import FWCore.ParameterSet.Config as cms
 pfRecHitSoAProducerECAL = cms.EDProducer('PFRecHitSoAProducerECAL@alpaka',
   producers = cms.VPSet(
     cms.PSet(
-      params = cms.ESInputTag('', ''),
       src = cms.InputTag('')
     )
   ),
