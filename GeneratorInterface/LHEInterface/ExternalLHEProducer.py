@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def ExternalLHEProducer(**kwargs):
   mod = cms.EDProducer('ExternalLHEProducer',
-    scriptName = cms.FileInPath(),
+    scriptName = cms.FileInPath(''),
     outputFile = cms.string('myoutput'),
     args = cms.required.vstring,
     numberOfParameters = cms.required.uint32,
