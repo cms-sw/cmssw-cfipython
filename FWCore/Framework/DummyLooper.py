@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 def DummyLooper(**kwargs):
-  mod = cms.EDLooper('DummyLooper',
+  mod = cms.Looper('DummyLooper',
     appendToDataLabel = cms.string('')
   )
   for k,v in kwargs.items():

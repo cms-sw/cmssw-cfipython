@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 def Pi0FixedMassWindowCalibration(**kwargs):
-  mod = cms.EDLooper('Pi0FixedMassWindowCalibration',
+  mod = cms.Looper('Pi0FixedMassWindowCalibration',
     maxLoops = cms.uint32(0),
     ecalRecHitsProducer = cms.string(''),
     barrelHitCollection = cms.string(''),

@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 def IntTestLooper(**kwargs):
-  mod = cms.EDLooper('IntTestLooper',
+  mod = cms.Looper('IntTestLooper',
     srcBeginRun = cms.untracked.VInputTag(),
     srcBeginLumi = cms.untracked.VInputTag(),
     srcEvent = cms.untracked.VInputTag(),
