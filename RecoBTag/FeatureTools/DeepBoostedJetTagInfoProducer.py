@@ -18,6 +18,7 @@ def DeepBoostedJetTagInfoProducer(**kwargs):
     secondary_vertices = cms.InputTag('inclusiveCandidateSecondaryVertices'),
     pf_candidates = cms.InputTag('particleFlow'),
     jets = cms.InputTag('ak8PFJetsPuppi'),
+    unsubjet_map = cms.untracked.InputTag(''),
     puppi_value_map = cms.InputTag('puppi'),
     vertex_associator = cms.InputTag('primaryVertexAssociation', 'original'),
     use_scouting_features = cms.bool(False),

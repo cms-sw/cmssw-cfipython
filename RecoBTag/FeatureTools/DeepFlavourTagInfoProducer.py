@@ -10,6 +10,7 @@ def DeepFlavourTagInfoProducer(**kwargs):
     puppi_value_map = cms.InputTag('puppi'),
     secondary_vertices = cms.InputTag('inclusiveCandidateSecondaryVertices'),
     jets = cms.InputTag('ak4PFJetsCHS'),
+    unsubjet_map = cms.untracked.InputTag(''),
     candidates = cms.InputTag('packedPFCandidates'),
     vertex_associator = cms.InputTag('primaryVertexAssociation', 'original'),
     fallback_puppi_weight = cms.bool(False),
