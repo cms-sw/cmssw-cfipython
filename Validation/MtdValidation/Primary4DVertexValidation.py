@@ -27,6 +27,7 @@ def Primary4DVertexValidation(**kwargs):
     useOnlyChargedTracks = cms.bool(True),
     debug = cms.untracked.bool(False),
     optionalPlots = cms.untracked.bool(False),
+    use3dNoTime = cms.bool(False),
     trackweightTh = cms.double(0.5),
     mvaTh = cms.double(0.01),
     minProbHeavy = cms.double(0.75),
