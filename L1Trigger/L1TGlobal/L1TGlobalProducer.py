@@ -15,7 +15,6 @@ def L1TGlobalProducer(**kwargs):
     AlgorithmTriggersUnprescaled = cms.bool(False),
     RequireMenuToMatchAlgoBlkInput = cms.bool(True),
     AlgorithmTriggersUnmasked = cms.bool(False),
-    AXOL1TLModelVersion = cms.string(''),
     useMuonShowers = cms.bool(False),
     resetPSCountersEachLumiSec = cms.bool(False),
     semiRandomInitialPSCounters = cms.bool(False),
