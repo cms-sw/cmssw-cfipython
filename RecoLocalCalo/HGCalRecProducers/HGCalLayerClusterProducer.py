@@ -45,7 +45,6 @@ def HGCalLayerClusterProducer(**kwargs):
     recHits = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
     timeClname = cms.string('timeLayerCluster'),
     nHitsTime = cms.uint32(3),
-    calculatePositionInAlgo = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
