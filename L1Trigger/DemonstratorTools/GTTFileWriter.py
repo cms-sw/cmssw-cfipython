@@ -9,6 +9,7 @@ def GTTFileWriter(**kwargs):
     vertices = cms.untracked.InputTag('l1tVertexProducer', 'L1VerticesEmulation'),
     jets = cms.untracked.InputTag('l1tTrackJetsEmulation', 'L1TrackJets'),
     htmiss = cms.untracked.InputTag('l1tTrackerEmuHTMiss', 'L1TrackerEmuHTMiss'),
+    htmissdisp = cms.untracked.InputTag('l1tTrackerEmuHTMissExtended', 'L1TrackerEmuHTMissExtended'),
     etmiss = cms.untracked.InputTag('l1tTrackerEmuEtMiss', 'L1TrackerEmuEtMiss'),
     inputFilename = cms.untracked.string('L1GTTInputFile'),
     inputConvertedFilename = cms.untracked.string('L1GTTInputConvertedFile'),
