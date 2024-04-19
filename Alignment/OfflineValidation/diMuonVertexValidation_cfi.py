@@ -3,7 +3,6 @@ import FWCore.ParameterSet.Config as cms
 diMuonVertexValidation = cms.EDAnalyzer('DiMuonVertexValidation',
   useReco = cms.bool(True),
   muons = cms.InputTag('muons'),
-  decayMotherName = cms.string('Z'),
   tracks = cms.InputTag('generalTracks'),
   vertices = cms.InputTag('offlinePrimaryVertices'),
   pTThresholds = cms.vdouble(

@@ -4,7 +4,6 @@ pfParticleTransformerAK4TagInfos = cms.EDProducer('ParticleTransformerAK4TagInfo
   jet_radius = cms.double(0.4),
   min_candidate_pt = cms.double(0.95),
   flip = cms.bool(False),
-  max_sip3dsig_for_flip = cms.double(99999),
   vertices = cms.InputTag('offlinePrimaryVertices'),
   puppi_value_map = cms.InputTag('puppi'),
   secondary_vertices = cms.InputTag('inclusiveCandidateSecondaryVertices'),
