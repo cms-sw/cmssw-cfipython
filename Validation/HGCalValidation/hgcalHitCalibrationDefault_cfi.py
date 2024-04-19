@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 hgcalHitCalibrationDefault = cms.EDProducer('HGCalHitCalibration',
   debug = cms.int32(0),
   rawRecHits = cms.bool(True),
+  folder = cms.string('HGCalHitCalibration'),
   detector = cms.string('all'),
   depletionFine = cms.int32(120),
   caloParticles = cms.InputTag('mix', 'MergedCaloTruth'),
