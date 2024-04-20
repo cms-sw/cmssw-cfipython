@@ -11,6 +11,8 @@ def ExceptionThrowingProducer(**kwargs):
     eventIDThrowOnStreamBeginLumi = cms.untracked.EventID(0, 0, 0),
     eventIDThrowOnStreamEndRun = cms.untracked.EventID(0, 0, 0),
     eventIDThrowOnStreamEndLumi = cms.untracked.EventID(0, 0, 0),
+    expectedStreamBeginLumi = cms.untracked.uint32(4294967295),
+    expectedOffsetNoStreamEndLumi = cms.untracked.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
