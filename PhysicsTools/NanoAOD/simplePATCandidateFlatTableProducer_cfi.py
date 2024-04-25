@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-simpleRun3ScoutingTrackFlatTableProducer = cms.EDProducer('SimpleRun3ScoutingTrackFlatTableProducer',
+simplePATCandidateFlatTableProducer = cms.EDProducer('SimplePATCandidateFlatTableProducer',
   name = cms.required.string,
   doc = cms.string(''),
   extension = cms.bool(False),

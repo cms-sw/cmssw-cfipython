@@ -9,6 +9,7 @@ hfRecHitFlatTableProducer = cms.EDProducer('HFRecHitFlatTableProducer',
   variables = cms.PSet(),
   singleton = cms.bool(False),
   cut = cms.string(''),
+  lazyEval = cms.untracked.bool(False),
   maxLen = cms.optional.uint32,
   externalVariables = cms.PSet(),
   mightGet = cms.optional.untracked.vstring

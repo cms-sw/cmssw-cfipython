@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-simpleRun3ScoutingTrackFlatTableProducer = cms.EDProducer('SimpleRun3ScoutingTrackFlatTableProducer',
+simplePATTau2TrackTimeLifeInfoFlatTableProducer = cms.EDProducer('SimplePATTau2TrackTimeLifeInfoFlatTableProducer',
   name = cms.required.string,
   doc = cms.string(''),
   extension = cms.bool(False),
@@ -12,5 +12,6 @@ simpleRun3ScoutingTrackFlatTableProducer = cms.EDProducer('SimpleRun3ScoutingTra
   lazyEval = cms.untracked.bool(False),
   maxLen = cms.optional.uint32,
   externalVariables = cms.PSet(),
+  externalTypedVariables = cms.PSet(),
   mightGet = cms.optional.untracked.vstring
 )
