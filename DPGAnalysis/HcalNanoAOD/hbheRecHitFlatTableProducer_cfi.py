@@ -10,11 +10,13 @@ hbheRecHitFlatTableProducer = cms.EDProducer('HBHERecHitFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.untracked.bool(False),
       type = cms.string('int')
     )
   ),
   singleton = cms.bool(False),
   cut = cms.string(''),
+  lazyEval = cms.untracked.bool(False),
   maxLen = cms.optional.uint32,
   externalVariables = cms.PSet(),
   mightGet = cms.optional.untracked.vstring

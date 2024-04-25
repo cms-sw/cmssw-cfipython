@@ -10,6 +10,7 @@ dtSegmentFlatTableProducer = cms.EDProducer('DTSegmentFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.untracked.bool(False),
       type = cms.string('int')
     )
   ),
@@ -17,19 +18,22 @@ dtSegmentFlatTableProducer = cms.EDProducer('DTSegmentFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.required.untracked.bool,
       type = cms.string('int')
     )
   ),
   globalPosVariables = cms.PSet(
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
-      doc = cms.required.string
+      doc = cms.required.string,
+      lazyEval = cms.required.untracked.bool
     )
   ),
   globalDirVariables = cms.PSet(
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
-      doc = cms.required.string
+      doc = cms.required.string,
+      lazyEval = cms.required.untracked.bool
     )
   ),
   mightGet = cms.optional.untracked.vstring

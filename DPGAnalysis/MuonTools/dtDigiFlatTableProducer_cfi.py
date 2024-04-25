@@ -10,6 +10,7 @@ dtDigiFlatTableProducer = cms.EDProducer('DTDigiFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.untracked.bool(False),
       type = cms.string('int')
     )
   ),
@@ -17,6 +18,7 @@ dtDigiFlatTableProducer = cms.EDProducer('DTDigiFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.required.untracked.bool,
       type = cms.string('int')
     )
   ),

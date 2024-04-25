@@ -10,6 +10,7 @@ simpleHTXSFlatTableProducer = cms.EDProducer('SimpleHTXSFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.untracked.bool(False),
       type = cms.string('int')
     )
   ),

@@ -10,6 +10,7 @@ cscWireDigiFlatTableProducer = cms.EDProducer('CSCWireDigiFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.untracked.bool(False),
       type = cms.string('int')
     )
   ),
@@ -17,6 +18,7 @@ cscWireDigiFlatTableProducer = cms.EDProducer('CSCWireDigiFlatTableProducer',
     allowAnyLabel_ = cms.required.PSetTemplate(
       expr = cms.required.string,
       doc = cms.required.string,
+      lazyEval = cms.required.untracked.bool,
       type = cms.string('int')
     )
   ),

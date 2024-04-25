@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimpleTrackFlatTableProducer(**kwargs):
-  mod = cms.EDProducer('SimpleTrackFlatTableProducer',
+def SimpleGenParticleFlatTableProducer(**kwargs):
+  mod = cms.EDProducer('SimpleGenParticleFlatTableProducer',
     name = cms.required.string,
     doc = cms.string(''),
     extension = cms.bool(False),
@@ -11,11 +11,13 @@ def SimpleTrackFlatTableProducer(**kwargs):
       allowAnyLabel_ = cms.required.PSetTemplate(
         expr = cms.required.string,
         doc = cms.required.string,
+        lazyEval = cms.untracked.bool(False),
         type = cms.string('int')
       )
     ),
     singleton = cms.bool(False),
     cut = cms.string(''),
+    lazyEval = cms.untracked.bool(False),
     maxLen = cms.optional.uint32,
     externalVariables = cms.PSet(),
     mightGet = cms.optional.untracked.vstring

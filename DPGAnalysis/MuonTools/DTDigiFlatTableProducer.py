@@ -11,6 +11,7 @@ def DTDigiFlatTableProducer(**kwargs):
       allowAnyLabel_ = cms.required.PSetTemplate(
         expr = cms.required.string,
         doc = cms.required.string,
+        lazyEval = cms.untracked.bool(False),
         type = cms.string('int')
       )
     ),
@@ -18,6 +19,7 @@ def DTDigiFlatTableProducer(**kwargs):
       allowAnyLabel_ = cms.required.PSetTemplate(
         expr = cms.required.string,
         doc = cms.required.string,
+        lazyEval = cms.required.untracked.bool,
         type = cms.string('int')
       )
     ),
