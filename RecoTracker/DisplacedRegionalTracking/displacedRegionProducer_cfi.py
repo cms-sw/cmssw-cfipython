@@ -11,6 +11,7 @@ displacedRegionProducer = cms.EDProducer('DisplacedRegionSeedingVertexProducer',
     'phi_1'
   ),
   output_names = cms.vstring('model_5/activation_10/Softmax'),
+  maxPseudoROIs = cms.uint32(10000),
   nThreads = cms.untracked.uint32(1),
   graph_path = cms.FileInPath('RecoTracker/DisplacedRegionalTracking/data/FullData_Phi-64-128-256_16-32-64_F-128-64-32_Model.pb'),
   beamSpot = cms.InputTag('offlineBeamSpot'),
