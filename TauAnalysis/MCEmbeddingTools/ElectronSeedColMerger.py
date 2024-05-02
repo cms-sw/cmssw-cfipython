@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def DYToMuMuGenFilter(**kwargs):
-  mod = cms.EDFilter('DYToMuMuGenFilter',
+def ElectronSeedColMerger(**kwargs):
+  mod = cms.EDProducer('ElectronSeedColMerger',
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():

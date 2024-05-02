@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def ExceptionThrowingProducer(**kwargs):
   mod = cms.EDProducer('ExceptionThrowingProducer',
+    verbose = cms.untracked.bool(False),
     eventIDThrowOnEvent = cms.untracked.EventID(0, 0, 0),
     eventIDThrowOnGlobalBeginRun = cms.untracked.EventID(0, 0, 0),
     eventIDThrowOnGlobalBeginLumi = cms.untracked.EventID(0, 0, 0),
@@ -13,6 +14,9 @@ def ExceptionThrowingProducer(**kwargs):
     eventIDThrowOnStreamEndLumi = cms.untracked.EventID(0, 0, 0),
     expectedStreamBeginLumi = cms.untracked.uint32(4294967295),
     expectedOffsetNoStreamEndLumi = cms.untracked.uint32(0),
+    expectedGlobalBeginLumi = cms.untracked.uint32(0),
+    expectedOffsetNoGlobalEndLumi = cms.untracked.uint32(0),
+    expectedOffsetNoWriteLumi = cms.untracked.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
