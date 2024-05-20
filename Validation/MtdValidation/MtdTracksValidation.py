@@ -10,8 +10,6 @@ def MtdTracksValidation(**kwargs):
     SimTag = cms.InputTag('mix', 'MergedTrackTruth'),
     TPtoRecoTrackAssoc = cms.InputTag('trackingParticleRecoTrackAsssociation'),
     tp2SimAssociationMapTag = cms.InputTag('mtdSimLayerClusterToTPAssociation'),
-    btlSimHits = cms.InputTag('mix', 'g4SimHitsFastTimerHitsBarrel'),
-    etlSimHits = cms.InputTag('mix', 'g4SimHitsFastTimerHitsEndcap'),
     btlRecHits = cms.InputTag('mtdRecHits', 'FTLBarrel'),
     etlRecHits = cms.InputTag('mtdRecHits', 'FTLEndcap'),
     tmtd = cms.InputTag('trackExtenderWithMTD', 'generalTracktmtd'),
