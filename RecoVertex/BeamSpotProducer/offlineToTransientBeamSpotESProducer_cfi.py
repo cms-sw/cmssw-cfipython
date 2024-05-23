@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-offlineToTransientBeamSpotESProducer = cms.ESProducer('OfflineToTransientBeamSpotESProducer',
-  appendToDataLabel = cms.string('')
-)
+from .OfflineToTransientBeamSpotESProducer import OfflineToTransientBeamSpotESProducer
+
+offlineToTransientBeamSpotESProducer = OfflineToTransientBeamSpotESProducer()

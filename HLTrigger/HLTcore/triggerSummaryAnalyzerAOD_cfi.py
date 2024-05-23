@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-triggerSummaryAnalyzerAOD = cms.EDAnalyzer('TriggerSummaryAnalyzerAOD',
-  inputTag = cms.InputTag('hltTriggerSummaryAOD'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .TriggerSummaryAnalyzerAOD import TriggerSummaryAnalyzerAOD
+
+triggerSummaryAnalyzerAOD = TriggerSummaryAnalyzerAOD()

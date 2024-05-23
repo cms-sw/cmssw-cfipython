@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_rocm_asyncHCALRecHitSoAProducer = cms.EDProducer('alpaka_rocm_async::HCALRecHitSoAProducer',
-  src = cms.InputTag(''),
-  synchronise = cms.untracked.bool(False),
-  mightGet = cms.optional.untracked.vstring,
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_rocm_async_HCALRecHitSoAProducer import alpaka_rocm_async_HCALRecHitSoAProducer
+
+alpaka_rocm_asyncHCALRecHitSoAProducer = alpaka_rocm_async_HCALRecHitSoAProducer()

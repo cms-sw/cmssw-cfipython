@@ -1,11 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-ecalGlobalUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
-  EBdigiCollection = cms.InputTag('ecalDigis', 'ebDigis'),
-  EEhitCollection = cms.string('EcalUncalibRecHitsEE'),
-  EEdigiCollection = cms.InputTag('ecalDigis', 'eeDigis'),
-  EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
-  algo = cms.string('EcalUncalibRecHitWorkerGlobal'),
+from .EcalUncalibRecHitProducer import EcalUncalibRecHitProducer
+
+ecalGlobalUncalibRecHitProducer = EcalUncalibRecHitProducer(
+  EBdigiCollection = ('ecalDigis', 'ebDigis'),
+  EEhitCollection = 'EcalUncalibRecHitsEE',
+  EEdigiCollection = ('ecalDigis', 'eeDigis'),
+  EBhitCollection = 'EcalUncalibRecHitsEB',
+  algo = 'EcalUncalibRecHitWorkerGlobal',
   algoPSet = cms.PSet(
     eePulseShape = cms.vdouble(
       5.2e-05,
@@ -96,6 +98,5 @@ ecalGlobalUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
     EEtimeConstantTerm = cms.double(1),
     chi2ThreshEE_ = cms.double(95),
     EBtimeFitLimits_Upper = cms.double(1.4)
-  ),
-  mightGet = cms.optional.untracked.vstring
+  )
 )

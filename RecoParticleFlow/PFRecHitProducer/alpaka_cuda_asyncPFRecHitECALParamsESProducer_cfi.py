@@ -1,9 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_cuda_asyncPFRecHitECALParamsESProducer = cms.ESProducer('alpaka_cuda_async::PFRecHitECALParamsESProducer',
-  cleaningThreshold = cms.double(2),
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_cuda_async_PFRecHitECALParamsESProducer import alpaka_cuda_async_PFRecHitECALParamsESProducer
+
+alpaka_cuda_asyncPFRecHitECALParamsESProducer = alpaka_cuda_async_PFRecHitECALParamsESProducer()

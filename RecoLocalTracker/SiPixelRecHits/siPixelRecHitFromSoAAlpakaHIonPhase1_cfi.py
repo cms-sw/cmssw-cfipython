@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-siPixelRecHitFromSoAAlpakaHIonPhase1 = cms.EDProducer('SiPixelRecHitFromSoAAlpakaHIonPhase1',
-  pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
-  src = cms.InputTag('siPixelClustersPreSplitting'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .SiPixelRecHitFromSoAAlpakaHIonPhase1 import SiPixelRecHitFromSoAAlpakaHIonPhase1
+
+siPixelRecHitFromSoAAlpakaHIonPhase1 = SiPixelRecHitFromSoAAlpakaHIonPhase1()

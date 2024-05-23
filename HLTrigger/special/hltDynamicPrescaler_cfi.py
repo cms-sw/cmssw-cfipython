@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hltDynamicPrescaler = cms.EDFilter('HLTDynamicPrescaler',
-  saveTags = cms.bool(False),
-  mightGet = cms.optional.untracked.vstring
-)
+from .HLTDynamicPrescaler import HLTDynamicPrescaler
+
+hltDynamicPrescaler = HLTDynamicPrescaler()

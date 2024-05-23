@@ -1,8 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_rocm_asyncSiPixelGainCalibrationForHLTSoAESProducer = cms.ESProducer('alpaka_rocm_async::SiPixelGainCalibrationForHLTSoAESProducer',
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer import alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer
+
+alpaka_rocm_asyncSiPixelGainCalibrationForHLTSoAESProducer = alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer()

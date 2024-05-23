@@ -1,15 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hltSingletL1extraL1EmParticle = cms.EDFilter('HLTLevel1EG',
-  saveTags = cms.bool(True),
-  inputTag = cms.InputTag('hltCollection'),
-  triggerType = cms.int32(0),
-  MinE = cms.double(-1),
-  MinPt = cms.double(-1),
-  MinMass = cms.double(-1),
-  MaxMass = cms.double(-1),
-  MinEta = cms.double(-1),
-  MaxEta = cms.double(-1),
-  MinN = cms.int32(1),
-  mightGet = cms.optional.untracked.vstring
-)
+from .HLTLevel1EG import HLTLevel1EG
+
+hltSingletL1extraL1EmParticle = HLTLevel1EG()

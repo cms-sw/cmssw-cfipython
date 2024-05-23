@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-ecalRecHitSoAProducer = cms.EDProducer('ECALRecHitSoAProducer@alpaka',
-  src = cms.InputTag(''),
-  synchronise = cms.untracked.bool(False),
-  mightGet = cms.optional.untracked.vstring,
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .ECALRecHitSoAProducer_alpaka import ECALRecHitSoAProducer_alpaka
+
+ecalRecHitSoAProducer = ECALRecHitSoAProducer_alpaka()

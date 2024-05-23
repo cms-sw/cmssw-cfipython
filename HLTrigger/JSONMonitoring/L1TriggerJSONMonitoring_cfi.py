@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-L1TriggerJSONMonitoring = cms.EDAnalyzer('L1TriggerJSONMonitoring',
-  L1Results = cms.InputTag('hltGtStage2Digis'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .L1TriggerJSONMonitoring import L1TriggerJSONMonitoring
+
+L1TriggerJSONMonitoring = L1TriggerJSONMonitoring()

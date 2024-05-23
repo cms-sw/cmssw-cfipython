@@ -1,16 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_rocm_asyncPFRecHitSoAProducerHCAL = cms.EDProducer('alpaka_rocm_async::PFRecHitSoAProducerHCAL',
-  producers = cms.VPSet(
-    cms.PSet(
-      params = cms.ESInputTag('', ''),
-      src = cms.InputTag('')
-    )
-  ),
-  topology = cms.ESInputTag('', ''),
-  synchronise = cms.untracked.bool(False),
-  mightGet = cms.optional.untracked.vstring,
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_rocm_async_PFRecHitSoAProducerHCAL import alpaka_rocm_async_PFRecHitSoAProducerHCAL
+
+alpaka_rocm_asyncPFRecHitSoAProducerHCAL = alpaka_rocm_async_PFRecHitSoAProducerHCAL()

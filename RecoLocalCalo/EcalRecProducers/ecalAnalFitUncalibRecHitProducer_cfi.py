@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-ecalAnalFitUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
-  EBdigiCollection = cms.InputTag('ecalDigis', 'ebDigis'),
-  EEhitCollection = cms.string('EcalUncalibRecHitsEE'),
-  EEdigiCollection = cms.InputTag('ecalDigis', 'eeDigis'),
-  EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
-  algo = cms.string('EcalUncalibRecHitWorkerAnalFit'),
-  algoPSet = cms.PSet(),
-  mightGet = cms.optional.untracked.vstring
+from .EcalUncalibRecHitProducer import EcalUncalibRecHitProducer
+
+ecalAnalFitUncalibRecHitProducer = EcalUncalibRecHitProducer(
+  EBdigiCollection = ('ecalDigis', 'ebDigis'),
+  EEhitCollection = 'EcalUncalibRecHitsEE',
+  EEdigiCollection = ('ecalDigis', 'eeDigis'),
+  EBhitCollection = 'EcalUncalibRecHitsEB',
+  algo = 'EcalUncalibRecHitWorkerAnalFit',
+  algoPSet = cms.PSet()
 )

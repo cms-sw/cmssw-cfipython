@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-StallMonitor = cms.Service('StallMonitor',
-  fileName = cms.untracked.string(''),
-  stallThreshold = cms.untracked.double(0.1),
-  recordFrameworkTransitions = cms.untracked.bool(False)
-)
+from .StallMonitor import StallMonitor
+
+StallMonitor = StallMonitor()

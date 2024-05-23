@@ -1,3 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-PrintLoadingPlugins = cms.Service('PrintLoadingPlugins')
+from .PrintLoadingPlugins import PrintLoadingPlugins
+
+PrintLoadingPlugins = PrintLoadingPlugins()

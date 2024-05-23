@@ -1,9 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_rocm_asyncPFRecHitHCALTopologyESProducer = cms.ESProducer('alpaka_rocm_async::PFRecHitHCALTopologyESProducer',
-  usePFThresholdsFromDB = cms.bool(True),
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_rocm_async_PFRecHitHCALTopologyESProducer import alpaka_rocm_async_PFRecHitHCALTopologyESProducer
+
+alpaka_rocm_asyncPFRecHitHCALTopologyESProducer = alpaka_rocm_async_PFRecHitHCALTopologyESProducer()

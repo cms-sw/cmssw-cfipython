@@ -1,8 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-l1TEGMultiMerger = cms.EDProducer('L1TEGMultiMerger',
-  tkElectrons = cms.required.VPSet,
-  tkEms = cms.required.VPSet,
-  tkEgs = cms.required.VPSet,
-  mightGet = cms.optional.untracked.vstring
-)
+from .L1TEGMultiMerger import L1TEGMultiMerger
+
+l1TEGMultiMerger = L1TEGMultiMerger()

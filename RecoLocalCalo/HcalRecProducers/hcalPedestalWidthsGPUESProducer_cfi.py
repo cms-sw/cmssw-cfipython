@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hcalPedestalWidthsGPUESProducer = cms.ESProducer('HcalPedestalWidthsGPUESProducer',
-  ComponentName = cms.string(''),
-  label = cms.string(''),
-  appendToDataLabel = cms.string('')
-)
+from .HcalPedestalWidthsGPUESProducer import HcalPedestalWidthsGPUESProducer
+
+hcalPedestalWidthsGPUESProducer = HcalPedestalWidthsGPUESProducer()

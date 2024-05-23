@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-beamSpotWrite2DB = cms.EDAnalyzer('BeamSpotWrite2DB',
-  OutputFileName = cms.untracked.string(''),
-  mightGet = cms.optional.untracked.vstring
-)
+from .BeamSpotWrite2DB import BeamSpotWrite2DB
+
+beamSpotWrite2DB = BeamSpotWrite2DB()

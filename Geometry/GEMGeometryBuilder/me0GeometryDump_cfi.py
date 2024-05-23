@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-me0GeometryDump = cms.EDAnalyzer('ME0GeometryDump',
-  verbose = cms.bool(False),
-  mightGet = cms.optional.untracked.vstring
-)
+from .ME0GeometryDump import ME0GeometryDump
+
+me0GeometryDump = ME0GeometryDump()

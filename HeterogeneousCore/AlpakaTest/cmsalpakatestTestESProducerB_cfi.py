@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-cmsalpakatestTestESProducerB = cms.ESProducer('cms::alpakatest::TestESProducerB',
-  value = cms.required.int32,
-  appendToDataLabel = cms.string('')
-)
+from .cms_alpakatest_TestESProducerB import cms_alpakatest_TestESProducerB
+
+cmsalpakatestTestESProducerB = cms_alpakatest_TestESProducerB()

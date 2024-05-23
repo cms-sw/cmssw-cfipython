@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_cuda_asynchgcalHGCalMappingCellESProducer = cms.ESProducer('alpaka_cuda_async::hgcal::HGCalMappingCellESProducer',
-  filelist = cms.vstring(),
-  cellindexer = cms.ESInputTag('', ''),
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_cuda_async_hgcal_HGCalMappingCellESProducer import alpaka_cuda_async_hgcal_HGCalMappingCellESProducer
+
+alpaka_cuda_asynchgcalHGCalMappingCellESProducer = alpaka_cuda_async_hgcal_HGCalMappingCellESProducer()

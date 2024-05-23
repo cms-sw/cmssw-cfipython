@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-siPixelRecHitFromCUDAHIonPhase1 = cms.EDProducer('SiPixelRecHitFromCUDAHIonPhase1',
-  pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingCUDA'),
-  src = cms.InputTag('siPixelClustersPreSplitting'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .SiPixelRecHitFromCUDAHIonPhase1 import SiPixelRecHitFromCUDAHIonPhase1
+
+siPixelRecHitFromCUDAHIonPhase1 = SiPixelRecHitFromCUDAHIonPhase1()

@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-CheckTransitions = cms.Service('CheckTransitions',
-  transitions = cms.untracked.VPSet(
-    cms.PSet()
-  )
-)
+from .CheckTransitions import CheckTransitions
+
+CheckTransitions = CheckTransitions()

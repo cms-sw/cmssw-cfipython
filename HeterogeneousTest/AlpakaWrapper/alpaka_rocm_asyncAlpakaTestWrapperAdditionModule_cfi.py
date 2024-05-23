@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_rocm_asyncAlpakaTestWrapperAdditionModule = cms.EDAnalyzer('alpaka_rocm_async::AlpakaTestWrapperAdditionModule',
-  size = cms.uint32(1048576),
-  alpaka = cms.untracked.PSet(),
-  mightGet = cms.optional.untracked.vstring
-)
+from .alpaka_rocm_async_AlpakaTestWrapperAdditionModule import alpaka_rocm_async_AlpakaTestWrapperAdditionModule
+
+alpaka_rocm_asyncAlpakaTestWrapperAdditionModule = alpaka_rocm_async_AlpakaTestWrapperAdditionModule()

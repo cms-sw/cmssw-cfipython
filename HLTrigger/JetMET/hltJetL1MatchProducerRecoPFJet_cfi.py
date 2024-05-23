@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hltJetL1MatchProducerRecoPFJet = cms.EDProducer('HLTPFJetL1MatchProducer',
-  jetsInput = cms.InputTag('hltAntiKT5PFJets'),
-  L1TauJets = cms.InputTag('hltL1extraParticles', 'Tau'),
-  L1CenJets = cms.InputTag('hltL1extraParticles', 'Central'),
-  L1ForJets = cms.InputTag('hltL1extraParticles', 'Forward'),
-  DeltaR = cms.double(0.5),
-  mightGet = cms.optional.untracked.vstring
-)
+from .HLTPFJetL1MatchProducer import HLTPFJetL1MatchProducer
+
+hltJetL1MatchProducerRecoPFJet = HLTPFJetL1MatchProducer()

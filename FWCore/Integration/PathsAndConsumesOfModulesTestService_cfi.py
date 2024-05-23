@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-PathsAndConsumesOfModulesTestService = cms.Service('PathsAndConsumesOfModulesTestService',
-  modulesAndConsumes = cms.VPSet(
-  )
-)
+from .PathsAndConsumesOfModulesTestService import PathsAndConsumesOfModulesTestService
+
+PathsAndConsumesOfModulesTestService = PathsAndConsumesOfModulesTestService()

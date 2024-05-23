@@ -1,8 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_cuda_asyncEcalElectronicsMappingHostESProducer = cms.ESProducer('alpaka_cuda_async::EcalElectronicsMappingHostESProducer',
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_cuda_async_EcalElectronicsMappingHostESProducer import alpaka_cuda_async_EcalElectronicsMappingHostESProducer
+
+alpaka_cuda_asyncEcalElectronicsMappingHostESProducer = alpaka_cuda_async_EcalElectronicsMappingHostESProducer()

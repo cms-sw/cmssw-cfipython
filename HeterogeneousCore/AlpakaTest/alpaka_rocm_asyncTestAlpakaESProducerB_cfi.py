@@ -1,9 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_rocm_asyncTestAlpakaESProducerB = cms.ESProducer('alpaka_rocm_async::TestAlpakaESProducerB',
-  explicitLabel = cms.string(''),
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_rocm_async_TestAlpakaESProducerB import alpaka_rocm_async_TestAlpakaESProducerB
+
+alpaka_rocm_asyncTestAlpakaESProducerB = alpaka_rocm_async_TestAlpakaESProducerB()

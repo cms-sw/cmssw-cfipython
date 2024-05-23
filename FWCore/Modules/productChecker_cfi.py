@@ -1,9 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-productChecker = cms.OutputModule('GetProductCheckerOutputModule',
-  outputCommands = cms.untracked.vstring('keep *'),
-  SelectEvents = cms.untracked.PSet(
-    SelectEvents = cms.optional.vstring
-  ),
-  verbose = cms.untracked.bool(False)
-)
+from .GetProductCheckerOutputModule import GetProductCheckerOutputModule
+
+productChecker = GetProductCheckerOutputModule()

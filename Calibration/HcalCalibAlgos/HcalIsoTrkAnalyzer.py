@@ -71,6 +71,7 @@ def HcalIsoTrkAnalyzer(**kwargs):
     hcalScale = cms.untracked.double(1),
     dataType = cms.untracked.int32(0),
     unCorrect = cms.untracked.bool(False),
+    getCharge = cms.untracked.bool(False),
     collapseDepth = cms.untracked.bool(False),
     l1TrigName = cms.untracked.string('L1_SingleJet60'),
     outMode = cms.untracked.int32(11),

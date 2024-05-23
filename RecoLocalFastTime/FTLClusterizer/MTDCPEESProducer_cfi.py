@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-MTDCPEESProducer = cms.ESProducer('MTDCPEESProducer',
-  appendToDataLabel = cms.string('')
-)
+from .MTDCPEESProducer import MTDCPEESProducer
+
+MTDCPEESProducer = MTDCPEESProducer()

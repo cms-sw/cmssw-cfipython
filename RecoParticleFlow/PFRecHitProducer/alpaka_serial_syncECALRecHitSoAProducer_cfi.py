@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_serial_syncECALRecHitSoAProducer = cms.EDProducer('alpaka_serial_sync::ECALRecHitSoAProducer',
-  src = cms.InputTag(''),
-  synchronise = cms.untracked.bool(False),
-  mightGet = cms.optional.untracked.vstring,
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_serial_sync_ECALRecHitSoAProducer import alpaka_serial_sync_ECALRecHitSoAProducer
+
+alpaka_serial_syncECALRecHitSoAProducer = alpaka_serial_sync_ECALRecHitSoAProducer()

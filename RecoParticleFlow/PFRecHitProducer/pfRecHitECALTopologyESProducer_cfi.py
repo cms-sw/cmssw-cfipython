@@ -1,9 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-pfRecHitECALTopologyESProducer = cms.ESProducer('PFRecHitECALTopologyESProducer@alpaka',
-  usePFThresholdsFromDB = cms.bool(False),
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .PFRecHitECALTopologyESProducer_alpaka import PFRecHitECALTopologyESProducer_alpaka
+
+pfRecHitECALTopologyESProducer = PFRecHitECALTopologyESProducer_alpaka()

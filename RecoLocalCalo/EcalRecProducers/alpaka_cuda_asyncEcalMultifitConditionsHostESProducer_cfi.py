@@ -1,8 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_cuda_asyncEcalMultifitConditionsHostESProducer = cms.ESProducer('alpaka_cuda_async::EcalMultifitConditionsHostESProducer',
-  appendToDataLabel = cms.string(''),
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_cuda_async_EcalMultifitConditionsHostESProducer import alpaka_cuda_async_EcalMultifitConditionsHostESProducer
+
+alpaka_cuda_asyncEcalMultifitConditionsHostESProducer = alpaka_cuda_async_EcalMultifitConditionsHostESProducer()

@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-otherThingRefComparer = cms.EDAnalyzer('OtherThingRefComparer',
-  first = cms.untracked.InputTag('OtherThing', 'testUserTag'),
-  second = cms.untracked.InputTag('OtherThing', 'testUserTag'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .OtherThingRefComparer import OtherThingRefComparer
+
+otherThingRefComparer = OtherThingRefComparer()

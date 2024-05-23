@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-Phase2OTHarvestTrackingParticles = cms.EDProducer('Phase2OTHarvestTrackingParticles',
-  TopFolderName = cms.string('TrackerPhase2OTL1TrackV'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .Phase2OTHarvestTrackingParticles import Phase2OTHarvestTrackingParticles
+
+Phase2OTHarvestTrackingParticles = Phase2OTHarvestTrackingParticles()

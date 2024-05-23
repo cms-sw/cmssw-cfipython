@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_cuda_asyncAlpakaTestKernelAdditionModule = cms.EDAnalyzer('alpaka_cuda_async::AlpakaTestKernelAdditionModule',
-  size = cms.uint32(1048576),
-  alpaka = cms.untracked.PSet(),
-  mightGet = cms.optional.untracked.vstring
-)
+from .alpaka_cuda_async_AlpakaTestKernelAdditionModule import alpaka_cuda_async_AlpakaTestKernelAdditionModule
+
+alpaka_cuda_asyncAlpakaTestKernelAdditionModule = alpaka_cuda_async_AlpakaTestKernelAdditionModule()

@@ -1,7 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hcalElectronicsMappingGPUESProducer = cms.ESProducer('HcalElectronicsMappingGPUESProducer',
-  ComponentName = cms.string(''),
-  label = cms.string(''),
-  appendToDataLabel = cms.string('')
-)
+from .HcalElectronicsMappingGPUESProducer import HcalElectronicsMappingGPUESProducer
+
+hcalElectronicsMappingGPUESProducer = HcalElectronicsMappingGPUESProducer()

@@ -1,14 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hltMuonL1TFilter = cms.EDFilter('HLTMuonL1TFilter',
-  saveTags = cms.bool(True),
-  CandTag = cms.InputTag('hltGmtStage2Digis'),
-  PreviousCandTag = cms.InputTag(''),
-  MaxEta = cms.double(2.5),
-  MinPt = cms.double(0),
-  MaxDeltaR = cms.double(0.3),
-  MinN = cms.int32(1),
-  CentralBxOnly = cms.bool(True),
-  SelectQualities = cms.vint32(),
-  mightGet = cms.optional.untracked.vstring
-)
+from .HLTMuonL1TFilter import HLTMuonL1TFilter
+
+hltMuonL1TFilter = HLTMuonL1TFilter()

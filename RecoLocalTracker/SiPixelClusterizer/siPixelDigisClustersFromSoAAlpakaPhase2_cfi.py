@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-siPixelDigisClustersFromSoAAlpakaPhase2 = cms.EDProducer('SiPixelDigisClustersFromSoAAlpakaPhase2',
-  src = cms.InputTag('siPixelDigisSoA'),
-  clusterThreshold_layer1 = cms.int32(2000),
-  clusterThreshold_otherLayers = cms.int32(4000),
-  produceDigis = cms.bool(True),
-  storeDigis = cms.bool(True),
-  mightGet = cms.optional.untracked.vstring
-)
+from .SiPixelDigisClustersFromSoAAlpakaPhase2 import SiPixelDigisClustersFromSoAAlpakaPhase2
+
+siPixelDigisClustersFromSoAAlpakaPhase2 = SiPixelDigisClustersFromSoAAlpakaPhase2()

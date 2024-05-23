@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-l1TSDebugger = cms.EDAnalyzer('APVCyclePhaseDebuggerFromL1TS',
-  l1TSCollection = cms.InputTag('scalersRawToDigi'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .APVCyclePhaseDebuggerFromL1TS import APVCyclePhaseDebuggerFromL1TS
+
+l1TSDebugger = APVCyclePhaseDebuggerFromL1TS()

@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-cscObjectMapESProducer = cms.ESProducer('CSCObjectMapESProducer',
-  appendToDataLabel = cms.string('')
-)
+from .CSCObjectMapESProducer import CSCObjectMapESProducer
+
+cscObjectMapESProducer = CSCObjectMapESProducer()

@@ -1,9 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-alpaka_cuda_asyncBeamSpotDeviceProducer = cms.EDProducer('alpaka_cuda_async::BeamSpotDeviceProducer',
-  src = cms.InputTag(''),
-  mightGet = cms.optional.untracked.vstring,
-  alpaka = cms.untracked.PSet(
-    backend = cms.untracked.string('')
-  )
-)
+from .alpaka_cuda_async_BeamSpotDeviceProducer import alpaka_cuda_async_BeamSpotDeviceProducer
+
+alpaka_cuda_asyncBeamSpotDeviceProducer = alpaka_cuda_async_BeamSpotDeviceProducer()

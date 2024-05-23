@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-ttTrackTrackWordDummyOneAnalyzer = cms.EDAnalyzer('TTTrackTrackWordDummyOneAnalyzer',
-  mightGet = cms.optional.untracked.vstring
-)
+from .TTTrackTrackWordDummyOneAnalyzer import TTTrackTrackWordDummyOneAnalyzer
+
+ttTrackTrackWordDummyOneAnalyzer = TTTrackTrackWordDummyOneAnalyzer()

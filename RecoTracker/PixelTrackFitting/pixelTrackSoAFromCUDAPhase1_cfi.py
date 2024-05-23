@@ -1,6 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-pixelTrackSoAFromCUDAPhase1 = cms.EDProducer('PixelTrackSoAFromCUDAPhase1',
-  src = cms.InputTag('pixelTracksCUDA'),
-  mightGet = cms.optional.untracked.vstring
-)
+from .PixelTrackSoAFromCUDAPhase1 import PixelTrackSoAFromCUDAPhase1
+
+pixelTrackSoAFromCUDAPhase1 = PixelTrackSoAFromCUDAPhase1()

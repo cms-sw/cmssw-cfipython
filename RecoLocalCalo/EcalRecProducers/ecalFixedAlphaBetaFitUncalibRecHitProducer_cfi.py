@@ -1,11 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-ecalFixedAlphaBetaFitUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitProducer',
-  EBdigiCollection = cms.InputTag('ecalDigis', 'ebDigis'),
-  EEhitCollection = cms.string('EcalUncalibRecHitsEE'),
-  EEdigiCollection = cms.InputTag('ecalDigis', 'eeDigis'),
-  EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
-  algo = cms.string('EcalUncalibRecHitWorkerFixedAlphaBetaFit'),
+from .EcalUncalibRecHitProducer import EcalUncalibRecHitProducer
+
+ecalFixedAlphaBetaFitUncalibRecHitProducer = EcalUncalibRecHitProducer(
+  EBdigiCollection = ('ecalDigis', 'ebDigis'),
+  EEhitCollection = 'EcalUncalibRecHitsEE',
+  EEdigiCollection = ('ecalDigis', 'eeDigis'),
+  EBhitCollection = 'EcalUncalibRecHitsEB',
+  algo = 'EcalUncalibRecHitWorkerFixedAlphaBetaFit',
   algoPSet = cms.PSet(
     alphaEB = cms.double(1.138),
     alphaEE = cms.double(1.89),
@@ -15,6 +17,5 @@ ecalFixedAlphaBetaFitUncalibRecHitProducer = cms.EDProducer('EcalUncalibRecHitPr
     MinAmplBarrel = cms.double(8),
     betaEE = cms.double(1.4),
     UseDynamicPedestal = cms.bool(True)
-  ),
-  mightGet = cms.optional.untracked.vstring
+  )
 )

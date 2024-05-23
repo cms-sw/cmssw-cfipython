@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-hgCalMappingESSourceTester = cms.EDAnalyzer('HGCalMappingESSourceTester',
-  mightGet = cms.optional.untracked.vstring
-)
+from .HGCalMappingESSourceTester import HGCalMappingESSourceTester
+
+hgCalMappingESSourceTester = HGCalMappingESSourceTester()

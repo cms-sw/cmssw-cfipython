@@ -1,10 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-l1TStage2TauComparison = cms.EDProducer('L1TStage2TauComparison',
-  collection1 = cms.InputTag('collection1'),
-  collection2 = cms.InputTag('collection2'),
-  checkBxRange = cms.bool(True),
-  checkCollSizePerBx = cms.bool(True),
-  checkObject = cms.bool(True),
-  mightGet = cms.optional.untracked.vstring
-)
+from .L1TStage2TauComparison import L1TStage2TauComparison
+
+l1TStage2TauComparison = L1TStage2TauComparison()
