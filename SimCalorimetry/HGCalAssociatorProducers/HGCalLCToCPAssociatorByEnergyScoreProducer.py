@@ -1,14 +1,14 @@
 import FWCore.ParameterSet.Config as cms
 
-def TSToSimTSHitLCAssociatorByEnergyScoreProducer(**kwargs):
-  mod = cms.EDProducer('TSToSimTSHitLCAssociatorByEnergyScoreProducer',
+def HGCalLCToCPAssociatorByEnergyScoreProducer(**kwargs):
+  mod = cms.EDProducer('HGCalLCToCPAssociatorByEnergyScoreProducer',
+    hardScatterOnly = cms.bool(True),
     hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     hits = cms.VInputTag(
       'HGCalRecHit:HGCEERecHits',
       'HGCalRecHit:HGCHEFRecHits',
       'HGCalRecHit:HGCHEBRecHits'
     ),
-    hardScatterOnly = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():

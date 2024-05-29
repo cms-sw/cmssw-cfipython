@@ -43,7 +43,7 @@ def HGCalPhotonIDValueMapProducer(**kwargs):
     EERecHits = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
     FHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
     BHRecHits = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
-    hitMapTag = cms.InputTag('hgcalRecHitMapProducer'),
+    hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
