@@ -7,11 +7,9 @@ def MuonHLTSeedMVAClassifier(**kwargs):
     L2Muon = cms.InputTag('hltL2MuonCandidates'),
     rejectAll = cms.bool(False),
     isFromL1 = cms.bool(False),
-    mvaFileBL1 = cms.FileInPath('RecoMuon/TrackerSeedGenerator/data/xgb_Run3_Iter2FromL1Seeds_barrel.xml'),
-    mvaFileEL1 = cms.FileInPath('RecoMuon/TrackerSeedGenerator/data/xgb_Run3_Iter2FromL1Seeds_endcap.xml'),
-    mvaFileBL2 = cms.FileInPath('RecoMuon/TrackerSeedGenerator/data/xgb_Run3_Iter2Seeds_barrel.xml'),
-    mvaFileEL2 = cms.FileInPath('RecoMuon/TrackerSeedGenerator/data/xgb_Run3_Iter2Seeds_endcap.xml'),
-    mvaScaleMeanBL1 = cms.vdouble(
+    mvaFileB = cms.FileInPath('RecoMuon/TrackerSeedGenerator/data/xgb_Run3_Iter2FromL1Seeds_barrel.xml'),
+    mvaFileE = cms.FileInPath('RecoMuon/TrackerSeedGenerator/data/xgb_Run3_Iter2FromL1Seeds_endcap.xml'),
+    mvaScaleMeanB = cms.vdouble(
       0,
       0,
       0,
@@ -21,7 +19,7 @@ def MuonHLTSeedMVAClassifier(**kwargs):
       0,
       0
     ),
-    mvaScaleStdBL1 = cms.vdouble(
+    mvaScaleStdB = cms.vdouble(
       1,
       1,
       1,
@@ -31,7 +29,7 @@ def MuonHLTSeedMVAClassifier(**kwargs):
       1,
       1
     ),
-    mvaScaleMeanEL1 = cms.vdouble(
+    mvaScaleMeanE = cms.vdouble(
       0,
       0,
       0,
@@ -41,55 +39,7 @@ def MuonHLTSeedMVAClassifier(**kwargs):
       0,
       0
     ),
-    mvaScaleStdEL1 = cms.vdouble(
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ),
-    mvaScaleMeanBL2 = cms.vdouble(
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ),
-    mvaScaleStdBL2 = cms.vdouble(
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ),
-    mvaScaleMeanEL2 = cms.vdouble(
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ),
-    mvaScaleStdEL2 = cms.vdouble(
-      1,
-      1,
+    mvaScaleStdE = cms.vdouble(
       1,
       1,
       1,
