@@ -17,6 +17,11 @@ def ExceptionThrowingProducer(**kwargs):
     expectedGlobalBeginLumi = cms.untracked.uint32(0),
     expectedOffsetNoGlobalEndLumi = cms.untracked.uint32(0),
     expectedOffsetNoWriteLumi = cms.untracked.uint32(0),
+    expectedStreamBeginRun = cms.untracked.uint32(4294967295),
+    expectedOffsetNoStreamEndRun = cms.untracked.uint32(0),
+    expectedGlobalBeginRun = cms.untracked.uint32(0),
+    expectedOffsetNoGlobalEndRun = cms.untracked.uint32(0),
+    expectedOffsetNoWriteRun = cms.untracked.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
