@@ -1,13 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-tkAlV0sAnalyzer = cms.EDAnalyzer('TkAlV0sAnalyzer',
-  vertexCompositeCandidates = cms.InputTag('generalV0Candidates', 'Kshort'),
-  tracks = cms.InputTag('ALCARECOTkAlKShortTracks'),
+v0Monitor = cms.EDProducer('V0Monitor',
+  FolderName = cms.string('Tracking/V0Monitoring'),
+  v0 = cms.InputTag('generalV0Candidates', 'Kshort'),
   beamSpot = cms.InputTag('offlineBeamSpot'),
   primaryVertex = cms.InputTag('offlinePrimaryVertices'),
   lumiScalers = cms.InputTag('scalersRawToDigi'),
+  forceSCAL = cms.bool(True),
   metadata = cms.InputTag('onlineMetaDataDigis'),
-  forceSCAL = cms.bool(False),
   pvNDOF = cms.int32(4),
   histoPSet = cms.PSet(
     lumiPSet = cms.PSet(
@@ -50,6 +50,29 @@ tkAlV0sAnalyzer = cms.EDAnalyzer('TkAlV0sAnalyzer',
       xmin = cms.double(0),
       xmax = cms.double(2000)
     )
+  ),
+  genericTriggerEventPSet = cms.PSet(
+    ReadPrescalesFromFile = cms.bool(False),
+    andOr = cms.bool(False),
+    andOrDcs = cms.bool(False),
+    andOrHlt = cms.bool(False),
+    andOrL1 = cms.bool(False),
+    errorReplyDcs = cms.bool(False),
+    errorReplyHlt = cms.bool(False),
+    errorReplyL1 = cms.bool(False),
+    l1BeforeMask = cms.bool(False),
+    stage2 = cms.bool(False),
+    dcsInputTag = cms.InputTag('scalersRawToDigi'),
+    dcsRecordInputTag = cms.InputTag('onlineMetaDataDigis'),
+    hltInputTag = cms.InputTag('TriggerResults', '', 'HLT'),
+    l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
+    l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
+    dbLabel = cms.string(''),
+    hltDBKey = cms.string(''),
+    dcsPartitions = cms.vint32(),
+    hltPaths = cms.vstring(),
+    l1Algorithms = cms.vstring(),
+    verbosityLevel = cms.uint32(0)
   ),
   mightGet = cms.optional.untracked.vstring
 )
