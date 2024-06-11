@@ -2,4 +2,4 @@ import FWCore.ParameterSet.Config as cms
 
 from .CaloTowerTopologyEP import CaloTowerTopologyEP
 
-CaloTowerTopology = CaloTowerTopologyEP()
+CaloTowerTopologyEP = CaloTowerTopologyEP()
