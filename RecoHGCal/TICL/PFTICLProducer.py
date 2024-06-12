@@ -9,6 +9,7 @@ def PFTICLProducer(**kwargs):
     energyFromRegression = cms.bool(True),
     timingQualityThreshold = cms.double(0.5),
     useMTDTiming = cms.bool(True),
+    isTICLv5 = cms.bool(False),
     useTimingAverage = cms.bool(False),
     muonSrc = cms.InputTag('muons1stStep'),
     pfMuonAlgoParameters = cms.PSet(

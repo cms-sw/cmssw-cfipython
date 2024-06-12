@@ -3,11 +3,13 @@ import FWCore.ParameterSet.Config as cms
 def SimTrackstersProducer(**kwargs):
   mod = cms.EDProducer('SimTrackstersProducer',
     detector = cms.string('HGCAL'),
+    computeLocalTime = cms.bool(True),
     layer_clusters = cms.InputTag('hgcalMergeLayerClusters'),
     time_layerclusters = cms.InputTag('hgcalMergeLayerClusters', 'timeLayerCluster'),
     filtered_mask = cms.InputTag('filteredLayerClustersSimTracksters', 'ticlSimTracksters'),
     simclusters = cms.InputTag('mix', 'MergedCaloTruth'),
     caloparticles = cms.InputTag('mix', 'MergedCaloTruth'),
+    MtdSimTracksters = cms.InputTag('mix', 'MergedMtdTruthST'),
     layerClusterSimClusterAssociator = cms.InputTag('layerClusterSimClusterAssociationProducer'),
     layerClusterCaloParticleAssociator = cms.InputTag('layerClusterCaloParticleAssociationProducer'),
     recoTracks = cms.InputTag('generalTracks'),

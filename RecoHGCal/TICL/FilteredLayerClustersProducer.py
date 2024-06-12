@@ -8,7 +8,8 @@ def FilteredLayerClustersProducer(**kwargs):
     clusterFilter = cms.string('ClusterFilterByAlgoAndSize'),
     algo_number = cms.vint32(
       6,
-      7
+      7,
+      8
     ),
     min_cluster_size = cms.int32(0),
     max_cluster_size = cms.int32(9999),
