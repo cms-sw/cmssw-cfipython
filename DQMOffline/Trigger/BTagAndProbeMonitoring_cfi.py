@@ -7,10 +7,7 @@ BTagAndProbeMonitoring = cms.EDProducer('BTagAndProbe',
   muons = cms.InputTag('muons'),
   electrons = cms.InputTag('gedGsfElectrons'),
   elecID = cms.InputTag('egmGsfElectronIDsForDQM', 'cutBasedElectronID-RunIIIWinter22-V1-tight'),
-  btagAlgos = cms.VInputTag(
-    'pfDeepCSVJetTags:probb',
-    'pfDeepCSVJetTags:probbb'
-  ),
+  btagAlgos = cms.VInputTag('pfParticleNetAK4DiscriminatorsJetTagsForRECO:BvsAll'),
   jetSelection = cms.string('pt > 30'),
   eleSelection = cms.string('pt > 0 && abs(eta) < 2.5'),
   muoSelection = cms.string('pt > 6 && abs(eta) < 2.4'),
