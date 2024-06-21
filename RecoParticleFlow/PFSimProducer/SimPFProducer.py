@@ -14,13 +14,15 @@ def SimPFProducer(**kwargs):
     muonSrc = cms.InputTag('muons1stStep'),
     neutralHADThreshold = cms.double(0.25),
     gsfTrackSrc = cms.InputTag('electronGsfTracks'),
-    trackTimeValueMap = cms.optional.InputTag,
-    trackTimeErrorMap = cms.optional.InputTag,
-    trackTimeQualityMap = cms.optional.InputTag,
-    timingQualityThreshold = cms.optional.double,
-    gsfTrackTimeValueMap = cms.optional.InputTag,
-    gsfTrackTimeErrorMap = cms.optional.InputTag,
-    gsfTrackTimeQualityMap = cms.optional.InputTag,
+    useTiming = cms.bool(False),
+    useTimingQuality = cms.bool(False),
+    trackTimeValueMap = cms.InputTag(''),
+    trackTimeErrorMap = cms.InputTag(''),
+    trackTimeQualityMap = cms.InputTag(''),
+    timingQualityThreshold = cms.double(0),
+    gsfTrackTimeValueMap = cms.InputTag(''),
+    gsfTrackTimeErrorMap = cms.InputTag(''),
+    gsfTrackTimeQualityMap = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():

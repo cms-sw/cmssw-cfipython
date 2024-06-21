@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_rocm_async_ECALRecHitSoAProducer import alpaka_rocm_async_ECALRecHitSoAProducer
-
-alpaka_rocm_asyncECALRecHitSoAProducer = alpaka_rocm_async_ECALRecHitSoAProducer()

@@ -19,6 +19,7 @@ def LegacyPFClusterProducer(**kwargs):
       minChi2Prob = cms.double(0),
       clusterTimeResFromSeed = cms.bool(False),
       algoName = cms.string(''),
+      positionCalcForConvergence = cms.PSet(),
       recHitEnergyNorms = cms.VPSet(
         cms.PSet(
           depths = cms.vint32(
@@ -99,7 +100,9 @@ def LegacyPFClusterProducer(**kwargs):
             )
           )
         ),
-        minAllowedNormalization = cms.double(1e-09)
+        minAllowedNormalization = cms.double(1e-09),
+        timeResolutionCalcBarrel = cms.PSet(),
+        timeResolutionCalcEndcap = cms.PSet()
       ),
       allCellsPositionCalc = cms.PSet(
         algoName = cms.string('Basic2DGenericPFlowPositionCalc'),
@@ -143,7 +146,9 @@ def LegacyPFClusterProducer(**kwargs):
             )
           )
         ),
-        minAllowedNormalization = cms.double(1e-09)
+        minAllowedNormalization = cms.double(1e-09),
+        timeResolutionCalcBarrel = cms.PSet(),
+        timeResolutionCalcEndcap = cms.PSet()
       ),
       timeResolutionCalcBarrel = cms.PSet(
         corrTermLowE = cms.double(0),

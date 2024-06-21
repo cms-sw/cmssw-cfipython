@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def PFRecHitProducerTest(**kwargs):
   mod = cms.EDProducer('PFRecHitProducerTest',
-    caloRecHits = cms.optional.untracked.InputTag,
+    caloRecHits = cms.untracked.InputTag(''),
     pfRecHitsSource1 = cms.required.untracked.InputTag,
     pfRecHitsSource2 = cms.required.untracked.InputTag,
     pfRecHitsType1 = cms.untracked.string('legacy'),
