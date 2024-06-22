@@ -8,6 +8,7 @@ def TestWriteL1Scouting(**kwargs):
     eGammaValues = cms.required.vint32,
     tauValues = cms.required.vint32,
     bxSumsValues = cms.required.vint32,
+    bmtfStubValues = cms.required.vint32,
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():

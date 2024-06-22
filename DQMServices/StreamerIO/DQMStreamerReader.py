@@ -7,6 +7,7 @@ def DQMStreamerReader(**kwargs):
     skipFirstLumis = cms.untracked.bool(False),
     deleteDatFiles = cms.untracked.bool(False),
     endOfRunKills = cms.untracked.bool(False),
+    unitTest = cms.untracked.bool(False),
     inputFileTransitionsEachEvent = cms.untracked.bool(False),
     runNumber = cms.required.untracked.uint32,
     datafnPosition = cms.untracked.uint32(3),

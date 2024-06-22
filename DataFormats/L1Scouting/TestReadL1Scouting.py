@@ -13,6 +13,9 @@ def TestReadL1Scouting(**kwargs):
     tausTag = cms.required.InputTag,
     expectedBxSumsValues = cms.required.vint32,
     bxSumsTag = cms.required.InputTag,
+    bmtfStubClassVersion = cms.required.int32,
+    expectedBmtfStubValues = cms.required.vint32,
+    bmtfStubTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
