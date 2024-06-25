@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .CAHitNtupletAlpakaHIonPhase1_alpaka import CAHitNtupletAlpakaHIonPhase1_alpaka
+
+caHitNtupletAlpakaHIonPhase1 = CAHitNtupletAlpakaHIonPhase1_alpaka()

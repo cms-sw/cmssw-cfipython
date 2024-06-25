@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PixelCPEFastParamsESProducerAlpakaHIonPhase1_alpaka import PixelCPEFastParamsESProducerAlpakaHIonPhase1_alpaka
+
+pixelCPEFastParamsESProducerAlpakaHIonPhase1 = PixelCPEFastParamsESProducerAlpakaHIonPhase1_alpaka()
