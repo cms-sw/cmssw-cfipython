@@ -9,6 +9,7 @@ def L1TGlobalProducer(**kwargs):
     JetInputTag = cms.InputTag(''),
     EtSumInputTag = cms.InputTag(''),
     EtSumZdcInputTag = cms.InputTag(''),
+    CICADAInputTag = cms.InputTag(''),
     ExtInputTag = cms.InputTag(''),
     AlgoBlkInputTag = cms.InputTag('hltGtStage2Digis'),
     GetPrescaleColumnFromData = cms.bool(False),
