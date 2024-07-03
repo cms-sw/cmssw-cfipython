@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_HBHERecHitProducerPortable import alpaka_rocm_async_HBHERecHitProducerPortable
+
+alpaka_rocm_asyncHBHERecHitProducerPortable = alpaka_rocm_async_HBHERecHitProducerPortable()

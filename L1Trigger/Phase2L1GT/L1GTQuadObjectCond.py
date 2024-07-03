@@ -14,15 +14,23 @@ def L1GTQuadObjectCond(**kwargs):
       maxZ0 = cms.optional.double,
       minScalarSumPt = cms.optional.double,
       maxScalarSumPt = cms.optional.double,
-      qual = cms.vuint32(),
+      minQualityScore = cms.optional.uint32,
+      maxQualityScore = cms.optional.uint32,
+      qualityFlags = cms.optional.uint32,
+      regions = cms.vuint32(),
       minAbsEta = cms.optional.double,
       maxAbsEta = cms.optional.double,
-      maxIso = cms.optional.double,
-      minHwIso = cms.optional.int32,
+      minIsolationPt = cms.optional.double,
+      maxIsolationPt = cms.optional.double,
+      minRelIsolationPt = cms.optional.double,
+      maxRelIsolationPt = cms.optional.double,
       regionsAbsEtaLowerBounds = cms.vdouble(),
       regionsMinPt = cms.vdouble(),
-      regionsMaxIso = cms.vdouble(),
-      regionsQual = cms.vuint32()
+      regionsMaxRelIsolationPt = cms.vdouble(),
+      regionsQualityFlags = cms.vuint32(),
+      minPrimVertDz = cms.optional.double,
+      maxPrimVertDz = cms.optional.double,
+      primVertex = cms.optional.uint32
     ),
     collection2 = cms.PSet(
       tag = cms.required.InputTag,
@@ -36,15 +44,23 @@ def L1GTQuadObjectCond(**kwargs):
       maxZ0 = cms.optional.double,
       minScalarSumPt = cms.optional.double,
       maxScalarSumPt = cms.optional.double,
-      qual = cms.vuint32(),
+      minQualityScore = cms.optional.uint32,
+      maxQualityScore = cms.optional.uint32,
+      qualityFlags = cms.optional.uint32,
+      regions = cms.vuint32(),
       minAbsEta = cms.optional.double,
       maxAbsEta = cms.optional.double,
-      maxIso = cms.optional.double,
-      minHwIso = cms.optional.int32,
+      minIsolationPt = cms.optional.double,
+      maxIsolationPt = cms.optional.double,
+      minRelIsolationPt = cms.optional.double,
+      maxRelIsolationPt = cms.optional.double,
       regionsAbsEtaLowerBounds = cms.vdouble(),
       regionsMinPt = cms.vdouble(),
-      regionsMaxIso = cms.vdouble(),
-      regionsQual = cms.vuint32()
+      regionsMaxRelIsolationPt = cms.vdouble(),
+      regionsQualityFlags = cms.vuint32(),
+      minPrimVertDz = cms.optional.double,
+      maxPrimVertDz = cms.optional.double,
+      primVertex = cms.optional.uint32
     ),
     collection3 = cms.PSet(
       tag = cms.required.InputTag,
@@ -58,15 +74,23 @@ def L1GTQuadObjectCond(**kwargs):
       maxZ0 = cms.optional.double,
       minScalarSumPt = cms.optional.double,
       maxScalarSumPt = cms.optional.double,
-      qual = cms.vuint32(),
+      minQualityScore = cms.optional.uint32,
+      maxQualityScore = cms.optional.uint32,
+      qualityFlags = cms.optional.uint32,
+      regions = cms.vuint32(),
       minAbsEta = cms.optional.double,
       maxAbsEta = cms.optional.double,
-      maxIso = cms.optional.double,
-      minHwIso = cms.optional.int32,
+      minIsolationPt = cms.optional.double,
+      maxIsolationPt = cms.optional.double,
+      minRelIsolationPt = cms.optional.double,
+      maxRelIsolationPt = cms.optional.double,
       regionsAbsEtaLowerBounds = cms.vdouble(),
       regionsMinPt = cms.vdouble(),
-      regionsMaxIso = cms.vdouble(),
-      regionsQual = cms.vuint32()
+      regionsMaxRelIsolationPt = cms.vdouble(),
+      regionsQualityFlags = cms.vuint32(),
+      minPrimVertDz = cms.optional.double,
+      maxPrimVertDz = cms.optional.double,
+      primVertex = cms.optional.uint32
     ),
     collection4 = cms.PSet(
       tag = cms.required.InputTag,
@@ -80,34 +104,43 @@ def L1GTQuadObjectCond(**kwargs):
       maxZ0 = cms.optional.double,
       minScalarSumPt = cms.optional.double,
       maxScalarSumPt = cms.optional.double,
-      qual = cms.vuint32(),
+      minQualityScore = cms.optional.uint32,
+      maxQualityScore = cms.optional.uint32,
+      qualityFlags = cms.optional.uint32,
+      regions = cms.vuint32(),
       minAbsEta = cms.optional.double,
       maxAbsEta = cms.optional.double,
-      maxIso = cms.optional.double,
-      minHwIso = cms.optional.int32,
+      minIsolationPt = cms.optional.double,
+      maxIsolationPt = cms.optional.double,
+      minRelIsolationPt = cms.optional.double,
+      maxRelIsolationPt = cms.optional.double,
       regionsAbsEtaLowerBounds = cms.vdouble(),
       regionsMinPt = cms.vdouble(),
-      regionsMaxIso = cms.vdouble(),
-      regionsQual = cms.vuint32()
+      regionsMaxRelIsolationPt = cms.vdouble(),
+      regionsQualityFlags = cms.vuint32(),
+      minPrimVertDz = cms.optional.double,
+      maxPrimVertDz = cms.optional.double,
+      primVertex = cms.optional.uint32
     ),
     scales = cms.PSet(
       pT_lsb = cms.required.double,
       phi_lsb = cms.required.double,
       eta_lsb = cms.required.double,
       z0_lsb = cms.required.double,
-      isolation_lsb = cms.required.double,
+      isolationPT_lsb = cms.required.double,
       beta_lsb = cms.required.double,
       mass_lsb = cms.required.double,
       seed_pT_lsb = cms.required.double,
       seed_z0_lsb = cms.required.double,
-      sca_sum_lsb = cms.required.double,
+      scalarSumPT_lsb = cms.required.double,
       sum_pT_pv_lsb = cms.required.double,
       pos_chg = cms.required.int32,
       neg_chg = cms.required.int32
     ),
+    primVertTag = cms.required.InputTag,
     sanity_checks = cms.untracked.bool(False),
     inv_mass_checks = cms.untracked.bool(False),
-    delta12 = cms.PSet(
+    correl12 = cms.PSet(
       minDEta = cms.optional.double,
       maxDEta = cms.optional.double,
       minDPhi = cms.optional.double,
@@ -122,10 +155,12 @@ def L1GTQuadObjectCond(**kwargs):
       maxTransMass = cms.optional.double,
       minCombPt = cms.optional.double,
       maxCombPt = cms.optional.double,
+      minInvMassOverDR = cms.optional.double,
+      maxInvMassOverDR = cms.optional.double,
       os = cms.bool(False),
       ss = cms.bool(False)
     ),
-    delta13 = cms.PSet(
+    correl13 = cms.PSet(
       minDEta = cms.optional.double,
       maxDEta = cms.optional.double,
       minDPhi = cms.optional.double,
@@ -140,10 +175,12 @@ def L1GTQuadObjectCond(**kwargs):
       maxTransMass = cms.optional.double,
       minCombPt = cms.optional.double,
       maxCombPt = cms.optional.double,
+      minInvMassOverDR = cms.optional.double,
+      maxInvMassOverDR = cms.optional.double,
       os = cms.bool(False),
       ss = cms.bool(False)
     ),
-    delta23 = cms.PSet(
+    correl23 = cms.PSet(
       minDEta = cms.optional.double,
       maxDEta = cms.optional.double,
       minDPhi = cms.optional.double,
@@ -158,10 +195,12 @@ def L1GTQuadObjectCond(**kwargs):
       maxTransMass = cms.optional.double,
       minCombPt = cms.optional.double,
       maxCombPt = cms.optional.double,
+      minInvMassOverDR = cms.optional.double,
+      maxInvMassOverDR = cms.optional.double,
       os = cms.bool(False),
       ss = cms.bool(False)
     ),
-    delta14 = cms.PSet(
+    correl14 = cms.PSet(
       minDEta = cms.optional.double,
       maxDEta = cms.optional.double,
       minDPhi = cms.optional.double,
@@ -176,10 +215,12 @@ def L1GTQuadObjectCond(**kwargs):
       maxTransMass = cms.optional.double,
       minCombPt = cms.optional.double,
       maxCombPt = cms.optional.double,
+      minInvMassOverDR = cms.optional.double,
+      maxInvMassOverDR = cms.optional.double,
       os = cms.bool(False),
       ss = cms.bool(False)
     ),
-    delta24 = cms.PSet(
+    correl24 = cms.PSet(
       minDEta = cms.optional.double,
       maxDEta = cms.optional.double,
       minDPhi = cms.optional.double,
@@ -194,10 +235,12 @@ def L1GTQuadObjectCond(**kwargs):
       maxTransMass = cms.optional.double,
       minCombPt = cms.optional.double,
       maxCombPt = cms.optional.double,
+      minInvMassOverDR = cms.optional.double,
+      maxInvMassOverDR = cms.optional.double,
       os = cms.bool(False),
       ss = cms.bool(False)
     ),
-    delta34 = cms.PSet(
+    correl34 = cms.PSet(
       minDEta = cms.optional.double,
       maxDEta = cms.optional.double,
       minDPhi = cms.optional.double,
@@ -212,8 +255,34 @@ def L1GTQuadObjectCond(**kwargs):
       maxTransMass = cms.optional.double,
       minCombPt = cms.optional.double,
       maxCombPt = cms.optional.double,
+      minInvMassOverDR = cms.optional.double,
+      maxInvMassOverDR = cms.optional.double,
       os = cms.bool(False),
       ss = cms.bool(False)
+    ),
+    correl123 = cms.PSet(
+      minInvMass = cms.optional.double,
+      maxInvMass = cms.optional.double,
+      minTransMass = cms.optional.double,
+      maxTransMass = cms.optional.double
+    ),
+    correl124 = cms.PSet(
+      minInvMass = cms.optional.double,
+      maxInvMass = cms.optional.double,
+      minTransMass = cms.optional.double,
+      maxTransMass = cms.optional.double
+    ),
+    correl134 = cms.PSet(
+      minInvMass = cms.optional.double,
+      maxInvMass = cms.optional.double,
+      minTransMass = cms.optional.double,
+      maxTransMass = cms.optional.double
+    ),
+    correl234 = cms.PSet(
+      minInvMass = cms.optional.double,
+      maxInvMass = cms.optional.double,
+      minTransMass = cms.optional.double,
+      maxTransMass = cms.optional.double
     ),
     cosh_eta_lut = cms.PSet(
       lut = cms.required.vint32,

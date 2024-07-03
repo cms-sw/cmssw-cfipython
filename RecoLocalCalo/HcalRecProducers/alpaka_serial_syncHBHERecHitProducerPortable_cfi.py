@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_HBHERecHitProducerPortable import alpaka_serial_sync_HBHERecHitProducerPortable
+
+alpaka_serial_syncHBHERecHitProducerPortable = alpaka_serial_sync_HBHERecHitProducerPortable()

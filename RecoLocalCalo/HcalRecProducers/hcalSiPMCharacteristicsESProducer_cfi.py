@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HcalSiPMCharacteristicsESProducer_alpaka import HcalSiPMCharacteristicsESProducer_alpaka
+
+hcalSiPMCharacteristicsESProducer = HcalSiPMCharacteristicsESProducer_alpaka()

@@ -15,6 +15,7 @@ def Primary4DVertexValidation(**kwargs):
     timeSrc = cms.InputTag('trackExtenderWithMTD', 'generalTracktmtd'),
     sigmaSrc = cms.InputTag('trackExtenderWithMTD', 'generalTracksigmatmtd'),
     t0PID = cms.InputTag('tofPID', 't0'),
+    sigmat0PID = cms.InputTag('tofPID', 'sigmat0'),
     t0SafePID = cms.InputTag('tofPID', 't0safe'),
     sigmat0SafePID = cms.InputTag('tofPID', 'sigmat0safe'),
     trackMVAQual = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),

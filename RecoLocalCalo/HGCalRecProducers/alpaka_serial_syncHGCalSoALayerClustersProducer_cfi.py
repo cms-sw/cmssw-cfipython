@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_HGCalSoALayerClustersProducer import alpaka_serial_sync_HGCalSoALayerClustersProducer
+
+alpaka_serial_syncHGCalSoALayerClustersProducer = alpaka_serial_sync_HGCalSoALayerClustersProducer()

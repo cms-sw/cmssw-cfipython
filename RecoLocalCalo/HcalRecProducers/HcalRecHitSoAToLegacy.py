@@ -1,9 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GTNTupleProducer(**kwargs):
-  mod = cms.EDAnalyzer('L1GTNTupleProducer',
-    producerName = cms.required.string,
-    maxNTuples = cms.required.uint32,
+def HcalRecHitSoAToLegacy(**kwargs):
+  mod = cms.EDProducer('HcalRecHitSoAToLegacy',
+    src = cms.InputTag('hbheRecHitProducerPortable'),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
