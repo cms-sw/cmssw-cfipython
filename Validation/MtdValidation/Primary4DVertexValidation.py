@@ -26,11 +26,10 @@ def Primary4DVertexValidation(**kwargs):
     probK = cms.InputTag('tofPID', 'probK'),
     probP = cms.InputTag('tofPID', 'probP'),
     useOnlyChargedTracks = cms.bool(True),
-    debug = cms.untracked.bool(False),
     optionalPlots = cms.untracked.bool(False),
     use3dNoTime = cms.bool(False),
     trackweightTh = cms.double(0.5),
-    mvaTh = cms.double(0.01),
+    mvaTh = cms.double(0.8),
     minProbHeavy = cms.double(0.75),
     lineDensityPar = cms.vdouble(
       1.87,

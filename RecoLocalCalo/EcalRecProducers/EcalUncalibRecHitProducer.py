@@ -87,6 +87,8 @@ def EcalUncalibRecHitProducer(**kwargs):
       outOfTimeThresholdGain61mEE = cms.double(1000),
       amplitudeThresholdEB = cms.double(10),
       amplitudeThresholdEE = cms.double(10),
+      crossCorrelationUseSlewCorrectionEB = cms.bool(True),
+      crossCorrelationUseSlewCorrectionEE = cms.bool(False),
       crossCorrelationStartTime = cms.double(-25),
       crossCorrelationStopTime = cms.double(25),
       crossCorrelationTargetTimePrecision = cms.double(0.01),
