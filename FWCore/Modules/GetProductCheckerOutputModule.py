@@ -6,6 +6,7 @@ def GetProductCheckerOutputModule(**kwargs):
     SelectEvents = cms.untracked.PSet(
       SelectEvents = cms.optional.vstring
     ),
+    crosscheck = cms.untracked.vstring(),
     verbose = cms.untracked.bool(False)
   )
   for k,v in kwargs.items():
