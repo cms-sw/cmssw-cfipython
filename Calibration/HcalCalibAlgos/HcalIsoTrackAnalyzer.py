@@ -7,6 +7,7 @@ def HcalIsoTrackAnalyzer(**kwargs):
     useRaw = cms.untracked.int32(0),
     dataType = cms.untracked.int32(0),
     unCorrect = cms.untracked.int32(0),
+    fillInRange = cms.untracked.bool(False),
     isoTrackVarLabel = cms.InputTag('alcaHcalIsotrkProducer', 'HcalIsoTrack'),
     isoTrackEvtLabel = cms.InputTag('alcaHcalIsotrkProducer', 'HcalIsoTrackEvent'),
     debugEvents = cms.vint32(),

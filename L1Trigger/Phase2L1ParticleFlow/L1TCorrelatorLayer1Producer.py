@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def L1TCorrelatorLayer1Producer(**kwargs):
   mod = cms.EDProducer('L1TCorrelatorLayer1Producer',
     tracks = cms.InputTag(''),
-    muons = cms.InputTag('l1tSAMuonsGmt', 'promptSAMuons'),
+    muons = cms.InputTag('l1tSAMuonsGmt', 'prompt'),
     emClusters = cms.VInputTag(),
     hadClusters = cms.VInputTag(),
     vtxCollection = cms.InputTag('l1tVertexFinderEmulator', 'L1VerticesEmulation'),
