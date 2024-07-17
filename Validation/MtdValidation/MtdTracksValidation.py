@@ -28,6 +28,7 @@ def MtdTracksValidation(**kwargs):
     trackMVAQual = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
     outermostHitPositionSrc = cms.InputTag('trackExtenderWithMTD', 'generalTrackOutermostHitPosition'),
     trackMinimumPt = cms.double(0.7),
+    trackMaximumPt = cms.double(12),
     trackMaximumBtlEta = cms.double(1.5),
     trackMinimumEtlEta = cms.double(1.6),
     trackMaximumEtlEta = cms.double(3),
