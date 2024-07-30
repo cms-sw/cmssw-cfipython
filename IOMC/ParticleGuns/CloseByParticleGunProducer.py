@@ -5,10 +5,12 @@ def CloseByParticleGunProducer(**kwargs):
     AddAntiParticle = cms.bool(False),
     PGunParameters = cms.PSet(
       ControlledByEta = cms.bool(False),
+      ControlledByREta = cms.bool(False),
       Delta = cms.double(10),
       VarMax = cms.double(200),
       VarMin = cms.double(25),
       MaxVarSpread = cms.bool(False),
+      LogSpacedVar = cms.bool(False),
       FlatPtGeneration = cms.bool(False),
       MaxEta = cms.double(2.7),
       MaxPhi = cms.double(3.14159265359),
