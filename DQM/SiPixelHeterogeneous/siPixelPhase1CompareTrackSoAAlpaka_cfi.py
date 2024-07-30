@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .SiPixelPhase1CompareTrackSoAAlpaka import SiPixelPhase1CompareTrackSoAAlpaka
-
-siPixelPhase1CompareTrackSoAAlpaka = SiPixelPhase1CompareTrackSoAAlpaka()
