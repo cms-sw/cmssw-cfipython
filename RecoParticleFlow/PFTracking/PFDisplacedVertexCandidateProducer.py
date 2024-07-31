@@ -14,8 +14,7 @@ def PFDisplacedVertexCandidateProducer(**kwargs):
       nChi2_max = cms.double(5),
       pt_min = cms.double(0.2),
       pt_min_prim = cms.double(0.8),
-      dxy = cms.double(0.2),
-      qoverpError_max = cms.double(10000000)
+      dxy = cms.double(0.2)
     ),
     mightGet = cms.optional.untracked.vstring
   )
