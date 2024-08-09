@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelPhase2CompareRecHitsSoAAlpaka import SiPixelPhase2CompareRecHitsSoAAlpaka
+
+siPixelPhase2CompareRecHitsSoAAlpaka = SiPixelPhase2CompareRecHitsSoAAlpaka()

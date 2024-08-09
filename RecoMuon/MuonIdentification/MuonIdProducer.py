@@ -39,14 +39,7 @@ def MuonIdProducer(**kwargs):
         RPCHitCollectionLabel = cms.InputTag('rpcRecHits'),
         GEMHitCollectionLabel = cms.InputTag('gemRecHits'),
         ME0HitCollectionLabel = cms.InputTag('me0RecHits')
-      ),
-      UseEcalRecHitsFlag = cms.bool(False),
-      UseHcalRecHitsFlag = cms.bool(False),
-      UseHORecHitsFlag = cms.bool(False),
-      EcalRecHitThresh = cms.bool(False),
-      HcalCutsFromDB = cms.bool(False),
-      MaxSeverityHB = cms.int32(9),
-      MaxSeverityHE = cms.int32(9)
+      )
     ),
     mightGet = cms.optional.untracked.vstring
   )
