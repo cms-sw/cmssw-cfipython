@@ -31,6 +31,7 @@ def CentralityProducer(**kwargs):
     hfEtaCut = cms.double(4),
     midRapidityRange = cms.double(1),
     lowGainZDC = cms.bool(True),
+    isPhase2 = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
