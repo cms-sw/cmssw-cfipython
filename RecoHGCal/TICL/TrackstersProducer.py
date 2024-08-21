@@ -118,6 +118,7 @@ def TrackstersProducer(**kwargs):
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       computeLocalTime = cms.bool(False),
+      usePCACleaning = cms.bool(False),
       type = cms.string('CLUE3D')
     
     ),

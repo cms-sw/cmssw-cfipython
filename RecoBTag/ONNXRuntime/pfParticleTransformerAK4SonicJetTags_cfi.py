@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .ParticleTransformerAK4SonicJetTagsProducer import ParticleTransformerAK4SonicJetTagsProducer
+
+pfParticleTransformerAK4SonicJetTags = ParticleTransformerAK4SonicJetTagsProducer()
