@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PFRecoTauDiscriminationAgainstMuon2Container import PFRecoTauDiscriminationAgainstMuon2Container
+
+pfRecoTauDiscriminationAgainstMuon2Container = PFRecoTauDiscriminationAgainstMuon2Container()

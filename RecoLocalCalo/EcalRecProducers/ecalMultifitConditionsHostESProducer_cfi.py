@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalMultifitConditionsHostESProducer_alpaka import EcalMultifitConditionsHostESProducer_alpaka
+
+ecalMultifitConditionsHostESProducer = EcalMultifitConditionsHostESProducer_alpaka()

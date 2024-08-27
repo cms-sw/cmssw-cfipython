@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EgammaHLTRechitInRegionsProducer import EgammaHLTRechitInRegionsProducer
+
+hltRechitInRegionsProducerL1extraL1EmParticle = EgammaHLTRechitInRegionsProducer()

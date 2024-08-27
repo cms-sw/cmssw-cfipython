@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_BeamSpotDeviceProducer import alpaka_serial_sync_BeamSpotDeviceProducer
+
+alpaka_serial_syncBeamSpotDeviceProducer = alpaka_serial_sync_BeamSpotDeviceProducer()

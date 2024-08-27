@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HGCalSoARecHitsLayerClustersProducer_alpaka import HGCalSoARecHitsLayerClustersProducer_alpaka
+
+hgCalSoARecHitsLayerClustersProducer = HGCalSoARecHitsLayerClustersProducer_alpaka()

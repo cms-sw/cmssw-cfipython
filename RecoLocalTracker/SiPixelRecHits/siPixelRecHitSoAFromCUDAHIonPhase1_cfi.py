@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelRecHitSoAFromCUDAHIonPhase1 import SiPixelRecHitSoAFromCUDAHIonPhase1
+
+siPixelRecHitSoAFromCUDAHIonPhase1 = SiPixelRecHitSoAFromCUDAHIonPhase1()

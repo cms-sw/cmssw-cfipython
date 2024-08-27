@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TSToSCAssociatorByEnergyScoreProducer import TSToSCAssociatorByEnergyScoreProducer
+
+tracksterAssociatorByEnergyScore = TSToSCAssociatorByEnergyScoreProducer()

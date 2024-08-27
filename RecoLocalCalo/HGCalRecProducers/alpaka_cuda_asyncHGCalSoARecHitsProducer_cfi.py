@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_HGCalSoARecHitsProducer import alpaka_cuda_async_HGCalSoARecHitsProducer
+
+alpaka_cuda_asyncHGCalSoARecHitsProducer = alpaka_cuda_async_HGCalSoARecHitsProducer()

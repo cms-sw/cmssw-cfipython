@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_AlpakaTestDeviceAdditionModule import alpaka_rocm_async_AlpakaTestDeviceAdditionModule
+
+alpaka_rocm_asyncAlpakaTestDeviceAdditionModule = alpaka_rocm_async_AlpakaTestDeviceAdditionModule()

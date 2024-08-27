@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_HcalMahiConditionsESProducer import alpaka_rocm_async_HcalMahiConditionsESProducer
+
+alpaka_rocm_asyncHcalMahiConditionsESProducer = alpaka_rocm_async_HcalMahiConditionsESProducer()

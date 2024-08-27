@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTHcalQIE10DigisInRegionsProducer import HLTHcalQIE10DigisInRegionsProducer
+
+hltCaloObjInRegionsProducerQIE10DataFrameHcalDataFrameContainerQIE10DataFrame = HLTHcalQIE10DigisInRegionsProducer()

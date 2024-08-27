@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTEcalRecHitInAllL1RegionsProducer import HLTEcalRecHitInAllL1RegionsProducer
+
+hltRecHitInAllL1RegionsProducerEcalRecHit = HLTEcalRecHitInAllL1RegionsProducer()

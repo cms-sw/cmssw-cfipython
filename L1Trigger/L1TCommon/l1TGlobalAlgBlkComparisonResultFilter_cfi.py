@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TGlobalAlgBlkComparisonResultFilter import L1TGlobalAlgBlkComparisonResultFilter
+
+l1TGlobalAlgBlkComparisonResultFilter = L1TGlobalAlgBlkComparisonResultFilter()

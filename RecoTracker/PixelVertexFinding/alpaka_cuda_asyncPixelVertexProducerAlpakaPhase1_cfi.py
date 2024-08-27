@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_PixelVertexProducerAlpakaPhase1 import alpaka_cuda_async_PixelVertexProducerAlpakaPhase1
+
+alpaka_cuda_asyncPixelVertexProducerAlpakaPhase1 = alpaka_cuda_async_PixelVertexProducerAlpakaPhase1()

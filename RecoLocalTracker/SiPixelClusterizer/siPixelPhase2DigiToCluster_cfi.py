@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelPhase2DigiToCluster_alpaka import SiPixelPhase2DigiToCluster_alpaka
+
+siPixelPhase2DigiToCluster = SiPixelPhase2DigiToCluster_alpaka()

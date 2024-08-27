@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTCountNumberOfTrajectorySeed import HLTCountNumberOfTrajectorySeed
+
+hltCountNumberOfObjectEdmViewTrajectorySeed = HLTCountNumberOfTrajectorySeed()

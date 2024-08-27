@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelHIonPhase1CompareTrackSoA import SiPixelHIonPhase1CompareTrackSoA
+
+siPixelHIonPhase1CompareTrackSoA = SiPixelHIonPhase1CompareTrackSoA()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelPhase1RawDataErrorComparator import SiPixelPhase1RawDataErrorComparator
+
+siPixelPhase1RawDataErrorComparator = SiPixelPhase1RawDataErrorComparator()

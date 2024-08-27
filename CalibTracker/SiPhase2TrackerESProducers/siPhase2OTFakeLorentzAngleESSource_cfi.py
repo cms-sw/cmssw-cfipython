@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPhase2OuterTrackerFakeLorentzAngleESSource import SiPhase2OuterTrackerFakeLorentzAngleESSource
+
+siPhase2OTFakeLorentzAngleESSource = SiPhase2OuterTrackerFakeLorentzAngleESSource()

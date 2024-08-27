@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPhase2OuterTrackerLorentzAngleReader import SiPhase2OuterTrackerLorentzAngleReader
+
+siPhase2OuterTrackerLorentzAngleReader = SiPhase2OuterTrackerLorentzAngleReader()

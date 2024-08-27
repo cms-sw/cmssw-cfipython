@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelCablingSoAESProducer_alpaka import SiPixelCablingSoAESProducer_alpaka
+
+siPixelCablingSoAESProducer = SiPixelCablingSoAESProducer_alpaka()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PixelFitterByHelixProjectionsProducer import PixelFitterByHelixProjectionsProducer
+
+pixelFitterByHelixProjectionsDefault = PixelFitterByHelixProjectionsProducer()

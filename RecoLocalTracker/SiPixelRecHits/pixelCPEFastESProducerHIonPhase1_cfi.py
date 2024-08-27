@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PixelCPEFastESProducerHIonPhase1 import PixelCPEFastESProducerHIonPhase1
+
+pixelCPEFastESProducerHIonPhase1 = PixelCPEFastESProducerHIonPhase1()

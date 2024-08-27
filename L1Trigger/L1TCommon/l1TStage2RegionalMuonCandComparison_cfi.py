@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TStage2RegionalMuonCandComparison import L1TStage2RegionalMuonCandComparison
+
+l1TStage2RegionalMuonCandComparison = L1TStage2RegionalMuonCandComparison()

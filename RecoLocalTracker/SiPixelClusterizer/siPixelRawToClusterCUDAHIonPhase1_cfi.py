@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelRawToClusterCUDAHIonPhase1 import SiPixelRawToClusterCUDAHIonPhase1
+
+siPixelRawToClusterCUDAHIonPhase1 = SiPixelRawToClusterCUDAHIonPhase1()

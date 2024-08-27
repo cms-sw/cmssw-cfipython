@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Phase2OTValidateTrackingParticles import Phase2OTValidateTrackingParticles
+
+Phase2OTValidateTrackingParticles = Phase2OTValidateTrackingParticles()

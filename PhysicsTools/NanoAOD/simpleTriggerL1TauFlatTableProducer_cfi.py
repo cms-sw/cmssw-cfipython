@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1TauFlatTableProducer import SimpleTriggerL1TauFlatTableProducer
+
+simpleTriggerL1TauFlatTableProducer = SimpleTriggerL1TauFlatTableProducer()

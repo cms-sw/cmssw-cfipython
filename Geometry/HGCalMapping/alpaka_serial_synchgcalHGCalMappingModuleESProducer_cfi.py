@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_hgcal_HGCalMappingModuleESProducer import alpaka_serial_sync_hgcal_HGCalMappingModuleESProducer
+
+alpaka_serial_synchgcalHGCalMappingModuleESProducer = alpaka_serial_sync_hgcal_HGCalMappingModuleESProducer()

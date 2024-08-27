@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalUncalibRecHitConvertGPU2CPUFormat import EcalUncalibRecHitConvertGPU2CPUFormat
+
+ecalUncalibRecHitConvertGPU2CPUFormat = EcalUncalibRecHitConvertGPU2CPUFormat()

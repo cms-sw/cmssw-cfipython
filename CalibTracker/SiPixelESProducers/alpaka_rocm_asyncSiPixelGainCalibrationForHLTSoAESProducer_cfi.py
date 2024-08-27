@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer import alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer
+
+alpaka_rocm_asyncSiPixelGainCalibrationForHLTSoAESProducer = alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer()

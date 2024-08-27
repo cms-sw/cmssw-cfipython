@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleRun3ScoutingPhotonFlatTableProducer import SimpleRun3ScoutingPhotonFlatTableProducer
+
+simpleRun3ScoutingPhotonFlatTableProducer = SimpleRun3ScoutingPhotonFlatTableProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TestAlpakaStreamProducer import alpaka_rocm_async_TestAlpakaStreamProducer
+
+alpaka_rocm_asyncTestAlpakaStreamProducer = alpaka_rocm_async_TestAlpakaStreamProducer()

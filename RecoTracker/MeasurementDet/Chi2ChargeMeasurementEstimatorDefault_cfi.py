@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Chi2ChargeMeasurementEstimatorESProducer import Chi2ChargeMeasurementEstimatorESProducer
+
+Chi2ChargeMeasurementEstimatorDefault = Chi2ChargeMeasurementEstimatorESProducer()

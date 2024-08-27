@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PFRecHitHCALTopologyESProducer_alpaka import PFRecHitHCALTopologyESProducer_alpaka
+
+pfRecHitHCALTopologyESProducer = PFRecHitHCALTopologyESProducer_alpaka()

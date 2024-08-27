@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1JetFlatTableProducer import SimpleTriggerL1JetFlatTableProducer
+
+simpleTriggerL1JetFlatTableProducer = SimpleTriggerL1JetFlatTableProducer()

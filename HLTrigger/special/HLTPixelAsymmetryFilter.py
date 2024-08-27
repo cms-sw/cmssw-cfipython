@@ -1,0 +1,15 @@
+import FWCore.ParameterSet.Config as cms
+
+def HLTPixelAsymmetryFilter(**kwargs):
+  mod = cms.EDFilter('HLTPixelAsymmetryFilter',
+    saveTags = cms.bool(True),
+    inputTag = cms.InputTag('hltSiPixelClusters'),
+    MinAsym = cms.double(0),
+    MaxAsym = cms.double(1),
+    MinCharge = cms.double(4000),
+    MinBarrel = cms.double(10000),
+    mightGet = cms.optional.untracked.vstring
+  )
+  for k,v in kwargs.items():
+    setattr(mod, k, v)
+  return mod

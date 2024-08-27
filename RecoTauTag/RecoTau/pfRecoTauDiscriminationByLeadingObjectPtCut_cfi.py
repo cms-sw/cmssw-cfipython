@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PFRecoTauDiscriminationByLeadingObjectPtCut import PFRecoTauDiscriminationByLeadingObjectPtCut
+
+pfRecoTauDiscriminationByLeadingObjectPtCut = PFRecoTauDiscriminationByLeadingObjectPtCut()

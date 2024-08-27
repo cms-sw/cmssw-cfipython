@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L3MuonSumCaloPFIsolationProducer import L3MuonSumCaloPFIsolationProducer
+
+hltL3MuonSumCaloPFIsolationProducer = L3MuonSumCaloPFIsolationProducer()

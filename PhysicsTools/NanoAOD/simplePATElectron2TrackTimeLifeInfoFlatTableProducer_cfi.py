@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimplePATElectron2TrackTimeLifeInfoFlatTableProducer import SimplePATElectron2TrackTimeLifeInfoFlatTableProducer
+
+simplePATElectron2TrackTimeLifeInfoFlatTableProducer = SimplePATElectron2TrackTimeLifeInfoFlatTableProducer()

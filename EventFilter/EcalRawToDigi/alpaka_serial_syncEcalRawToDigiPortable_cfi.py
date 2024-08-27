@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_EcalRawToDigiPortable import alpaka_serial_sync_EcalRawToDigiPortable
+
+alpaka_serial_syncEcalRawToDigiPortable = alpaka_serial_sync_EcalRawToDigiPortable()
