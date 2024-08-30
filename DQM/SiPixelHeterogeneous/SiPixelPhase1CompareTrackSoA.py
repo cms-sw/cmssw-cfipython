@@ -7,7 +7,7 @@ def SiPixelPhase1CompareTrackSoA(**kwargs):
     topFolderName = cms.string('SiPixelHeterogeneous/PixelTrackCompareGPUvsCPU'),
     useQualityCut = cms.bool(True),
     minQuality = cms.string('loose'),
-    deltaR2cut = cms.double(0.04),
+    deltaR2cut = cms.double(0.0004),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
