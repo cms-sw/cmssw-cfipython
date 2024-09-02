@@ -6,6 +6,6 @@ siPixelPhase2CompareTrackSoA = cms.EDProducer('SiPixelPhase2CompareTrackSoA',
   topFolderName = cms.string('SiPixelHeterogeneous/PixelTrackCompareGPUvsCPU'),
   useQualityCut = cms.bool(True),
   minQuality = cms.string('loose'),
-  deltaR2cut = cms.double(0.04),
+  deltaR2cut = cms.double(0.0004),
   mightGet = cms.optional.untracked.vstring
 )
