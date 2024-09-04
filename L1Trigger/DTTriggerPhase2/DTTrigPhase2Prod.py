@@ -21,6 +21,8 @@ def DTTrigPhase2Prod(**kwargs):
     minx_match_2digis = cms.double(1),
     scenario = cms.int32(0),
     df_extended = cms.int32(0),
+    co_option = cms.int32(0),
+    co_quality = cms.int32(0),
     max_primitives = cms.int32(999),
     output_mixer = cms.bool(False),
     output_latpredictor = cms.bool(False),
