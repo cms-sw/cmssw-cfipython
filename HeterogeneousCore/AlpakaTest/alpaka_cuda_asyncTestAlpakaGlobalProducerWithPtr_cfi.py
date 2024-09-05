@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_TestAlpakaGlobalProducerWithPtr import alpaka_cuda_async_TestAlpakaGlobalProducerWithPtr
+
+alpaka_cuda_asyncTestAlpakaGlobalProducerWithPtr = alpaka_cuda_async_TestAlpakaGlobalProducerWithPtr()
