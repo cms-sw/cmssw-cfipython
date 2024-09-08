@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .PixelVertexProducerAlpakaPhase1_alpaka import PixelVertexProducerAlpakaPhase1_alpaka
-
-pixelVertexProducerAlpakaPhase1 = PixelVertexProducerAlpakaPhase1_alpaka()
