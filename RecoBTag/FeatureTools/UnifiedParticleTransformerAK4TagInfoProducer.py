@@ -5,6 +5,7 @@ def UnifiedParticleTransformerAK4TagInfoProducer(**kwargs):
     jet_radius = cms.double(0.4),
     min_candidate_pt = cms.double(0.1),
     flip = cms.bool(False),
+    sort_cand_by_pt = cms.bool(False),
     fix_lt_sorting = cms.bool(False),
     vertices = cms.InputTag('offlinePrimaryVertices'),
     losttracks = cms.InputTag('lostTracks'),
