@@ -30,6 +30,8 @@ def L1GTSingleObjectCond(**kwargs):
     minPrimVertDz = cms.optional.double,
     maxPrimVertDz = cms.optional.double,
     primVertex = cms.optional.uint32,
+    minPtMultiplicityN = cms.uint32(0),
+    minPtMultiplicityCut = cms.optional.double,
     primVertTag = cms.required.InputTag,
     scales = cms.PSet(
       pT_lsb = cms.required.double,

@@ -30,7 +30,9 @@ def L1GTTripleObjectCond(**kwargs):
       regionsQualityFlags = cms.vuint32(),
       minPrimVertDz = cms.optional.double,
       maxPrimVertDz = cms.optional.double,
-      primVertex = cms.optional.uint32
+      primVertex = cms.optional.uint32,
+      minPtMultiplicityN = cms.uint32(0),
+      minPtMultiplicityCut = cms.optional.double
     ),
     collection2 = cms.PSet(
       tag = cms.required.InputTag,
@@ -60,7 +62,9 @@ def L1GTTripleObjectCond(**kwargs):
       regionsQualityFlags = cms.vuint32(),
       minPrimVertDz = cms.optional.double,
       maxPrimVertDz = cms.optional.double,
-      primVertex = cms.optional.uint32
+      primVertex = cms.optional.uint32,
+      minPtMultiplicityN = cms.uint32(0),
+      minPtMultiplicityCut = cms.optional.double
     ),
     collection3 = cms.PSet(
       tag = cms.required.InputTag,
@@ -90,7 +94,9 @@ def L1GTTripleObjectCond(**kwargs):
       regionsQualityFlags = cms.vuint32(),
       minPrimVertDz = cms.optional.double,
       maxPrimVertDz = cms.optional.double,
-      primVertex = cms.optional.uint32
+      primVertex = cms.optional.uint32,
+      minPtMultiplicityN = cms.uint32(0),
+      minPtMultiplicityCut = cms.optional.double
     ),
     scales = cms.PSet(
       pT_lsb = cms.required.double,

@@ -30,7 +30,9 @@ def L1GTDoubleObjectCond(**kwargs):
       regionsQualityFlags = cms.vuint32(),
       minPrimVertDz = cms.optional.double,
       maxPrimVertDz = cms.optional.double,
-      primVertex = cms.optional.uint32
+      primVertex = cms.optional.uint32,
+      minPtMultiplicityN = cms.uint32(0),
+      minPtMultiplicityCut = cms.optional.double
     ),
     collection2 = cms.PSet(
       tag = cms.required.InputTag,
@@ -60,7 +62,9 @@ def L1GTDoubleObjectCond(**kwargs):
       regionsQualityFlags = cms.vuint32(),
       minPrimVertDz = cms.optional.double,
       maxPrimVertDz = cms.optional.double,
-      primVertex = cms.optional.uint32
+      primVertex = cms.optional.uint32,
+      minPtMultiplicityN = cms.uint32(0),
+      minPtMultiplicityCut = cms.optional.double
     ),
     primVertTag = cms.required.InputTag,
     sanity_checks = cms.untracked.bool(False),
