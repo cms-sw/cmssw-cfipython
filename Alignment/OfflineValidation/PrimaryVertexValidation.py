@@ -36,6 +36,7 @@ def PrimaryVertexValidation(**kwargs):
       trackQuality = cms.string('any'),
       minPixelLayersWithHits = cms.int32(2),
       minSiliconLayersWithHits = cms.int32(5),
+      minValidStripHits = cms.int32(0),
       numTracksThreshold = cms.int32(0)
     ),
     TkClusParameters = cms.PSet(
