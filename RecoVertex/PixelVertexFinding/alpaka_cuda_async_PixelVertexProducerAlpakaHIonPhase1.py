@@ -11,6 +11,7 @@ def alpaka_cuda_async_PixelVertexProducerAlpakaHIonPhase1(**kwargs):
     eps = cms.double(0.07),
     errmax = cms.double(0.01),
     chi2max = cms.double(9),
+    maxVertices = cms.int32(256),
     PtMin = cms.double(0.5),
     PtMax = cms.double(75),
     pixelTrackSrc = cms.InputTag('pixelTracksAlpaka'),
