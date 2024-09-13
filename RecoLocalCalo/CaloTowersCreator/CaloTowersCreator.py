@@ -176,7 +176,6 @@ def CaloTowersCreator(**kwargs):
     EcalSeveritiesToBeUsedInBadTowers = cms.vstring(),
     HcalPhase = cms.int32(0),
     usePFThresholdsFromDB = cms.bool(True),
-    EcalRecHitThresh = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for k,v in kwargs.items():
