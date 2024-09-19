@@ -18,7 +18,7 @@ def UnifiedParticleTransformerAK4TagInfoProducer(**kwargs):
     fallback_puppi_weight = cms.bool(False),
     fallback_vertex_association = cms.bool(False),
     is_weighted_jet = cms.bool(False),
-    min_jet_pt = cms.double(0),
+    min_jet_pt = cms.double(15),
     max_jet_eta = cms.double(2.5),
     mightGet = cms.optional.untracked.vstring
   )
