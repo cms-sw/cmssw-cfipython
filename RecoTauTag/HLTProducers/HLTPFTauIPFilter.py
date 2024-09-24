@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFTauIPFilter(**kwargs):
+def HLTPFTauIPFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPFTauIPFilter',
     saveTags = cms.bool(True),
     Taus = cms.InputTag('hltTauCollection'),
@@ -10,6 +10,7 @@ def HLTPFTauIPFilter(**kwargs):
     Cut = cms.string('dxy > -999.'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationByIsolation(**kwargs):
+def PFRecoTauDiscriminationByIsolation(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationByIsolation',
     storeRawFootprintCorrection = cms.bool(False),
     PFTauProducer = cms.InputTag('pfRecoTauProducer'),
@@ -100,6 +100,7 @@ def PFRecoTauDiscriminationByIsolation(**kwargs):
     particleFlowSrc = cms.InputTag('particleFlow'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

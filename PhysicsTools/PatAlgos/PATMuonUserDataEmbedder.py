@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATMuonUserDataEmbedder(**kwargs):
+def PATMuonUserDataEmbedder(*args, **kwargs):
   mod = cms.EDProducer('PATMuonUserDataEmbedder',
     src = cms.required.InputTag,
     parentSrcs = cms.VInputTag(),
@@ -18,6 +18,7 @@ def PATMuonUserDataEmbedder(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

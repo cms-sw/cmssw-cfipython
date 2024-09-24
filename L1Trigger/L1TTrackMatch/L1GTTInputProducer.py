@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GTTInputProducer(**kwargs):
+def L1GTTInputProducer(*args, **kwargs):
   mod = cms.EDProducer('L1GTTInputProducer',
     debug = cms.int32(0),
     l1TracksInputTag = cms.InputTag('TTTracksFromTrackletEmulation', 'Level1TTTracks'),
@@ -8,6 +8,7 @@ def L1GTTInputProducer(**kwargs):
     setTrackWordBits = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

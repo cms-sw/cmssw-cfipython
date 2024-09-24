@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenProtonTableProducer(**kwargs):
+def GenProtonTableProducer(*args, **kwargs):
   mod = cms.EDProducer('GenProtonTableProducer',
     srcPruned = cms.InputTag('prunedGenParticles'),
     srcPUProtons = cms.InputTag('genPUProtons'),
@@ -11,6 +11,7 @@ def GenProtonTableProducer(**kwargs):
     tolerance = cms.double(0.001),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

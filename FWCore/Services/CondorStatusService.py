@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CondorStatusService(**kwargs):
+def CondorStatusService(*args, **kwargs):
   mod = cms.Service('CondorStatusService',
     updateIntervalSeconds = cms.untracked.uint32(180),
     debug = cms.untracked.bool(False),
@@ -8,6 +8,7 @@ def CondorStatusService(**kwargs):
     tag = cms.optional.untracked.string,
     enable = cms.untracked.bool(True)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

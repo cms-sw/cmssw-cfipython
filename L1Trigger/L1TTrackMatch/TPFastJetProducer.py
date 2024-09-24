@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TPFastJetProducer(**kwargs):
+def TPFastJetProducer(*args, **kwargs):
   mod = cms.EDProducer('TPFastJetProducer',
     TrackingParticleInputTag = cms.InputTag('mix', 'MergedTrackTruth'),
     MCTruthStubInputTag = cms.InputTag('TTStubAssociatorFromPixelDigis', 'StubAccepted'),
@@ -12,6 +12,7 @@ def TPFastJetProducer(**kwargs):
     coneSize = cms.double(0.4),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

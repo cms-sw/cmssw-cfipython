@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PatJetDeepJetTableProducer(**kwargs):
+def PatJetDeepJetTableProducer(*args, **kwargs):
   mod = cms.EDProducer('PatJetDeepJetTableProducer',
     nameDeepJet = cms.string('Jet'),
     idx_nameDeepJet = cms.string('djIdx'),
@@ -11,6 +11,7 @@ def PatJetDeepJetTableProducer(**kwargs):
     tagInfo_src = cms.InputTag('pfDeepFlavourTagInfosPuppiWithDeepInfo'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

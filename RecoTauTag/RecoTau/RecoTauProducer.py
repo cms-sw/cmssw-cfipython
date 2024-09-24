@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecoTauProducer(**kwargs):
+def RecoTauProducer(*args, **kwargs):
   mod = cms.EDProducer('RecoTauProducer',
     piZeroSrc = cms.InputTag('ak4PFJetsRecoTauPiZeros'),
     modifiers = cms.required.VPSet,
@@ -24,6 +24,7 @@ def RecoTauProducer(**kwargs):
     verbosity = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

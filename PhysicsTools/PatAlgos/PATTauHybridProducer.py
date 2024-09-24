@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATTauHybridProducer(**kwargs):
+def PATTauHybridProducer(*args, **kwargs):
   mod = cms.EDProducer('PATTauHybridProducer',
     src = cms.InputTag('slimmedTaus'),
     jetSource = cms.InputTag('slimmedJetsUpdated'),
@@ -20,6 +20,7 @@ def PATTauHybridProducer(**kwargs):
     usePFLeptonsAsChargedHadrons = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

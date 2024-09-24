@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1BJetProducer(**kwargs):
+def L1BJetProducer(*args, **kwargs):
   mod = cms.EDProducer('L1BJetProducer',
     jets = cms.InputTag('scPFL1Puppi'),
     useRawPt = cms.bool(True),
@@ -14,6 +14,7 @@ def L1BJetProducer(**kwargs):
     vtx = cms.InputTag('L1VertexFinderEmulator', 'L1VerticesEmulation'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

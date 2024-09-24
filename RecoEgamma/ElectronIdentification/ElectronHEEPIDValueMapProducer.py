@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ElectronHEEPIDValueMapProducer(**kwargs):
+def ElectronHEEPIDValueMapProducer(*args, **kwargs):
   mod = cms.EDProducer('ElectronHEEPIDValueMapProducer',
     beamSpot = cms.InputTag('offlineBeamSpot'),
     ebRecHitsAOD = cms.InputTag('reducedEcalRecHitsEB'),
@@ -69,6 +69,7 @@ def ElectronHEEPIDValueMapProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

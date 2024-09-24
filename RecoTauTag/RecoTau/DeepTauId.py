@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DeepTauId(**kwargs):
+def DeepTauId(*args, **kwargs):
   mod = cms.EDProducer('DeepTauId',
     electrons = cms.InputTag('slimmedElectrons'),
     muons = cms.InputTag('slimmedMuons'),
@@ -34,6 +34,7 @@ def DeepTauId(**kwargs):
     graph_file = cms.vstring('RecoTauTag/TrainingFiles/data/DeepTauId/deepTau_2017v2p6_e6.pb'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

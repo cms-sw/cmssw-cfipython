@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATTauTimeLifeInfoProducer(**kwargs):
+def PATTauTimeLifeInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('PATTauTimeLifeInfoProducer',
     src = cms.InputTag('slimmedTaus'),
     pvSource = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -8,6 +8,7 @@ def PATTauTimeLifeInfoProducer(**kwargs):
     pvChoice = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecoTauDiscriminantCutMultiplexer(**kwargs):
+def RecoTauDiscriminantCutMultiplexer(*args, **kwargs):
   mod = cms.EDProducer('RecoTauDiscriminantCutMultiplexer',
     toMultiplex = cms.InputTag('fixme'),
     verbosity = cms.int32(0),
@@ -29,6 +29,7 @@ def RecoTauDiscriminantCutMultiplexer(**kwargs):
     mvaOutput_normalization = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def InitRootHandlers(**kwargs):
+def InitRootHandlers(*args, **kwargs):
   mod = cms.Service('InitRootHandlers',
     UnloadRootSigHandler = cms.untracked.bool(False),
     ResetRootErrHandler = cms.untracked.bool(True),
@@ -13,6 +13,7 @@ def InitRootHandlers(**kwargs):
     DebugLevel = cms.untracked.int32(0),
     StackTracePauseTime = cms.untracked.int32(300)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

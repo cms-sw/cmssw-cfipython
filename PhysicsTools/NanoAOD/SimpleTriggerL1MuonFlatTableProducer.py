@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimpleTriggerL1MuonFlatTableProducer(**kwargs):
+def SimpleTriggerL1MuonFlatTableProducer(*args, **kwargs):
   mod = cms.EDProducer('SimpleTriggerL1MuonFlatTableProducer',
     name = cms.required.string,
     doc = cms.string(''),
@@ -22,6 +22,7 @@ def SimpleTriggerL1MuonFlatTableProducer(**kwargs):
     alwaysWriteBXValue = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

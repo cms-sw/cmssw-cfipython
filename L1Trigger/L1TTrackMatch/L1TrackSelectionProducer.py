@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TrackSelectionProducer(**kwargs):
+def L1TrackSelectionProducer(*args, **kwargs):
   mod = cms.EDProducer('L1TrackSelectionProducer',
     l1TracksInputTag = cms.InputTag('TTTracksFromTrackletEmulation', 'Level1TTTracks'),
     outputCollectionName = cms.string('Level1TTTracksSelected'),
@@ -26,6 +26,7 @@ def L1TrackSelectionProducer(**kwargs):
     debug = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

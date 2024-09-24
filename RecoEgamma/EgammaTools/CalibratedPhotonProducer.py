@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CalibratedPhotonProducer(**kwargs):
+def CalibratedPhotonProducer(*args, **kwargs):
   mod = cms.EDProducer('CalibratedPhotonProducer',
     src = cms.InputTag('gedGsfElectrons'),
     recHitCollectionEB = cms.InputTag('reducedEcalRecHitsEB'),
@@ -34,6 +34,7 @@ def CalibratedPhotonProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

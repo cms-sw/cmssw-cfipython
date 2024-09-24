@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TSGForOIFromL2(**kwargs):
+def TSGForOIFromL2(*args, **kwargs):
   mod = cms.EDProducer('TSGForOIFromL2',
     src = cms.InputTag('hltL2Muons', 'UpdatedAtVtx'),
     layersToTry = cms.int32(2),
@@ -44,6 +44,7 @@ def TSGForOIFromL2(**kwargs):
     propagatorName = cms.string('PropagatorWithMaterialParabolicMf'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PatPhotonDRNCorrectionProducer(**kwargs):
+def PatPhotonDRNCorrectionProducer(*args, **kwargs):
   mod = cms.EDProducer('PatPhotonDRNCorrectionProducer',
     Client = cms.PSet(
       mode = cms.string('PseudoAsync'),
@@ -23,6 +23,7 @@ def PatPhotonDRNCorrectionProducer(**kwargs):
     reducedEcalRecHitsES = cms.InputTag('reducedEcalRecHitsES'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

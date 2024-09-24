@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DeepCoreSeedGenerator(**kwargs):
+def DeepCoreSeedGenerator(*args, **kwargs):
   mod = cms.EDProducer('DeepCoreSeedGenerator',
     vertices = cms.InputTag('offlinePrimaryVertices'),
     pixelClusters = cms.InputTag('siPixelClustersPreSplitting'),
@@ -23,6 +23,7 @@ def DeepCoreSeedGenerator(**kwargs):
     probThr = cms.double(0.7),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

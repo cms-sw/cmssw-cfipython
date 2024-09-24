@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1HPSPFTauProducer(**kwargs):
+def L1HPSPFTauProducer(*args, **kwargs):
   mod = cms.EDProducer('L1HPSPFTauProducer',
     srcL1PFCands = cms.InputTag('l1tLayer1', 'Puppi'),
     nTaus = cms.int32(16),
@@ -10,6 +10,7 @@ def L1HPSPFTauProducer(**kwargs):
     srcL1PFJets = cms.InputTag('l1tPhase1JetCalibrator9x9trimmed', 'Phase1L1TJetFromPfCandidates'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

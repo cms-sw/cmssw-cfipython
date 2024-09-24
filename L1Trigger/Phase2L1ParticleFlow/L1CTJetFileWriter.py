@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1CTJetFileWriter(**kwargs):
+def L1CTJetFileWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('L1CTJetFileWriter',
     collections = cms.required.VPSet,
     outputFilename = cms.required.string,
@@ -13,6 +13,7 @@ def L1CTJetFileWriter(**kwargs):
     format = cms.string('EMPv2'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

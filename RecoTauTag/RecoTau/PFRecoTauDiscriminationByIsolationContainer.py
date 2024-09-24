@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationByIsolationContainer(**kwargs):
+def PFRecoTauDiscriminationByIsolationContainer(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationByIsolationContainer',
     PFTauProducer = cms.InputTag('pfRecoTauProducer'),
     qualityCuts = cms.PSet(
@@ -83,6 +83,7 @@ def PFRecoTauDiscriminationByIsolationContainer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

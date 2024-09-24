@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ProtonProducer(**kwargs):
+def ProtonProducer(*args, **kwargs):
   mod = cms.EDProducer('ProtonProducer',
     tagRecoProtonsMulti = cms.required.InputTag,
     tagRecoProtonsSingle = cms.required.InputTag,
@@ -8,6 +8,7 @@ def ProtonProducer(**kwargs):
     storeSingleRPProtons = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

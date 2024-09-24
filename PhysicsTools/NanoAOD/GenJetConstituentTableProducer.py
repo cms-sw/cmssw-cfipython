@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenJetConstituentTableProducer(**kwargs):
+def GenJetConstituentTableProducer(*args, **kwargs):
   mod = cms.EDProducer('GenJetConstituentTableProducer',
     name = cms.string('JetPFCands'),
     nameSV = cms.string('JetSV'),
@@ -14,6 +14,7 @@ def GenJetConstituentTableProducer(**kwargs):
     secondary_vertices = cms.InputTag('slimmedSecondaryVertices'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

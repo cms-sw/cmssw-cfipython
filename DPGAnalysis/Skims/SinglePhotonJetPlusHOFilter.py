@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SinglePhotonJetPlusHOFilter(**kwargs):
+def SinglePhotonJetPlusHOFilter(*args, **kwargs):
   mod = cms.EDFilter('SinglePhotonJetPlusHOFilter',
     Ptcut = cms.double(90),
     Etacut = cms.double(1.5),
@@ -11,6 +11,7 @@ def SinglePhotonJetPlusHOFilter(**kwargs):
     Photons = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATRefitVertexProducer(**kwargs):
+def PATRefitVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('PATRefitVertexProducer',
     srcVertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
     srcCands = cms.InputTag('packedPFCandidates'),
@@ -12,6 +12,7 @@ def PATRefitVertexProducer(**kwargs):
     useEleKfTracks = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

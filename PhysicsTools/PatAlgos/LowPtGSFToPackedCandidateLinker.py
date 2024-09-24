@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LowPtGSFToPackedCandidateLinker(**kwargs):
+def LowPtGSFToPackedCandidateLinker(*args, **kwargs):
   mod = cms.EDProducer('LowPtGSFToPackedCandidateLinker',
     PFCandidates = cms.InputTag('particleFlow'),
     packedCandidates = cms.InputTag('packedPFCandidates'),
@@ -11,6 +11,7 @@ def LowPtGSFToPackedCandidateLinker(**kwargs):
     electrons = cms.InputTag('selectedPatLowPtElectrons'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

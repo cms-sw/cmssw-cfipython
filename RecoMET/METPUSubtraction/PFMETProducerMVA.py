@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFMETProducerMVA(**kwargs):
+def PFMETProducerMVA(*args, **kwargs):
   mod = cms.EDProducer('PFMETProducerMVA',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LHCInfoProducer(**kwargs):
+def LHCInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('LHCInfoProducer',
     lhcInfoLabel = cms.string(''),
     lhcInfoPerLSLabel = cms.string(''),
@@ -8,6 +8,7 @@ def LHCInfoProducer(**kwargs):
     useNewLHCInfo = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

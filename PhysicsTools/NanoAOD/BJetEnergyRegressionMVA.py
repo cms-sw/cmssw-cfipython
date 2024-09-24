@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BJetEnergyRegressionMVA(**kwargs):
+def BJetEnergyRegressionMVA(*args, **kwargs):
   mod = cms.EDProducer('BJetEnergyRegressionMVA',
     src = cms.required.InputTag,
     name = cms.required.string,
@@ -14,6 +14,7 @@ def BJetEnergyRegressionMVA(**kwargs):
     rhosrc = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

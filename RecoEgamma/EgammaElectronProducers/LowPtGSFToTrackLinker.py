@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def LowPtGSFToTrackLinker(**kwargs):
+def LowPtGSFToTrackLinker(*args, **kwargs):
   mod = cms.EDProducer('LowPtGSFToTrackLinker',
     tracks = cms.InputTag('generalTracks'),
     gsfPreID = cms.InputTag('lowPtGsfElectronSeeds'),
     gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

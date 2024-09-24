@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackerTrackHitFilter(**kwargs):
+def TrackerTrackHitFilter(*args, **kwargs):
   mod = cms.EDProducer('TrackerTrackHitFilter',
     src = cms.InputTag('generalTracks'),
     minimumHits = cms.uint32(3),
@@ -30,6 +30,7 @@ def TrackerTrackHitFilter(**kwargs):
     StoNcommands = cms.vstring(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

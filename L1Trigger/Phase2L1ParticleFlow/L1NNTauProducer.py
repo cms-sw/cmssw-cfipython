@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1NNTauProducer(**kwargs):
+def L1NNTauProducer(*args, **kwargs):
   mod = cms.EDProducer('L1NNTauProducer',
     NNFileName = cms.string('L1Trigger/Phase2L1ParticleFlow/data/tau_3layer.pb'),
     tausize = cms.double(0.1),
@@ -14,6 +14,7 @@ def L1NNTauProducer(**kwargs):
     L1PFObjects = cms.InputTag('L1PFProducer', 'l1pfCandidates'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

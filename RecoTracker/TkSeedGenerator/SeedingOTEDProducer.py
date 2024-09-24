@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SeedingOTEDProducer(**kwargs):
+def SeedingOTEDProducer(*args, **kwargs):
   mod = cms.EDProducer('SeedingOTEDProducer',
     src = cms.InputTag('siPhase2VectorHits', 'accepted'),
     trackerEvent = cms.InputTag('MeasurementTrackerEvent'),
@@ -8,6 +8,7 @@ def SeedingOTEDProducer(**kwargs):
     updator = cms.string('KFUpdator'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

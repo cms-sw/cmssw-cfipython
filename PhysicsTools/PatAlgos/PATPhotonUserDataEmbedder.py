@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATPhotonUserDataEmbedder(**kwargs):
+def PATPhotonUserDataEmbedder(*args, **kwargs):
   mod = cms.EDProducer('PATPhotonUserDataEmbedder',
     src = cms.required.InputTag,
     parentSrcs = cms.VInputTag(),
@@ -18,6 +18,7 @@ def PATPhotonUserDataEmbedder(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

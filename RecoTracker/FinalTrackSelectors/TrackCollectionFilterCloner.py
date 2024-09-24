@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackCollectionFilterCloner(**kwargs):
+def TrackCollectionFilterCloner(*args, **kwargs):
   mod = cms.EDProducer('TrackCollectionFilterCloner',
     originalSource = cms.InputTag(''),
     originalMVAVals = cms.InputTag(''),
@@ -10,6 +10,7 @@ def TrackCollectionFilterCloner(**kwargs):
     copyTrajectories = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

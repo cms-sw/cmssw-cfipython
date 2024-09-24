@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFTauSelector(**kwargs):
+def PFTauSelector(*args, **kwargs):
   mod = cms.EDFilter('PFTauSelector',
     src = cms.InputTag('fixedConePFTauProducer'),
     cut = cms.string('pt > 0'),
@@ -14,6 +14,7 @@ def PFTauSelector(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

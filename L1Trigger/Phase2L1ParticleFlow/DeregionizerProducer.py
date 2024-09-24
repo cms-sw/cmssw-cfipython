@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DeregionizerProducer(**kwargs):
+def DeregionizerProducer(*args, **kwargs):
   mod = cms.EDProducer('DeregionizerProducer',
     RegionalPuppiCands = cms.InputTag('l1tLayer1', 'PuppiRegional'),
     nPuppiFinalBuffer = cms.uint32(128),
@@ -12,6 +12,7 @@ def DeregionizerProducer(**kwargs):
     linkConfigs = cms.required.VPSet,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackstersMergeProducer(**kwargs):
+def TrackstersMergeProducer(*args, **kwargs):
   mod = cms.EDProducer('TrackstersMergeProducer',
     linkingPSet = cms.PSet(
       cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
@@ -50,6 +50,7 @@ def TrackstersMergeProducer(**kwargs):
     eid_n_clusters = cms.int32(10),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

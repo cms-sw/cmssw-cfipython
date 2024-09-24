@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TauTagFilter(**kwargs):
+def TauTagFilter(*args, **kwargs):
   mod = cms.EDFilter('TauTagFilter',
     saveTags = cms.bool(True),
     nExpected = cms.int32(2),
@@ -22,6 +22,7 @@ def TauTagFilter(**kwargs):
     matchingdR = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

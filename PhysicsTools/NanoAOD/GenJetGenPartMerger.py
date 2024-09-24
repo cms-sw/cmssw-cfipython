@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenJetGenPartMerger(**kwargs):
+def GenJetGenPartMerger(*args, **kwargs):
   mod = cms.EDProducer('GenJetGenPartMerger',
     srcJet = cms.required.InputTag,
     srcPart = cms.required.InputTag,
@@ -8,6 +8,7 @@ def GenJetGenPartMerger(**kwargs):
     hasTauAnc = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

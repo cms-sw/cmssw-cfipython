@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATTracksToPackedCandidates(**kwargs):
+def PATTracksToPackedCandidates(*args, **kwargs):
   mod = cms.EDProducer('PATTracksToPackedCandidates',
     srcTracks = cms.InputTag('hiConformalPixelTracks'),
     srcPrimaryVertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -16,6 +16,7 @@ def PATTracksToPackedCandidates(**kwargs):
     covarianceSchema = cms.int32(520),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

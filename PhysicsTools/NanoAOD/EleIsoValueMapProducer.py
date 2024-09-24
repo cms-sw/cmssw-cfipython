@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EleIsoValueMapProducer(**kwargs):
+def EleIsoValueMapProducer(*args, **kwargs):
   mod = cms.EDProducer('EleIsoValueMapProducer',
     src = cms.required.InputTag,
     relative = cms.required.bool,
@@ -11,6 +11,7 @@ def EleIsoValueMapProducer(**kwargs):
     rho_PFIso = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

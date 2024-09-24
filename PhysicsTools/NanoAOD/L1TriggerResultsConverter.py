@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TriggerResultsConverter(**kwargs):
+def L1TriggerResultsConverter(*args, **kwargs):
   mod = cms.EDProducer('L1TriggerResultsConverter',
     legacyL1 = cms.required.bool,
     src = cms.required.InputTag,
@@ -8,6 +8,7 @@ def L1TriggerResultsConverter(**kwargs):
     src_ext = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

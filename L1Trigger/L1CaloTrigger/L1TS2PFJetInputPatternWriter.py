@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TS2PFJetInputPatternWriter(**kwargs):
+def L1TS2PFJetInputPatternWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('L1TS2PFJetInputPatternWriter',
     nPayloadFrames = cms.untracked.uint32(40),
     nHeaderFrames = cms.untracked.uint32(1),
@@ -11,6 +11,7 @@ def L1TS2PFJetInputPatternWriter(**kwargs):
     nQuads = cms.untracked.uint32(18),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

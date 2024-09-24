@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEDGsfElectronCoreProducer(**kwargs):
+def GEDGsfElectronCoreProducer(*args, **kwargs):
   mod = cms.EDProducer('GEDGsfElectronCoreProducer',
     ctfTracks = cms.InputTag('generalTracks'),
     GEDEMUnbiased = cms.InputTag('particleFlowEGamma'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

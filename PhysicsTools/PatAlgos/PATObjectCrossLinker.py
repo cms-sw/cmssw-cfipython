@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATObjectCrossLinker(**kwargs):
+def PATObjectCrossLinker(*args, **kwargs):
   mod = cms.EDProducer('PATObjectCrossLinker',
     jets = cms.required.InputTag,
     muons = cms.required.InputTag,
@@ -12,6 +12,7 @@ def PATObjectCrossLinker(**kwargs):
     vertices = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

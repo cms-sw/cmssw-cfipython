@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalElectronIDValueMapProducer(**kwargs):
+def HGCalElectronIDValueMapProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalElectronIDValueMapProducer',
     electrons = cms.InputTag('ecalDrivenGsfElectronsHGC'),
     pcaRadius = cms.double(3),
@@ -54,6 +54,7 @@ def HGCalElectronIDValueMapProducer(**kwargs):
     hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

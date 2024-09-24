@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EvaluateMuonMVAID(**kwargs):
+def EvaluateMuonMVAID(*args, **kwargs):
   mod = cms.EDProducer('EvaluateMuonMVAID',
     src = cms.required.InputTag,
     name = cms.required.string,
@@ -11,6 +11,7 @@ def EvaluateMuonMVAID(**kwargs):
     isClassifier = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer(**kwargs):
+def SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer(*args, **kwargs):
   mod = cms.EDProducer('SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer',
     seedingHitSets = cms.InputTag('hitPairEDProducer'),
     propagator = cms.string('PropagatorWithMaterialParabolicMf'),
@@ -15,6 +15,7 @@ def SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

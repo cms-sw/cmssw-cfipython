@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationByHPSSelection(**kwargs):
+def PFRecoTauDiscriminationByHPSSelection(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationByHPSSelection',
     PFTauProducer = cms.InputTag('combinatoricRecoTaus'),
     verbosity = cms.int32(0),
@@ -22,6 +22,7 @@ def PFRecoTauDiscriminationByHPSSelection(**kwargs):
     requireTauChargedHadronsToBeChargedPFCands = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

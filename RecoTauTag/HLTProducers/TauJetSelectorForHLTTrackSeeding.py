@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TauJetSelectorForHLTTrackSeeding(**kwargs):
+def TauJetSelectorForHLTTrackSeeding(*args, **kwargs):
   mod = cms.EDProducer('TauJetSelectorForHLTTrackSeeding',
     inputTrackJetTag = cms.InputTag('hltAntiKT5TrackJetsIter0'),
     inputCaloJetTag = cms.InputTag('hltAntiKT5CaloJetsPFEt5'),
@@ -16,6 +16,7 @@ def TauJetSelectorForHLTTrackSeeding(**kwargs):
     nTrkMaxInCaloCone = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

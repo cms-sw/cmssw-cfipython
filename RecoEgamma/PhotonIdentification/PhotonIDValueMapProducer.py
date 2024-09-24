@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PhotonIDValueMapProducer(**kwargs):
+def PhotonIDValueMapProducer(*args, **kwargs):
   mod = cms.EDProducer('PhotonIDValueMapProducer',
     particleBasedIsolation = cms.InputTag('particleBasedIsolation', 'gedPhotons'),
     src = cms.InputTag('slimmedPhotons', '', '@skipCurrentProcess'),
@@ -12,6 +12,7 @@ def PhotonIDValueMapProducer(**kwargs):
     isAOD = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

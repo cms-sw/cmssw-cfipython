@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PhotonMVANtuplizer(**kwargs):
+def PhotonMVANtuplizer(*args, **kwargs):
   mod = cms.EDAnalyzer('PhotonMVANtuplizer',
     src = cms.InputTag('slimmedPhotons'),
     vertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -22,6 +22,7 @@ def PhotonMVANtuplizer(**kwargs):
     variableDefinition = cms.required.string,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

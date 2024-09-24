@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecoTauPiZeroUnembedder(**kwargs):
+def RecoTauPiZeroUnembedder(*args, **kwargs):
   mod = cms.EDProducer('RecoTauPiZeroUnembedder',
     src = cms.InputTag('hpsPFTauProducerSansRefs'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

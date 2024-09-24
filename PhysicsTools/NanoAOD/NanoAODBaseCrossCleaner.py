@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def NanoAODBaseCrossCleaner(**kwargs):
+def NanoAODBaseCrossCleaner(*args, **kwargs):
   mod = cms.EDProducer('NanoAODBaseCrossCleaner',
     name = cms.required.string,
     doc = cms.required.string,
@@ -24,6 +24,7 @@ def NanoAODBaseCrossCleaner(**kwargs):
     photonName = cms.required.string,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

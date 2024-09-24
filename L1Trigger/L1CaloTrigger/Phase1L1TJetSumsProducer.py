@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase1L1TJetSumsProducer(**kwargs):
+def Phase1L1TJetSumsProducer(*args, **kwargs):
   mod = cms.EDProducer('Phase1L1TJetSumsProducer',
     inputJetCollectionTag = cms.InputTag('l1tPhase1JetCalibrator', 'Phase1L1TJetFromPfCandidates'),
     sinPhi = cms.required.vdouble,
@@ -16,6 +16,7 @@ def Phase1L1TJetSumsProducer(**kwargs):
     outputCollectionName = cms.string('Sums'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

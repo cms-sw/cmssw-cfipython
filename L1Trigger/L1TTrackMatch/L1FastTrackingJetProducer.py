@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1FastTrackingJetProducer(**kwargs):
+def L1FastTrackingJetProducer(*args, **kwargs):
   mod = cms.EDProducer('L1FastTrackingJetProducer',
     L1TrackInputTag = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
     L1PrimaryVertexTag = cms.string('L1Vertices'),
@@ -23,6 +23,7 @@ def L1FastTrackingJetProducer(**kwargs):
     selectTrkMatchGenOrPU = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

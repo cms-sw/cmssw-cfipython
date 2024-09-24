@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DisplacedMuonFilterProducer(**kwargs):
+def DisplacedMuonFilterProducer(*args, **kwargs):
   mod = cms.EDProducer('DisplacedMuonFilterProducer',
     srcMuons = cms.InputTag('displacedMuons'),
     FillTimingInfo = cms.bool(True),
@@ -15,6 +15,7 @@ def DisplacedMuonFilterProducer(**kwargs):
     minMatches = cms.double(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DisplacedRegionSeedingVertexProducer(**kwargs):
+def DisplacedRegionSeedingVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('DisplacedRegionSeedingVertexProducer',
     rParam = cms.double(1),
     minRadius = cms.double(-1),
@@ -19,6 +19,7 @@ def DisplacedRegionSeedingVertexProducer(**kwargs):
     trackClusters = cms.InputTag('generalV0Candidates', 'Kshort'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LowPtGsfElectronSCProducer(**kwargs):
+def LowPtGsfElectronSCProducer(*args, **kwargs):
   mod = cms.EDProducer('LowPtGsfElectronSCProducer',
     gsfPfRecTracks = cms.InputTag('lowPtGsfElePfGsfTracks'),
     ecalClusters = cms.InputTag('particleFlowClusterECAL'),
@@ -8,6 +8,7 @@ def LowPtGsfElectronSCProducer(**kwargs):
     MaxDeltaR2 = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

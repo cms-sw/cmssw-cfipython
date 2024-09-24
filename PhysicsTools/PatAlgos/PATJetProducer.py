@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATJetProducer(**kwargs):
+def PATJetProducer(*args, **kwargs):
   mod = cms.EDProducer('PATJetProducer',
     jetSource = cms.InputTag('no default'),
     embedCaloTowers = cms.bool(False),
@@ -57,6 +57,7 @@ def PATJetProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

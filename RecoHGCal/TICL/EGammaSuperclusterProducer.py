@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EGammaSuperclusterProducer(**kwargs):
+def EGammaSuperclusterProducer(*args, **kwargs):
   mod = cms.EDProducer('EGammaSuperclusterProducer',
     ticlSuperClusters = cms.InputTag('ticlTracksterLinksSuperclusteringDNN'),
     ticlTrackstersEM = cms.InputTag('ticlTrackstersCLUE3DHigh'),
@@ -10,6 +10,7 @@ def EGammaSuperclusterProducer(**kwargs):
     regressionModelPath = cms.FileInPath('RecoHGCal/TICL/data/superclustering/regression_v1.onnx'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ConversionTrackCandidateProducer(**kwargs):
+def ConversionTrackCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('ConversionTrackCandidateProducer',
     bcBarrelCollection = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowBasicClusterECALBarrel'),
     bcEndcapCollection = cms.InputTag('particleFlowSuperClusterECAL', 'particleFlowBasicClusterECALEndcap'),
@@ -68,6 +68,7 @@ def ConversionTrackCandidateProducer(**kwargs):
     MissingHitPenalty = cms.double(20),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

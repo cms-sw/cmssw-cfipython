@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IslandClusterProducer(**kwargs):
+def IslandClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('IslandClusterProducer',
     VerbosityLevel = cms.string('ERROR'),
     barrelHits = cms.InputTag('ecalRecHit', 'EcalRecHitsEB'),
@@ -27,6 +27,7 @@ def IslandClusterProducer(**kwargs):
     RecHitFlagToBeExcludedEE = cms.vstring(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

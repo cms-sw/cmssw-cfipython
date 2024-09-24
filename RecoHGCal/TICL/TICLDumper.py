@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TICLDumper(**kwargs):
+def TICLDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('TICLDumper',
     tracksterCollections = cms.required.VPSet,
     trackstersInCand = cms.InputTag('ticlTrackstersCLUE3DHigh'),
@@ -34,6 +34,7 @@ def TICLDumper(**kwargs):
     saveRecoSuperclusters = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

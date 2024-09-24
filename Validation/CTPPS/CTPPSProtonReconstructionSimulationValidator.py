@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSProtonReconstructionSimulationValidator(**kwargs):
+def CTPPSProtonReconstructionSimulationValidator(*args, **kwargs):
   mod = cms.EDAnalyzer('CTPPSProtonReconstructionSimulationValidator',
     lhcInfoLabel = cms.string(''),
     lhcInfoPerLSLabel = cms.string(''),
@@ -10,6 +10,7 @@ def CTPPSProtonReconstructionSimulationValidator(**kwargs):
     verbosity = cms.untracked.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

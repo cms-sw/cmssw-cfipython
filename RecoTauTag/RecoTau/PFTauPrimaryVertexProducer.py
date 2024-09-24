@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFTauPrimaryVertexProducer(**kwargs):
+def PFTauPrimaryVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('PFTauPrimaryVertexProducer',
     discriminators = cms.required.VPSet,
     qualityCuts = cms.PSet(
@@ -58,6 +58,7 @@ def PFTauPrimaryVertexProducer(**kwargs):
     PVTag = cms.InputTag('offlinePrimaryVertices'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

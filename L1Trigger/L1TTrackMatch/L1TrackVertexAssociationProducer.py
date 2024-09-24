@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TrackVertexAssociationProducer(**kwargs):
+def L1TrackVertexAssociationProducer(*args, **kwargs):
   mod = cms.EDProducer('L1TrackVertexAssociationProducer',
     l1TracksInputTag = cms.InputTag('l1tGTTInputProducer', 'Level1TTTracksConverted'),
     l1SelectedTracksInputTag = cms.InputTag('l1tTrackSelectionProducer', 'Level1TTTracksSelected'),
@@ -40,6 +40,7 @@ def L1TrackVertexAssociationProducer(**kwargs):
     debug = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

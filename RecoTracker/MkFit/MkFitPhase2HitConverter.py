@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def MkFitPhase2HitConverter(**kwargs):
+def MkFitPhase2HitConverter(*args, **kwargs):
   mod = cms.EDProducer('MkFitPhase2HitConverter',
     siPhase2Hits = cms.InputTag('siPhase2RecHits'),
     ttrhBuilder = cms.ESInputTag('', 'WithTrackAngle'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

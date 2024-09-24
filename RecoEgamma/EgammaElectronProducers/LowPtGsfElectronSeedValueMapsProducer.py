@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LowPtGsfElectronSeedValueMapsProducer(**kwargs):
+def LowPtGsfElectronSeedValueMapsProducer(*args, **kwargs):
   mod = cms.EDProducer('LowPtGsfElectronSeedValueMapsProducer',
     gsfTracks = cms.InputTag('lowPtGsfEleGsfTracks'),
     preIdsValueMap = cms.InputTag('lowPtGsfElectronSeeds'),
@@ -13,6 +13,7 @@ def LowPtGsfElectronSeedValueMapsProducer(**kwargs):
     floatValueMaps = cms.VInputTag(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

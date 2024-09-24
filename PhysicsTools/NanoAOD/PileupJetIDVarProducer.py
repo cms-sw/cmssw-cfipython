@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def PileupJetIDVarProducer(**kwargs):
+def PileupJetIDVarProducer(*args, **kwargs):
   mod = cms.EDProducer('PileupJetIDVarProducer',
     srcJet = cms.required.InputTag,
     srcPileupJetId = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

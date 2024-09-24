@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2TauJetsMerger(**kwargs):
+def L2TauJetsMerger(*args, **kwargs):
   mod = cms.EDProducer('L2TauJetsMerger',
     JetSrc = cms.VInputTag(
       'hltAkIsoTau1Regional',
@@ -11,6 +11,7 @@ def L2TauJetsMerger(**kwargs):
     EtMin = cms.double(20),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

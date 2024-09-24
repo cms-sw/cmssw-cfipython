@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2L1CaloJetEmulator(**kwargs):
+def Phase2L1CaloJetEmulator(*args, **kwargs):
   mod = cms.EDProducer('Phase2L1CaloJetEmulator',
     gctFullTowers = cms.InputTag('l1tPhase2L1CaloEGammaEmulator', 'GCTFullTowers'),
     hgcalTowers = cms.InputTag('l1tHGCalTowerProducer', 'HGCalTowerProcessor'),
@@ -744,6 +744,7 @@ def Phase2L1CaloJetEmulator(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

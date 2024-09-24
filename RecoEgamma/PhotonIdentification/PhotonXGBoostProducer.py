@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PhotonXGBoostProducer(**kwargs):
+def PhotonXGBoostProducer(*args, **kwargs):
   mod = cms.EDProducer('PhotonXGBoostProducer',
     candTag = cms.InputTag('hltEgammaCandidatesUnseeded'),
     inputTagR9 = cms.InputTag('hltEgammaR9IDUnseeded', 'r95x5'),
@@ -15,6 +15,7 @@ def PhotonXGBoostProducer(**kwargs):
     mvaThresholdEt = cms.double(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonBaseMVAValueMapProducer(**kwargs):
+def MuonBaseMVAValueMapProducer(*args, **kwargs):
   mod = cms.EDProducer('MuonBaseMVAValueMapProducer',
     src = cms.required.InputTag,
     name = cms.required.string,
@@ -11,6 +11,7 @@ def MuonBaseMVAValueMapProducer(**kwargs):
     isClassifier = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

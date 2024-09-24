@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TrackJetEmulatorProducer(**kwargs):
+def L1TrackJetEmulatorProducer(*args, **kwargs):
   mod = cms.EDProducer('L1TrackJetEmulatorProducer',
     L1TrackInputTag = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
     trk_zMax = cms.double(15),
@@ -20,6 +20,7 @@ def L1TrackJetEmulatorProducer(**kwargs):
     nDisplacedTracks = cms.int32(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

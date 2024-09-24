@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PatJetConstituentTableProducer(**kwargs):
+def PatJetConstituentTableProducer(*args, **kwargs):
   mod = cms.EDProducer('PatJetConstituentTableProducer',
     name = cms.string('JetPFCands'),
     nameSV = cms.string('JetSV'),
@@ -14,6 +14,7 @@ def PatJetConstituentTableProducer(**kwargs):
     secondary_vertices = cms.InputTag('slimmedSecondaryVertices'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalConcentratorProducer(**kwargs):
+def HGCalConcentratorProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalConcentratorProducer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

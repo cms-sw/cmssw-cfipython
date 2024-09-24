@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauChargedHadronProducer(**kwargs):
+def PFRecoTauChargedHadronProducer(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauChargedHadronProducer',
     ranking = cms.VPSet(
       cms.PSet(
@@ -26,6 +26,7 @@ def PFRecoTauChargedHadronProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

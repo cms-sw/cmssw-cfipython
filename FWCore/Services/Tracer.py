@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Tracer(**kwargs):
+def Tracer(*args, **kwargs):
   mod = cms.Service('Tracer',
     indention = cms.untracked.string('++'),
     dumpContextForLabels = cms.untracked.vstring(),
@@ -11,6 +11,7 @@ def Tracer(**kwargs):
     useMessageLogger = cms.untracked.bool(True),
     fileName = cms.untracked.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

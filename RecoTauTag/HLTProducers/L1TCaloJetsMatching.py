@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TCaloJetsMatching(**kwargs):
+def L1TCaloJetsMatching(*args, **kwargs):
   mod = cms.EDProducer('L1TCaloJetsMatching',
     L1JetTrigger = cms.InputTag('hltL1DiJetVBF'),
     JetSrc = cms.InputTag('hltAK4PFJetsTightIDCorrected'),
@@ -12,6 +12,7 @@ def L1TCaloJetsMatching(**kwargs):
     matchingR = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

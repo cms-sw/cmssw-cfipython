@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2TauTagFilter(**kwargs):
+def L2TauTagFilter(*args, **kwargs):
   mod = cms.EDFilter('L2TauTagFilter',
     saveTags = cms.bool(True),
     nExpected = cms.int32(2),
@@ -10,6 +10,7 @@ def L2TauTagFilter(**kwargs):
     l1TauPtThreshold = cms.double(250),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

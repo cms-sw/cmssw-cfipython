@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenWeightsTableProducer(**kwargs):
+def GenWeightsTableProducer(*args, **kwargs):
   mod = cms.EDProducer('GenWeightsTableProducer',
     genEvent = cms.InputTag('generator'),
     genLumiInfoHeader = cms.InputTag('generator'),
@@ -18,6 +18,7 @@ def GenWeightsTableProducer(**kwargs):
     debug = cms.optional.untracked.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

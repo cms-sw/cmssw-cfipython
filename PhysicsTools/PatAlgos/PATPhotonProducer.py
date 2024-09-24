@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATPhotonProducer(**kwargs):
+def PATPhotonProducer(*args, **kwargs):
   mod = cms.EDProducer('PATPhotonProducer',
     photonSource = cms.InputTag('no default'),
     electronSource = cms.InputTag('no default'),
@@ -74,6 +74,7 @@ def PATPhotonProducer(**kwargs):
     saveRegressionData = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

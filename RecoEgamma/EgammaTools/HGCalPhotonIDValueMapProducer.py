@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalPhotonIDValueMapProducer(**kwargs):
+def HGCalPhotonIDValueMapProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalPhotonIDValueMapProducer',
     photons = cms.InputTag('photonsHGC'),
     pcaRadius = cms.double(3),
@@ -46,6 +46,7 @@ def HGCalPhotonIDValueMapProducer(**kwargs):
     hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFTauDecayModeCutMultiplexer(**kwargs):
+def PFTauDecayModeCutMultiplexer(*args, **kwargs):
   mod = cms.EDProducer('PFTauDecayModeCutMultiplexer',
     PFTauDecayModeSrc = cms.required.InputTag,
     PFTauDiscriminantToMultiplex = cms.required.InputTag,
@@ -19,6 +19,7 @@ def PFTauDecayModeCutMultiplexer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

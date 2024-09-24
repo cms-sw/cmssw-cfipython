@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalMustacheSCParametersESProducer(**kwargs):
+def EcalMustacheSCParametersESProducer(*args, **kwargs):
   mod = cms.ESProducer('EcalMustacheSCParametersESProducer',
     sqrtLogClustETuning = cms.double(1.1),
     parabolaParameterSets = cms.VPSet(
@@ -37,6 +37,7 @@ def EcalMustacheSCParametersESProducer(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

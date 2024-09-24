@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiteLocalConfigService(**kwargs):
+def SiteLocalConfigService(*args, **kwargs):
   mod = cms.Service('SiteLocalConfigService',
     siteLocalConfigFileUrl = cms.untracked.string(''),
     overrideSourceCacheTempDir = cms.optional.untracked.string,
@@ -19,6 +19,7 @@ def SiteLocalConfigService(**kwargs):
     overrideLocalConnectPrefix = cms.optional.untracked.string,
     overrideLocalConnectSuffix = cms.optional.untracked.string
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

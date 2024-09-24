@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationAgainstMuon2Container(**kwargs):
+def PFRecoTauDiscriminationAgainstMuon2Container(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationAgainstMuon2Container',
     maskHitsRPC = cms.vint32(
       0,
@@ -65,6 +65,7 @@ def PFRecoTauDiscriminationAgainstMuon2Container(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

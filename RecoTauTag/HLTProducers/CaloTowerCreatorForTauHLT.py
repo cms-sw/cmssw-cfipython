@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CaloTowerCreatorForTauHLT(**kwargs):
+def CaloTowerCreatorForTauHLT(*args, **kwargs):
   mod = cms.EDProducer('CaloTowerCreatorForTauHLT',
     TauTrigger = cms.InputTag('l1extraParticles', 'Tau'),
     TauId = cms.int32(0),
@@ -11,6 +11,7 @@ def CaloTowerCreatorForTauHLT(**kwargs):
     verbose = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

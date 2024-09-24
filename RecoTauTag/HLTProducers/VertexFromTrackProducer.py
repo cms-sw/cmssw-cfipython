@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def VertexFromTrackProducer(**kwargs):
+def VertexFromTrackProducer(*args, **kwargs):
   mod = cms.EDProducer('VertexFromTrackProducer',
     isRecoCandidate = cms.bool(False),
     trackLabel = cms.InputTag('hltL3MuonCandidates'),
@@ -15,6 +15,7 @@ def VertexFromTrackProducer(**kwargs):
     verbose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

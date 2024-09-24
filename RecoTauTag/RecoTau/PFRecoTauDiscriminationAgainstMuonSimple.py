@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationAgainstMuonSimple(**kwargs):
+def PFRecoTauDiscriminationAgainstMuonSimple(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationAgainstMuonSimple',
     PFTauProducer = cms.InputTag('pfRecoTauProducer'),
     Prediscriminants = cms.PSet(
@@ -66,6 +66,7 @@ def PFRecoTauDiscriminationAgainstMuonSimple(**kwargs):
     verbosity = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

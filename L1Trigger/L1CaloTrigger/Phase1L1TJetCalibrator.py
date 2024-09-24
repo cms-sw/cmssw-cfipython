@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase1L1TJetCalibrator(**kwargs):
+def Phase1L1TJetCalibrator(*args, **kwargs):
   mod = cms.EDProducer('Phase1L1TJetCalibrator',
     inputCollectionTag = cms.InputTag('l1tPhase1JetProducer', 'UncalibratedPhase1L1TJetFromPfCandidates'),
     absEtaBinning = cms.required.vdouble,
@@ -9,6 +9,7 @@ def Phase1L1TJetCalibrator(**kwargs):
     outputCollectionName = cms.string('Phase1L1TJetFromPfCandidates'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TICLCandidateProducer(**kwargs):
+def TICLCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('TICLCandidateProducer',
     interpretationDescPSet = cms.PSet(
       cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
@@ -29,6 +29,7 @@ def TICLCandidateProducer(**kwargs):
     cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1SeedConePFJetProducer(**kwargs):
+def L1SeedConePFJetProducer(*args, **kwargs):
   mod = cms.EDProducer('L1SeedConePFJetProducer',
     L1PFObjects = cms.InputTag('l1tLayer1', 'Puppi'),
     nJets = cms.uint32(16),
@@ -12,6 +12,7 @@ def L1SeedConePFJetProducer(**kwargs):
     correctorDir = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

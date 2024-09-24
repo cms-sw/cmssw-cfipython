@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def CheckTransitions(**kwargs):
+def CheckTransitions(*args, **kwargs):
   mod = cms.Service('CheckTransitions',
     transitions = cms.untracked.VPSet(
       cms.PSet()
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

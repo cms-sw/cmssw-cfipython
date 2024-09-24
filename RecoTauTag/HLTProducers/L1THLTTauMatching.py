@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1THLTTauMatching(**kwargs):
+def L1THLTTauMatching(*args, **kwargs):
   mod = cms.EDProducer('L1THLTTauMatching',
     L1TauTrigger = cms.InputTag('hltL1sDoubleIsoTau40er'),
     JetSrc = cms.InputTag('hltSelectedPFTausTrackPt1MediumIsolationReg'),
@@ -9,6 +9,7 @@ def L1THLTTauMatching(**kwargs):
     KeepOriginalVertex = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

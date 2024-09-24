@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TauSpinnerTableProducer(**kwargs):
+def TauSpinnerTableProducer(*args, **kwargs):
   mod = cms.EDProducer('TauSpinnerTableProducer',
     src = cms.required.InputTag,
     name = cms.required.string,
@@ -9,6 +9,7 @@ def TauSpinnerTableProducer(**kwargs):
     defaultWeight = cms.double(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

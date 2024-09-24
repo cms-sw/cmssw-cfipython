@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MTDSoAProducer(**kwargs):
+def MTDSoAProducer(*args, **kwargs):
   mod = cms.EDProducer('MTDSoAProducer',
     tracksSrc = cms.InputTag('generalTracks'),
     trackAssocSrc = cms.InputTag('trackExtenderWithMTD', 'generalTrackassoc'),
@@ -18,6 +18,7 @@ def MTDSoAProducer(**kwargs):
     probP = cms.InputTag('tofPID', 'probP'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

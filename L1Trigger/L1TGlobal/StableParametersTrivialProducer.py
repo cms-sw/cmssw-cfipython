@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def StableParametersTrivialProducer(**kwargs):
+def StableParametersTrivialProducer(*args, **kwargs):
   mod = cms.ESProducer('StableParametersTrivialProducer',
     TotalBxInEvent = cms.int32(5),
     NumberPhysTriggers = cms.uint32(512),
@@ -30,6 +30,7 @@ def StableParametersTrivialProducer(**kwargs):
     OrderConditionChip = cms.vint32(1),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

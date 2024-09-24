@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATTauDiscriminationByMVAIsolationRun2(**kwargs):
+def PATTauDiscriminationByMVAIsolationRun2(*args, **kwargs):
   mod = cms.EDProducer('PATTauDiscriminationByMVAIsolationRun2',
     mvaName = cms.required.string,
     loadMVAfromDB = cms.required.bool,
@@ -26,6 +26,7 @@ def PATTauDiscriminationByMVAIsolationRun2(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

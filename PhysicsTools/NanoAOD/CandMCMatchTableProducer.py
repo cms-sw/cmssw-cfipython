@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CandMCMatchTableProducer(**kwargs):
+def CandMCMatchTableProducer(*args, **kwargs):
   mod = cms.EDProducer('CandMCMatchTableProducer',
     objName = cms.required.string,
     branchName = cms.required.string,
@@ -14,6 +14,7 @@ def CandMCMatchTableProducer(**kwargs):
     genparticles = cms.optional.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

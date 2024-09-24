@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecoTauCleaner(**kwargs):
+def RecoTauCleaner(*args, **kwargs):
   mod = cms.EDProducer('RecoTauCleaner',
     outputSelection = cms.string(''),
     cleaners = cms.VPSet(
@@ -61,6 +61,7 @@ def RecoTauCleaner(**kwargs):
     src = cms.InputTag('combinatoricRecoTaus'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

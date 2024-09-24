@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GsfElectronCoreEcalDrivenProducer(**kwargs):
+def GsfElectronCoreEcalDrivenProducer(*args, **kwargs):
   mod = cms.EDProducer('GsfElectronCoreEcalDrivenProducer',
     gsfPfRecTracks = cms.InputTag('pfTrackElec'),
     gsfTracks = cms.InputTag('electronGsfTracks'),
@@ -9,6 +9,7 @@ def GsfElectronCoreEcalDrivenProducer(**kwargs):
     hgcalOnly = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

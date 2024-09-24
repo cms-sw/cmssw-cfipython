@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TGlobalSummary(**kwargs):
+def L1TGlobalSummary(*args, **kwargs):
   mod = cms.EDAnalyzer('L1TGlobalSummary',
     AlgInputTag = cms.InputTag(''),
     ExtInputTag = cms.InputTag(''),
@@ -14,6 +14,7 @@ def L1TGlobalSummary(**kwargs):
     psColumn = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

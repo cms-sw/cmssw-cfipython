@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ElectronMVANtuplizer(**kwargs):
+def ElectronMVANtuplizer(*args, **kwargs):
   mod = cms.EDAnalyzer('ElectronMVANtuplizer',
     src = cms.InputTag('slimmedElectrons'),
     vertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -22,6 +22,7 @@ def ElectronMVANtuplizer(**kwargs):
     eleMVACatLabels = cms.vstring(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

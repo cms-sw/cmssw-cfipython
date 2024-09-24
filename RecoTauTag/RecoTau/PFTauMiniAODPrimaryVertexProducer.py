@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFTauMiniAODPrimaryVertexProducer(**kwargs):
+def PFTauMiniAODPrimaryVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('PFTauMiniAODPrimaryVertexProducer',
     discriminators = cms.required.VPSet,
     qualityCuts = cms.PSet(
@@ -60,6 +60,7 @@ def PFTauMiniAODPrimaryVertexProducer(**kwargs):
     packedCandidatesTag = cms.InputTag('packedPFCandidates'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

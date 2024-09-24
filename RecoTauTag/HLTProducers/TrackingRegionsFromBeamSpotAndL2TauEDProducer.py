@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackingRegionsFromBeamSpotAndL2TauEDProducer(**kwargs):
+def TrackingRegionsFromBeamSpotAndL2TauEDProducer(*args, **kwargs):
   mod = cms.EDProducer('TrackingRegionsFromBeamSpotAndL2TauEDProducer',
     RegionPSet = cms.PSet(
       ptMin = cms.double(5),
@@ -19,6 +19,7 @@ def TrackingRegionsFromBeamSpotAndL2TauEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

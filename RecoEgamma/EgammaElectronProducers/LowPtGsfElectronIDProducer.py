@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LowPtGsfElectronIDProducer(**kwargs):
+def LowPtGsfElectronIDProducer(*args, **kwargs):
   mod = cms.EDProducer('LowPtGsfElectronIDProducer',
     useGsfToTrack = cms.bool(False),
     usePAT = cms.bool(False),
@@ -17,6 +17,7 @@ def LowPtGsfElectronIDProducer(**kwargs):
     Version = cms.string('V1'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

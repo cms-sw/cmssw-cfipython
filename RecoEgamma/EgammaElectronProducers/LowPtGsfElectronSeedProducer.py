@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LowPtGsfElectronSeedProducer(**kwargs):
+def LowPtGsfElectronSeedProducer(*args, **kwargs):
   mod = cms.EDProducer('LowPtGsfElectronSeedProducer',
     tracks = cms.InputTag('generalTracks'),
     pfTracks = cms.InputTag('lowPtGsfElePfTracks'),
@@ -22,6 +22,7 @@ def LowPtGsfElectronSeedProducer(**kwargs):
     MaxPtThreshold = cms.double(15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

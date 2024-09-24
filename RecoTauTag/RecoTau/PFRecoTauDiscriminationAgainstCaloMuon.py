@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationAgainstCaloMuon(**kwargs):
+def PFRecoTauDiscriminationAgainstCaloMuon(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationAgainstCaloMuon',
     srcHcalRecHits = cms.InputTag('hbhereco'),
     minLeadTrackPt = cms.double(15),
@@ -23,6 +23,7 @@ def PFRecoTauDiscriminationAgainstCaloMuon(**kwargs):
     maxEnEcal = cms.double(3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

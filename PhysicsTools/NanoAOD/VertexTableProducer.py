@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def VertexTableProducer(**kwargs):
+def VertexTableProducer(*args, **kwargs):
   mod = cms.EDProducer('VertexTableProducer',
     pvSrc = cms.required.InputTag,
     pfcSrc = cms.required.InputTag,
@@ -14,6 +14,7 @@ def VertexTableProducer(**kwargs):
     svDoc = cms.required.string,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

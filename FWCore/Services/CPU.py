@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def CPU(**kwargs):
+def CPU(*args, **kwargs):
   mod = cms.Service('CPU',
     reportCPUProperties = cms.untracked.bool(False),
     disableJobReportOutput = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

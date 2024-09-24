@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSLHCInfoPlotter(**kwargs):
+def CTPPSLHCInfoPlotter(*args, **kwargs):
   mod = cms.EDAnalyzer('CTPPSLHCInfoPlotter',
     lhcInfoLabel = cms.string(''),
     lhcInfoPerLSLabel = cms.string(''),
@@ -9,6 +9,7 @@ def CTPPSLHCInfoPlotter(**kwargs):
     outputFile = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

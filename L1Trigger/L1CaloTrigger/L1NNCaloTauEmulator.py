@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1NNCaloTauEmulator(**kwargs):
+def L1NNCaloTauEmulator(*args, **kwargs):
   mod = cms.EDProducer('L1NNCaloTauEmulator',
     l1CaloTowers = cms.InputTag('l1tEGammaClusterEmuProducer', 'L1CaloTowerCollection'),
     hgcalTowers = cms.InputTag('l1tHGCalTowerProducer', 'HGCalTowerProcessor'),
@@ -57,6 +57,7 @@ def L1NNCaloTauEmulator(**kwargs):
     DEBUG = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

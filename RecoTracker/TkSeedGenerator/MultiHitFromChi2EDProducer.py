@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MultiHitFromChi2EDProducer(**kwargs):
+def MultiHitFromChi2EDProducer(*args, **kwargs):
   mod = cms.EDProducer('MultiHitFromChi2EDProducer',
     doublets = cms.InputTag('hitPairEDProducer'),
     maxElement = cms.uint32(1000000),
@@ -36,6 +36,7 @@ def MultiHitFromChi2EDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

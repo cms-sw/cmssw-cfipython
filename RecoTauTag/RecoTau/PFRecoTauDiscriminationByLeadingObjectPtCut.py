@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationByLeadingObjectPtCut(**kwargs):
+def PFRecoTauDiscriminationByLeadingObjectPtCut(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationByLeadingObjectPtCut',
     MinPtLeadingObject = cms.double(5),
     Prediscriminants = cms.PSet(
@@ -10,6 +10,7 @@ def PFRecoTauDiscriminationByLeadingObjectPtCut(**kwargs):
     PFTauProducer = cms.InputTag('pfRecoTauProducer'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

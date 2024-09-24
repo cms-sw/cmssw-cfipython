@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2TauNNProducerAlpaka(**kwargs):
+def L2TauNNProducerAlpaka(*args, **kwargs):
   mod = cms.EDProducer('L2TauNNProducerAlpaka',
     debugLevel = cms.int32(0),
     L1Taus = cms.VPSet(
@@ -26,6 +26,7 @@ def L2TauNNProducerAlpaka(**kwargs):
     normalizationDict = cms.string('RecoTauTag/TrainingFiles/data/L2TauNNTag/NormalizationDict.json'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

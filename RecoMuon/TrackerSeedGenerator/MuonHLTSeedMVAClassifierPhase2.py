@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonHLTSeedMVAClassifierPhase2(**kwargs):
+def MuonHLTSeedMVAClassifierPhase2(*args, **kwargs):
   mod = cms.EDProducer('MuonHLTSeedMVAClassifierPhase2',
     src = cms.InputTag('hltIter2Phase2L3FromL1TkMuonPixelSeeds'),
     L1TkMu = cms.InputTag('L1TkMuons', 'Muon'),
@@ -67,6 +67,7 @@ def MuonHLTSeedMVAClassifierPhase2(**kwargs):
     baseScore = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

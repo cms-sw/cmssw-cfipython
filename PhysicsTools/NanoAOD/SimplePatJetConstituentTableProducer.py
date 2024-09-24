@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimplePatJetConstituentTableProducer(**kwargs):
+def SimplePatJetConstituentTableProducer(*args, **kwargs):
   mod = cms.EDProducer('SimplePatJetConstituentTableProducer',
     name = cms.string('FatJetPFCand'),
     candIdxName = cms.string('PFCandIdx'),
@@ -10,6 +10,7 @@ def SimplePatJetConstituentTableProducer(**kwargs):
     jetCut = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

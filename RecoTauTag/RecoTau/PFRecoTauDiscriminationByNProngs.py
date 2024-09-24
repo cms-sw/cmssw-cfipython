@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationByNProngs(**kwargs):
+def PFRecoTauDiscriminationByNProngs(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationByNProngs',
     qualityCuts = cms.PSet(
       signalQualityCuts = cms.PSet(
@@ -53,6 +53,7 @@ def PFRecoTauDiscriminationByNProngs(**kwargs):
     MaxN = cms.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

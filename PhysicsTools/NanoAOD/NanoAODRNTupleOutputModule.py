@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def NanoAODRNTupleOutputModule(**kwargs):
+def NanoAODRNTupleOutputModule(*args, **kwargs):
   mod = cms.OutputModule('NanoAODRNTupleOutputModule',
     fileName = cms.required.untracked.string,
     logicalFileName = cms.untracked.string(''),
@@ -21,6 +21,7 @@ def NanoAODRNTupleOutputModule(**kwargs):
     dataset = cms.untracked.PSet(),
     branches = cms.PSet()
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

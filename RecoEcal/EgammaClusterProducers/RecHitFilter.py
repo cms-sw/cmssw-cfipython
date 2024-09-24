@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecHitFilter(**kwargs):
+def RecHitFilter(*args, **kwargs):
   mod = cms.EDProducer('RecHitFilter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

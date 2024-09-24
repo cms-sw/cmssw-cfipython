@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFTauPairLeadTrackDzMatchFilter(**kwargs):
+def HLTPFTauPairLeadTrackDzMatchFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPFTauPairLeadTrackDzMatchFilter',
     saveTags = cms.bool(True),
     tauSrc = cms.InputTag('hltPFTaus'),
@@ -11,6 +11,7 @@ def HLTPFTauPairLeadTrackDzMatchFilter(**kwargs):
     triggerType = cms.int32(84),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

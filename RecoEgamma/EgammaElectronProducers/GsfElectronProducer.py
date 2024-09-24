@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GsfElectronProducer(**kwargs):
+def GsfElectronProducer(*args, **kwargs):
   mod = cms.EDProducer('GsfElectronProducer',
     gsfElectronCoresTag = cms.InputTag('ecalDrivenGsfElectronCores'),
     vtxTag = cms.InputTag('offlinePrimaryVertices'),
@@ -268,6 +268,7 @@ def GsfElectronProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

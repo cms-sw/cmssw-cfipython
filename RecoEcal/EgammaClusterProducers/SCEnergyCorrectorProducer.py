@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SCEnergyCorrectorProducer(**kwargs):
+def SCEnergyCorrectorProducer(*args, **kwargs):
   mod = cms.EDProducer('SCEnergyCorrectorProducer',
     correctorCfg = cms.PSet(
       isHLT = cms.bool(False),
@@ -30,6 +30,7 @@ def SCEnergyCorrectorProducer(**kwargs):
     inputSCs = cms.InputTag('particleFlowSuperClusterECAL'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

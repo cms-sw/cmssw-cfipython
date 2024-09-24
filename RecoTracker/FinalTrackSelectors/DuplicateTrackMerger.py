@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DuplicateTrackMerger(**kwargs):
+def DuplicateTrackMerger(*args, **kwargs):
   mod = cms.EDProducer('DuplicateTrackMerger',
     source = cms.InputTag(''),
     minDeltaR3d = cms.double(-4),
@@ -24,6 +24,7 @@ def DuplicateTrackMerger(**kwargs):
     chi2EstimatorName = cms.string('DuplicateTrackMergerChi2Est'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

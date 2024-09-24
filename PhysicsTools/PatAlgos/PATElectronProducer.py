@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATElectronProducer(**kwargs):
+def PATElectronProducer(*args, **kwargs):
   mod = cms.EDProducer('PATElectronProducer',
     pfCandidateMap = cms.InputTag('no default'),
     electronSource = cms.InputTag('no default'),
@@ -101,6 +101,7 @@ def PATElectronProducer(**kwargs):
     pvSrc = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

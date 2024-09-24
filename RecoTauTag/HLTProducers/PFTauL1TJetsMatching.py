@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFTauL1TJetsMatching(**kwargs):
+def PFTauL1TJetsMatching(*args, **kwargs):
   mod = cms.EDProducer('PFTauL1TJetsMatching',
     L1JetSrc = cms.InputTag('hltL1VBFDiJetOR'),
     TauSrc = cms.InputTag('hltSelectedPFTausTrackFindingLooseChargedIsolationAgainstMuon'),
@@ -9,6 +9,7 @@ def PFTauL1TJetsMatching(**kwargs):
     MinL1TPt = cms.double(115),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

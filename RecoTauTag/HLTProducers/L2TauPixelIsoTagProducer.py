@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2TauPixelIsoTagProducer(**kwargs):
+def L2TauPixelIsoTagProducer(*args, **kwargs):
   mod = cms.EDProducer('L2TauPixelIsoTagProducer',
     JetSrc = cms.InputTag('hltL2DiTauCaloJets'),
     BeamSpotSrc = cms.InputTag('hltOnlineBeamSpot'),
@@ -16,6 +16,7 @@ def L2TauPixelIsoTagProducer(**kwargs):
     TrackSrc = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

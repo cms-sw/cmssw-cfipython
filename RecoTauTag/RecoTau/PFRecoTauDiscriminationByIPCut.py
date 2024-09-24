@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationByIPCut(**kwargs):
+def PFRecoTauDiscriminationByIPCut(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationByIPCut',
     tausTIP = cms.InputTag('hltTauIPCollection'),
     cut = cms.string('abs(dxy) > -999.'),
@@ -18,6 +18,7 @@ def PFRecoTauDiscriminationByIPCut(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

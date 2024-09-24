@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TExtCondProducer(**kwargs):
+def L1TExtCondProducer(*args, **kwargs):
   mod = cms.EDProducer('L1TExtCondProducer',
     setBptxMinus = cms.bool(True),
     setBptxAND = cms.bool(True),
@@ -11,6 +11,7 @@ def L1TExtCondProducer(**kwargs):
     tcdsRecordLabel = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

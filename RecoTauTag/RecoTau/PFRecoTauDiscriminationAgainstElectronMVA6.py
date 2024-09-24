@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecoTauDiscriminationAgainstElectronMVA6(**kwargs):
+def PFRecoTauDiscriminationAgainstElectronMVA6(*args, **kwargs):
   mod = cms.EDProducer('PFRecoTauDiscriminationAgainstElectronMVA6',
     method = cms.string('BDTG'),
     loadMVAfromDB = cms.bool(True),
@@ -41,6 +41,7 @@ def PFRecoTauDiscriminationAgainstElectronMVA6(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

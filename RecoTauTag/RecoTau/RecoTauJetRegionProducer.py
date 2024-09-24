@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecoTauJetRegionProducer(**kwargs):
+def RecoTauJetRegionProducer(*args, **kwargs):
   mod = cms.EDProducer('RecoTauJetRegionProducer',
     src = cms.InputTag('ak4PFJets'),
     deltaR = cms.double(0.8),
@@ -11,6 +11,7 @@ def RecoTauJetRegionProducer(**kwargs):
     pfCandSrc = cms.InputTag('particleFlow'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

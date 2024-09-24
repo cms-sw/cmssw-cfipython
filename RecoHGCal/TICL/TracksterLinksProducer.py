@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TracksterLinksProducer(**kwargs):
+def TracksterLinksProducer(*args, **kwargs):
   mod = cms.EDProducer('TracksterLinksProducer',
     linkingPSet = cms.PSet(
       track_time_quality_threshold = cms.double(0.5),
@@ -49,6 +49,7 @@ def TracksterLinksProducer(**kwargs):
     propagator = cms.string('PropagatorWithMaterial'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFTICLProducer(**kwargs):
+def PFTICLProducer(*args, **kwargs):
   mod = cms.EDProducer('PFTICLProducer',
     ticlCandidateSrc = cms.InputTag('ticlTrackstersMerge'),
     trackTimeValueMap = cms.InputTag('tofPID', 't0'),
@@ -35,6 +35,7 @@ def PFTICLProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

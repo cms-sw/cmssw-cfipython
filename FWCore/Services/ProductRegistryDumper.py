@@ -1,7 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-def ProductRegistryDumper(**kwargs):
+def ProductRegistryDumper(*args, **kwargs):
   mod = cms.Service('ProductRegistryDumper')
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

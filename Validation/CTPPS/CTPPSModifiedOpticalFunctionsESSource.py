@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSModifiedOpticalFunctionsESSource(**kwargs):
+def CTPPSModifiedOpticalFunctionsESSource(*args, **kwargs):
   mod = cms.ESProducer('CTPPSModifiedOpticalFunctionsESSource',
     inputOpticsLabel = cms.string(''),
     outputOpticsLabel = cms.string('modified'),
@@ -12,6 +12,7 @@ def CTPPSModifiedOpticalFunctionsESSource(**kwargs):
     rpId_56_F = cms.uint32(0),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimpleRun3ScoutingMuonFlatTableProducer(**kwargs):
+def SimpleRun3ScoutingMuonFlatTableProducer(*args, **kwargs):
   mod = cms.EDProducer('SimpleRun3ScoutingMuonFlatTableProducer',
     name = cms.required.string,
     doc = cms.string(''),
@@ -22,6 +22,7 @@ def SimpleRun3ScoutingMuonFlatTableProducer(**kwargs):
     externalVariables = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

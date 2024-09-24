@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATPrimaryVertexCleaner(**kwargs):
+def PATPrimaryVertexCleaner(*args, **kwargs):
   mod = cms.EDFilter('PATPrimaryVertexCleaner',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod
