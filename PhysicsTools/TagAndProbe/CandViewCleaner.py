@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CandViewCleaner(**kwargs):
+def CandViewCleaner(*args, **kwargs):
   mod = cms.EDProducer('CandViewCleaner',
     srcObject = cms.required.InputTag,
     srcObjectsToRemove = cms.required.VInputTag,
@@ -9,6 +9,7 @@ def CandViewCleaner(**kwargs):
     srcObjectsToRemoveSelection = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

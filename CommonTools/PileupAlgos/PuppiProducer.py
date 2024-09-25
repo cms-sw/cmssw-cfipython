@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PuppiProducer(**kwargs):
+def PuppiProducer(*args, **kwargs):
   mod = cms.EDProducer('PuppiProducer',
     puppiDiagnostics = cms.bool(False),
     puppiNoLep = cms.bool(False),
@@ -60,6 +60,7 @@ def PuppiProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

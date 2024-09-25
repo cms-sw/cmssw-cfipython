@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TotemVFATRawToDigi(**kwargs):
+def TotemVFATRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('TotemVFATRawToDigi',
     rawDataTag = cms.InputTag(''),
     subSystem = cms.string(''),
@@ -25,6 +25,7 @@ def TotemVFATRawToDigi(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_cuda_async_EcalUncalibRecHitProducerPortable(**kwargs):
+def alpaka_cuda_async_EcalUncalibRecHitProducerPortable(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::EcalUncalibRecHitProducerPortable',
     digisLabelEB = cms.InputTag('ecalRawToDigiPortable', 'ebDigis'),
     digisLabelEE = cms.InputTag('ecalRawToDigiPortable', 'eeDigis'),
@@ -35,6 +35,7 @@ def alpaka_cuda_async_EcalUncalibRecHitProducerPortable(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelQualityProbabilitiesTestWriter(**kwargs):
+def SiPixelQualityProbabilitiesTestWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('SiPixelQualityProbabilitiesTestWriter',
     printDebug = cms.untracked.bool(True),
     record = cms.string('SiPixelStatusScenarioProbabilityRcd'),
@@ -8,6 +8,7 @@ def SiPixelQualityProbabilitiesTestWriter(**kwargs):
     probabilities = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def V0Monitor(**kwargs):
+def V0Monitor(*args, **kwargs):
   mod = cms.EDProducer('V0Monitor',
     FolderName = cms.string('Tracking/V0Monitoring'),
     v0 = cms.InputTag('generalV0Candidates', 'Kshort'),
@@ -77,6 +77,7 @@ def V0Monitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

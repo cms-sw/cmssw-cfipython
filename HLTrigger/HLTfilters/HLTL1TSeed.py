@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTL1TSeed(**kwargs):
+def HLTL1TSeed(*args, **kwargs):
   mod = cms.EDFilter('HLTL1TSeed',
     saveTags = cms.bool(True),
     L1SeedsLogicalExpression = cms.string(''),
@@ -15,6 +15,7 @@ def HLTL1TSeed(**kwargs):
     L1EtSumZdcInputTag = cms.InputTag('hltGtStage2Digis', 'EtSumZDC'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

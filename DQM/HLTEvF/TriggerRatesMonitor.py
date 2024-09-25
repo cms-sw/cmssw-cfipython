@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TriggerRatesMonitor(**kwargs):
+def TriggerRatesMonitor(*args, **kwargs):
   mod = cms.EDProducer('TriggerRatesMonitor',
     l1tResults = cms.untracked.InputTag('gtStage2Digis'),
     hltResults = cms.untracked.InputTag('TriggerResults'),
@@ -8,6 +8,7 @@ def TriggerRatesMonitor(**kwargs):
     lumisectionRange = cms.untracked.uint32(2500),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

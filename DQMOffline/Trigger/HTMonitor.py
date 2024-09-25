@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HTMonitor(**kwargs):
+def HTMonitor(*args, **kwargs):
   mod = cms.EDProducer('HTMonitor',
     FolderName = cms.string('HLT/HT'),
     requireValidHLTPaths = cms.bool(True),
@@ -154,6 +154,7 @@ def HTMonitor(**kwargs):
     quantity = cms.string('HT'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTMonitorTTStub(**kwargs):
+def Phase2OTMonitorTTStub(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorTTStub',
     TH2TTStub_Position = cms.PSet(
       Nbinsx = cms.int32(960),
@@ -86,6 +86,7 @@ def Phase2OTMonitorTTStub(**kwargs):
     TTStubs = cms.InputTag('TTStubsFromPhase2TrackerDigis', 'StubAccepted'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

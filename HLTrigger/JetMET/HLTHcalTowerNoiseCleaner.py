@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHcalTowerNoiseCleaner(**kwargs):
+def HLTHcalTowerNoiseCleaner(*args, **kwargs):
   mod = cms.EDProducer('HLTHcalTowerNoiseCleaner',
     HcalNoiseRBXCollection = cms.InputTag('hltHcalNoiseInfoProducer'),
     CaloTowerCollection = cms.InputTag('hltTowerMakerForAll'),
@@ -58,6 +58,7 @@ def HLTHcalTowerNoiseCleaner(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

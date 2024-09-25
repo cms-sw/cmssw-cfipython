@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelRawToClusterCUDAPhase1(**kwargs):
+def SiPixelRawToClusterCUDAPhase1(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRawToClusterCUDAPhase1',
     IncludeErrors = cms.bool(True),
     UseQualityInfo = cms.bool(False),
@@ -20,6 +20,7 @@ def SiPixelRawToClusterCUDAPhase1(**kwargs):
     CablingMapLabel = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

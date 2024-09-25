@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EventContentAnalyzer(**kwargs):
+def EventContentAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('EventContentAnalyzer',
     indentation = cms.untracked.string('++'),
     verbose = cms.untracked.bool(False),
@@ -13,6 +13,7 @@ def EventContentAnalyzer(**kwargs):
     listPathStatus = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

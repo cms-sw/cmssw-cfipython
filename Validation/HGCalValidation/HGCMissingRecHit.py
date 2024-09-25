@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCMissingRecHit(**kwargs):
+def HGCMissingRecHit(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCMissingRecHit',
     geometrySource = cms.vstring(
       'HGCalEESensitive',
@@ -24,6 +24,7 @@ def HGCMissingRecHit(**kwargs):
     ietaExcludeBH = cms.vint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

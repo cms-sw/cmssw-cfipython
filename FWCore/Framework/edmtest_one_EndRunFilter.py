@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_one_EndRunFilter(**kwargs):
+def edmtest_one_EndRunFilter(*args, **kwargs):
   mod = cms.EDFilter('edmtest::one::EndRunFilter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

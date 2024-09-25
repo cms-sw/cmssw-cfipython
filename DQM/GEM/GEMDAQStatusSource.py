@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMDAQStatusSource(**kwargs):
+def GEMDAQStatusSource(*args, **kwargs):
   mod = cms.EDProducer('GEMDAQStatusSource',
     VFATInputLabel = cms.InputTag('muonGEMDigis', 'VFATStatus'),
     OHInputLabel = cms.InputTag('muonGEMDigis', 'OHStatus'),
@@ -12,6 +12,7 @@ def GEMDAQStatusSource(**kwargs):
     useDBEMap = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

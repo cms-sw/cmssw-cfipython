@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimHitCaloHitDumper(**kwargs):
+def SimHitCaloHitDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('SimHitCaloHitDumper',
     TrackerHitsPixelBarrelLowTof = cms.InputTag('g4SimHits', 'TrackerHitsPixelBarrelLowTof'),
     TrackerHitsPixelBarrelHighTof = cms.InputTag('g4SimHits', 'TrackerHitsPixelBarrelHighTof'),
@@ -31,6 +31,7 @@ def SimHitCaloHitDumper(**kwargs):
     CastorBU = cms.InputTag('g4SimHits', 'CastorBU'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

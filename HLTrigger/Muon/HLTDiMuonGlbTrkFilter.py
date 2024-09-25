@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTDiMuonGlbTrkFilter(**kwargs):
+def HLTDiMuonGlbTrkFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTDiMuonGlbTrkFilter',
     saveTags = cms.bool(True),
     inputMuonCollection = cms.InputTag(''),
@@ -23,6 +23,7 @@ def HLTDiMuonGlbTrkFilter(**kwargs):
     maxdEtaMuMu = cms.double(1e+99),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

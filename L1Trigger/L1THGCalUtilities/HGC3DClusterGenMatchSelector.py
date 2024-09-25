@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGC3DClusterGenMatchSelector(**kwargs):
+def HGC3DClusterGenMatchSelector(*args, **kwargs):
   mod = cms.EDProducer('HGC3DClusterGenMatchSelector',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

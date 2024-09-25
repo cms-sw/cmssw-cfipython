@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2ITMonitorCluster(**kwargs):
+def Phase2ITMonitorCluster(*args, **kwargs):
   mod = cms.EDProducer('Phase2ITMonitorCluster',
     GlobalNClusters = cms.PSet(
       name = cms.string('NumberOfClusters'),
@@ -120,6 +120,7 @@ def Phase2ITMonitorCluster(**kwargs):
     InnerPixelClusterSource = cms.InputTag('siPixelClusters'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlcaBeamMonitor(**kwargs):
+def AlcaBeamMonitor(*args, **kwargs):
   mod = cms.EDProducer('AlcaBeamMonitor',
     MonitorName = cms.untracked.string('YourSubsystemName'),
     PrimaryVertexLabel = cms.required.untracked.InputTag,
@@ -56,6 +56,7 @@ def AlcaBeamMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

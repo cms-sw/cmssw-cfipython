@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFJetTimingProducer(**kwargs):
+def HLTPFJetTimingProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTPFJetTimingProducer',
     jets = cms.InputTag(''),
     barrelJets = cms.bool(False),
@@ -13,6 +13,7 @@ def HLTPFJetTimingProducer(**kwargs):
     eeRecHitsColl = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEE'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

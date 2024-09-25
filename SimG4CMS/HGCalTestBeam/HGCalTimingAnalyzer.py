@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTimingAnalyzer(**kwargs):
+def HGCalTimingAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalTimingAnalyzer',
     DetectorEE = cms.string('HGCalEESensitive'),
     DetectorBeam = cms.string('HcalTB06BeamDetector'),
@@ -19,6 +19,7 @@ def HGCalTimingAnalyzer(**kwargs):
     CaloHitSrcBeam = cms.string('HcalTB06BeamHits'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelRecHitAlpakaHIonPhase1_alpaka(**kwargs):
+def SiPixelRecHitAlpakaHIonPhase1_alpaka(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRecHitAlpakaHIonPhase1@alpaka',
     beamSpot = cms.InputTag('offlineBeamSpotDevice'),
     src = cms.InputTag('siPixelClustersPreSplittingAlpaka'),
@@ -10,6 +10,7 @@ def SiPixelRecHitAlpakaHIonPhase1_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

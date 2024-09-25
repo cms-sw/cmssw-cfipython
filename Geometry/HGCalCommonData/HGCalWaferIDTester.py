@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalWaferIDTester(**kwargs):
+def HGCalWaferIDTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalWaferIDTester',
     nameSense = cms.string('HGCalHESiliconSensitive'),
     fileName = cms.string('cellIDHEF.txt'),
@@ -8,6 +8,7 @@ def HGCalWaferIDTester(**kwargs):
     shift = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

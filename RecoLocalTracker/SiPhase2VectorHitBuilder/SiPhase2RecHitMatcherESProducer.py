@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPhase2RecHitMatcherESProducer(**kwargs):
+def SiPhase2RecHitMatcherESProducer(*args, **kwargs):
   mod = cms.ESProducer('SiPhase2RecHitMatcherESProducer',
     offlinestubs = cms.string('vectorHits'),
     maxVectorHits = cms.int32(999999999),
@@ -29,6 +29,7 @@ def SiPhase2RecHitMatcherESProducer(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

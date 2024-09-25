@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HTTTopJetProducer(**kwargs):
+def HTTTopJetProducer(*args, **kwargs):
   mod = cms.EDProducer('HTTTopJetProducer',
     optimalR = cms.bool(True),
     qJets = cms.bool(False),
@@ -107,6 +107,7 @@ def HTTTopJetProducer(**kwargs):
     minimumTowersFraction = cms.double(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

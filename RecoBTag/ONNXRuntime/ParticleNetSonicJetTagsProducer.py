@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ParticleNetSonicJetTagsProducer(**kwargs):
+def ParticleNetSonicJetTagsProducer(*args, **kwargs):
   mod = cms.EDProducer('ParticleNetSonicJetTagsProducer',
     Client = cms.PSet(
       mode = cms.string('PseudoAsync'),
@@ -41,6 +41,7 @@ def ParticleNetSonicJetTagsProducer(**kwargs):
     debugMode = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

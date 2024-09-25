@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestTrackerHierarchy(**kwargs):
+def TestTrackerHierarchy(*args, **kwargs):
   mod = cms.EDAnalyzer('TestTrackerHierarchy',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

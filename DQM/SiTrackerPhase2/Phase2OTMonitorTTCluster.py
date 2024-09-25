@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTMonitorTTCluster(**kwargs):
+def Phase2OTMonitorTTCluster(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorTTCluster',
     TH1TTCluster_Barrel = cms.PSet(
       Nbinsx = cms.int32(7),
@@ -60,6 +60,7 @@ def Phase2OTMonitorTTCluster(**kwargs):
     TTClusters = cms.InputTag('TTClustersFromPhase2TrackerDigis', 'ClusterInclusive'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

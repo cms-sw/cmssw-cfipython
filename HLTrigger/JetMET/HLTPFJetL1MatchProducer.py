@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFJetL1MatchProducer(**kwargs):
+def HLTPFJetL1MatchProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTPFJetL1MatchProducer',
     jetsInput = cms.InputTag('hltAntiKT5PFJets'),
     L1TauJets = cms.InputTag('hltL1extraParticles', 'Tau'),
@@ -9,6 +9,7 @@ def HLTPFJetL1MatchProducer(**kwargs):
     DeltaR = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

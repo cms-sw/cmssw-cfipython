@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripCPEAnalyzer(**kwargs):
+def SiStripCPEAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripCPEAnalyzer',
     tracks = cms.untracked.InputTag('generalTracks'),
     trajectories = cms.untracked.InputTag('generalTracks'),
@@ -9,6 +9,7 @@ def SiStripCPEAnalyzer(**kwargs):
     StripCPE = cms.ESInputTag('StripCPEfromTrackAngleESProducer', 'StripCPEfromTrackAngle'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

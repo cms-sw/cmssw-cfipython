@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHcalLaserMisfireFilter(**kwargs):
+def HLTHcalLaserMisfireFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTHcalLaserMisfireFilter',
     InputHBHE = cms.InputTag('source'),
     InputHF = cms.InputTag('source'),
@@ -11,6 +11,7 @@ def HLTHcalLaserMisfireFilter(**kwargs):
     testMode = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

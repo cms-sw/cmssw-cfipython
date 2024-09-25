@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Type1PFMET(**kwargs):
+def Type1PFMET(*args, **kwargs):
   mod = cms.EDProducer('Type1PFMET',
     inputUncorJetsTag = cms.InputTag('ak4PFJets'),
     jetEMfracLimit = cms.double(0.95),
@@ -11,6 +11,7 @@ def Type1PFMET(**kwargs):
     corrector = cms.InputTag('ak4PFL2L3Corrector'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

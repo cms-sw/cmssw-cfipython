@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT2PhotonPFMET(**kwargs):
+def HLT2PhotonPFMET(*args, **kwargs):
   mod = cms.EDFilter('HLT2PhotonPFMET',
     saveTags = cms.bool(True),
     originTag1 = cms.VInputTag('hltOriginal1'),
@@ -22,6 +22,7 @@ def HLT2PhotonPFMET(**kwargs):
     MinN = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

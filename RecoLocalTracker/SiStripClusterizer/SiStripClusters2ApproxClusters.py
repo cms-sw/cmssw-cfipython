@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripClusters2ApproxClusters(**kwargs):
+def SiStripClusters2ApproxClusters(*args, **kwargs):
   mod = cms.EDProducer('SiStripClusters2ApproxClusters',
     inputClusters = cms.InputTag('siStripClusters'),
     maxSaturatedStrips = cms.uint32(3),
@@ -8,6 +8,7 @@ def SiStripClusters2ApproxClusters(**kwargs):
     beamSpot = cms.InputTag('offlineBeamSpot'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

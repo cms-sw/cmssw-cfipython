@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TDTTFClient(**kwargs):
+def L1TDTTFClient(*args, **kwargs):
   mod = cms.EDProducer('L1TDTTFClient',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

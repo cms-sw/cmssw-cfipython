@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelDigiMorphing(**kwargs):
+def SiPixelDigiMorphing(*args, **kwargs):
   mod = cms.EDProducer('SiPixelDigiMorphing',
     src = cms.InputTag('siPixelDigis'),
     nrows = cms.int32(160),
@@ -20,6 +20,7 @@ def SiPixelDigiMorphing(**kwargs):
     fakeAdc = cms.uint32(100),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

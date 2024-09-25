@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonL1Filter(**kwargs):
+def HLTMuonL1Filter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonL1Filter',
     saveTags = cms.bool(True),
     CandTag = cms.InputTag('hltL1extraParticles'),
@@ -13,6 +13,7 @@ def HLTMuonL1Filter(**kwargs):
     SelectQualities = cms.vint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

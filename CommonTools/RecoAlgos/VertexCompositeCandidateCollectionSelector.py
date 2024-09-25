@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def VertexCompositeCandidateCollectionSelector(**kwargs):
+def VertexCompositeCandidateCollectionSelector(*args, **kwargs):
   mod = cms.EDProducer('VertexCompositeCandidateCollectionSelector',
     v0 = cms.required.InputTag,
     beamSpot = cms.required.InputTag,
@@ -11,6 +11,7 @@ def VertexCompositeCandidateCollectionSelector(**kwargs):
     debug = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

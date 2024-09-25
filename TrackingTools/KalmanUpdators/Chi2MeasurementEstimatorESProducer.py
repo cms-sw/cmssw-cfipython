@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Chi2MeasurementEstimatorESProducer(**kwargs):
+def Chi2MeasurementEstimatorESProducer(*args, **kwargs):
   mod = cms.ESProducer('Chi2MeasurementEstimatorESProducer',
     MaxChi2 = cms.double(30),
     nSigma = cms.double(3),
@@ -11,6 +11,7 @@ def Chi2MeasurementEstimatorESProducer(**kwargs):
     ComponentName = cms.string('Chi2'),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

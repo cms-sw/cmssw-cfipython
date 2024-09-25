@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def JetPlusTrackAddonSeedProducer(**kwargs):
+def JetPlusTrackAddonSeedProducer(*args, **kwargs):
   mod = cms.EDProducer('JetPlusTrackAddonSeedProducer',
     dRcone = cms.double(0.4),
     UsePAT = cms.bool(False),
@@ -11,6 +11,7 @@ def JetPlusTrackAddonSeedProducer(**kwargs):
     towerMaker = cms.InputTag('towerMaker'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

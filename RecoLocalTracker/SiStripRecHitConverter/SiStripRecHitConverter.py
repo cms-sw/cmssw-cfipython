@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripRecHitConverter(**kwargs):
+def SiStripRecHitConverter(*args, **kwargs):
   mod = cms.EDProducer('SiStripRecHitConverter',
     ClusterProducer = cms.InputTag('siStripClusters'),
     rphiRecHits = cms.string('rphiRecHit'),
@@ -15,6 +15,7 @@ def SiStripRecHitConverter(**kwargs):
     VerbosityLevel = cms.optional.untracked.int32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

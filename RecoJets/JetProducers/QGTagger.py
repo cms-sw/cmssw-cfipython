@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def QGTagger(**kwargs):
+def QGTagger(*args, **kwargs):
   mod = cms.EDProducer('QGTagger',
     srcJets = cms.InputTag('ak4PFJetsCHS'),
     srcRho = cms.InputTag('fixedGridRhoFastjetAll'),
@@ -13,6 +13,7 @@ def QGTagger(**kwargs):
     srcConstituentWeights = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

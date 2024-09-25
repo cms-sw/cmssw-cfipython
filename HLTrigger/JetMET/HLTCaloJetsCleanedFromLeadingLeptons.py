@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCaloJetsCleanedFromLeadingLeptons(**kwargs):
+def HLTCaloJetsCleanedFromLeadingLeptons(*args, **kwargs):
   mod = cms.EDProducer('HLTCaloJetsCleanedFromLeadingLeptons',
     leptons = cms.InputTag('triggerFilterObjectWithRefs'),
     jets = cms.InputTag('jetCollection'),
@@ -8,6 +8,7 @@ def HLTCaloJetsCleanedFromLeadingLeptons(**kwargs):
     numLeptons = cms.uint32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

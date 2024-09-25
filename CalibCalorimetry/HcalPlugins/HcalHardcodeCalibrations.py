@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalHardcodeCalibrations(**kwargs):
+def HcalHardcodeCalibrations(*args, **kwargs):
   mod = cms.ESSource('HcalHardcodeCalibrations',
     iLumi = cms.double(-1),
     HBRecalibration = cms.bool(False),
@@ -269,6 +269,7 @@ def HcalHardcodeCalibrations(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

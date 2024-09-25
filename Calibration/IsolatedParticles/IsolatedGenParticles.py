@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IsolatedGenParticles(**kwargs):
+def IsolatedGenParticles(*args, **kwargs):
   mod = cms.EDAnalyzer('IsolatedGenParticles',
     GenSrc = cms.untracked.string('genParticles'),
     UseHepMC = cms.untracked.bool(False),
@@ -23,6 +23,7 @@ def IsolatedGenParticles(**kwargs):
     L1GTObjectMapRcdSource = cms.untracked.InputTag('hltL1GtObjectMap'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

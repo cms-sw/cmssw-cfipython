@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ThinnedRefFromTestAnalyzer(**kwargs):
+def ThinnedRefFromTestAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('ThinnedRefFromTestAnalyzer',
     parentTag = cms.required.InputTag,
     thinnedTag = cms.required.InputTag,
@@ -8,6 +8,7 @@ def ThinnedRefFromTestAnalyzer(**kwargs):
     trackTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

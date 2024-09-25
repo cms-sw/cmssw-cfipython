@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSLHCInfoRandomXangleESSource(**kwargs):
+def CTPPSLHCInfoRandomXangleESSource(*args, **kwargs):
   mod = cms.ESSource('CTPPSLHCInfoRandomXangleESSource',
     label = cms.string(''),
     seed = cms.uint32(1),
@@ -10,6 +10,7 @@ def CTPPSLHCInfoRandomXangleESSource(**kwargs):
     beamEnergy = cms.double(0),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

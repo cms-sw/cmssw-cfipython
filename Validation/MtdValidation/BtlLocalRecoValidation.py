@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BtlLocalRecoValidation(**kwargs):
+def BtlLocalRecoValidation(*args, **kwargs):
   mod = cms.EDProducer('BtlLocalRecoValidation',
     folder = cms.string('MTD/BTL/LocalReco'),
     recHitsTag = cms.InputTag('mtdRecHits', 'FTLBarrel'),
@@ -15,6 +15,7 @@ def BtlLocalRecoValidation(**kwargs):
     HitMinimumAmplitude = cms.double(30),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

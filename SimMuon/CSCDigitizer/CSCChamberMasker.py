@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CSCChamberMasker(**kwargs):
+def CSCChamberMasker(*args, **kwargs):
   mod = cms.EDProducer('CSCChamberMasker',
     stripDigiTag = cms.InputTag('simMuonCSCDigis', 'MuonCSCStripDigi'),
     wireDigiTag = cms.InputTag('simMuonCSCDigis', 'MuonCSCWireDigi'),
@@ -10,6 +10,7 @@ def CSCChamberMasker(**kwargs):
     clctDigiTag = cms.InputTag('simMuonCSCDigis', 'MuonCSCCLCTDigi'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

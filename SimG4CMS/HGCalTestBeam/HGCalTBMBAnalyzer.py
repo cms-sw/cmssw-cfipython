@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTBMBAnalyzer(**kwargs):
+def HGCalTBMBAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalTBMBAnalyzer',
     detectorNames = cms.vstring(
       'HGCalBeamWChamb',
@@ -20,6 +20,7 @@ def HGCalTBMBAnalyzer(**kwargs):
     labelMBCalo = cms.InputTag('g4SimHits', 'HGCalTBMB'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

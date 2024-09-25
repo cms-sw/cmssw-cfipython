@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelRawToClusterPhase1_alpaka(**kwargs):
+def SiPixelRawToClusterPhase1_alpaka(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRawToClusterPhase1@alpaka',
     IncludeErrors = cms.bool(True),
     UseQualityInfo = cms.bool(False),
@@ -23,6 +23,7 @@ def SiPixelRawToClusterPhase1_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalRecHitProducer(**kwargs):
+def EcalRecHitProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalRecHitProducer',
     recoverEEVFE = cms.bool(False),
     EErechitCollection = cms.string('EcalRecHitsEE'),
@@ -95,6 +95,7 @@ def EcalRecHitProducer(**kwargs):
     skipTimeCalib = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

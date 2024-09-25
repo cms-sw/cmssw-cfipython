@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHGCalUncalibratedRecHitsInRegionsProducer(**kwargs):
+def HLTHGCalUncalibratedRecHitsInRegionsProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTHGCalUncalibratedRecHitsInRegionsProducer',
     outputProductNames = cms.vstring('EcalRegionalRecHitsEB'),
     inputCollTags = cms.VInputTag('hltHcalDigis'),
@@ -17,6 +17,7 @@ def HLTHGCalUncalibratedRecHitsInRegionsProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

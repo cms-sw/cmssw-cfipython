@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMCSCSegmentProducer(**kwargs):
+def GEMCSCSegmentProducer(*args, **kwargs):
   mod = cms.EDProducer('GEMCSCSegmentProducer',
     inputObjectsGEM = cms.InputTag('gemRecHits'),
     inputObjectsCSC = cms.InputTag('cscSegments'),
@@ -20,6 +20,7 @@ def GEMCSCSegmentProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

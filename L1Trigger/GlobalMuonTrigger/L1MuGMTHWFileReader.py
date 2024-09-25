@@ -1,7 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1MuGMTHWFileReader(**kwargs):
+def L1MuGMTHWFileReader(*args, **kwargs):
   mod = cms.Source('L1MuGMTHWFileReader')
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT1PFTau(**kwargs):
+def HLT1PFTau(*args, **kwargs):
   mod = cms.EDFilter('HLT1PFTau',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltCollection'),
@@ -14,6 +14,7 @@ def HLT1PFTau(**kwargs):
     MinN = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

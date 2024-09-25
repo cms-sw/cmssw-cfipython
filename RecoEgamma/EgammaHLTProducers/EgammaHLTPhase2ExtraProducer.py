@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTPhase2ExtraProducer(**kwargs):
+def EgammaHLTPhase2ExtraProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTPhase2ExtraProducer',
     egTrigObjs = cms.InputTag('hltEgammaHLTExtra'),
     l1Trks = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
@@ -34,6 +34,7 @@ def EgammaHLTPhase2ExtraProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

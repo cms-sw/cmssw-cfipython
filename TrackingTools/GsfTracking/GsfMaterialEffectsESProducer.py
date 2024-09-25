@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GsfMaterialEffectsESProducer(**kwargs):
+def GsfMaterialEffectsESProducer(*args, **kwargs):
   mod = cms.ESProducer('GsfMaterialEffectsESProducer',
     ComponentName = cms.required.string,
     Mass = cms.required.double,
@@ -10,6 +10,7 @@ def GsfMaterialEffectsESProducer(**kwargs):
     BetheHeitlerCorrection = cms.required.int32,
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

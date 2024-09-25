@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalDigisProducerGPU(**kwargs):
+def HcalDigisProducerGPU(*args, **kwargs):
   mod = cms.EDProducer('HcalDigisProducerGPU',
     hbheDigisLabel = cms.InputTag('hcalDigis'),
     qie11DigiLabel = cms.InputTag('hcalDigis'),
@@ -12,6 +12,7 @@ def HcalDigisProducerGPU(**kwargs):
     maxChannelsF3HB = cms.uint32(10000),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

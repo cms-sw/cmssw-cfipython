@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCAWZTagFilter(**kwargs):
+def HLTCAWZTagFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTCAWZTagFilter',
     saveTags = cms.bool(True),
     maxWMass = cms.double(130),
@@ -11,6 +11,7 @@ def HLTCAWZTagFilter(**kwargs):
     triggerType = cms.int32(85),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

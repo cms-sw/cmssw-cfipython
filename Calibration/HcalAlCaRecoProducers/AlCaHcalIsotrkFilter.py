@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlCaHcalIsotrkFilter(**kwargs):
+def AlCaHcalIsotrkFilter(*args, **kwargs):
   mod = cms.EDFilter('AlCaHcalIsotrkFilter',
     momentumLow = cms.double(40),
     momentumHigh = cms.double(60),
@@ -10,6 +10,7 @@ def AlCaHcalIsotrkFilter(**kwargs):
     debugEvents = cms.vint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

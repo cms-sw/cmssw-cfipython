@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BadPFCandidateJetsEEnoiseProducer(**kwargs):
+def BadPFCandidateJetsEEnoiseProducer(*args, **kwargs):
   mod = cms.EDProducer('BadPFCandidateJetsEEnoiseProducer',
     jetsrc = cms.InputTag('slimmedJets'),
     userawPt = cms.bool(True),
@@ -9,6 +9,7 @@ def BadPFCandidateJetsEEnoiseProducer(**kwargs):
     maxEtaThreshold = cms.double(3.139),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

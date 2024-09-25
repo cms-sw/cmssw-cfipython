@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HOCalibAnalyzer(**kwargs):
+def HOCalibAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HOCalibAnalyzer',
     hoCalibVariableCollectionTag = cms.InputTag('hoCalibProducer', 'HOCalibVariableCollection'),
     hoInputTag = cms.InputTag('horeco'),
@@ -15,6 +15,7 @@ def HOCalibAnalyzer(**kwargs):
     verbose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

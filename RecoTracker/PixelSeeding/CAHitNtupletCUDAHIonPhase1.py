@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CAHitNtupletCUDAHIonPhase1(**kwargs):
+def CAHitNtupletCUDAHIonPhase1(*args, **kwargs):
   mod = cms.EDProducer('CAHitNtupletCUDAHIonPhase1',
     onGPU = cms.bool(True),
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingCUDA'),
@@ -65,6 +65,7 @@ def CAHitNtupletCUDAHIonPhase1(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

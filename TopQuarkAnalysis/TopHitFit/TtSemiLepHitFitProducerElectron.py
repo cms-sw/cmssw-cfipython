@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def TtSemiLepHitFitProducerElectron(**kwargs):
+def TtSemiLepHitFitProducerElectron(*args, **kwargs):
   mod = cms.EDProducer('TtSemiLepHitFitProducerElectron',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

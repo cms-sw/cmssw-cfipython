@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackerOfflineValidation(**kwargs):
+def TrackerOfflineValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('TrackerOfflineValidation',
     trajectoryInput = cms.string('generalTracks'),
     Tracks = cms.InputTag('generalTracks'),
@@ -98,6 +98,7 @@ def TrackerOfflineValidation(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

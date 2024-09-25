@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMStreamerReader(**kwargs):
+def DQMStreamerReader(*args, **kwargs):
   mod = cms.Source('DQMStreamerReader',
     SelectEvents = cms.required.untracked.vstring,
     minEventsPerLumi = cms.untracked.int32(1),
@@ -26,6 +26,7 @@ def DQMStreamerReader(**kwargs):
     eventsToSkip = cms.untracked.VEventRange(),
     eventsToProcess = cms.untracked.VEventRange()
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

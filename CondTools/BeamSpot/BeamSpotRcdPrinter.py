@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamSpotRcdPrinter(**kwargs):
+def BeamSpotRcdPrinter(*args, **kwargs):
   mod = cms.EDAnalyzer('BeamSpotRcdPrinter',
     conditionDatabase = cms.string('frontier://FrontierProd/CMS_CONDITIONS'),
     tagName = cms.string('BeamSpotObjects_PCL_byLumi_v0_prompt'),
@@ -17,6 +17,7 @@ def BeamSpotRcdPrinter(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

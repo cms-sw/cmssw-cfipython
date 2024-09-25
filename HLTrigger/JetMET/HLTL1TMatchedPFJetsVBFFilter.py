@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTL1TMatchedPFJetsVBFFilter(**kwargs):
+def HLTL1TMatchedPFJetsVBFFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTL1TMatchedPFJetsVBFFilter',
     saveTags = cms.bool(True),
     src = cms.InputTag('hltJets'),
@@ -17,6 +17,7 @@ def HLTL1TMatchedPFJetsVBFFilter(**kwargs):
     triggerType = cms.int32(85),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlpakaServiceCudaAsync(**kwargs):
+def AlpakaServiceCudaAsync(*args, **kwargs):
   mod = cms.Service('AlpakaServiceCudaAsync',
     enabled = cms.untracked.bool(True),
     verbose = cms.untracked.bool(False),
@@ -35,6 +35,7 @@ def AlpakaServiceCudaAsync(**kwargs):
       fillCacheValue = cms.untracked.uint32(150)
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

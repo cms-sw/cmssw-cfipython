@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DiMuonMassBiasMonitor(**kwargs):
+def DiMuonMassBiasMonitor(*args, **kwargs):
   mod = cms.EDProducer('DiMuonMassBiasMonitor',
     muonTracks = cms.InputTag('ALCARECOTkAlDiMuon'),
     vertices = cms.InputTag('offlinePrimaryVertices'),
@@ -20,6 +20,7 @@ def DiMuonMassBiasMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

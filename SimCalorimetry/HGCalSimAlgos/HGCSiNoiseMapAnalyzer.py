@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCSiNoiseMapAnalyzer(**kwargs):
+def HGCSiNoiseMapAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCSiNoiseMapAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

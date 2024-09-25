@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTL1MuonNoL2Selector(**kwargs):
+def HLTL1MuonNoL2Selector(*args, **kwargs):
   mod = cms.EDProducer('HLTL1MuonNoL2Selector',
     InputObjects = cms.InputTag(''),
     L2CandTag = cms.InputTag('hltL2MuonCandidates'),
@@ -11,6 +11,7 @@ def HLTL1MuonNoL2Selector(**kwargs):
     CentralBxOnly = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

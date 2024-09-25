@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEgammaDoubleXGBoostCombFilter(**kwargs):
+def HLTEgammaDoubleXGBoostCombFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTEgammaDoubleXGBoostCombFilter',
     saveTags = cms.bool(True),
     highMassCut = cms.double(90),
@@ -32,6 +32,7 @@ def HLTEgammaDoubleXGBoostCombFilter(**kwargs):
     mvaPhotonTag = cms.InputTag('PhotonXGBoostProducer'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

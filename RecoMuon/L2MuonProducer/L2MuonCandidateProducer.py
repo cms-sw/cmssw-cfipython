@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2MuonCandidateProducer(**kwargs):
+def L2MuonCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('L2MuonCandidateProducer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TriggerBxMonitor(**kwargs):
+def TriggerBxMonitor(*args, **kwargs):
   mod = cms.EDProducer('TriggerBxMonitor',
     l1tResults = cms.untracked.InputTag('gtStage2Digis'),
     hltResults = cms.untracked.InputTag('TriggerResults'),
@@ -10,6 +10,7 @@ def TriggerBxMonitor(**kwargs):
     lsRange = cms.untracked.uint32(4000),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

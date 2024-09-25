@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MTDClusterProducer(**kwargs):
+def MTDClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('MTDClusterProducer',
     srcBarrel = cms.InputTag('mtdRecHits', 'FTLBarrel'),
     srcEndcap = cms.InputTag('mtdRecHits', 'FTLEndcap'),
@@ -14,6 +14,7 @@ def MTDClusterProducer(**kwargs):
     PositionThreshold = cms.double(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

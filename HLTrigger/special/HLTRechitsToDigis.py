@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTRechitsToDigis(**kwargs):
+def HLTRechitsToDigis(*args, **kwargs):
   mod = cms.EDProducer('HLTRechitsToDigis',
     region = cms.string('barrel'),
     digisIn = cms.InputTag('ecalDigis', 'ebDigis'),
@@ -10,6 +10,7 @@ def HLTRechitsToDigis(**kwargs):
     srFlagsOut = cms.string('pi0EBSrFlags'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

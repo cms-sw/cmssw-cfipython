@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RPCDigiMerger(**kwargs):
+def RPCDigiMerger(*args, **kwargs):
   mod = cms.EDProducer('RPCDigiMerger',
     inputTagSimRPCDigis = cms.InputTag('simMuonRPCDigis'),
     inputTagTwinMuxDigis = cms.InputTag(''),
@@ -15,6 +15,7 @@ def RPCDigiMerger(**kwargs):
     bxMaxCPPF = cms.int32(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

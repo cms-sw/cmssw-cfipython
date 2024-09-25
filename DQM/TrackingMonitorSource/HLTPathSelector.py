@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPathSelector(**kwargs):
+def HLTPathSelector(*args, **kwargs):
   mod = cms.EDFilter('HLTPathSelector',
     verbose = cms.untracked.bool(False),
     processName = cms.string(''),
@@ -9,6 +9,7 @@ def HLTPathSelector(**kwargs):
     triggerEvent = cms.untracked.InputTag('hltTriggerSummaryAOD', '', 'HLT'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

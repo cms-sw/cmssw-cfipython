@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def ParticleDecayProducer(**kwargs):
+def ParticleDecayProducer(*args, **kwargs):
   mod = cms.EDProducer('ParticleDecayProducer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TransformAsyncIntProducer(**kwargs):
+def TransformAsyncIntProducer(*args, **kwargs):
   mod = cms.EDProducer('TransformAsyncIntProducer',
     get = cms.required.InputTag,
     offset = cms.uint32(0),
@@ -9,6 +9,7 @@ def TransformAsyncIntProducer(**kwargs):
     noPut = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

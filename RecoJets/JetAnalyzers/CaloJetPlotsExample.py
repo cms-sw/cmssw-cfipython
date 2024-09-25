@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def CaloJetPlotsExample(**kwargs):
+def CaloJetPlotsExample(*args, **kwargs):
   mod = cms.EDAnalyzer('CaloJetPlotsExample',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

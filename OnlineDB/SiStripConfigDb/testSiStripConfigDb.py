@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def testSiStripConfigDb(**kwargs):
+def testSiStripConfigDb(*args, **kwargs):
   mod = cms.EDAnalyzer('testSiStripConfigDb',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

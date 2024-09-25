@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSTimingCalibrationWriter(**kwargs):
+def PPSTimingCalibrationWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('PPSTimingCalibrationWriter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSPixelRawToDigi(**kwargs):
+def CTPPSPixelRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('CTPPSPixelRawToDigi',
     isRun3 = cms.bool(True),
     includeErrors = cms.bool(True),
@@ -8,6 +8,7 @@ def CTPPSPixelRawToDigi(**kwargs):
     mappingLabel = cms.string('RPix'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

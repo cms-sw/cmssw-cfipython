@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1MuonSeededTrackingRegionsEDProducer(**kwargs):
+def L1MuonSeededTrackingRegionsEDProducer(*args, **kwargs):
   mod = cms.EDProducer('L1MuonSeededTrackingRegionsEDProducer',
     Propagator = cms.string(''),
     L1MinPt = cms.double(-1),
@@ -40,6 +40,7 @@ def L1MuonSeededTrackingRegionsEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

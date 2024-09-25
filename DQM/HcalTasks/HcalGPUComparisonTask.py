@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalGPUComparisonTask(**kwargs):
+def HcalGPUComparisonTask(*args, **kwargs):
   mod = cms.EDProducer('HcalGPUComparisonTask',
     name = cms.untracked.string('HcalGPUComparisonTask'),
     debug = cms.untracked.int32(0),
@@ -14,6 +14,7 @@ def HcalGPUComparisonTask(**kwargs):
     tagRaw = cms.untracked.InputTag('rawDataCollector'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

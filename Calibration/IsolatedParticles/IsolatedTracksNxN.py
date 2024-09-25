@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IsolatedTracksNxN(**kwargs):
+def IsolatedTracksNxN(*args, **kwargs):
   mod = cms.EDAnalyzer('IsolatedTracksNxN',
     doMC = cms.untracked.bool(False),
     writeAllTracks = cms.untracked.bool(False),
@@ -30,6 +30,7 @@ def IsolatedTracksNxN(**kwargs):
     timeMaxCutHCAL = cms.untracked.double(500),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

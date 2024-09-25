@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TCaloLayer1Summary(**kwargs):
+def L1TCaloLayer1Summary(*args, **kwargs):
   mod = cms.EDProducer('L1TCaloLayer1Summary',
     caloLayer1CICADAScore = cms.InputTag('caloLayer1Digis', 'CICADAScore'),
     gtCICADAScore = cms.InputTag('gtTestcrateStage2Digis', 'CICADAScore'),
@@ -11,6 +11,7 @@ def L1TCaloLayer1Summary(**kwargs):
     histFolder = cms.string('L1T/L1TCaloLayer1Summary'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def CosmicRateAnalyzer(**kwargs):
+def CosmicRateAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('CosmicRateAnalyzer',
     tracksInputTag = cms.InputTag('ALCARECOTkAlCosmicsCTF0T'),
     muonsInputTag = cms.InputTag('muons1Leg'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

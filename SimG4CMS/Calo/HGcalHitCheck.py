@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGcalHitCheck(**kwargs):
+def HGcalHitCheck(*args, **kwargs):
   mod = cms.EDAnalyzer('HGcalHitCheck',
     moduleLabel = cms.string('g4SimHits'),
     caloHitSource = cms.string('HGCHitsEE'),
@@ -11,6 +11,7 @@ def HGcalHitCheck(**kwargs):
     verbosity = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

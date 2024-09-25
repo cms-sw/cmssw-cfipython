@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalLayerClustersFromSoAProducer(**kwargs):
+def HGCalLayerClustersFromSoAProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalLayerClustersFromSoAProducer',
     src = cms.InputTag('hltHgcalSoALayerClustersProducer'),
     hgcalRecHitsLayerClustersSoA = cms.InputTag('hltHgcalSoARecHitsLayerClustersProducer'),
@@ -10,6 +10,7 @@ def HGCalLayerClustersFromSoAProducer(**kwargs):
     detector = cms.string('EE'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

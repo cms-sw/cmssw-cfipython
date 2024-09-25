@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PrescaleService(**kwargs):
+def PrescaleService(*args, **kwargs):
   mod = cms.Service('PrescaleService',
     lvl1Labels = cms.vstring('default'),
     prescaleTable = cms.VPSet(
@@ -12,6 +12,7 @@ def PrescaleService(**kwargs):
     lvl1DefaultLabel = cms.string('default'),
     forceDefault = cms.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

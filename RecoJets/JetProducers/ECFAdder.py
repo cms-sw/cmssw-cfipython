@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ECFAdder(**kwargs):
+def ECFAdder(*args, **kwargs):
   mod = cms.EDProducer('ECFAdder',
     src = cms.InputTag('no default'),
     Njets = cms.vuint32(
@@ -19,6 +19,7 @@ def ECFAdder(**kwargs):
     srcWeights = cms.InputTag('puppi'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

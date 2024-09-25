@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripBadStripFromASCIIFile(**kwargs):
+def SiStripBadStripFromASCIIFile(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripBadStripFromASCIIFile',
     SinceAppendMode = cms.required.bool,
     IOVMode = cms.required.string,
@@ -13,6 +13,7 @@ def SiStripBadStripFromASCIIFile(**kwargs):
     isFlagAvailable = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

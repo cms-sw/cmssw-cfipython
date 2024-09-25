@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def MPIService(**kwargs):
+def MPIService(*args, **kwargs):
   mod = cms.Service('MPIService',
     pmix_server_uri = cms.optional.untracked.string
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

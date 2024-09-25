@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHcalSimpleRecHitFilter(**kwargs):
+def HLTHcalSimpleRecHitFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTHcalSimpleRecHitFilter',
     saveTags = cms.bool(True),
     HFRecHitCollection = cms.InputTag('hltHfreco'),
@@ -11,6 +11,7 @@ def HLTHcalSimpleRecHitFilter(**kwargs):
     maskedChannels = cms.vuint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

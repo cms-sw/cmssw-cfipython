@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestSource(**kwargs):
+def TestSource(*args, **kwargs):
   mod = cms.Source('TestSource',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -17,6 +17,7 @@ def TestSource(**kwargs):
       cms.PSet()
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

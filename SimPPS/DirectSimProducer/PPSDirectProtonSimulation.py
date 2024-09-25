@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSDirectProtonSimulation(**kwargs):
+def PPSDirectProtonSimulation(*args, **kwargs):
   mod = cms.EDProducer('PPSDirectProtonSimulation',
     verbosity = cms.untracked.uint32(0),
     lhcInfoLabel = cms.string(''),
@@ -22,6 +22,7 @@ def PPSDirectProtonSimulation(**kwargs):
     pitchPixelsVer = cms.double(0.15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

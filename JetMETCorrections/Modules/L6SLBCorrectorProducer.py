@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L6SLBCorrectorProducer(**kwargs):
+def L6SLBCorrectorProducer(*args, **kwargs):
   mod = cms.EDProducer('L6SLBCorrectorProducer',
     level = cms.required.string,
     algorithm = cms.required.string,
@@ -9,6 +9,7 @@ def L6SLBCorrectorProducer(**kwargs):
     addMuonToJet = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

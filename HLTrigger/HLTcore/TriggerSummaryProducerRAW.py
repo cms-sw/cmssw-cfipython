@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def TriggerSummaryProducerRAW(**kwargs):
+def TriggerSummaryProducerRAW(*args, **kwargs):
   mod = cms.EDProducer('TriggerSummaryProducerRAW',
     processName = cms.string('@'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

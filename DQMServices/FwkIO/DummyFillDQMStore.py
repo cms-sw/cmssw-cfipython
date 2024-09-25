@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def DummyFillDQMStore(**kwargs):
+def DummyFillDQMStore(*args, **kwargs):
   mod = cms.EDProducer('DummyFillDQMStore',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

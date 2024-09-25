@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonSeedGenerator(**kwargs):
+def MuonSeedGenerator(*args, **kwargs):
   mod = cms.EDProducer('MuonSeedGenerator',
     beamSpotTag = cms.InputTag('offlineBeamSpot'),
     scaleDT = cms.bool(True),
@@ -21,6 +21,7 @@ def MuonSeedGenerator(**kwargs):
     deltaEtaCrackSearchWindow = cms.double(0.25),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

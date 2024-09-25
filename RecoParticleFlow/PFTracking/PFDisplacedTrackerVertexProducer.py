@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFDisplacedTrackerVertexProducer(**kwargs):
+def PFDisplacedTrackerVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('PFDisplacedTrackerVertexProducer',
     displacedTrackerVertexColl = cms.InputTag('particleFlowDisplacedVertex'),
     trackColl = cms.InputTag('generalTracks'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def ApeTreeCreateDefault(**kwargs):
+def ApeTreeCreateDefault(*args, **kwargs):
   mod = cms.EDAnalyzer('ApeTreeCreateDefault',
     resultFile = cms.string('defaultAPE.root'),
     trackerTreeFile = cms.required.string,
     sectors = cms.required.VPSet,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

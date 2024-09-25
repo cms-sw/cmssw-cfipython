@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DeepFlavourTagInfoProducer(**kwargs):
+def DeepFlavourTagInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('DeepFlavourTagInfoProducer',
     shallow_tag_infos = cms.InputTag('pfDeepCSVTagInfos'),
     jet_radius = cms.double(0.4),
@@ -22,6 +22,7 @@ def DeepFlavourTagInfoProducer(**kwargs):
     max_jet_eta = cms.double(2.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

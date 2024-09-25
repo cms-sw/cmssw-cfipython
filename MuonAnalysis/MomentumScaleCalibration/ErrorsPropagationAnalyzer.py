@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def ErrorsPropagationAnalyzer(**kwargs):
+def ErrorsPropagationAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('ErrorsPropagationAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

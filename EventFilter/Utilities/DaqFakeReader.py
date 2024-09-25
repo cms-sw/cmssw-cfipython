@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DaqFakeReader(**kwargs):
+def DaqFakeReader(*args, **kwargs):
   mod = cms.EDProducer('DaqFakeReader',
     emptyEvents = cms.untracked.bool(False),
     fillRandom = cms.untracked.bool(False),
@@ -10,6 +10,7 @@ def DaqFakeReader(**kwargs):
     tcdsFEDID = cms.untracked.uint32(1024),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

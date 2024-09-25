@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlCaIsoTracksProducer(**kwargs):
+def AlCaIsoTracksProducer(*args, **kwargs):
   mod = cms.EDProducer('AlCaIsoTracksProducer',
     TrackLabel = cms.InputTag('generalTracks'),
     VertexLabel = cms.InputTag('offlinePrimaryVertices'),
@@ -39,6 +39,7 @@ def AlCaIsoTracksProducer(**kwargs):
     preScaleFactor = cms.int32(10),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

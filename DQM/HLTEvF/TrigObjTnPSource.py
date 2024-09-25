@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrigObjTnPSource(**kwargs):
+def TrigObjTnPSource(*args, **kwargs):
   mod = cms.EDProducer('TrigObjTnPSource',
     triggerEvent = cms.InputTag('hltTriggerSummaryAOD', '', 'HLT'),
     triggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
@@ -8,6 +8,7 @@ def TrigObjTnPSource(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

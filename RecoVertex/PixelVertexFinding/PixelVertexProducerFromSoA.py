@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelVertexProducerFromSoA(**kwargs):
+def PixelVertexProducerFromSoA(*args, **kwargs):
   mod = cms.EDProducer('PixelVertexProducerFromSoA',
     TrackCollection = cms.InputTag('pixelTracks'),
     beamSpot = cms.InputTag('offlineBeamSpot'),
     src = cms.InputTag('pixelVerticesSoA'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

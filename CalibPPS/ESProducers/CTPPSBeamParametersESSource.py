@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSBeamParametersESSource(**kwargs):
+def CTPPSBeamParametersESSource(*args, **kwargs):
   mod = cms.ESSource('CTPPSBeamParametersESSource',
     setBeamPars = cms.bool(True),
     beamMom45 = cms.double(6500),
@@ -31,6 +31,7 @@ def CTPPSBeamParametersESSource(**kwargs):
     vtxStddevT = cms.double(0.02),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

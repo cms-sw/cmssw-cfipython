@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT2L1P2GTCandL1P2GTCandDZ(**kwargs):
+def HLT2L1P2GTCandL1P2GTCandDZ(*args, **kwargs):
   mod = cms.EDFilter('HLT2L1P2GTCandL1P2GTCandDZ',
     saveTags = cms.bool(True),
     originTag1 = cms.VInputTag('hltOriginal1'),
@@ -17,6 +17,7 @@ def HLT2L1P2GTCandL1P2GTCandDZ(**kwargs):
     MinN = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

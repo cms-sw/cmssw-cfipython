@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecHitMapProducer(**kwargs):
+def RecHitMapProducer(*args, **kwargs):
   mod = cms.EDProducer('RecHitMapProducer',
     EEInput = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
     FHInput = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
@@ -11,6 +11,7 @@ def RecHitMapProducer(**kwargs):
     hgcalOnly = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

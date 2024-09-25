@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimDigiDumper(**kwargs):
+def SimDigiDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('SimDigiDumper',
     ECalEBSrc = cms.InputTag('simEcalDigis', 'ebDigis'),
     ECalEESrc = cms.InputTag('simEcalDigis', 'eeDigis'),
@@ -17,6 +17,7 @@ def SimDigiDumper(**kwargs):
     ETLSrc = cms.InputTag('mix', 'FTLEndcap'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

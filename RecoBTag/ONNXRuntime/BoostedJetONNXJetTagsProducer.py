@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BoostedJetONNXJetTagsProducer(**kwargs):
+def BoostedJetONNXJetTagsProducer(*args, **kwargs):
   mod = cms.EDProducer('BoostedJetONNXJetTagsProducer',
     src = cms.InputTag('pfDeepBoostedJetTagInfos'),
     preprocess_json = cms.string(''),
@@ -30,6 +30,7 @@ def BoostedJetONNXJetTagsProducer(**kwargs):
     debugMode = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

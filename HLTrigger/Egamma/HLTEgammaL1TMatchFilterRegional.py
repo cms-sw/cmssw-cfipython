@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEgammaL1TMatchFilterRegional(**kwargs):
+def HLTEgammaL1TMatchFilterRegional(*args, **kwargs):
   mod = cms.EDFilter('HLTEgammaL1TMatchFilterRegional',
     saveTags = cms.bool(True),
     candIsolatedTag = cms.InputTag('hltRecoIsolatedEcalCandidate'),
@@ -19,6 +19,7 @@ def HLTEgammaL1TMatchFilterRegional(**kwargs):
     endcap_end = cms.double(2.65),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

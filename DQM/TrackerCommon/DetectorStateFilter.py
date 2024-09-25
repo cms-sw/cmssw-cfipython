@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DetectorStateFilter(**kwargs):
+def DetectorStateFilter(*args, **kwargs):
   mod = cms.EDFilter('DetectorStateFilter',
     DebugOn = cms.untracked.bool(False),
     DetectorType = cms.untracked.string('sistrip'),
@@ -9,6 +9,7 @@ def DetectorStateFilter(**kwargs):
     DCSRecordLabel = cms.untracked.InputTag('onlineMetaDataDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

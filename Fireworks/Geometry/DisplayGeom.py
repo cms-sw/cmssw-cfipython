@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DisplayGeom(**kwargs):
+def DisplayGeom(*args, **kwargs):
   mod = cms.EDAnalyzer('DisplayGeom',
     nodes = cms.untracked.vstring(
       'tracker:Tracker_1',
@@ -30,6 +30,7 @@ def DisplayGeom(**kwargs):
     MF_pickable = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

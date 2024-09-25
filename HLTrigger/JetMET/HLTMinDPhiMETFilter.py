@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMinDPhiMETFilter(**kwargs):
+def HLTMinDPhiMETFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMinDPhiMETFilter',
     saveTags = cms.bool(True),
     usePt = cms.bool(True),
@@ -14,6 +14,7 @@ def HLTMinDPhiMETFilter(**kwargs):
     jetsLabel = cms.InputTag('hltAK4PFJetL1FastL2L3Corrected'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

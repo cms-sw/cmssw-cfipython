@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CorrectedECALPFClusterProducer(**kwargs):
+def CorrectedECALPFClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('CorrectedECALPFClusterProducer',
     minimumPSEnergy = cms.double(0),
     skipPS = cms.bool(False),
@@ -21,6 +21,7 @@ def CorrectedECALPFClusterProducer(**kwargs):
     inputECAL = cms.InputTag('particleFlowClusterECALUncorrected'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

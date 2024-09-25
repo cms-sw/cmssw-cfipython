@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCSCRing2or3Filter(**kwargs):
+def HLTCSCRing2or3Filter(*args, **kwargs):
   mod = cms.EDFilter('HLTCSCRing2or3Filter',
     saveTags = cms.bool(True),
     input = cms.InputTag('hltCsc2DRecHits'),
@@ -9,6 +9,7 @@ def HLTCSCRing2or3Filter(**kwargs):
     yWindow = cms.double(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFClusterSoAProducer_alpaka(**kwargs):
+def PFClusterSoAProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('PFClusterSoAProducer@alpaka',
     pfRecHits = cms.InputTag(''),
     pfClusterParams = cms.ESInputTag('', ''),
@@ -12,6 +12,7 @@ def PFClusterSoAProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

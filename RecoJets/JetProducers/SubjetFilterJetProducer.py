@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SubjetFilterJetProducer(**kwargs):
+def SubjetFilterJetProducer(*args, **kwargs):
   mod = cms.EDProducer('SubjetFilterJetProducer',
     src = cms.InputTag('particleFlow'),
     srcPVs = cms.InputTag(''),
@@ -48,6 +48,7 @@ def SubjetFilterJetProducer(**kwargs):
     jetCollInstanceName = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

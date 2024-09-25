@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTFEDSizeFilter(**kwargs):
+def HLTFEDSizeFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTFEDSizeFilter',
     saveTags = cms.bool(True),
     rawData = cms.InputTag('source'),
@@ -10,6 +10,7 @@ def HLTFEDSizeFilter(**kwargs):
     requireAllFEDs = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_limited_StreamIntAnalyzer(**kwargs):
+def edmtest_limited_StreamIntAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('edmtest::limited::StreamIntAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

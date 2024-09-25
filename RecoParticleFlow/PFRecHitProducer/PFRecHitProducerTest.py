@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecHitProducerTest(**kwargs):
+def PFRecHitProducerTest(*args, **kwargs):
   mod = cms.EDProducer('PFRecHitProducerTest',
     caloRecHits = cms.untracked.InputTag(''),
     pfRecHitsSource1 = cms.required.untracked.InputTag,
@@ -13,6 +13,7 @@ def PFRecHitProducerTest(**kwargs):
     strictCompare = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalUncalibRecHitPhase2WeightsProducer(**kwargs):
+def EcalUncalibRecHitPhase2WeightsProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalUncalibRecHitPhase2WeightsProducer',
     EBhitCollection = cms.string('EcalUncalibRecHitsEB'),
     tRise = cms.double(0.2),
@@ -44,6 +44,7 @@ def EcalUncalibRecHitPhase2WeightsProducer(**kwargs):
     BarrelDigis = cms.InputTag('simEcalUnsuppressedDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

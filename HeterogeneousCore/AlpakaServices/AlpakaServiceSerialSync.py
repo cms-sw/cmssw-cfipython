@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlpakaServiceSerialSync(**kwargs):
+def AlpakaServiceSerialSync(*args, **kwargs):
   mod = cms.Service('AlpakaServiceSerialSync',
     enabled = cms.untracked.bool(True),
     verbose = cms.untracked.bool(False),
@@ -35,6 +35,7 @@ def AlpakaServiceSerialSync(**kwargs):
       fillCacheValue = cms.untracked.uint32(150)
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

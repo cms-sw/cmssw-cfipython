@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MTDTrackQualityMVAProducer(**kwargs):
+def MTDTrackQualityMVAProducer(*args, **kwargs):
   mod = cms.EDProducer('MTDTrackQualityMVAProducer',
     tracksSrc = cms.InputTag('generalTracks'),
     btlMatchChi2Src = cms.InputTag('trackExtenderWithMTD', 'btlMatchChi2'),
@@ -14,6 +14,7 @@ def MTDTrackQualityMVAProducer(**kwargs):
     qualityBDT_weights_file = cms.FileInPath('RecoMTD/TimingIDTools/data/clf4D_MTDquality_bo.xml'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

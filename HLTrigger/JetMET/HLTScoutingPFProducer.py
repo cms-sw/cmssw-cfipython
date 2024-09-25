@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTScoutingPFProducer(**kwargs):
+def HLTScoutingPFProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTScoutingPFProducer',
     pfJetCollection = cms.InputTag('hltAK4PFJets'),
     pfJetTagCollection = cms.InputTag('hltDeepCombinedSecondaryVertexBJetTagsPF'),
@@ -21,6 +21,7 @@ def HLTScoutingPFProducer(**kwargs):
     doCandIndsForJets = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

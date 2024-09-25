@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def ESTestAnalyzerAZ(**kwargs):
+def ESTestAnalyzerAZ(*args, **kwargs):
   mod = cms.EDAnalyzer('ESTestAnalyzerAZ',
     runsToGetDataFor = cms.required.vint32,
     expectedValuesA = cms.untracked.vint32(),
     expectedValuesZ = cms.untracked.vint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

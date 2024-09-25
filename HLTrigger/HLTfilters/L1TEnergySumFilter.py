@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TEnergySumFilter(**kwargs):
+def L1TEnergySumFilter(*args, **kwargs):
   mod = cms.EDFilter('L1TEnergySumFilter',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('L1PFEnergySums'),
@@ -15,6 +15,7 @@ def L1TEnergySumFilter(**kwargs):
     MinPt = cms.double(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

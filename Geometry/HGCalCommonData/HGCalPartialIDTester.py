@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalPartialIDTester(**kwargs):
+def HGCalPartialIDTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalPartialIDTester',
     nameDetector = cms.string('HGCalEESensitive'),
     fileName = cms.string('partialD98.txt'),
@@ -8,6 +8,7 @@ def HGCalPartialIDTester(**kwargs):
     debug = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

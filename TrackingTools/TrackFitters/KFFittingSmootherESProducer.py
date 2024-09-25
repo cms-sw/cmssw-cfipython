@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def KFFittingSmootherESProducer(**kwargs):
+def KFFittingSmootherESProducer(*args, **kwargs):
   mod = cms.ESProducer('KFFittingSmootherESProducer',
     ComponentName = cms.string('KFFittingSmoother'),
     Fitter = cms.string('KFFitter'),
@@ -19,6 +19,7 @@ def KFFittingSmootherESProducer(**kwargs):
     LogPixelProbabilityCut = cms.double(0),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

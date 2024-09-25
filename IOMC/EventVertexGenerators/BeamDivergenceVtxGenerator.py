@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamDivergenceVtxGenerator(**kwargs):
+def BeamDivergenceVtxGenerator(*args, **kwargs):
   mod = cms.EDProducer('BeamDivergenceVtxGenerator',
     src = cms.InputTag('generator', 'unsmeared'),
     srcGenParticle = cms.VInputTag(),
@@ -8,6 +8,7 @@ def BeamDivergenceVtxGenerator(**kwargs):
     simulateVertex = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

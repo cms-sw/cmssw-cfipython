@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFJetHFCleaner(**kwargs):
+def HLTPFJetHFCleaner(*args, **kwargs):
   mod = cms.EDProducer('HLTPFJetHFCleaner',
     jets = cms.InputTag('hltAK4PFJetsTightIDCorrected'),
     mets = cms.InputTag('hltMet'),
@@ -20,6 +20,7 @@ def HLTPFJetHFCleaner(**kwargs):
     applyStripSizeCut = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PrimaryVertexResolution(**kwargs):
+def PrimaryVertexResolution(*args, **kwargs):
   mod = cms.EDProducer('PrimaryVertexResolution',
     vertexSrc = cms.untracked.InputTag('trackingDQMgoodOfflinePrimaryVertices'),
     beamspotSrc = cms.untracked.InputTag('offlineBeamSpot'),
@@ -29,6 +29,7 @@ def PrimaryVertexResolution(**kwargs):
     maxLumi = cms.untracked.double(20000),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

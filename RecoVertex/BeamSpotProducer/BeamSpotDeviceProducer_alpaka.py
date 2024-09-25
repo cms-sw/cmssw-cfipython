@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamSpotDeviceProducer_alpaka(**kwargs):
+def BeamSpotDeviceProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('BeamSpotDeviceProducer@alpaka',
     src = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring,
@@ -8,6 +8,7 @@ def BeamSpotDeviceProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

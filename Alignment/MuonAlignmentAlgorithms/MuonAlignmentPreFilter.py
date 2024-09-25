@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonAlignmentPreFilter(**kwargs):
+def MuonAlignmentPreFilter(*args, **kwargs):
   mod = cms.EDFilter('MuonAlignmentPreFilter',
     tracksTag = cms.InputTag('ALCARECOMuAlCalIsolatedMu', 'GlobalMuon'),
     minTrackPt = cms.double(20),
@@ -13,6 +13,7 @@ def MuonAlignmentPreFilter(**kwargs):
     maxTrackEta = cms.double(2.4),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

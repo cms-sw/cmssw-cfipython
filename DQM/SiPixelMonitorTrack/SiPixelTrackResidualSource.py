@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelTrackResidualSource(**kwargs):
+def SiPixelTrackResidualSource(*args, **kwargs):
   mod = cms.EDProducer('SiPixelTrackResidualSource',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

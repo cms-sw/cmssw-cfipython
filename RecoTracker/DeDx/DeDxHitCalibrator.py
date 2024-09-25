@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DeDxHitCalibrator(**kwargs):
+def DeDxHitCalibrator(*args, **kwargs):
   mod = cms.EDProducer('DeDxHitCalibrator',
     applyGain = cms.bool(True),
     MeVPerElectron = cms.double(3.61e-06),
@@ -13,6 +13,7 @@ def DeDxHitCalibrator(**kwargs):
     dedxHitInfo = cms.InputTag('dedxHitInfo'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

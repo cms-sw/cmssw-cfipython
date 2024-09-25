@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DiElectronVertexValidation(**kwargs):
+def DiElectronVertexValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('DiElectronVertexValidation',
     gsfTracks = cms.InputTag('electronGsfTracks'),
     vertices = cms.InputTag('offlinePrimaryVertices'),
@@ -84,6 +84,7 @@ def DiElectronVertexValidation(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

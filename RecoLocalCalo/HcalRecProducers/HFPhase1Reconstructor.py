@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HFPhase1Reconstructor(**kwargs):
+def HFPhase1Reconstructor(*args, **kwargs):
   mod = cms.EDProducer('HFPhase1Reconstructor',
     inputLabel = cms.required.InputTag,
     algoConfigClass = cms.required.string,
@@ -42,6 +42,7 @@ def HFPhase1Reconstructor(**kwargs):
     PETstat = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

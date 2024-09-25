@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DeepDoubleXTagInfoProducer(**kwargs):
+def DeepDoubleXTagInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('DeepDoubleXTagInfoProducer',
     shallow_tag_infos = cms.InputTag('pfBoostedDoubleSVAK8TagInfos'),
     jet_radius = cms.double(0.8),
@@ -14,6 +14,7 @@ def DeepDoubleXTagInfoProducer(**kwargs):
     is_weighted_jet = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

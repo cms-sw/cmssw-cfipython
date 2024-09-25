@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RepeatingCachedRootSource(**kwargs):
+def RepeatingCachedRootSource(*args, **kwargs):
   mod = cms.Source('RepeatingCachedRootSource',
     fileName = cms.required.untracked.string,
     repeatNEvents = cms.untracked.uint32(10),
@@ -9,6 +9,7 @@ def RepeatingCachedRootSource(**kwargs):
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

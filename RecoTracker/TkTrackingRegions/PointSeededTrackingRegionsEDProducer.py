@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PointSeededTrackingRegionsEDProducer(**kwargs):
+def PointSeededTrackingRegionsEDProducer(*args, **kwargs):
   mod = cms.EDProducer('PointSeededTrackingRegionsEDProducer',
     RegionPSet = cms.PSet(
       points = cms.PSet(
@@ -27,6 +27,7 @@ def PointSeededTrackingRegionsEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTDQMMuonSelector(**kwargs):
+def HLTDQMMuonSelector(*args, **kwargs):
   mod = cms.EDProducer('HLTDQMMuonSelector',
     objs = cms.InputTag('muons'),
     vertices = cms.InputTag('offlinePrimaryVertices'),
@@ -8,6 +8,7 @@ def HLTDQMMuonSelector(**kwargs):
     muonSelectionType = cms.string('tight'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

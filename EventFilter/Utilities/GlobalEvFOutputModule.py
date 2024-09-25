@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GlobalEvFOutputModule(**kwargs):
+def GlobalEvFOutputModule(*args, **kwargs):
   mod = cms.OutputModule('GlobalEvFOutputModule',
     max_event_size = cms.untracked.int32(7000000),
     use_compression = cms.untracked.bool(True),
@@ -13,6 +13,7 @@ def GlobalEvFOutputModule(**kwargs):
     ),
     psetMap = cms.untracked.InputTag('hltPSetMap')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

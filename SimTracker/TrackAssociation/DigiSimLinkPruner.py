@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DigiSimLinkPruner(**kwargs):
+def DigiSimLinkPruner(*args, **kwargs):
   mod = cms.EDProducer('DigiSimLinkPruner',
     trackingParticles = cms.required.InputTag,
     pixelSimLinkSrc = cms.InputTag('simSiPixelDigis'),
@@ -8,6 +8,7 @@ def DigiSimLinkPruner(**kwargs):
     phase2OTSimLinkSrc = cms.optional.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripDetVOffFakeESSource(**kwargs):
+def SiStripDetVOffFakeESSource(*args, **kwargs):
   mod = cms.ESSource('SiStripDetVOffFakeESSource',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

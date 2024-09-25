@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTSummaryFilter(**kwargs):
+def HLTSummaryFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTSummaryFilter',
     saveTags = cms.bool(True),
     summary = cms.InputTag('hltTriggerSummaryAOD', '', 'HLT'),
@@ -9,6 +9,7 @@ def HLTSummaryFilter(**kwargs):
     minN = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

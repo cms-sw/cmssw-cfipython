@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecAnalyzerMinbias(**kwargs):
+def RecAnalyzerMinbias(*args, **kwargs):
   mod = cms.EDAnalyzer('RecAnalyzerMinbias',
     runNZS = cms.bool(True),
     noise = cms.bool(False),
@@ -27,6 +27,7 @@ def RecAnalyzerMinbias(**kwargs):
     hcalDigiCollectionTag = cms.InputTag('hcalDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CSCDigiFilter(**kwargs):
+def CSCDigiFilter(*args, **kwargs):
   mod = cms.EDProducer('CSCDigiFilter',
     stripDigiTag = cms.InputTag('muonCSCDigis', 'MuonCSCStripDigi'),
     wireDigiTag = cms.InputTag('muonCSCDigis', 'MuonCSCWireDigi'),
@@ -16,6 +16,7 @@ def CSCDigiFilter(**kwargs):
     useShowers = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

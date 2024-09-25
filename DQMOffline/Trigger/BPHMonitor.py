@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BPHMonitor(**kwargs):
+def BPHMonitor(*args, **kwargs):
   mod = cms.EDProducer('BPHMonitor',
     FolderName = cms.string('HLT/BPH/'),
     requireValidHLTPaths = cms.bool(True),
@@ -196,6 +196,7 @@ def BPHMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

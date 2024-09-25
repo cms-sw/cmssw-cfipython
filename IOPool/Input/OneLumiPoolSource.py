@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def OneLumiPoolSource(**kwargs):
+def OneLumiPoolSource(*args, **kwargs):
   mod = cms.Source('OneLumiPoolSource',
     fileNames = cms.required.untracked.vstring,
     secondaryFileNames = cms.untracked.vstring(),
@@ -31,6 +31,7 @@ def OneLumiPoolSource(**kwargs):
     duplicateCheckMode = cms.untracked.string('checkAllFilesOpened'),
     setRunNumber = cms.untracked.uint32(0)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

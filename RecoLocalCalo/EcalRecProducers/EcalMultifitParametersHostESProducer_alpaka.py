@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalMultifitParametersHostESProducer_alpaka(**kwargs):
+def EcalMultifitParametersHostESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('EcalMultifitParametersHostESProducer@alpaka',
     EBtimeFitParameters = cms.vdouble(
       -2.015452,
@@ -35,6 +35,7 @@ def EcalMultifitParametersHostESProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

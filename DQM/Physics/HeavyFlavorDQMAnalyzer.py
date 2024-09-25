@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HeavyFlavorDQMAnalyzer(**kwargs):
+def HeavyFlavorDQMAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('HeavyFlavorDQMAnalyzer',
     folder = cms.string('Physics/HeavyFlavor'),
     pvCollection = cms.required.InputTag,
@@ -20,6 +20,7 @@ def HeavyFlavorDQMAnalyzer(**kwargs):
     Psi2SToJPsiPiPiCands = cms.optional.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

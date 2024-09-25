@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ClusterTPAssociationProducer(**kwargs):
+def ClusterTPAssociationProducer(*args, **kwargs):
   mod = cms.EDProducer('ClusterTPAssociationProducer',
     simTrackSrc = cms.InputTag('g4SimHits'),
     pixelSimLinkSrc = cms.InputTag('simSiPixelDigis'),
@@ -13,6 +13,7 @@ def ClusterTPAssociationProducer(**kwargs):
     throwOnMissingCollections = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

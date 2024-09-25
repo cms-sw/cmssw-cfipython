@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSAlignmentWorker(**kwargs):
+def PPSAlignmentWorker(*args, **kwargs):
   mod = cms.EDProducer('PPSAlignmentWorker',
     label = cms.string(''),
     tracksTags = cms.VInputTag('ctppsLocalTrackLiteProducer'),
@@ -8,6 +8,7 @@ def PPSAlignmentWorker(**kwargs):
     debug = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

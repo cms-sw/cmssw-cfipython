@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFEGammaToCandidate(**kwargs):
+def PFEGammaToCandidate(*args, **kwargs):
   mod = cms.EDProducer('PFEGammaToCandidate',
     photons = cms.InputTag('selectedPatPhotons'),
     electrons = cms.InputTag('selectedPatElectrons'),
@@ -8,6 +8,7 @@ def PFEGammaToCandidate(**kwargs):
     electron2pf = cms.InputTag('particleBasedIsolation', 'gedGsfElectrons'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

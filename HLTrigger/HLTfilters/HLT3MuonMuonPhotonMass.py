@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT3MuonMuonPhotonMass(**kwargs):
+def HLT3MuonMuonPhotonMass(*args, **kwargs):
   mod = cms.EDFilter('HLT3MuonMuonPhotonMass',
     saveTags = cms.bool(True),
     originTag1 = cms.VInputTag('hltOriginal1'),
@@ -20,6 +20,7 @@ def HLT3MuonMuonPhotonMass(**kwargs):
     is2and3Same = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

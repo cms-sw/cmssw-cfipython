@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def JetTester_HeavyIons(**kwargs):
+def JetTester_HeavyIons(*args, **kwargs):
   mod = cms.EDProducer('JetTester_HeavyIons',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

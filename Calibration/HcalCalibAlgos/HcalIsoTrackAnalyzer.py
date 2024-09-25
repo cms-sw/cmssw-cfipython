@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalIsoTrackAnalyzer(**kwargs):
+def HcalIsoTrackAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalIsoTrackAnalyzer',
     momentumLow = cms.double(40),
     momentumHigh = cms.double(60),
@@ -13,6 +13,7 @@ def HcalIsoTrackAnalyzer(**kwargs):
     debugEvents = cms.vint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

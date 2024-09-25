@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def RealCosmicDataAnalyzer(**kwargs):
+def RealCosmicDataAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('RealCosmicDataAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

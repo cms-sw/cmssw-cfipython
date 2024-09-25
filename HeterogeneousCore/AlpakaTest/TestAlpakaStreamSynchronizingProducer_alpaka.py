@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestAlpakaStreamSynchronizingProducer_alpaka(**kwargs):
+def TestAlpakaStreamSynchronizingProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('TestAlpakaStreamSynchronizingProducer@alpaka',
     source = cms.required.InputTag,
     intSource = cms.required.InputTag,
@@ -10,6 +10,7 @@ def TestAlpakaStreamSynchronizingProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

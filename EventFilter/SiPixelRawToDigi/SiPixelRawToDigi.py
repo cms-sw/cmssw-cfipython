@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelRawToDigi(**kwargs):
+def SiPixelRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRawToDigi',
     IncludeErrors = cms.bool(True),
     UseQualityInfo = cms.bool(False),
@@ -19,6 +19,7 @@ def SiPixelRawToDigi(**kwargs):
     SiPixelQualityLabel = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

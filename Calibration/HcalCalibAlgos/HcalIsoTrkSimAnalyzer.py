@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalIsoTrkSimAnalyzer(**kwargs):
+def HcalIsoTrkSimAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalIsoTrkSimAnalyzer',
     triggers = cms.vstring(
       'HLT_PFJet40',
@@ -72,6 +72,7 @@ def HcalIsoTrkSimAnalyzer(**kwargs):
     usePFThreshold = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

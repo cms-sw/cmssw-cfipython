@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripGainCalibTableProducer(**kwargs):
+def SiStripGainCalibTableProducer(*args, **kwargs):
   mod = cms.EDProducer('SiStripGainCalibTableProducer',
     name = cms.string('cluster'),
     doc = cms.string(''),
@@ -8,6 +8,7 @@ def SiStripGainCalibTableProducer(**kwargs):
     Tracks = cms.InputTag('generalTracks'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

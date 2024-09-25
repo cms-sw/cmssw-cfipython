@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CSCRecHitDProducer(**kwargs):
+def CSCRecHitDProducer(*args, **kwargs):
   mod = cms.EDProducer('CSCRecHitDProducer',
     CSCStripPeakThreshold = cms.double(10),
     CSCStripClusterChargeCut = cms.double(25),
@@ -52,6 +52,7 @@ def CSCRecHitDProducer(**kwargs):
     CSCWireTimeWindowHigh = cms.int32(15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

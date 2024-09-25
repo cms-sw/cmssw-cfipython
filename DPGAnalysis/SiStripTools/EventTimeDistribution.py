@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def EventTimeDistribution(**kwargs):
+def EventTimeDistribution(*args, **kwargs):
   mod = cms.EDAnalyzer('EventTimeDistribution',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

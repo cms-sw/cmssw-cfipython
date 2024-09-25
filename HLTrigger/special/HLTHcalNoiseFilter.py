@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHcalNoiseFilter(**kwargs):
+def HLTHcalNoiseFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTHcalNoiseFilter',
     saveTags = cms.bool(True),
     JetSource = cms.InputTag('iterativeCone5CaloJets'),
@@ -13,6 +13,7 @@ def HLTHcalNoiseFilter(**kwargs):
     JetHCALminEnergyFraction = cms.double(0.98),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

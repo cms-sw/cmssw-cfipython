@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTBParametersESModule(**kwargs):
+def HGCalTBParametersESModule(*args, **kwargs):
   mod = cms.ESProducer('HGCalTBParametersESModule',
     name = cms.string('HGCalEESensitive'),
     name2 = cms.string('HGCalEE'),
@@ -11,6 +11,7 @@ def HGCalTBParametersESModule(**kwargs):
     fromDD4hep = cms.bool(False),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

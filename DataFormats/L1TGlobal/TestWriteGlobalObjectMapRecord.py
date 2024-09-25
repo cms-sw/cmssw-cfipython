@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestWriteGlobalObjectMapRecord(**kwargs):
+def TestWriteGlobalObjectMapRecord(*args, **kwargs):
   mod = cms.EDProducer('TestWriteGlobalObjectMapRecord',
     nGlobalObjectMaps = cms.required.uint32,
     algoNames = cms.required.vstring,
@@ -19,6 +19,7 @@ def TestWriteGlobalObjectMapRecord(**kwargs):
     elementDelta = cms.required.int32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

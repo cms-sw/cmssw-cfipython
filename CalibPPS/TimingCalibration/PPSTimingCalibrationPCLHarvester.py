@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSTimingCalibrationPCLHarvester(**kwargs):
+def PPSTimingCalibrationPCLHarvester(*args, **kwargs):
   mod = cms.EDProducer('PPSTimingCalibrationPCLHarvester',
     dqmDir = cms.string('AlCaReco/PPSTimingCalibrationPCL'),
     formula = cms.string('[0]/(exp((x-[1])/[2])+1)+[3]'),
@@ -8,6 +8,7 @@ def PPSTimingCalibrationPCLHarvester(**kwargs):
     thresholdFractionOfMax = cms.double(0.05),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

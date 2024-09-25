@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TriggerResultsFilterFromDB(**kwargs):
+def TriggerResultsFilterFromDB(*args, **kwargs):
   mod = cms.EDFilter('TriggerResultsFilterFromDB',
     usePathStatus = cms.bool(False),
     hltResults = cms.InputTag('TriggerResults'),
@@ -10,6 +10,7 @@ def TriggerResultsFilterFromDB(**kwargs):
     eventSetupPathsKey = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

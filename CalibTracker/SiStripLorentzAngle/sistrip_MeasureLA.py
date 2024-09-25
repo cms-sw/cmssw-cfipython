@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def sistrip_MeasureLA(**kwargs):
+def sistrip_MeasureLA(*args, **kwargs):
   mod = cms.ESProducer('sistrip::MeasureLA',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

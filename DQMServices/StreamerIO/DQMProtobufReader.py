@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMProtobufReader(**kwargs):
+def DQMProtobufReader(*args, **kwargs):
   mod = cms.Source('DQMProtobufReader',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -25,6 +25,7 @@ def DQMProtobufReader(**kwargs):
     scanOnce = cms.untracked.bool(False),
     runInputDir = cms.required.untracked.string
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

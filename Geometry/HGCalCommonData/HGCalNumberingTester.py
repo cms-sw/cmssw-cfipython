@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalNumberingTester(**kwargs):
+def HGCalNumberingTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalNumberingTester',
     NameSense = cms.string('HGCalEESensitive'),
     NameDevice = cms.string('HGCal EE'),
@@ -11,6 +11,7 @@ def HGCalNumberingTester(**kwargs):
     Reco = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

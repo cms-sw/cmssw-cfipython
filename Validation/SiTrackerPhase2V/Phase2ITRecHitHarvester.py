@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2ITRecHitHarvester(**kwargs):
+def Phase2ITRecHitHarvester(*args, **kwargs):
   mod = cms.EDProducer('Phase2ITRecHitHarvester',
     TopFolder = cms.string('TrackerPhase2ITRecHitV'),
     NbarrelLayers = cms.uint32(4),
@@ -79,6 +79,7 @@ def Phase2ITRecHitHarvester(**kwargs):
     NFitThreshold = cms.uint32(100),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

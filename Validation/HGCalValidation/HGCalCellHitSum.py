@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalCellHitSum(**kwargs):
+def HGCalCellHitSum(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalCellHitSum',
     simtrack = cms.InputTag('g4SimHits'),
     simhits = cms.InputTag('g4SimHits', 'HGCHitsEE'),
@@ -9,6 +9,7 @@ def HGCalCellHitSum(**kwargs):
     layerList = cms.string('1'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

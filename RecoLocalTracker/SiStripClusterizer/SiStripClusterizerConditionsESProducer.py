@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripClusterizerConditionsESProducer(**kwargs):
+def SiStripClusterizerConditionsESProducer(*args, **kwargs):
   mod = cms.ESProducer('SiStripClusterizerConditionsESProducer',
     QualityLabel = cms.string(''),
     Label = cms.string(''),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

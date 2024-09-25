@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPhase2BadStripChannelBuilder(**kwargs):
+def SiPhase2BadStripChannelBuilder(*args, **kwargs):
   mod = cms.EDAnalyzer('SiPhase2BadStripChannelBuilder',
     SinceAppendMode = cms.required.bool,
     IOVMode = cms.required.string,
@@ -13,6 +13,7 @@ def SiPhase2BadStripChannelBuilder(**kwargs):
     badComponentsFraction = cms.double(0.01),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

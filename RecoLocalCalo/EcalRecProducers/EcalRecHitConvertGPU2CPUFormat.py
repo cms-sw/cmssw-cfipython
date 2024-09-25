@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalRecHitConvertGPU2CPUFormat(**kwargs):
+def EcalRecHitConvertGPU2CPUFormat(*args, **kwargs):
   mod = cms.EDProducer('EcalRecHitConvertGPU2CPUFormat',
     recHitsLabelGPUEB = cms.InputTag('ecalRecHitProducerGPU', 'EcalRecHitsGPUEB'),
     recHitsLabelGPUEE = cms.InputTag('ecalRecHitProducerGPU', 'EcalRecHitsGPUEE'),
@@ -8,6 +8,7 @@ def EcalRecHitConvertGPU2CPUFormat(**kwargs):
     recHitsLabelCPUEE = cms.string('EcalRecHitsEE'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

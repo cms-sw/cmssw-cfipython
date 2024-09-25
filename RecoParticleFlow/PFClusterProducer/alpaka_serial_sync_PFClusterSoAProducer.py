@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_serial_sync_PFClusterSoAProducer(**kwargs):
+def alpaka_serial_sync_PFClusterSoAProducer(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::PFClusterSoAProducer',
     pfRecHits = cms.InputTag(''),
     pfClusterParams = cms.ESInputTag('', ''),
@@ -12,6 +12,7 @@ def alpaka_serial_sync_PFClusterSoAProducer(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

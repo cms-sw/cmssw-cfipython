@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GsfTrackProducer(**kwargs):
+def GsfTrackProducer(*args, **kwargs):
   mod = cms.EDProducer('GsfTrackProducer',
     src = cms.InputTag('CkfElectronCandidates'),
     beamSpot = cms.InputTag('offlineBeamSpot'),
@@ -17,6 +17,7 @@ def GsfTrackProducer(**kwargs):
     AlgorithmName = cms.string('gsf'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

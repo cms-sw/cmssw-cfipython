@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def ProvenanceCheckerOutputModule(**kwargs):
+def ProvenanceCheckerOutputModule(*args, **kwargs):
   mod = cms.OutputModule('ProvenanceCheckerOutputModule',
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
       SelectEvents = cms.optional.vstring
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

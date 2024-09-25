@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CSCDigiToRawModule(**kwargs):
+def CSCDigiToRawModule(*args, **kwargs):
   mod = cms.EDProducer('CSCDigiToRawModule',
     formatVersion = cms.uint32(2005),
     usePreTriggers = cms.bool(True),
@@ -29,6 +29,7 @@ def CSCDigiToRawModule(**kwargs):
     preTriggerWindowMax = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

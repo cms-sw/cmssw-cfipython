@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTEleL1TrackIsolProducer(**kwargs):
+def EgammaHLTEleL1TrackIsolProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTEleL1TrackIsolProducer',
     ecalCands = cms.InputTag('hltEgammaCandidates'),
     eles = cms.InputTag('hltEgammaGsfElectrons'),
@@ -15,6 +15,7 @@ def EgammaHLTEleL1TrackIsolProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

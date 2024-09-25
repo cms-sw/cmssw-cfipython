@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PF_PU_FirstVertexTracks(**kwargs):
+def PF_PU_FirstVertexTracks(*args, **kwargs):
   mod = cms.EDProducer('PF_PU_FirstVertexTracks',
     AssociationType = cms.required.InputTag,
     AssociationMap = cms.required.InputTag,
@@ -9,6 +9,7 @@ def PF_PU_FirstVertexTracks(**kwargs):
     MinQuality = cms.required.int32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

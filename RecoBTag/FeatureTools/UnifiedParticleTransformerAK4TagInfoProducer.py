@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def UnifiedParticleTransformerAK4TagInfoProducer(**kwargs):
+def UnifiedParticleTransformerAK4TagInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('UnifiedParticleTransformerAK4TagInfoProducer',
     jet_radius = cms.double(0.4),
     min_candidate_pt = cms.double(0.1),
@@ -22,6 +22,7 @@ def UnifiedParticleTransformerAK4TagInfoProducer(**kwargs):
     max_jet_eta = cms.double(2.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

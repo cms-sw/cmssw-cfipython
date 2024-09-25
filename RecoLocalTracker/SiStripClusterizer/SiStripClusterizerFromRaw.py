@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripClusterizerFromRaw(**kwargs):
+def SiStripClusterizerFromRaw(*args, **kwargs):
   mod = cms.EDProducer('SiStripClusterizerFromRaw',
     ProductLabel = cms.InputTag('rawDataCollector'),
     ConditionsLabel = cms.string(''),
@@ -65,6 +65,7 @@ def SiStripClusterizerFromRaw(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

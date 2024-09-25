@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RPCPointProducer(**kwargs):
+def RPCPointProducer(*args, **kwargs):
   mod = cms.EDProducer('RPCPointProducer',
     incldt = cms.bool(True),
     inclcsc = cms.bool(True),
@@ -29,6 +29,7 @@ def RPCPointProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

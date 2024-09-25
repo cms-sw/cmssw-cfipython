@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalSimHitCheck(**kwargs):
+def HcalSimHitCheck(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalSimHitCheck',
     moduleLabel = cms.string('g4SimHits'),
     HitCollection = cms.string('HcalHits'),
@@ -10,6 +10,7 @@ def HcalSimHitCheck(**kwargs):
     hep17 = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

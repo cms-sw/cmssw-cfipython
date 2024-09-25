@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelCPEFastESProducerPhase2(**kwargs):
+def PixelCPEFastESProducerPhase2(*args, **kwargs):
   mod = cms.ESProducer('PixelCPEFastESProducerPhase2',
     LoadTemplatesFromDB = cms.bool(True),
     Alpha2Order = cms.bool(True),
@@ -62,6 +62,7 @@ def PixelCPEFastESProducerPhase2(**kwargs):
     MagneticFieldRecord = cms.ESInputTag('', ''),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

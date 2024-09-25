@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestWriteTriggerEvent(**kwargs):
+def TestWriteTriggerEvent(*args, **kwargs):
   mod = cms.EDProducer('TestWriteTriggerEvent',
     usedProcessName = cms.required.string,
     collectionTags = cms.required.vstring,
@@ -16,6 +16,7 @@ def TestWriteTriggerEvent(**kwargs):
     filterKeys = cms.required.vuint32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

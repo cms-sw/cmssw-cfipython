@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTestNeighbor(**kwargs):
+def HGCalTestNeighbor(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalTestNeighbor',
     detector = cms.string('HGCalEESensitive'),
     pX = cms.vdouble(
@@ -23,6 +23,7 @@ def HGCalTestNeighbor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

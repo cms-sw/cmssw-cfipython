@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT2MuonPhotonDZ(**kwargs):
+def HLT2MuonPhotonDZ(*args, **kwargs):
   mod = cms.EDFilter('HLT2MuonPhotonDZ',
     saveTags = cms.bool(True),
     originTag1 = cms.VInputTag('hltOriginal1'),
@@ -17,6 +17,7 @@ def HLT2MuonPhotonDZ(**kwargs):
     checkSC = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

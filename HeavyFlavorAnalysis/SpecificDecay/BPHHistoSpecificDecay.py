@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BPHHistoSpecificDecay(**kwargs):
+def BPHHistoSpecificDecay(*args, **kwargs):
   mod = cms.EDAnalyzer('BPHHistoSpecificDecay',
     trigResultsLabel = cms.string(''),
     oniaCandsLabel = cms.string(''),
@@ -17,6 +17,7 @@ def BPHHistoSpecificDecay(**kwargs):
     x3872CandsLabel = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

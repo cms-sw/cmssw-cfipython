@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalMLTask(**kwargs):
+def HcalMLTask(*args, **kwargs):
   mod = cms.EDProducer('HcalMLTask',
     name = cms.untracked.string('HcalMLTask'),
     onnx_model_path_HB = cms.untracked.string('DQM/HcalTasks/data/HB_2022/CGAE_MultiDim_SPATIAL_vONNX_RCLv22_PIXEL_BT_BN_RIN_IPHI_MED_5218_v06_02_2023_21h01_stateful.onnx'),
@@ -17,6 +17,7 @@ def HcalMLTask(**kwargs):
     tagHF = cms.untracked.InputTag('hcalDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

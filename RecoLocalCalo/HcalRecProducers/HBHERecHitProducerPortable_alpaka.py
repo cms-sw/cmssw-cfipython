@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HBHERecHitProducerPortable_alpaka(**kwargs):
+def HBHERecHitProducerPortable_alpaka(*args, **kwargs):
   mod = cms.EDProducer('HBHERecHitProducerPortable@alpaka',
     mahiPulseOffSets = cms.ESInputTag('', ''),
     maxTimeSamples = cms.uint32(10),
@@ -43,6 +43,7 @@ def HBHERecHitProducerPortable_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

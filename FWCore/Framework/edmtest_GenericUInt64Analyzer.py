@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_GenericUInt64Analyzer(**kwargs):
+def edmtest_GenericUInt64Analyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('edmtest::GenericUInt64Analyzer',
     srcBeginProcess = cms.untracked.VInputTag(),
     srcBeginRun = cms.untracked.VInputTag(),
@@ -13,6 +13,7 @@ def edmtest_GenericUInt64Analyzer(**kwargs):
     inputShouldBeMissing = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

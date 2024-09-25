@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BTagAndProbe(**kwargs):
+def BTagAndProbe(*args, **kwargs):
   mod = cms.EDProducer('BTagAndProbe',
     FolderName = cms.string('HLT/BTV'),
     requireValidHLTPaths = cms.bool(True),
@@ -52,6 +52,7 @@ def BTagAndProbe(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

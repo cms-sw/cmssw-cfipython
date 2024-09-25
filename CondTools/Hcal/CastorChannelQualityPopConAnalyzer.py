@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def CastorChannelQualityPopConAnalyzer(**kwargs):
+def CastorChannelQualityPopConAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('CastorChannelQualityPopConAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

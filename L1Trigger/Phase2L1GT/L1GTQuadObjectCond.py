@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GTQuadObjectCond(**kwargs):
+def L1GTQuadObjectCond(*args, **kwargs):
   mod = cms.EDFilter('L1GTQuadObjectCond',
     collection1 = cms.PSet(
       tag = cms.required.InputTag,
@@ -312,6 +312,7 @@ def L1GTQuadObjectCond(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

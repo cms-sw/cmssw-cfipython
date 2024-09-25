@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackIPProducer(**kwargs):
+def TrackIPProducer(*args, **kwargs):
   mod = cms.EDProducer('TrackIPProducer',
     maximumTransverseImpactParameter = cms.double(0.2),
     minimumNumberOfHits = cms.int32(8),
@@ -18,6 +18,7 @@ def TrackIPProducer(**kwargs):
     maximumChiSquared = cms.double(5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

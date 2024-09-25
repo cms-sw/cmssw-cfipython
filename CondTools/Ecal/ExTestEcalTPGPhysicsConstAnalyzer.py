@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def ExTestEcalTPGPhysicsConstAnalyzer(**kwargs):
+def ExTestEcalTPGPhysicsConstAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('ExTestEcalTPGPhysicsConstAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

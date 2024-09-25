@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DetSetVectorThingProducer(**kwargs):
+def DetSetVectorThingProducer(*args, **kwargs):
   mod = cms.EDProducer('DetSetVectorThingProducer',
     offsetDelta = cms.int32(0),
     detSets = cms.vint32(
@@ -12,6 +12,7 @@ def DetSetVectorThingProducer(**kwargs):
     grow = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

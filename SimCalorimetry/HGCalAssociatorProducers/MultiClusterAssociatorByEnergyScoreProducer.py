@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MultiClusterAssociatorByEnergyScoreProducer(**kwargs):
+def MultiClusterAssociatorByEnergyScoreProducer(*args, **kwargs):
   mod = cms.EDProducer('MultiClusterAssociatorByEnergyScoreProducer',
     hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     hits = cms.VInputTag(
@@ -11,6 +11,7 @@ def MultiClusterAssociatorByEnergyScoreProducer(**kwargs):
     hardScatterOnly = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

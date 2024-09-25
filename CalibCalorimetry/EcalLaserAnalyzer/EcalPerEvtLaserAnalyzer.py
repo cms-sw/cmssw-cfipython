@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalPerEvtLaserAnalyzer(**kwargs):
+def EcalPerEvtLaserAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('EcalPerEvtLaserAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

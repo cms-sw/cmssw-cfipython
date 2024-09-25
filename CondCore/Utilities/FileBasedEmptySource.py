@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def FileBasedEmptySource(**kwargs):
+def FileBasedEmptySource(*args, **kwargs):
   mod = cms.Source('FileBasedEmptySource',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -17,6 +17,7 @@ def FileBasedEmptySource(**kwargs):
     maxEvents = cms.required.uint32,
     pathForLastLumiFile = cms.required.string
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

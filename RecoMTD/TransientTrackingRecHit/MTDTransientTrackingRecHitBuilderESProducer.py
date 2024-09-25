@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def MTDTransientTrackingRecHitBuilderESProducer(**kwargs):
+def MTDTransientTrackingRecHitBuilderESProducer(*args, **kwargs):
   mod = cms.ESProducer('MTDTransientTrackingRecHitBuilderESProducer',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

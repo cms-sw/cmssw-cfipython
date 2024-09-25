@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SoftPFElectronTagInfoProducer(**kwargs):
+def SoftPFElectronTagInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('SoftPFElectronTagInfoProducer',
     primaryVertex = cms.required.InputTag,
     jets = cms.required.InputTag,
@@ -9,6 +9,7 @@ def SoftPFElectronTagInfoProducer(**kwargs):
     MaxSip3Dsig = cms.required.double,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

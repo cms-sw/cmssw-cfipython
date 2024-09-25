@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMRawToDigiModule(**kwargs):
+def GEMRawToDigiModule(*args, **kwargs):
   mod = cms.EDProducer('GEMRawToDigiModule',
     InputLabel = cms.InputTag('rawDataCollector'),
     useDBEMap = cms.bool(False),
@@ -11,6 +11,7 @@ def GEMRawToDigiModule(**kwargs):
     fedIdEnd = cms.uint32(1478),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

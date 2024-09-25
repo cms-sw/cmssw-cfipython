@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def FFTGenJetCorrectionESProducer(**kwargs):
+def FFTGenJetCorrectionESProducer(*args, **kwargs):
   mod = cms.ESProducer('FFTGenJetCorrectionESProducer',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

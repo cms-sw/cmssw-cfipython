@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def testSiStripGainBuilderFromDb(**kwargs):
+def testSiStripGainBuilderFromDb(*args, **kwargs):
   mod = cms.EDAnalyzer('testSiStripGainBuilderFromDb',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

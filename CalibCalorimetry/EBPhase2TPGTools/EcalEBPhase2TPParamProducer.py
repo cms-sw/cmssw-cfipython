@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalEBPhase2TPParamProducer(**kwargs):
+def EcalEBPhase2TPParamProducer(*args, **kwargs):
   mod = cms.EDAnalyzer('EcalEBPhase2TPParamProducer',
     inputFile = cms.required.FileInPath,
     outputFile = cms.required.untracked.string,
@@ -13,6 +13,7 @@ def EcalEBPhase2TPParamProducer(**kwargs):
     binOfMaximum = cms.uint32(6),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

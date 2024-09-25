@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def MtdTruthDumper(**kwargs):
+def MtdTruthDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('MtdTruthDumper',
     moduleLabelMtdSimLC = cms.InputTag('mix', 'MergedMtdTruthLC'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

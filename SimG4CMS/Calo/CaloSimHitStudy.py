@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CaloSimHitStudy(**kwargs):
+def CaloSimHitStudy(*args, **kwargs):
   mod = cms.EDAnalyzer('CaloSimHitStudy',
     SourceLabel = cms.untracked.string('generatorSmeared'),
     ModuleLabel = cms.untracked.string('g4SimHits'),
@@ -17,6 +17,7 @@ def CaloSimHitStudy(**kwargs):
     TestNumbering = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

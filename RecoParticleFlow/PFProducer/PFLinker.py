@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFLinker(**kwargs):
+def PFLinker(*args, **kwargs):
   mod = cms.EDProducer('PFLinker',
     PFCandidate = cms.VInputTag('particleFlow'),
     GsfElectrons = cms.InputTag('gedGsfElectrons'),
@@ -15,6 +15,7 @@ def PFLinker(**kwargs):
     forceElectronsInHGCAL = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

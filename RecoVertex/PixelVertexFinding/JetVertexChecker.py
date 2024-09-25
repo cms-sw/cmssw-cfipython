@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def JetVertexChecker(**kwargs):
+def JetVertexChecker(*args, **kwargs):
   mod = cms.EDFilter('JetVertexChecker',
     beamSpot = cms.InputTag('hltOnlineBeamSpot'),
     jetTracks = cms.InputTag('hltFastPVJetTracksAssociator'),
@@ -18,6 +18,7 @@ def JetVertexChecker(**kwargs):
     pvErr_z = cms.double(1.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestCaloSelectors(**kwargs):
+def TestCaloSelectors(*args, **kwargs):
   mod = cms.EDAnalyzer('TestCaloSelectors',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

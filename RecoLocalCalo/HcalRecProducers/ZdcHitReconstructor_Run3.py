@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZdcHitReconstructor_Run3(**kwargs):
+def ZdcHitReconstructor_Run3(*args, **kwargs):
   mod = cms.EDProducer('ZdcHitReconstructor_Run3',
     digiLabelQIE10ZDC = cms.InputTag('hcalDigis', 'ZDC'),
     Subdetector = cms.string('ZDC'),
@@ -49,6 +49,7 @@ def ZdcHitReconstructor_Run3(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

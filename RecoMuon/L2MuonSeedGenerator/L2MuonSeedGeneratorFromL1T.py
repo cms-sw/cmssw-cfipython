@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2MuonSeedGeneratorFromL1T(**kwargs):
+def L2MuonSeedGeneratorFromL1T(*args, **kwargs):
   mod = cms.EDProducer('L2MuonSeedGeneratorFromL1T',
     GMTReadoutCollection = cms.InputTag(''),
     InputObjects = cms.InputTag('hltGmtStage2Digis'),
@@ -28,6 +28,7 @@ def L2MuonSeedGeneratorFromL1T(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

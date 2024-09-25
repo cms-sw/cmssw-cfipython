@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PATJetCleanerForType1MET(**kwargs):
+def PATJetCleanerForType1MET(*args, **kwargs):
   mod = cms.EDProducer('PATJetCleanerForType1MET',
     src = cms.required.InputTag,
     offsetCorrLabel = cms.required.InputTag,
@@ -15,6 +15,7 @@ def PATJetCleanerForType1MET(**kwargs):
     calcMuonSubtrRawPtAsValueMap = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

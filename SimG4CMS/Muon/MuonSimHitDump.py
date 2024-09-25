@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonSimHitDump(**kwargs):
+def MuonSimHitDump(*args, **kwargs):
   mod = cms.EDAnalyzer('MuonSimHitDump',
     ModuleLabel = cms.string('g4SimHits'),
     HitCollections = cms.vstring(
@@ -18,6 +18,7 @@ def MuonSimHitDump(**kwargs):
     MaxEvent = cms.int32(10),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

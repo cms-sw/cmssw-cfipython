@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTValidateRecHit(**kwargs):
+def Phase2OTValidateRecHit(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTValidateRecHit',
     Delta_X_Pixel = cms.PSet(
       name = cms.string('Delta_X_Pixel'),
@@ -317,6 +317,7 @@ def Phase2OTValidateRecHit(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

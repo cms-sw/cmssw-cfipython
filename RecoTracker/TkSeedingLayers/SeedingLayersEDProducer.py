@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SeedingLayersEDProducer(**kwargs):
+def SeedingLayersEDProducer(*args, **kwargs):
   mod = cms.EDProducer('SeedingLayersEDProducer',
     layerList = cms.vstring(),
     BPix = cms.PSet(),
@@ -15,6 +15,7 @@ def SeedingLayersEDProducer(**kwargs):
     MTEC = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

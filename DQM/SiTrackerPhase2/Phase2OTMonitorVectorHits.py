@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTMonitorVectorHits(**kwargs):
+def Phase2OTMonitorVectorHits(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorVectorHits',
     GlobalNVecHits = cms.PSet(
       name = cms.string('NumberOfVecHits'),
@@ -165,6 +165,7 @@ def Phase2OTMonitorVectorHits(**kwargs):
     vechitsSrc = cms.InputTag('siPhase2VectorHits', 'accepted'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

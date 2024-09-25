@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalTrigPrimProducer(**kwargs):
+def EcalTrigPrimProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalTrigPrimProducer',
     BarrelOnly = cms.bool(False),
     TcpOutput = cms.bool(False),
@@ -13,6 +13,7 @@ def EcalTrigPrimProducer(**kwargs):
     TPinfoPrintout = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

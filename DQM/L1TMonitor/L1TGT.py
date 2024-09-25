@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TGT(**kwargs):
+def L1TGT(*args, **kwargs):
   mod = cms.EDProducer('L1TGT',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

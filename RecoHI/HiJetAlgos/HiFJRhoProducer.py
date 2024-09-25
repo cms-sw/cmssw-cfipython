@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HiFJRhoProducer(**kwargs):
+def HiFJRhoProducer(*args, **kwargs):
   mod = cms.EDProducer('HiFJRhoProducer',
     jetSource = cms.InputTag('kt4PFJets'),
     nExcl = cms.int32(2),
@@ -12,6 +12,7 @@ def HiFJRhoProducer(**kwargs):
     etaRanges = cms.vdouble(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

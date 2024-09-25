@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripO2OBadStrip(**kwargs):
+def SiStripO2OBadStrip(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripO2OBadStrip',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

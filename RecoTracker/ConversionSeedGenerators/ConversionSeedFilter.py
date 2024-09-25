@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def ConversionSeedFilter(**kwargs):
+def ConversionSeedFilter(*args, **kwargs):
   mod = cms.EDProducer('ConversionSeedFilter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

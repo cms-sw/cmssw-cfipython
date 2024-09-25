@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTMonitorRecHit(**kwargs):
+def Phase2OTMonitorRecHit(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorRecHit',
     GlobalNRecHits = cms.PSet(
       name = cms.string('NumberOfRecHits'),
@@ -135,6 +135,7 @@ def Phase2OTMonitorRecHit(**kwargs):
     rechitsSrc = cms.InputTag('siPhase2RecHits'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

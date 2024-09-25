@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalDumpHits(**kwargs):
+def HcalDumpHits(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalDumpHits',
     simHitSource = cms.InputTag('g4SimHits', 'HcalHits'),
     hbheDigiSource = cms.InputTag('hcalDigis'),
@@ -11,6 +11,7 @@ def HcalDumpHits(**kwargs):
     hoRecHitSource = cms.InputTag('horeco'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

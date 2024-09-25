@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def PtMinPFJetSelector(**kwargs):
+def PtMinPFJetSelector(*args, **kwargs):
   mod = cms.EDFilter('PtMinPFJetSelector',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

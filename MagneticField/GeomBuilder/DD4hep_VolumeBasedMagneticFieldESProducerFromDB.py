@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DD4hep_VolumeBasedMagneticFieldESProducerFromDB(**kwargs):
+def DD4hep_VolumeBasedMagneticFieldESProducerFromDB(*args, **kwargs):
   mod = cms.ESProducer('DD4hep_VolumeBasedMagneticFieldESProducerFromDB',
     debugBuilder = cms.untracked.bool(False),
     useMergeFileIfAvailable = cms.bool(True),
@@ -8,6 +8,7 @@ def DD4hep_VolumeBasedMagneticFieldESProducerFromDB(**kwargs):
     label = cms.untracked.string(''),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

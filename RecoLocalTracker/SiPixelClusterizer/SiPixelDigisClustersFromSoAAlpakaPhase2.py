@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelDigisClustersFromSoAAlpakaPhase2(**kwargs):
+def SiPixelDigisClustersFromSoAAlpakaPhase2(*args, **kwargs):
   mod = cms.EDProducer('SiPixelDigisClustersFromSoAAlpakaPhase2',
     src = cms.InputTag('siPixelDigisSoA'),
     clusterThreshold_layer1 = cms.int32(2000),
@@ -9,6 +9,7 @@ def SiPixelDigisClustersFromSoAAlpakaPhase2(**kwargs):
     storeDigis = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

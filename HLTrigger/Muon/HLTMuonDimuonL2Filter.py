@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonDimuonL2Filter(**kwargs):
+def HLTMuonDimuonL2Filter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonDimuonL2Filter',
     saveTags = cms.bool(True),
     BeamSpotTag = cms.InputTag('hltOfflineBeamSpot'),
@@ -29,6 +29,7 @@ def HLTMuonDimuonL2Filter(**kwargs):
     NSigmaPt = cms.double(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

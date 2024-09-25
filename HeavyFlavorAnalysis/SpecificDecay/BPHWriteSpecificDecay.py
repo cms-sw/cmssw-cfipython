@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BPHWriteSpecificDecay(**kwargs):
+def BPHWriteSpecificDecay(*args, **kwargs):
   mod = cms.EDProducer('BPHWriteSpecificDecay',
     pVertexLabel = cms.string(''),
     patMuonLabel = cms.string(''),
@@ -32,6 +32,7 @@ def BPHWriteSpecificDecay(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

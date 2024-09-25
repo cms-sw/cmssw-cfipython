@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SlimmingDSVThingProducer(**kwargs):
+def SlimmingDSVThingProducer(*args, **kwargs):
   mod = cms.EDProducer('SlimmingDSVThingProducer',
     inputTag = cms.required.InputTag,
     trackTag = cms.required.InputTag,
@@ -11,6 +11,7 @@ def SlimmingDSVThingProducer(**kwargs):
     slimmedValueFactor = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

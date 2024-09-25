@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CUDAService(**kwargs):
+def CUDAService(*args, **kwargs):
   mod = cms.Service('CUDAService',
     enabled = cms.untracked.bool(True),
     verbose = cms.untracked.bool(False),
@@ -16,6 +16,7 @@ def CUDAService(**kwargs):
       hostPreallocate = cms.untracked.vuint32()
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelClusterProducer(**kwargs):
+def SiPixelClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('SiPixelClusterProducer',
     src = cms.InputTag('siPixelDigis'),
     ClusterMode = cms.string('PixelThresholdClusterizer'),
@@ -24,6 +24,7 @@ def SiPixelClusterProducer(**kwargs):
     Phase2KinkADC = cms.int32(8),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

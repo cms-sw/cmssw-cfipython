@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPPSJetComparisonFilter(**kwargs):
+def HLTPPSJetComparisonFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPPSJetComparisonFilter',
     jetInputTag = cms.InputTag('hltAK4PFJetsCorrected'),
     forwardProtonInputTag = cms.InputTag('ctppsProtons', 'singleRP'),
@@ -16,6 +16,7 @@ def HLTPPSJetComparisonFilter(**kwargs):
     do_my = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

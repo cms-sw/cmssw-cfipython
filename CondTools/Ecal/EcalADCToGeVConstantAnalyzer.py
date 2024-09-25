@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalADCToGeVConstantAnalyzer(**kwargs):
+def EcalADCToGeVConstantAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('EcalADCToGeVConstantAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GaussEvtVtxGenerator(**kwargs):
+def GaussEvtVtxGenerator(*args, **kwargs):
   mod = cms.EDProducer('GaussEvtVtxGenerator',
     MeanX = cms.double(0),
     MeanY = cms.double(0),
@@ -13,6 +13,7 @@ def GaussEvtVtxGenerator(**kwargs):
     readDB = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

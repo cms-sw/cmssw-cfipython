@@ -1,7 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-def DummyServiceE0(**kwargs):
+def DummyServiceE0(*args, **kwargs):
   mod = cms.Service('DummyServiceE0')
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

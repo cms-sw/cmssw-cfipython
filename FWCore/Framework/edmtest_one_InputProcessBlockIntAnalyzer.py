@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_one_InputProcessBlockIntAnalyzer(**kwargs):
+def edmtest_one_InputProcessBlockIntAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('edmtest::one::InputProcessBlockIntAnalyzer',
     transitions = cms.required.int32,
     expectedByRun = cms.vint32(),
@@ -19,6 +19,7 @@ def edmtest_one_InputProcessBlockIntAnalyzer(**kwargs):
     consumesProcessBlockNotFound4 = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ttbarEventSelector(**kwargs):
+def ttbarEventSelector(*args, **kwargs):
   mod = cms.EDFilter('ttbarEventSelector',
     electronInputTag = cms.untracked.InputTag('gedGsfElectrons'),
     jetsInputTag = cms.untracked.InputTag('ak4PFJetsCHS'),
@@ -44,6 +44,7 @@ def ttbarEventSelector(**kwargs):
     maxWmass = cms.untracked.double(130),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

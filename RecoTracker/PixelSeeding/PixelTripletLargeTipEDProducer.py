@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelTripletLargeTipEDProducer(**kwargs):
+def PixelTripletLargeTipEDProducer(*args, **kwargs):
   mod = cms.EDProducer('PixelTripletLargeTipEDProducer',
     doublets = cms.InputTag('hitPairEDProducer'),
     produceSeedingHitSets = cms.bool(False),
@@ -14,6 +14,7 @@ def PixelTripletLargeTipEDProducer(**kwargs):
     phiPreFiltering = cms.double(0.3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def JetMonitor(**kwargs):
+def JetMonitor(*args, **kwargs):
   mod = cms.EDProducer('JetMonitor',
     FolderName = cms.string('HLT/Jet'),
     requireValidHLTPaths = cms.bool(True),
@@ -102,6 +102,7 @@ def JetMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

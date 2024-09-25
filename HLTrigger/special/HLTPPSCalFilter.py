@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPPSCalFilter(**kwargs):
+def HLTPPSCalFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPPSCalFilter',
     pixelLocalTrackInputTag = cms.InputTag('ctppsPixelLocalTracks'),
     minTracks = cms.int32(1),
@@ -9,6 +9,7 @@ def HLTPPSCalFilter(**kwargs):
     triggerType = cms.int32(91),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

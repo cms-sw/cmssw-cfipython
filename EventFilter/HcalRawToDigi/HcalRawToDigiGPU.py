@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalRawToDigiGPU(**kwargs):
+def HcalRawToDigiGPU(*args, **kwargs):
   mod = cms.EDProducer('HcalRawToDigiGPU',
     InputLabel = cms.InputTag('rawDataCollector'),
     FEDs = cms.vint32(
@@ -116,6 +116,7 @@ def HcalRawToDigiGPU(**kwargs):
     digisLabelF3HB = cms.string('f3HBDigisGPU'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

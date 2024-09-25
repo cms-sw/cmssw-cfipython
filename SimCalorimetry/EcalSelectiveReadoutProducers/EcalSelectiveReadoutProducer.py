@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalSelectiveReadoutProducer(**kwargs):
+def EcalSelectiveReadoutProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalSelectiveReadoutProducer',
     digiProducer = cms.required.string,
     EBdigiCollection = cms.required.string,
@@ -35,6 +35,7 @@ def EcalSelectiveReadoutProducer(**kwargs):
     srpEndcapHighInterestChannelZS = cms.optional.double,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

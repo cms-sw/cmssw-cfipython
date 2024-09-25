@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GoodSeedProducer(**kwargs):
+def GoodSeedProducer(*args, **kwargs):
   mod = cms.EDProducer('GoodSeedProducer',
     MaxEOverP = cms.double(3),
     Smoother = cms.string('GsfTrajectorySmoother_forPreId'),
@@ -50,6 +50,7 @@ def GoodSeedProducer(**kwargs):
     Min_dr = cms.double(0.2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

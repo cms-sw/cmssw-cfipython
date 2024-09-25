@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def RPCGeometryServTest(**kwargs):
+def RPCGeometryServTest(*args, **kwargs):
   mod = cms.EDAnalyzer('RPCGeometryServTest',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

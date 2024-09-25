@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TRate_Offline(**kwargs):
+def L1TRate_Offline(*args, **kwargs):
   mod = cms.EDProducer('L1TRate_Offline',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

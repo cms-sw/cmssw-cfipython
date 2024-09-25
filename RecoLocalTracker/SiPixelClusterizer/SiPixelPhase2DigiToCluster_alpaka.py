@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelPhase2DigiToCluster_alpaka(**kwargs):
+def SiPixelPhase2DigiToCluster_alpaka(*args, **kwargs):
   mod = cms.EDProducer('SiPixelPhase2DigiToCluster@alpaka',
     IncludeErrors = cms.bool(True),
     clusterThreshold_layer1 = cms.int32(4000),
@@ -15,6 +15,7 @@ def SiPixelPhase2DigiToCluster_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

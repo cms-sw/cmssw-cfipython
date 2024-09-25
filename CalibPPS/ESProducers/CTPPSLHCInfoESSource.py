@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSLHCInfoESSource(**kwargs):
+def CTPPSLHCInfoESSource(*args, **kwargs):
   mod = cms.ESSource('CTPPSLHCInfoESSource',
     label = cms.string(''),
     validityRange = cms.EventRange('0:18446744073709551615-0:18446744073709551615'),
@@ -9,6 +9,7 @@ def CTPPSLHCInfoESSource(**kwargs):
     xangle = cms.double(0),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

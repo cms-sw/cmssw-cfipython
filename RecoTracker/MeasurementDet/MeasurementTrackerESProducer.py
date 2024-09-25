@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MeasurementTrackerESProducer(**kwargs):
+def MeasurementTrackerESProducer(*args, **kwargs):
   mod = cms.ESProducer('MeasurementTrackerESProducer',
     ComponentName = cms.string(''),
     PixelCPE = cms.string('PixelCPEGeneric'),
@@ -39,6 +39,7 @@ def MeasurementTrackerESProducer(**kwargs):
     DebugPixelROCQualityDB = cms.untracked.bool(False),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

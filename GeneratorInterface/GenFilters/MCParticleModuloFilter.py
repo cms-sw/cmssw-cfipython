@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MCParticleModuloFilter(**kwargs):
+def MCParticleModuloFilter(*args, **kwargs):
   mod = cms.EDFilter('MCParticleModuloFilter',
     moduleLabel = cms.InputTag('generator', 'unsmeared'),
     particleIDs = cms.vint32(),
@@ -10,6 +10,7 @@ def MCParticleModuloFilter(**kwargs):
     status = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

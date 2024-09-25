@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def UnitTestClient_X(**kwargs):
+def UnitTestClient_X(*args, **kwargs):
   mod = cms.EDAnalyzer('UnitTestClient_X',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

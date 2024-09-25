@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_rocm_async_PFClusterParamsESProducer(**kwargs):
+def alpaka_rocm_async_PFClusterParamsESProducer(*args, **kwargs):
   mod = cms.ESProducer('alpaka_rocm_async::PFClusterParamsESProducer',
     seedFinder = cms.PSet(
       nNeighbours = cms.int32(4),
@@ -113,6 +113,7 @@ def alpaka_rocm_async_PFClusterParamsESProducer(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

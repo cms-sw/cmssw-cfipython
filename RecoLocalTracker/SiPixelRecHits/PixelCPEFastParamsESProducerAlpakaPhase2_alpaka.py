@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelCPEFastParamsESProducerAlpakaPhase2_alpaka(**kwargs):
+def PixelCPEFastParamsESProducerAlpakaPhase2_alpaka(*args, **kwargs):
   mod = cms.ESProducer('PixelCPEFastParamsESProducerAlpakaPhase2@alpaka',
     LoadTemplatesFromDB = cms.bool(True),
     Alpha2Order = cms.bool(True),
@@ -65,6 +65,7 @@ def PixelCPEFastParamsESProducerAlpakaPhase2_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

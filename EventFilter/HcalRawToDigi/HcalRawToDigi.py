@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalRawToDigi(**kwargs):
+def HcalRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('HcalRawToDigi',
     HcalFirstFED = cms.untracked.int32(700),
     firstSample = cms.int32(0),
@@ -23,6 +23,7 @@ def HcalRawToDigi(**kwargs):
     ElectronicsMap = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

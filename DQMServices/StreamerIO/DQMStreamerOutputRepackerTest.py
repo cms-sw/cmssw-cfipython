@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMStreamerOutputRepackerTest(**kwargs):
+def DQMStreamerOutputRepackerTest(*args, **kwargs):
   mod = cms.OutputModule('DQMStreamerOutputRepackerTest',
     max_event_size = cms.untracked.int32(7000000),
     use_compression = cms.untracked.bool(True),
@@ -15,6 +15,7 @@ def DQMStreamerOutputRepackerTest(**kwargs):
     outputPath = cms.untracked.string('./output/'),
     streamLabel = cms.untracked.string('DQM')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

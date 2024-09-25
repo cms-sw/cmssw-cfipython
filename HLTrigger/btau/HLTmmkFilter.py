@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTmmkFilter(**kwargs):
+def HLTmmkFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTmmkFilter',
     saveTags = cms.bool(True),
     MuCand = cms.InputTag('hltMuTracks'),
@@ -18,6 +18,7 @@ def HLTmmkFilter(**kwargs):
     BeamSpotTag = cms.InputTag('hltOfflineBeamSpot'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

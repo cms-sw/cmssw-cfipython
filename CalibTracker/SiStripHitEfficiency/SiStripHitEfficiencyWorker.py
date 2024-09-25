@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripHitEfficiencyWorker(**kwargs):
+def SiStripHitEfficiencyWorker(*args, **kwargs):
   mod = cms.EDProducer('SiStripHitEfficiencyWorker',
     dqmDir = cms.string('AlCaReco/SiStripHitEfficiency'),
     UseOnlyHighPurityTracks = cms.bool(True),
@@ -32,6 +32,7 @@ def SiStripHitEfficiencyWorker(**kwargs):
     BadModulesFile = cms.untracked.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

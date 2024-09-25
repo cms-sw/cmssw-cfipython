@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMRootSource(**kwargs):
+def DQMRootSource(*args, **kwargs):
   mod = cms.Source('DQMRootSource',
     fileNames = cms.required.untracked.vstring,
     filterOnRun = cms.untracked.uint32(0),
@@ -9,6 +9,7 @@ def DQMRootSource(**kwargs):
     overrideCatalog = cms.untracked.string(''),
     lumisToProcess = cms.untracked.VLuminosityBlockRange()
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

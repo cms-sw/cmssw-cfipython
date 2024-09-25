@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DTGeometryESModule(**kwargs):
+def DTGeometryESModule(*args, **kwargs):
   mod = cms.ESProducer('DTGeometryESModule',
     fromDDD = cms.bool(True),
     fromDD4hep = cms.bool(False),
@@ -11,6 +11,7 @@ def DTGeometryESModule(**kwargs):
     value = cms.string('MuonBarrelDT'),
     applyAlignment = cms.bool(True)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

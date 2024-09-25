@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GlobalTriggerRawToDigi(**kwargs):
+def L1GlobalTriggerRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('L1GlobalTriggerRawToDigi',
     DaqGtInputTag = cms.InputTag('l1GtPack'),
     DaqGtFedId = cms.untracked.int32(813),
@@ -9,6 +9,7 @@ def L1GlobalTriggerRawToDigi(**kwargs):
     Verbosity = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

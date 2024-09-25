@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalGeometryNewCornersTest(**kwargs):
+def HGCalGeometryNewCornersTest(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalGeometryNewCornersTest',
     detectorName = cms.string('HGCalHESiliconSensitive'),
     layers = cms.vint32(
@@ -38,6 +38,7 @@ def HGCalGeometryNewCornersTest(**kwargs):
     debugFlag = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

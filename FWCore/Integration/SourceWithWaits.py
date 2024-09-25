@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SourceWithWaits(**kwargs):
+def SourceWithWaits(*args, **kwargs):
   mod = cms.Source('SourceWithWaits',
     timePerLumi = cms.required.untracked.double,
     sleepAfterStartOfRun = cms.required.untracked.double,
@@ -11,6 +11,7 @@ def SourceWithWaits(**kwargs):
     declareLast = cms.untracked.bool(False),
     declareAllLast = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

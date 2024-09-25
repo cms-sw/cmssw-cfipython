@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AnalyzeTuples(**kwargs):
+def AnalyzeTuples(*args, **kwargs):
   mod = cms.EDAnalyzer('AnalyzeTuples',
     FileName = cms.string('SimG4CMS/Calo/data/HFShowerLibrary_oldpmt_noatt_eta4_16en_v3.root'),
     TreeEMID = cms.string('emParticles'),
@@ -10,6 +10,7 @@ def AnalyzeTuples(**kwargs):
     BranchPost = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

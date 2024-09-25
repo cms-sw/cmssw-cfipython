@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def StandaloneTrackMonitor(**kwargs):
+def StandaloneTrackMonitor(*args, **kwargs):
   mod = cms.EDProducer('StandaloneTrackMonitor',
     moduleName = cms.untracked.string('StandaloneTrackMonitor'),
     folderName = cms.untracked.string('highPurityTracks'),
@@ -40,6 +40,7 @@ def StandaloneTrackMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

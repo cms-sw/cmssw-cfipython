@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def FastjetJetProducer(**kwargs):
+def FastjetJetProducer(*args, **kwargs):
   mod = cms.EDProducer('FastjetJetProducer',
     useMassDropTagger = cms.bool(False),
     useFiltering = cms.bool(False),
@@ -87,6 +87,7 @@ def FastjetJetProducer(**kwargs):
     sumRecHits = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

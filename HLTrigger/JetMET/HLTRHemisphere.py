@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTRHemisphere(**kwargs):
+def HLTRHemisphere(*args, **kwargs):
   mod = cms.EDFilter('HLTRHemisphere',
     inputTag = cms.InputTag('hltMCJetCorJetIcone5HF07'),
     muonTag = cms.InputTag(''),
@@ -12,6 +12,7 @@ def HLTRHemisphere(**kwargs):
     acceptNJ = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

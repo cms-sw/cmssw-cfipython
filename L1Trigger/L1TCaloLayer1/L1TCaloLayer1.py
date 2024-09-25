@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TCaloLayer1(**kwargs):
+def L1TCaloLayer1(*args, **kwargs):
   mod = cms.EDProducer('L1TCaloLayer1',
     ecalToken = cms.InputTag('simEcalTriggerPrimitiveDigis'),
     hcalToken = cms.InputTag('simHcalTriggerPrimitiveDigis'),
@@ -16,6 +16,7 @@ def L1TCaloLayer1(**kwargs):
     firmwareVersion = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

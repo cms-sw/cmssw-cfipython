@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalConvertedPedestalWidthsGPUESProducer(**kwargs):
+def HcalConvertedPedestalWidthsGPUESProducer(*args, **kwargs):
   mod = cms.ESProducer('HcalConvertedPedestalWidthsGPUESProducer',
     ComponentName = cms.string(''),
     label0 = cms.string(''),
@@ -9,6 +9,7 @@ def HcalConvertedPedestalWidthsGPUESProducer(**kwargs):
     label3 = cms.string(''),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

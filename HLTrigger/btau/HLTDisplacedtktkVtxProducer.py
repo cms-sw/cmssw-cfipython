@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTDisplacedtktkVtxProducer(**kwargs):
+def HLTDisplacedtktkVtxProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTDisplacedtktkVtxProducer',
     Src = cms.InputTag('hltL3MuonCandidates'),
     PreviousCandTag = cms.InputTag(''),
@@ -15,6 +15,7 @@ def HLTDisplacedtktkVtxProducer(**kwargs):
     triggerTypeDaughters = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

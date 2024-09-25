@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTDisplacedtktkFilter(**kwargs):
+def HLTDisplacedtktkFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTDisplacedtktkFilter',
     saveTags = cms.bool(True),
     FastAccept = cms.bool(False),
@@ -15,6 +15,7 @@ def HLTDisplacedtktkFilter(**kwargs):
     TrackTag = cms.InputTag('hltL3MuonCandidates'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

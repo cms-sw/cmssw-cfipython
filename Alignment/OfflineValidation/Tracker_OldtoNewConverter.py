@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Tracker_OldtoNewConverter(**kwargs):
+def Tracker_OldtoNewConverter(*args, **kwargs):
   mod = cms.EDAnalyzer('Tracker_OldtoNewConverter',
     conversionType = cms.untracked.string(''),
     inputFile = cms.untracked.string(''),
@@ -9,6 +9,7 @@ def Tracker_OldtoNewConverter(**kwargs):
     treeName = cms.untracked.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

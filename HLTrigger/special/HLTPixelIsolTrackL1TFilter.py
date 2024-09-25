@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPixelIsolTrackL1TFilter(**kwargs):
+def HLTPixelIsolTrackL1TFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPixelIsolTrackL1TFilter',
     saveTags = cms.bool(True),
     candTag = cms.InputTag('hltIsolPixelTrackProd'),
@@ -14,6 +14,7 @@ def HLTPixelIsolTrackL1TFilter(**kwargs):
     DropMultiL2Event = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

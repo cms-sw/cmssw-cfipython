@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalSoARecHitsProducer_alpaka(**kwargs):
+def HGCalSoARecHitsProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('HGCalSoARecHitsProducer@alpaka',
     detector = cms.string('EE'),
     recHits = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
@@ -16,6 +16,7 @@ def HGCalSoARecHitsProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

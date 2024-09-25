@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalHitCalibration(**kwargs):
+def HGCalHitCalibration(*args, **kwargs):
   mod = cms.EDProducer('HGCalHitCalibration',
     debug = cms.int32(0),
     rawRecHits = cms.bool(True),
@@ -16,6 +16,7 @@ def HGCalHitCalibration(**kwargs):
     photons = cms.InputTag('photonsHGC'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

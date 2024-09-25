@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalSoARecHitsLayerClustersProducer_alpaka(**kwargs):
+def HGCalSoARecHitsLayerClustersProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('HGCalSoARecHitsLayerClustersProducer@alpaka',
     hgcalRecHitsSoA = cms.InputTag('TO BE DEFINED'),
     deltac = cms.double(1.3),
@@ -11,6 +11,7 @@ def HGCalSoARecHitsLayerClustersProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

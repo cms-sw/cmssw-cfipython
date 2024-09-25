@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def EmbeddingLHEProducer(**kwargs):
+def EmbeddingLHEProducer(*args, **kwargs):
   mod = cms.EDProducer('EmbeddingLHEProducer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_TestGetByLabelThingAnalyzer(**kwargs):
+def edmtest_TestGetByLabelThingAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('edmtest::TestGetByLabelThingAnalyzer',
     src = cms.required.untracked.InputTag,
     getExceptionCategory = cms.untracked.string(''),
@@ -8,6 +8,7 @@ def edmtest_TestGetByLabelThingAnalyzer(**kwargs):
     consumes = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CosmicSplitterValidation(**kwargs):
+def CosmicSplitterValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('CosmicSplitterValidation',
     compressionSettings = cms.untracked.int32(-1),
     splitTracks = cms.InputTag('FinalTrackRefitter', '', 'splitter'),
@@ -11,6 +11,7 @@ def CosmicSplitterValidation(**kwargs):
     ifSplitMuons = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

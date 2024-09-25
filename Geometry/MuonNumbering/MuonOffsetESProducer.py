@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonOffsetESProducer(**kwargs):
+def MuonOffsetESProducer(*args, **kwargs):
   mod = cms.ESProducer('MuonOffsetESProducer',
     fromDD4hep = cms.bool(False),
     names = cms.vstring(
@@ -58,6 +58,7 @@ def MuonOffsetESProducer(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

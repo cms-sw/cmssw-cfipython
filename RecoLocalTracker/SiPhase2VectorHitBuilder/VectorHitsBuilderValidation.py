@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def VectorHitsBuilderValidation(**kwargs):
+def VectorHitsBuilderValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('VectorHitsBuilderValidation',
     src = cms.string('siPhase2Clusters'),
     links = cms.InputTag('simSiPixelDigis', 'Tracker'),
@@ -10,6 +10,7 @@ def VectorHitsBuilderValidation(**kwargs):
     trackingParticleSrc = cms.InputTag('mix', 'MergedTrackTruth'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

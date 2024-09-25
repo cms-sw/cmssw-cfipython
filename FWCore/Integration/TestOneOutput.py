@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestOneOutput(**kwargs):
+def TestOneOutput(*args, **kwargs):
   mod = cms.OutputModule('TestOneOutput',
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
@@ -32,6 +32,7 @@ def TestOneOutput(**kwargs):
     expectedNAddedProcesses = cms.untracked.uint32(4294967295),
     expectedProductsFromInputKept = cms.untracked.bool(True)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

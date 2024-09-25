@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecAnalyzerHF(**kwargs):
+def RecAnalyzerHF(*args, **kwargs):
   mod = cms.EDAnalyzer('RecAnalyzerHF',
     RunNZS = cms.bool(True),
     Noise = cms.bool(False),
@@ -16,6 +16,7 @@ def RecAnalyzerHF(**kwargs):
     hfInput = cms.InputTag('hfprereco'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

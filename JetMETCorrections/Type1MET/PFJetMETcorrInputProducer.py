@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFJetMETcorrInputProducer(**kwargs):
+def PFJetMETcorrInputProducer(*args, **kwargs):
   mod = cms.EDProducer('PFJetMETcorrInputProducer',
     src = cms.InputTag('ak4PFJetsCHS'),
     offsetCorrLabel = cms.InputTag('ak4PFCHSL1FastjetCorrector'),
@@ -14,6 +14,7 @@ def PFJetMETcorrInputProducer(**kwargs):
     skipMuonSelection = cms.string('isGlobalMuon | isStandAloneMuon'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

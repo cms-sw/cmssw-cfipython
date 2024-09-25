@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TkTransientTrackingRecHitBuilderESProducer(**kwargs):
+def TkTransientTrackingRecHitBuilderESProducer(*args, **kwargs):
   mod = cms.ESProducer('TkTransientTrackingRecHitBuilderESProducer',
     ComponentName = cms.string('Fake'),
     ComputeCoarseLocalPositionFromDisk = cms.bool(False),
@@ -10,6 +10,7 @@ def TkTransientTrackingRecHitBuilderESProducer(**kwargs):
     Phase2StripCPE = cms.string(''),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

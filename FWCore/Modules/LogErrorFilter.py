@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LogErrorFilter(**kwargs):
+def LogErrorFilter(*args, **kwargs):
   mod = cms.EDFilter('LogErrorFilter',
     harvesterTag = cms.required.InputTag,
     atLeastOneError = cms.required.bool,
@@ -11,6 +11,7 @@ def LogErrorFilter(**kwargs):
     avoidCategories = cms.required.vstring,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTElectronOneOEMinusOneOPFilterRegional(**kwargs):
+def HLTElectronOneOEMinusOneOPFilterRegional(*args, **kwargs):
   mod = cms.EDFilter('HLTElectronOneOEMinusOneOPFilterRegional',
     saveTags = cms.bool(True),
     candTag = cms.InputTag('hltL1NonIsoHLTNonIsoSingleElectronEt15LTIPixelMatchFilter'),
@@ -12,6 +12,7 @@ def HLTElectronOneOEMinusOneOPFilterRegional(**kwargs):
     doIsolated = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

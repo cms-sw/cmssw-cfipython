@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AdaptorConfig(**kwargs):
+def AdaptorConfig(*args, **kwargs):
   mod = cms.Service('AdaptorConfig',
     enable = cms.optional.untracked.bool,
     stats = cms.optional.untracked.bool,
@@ -10,6 +10,7 @@ def AdaptorConfig(**kwargs):
     tempMinFree = cms.optional.untracked.double,
     native = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

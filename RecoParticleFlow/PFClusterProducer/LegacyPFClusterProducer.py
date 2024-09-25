@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LegacyPFClusterProducer(**kwargs):
+def LegacyPFClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('LegacyPFClusterProducer',
     src = cms.InputTag('pfClusterSoAProducer'),
     PFRecHitsLabelIn = cms.InputTag('pfRecHitSoAProducerHCAL'),
@@ -173,6 +173,7 @@ def LegacyPFClusterProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

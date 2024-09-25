@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFEnergyFractionsFilter(**kwargs):
+def HLTPFEnergyFractionsFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPFEnergyFractionsFilter',
     saveTags = cms.bool(True),
     inputPFJetTag = cms.InputTag('hltAntiKT5PFJets'),
@@ -16,6 +16,7 @@ def HLTPFEnergyFractionsFilter(**kwargs):
     triggerType = cms.int32(85),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

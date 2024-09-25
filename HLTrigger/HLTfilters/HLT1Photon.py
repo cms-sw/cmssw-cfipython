@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT1Photon(**kwargs):
+def HLT1Photon(*args, **kwargs):
   mod = cms.EDFilter('HLT1Photon',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltCollection'),
@@ -14,6 +14,7 @@ def HLT1Photon(**kwargs):
     MinN = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

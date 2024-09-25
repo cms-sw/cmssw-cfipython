@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CandidateVertexArbitrator(**kwargs):
+def CandidateVertexArbitrator(*args, **kwargs):
   mod = cms.EDProducer('CandidateVertexArbitrator',
     beamSpot = cms.InputTag('offlineBeamSpot'),
     primaryVertices = cms.InputTag('offlinePrimaryVertices'),
@@ -19,6 +19,7 @@ def CandidateVertexArbitrator(**kwargs):
     maxTimeSignificance = cms.double(3.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

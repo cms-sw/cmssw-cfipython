@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTDeDxFilter(**kwargs):
+def HLTDeDxFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTDeDxFilter',
     saveTags = cms.bool(False),
     minDEDx = cms.double(0),
@@ -20,6 +20,7 @@ def HLTDeDxFilter(**kwargs):
     inputDeDxTag = cms.InputTag('HLTdedxHarm2'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

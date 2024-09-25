@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DiMuonValidation(**kwargs):
+def DiMuonValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('DiMuonValidation',
     compressionSettings = cms.untracked.int32(-1),
     eBeam = cms.double(3500),
@@ -38,6 +38,7 @@ def DiMuonValidation(**kwargs):
     Variable_PairPt_nbins = cms.int32(100),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

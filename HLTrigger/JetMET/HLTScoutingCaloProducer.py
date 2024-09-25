@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTScoutingCaloProducer(**kwargs):
+def HLTScoutingCaloProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTScoutingCaloProducer',
     caloJetCollection = cms.InputTag('hltAK4CaloJets'),
     caloJetBTagCollection = cms.InputTag('hltCombinedSecondaryVertexBJetTagsCalo'),
@@ -15,6 +15,7 @@ def HLTScoutingCaloProducer(**kwargs):
     doJetIDTags = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

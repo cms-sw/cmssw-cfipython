@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MtdTracksValidation(**kwargs):
+def MtdTracksValidation(*args, **kwargs):
   mod = cms.EDProducer('MtdTracksValidation',
     folder = cms.string('MTD/Tracks'),
     inputTagG = cms.InputTag('generalTracks'),
@@ -35,6 +35,7 @@ def MtdTracksValidation(**kwargs):
     optionalPlots = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

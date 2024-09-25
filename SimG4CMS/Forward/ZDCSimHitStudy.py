@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZDCSimHitStudy(**kwargs):
+def ZDCSimHitStudy(*args, **kwargs):
   mod = cms.EDAnalyzer('ZDCSimHitStudy',
     ModuleLabel = cms.string('g4SimHits'),
     HitCollection = cms.string('ZDCHITS'),
@@ -9,6 +9,7 @@ def ZDCSimHitStudy(**kwargs):
     Verbose = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

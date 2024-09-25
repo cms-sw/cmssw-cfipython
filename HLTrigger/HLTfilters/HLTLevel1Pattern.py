@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTLevel1Pattern(**kwargs):
+def HLTLevel1Pattern(*args, **kwargs):
   mod = cms.EDFilter('HLTLevel1Pattern',
     L1GtReadoutRecordTag = cms.InputTag('hltGtDigis'),
     triggerBit = cms.string('L1Tech_RPC_TTU_pointing_Cosmics.v0'),
@@ -24,6 +24,7 @@ def HLTLevel1Pattern(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

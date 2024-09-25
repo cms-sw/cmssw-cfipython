@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalPartialWaferTester(**kwargs):
+def HGCalPartialWaferTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalPartialWaferTester',
     nameSense = cms.string('HGCalHESiliconSensitive'),
     waferOrientations = cms.vint32(
@@ -27,6 +27,7 @@ def HGCalPartialWaferTester(**kwargs):
     numberOfTrials = cms.int32(1000),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

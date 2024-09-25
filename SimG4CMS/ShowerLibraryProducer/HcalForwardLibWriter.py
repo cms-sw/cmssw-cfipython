@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalForwardLibWriter(**kwargs):
+def HcalForwardLibWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalForwardLibWriter',
     FileName = cms.FileInPath('SimG4CMS/ShowerLibraryProducer/data/fileList.txt'),
     Nbins = cms.int32(16),
@@ -11,6 +11,7 @@ def HcalForwardLibWriter(**kwargs):
     CompressionLevel = cms.int32(4),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTTrackWithHits(**kwargs):
+def HLTTrackWithHits(*args, **kwargs):
   mod = cms.EDFilter('HLTTrackWithHits',
     saveTags = cms.bool(True),
     src = cms.InputTag(''),
@@ -12,6 +12,7 @@ def HLTTrackWithHits(**kwargs):
     MinPT = cms.double(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

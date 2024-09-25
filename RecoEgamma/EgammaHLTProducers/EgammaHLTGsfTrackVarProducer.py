@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTGsfTrackVarProducer(**kwargs):
+def EgammaHLTGsfTrackVarProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTGsfTrackVarProducer',
     recoEcalCandidateProducer = cms.InputTag('hltRecoEcalSuperClusterActivityCandidate'),
     inputCollection = cms.InputTag('hltActivityElectronGsfTracks'),
@@ -12,6 +12,7 @@ def EgammaHLTGsfTrackVarProducer(**kwargs):
     produceAbsValues = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

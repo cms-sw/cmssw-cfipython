@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTBAnalyzer(**kwargs):
+def HGCalTBAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalTBAnalyzer',
     detectorEE = cms.string('HGCalEESensitive'),
     useEE = cms.bool(True),
@@ -72,6 +72,7 @@ def HGCalTBAnalyzer(**kwargs):
     zFirst = cms.untracked.double(17.6),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

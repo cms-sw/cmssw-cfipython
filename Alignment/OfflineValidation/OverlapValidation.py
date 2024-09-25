@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def OverlapValidation(**kwargs):
+def OverlapValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('OverlapValidation',
     associatePixel = cms.bool(False),
     associateStrip = cms.bool(False),
@@ -27,6 +27,7 @@ def OverlapValidation(**kwargs):
     useTEC = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

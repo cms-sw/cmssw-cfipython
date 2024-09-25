@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHighLevel(**kwargs):
+def HLTHighLevel(*args, **kwargs):
   mod = cms.EDFilter('HLTHighLevel',
     TriggerResultsTag = cms.InputTag('TriggerResults', '', 'HLT'),
     HLTPaths = cms.vstring(),
@@ -10,6 +10,7 @@ def HLTHighLevel(**kwargs):
     throw = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

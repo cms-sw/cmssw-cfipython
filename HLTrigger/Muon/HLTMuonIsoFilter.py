@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonIsoFilter(**kwargs):
+def HLTMuonIsoFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonIsoFilter',
     saveTags = cms.bool(True),
     CandTag = cms.InputTag('hltL3MuonCandidates'),
@@ -10,6 +10,7 @@ def HLTMuonIsoFilter(**kwargs):
     IsolatorPSet = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

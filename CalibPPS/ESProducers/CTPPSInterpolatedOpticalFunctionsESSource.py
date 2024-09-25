@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSInterpolatedOpticalFunctionsESSource(**kwargs):
+def CTPPSInterpolatedOpticalFunctionsESSource(*args, **kwargs):
   mod = cms.ESProducer('CTPPSInterpolatedOpticalFunctionsESSource',
     lhcInfoLabel = cms.string(''),
     lhcInfoPerFillLabel = cms.string(''),
@@ -9,6 +9,7 @@ def CTPPSInterpolatedOpticalFunctionsESSource(**kwargs):
     useNewLHCInfo = cms.bool(False),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

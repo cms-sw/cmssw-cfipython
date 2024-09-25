@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCSCOverlapFilter(**kwargs):
+def HLTCSCOverlapFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTCSCOverlapFilter',
     saveTags = cms.bool(True),
     input = cms.InputTag('hltCsc2DRecHits'),
@@ -12,6 +12,7 @@ def HLTCSCOverlapFilter(**kwargs):
     fillHists = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

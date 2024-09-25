@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestGlobalOutput(**kwargs):
+def TestGlobalOutput(*args, **kwargs):
   mod = cms.OutputModule('TestGlobalOutput',
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
@@ -10,6 +10,7 @@ def TestGlobalOutput(**kwargs):
     expectedProcessesWithProcessBlockProducts = cms.untracked.vstring(),
     expectedWriteProcessBlockTransitions = cms.untracked.int32(-1)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

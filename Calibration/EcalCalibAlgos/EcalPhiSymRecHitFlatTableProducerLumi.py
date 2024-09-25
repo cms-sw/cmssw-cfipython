@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalPhiSymRecHitFlatTableProducerLumi(**kwargs):
+def EcalPhiSymRecHitFlatTableProducerLumi(*args, **kwargs):
   mod = cms.EDProducer('EcalPhiSymRecHitFlatTableProducerLumi',
     name = cms.required.string,
     doc = cms.string(''),
@@ -18,6 +18,7 @@ def EcalPhiSymRecHitFlatTableProducerLumi(**kwargs):
     maxLen = cms.optional.uint32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

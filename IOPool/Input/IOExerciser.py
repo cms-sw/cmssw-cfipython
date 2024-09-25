@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IOExerciser(**kwargs):
+def IOExerciser(*args, **kwargs):
   mod = cms.OutputModule('IOExerciser',
     percentBranches = cms.untracked.uint32(100),
     selectionStrategy = cms.untracked.string('smallestFirst'),
@@ -10,6 +10,7 @@ def IOExerciser(**kwargs):
       SelectEvents = cms.optional.vstring
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

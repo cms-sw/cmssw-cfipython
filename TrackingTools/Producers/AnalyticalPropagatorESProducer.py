@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AnalyticalPropagatorESProducer(**kwargs):
+def AnalyticalPropagatorESProducer(*args, **kwargs):
   mod = cms.ESProducer('AnalyticalPropagatorESProducer',
     ComponentName = cms.required.string,
     SimpleMagneticField = cms.string(''),
@@ -8,6 +8,7 @@ def AnalyticalPropagatorESProducer(**kwargs):
     MaxDPhi = cms.required.double,
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1SubsystemKeysOnlineProdExt(**kwargs):
+def L1SubsystemKeysOnlineProdExt(*args, **kwargs):
   mod = cms.ESProducer('L1SubsystemKeysOnlineProdExt',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

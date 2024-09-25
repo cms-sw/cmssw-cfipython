@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTPhotonTrackIsolationProducersRegional(**kwargs):
+def EgammaHLTPhotonTrackIsolationProducersRegional(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTPhotonTrackIsolationProducersRegional',
     recoEcalCandidateProducer = cms.InputTag('hltL1SeededRecoEcalCandidate'),
     trackProducer = cms.InputTag('hltL1SeededEgammaRegionalCTFFinalFitWithMaterial'),
@@ -14,6 +14,7 @@ def EgammaHLTPhotonTrackIsolationProducersRegional(**kwargs):
     egTrkIsoStripEndcap = cms.double(0.03),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTMonitorTTTrack(**kwargs):
+def Phase2OTMonitorTTTrack(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorTTTrack',
     TH1_NStubs = cms.PSet(
       Nbinsx = cms.int32(8),
@@ -88,6 +88,7 @@ def Phase2OTMonitorTTTrack(**kwargs):
     HQBendChi2 = cms.double(2.2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

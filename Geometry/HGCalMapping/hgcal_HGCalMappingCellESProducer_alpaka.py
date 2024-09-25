@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def hgcal_HGCalMappingCellESProducer_alpaka(**kwargs):
+def hgcal_HGCalMappingCellESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('hgcal::HGCalMappingCellESProducer@alpaka',
     filelist = cms.vstring(),
     cellindexer = cms.ESInputTag('', ''),
@@ -9,6 +9,7 @@ def hgcal_HGCalMappingCellESProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

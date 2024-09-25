@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ESRawToDigi(**kwargs):
+def ESRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('ESRawToDigi',
     sourceTag = cms.InputTag('rawDataCollector'),
     debugMode = cms.untracked.bool(False),
@@ -9,6 +9,7 @@ def ESRawToDigi(**kwargs):
     ESdigiCollection = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

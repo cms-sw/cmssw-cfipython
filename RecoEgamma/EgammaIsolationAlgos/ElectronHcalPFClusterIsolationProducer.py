@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ElectronHcalPFClusterIsolationProducer(**kwargs):
+def ElectronHcalPFClusterIsolationProducer(*args, **kwargs):
   mod = cms.EDProducer('ElectronHcalPFClusterIsolationProducer',
     candidateProducer = cms.InputTag('gedGsfElectrons'),
     pfClusterProducerHCAL = cms.InputTag('particleFlowClusterHCAL'),
@@ -17,6 +17,7 @@ def ElectronHcalPFClusterIsolationProducer(**kwargs):
     useEt = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

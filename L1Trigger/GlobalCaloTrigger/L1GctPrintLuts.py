@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GctPrintLuts(**kwargs):
+def L1GctPrintLuts(*args, **kwargs):
   mod = cms.EDAnalyzer('L1GctPrintLuts',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def RPCGeometryAnalyzer(**kwargs):
+def RPCGeometryAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('RPCGeometryAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

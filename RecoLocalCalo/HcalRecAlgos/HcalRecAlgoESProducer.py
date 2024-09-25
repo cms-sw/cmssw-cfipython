@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalRecAlgoESProducer(**kwargs):
+def HcalRecAlgoESProducer(*args, **kwargs):
   mod = cms.ESProducer('HcalRecAlgoESProducer',
     phase = cms.uint32(0),
     RecoveredRecHitBits = cms.vstring(
@@ -86,6 +86,7 @@ def HcalRecAlgoESProducer(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

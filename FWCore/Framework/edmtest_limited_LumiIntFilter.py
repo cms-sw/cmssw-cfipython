@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_limited_LumiIntFilter(**kwargs):
+def edmtest_limited_LumiIntFilter(*args, **kwargs):
   mod = cms.EDFilter('edmtest::limited::LumiIntFilter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

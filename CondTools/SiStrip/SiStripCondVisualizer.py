@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripCondVisualizer(**kwargs):
+def SiStripCondVisualizer(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripCondVisualizer',
     doNoise = cms.bool(False),
     doPeds = cms.bool(False),
@@ -24,6 +24,7 @@ def SiStripCondVisualizer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

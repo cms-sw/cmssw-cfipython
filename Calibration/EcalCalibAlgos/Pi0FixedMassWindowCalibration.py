@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Pi0FixedMassWindowCalibration(**kwargs):
+def Pi0FixedMassWindowCalibration(*args, **kwargs):
   mod = cms.Looper('Pi0FixedMassWindowCalibration',
     maxLoops = cms.uint32(0),
     ecalRecHitsProducer = cms.string(''),
@@ -37,6 +37,7 @@ def Pi0FixedMassWindowCalibration(**kwargs):
     RecHitFlagToBeExcludedEE = cms.vstring(),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

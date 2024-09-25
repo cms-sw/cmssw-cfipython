@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonReducedTrackExtraProducer(**kwargs):
+def MuonReducedTrackExtraProducer(*args, **kwargs):
   mod = cms.EDProducer('MuonReducedTrackExtraProducer',
     muonTag = cms.InputTag('muons'),
     trackExtraTags = cms.VInputTag(
@@ -17,6 +17,7 @@ def MuonReducedTrackExtraProducer(**kwargs):
     outputClusters = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

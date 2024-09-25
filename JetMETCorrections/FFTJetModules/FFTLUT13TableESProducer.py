@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def FFTLUT13TableESProducer(**kwargs):
+def FFTLUT13TableESProducer(*args, **kwargs):
   mod = cms.ESProducer('FFTLUT13TableESProducer',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

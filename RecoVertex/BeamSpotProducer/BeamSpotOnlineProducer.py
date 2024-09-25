@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamSpotOnlineProducer(**kwargs):
+def BeamSpotOnlineProducer(*args, **kwargs):
   mod = cms.EDProducer('BeamSpotOnlineProducer',
     changeToCMSCoordinates = cms.bool(False),
     maxZ = cms.double(40),
@@ -12,6 +12,7 @@ def BeamSpotOnlineProducer(**kwargs):
     useTransientRecord = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

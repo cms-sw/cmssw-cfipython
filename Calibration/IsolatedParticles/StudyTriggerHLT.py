@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def StudyTriggerHLT(**kwargs):
+def StudyTriggerHLT(*args, **kwargs):
   mod = cms.EDAnalyzer('StudyTriggerHLT',
     verbosity = cms.int32(0),
     labelMuon = cms.InputTag('muons', '', 'RECO'),
@@ -8,6 +8,7 @@ def StudyTriggerHLT(**kwargs):
     trackQuality = cms.string('highPurity'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

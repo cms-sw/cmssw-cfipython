@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTDisplacedEgammaFilter(**kwargs):
+def HLTDisplacedEgammaFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTDisplacedEgammaFilter',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltEGRegionalL1SingleEG22'),
@@ -22,6 +22,7 @@ def HLTDisplacedEgammaFilter(**kwargs):
     trackdRCut = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

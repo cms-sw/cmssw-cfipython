@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTrigReport(**kwargs):
+def HLTrigReport(*args, **kwargs):
   mod = cms.EDAnalyzer('HLTrigReport',
     HLTriggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
     reportBy = cms.untracked.string('job'),
@@ -12,6 +12,7 @@ def HLTrigReport(**kwargs):
     ReferenceRate = cms.untracked.double(100),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonL3andL2PreFilter(**kwargs):
+def HLTMuonL3andL2PreFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonL3andL2PreFilter',
     saveTags = cms.bool(True),
     L3CandTag = cms.InputTag('hltL3MuonCandidates'),
@@ -71,6 +71,7 @@ def HLTMuonL3andL2PreFilter(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

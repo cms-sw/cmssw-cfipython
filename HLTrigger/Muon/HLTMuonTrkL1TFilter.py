@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonTrkL1TFilter(**kwargs):
+def HLTMuonTrkL1TFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonTrkL1TFilter',
     saveTags = cms.bool(True),
     inputMuonCollection = cms.InputTag(''),
@@ -29,6 +29,7 @@ def HLTMuonTrkL1TFilter(**kwargs):
     propagatorOpposite = cms.ESInputTag('', 'hltESPSteppingHelixPropagatorOpposite'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

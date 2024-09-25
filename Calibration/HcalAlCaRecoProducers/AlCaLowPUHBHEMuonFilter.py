@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlCaLowPUHBHEMuonFilter(**kwargs):
+def AlCaLowPUHBHEMuonFilter(*args, **kwargs):
   mod = cms.EDFilter('AlCaLowPUHBHEMuonFilter',
     processName = cms.string('HLT'),
     triggerResultLabel = cms.InputTag('TriggerResults', '', 'HLT'),
@@ -14,6 +14,7 @@ def AlCaLowPUHBHEMuonFilter(**kwargs):
     pfIsolationCut = cms.double(0.15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

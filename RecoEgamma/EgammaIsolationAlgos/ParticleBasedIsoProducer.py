@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ParticleBasedIsoProducer(**kwargs):
+def ParticleBasedIsoProducer(*args, **kwargs):
   mod = cms.EDProducer('ParticleBasedIsoProducer',
     valueMapEleToEG = cms.string(''),
     valueMapPhoToEG = cms.string('valMapPFEgammaCandToPhoton'),
@@ -18,6 +18,7 @@ def ParticleBasedIsoProducer(**kwargs):
     valueMapPhoPFblockIso = cms.string('gedPhotons'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

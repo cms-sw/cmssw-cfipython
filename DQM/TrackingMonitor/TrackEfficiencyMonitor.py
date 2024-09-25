@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackEfficiencyMonitor(**kwargs):
+def TrackEfficiencyMonitor(*args, **kwargs):
   mod = cms.EDProducer('TrackEfficiencyMonitor',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

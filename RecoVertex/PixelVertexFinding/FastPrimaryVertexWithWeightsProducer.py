@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def FastPrimaryVertexWithWeightsProducer(**kwargs):
+def FastPrimaryVertexWithWeightsProducer(*args, **kwargs):
   mod = cms.EDProducer('FastPrimaryVertexWithWeightsProducer',
     clusters = cms.InputTag('hltSiPixelClusters'),
     beamSpot = cms.InputTag('hltOnlineBeamSpot'),
@@ -41,6 +41,7 @@ def FastPrimaryVertexWithWeightsProducer(**kwargs):
     ptWeighting_offset = cms.double(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

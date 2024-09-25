@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPixelClusterShapeFilter(**kwargs):
+def HLTPixelClusterShapeFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPixelClusterShapeFilter',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltSiPixelRecHits'),
@@ -15,6 +15,7 @@ def HLTPixelClusterShapeFilter(**kwargs):
     clusterTrunc = cms.double(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

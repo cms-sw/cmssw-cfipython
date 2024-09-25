@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DAQSource(**kwargs):
+def DAQSource(*args, **kwargs):
   mod = cms.Source('DAQSource',
     dataMode = cms.untracked.string('FRD'),
     eventChunkSize = cms.untracked.uint32(64),
@@ -15,6 +15,7 @@ def DAQSource(**kwargs):
     fileListMode = cms.untracked.bool(False),
     fileNames = cms.untracked.vstring()
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

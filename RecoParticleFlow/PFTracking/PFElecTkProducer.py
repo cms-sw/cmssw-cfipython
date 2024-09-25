@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFElecTkProducer(**kwargs):
+def PFElecTkProducer(*args, **kwargs):
   mod = cms.EDProducer('PFElecTkProducer',
     TrajInEvents = cms.bool(False),
     Fitter = cms.string('GsfElectronFittingSmoother'),
@@ -42,6 +42,7 @@ def PFElecTkProducer(**kwargs):
     pf_convBremFinderID_mvaWeightFileEndcapsHighPt = cms.FileInPath('RecoParticleFlow/PFTracking/data/TMVAClassification_ConvBremFinder_Testetgt20absetagt1_479_BDT.weights.xml'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

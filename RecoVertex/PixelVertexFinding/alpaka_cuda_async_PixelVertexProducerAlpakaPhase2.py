@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_cuda_async_PixelVertexProducerAlpakaPhase2(**kwargs):
+def alpaka_cuda_async_PixelVertexProducerAlpakaPhase2(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::PixelVertexProducerAlpakaPhase2',
     oneKernel = cms.bool(True),
     useDensity = cms.bool(True),
@@ -20,6 +20,7 @@ def alpaka_cuda_async_PixelVertexProducerAlpakaPhase2(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

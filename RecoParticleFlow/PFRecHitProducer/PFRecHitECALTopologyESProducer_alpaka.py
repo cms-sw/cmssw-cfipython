@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFRecHitECALTopologyESProducer_alpaka(**kwargs):
+def PFRecHitECALTopologyESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('PFRecHitECALTopologyESProducer@alpaka',
     usePFThresholdsFromDB = cms.bool(False),
     appendToDataLabel = cms.string(''),
@@ -8,6 +8,7 @@ def PFRecHitECALTopologyESProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

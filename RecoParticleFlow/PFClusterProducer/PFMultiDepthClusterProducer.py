@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFMultiDepthClusterProducer(**kwargs):
+def PFMultiDepthClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('PFMultiDepthClusterProducer',
     clustersSource = cms.InputTag(''),
     energyCorrector = cms.PSet(),
@@ -25,6 +25,7 @@ def PFMultiDepthClusterProducer(**kwargs):
     usePFThresholdsFromDB = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

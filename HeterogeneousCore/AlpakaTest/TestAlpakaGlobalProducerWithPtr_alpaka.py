@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestAlpakaGlobalProducerWithPtr_alpaka(**kwargs):
+def TestAlpakaGlobalProducerWithPtr_alpaka(*args, **kwargs):
   mod = cms.EDProducer('TestAlpakaGlobalProducerWithPtr@alpaka',
     size = cms.required.int32,
     mightGet = cms.optional.untracked.vstring,
@@ -8,6 +8,7 @@ def TestAlpakaGlobalProducerWithPtr_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

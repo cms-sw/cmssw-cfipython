@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def Pythia8HepMC3ConcurrentHadronizerFilter(**kwargs):
+def Pythia8HepMC3ConcurrentHadronizerFilter(*args, **kwargs):
   mod = cms.EDFilter('Pythia8HepMC3ConcurrentHadronizerFilter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

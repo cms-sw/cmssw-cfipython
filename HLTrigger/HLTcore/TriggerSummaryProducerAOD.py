@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TriggerSummaryProducerAOD(**kwargs):
+def TriggerSummaryProducerAOD(*args, **kwargs):
   mod = cms.EDProducer('TriggerSummaryProducerAOD',
     throw = cms.bool(False),
     processName = cms.string('@'),
@@ -8,6 +8,7 @@ def TriggerSummaryProducerAOD(**kwargs):
     moduleLabelPatternsToSkip = cms.vstring(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SonicDummyFilter(**kwargs):
+def SonicDummyFilter(*args, **kwargs):
   mod = cms.EDFilter('SonicDummyFilter',
     Client = cms.PSet(
       mode = cms.string('PseudoAsync'),
@@ -13,6 +13,7 @@ def SonicDummyFilter(**kwargs):
     input = cms.required.int32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

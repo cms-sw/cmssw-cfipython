@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelCompareVertexSoA(**kwargs):
+def SiPixelCompareVertexSoA(*args, **kwargs):
   mod = cms.EDProducer('SiPixelCompareVertexSoA',
     pixelVertexSrcCPU = cms.InputTag('pixelVerticesSoA@cpu'),
     pixelVertexSrcGPU = cms.InputTag('pixelVerticesSoA@cuda'),
@@ -9,6 +9,7 @@ def SiPixelCompareVertexSoA(**kwargs):
     dzCut = cms.double(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

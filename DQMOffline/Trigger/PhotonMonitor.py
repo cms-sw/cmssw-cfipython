@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PhotonMonitor(**kwargs):
+def PhotonMonitor(*args, **kwargs):
   mod = cms.EDProducer('PhotonMonitor',
     FolderName = cms.string('HLT/Photon'),
     requireValidHLTPaths = cms.bool(True),
@@ -131,6 +131,7 @@ def PhotonMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

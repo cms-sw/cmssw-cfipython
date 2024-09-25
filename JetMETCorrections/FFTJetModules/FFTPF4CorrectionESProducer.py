@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def FFTPF4CorrectionESProducer(**kwargs):
+def FFTPF4CorrectionESProducer(*args, **kwargs):
   mod = cms.ESProducer('FFTPF4CorrectionESProducer',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

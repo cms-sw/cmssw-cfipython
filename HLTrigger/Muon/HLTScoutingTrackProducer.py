@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTScoutingTrackProducer(**kwargs):
+def HLTScoutingTrackProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTScoutingTrackProducer',
     OtherTracks = cms.InputTag('hltPixelTracksL3MuonNoVtx'),
     vertexCollection = cms.InputTag('hltPixelVertices'),
@@ -9,6 +9,7 @@ def HLTScoutingTrackProducer(**kwargs):
     ptMin = cms.double(0.3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

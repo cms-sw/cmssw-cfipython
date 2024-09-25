@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2ITValidateCluster(**kwargs):
+def Phase2ITValidateCluster(*args, **kwargs):
   mod = cms.EDProducer('Phase2ITValidateCluster',
     Delta_X_Pixel = cms.PSet(
       name = cms.string('Delta_X_Pixel'),
@@ -47,6 +47,7 @@ def Phase2ITValidateCluster(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

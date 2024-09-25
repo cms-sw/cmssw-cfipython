@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GlobalTrackingRegionEDProducer(**kwargs):
+def GlobalTrackingRegionEDProducer(*args, **kwargs):
   mod = cms.EDProducer('GlobalTrackingRegionEDProducer',
     RegionPSet = cms.PSet(
       precise = cms.bool(True),
@@ -14,6 +14,7 @@ def GlobalTrackingRegionEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

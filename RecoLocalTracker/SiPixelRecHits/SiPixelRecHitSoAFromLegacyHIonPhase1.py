@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelRecHitSoAFromLegacyHIonPhase1(**kwargs):
+def SiPixelRecHitSoAFromLegacyHIonPhase1(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRecHitSoAFromLegacyHIonPhase1',
     beamSpot = cms.InputTag('offlineBeamSpot'),
     src = cms.InputTag('siPixelClustersPreSplitting'),
@@ -8,6 +8,7 @@ def SiPixelRecHitSoAFromLegacyHIonPhase1(**kwargs):
     convertToLegacy = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

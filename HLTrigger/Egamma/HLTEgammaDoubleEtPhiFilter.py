@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEgammaDoubleEtPhiFilter(**kwargs):
+def HLTEgammaDoubleEtPhiFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTEgammaDoubleEtPhiFilter',
     saveTags = cms.bool(True),
     candTag = cms.InputTag('hltDoubleL1MatchFilter'),
@@ -13,6 +13,7 @@ def HLTEgammaDoubleEtPhiFilter(**kwargs):
     npaircut = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

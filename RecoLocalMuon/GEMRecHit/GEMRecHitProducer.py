@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMRecHitProducer(**kwargs):
+def GEMRecHitProducer(*args, **kwargs):
   mod = cms.EDProducer('GEMRecHitProducer',
     recAlgoConfig = cms.PSet(),
     recAlgo = cms.string('GEMRecHitStandardAlgo'),
@@ -11,6 +11,7 @@ def GEMRecHitProducer(**kwargs):
     deadFile = cms.optional.FileInPath,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

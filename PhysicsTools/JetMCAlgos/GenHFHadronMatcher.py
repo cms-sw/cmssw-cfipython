@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenHFHadronMatcher(**kwargs):
+def GenHFHadronMatcher(*args, **kwargs):
   mod = cms.EDProducer('GenHFHadronMatcher',
     genParticles = cms.required.InputTag,
     jetFlavourInfos = cms.required.InputTag,
@@ -9,6 +9,7 @@ def GenHFHadronMatcher(**kwargs):
     flavour = cms.int32(5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

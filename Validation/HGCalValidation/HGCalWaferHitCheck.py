@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalWaferHitCheck(**kwargs):
+def HGCalWaferHitCheck(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalWaferHitCheck',
     detectorName = cms.string('HGCalEESensitive'),
     caloHitSource = cms.string('HGCHitsEE'),
@@ -10,6 +10,7 @@ def HGCalWaferHitCheck(**kwargs):
     ifNose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

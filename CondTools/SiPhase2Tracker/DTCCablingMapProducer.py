@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DTCCablingMapProducer(**kwargs):
+def DTCCablingMapProducer(*args, **kwargs):
   mod = cms.EDAnalyzer('DTCCablingMapProducer',
     dummy_fill_mode = cms.string('DUMMY_FILL_DISABLED'),
     verbosity = cms.int32(0),
@@ -14,6 +14,7 @@ def DTCCablingMapProducer(**kwargs):
     modulesToDTCCablingCSVFileNames = cms.vstring(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

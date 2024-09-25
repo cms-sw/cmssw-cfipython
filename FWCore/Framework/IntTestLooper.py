@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IntTestLooper(**kwargs):
+def IntTestLooper(*args, **kwargs):
   mod = cms.Looper('IntTestLooper',
     srcBeginRun = cms.untracked.VInputTag(),
     srcBeginLumi = cms.untracked.VInputTag(),
@@ -15,6 +15,7 @@ def IntTestLooper(**kwargs):
     expectESValue = cms.required.untracked.int32,
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

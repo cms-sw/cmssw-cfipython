@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPixelActivityFilter(**kwargs):
+def HLTPixelActivityFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPixelActivityFilter',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltSiPixelClusters'),
@@ -16,6 +16,7 @@ def HLTPixelActivityFilter(**kwargs):
     maxLayersFPix = cms.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

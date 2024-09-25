@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonL1toL3TkPreFilter(**kwargs):
+def HLTMuonL1toL3TkPreFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonL1toL3TkPreFilter',
     saveTags = cms.bool(True),
     BeamSpotTag = cms.InputTag('hltBeamSpotTag'),
@@ -15,6 +15,7 @@ def HLTMuonL1toL3TkPreFilter(**kwargs):
     NSigmaPt = cms.double(9999),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

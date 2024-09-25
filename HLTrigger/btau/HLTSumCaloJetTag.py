@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTSumCaloJetTag(**kwargs):
+def HLTSumCaloJetTag(*args, **kwargs):
   mod = cms.EDFilter('HLTSumCaloJetTag',
     saveTags = cms.bool(True),
     Jets = cms.InputTag('hltJetCollection'),
@@ -15,6 +15,7 @@ def HLTSumCaloJetTag(**kwargs):
     TriggerType = cms.int32(86),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamSpotOnlineFromOfflineConverter(**kwargs):
+def BeamSpotOnlineFromOfflineConverter(*args, **kwargs):
   mod = cms.EDAnalyzer('BeamSpotOnlineFromOfflineConverter',
     isHLT = cms.bool(True),
     IOVStartRun = cms.untracked.uint32(1),
@@ -21,6 +21,7 @@ def BeamSpotOnlineFromOfflineConverter(**kwargs):
     lumiRange = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

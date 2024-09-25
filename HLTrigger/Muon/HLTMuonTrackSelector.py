@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonTrackSelector(**kwargs):
+def HLTMuonTrackSelector(*args, **kwargs):
   mod = cms.EDProducer('HLTMuonTrackSelector',
     track = cms.InputTag(''),
     muon = cms.InputTag(''),
@@ -10,6 +10,7 @@ def HLTMuonTrackSelector(**kwargs):
     copyTrajectories = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

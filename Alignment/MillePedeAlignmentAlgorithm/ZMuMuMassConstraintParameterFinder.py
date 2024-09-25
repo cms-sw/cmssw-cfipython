@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZMuMuMassConstraintParameterFinder(**kwargs):
+def ZMuMuMassConstraintParameterFinder(*args, **kwargs):
   mod = cms.EDAnalyzer('ZMuMuMassConstraintParameterFinder',
     pMin = cms.double(3),
     ptMin = cms.double(15),
@@ -12,6 +12,7 @@ def ZMuMuMassConstraintParameterFinder(**kwargs):
     maxMassPair = cms.double(95.8),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

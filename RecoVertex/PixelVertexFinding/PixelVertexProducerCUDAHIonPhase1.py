@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelVertexProducerCUDAHIonPhase1(**kwargs):
+def PixelVertexProducerCUDAHIonPhase1(*args, **kwargs):
   mod = cms.EDProducer('PixelVertexProducerCUDAHIonPhase1',
     onGPU = cms.bool(True),
     oneKernel = cms.bool(True),
@@ -17,6 +17,7 @@ def PixelVertexProducerCUDAHIonPhase1(**kwargs):
     pixelTrackSrc = cms.InputTag('pixelTracksCUDA'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

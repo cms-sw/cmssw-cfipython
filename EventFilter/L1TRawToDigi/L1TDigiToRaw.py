@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TDigiToRaw(**kwargs):
+def L1TDigiToRaw(*args, **kwargs):
   mod = cms.EDProducer('L1TDigiToRaw',
     FWId = cms.uint32(4294967295),
     FedId = cms.required.int32,
@@ -43,6 +43,7 @@ def L1TDigiToRaw(**kwargs):
     EMTFShowerInputLabel = cms.optional.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

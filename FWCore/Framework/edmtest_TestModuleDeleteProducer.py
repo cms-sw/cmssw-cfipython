@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_TestModuleDeleteProducer(**kwargs):
+def edmtest_TestModuleDeleteProducer(*args, **kwargs):
   mod = cms.EDProducer('edmtest::TestModuleDeleteProducer',
     srcBeginProcess = cms.untracked.VInputTag(),
     srcBeginRun = cms.untracked.VInputTag(),
@@ -8,6 +8,7 @@ def edmtest_TestModuleDeleteProducer(**kwargs):
     srcEvent = cms.untracked.VInputTag(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def XrdStatisticsService(**kwargs):
+def XrdStatisticsService(*args, **kwargs):
   mod = cms.Service('XrdStatisticsService',
     reportToFJR = cms.untracked.bool(True)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

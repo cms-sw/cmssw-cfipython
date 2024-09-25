@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TStage2RegionalMuonShowerComp(**kwargs):
+def L1TStage2RegionalMuonShowerComp(*args, **kwargs):
   mod = cms.EDProducer('L1TStage2RegionalMuonShowerComp',
     regionalMuonShowerCollection1 = cms.required.InputTag,
     regionalMuonShowerCollection2 = cms.required.InputTag,
@@ -12,6 +12,7 @@ def L1TStage2RegionalMuonShowerComp(**kwargs):
     verbose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

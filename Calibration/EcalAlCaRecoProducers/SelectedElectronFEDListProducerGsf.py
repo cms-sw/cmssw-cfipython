@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SelectedElectronFEDListProducerGsf(**kwargs):
+def SelectedElectronFEDListProducerGsf(*args, **kwargs):
   mod = cms.EDProducer('SelectedElectronFEDListProducerGsf',
     electronTags = cms.VInputTag('hltEgammaGsfElectrons'),
     recoEcalCandidateTags = cms.VInputTag('hltL1EG25Ele27WP85GsfTrackIsoFilter'),
@@ -28,6 +28,7 @@ def SelectedElectronFEDListProducerGsf(**kwargs):
     dumpAllHcalFed = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

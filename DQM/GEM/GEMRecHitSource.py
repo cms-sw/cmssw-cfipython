@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMRecHitSource(**kwargs):
+def GEMRecHitSource(*args, **kwargs):
   mod = cms.EDProducer('GEMRecHitSource',
     recHitsInputLabel = cms.InputTag('gemRecHits'),
     runType = cms.untracked.string('online'),
@@ -11,6 +11,7 @@ def GEMRecHitSource(**kwargs):
     logCategory = cms.untracked.string('GEMRecHitSource'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTNxNClusterProducer(**kwargs):
+def EgammaHLTNxNClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTNxNClusterProducer',
     doBarrel = cms.bool(True),
     doEndcaps = cms.bool(True),
@@ -29,6 +29,7 @@ def EgammaHLTNxNClusterProducer(**kwargs):
     debugLevel = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

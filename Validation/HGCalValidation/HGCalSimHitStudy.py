@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalSimHitStudy(**kwargs):
+def HGCalSimHitStudy(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalSimHitStudy',
     detectorNames = cms.vstring(
       'HGCalEESensitive',
@@ -27,6 +27,7 @@ def HGCalSimHitStudy(**kwargs):
     ifLayer = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

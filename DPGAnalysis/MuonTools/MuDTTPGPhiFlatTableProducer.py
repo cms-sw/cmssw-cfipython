@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuDTTPGPhiFlatTableProducer(**kwargs):
+def MuDTTPGPhiFlatTableProducer(*args, **kwargs):
   mod = cms.EDProducer('MuDTTPGPhiFlatTableProducer',
     name = cms.string('ltBmtfIn'),
     tag = cms.string('BMTF_IN'),
     src = cms.InputTag('bmtfDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

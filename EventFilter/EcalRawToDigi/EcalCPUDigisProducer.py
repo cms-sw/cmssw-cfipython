@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalCPUDigisProducer(**kwargs):
+def EcalCPUDigisProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalCPUDigisProducer',
     digisInLabelEB = cms.InputTag('ecalRawToDigiGPU', 'ebDigis'),
     digisInLabelEE = cms.InputTag('ecalRawToDigiGPU', 'eeDigis'),
@@ -9,6 +9,7 @@ def EcalCPUDigisProducer(**kwargs):
     produceDummyIntegrityCollections = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

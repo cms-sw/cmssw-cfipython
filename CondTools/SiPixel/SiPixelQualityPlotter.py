@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelQualityPlotter(**kwargs):
+def SiPixelQualityPlotter(*args, **kwargs):
   mod = cms.EDAnalyzer('SiPixelQualityPlotter',
     useLogScale = cms.bool(False),
     addLumiInfo = cms.bool(True),
@@ -9,6 +9,7 @@ def SiPixelQualityPlotter(**kwargs):
     lumiInputTag = cms.untracked.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

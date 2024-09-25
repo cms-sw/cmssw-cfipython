@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFProducer(**kwargs):
+def PFProducer(*args, **kwargs):
   mod = cms.EDProducer('PFProducer',
     verbose = cms.untracked.bool(False),
     debug = cms.untracked.bool(False),
@@ -259,6 +259,7 @@ def PFProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

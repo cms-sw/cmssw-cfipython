@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def DTT0ValidateDBRead(**kwargs):
+def DTT0ValidateDBRead(*args, **kwargs):
   mod = cms.EDAnalyzer('DTT0ValidateDBRead',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

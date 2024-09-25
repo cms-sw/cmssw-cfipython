@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MCDisplacementFilter(**kwargs):
+def MCDisplacementFilter(*args, **kwargs):
   mod = cms.EDFilter('MCDisplacementFilter',
     hepMCProductTag = cms.InputTag('generator', 'unsmeared'),
     ParticleIDs = cms.vint32(0),
@@ -8,6 +8,7 @@ def MCDisplacementFilter(**kwargs):
     LengMin = cms.double(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

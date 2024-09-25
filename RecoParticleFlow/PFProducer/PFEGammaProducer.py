@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFEGammaProducer(**kwargs):
+def PFEGammaProducer(*args, **kwargs):
   mod = cms.EDProducer('PFEGammaProducer',
     produceEGCandsWithNoSuperCluster = cms.bool(False),
     pf_electron_mvaCut = cms.double(-0.1),
@@ -13,6 +13,7 @@ def PFEGammaProducer(**kwargs):
     pf_convID_mvaWeightFile = cms.FileInPath('RecoParticleFlow/PFProducer/data/pfConversionAug0411_BDT.weights.xml.gz'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

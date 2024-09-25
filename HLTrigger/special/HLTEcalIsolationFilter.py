@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEcalIsolationFilter(**kwargs):
+def HLTEcalIsolationFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTEcalIsolationFilter',
     saveTags = cms.bool(True),
     EcalIsolatedParticleSource = cms.InputTag('ecalIsolPartProd'),
@@ -11,6 +11,7 @@ def HLTEcalIsolationFilter(**kwargs):
     MaxEtaCandidate = cms.double(1.3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

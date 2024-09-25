@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def FWLiteESRecordWriterAnalyzer(**kwargs):
+def FWLiteESRecordWriterAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('FWLiteESRecordWriterAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

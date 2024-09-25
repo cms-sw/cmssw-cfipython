@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PHGCalParametersDBBuilder(**kwargs):
+def PHGCalParametersDBBuilder(*args, **kwargs):
   mod = cms.EDAnalyzer('PHGCalParametersDBBuilder',
     name = cms.string('HGCalEESensitive'),
     name2 = cms.string('HGCalEE'),
@@ -10,6 +10,7 @@ def PHGCalParametersDBBuilder(**kwargs):
     fromDD4hep = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

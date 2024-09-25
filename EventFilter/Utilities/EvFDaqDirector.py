@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EvFDaqDirector(**kwargs):
+def EvFDaqDirector(*args, **kwargs):
   mod = cms.Service('EvFDaqDirector',
     baseDir = cms.untracked.string('.'),
     buBaseDir = cms.untracked.string('.'),
@@ -19,6 +19,7 @@ def EvFDaqDirector(**kwargs):
     hltSourceDirectory = cms.untracked.string(''),
     mergingPset = cms.untracked.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

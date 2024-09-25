@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalValidityTester(**kwargs):
+def HGCalValidityTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalValidityTester',
     nameDetectors = cms.vstring(
       'HGCalEESensitive',
@@ -10,6 +10,7 @@ def HGCalValidityTester(**kwargs):
     fileName = cms.string('missD88.txt'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

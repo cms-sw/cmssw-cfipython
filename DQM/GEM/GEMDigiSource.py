@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMDigiSource(**kwargs):
+def GEMDigiSource(*args, **kwargs):
   mod = cms.EDProducer('GEMDigiSource',
     digisInputLabel = cms.InputTag('muonGEMDigis'),
     runType = cms.untracked.string('online'),
@@ -10,6 +10,7 @@ def GEMDigiSource(**kwargs):
     useDBEMap = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

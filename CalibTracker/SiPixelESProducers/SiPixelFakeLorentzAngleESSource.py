@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelFakeLorentzAngleESSource(**kwargs):
+def SiPixelFakeLorentzAngleESSource(*args, **kwargs):
   mod = cms.ESSource('SiPixelFakeLorentzAngleESSource',
     file = cms.FileInPath('SLHCUpgradeSimulations/Geometry/data/PhaseI/PixelSkimmedGeometry_phase1.txt'),
     topologyInput = cms.FileInPath('Geometry/TrackerCommonData/data/PhaseI/trackerParameters.xml'),
@@ -14,6 +14,7 @@ def SiPixelFakeLorentzAngleESSource(**kwargs):
     ModuleParameters = cms.VPSet(
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestReadTriggerResults(**kwargs):
+def TestReadTriggerResults(*args, **kwargs):
   mod = cms.EDAnalyzer('TestReadTriggerResults',
     expectedParameterSetID = cms.required.string,
     expectedNames = cms.required.vstring,
@@ -9,6 +9,7 @@ def TestReadTriggerResults(**kwargs):
     triggerResultsTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

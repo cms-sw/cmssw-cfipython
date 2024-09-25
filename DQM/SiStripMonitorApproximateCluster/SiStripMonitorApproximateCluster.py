@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripMonitorApproximateCluster(**kwargs):
+def SiStripMonitorApproximateCluster(*args, **kwargs):
   mod = cms.EDProducer('SiStripMonitorApproximateCluster',
     compareClusters = cms.bool(False),
     ApproxClustersProducer = cms.InputTag('hltSiStripClusters2ApproxClusters'),
@@ -9,6 +9,7 @@ def SiStripMonitorApproximateCluster(**kwargs):
     folder = cms.string('SiStripApproximateClusters'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

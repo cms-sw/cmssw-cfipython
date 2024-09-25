@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def FixMissingStreamerInfos(**kwargs):
+def FixMissingStreamerInfos(*args, **kwargs):
   mod = cms.Service('FixMissingStreamerInfos',
     fileInPath = cms.required.untracked.FileInPath
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

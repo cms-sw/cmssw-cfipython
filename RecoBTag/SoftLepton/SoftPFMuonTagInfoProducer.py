@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SoftPFMuonTagInfoProducer(**kwargs):
+def SoftPFMuonTagInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('SoftPFMuonTagInfoProducer',
     jets = cms.required.InputTag,
     muons = cms.required.InputTag,
@@ -13,6 +13,7 @@ def SoftPFMuonTagInfoProducer(**kwargs):
     filterPromptMuons = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

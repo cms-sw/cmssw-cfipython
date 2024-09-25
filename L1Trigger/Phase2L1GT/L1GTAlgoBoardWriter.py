@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GTAlgoBoardWriter(**kwargs):
+def L1GTAlgoBoardWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('L1GTAlgoBoardWriter',
     filename = cms.required.untracked.string,
     fileExtension = cms.untracked.string('txt'),
@@ -22,6 +22,7 @@ def L1GTAlgoBoardWriter(**kwargs):
     patternFormat = cms.untracked.string('EMPv2'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

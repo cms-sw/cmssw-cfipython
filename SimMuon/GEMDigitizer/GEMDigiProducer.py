@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMDigiProducer(**kwargs):
+def GEMDigiProducer(*args, **kwargs):
   mod = cms.EDProducer('GEMDigiProducer',
     inputCollection = cms.string('g4SimHitsMuonGEMHits'),
     mixLabel = cms.string('mix'),
@@ -37,6 +37,7 @@ def GEMDigiProducer(**kwargs):
     GE21ElecBkgParam2 = cms.double(0.000550599),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

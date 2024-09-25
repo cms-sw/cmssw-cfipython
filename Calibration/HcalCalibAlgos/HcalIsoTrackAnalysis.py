@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalIsoTrackAnalysis(**kwargs):
+def HcalIsoTrackAnalysis(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalIsoTrackAnalysis',
     trackQuality = cms.string('highPurity'),
     minTrackPt = cms.double(1),
@@ -76,6 +76,7 @@ def HcalIsoTrackAnalysis(**kwargs):
     usePFThreshold = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

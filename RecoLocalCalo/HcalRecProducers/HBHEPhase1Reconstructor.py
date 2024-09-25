@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HBHEPhase1Reconstructor(**kwargs):
+def HBHEPhase1Reconstructor(*args, **kwargs):
   mod = cms.EDProducer('HBHEPhase1Reconstructor',
     digiLabelQIE8 = cms.required.InputTag,
     digiLabelQIE11 = cms.required.InputTag,
@@ -47,6 +47,7 @@ def HBHEPhase1Reconstructor(**kwargs):
     pulseShapeParametersQIE11 = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

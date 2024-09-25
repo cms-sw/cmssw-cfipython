@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def JetTagProducer(**kwargs):
+def JetTagProducer(*args, **kwargs):
   mod = cms.EDProducer('JetTagProducer',
     jetTagComputer = cms.string('combinedMVAComputer'),
     tagInfos = cms.VInputTag(
@@ -11,6 +11,7 @@ def JetTagProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

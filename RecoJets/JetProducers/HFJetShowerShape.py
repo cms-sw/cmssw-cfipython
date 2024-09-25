@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HFJetShowerShape(**kwargs):
+def HFJetShowerShape(*args, **kwargs):
   mod = cms.EDProducer('HFJetShowerShape',
     jets = cms.InputTag('ak4PFJetsCHS'),
     vertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
@@ -15,6 +15,7 @@ def HFJetShowerShape(**kwargs):
     widthPtThreshold = cms.double(3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

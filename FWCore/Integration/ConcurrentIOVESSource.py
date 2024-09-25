@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ConcurrentIOVESSource(**kwargs):
+def ConcurrentIOVESSource(*args, **kwargs):
   mod = cms.ESSource('ConcurrentIOVESSource',
     iovIsRunNotTime = cms.bool(True),
     concurrentFinder = cms.bool(True),
@@ -10,6 +10,7 @@ def ConcurrentIOVESSource(**kwargs):
     invalidLumis = cms.vuint32(),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

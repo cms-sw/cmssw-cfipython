@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelClusterTagInfoProducer(**kwargs):
+def PixelClusterTagInfoProducer(*args, **kwargs):
   mod = cms.EDProducer('PixelClusterTagInfoProducer',
     jets = cms.InputTag('ak4PFJetsCHS'),
     vertices = cms.InputTag('offlinePrimaryVertices'),
@@ -13,6 +13,7 @@ def PixelClusterTagInfoProducer(**kwargs):
     hadronMass = cms.double(12),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

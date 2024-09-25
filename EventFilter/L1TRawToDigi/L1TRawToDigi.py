@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TRawToDigi(**kwargs):
+def L1TRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('L1TRawToDigi',
     FedIds = cms.vint32(),
     Setup = cms.string(''),
@@ -21,6 +21,7 @@ def L1TRawToDigi(**kwargs):
     MinFeds = cms.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

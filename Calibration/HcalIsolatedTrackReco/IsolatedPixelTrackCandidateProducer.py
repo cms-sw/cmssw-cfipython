@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IsolatedPixelTrackCandidateProducer(**kwargs):
+def IsolatedPixelTrackCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('IsolatedPixelTrackCandidateProducer',
     L1eTauJetsSource = cms.InputTag('hltCaloStage2Digis', 'Tau'),
     tauAssociationCone = cms.double(0),
@@ -18,6 +18,7 @@ def IsolatedPixelTrackCandidateProducer(**kwargs):
     EBEtaBoundary = cms.double(1.479),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

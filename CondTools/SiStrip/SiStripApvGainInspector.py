@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripApvGainInspector(**kwargs):
+def SiStripApvGainInspector(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripApvGainInspector',
     inputFile = cms.untracked.string(''),
     minNrEntries = cms.untracked.double(20),
@@ -8,6 +8,7 @@ def SiStripApvGainInspector(**kwargs):
     selectedModules = cms.untracked.vuint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

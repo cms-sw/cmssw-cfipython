@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DiMuonVertexValidation(**kwargs):
+def DiMuonVertexValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('DiMuonVertexValidation',
     useReco = cms.bool(True),
     muons = cms.InputTag('muons'),
@@ -87,6 +87,7 @@ def DiMuonVertexValidation(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

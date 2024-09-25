@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def StudyCaloResponse(**kwargs):
+def StudyCaloResponse(*args, **kwargs):
   mod = cms.EDAnalyzer('StudyCaloResponse',
     particleSource = cms.InputTag('genParticles'),
     verbosity = cms.untracked.int32(0),
@@ -45,6 +45,7 @@ def StudyCaloResponse(**kwargs):
     puWeights = cms.untracked.vdouble(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMRootOutputModule(**kwargs):
+def DQMRootOutputModule(*args, **kwargs):
   mod = cms.OutputModule('DQMRootOutputModule',
     fileName = cms.required.untracked.string,
     logicalFileName = cms.untracked.string(''),
@@ -15,6 +15,7 @@ def DQMRootOutputModule(**kwargs):
     ),
     dataset = cms.untracked.PSet()
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

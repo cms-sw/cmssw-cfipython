@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def VectorHitBuilderEDProducer(**kwargs):
+def VectorHitBuilderEDProducer(*args, **kwargs):
   mod = cms.EDProducer('VectorHitBuilderEDProducer',
     offlinestubs = cms.string('vectorHits'),
     maxVectorHits = cms.int32(999999999),
@@ -27,6 +27,7 @@ def VectorHitBuilderEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

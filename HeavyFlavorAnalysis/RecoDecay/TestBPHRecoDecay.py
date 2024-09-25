@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestBPHRecoDecay(**kwargs):
+def TestBPHRecoDecay(*args, **kwargs):
   mod = cms.EDAnalyzer('TestBPHRecoDecay',
     patMuonLabel = cms.string(''),
     ccCandsLabel = cms.string(''),
@@ -11,6 +11,7 @@ def TestBPHRecoDecay(**kwargs):
     outHist = cms.string('hist.root'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

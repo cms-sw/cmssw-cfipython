@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ThroughputService(**kwargs):
+def ThroughputService(*args, **kwargs):
   mod = cms.Service('ThroughputService',
     eventRange = cms.untracked.uint32(10000),
     eventResolution = cms.untracked.uint32(1),
@@ -11,6 +11,7 @@ def ThroughputService(**kwargs):
     timeRange = cms.untracked.double(60000),
     timeResolution = cms.untracked.double(10)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

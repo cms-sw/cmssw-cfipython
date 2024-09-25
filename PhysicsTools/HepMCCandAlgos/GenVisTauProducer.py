@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenVisTauProducer(**kwargs):
+def GenVisTauProducer(*args, **kwargs):
   mod = cms.EDProducer('GenVisTauProducer',
     src = cms.required.InputTag,
     srcGenParticles = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

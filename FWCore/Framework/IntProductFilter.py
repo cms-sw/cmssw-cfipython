@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def IntProductFilter(**kwargs):
+def IntProductFilter(*args, **kwargs):
   mod = cms.EDFilter('IntProductFilter',
     label = cms.required.InputTag,
     threshold = cms.int32(0),
     shouldProduce = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

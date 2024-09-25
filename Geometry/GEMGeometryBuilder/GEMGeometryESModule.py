@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMGeometryESModule(**kwargs):
+def GEMGeometryESModule(*args, **kwargs):
   mod = cms.ESProducer('GEMGeometryESModule',
     fromDDD = cms.bool(True),
     fromDD4hep = cms.bool(False),
@@ -8,6 +8,7 @@ def GEMGeometryESModule(**kwargs):
     alignmentsLabel = cms.string(''),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

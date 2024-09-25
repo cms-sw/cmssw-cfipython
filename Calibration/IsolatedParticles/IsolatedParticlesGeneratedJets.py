@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def IsolatedParticlesGeneratedJets(**kwargs):
+def IsolatedParticlesGeneratedJets(*args, **kwargs):
   mod = cms.EDAnalyzer('IsolatedParticlesGeneratedJets',
     Debug = cms.untracked.bool(True),
     JetSource = cms.InputTag('ak5GenJets'),
     ParticleSource = cms.InputTag('genParticles'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

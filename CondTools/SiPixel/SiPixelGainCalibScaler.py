@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelGainCalibScaler(**kwargs):
+def SiPixelGainCalibScaler(*args, **kwargs):
   mod = cms.EDAnalyzer('SiPixelGainCalibScaler',
     record = cms.string('SiPixelGainCalibrationForHLTRcd'),
     isForHLT = cms.bool(True),
@@ -23,6 +23,7 @@ def SiPixelGainCalibScaler(**kwargs):
     verbose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

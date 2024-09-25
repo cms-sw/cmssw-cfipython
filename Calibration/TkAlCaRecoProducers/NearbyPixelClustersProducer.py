@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def NearbyPixelClustersProducer(**kwargs):
+def NearbyPixelClustersProducer(*args, **kwargs):
   mod = cms.EDProducer('NearbyPixelClustersProducer',
     throwBadComponents = cms.bool(False),
     dumpWholeDetIds = cms.bool(False),
@@ -8,6 +8,7 @@ def NearbyPixelClustersProducer(**kwargs):
     trajectoryInput = cms.InputTag('myRefitter'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

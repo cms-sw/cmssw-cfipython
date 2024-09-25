@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HitResol(**kwargs):
+def HitResol(*args, **kwargs):
   mod = cms.EDAnalyzer('HitResol',
     lumiScalers = cms.InputTag('scalersRawToDigi'),
     combinatorialTracks = cms.InputTag('generalTracks'),
@@ -15,6 +15,7 @@ def HitResol(**kwargs):
     UsePairsOnly = cms.untracked.uint32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

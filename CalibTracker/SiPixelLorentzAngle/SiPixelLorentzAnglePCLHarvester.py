@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelLorentzAnglePCLHarvester(**kwargs):
+def SiPixelLorentzAnglePCLHarvester(*args, **kwargs):
   mod = cms.EDProducer('SiPixelLorentzAnglePCLHarvester',
     newmodulelist = cms.vstring(),
     dqmDir = cms.string('AlCaReco/SiPixelLorentzAngle'),
@@ -15,6 +15,7 @@ def SiPixelLorentzAnglePCLHarvester(**kwargs):
     record = cms.string('SiPixelLorentzAngleRcd'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestReadRun3Scouting(**kwargs):
+def TestReadRun3Scouting(*args, **kwargs):
   mod = cms.EDAnalyzer('TestReadRun3Scouting',
     expectedCaloJetsValues = cms.required.vdouble,
     caloJetsTag = cms.required.InputTag,
@@ -30,6 +30,7 @@ def TestReadRun3Scouting(**kwargs):
     vertexesTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

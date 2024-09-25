@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Onia2MuMuPAT(**kwargs):
+def Onia2MuMuPAT(*args, **kwargs):
   mod = cms.EDProducer('Onia2MuMuPAT',
     muons = cms.required.InputTag,
     beamSpotTag = cms.required.InputTag,
@@ -14,6 +14,7 @@ def Onia2MuMuPAT(**kwargs):
     addMCTruth = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

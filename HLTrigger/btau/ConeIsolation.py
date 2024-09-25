@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ConeIsolation(**kwargs):
+def ConeIsolation(*args, **kwargs):
   mod = cms.EDProducer('ConeIsolation',
     JetTrackSrc = cms.InputTag('ic5JetTracksAssociatorAtVertex'),
     vertexSrc = cms.InputTag('offlinePrimaryVertices'),
@@ -25,6 +25,7 @@ def ConeIsolation(**kwargs):
     VariableMinCone = cms.double(0.05),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

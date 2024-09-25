@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEgammaDoubleLegCombFilter(**kwargs):
+def HLTEgammaDoubleLegCombFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTEgammaDoubleLegCombFilter',
     saveTags = cms.bool(True),
     firstLegLastFilter = cms.InputTag('firstFilter'),
@@ -11,6 +11,7 @@ def HLTEgammaDoubleLegCombFilter(**kwargs):
     maxMatchDR = cms.double(0.01),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

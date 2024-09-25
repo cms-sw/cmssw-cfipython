@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZtoMMEventSelector(**kwargs):
+def ZtoMMEventSelector(*args, **kwargs):
   mod = cms.EDFilter('ZtoMMEventSelector',
     verbose = cms.untracked.bool(False),
     muonInputTag = cms.untracked.InputTag('muons'),
@@ -21,6 +21,7 @@ def ZtoMMEventSelector(**kwargs):
     maxInvMass = cms.untracked.double(105),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

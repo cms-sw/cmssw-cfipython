@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMFileSaverOnline(**kwargs):
+def DQMFileSaverOnline(*args, **kwargs):
   mod = cms.EDAnalyzer('DQMFileSaverOnline',
     backupLumiCount = cms.untracked.int32(10),
     keepBackupLumi = cms.untracked.bool(False),
@@ -12,6 +12,7 @@ def DQMFileSaverOnline(**kwargs):
     runNumber = cms.untracked.int32(111),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

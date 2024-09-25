@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamSpotCompatibilityChecker(**kwargs):
+def BeamSpotCompatibilityChecker(*args, **kwargs):
   mod = cms.EDAnalyzer('BeamSpotCompatibilityChecker',
     warningThr = cms.double(1),
     errorThr = cms.double(3),
@@ -10,6 +10,7 @@ def BeamSpotCompatibilityChecker(**kwargs):
     bsFromDB = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

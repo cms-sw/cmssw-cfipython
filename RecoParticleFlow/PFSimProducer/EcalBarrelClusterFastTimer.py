@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalBarrelClusterFastTimer(**kwargs):
+def EcalBarrelClusterFastTimer(*args, **kwargs):
   mod = cms.EDProducer('EcalBarrelClusterFastTimer',
     ecalDepth = cms.double(7),
     resolutionModels = cms.VPSet(
@@ -15,6 +15,7 @@ def EcalBarrelClusterFastTimer(**kwargs):
     ebTimeHits = cms.InputTag('ecalDetailedTimeRecHit', 'EcalRecHitsEB'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

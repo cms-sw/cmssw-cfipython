@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZtoEEElectronTrackProducer(**kwargs):
+def ZtoEEElectronTrackProducer(*args, **kwargs):
   mod = cms.EDProducer('ZtoEEElectronTrackProducer',
     electronInputTag = cms.untracked.InputTag('gedGsfElectrons'),
     offlineBeamSpot = cms.untracked.InputTag('offlineBeamSpot'),
@@ -25,6 +25,7 @@ def ZtoEEElectronTrackProducer(**kwargs):
     maxInvMass = cms.untracked.double(105),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

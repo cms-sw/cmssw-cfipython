@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackerGeometryCompare(**kwargs):
+def TrackerGeometryCompare(*args, **kwargs):
   mod = cms.EDAnalyzer('TrackerGeometryCompare',
     levels = cms.untracked.vstring(),
     fromDD4hep = cms.untracked.bool(False),
@@ -20,6 +20,7 @@ def TrackerGeometryCompare(**kwargs):
     weightByIdFile = cms.untracked.string('blah2.txt'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

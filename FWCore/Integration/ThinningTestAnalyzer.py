@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ThinningTestAnalyzer(**kwargs):
+def ThinningTestAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('ThinningTestAnalyzer',
     parentTag = cms.required.InputTag,
     thinnedTag = cms.required.InputTag,
@@ -21,6 +21,7 @@ def ThinningTestAnalyzer(**kwargs):
     slimmedValueFactor = cms.int32(10),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

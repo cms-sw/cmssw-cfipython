@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TransformAsyncIntStreamProducer(**kwargs):
+def TransformAsyncIntStreamProducer(*args, **kwargs):
   mod = cms.EDProducer('TransformAsyncIntStreamProducer',
     get = cms.required.InputTag,
     offset = cms.uint32(0),
@@ -8,6 +8,7 @@ def TransformAsyncIntStreamProducer(**kwargs):
     checkTransformNotCalled = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

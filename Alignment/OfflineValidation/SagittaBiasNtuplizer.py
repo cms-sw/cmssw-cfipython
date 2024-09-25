@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SagittaBiasNtuplizer(**kwargs):
+def SagittaBiasNtuplizer(*args, **kwargs):
   mod = cms.EDAnalyzer('SagittaBiasNtuplizer',
     useReco = cms.bool(True),
     muons = cms.InputTag('muons'),
@@ -22,6 +22,7 @@ def SagittaBiasNtuplizer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

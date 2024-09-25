@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TPIsolatedPFCandidatesOnPFCandidates(**kwargs):
+def TPIsolatedPFCandidatesOnPFCandidates(*args, **kwargs):
   mod = cms.EDProducer('TPIsolatedPFCandidatesOnPFCandidates',
     enable = cms.required.bool,
     name = cms.untracked.string('No Name'),
@@ -9,6 +9,7 @@ def TPIsolatedPFCandidatesOnPFCandidates(**kwargs):
     matchByPtrDirect = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZEEDetails(**kwargs):
+def ZEEDetails(*args, **kwargs):
   mod = cms.EDProducer('ZEEDetails',
     moduleName = cms.untracked.string('ZEEDetails'),
     folderName = cms.untracked.string('ElectronTracks'),
@@ -33,6 +33,7 @@ def ZEEDetails(**kwargs):
     puScaleFactorFile = cms.untracked.string('PileupScaleFactor.root'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

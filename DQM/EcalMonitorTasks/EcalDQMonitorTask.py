@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalDQMonitorTask(**kwargs):
+def EcalDQMonitorTask(*args, **kwargs):
   mod = cms.EDProducer('EcalDQMonitorTask',
     moduleName = cms.untracked.string('Ecal Monitor Module'),
     workers = cms.required.untracked.vstring,
@@ -62,6 +62,7 @@ def EcalDQMonitorTask(**kwargs):
     resetInterval = cms.untracked.double(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

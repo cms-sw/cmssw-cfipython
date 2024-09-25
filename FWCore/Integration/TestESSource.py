@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestESSource(**kwargs):
+def TestESSource(*args, **kwargs):
   mod = cms.ESSource('TestESSource',
     iterations = cms.uint32(10000000),
     checkIOVInitialization = cms.bool(False),
@@ -8,6 +8,7 @@ def TestESSource(**kwargs):
     firstValidLumis = cms.vuint32(),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

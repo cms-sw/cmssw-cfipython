@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def FedRawDataInputSource(**kwargs):
+def FedRawDataInputSource(*args, **kwargs):
   mod = cms.Source('FedRawDataInputSource',
     eventChunkSize = cms.untracked.uint32(32),
     eventChunkBlock = cms.untracked.uint32(32),
@@ -13,6 +13,7 @@ def FedRawDataInputSource(**kwargs):
     fileListMode = cms.untracked.bool(False),
     fileNames = cms.untracked.vstring()
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

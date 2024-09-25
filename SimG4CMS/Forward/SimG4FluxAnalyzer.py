@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimG4FluxAnalyzer(**kwargs):
+def SimG4FluxAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('SimG4FluxAnalyzer',
     LVNames = cms.vstring(
       'TotemT1Part1',
@@ -12,6 +12,7 @@ def SimG4FluxAnalyzer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMEfficiencyAnalyzer(**kwargs):
+def GEMEfficiencyAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('GEMEfficiencyAnalyzer',
     ohStatusTag = cms.untracked.InputTag('muonGEMDigis', 'OHStatus'),
     vfatStatusTag = cms.untracked.InputTag('muonGEMDigis', 'VFATStatus'),
@@ -68,6 +68,7 @@ def GEMEfficiencyAnalyzer(**kwargs):
     ServiceParameters = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

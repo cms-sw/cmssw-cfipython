@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonDimuonL3Filter(**kwargs):
+def HLTMuonDimuonL3Filter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonDimuonL3Filter',
     saveTags = cms.bool(True),
     BeamSpotTag = cms.InputTag('hltOfflineBeamSpot'),
@@ -47,6 +47,7 @@ def HLTMuonDimuonL3Filter(**kwargs):
     propagatorOpposite = cms.ESInputTag('', 'hltESPSteppingHelixPropagatorOpposite'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

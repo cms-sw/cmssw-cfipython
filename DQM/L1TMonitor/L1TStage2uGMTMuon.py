@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TStage2uGMTMuon(**kwargs):
+def L1TStage2uGMTMuon(*args, **kwargs):
   mod = cms.EDProducer('L1TStage2uGMTMuon',
     muonProducer = cms.required.InputTag,
     monitorDir = cms.untracked.string(''),
@@ -10,6 +10,7 @@ def L1TStage2uGMTMuon(**kwargs):
     displacedQuantities = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

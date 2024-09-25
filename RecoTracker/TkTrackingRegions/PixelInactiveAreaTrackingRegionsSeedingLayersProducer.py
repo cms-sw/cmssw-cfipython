@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelInactiveAreaTrackingRegionsSeedingLayersProducer(**kwargs):
+def PixelInactiveAreaTrackingRegionsSeedingLayersProducer(*args, **kwargs):
   mod = cms.EDProducer('PixelInactiveAreaTrackingRegionsSeedingLayersProducer',
     RegionPSet = cms.PSet(
       operationMode = cms.string('BeamSpotFixed'),
@@ -42,6 +42,7 @@ def PixelInactiveAreaTrackingRegionsSeedingLayersProducer(**kwargs):
     MTEC = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

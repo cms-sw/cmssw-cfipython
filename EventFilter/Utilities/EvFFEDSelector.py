@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EvFFEDSelector(**kwargs):
+def EvFFEDSelector(*args, **kwargs):
   mod = cms.EDProducer('EvFFEDSelector',
     inputTag = cms.InputTag('source'),
     fedList = cms.vuint32(
@@ -9,6 +9,7 @@ def EvFFEDSelector(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

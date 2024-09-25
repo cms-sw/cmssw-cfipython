@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SecondaryVertexProducer(**kwargs):
+def SecondaryVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('SecondaryVertexProducer',
     extSVDeltaRToJet = cms.double(0.3),
     beamSpotTag = cms.InputTag('offlineBeamSpot'),
@@ -83,6 +83,7 @@ def SecondaryVertexProducer(**kwargs):
     weights = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

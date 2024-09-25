@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTPixelMatchElectronProducers(**kwargs):
+def EgammaHLTPixelMatchElectronProducers(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTPixelMatchElectronProducers',
     TrackProducer = cms.InputTag('hltEleAnyWP80CleanMergedTracks'),
     GsfTrackProducer = cms.InputTag(''),
@@ -8,6 +8,7 @@ def EgammaHLTPixelMatchElectronProducers(**kwargs):
     BSProducer = cms.InputTag('hltOnlineBeamSpot'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

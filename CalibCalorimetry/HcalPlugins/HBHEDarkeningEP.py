@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HBHEDarkeningEP(**kwargs):
+def HBHEDarkeningEP(*args, **kwargs):
   mod = cms.ESSource('HBHEDarkeningEP',
     ieta_shift = cms.required.int32,
     drdA = cms.required.double,
@@ -13,6 +13,7 @@ def HBHEDarkeningEP(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

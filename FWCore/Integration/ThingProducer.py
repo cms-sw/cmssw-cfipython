@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ThingProducer(**kwargs):
+def ThingProducer(*args, **kwargs):
   mod = cms.EDProducer('ThingProducer',
     offsetDelta = cms.int32(0),
     nThings = cms.int32(20),
@@ -8,6 +8,7 @@ def ThingProducer(**kwargs):
     noPut = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

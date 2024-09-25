@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalHBHEMuonSimAnalyzer(**kwargs):
+def HcalHBHEMuonSimAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalHBHEMuonSimAnalyzer',
     ModuleLabel = cms.string('g4SimHits'),
     EBCollection = cms.string('EcalHitsEB'),
@@ -15,6 +15,7 @@ def HcalHBHEMuonSimAnalyzer(**kwargs):
     TimeMaxCutHCAL = cms.untracked.double(500),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

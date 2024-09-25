@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuonHLTHGCalLayerClusterIsolationProducer(**kwargs):
+def MuonHLTHGCalLayerClusterIsolationProducer(*args, **kwargs):
   mod = cms.EDProducer('MuonHLTHGCalLayerClusterIsolationProducer',
     recoCandidateProducer = cms.InputTag('hltL1SeededRecoEcalCandidatePF'),
     layerClusterProducer = cms.InputTag('hltParticleFlowClusterECAL'),
@@ -22,6 +22,7 @@ def MuonHLTHGCalLayerClusterIsolationProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MeasurementTrackerEventProducer(**kwargs):
+def MeasurementTrackerEventProducer(*args, **kwargs):
   mod = cms.EDProducer('MeasurementTrackerEventProducer',
     measurementTracker = cms.string(''),
     skipClusters = cms.InputTag(''),
@@ -16,6 +16,7 @@ def MeasurementTrackerEventProducer(**kwargs):
     switchOffPixelsIfEmpty = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSPixelLocalTrackProducer(**kwargs):
+def CTPPSPixelLocalTrackProducer(*args, **kwargs):
   mod = cms.EDProducer('CTPPSPixelLocalTrackProducer',
     tag = cms.InputTag('ctppsPixelRecHits'),
     patternFinderAlgorithm = cms.string('RPixRoadFinder'),
@@ -21,6 +21,7 @@ def CTPPSPixelLocalTrackProducer(**kwargs):
     roadRadiusBadPot = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

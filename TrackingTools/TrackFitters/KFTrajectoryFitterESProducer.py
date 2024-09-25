@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def KFTrajectoryFitterESProducer(**kwargs):
+def KFTrajectoryFitterESProducer(*args, **kwargs):
   mod = cms.ESProducer('KFTrajectoryFitterESProducer',
     ComponentName = cms.string('KFFitter'),
     Propagator = cms.string('PropagatorWithMaterial'),
@@ -10,6 +10,7 @@ def KFTrajectoryFitterESProducer(**kwargs):
     minHits = cms.int32(3),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

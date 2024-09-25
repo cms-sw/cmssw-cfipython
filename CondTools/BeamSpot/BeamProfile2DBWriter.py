@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BeamProfile2DBWriter(**kwargs):
+def BeamProfile2DBWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('BeamProfile2DBWriter',
     recordName = cms.string('SimBeamSpotObjectsRcd'),
     X0 = cms.double(0),
@@ -19,6 +19,7 @@ def BeamProfile2DBWriter(**kwargs):
     TimeOffset = cms.double(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

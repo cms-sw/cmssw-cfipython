@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_serial_sync_TestAlpakaProducer(**kwargs):
+def alpaka_serial_sync_TestAlpakaProducer(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::TestAlpakaProducer',
     size = cms.required.int32,
     size2 = cms.required.int32,
@@ -10,6 +10,7 @@ def alpaka_serial_sync_TestAlpakaProducer(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

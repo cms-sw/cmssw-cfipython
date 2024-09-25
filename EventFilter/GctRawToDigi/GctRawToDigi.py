@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GctRawToDigi(**kwargs):
+def GctRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('GctRawToDigi',
     unpackSharedRegions = cms.bool(False),
     numberOfGctSamplesToUnpack = cms.uint32(1),
@@ -13,6 +13,7 @@ def GctRawToDigi(**kwargs):
     verbose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

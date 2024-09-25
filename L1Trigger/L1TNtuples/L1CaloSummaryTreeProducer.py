@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1CaloSummaryTreeProducer(**kwargs):
+def L1CaloSummaryTreeProducer(*args, **kwargs):
   mod = cms.EDAnalyzer('L1CaloSummaryTreeProducer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EventStreamFileWriter(**kwargs):
+def EventStreamFileWriter(*args, **kwargs):
   mod = cms.OutputModule('EventStreamFileWriter',
     max_event_size = cms.untracked.int32(7000000),
     use_compression = cms.untracked.bool(True),
@@ -15,6 +15,7 @@ def EventStreamFileWriter(**kwargs):
     fileName = cms.untracked.string('teststreamfile.dat'),
     padding = cms.untracked.uint32(0)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

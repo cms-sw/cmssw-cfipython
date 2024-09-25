@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTElectronTrackIsolationProducers(**kwargs):
+def EgammaHLTElectronTrackIsolationProducers(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTElectronTrackIsolationProducers',
     electronProducer = cms.InputTag('hltEleAnyWP80PixelMatchElectronsL1Seeded'),
     trackProducer = cms.InputTag('hltL1SeededEgammaRegionalCTFFinalFitWithMaterial'),
@@ -18,6 +18,7 @@ def EgammaHLTElectronTrackIsolationProducers(**kwargs):
     useSCRefs = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

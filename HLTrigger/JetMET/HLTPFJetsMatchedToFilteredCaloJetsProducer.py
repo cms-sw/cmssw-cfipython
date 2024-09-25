@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFJetsMatchedToFilteredCaloJetsProducer(**kwargs):
+def HLTPFJetsMatchedToFilteredCaloJetsProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTPFJetsMatchedToFilteredCaloJetsProducer',
     src = cms.InputTag('hltJets'),
     triggerJetsFilter = cms.InputTag('hltCaloJetsFiltered'),
@@ -8,6 +8,7 @@ def HLTPFJetsMatchedToFilteredCaloJetsProducer(**kwargs):
     maxDeltaR = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

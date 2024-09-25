@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMStreamerWriteJsonAnalyzer(**kwargs):
+def DQMStreamerWriteJsonAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('DQMStreamerWriteJsonAnalyzer',
     eventsPerLumi = cms.required.untracked.uint32,
     runNumber = cms.required.untracked.uint32,
@@ -9,6 +9,7 @@ def DQMStreamerWriteJsonAnalyzer(**kwargs):
     dataFileForEachLumi = cms.required.untracked.vstring,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTClusterShapeProducer(**kwargs):
+def EgammaHLTClusterShapeProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTClusterShapeProducer',
     recoEcalCandidateProducer = cms.InputTag('hltL1SeededRecoEcalCandidate'),
     ecalRechitEB = cms.InputTag('hltEcalRegionalEgammaRecHit', 'EcalRecHitsEB'),
@@ -9,6 +9,7 @@ def EgammaHLTClusterShapeProducer(**kwargs):
     multThresEE = cms.double(1.25),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

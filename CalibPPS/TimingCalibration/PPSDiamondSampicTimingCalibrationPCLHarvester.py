@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSDiamondSampicTimingCalibrationPCLHarvester(**kwargs):
+def PPSDiamondSampicTimingCalibrationPCLHarvester(*args, **kwargs):
   mod = cms.EDProducer('PPSDiamondSampicTimingCalibrationPCLHarvester',
     timingCalibrationTag = cms.string('GlobalTag:PPSDiamondSampicCalibration'),
     dqmDir = cms.string('AlCaReco/PPSDiamondSampicTimingCalibrationPCL'),
@@ -9,6 +9,7 @@ def PPSDiamondSampicTimingCalibrationPCLHarvester(**kwargs):
     jsonOutputPath = cms.string('offset_cal.json'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

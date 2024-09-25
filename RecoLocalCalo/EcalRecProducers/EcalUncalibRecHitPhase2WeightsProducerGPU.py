@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalUncalibRecHitPhase2WeightsProducerGPU(**kwargs):
+def EcalUncalibRecHitPhase2WeightsProducerGPU(*args, **kwargs):
   mod = cms.EDProducer('EcalUncalibRecHitPhase2WeightsProducerGPU',
     recHitsLabelEB = cms.string('EcalUncalibRecHitsEB'),
     weights = cms.vdouble(
@@ -24,6 +24,7 @@ def EcalUncalibRecHitPhase2WeightsProducerGPU(**kwargs):
     digisLabelEB = cms.InputTag('simEcalUnsuppressedDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

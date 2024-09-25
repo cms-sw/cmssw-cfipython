@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalGeometryCheck(**kwargs):
+def HGCalGeometryCheck(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalGeometryCheck',
     detectorNames = cms.vstring(
       'HGCalEESensitive',
@@ -17,6 +17,7 @@ def HGCalGeometryCheck(**kwargs):
     verbosity = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

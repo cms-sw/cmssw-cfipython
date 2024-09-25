@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalDQMonitorClient(**kwargs):
+def EcalDQMonitorClient(*args, **kwargs):
   mod = cms.EDProducer('EcalDQMonitorClient',
     moduleName = cms.untracked.string('Ecal Monitor Module'),
     workers = cms.required.untracked.vstring,
@@ -96,6 +96,7 @@ def EcalDQMonitorClient(**kwargs):
     PNMaskFile = cms.optional.untracked.FileInPath,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

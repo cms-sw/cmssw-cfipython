@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalNumberingInitialization(**kwargs):
+def HGCalNumberingInitialization(*args, **kwargs):
   mod = cms.ESProducer('HGCalNumberingInitialization',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

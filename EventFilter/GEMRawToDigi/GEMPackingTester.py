@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMPackingTester(**kwargs):
+def GEMPackingTester(*args, **kwargs):
   mod = cms.EDAnalyzer('GEMPackingTester',
     fed = cms.InputTag('rawDataCollector'),
     gemDigi = cms.InputTag('muonGEMDigis'),
@@ -8,6 +8,7 @@ def GEMPackingTester(**kwargs):
     readMultiBX = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

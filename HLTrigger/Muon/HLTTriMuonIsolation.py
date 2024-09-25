@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTTriMuonIsolation(**kwargs):
+def HLTTriMuonIsolation(*args, **kwargs):
   mod = cms.EDProducer('HLTTriMuonIsolation',
     L3MuonsSrc = cms.InputTag('hltIterL3FromL2MuonCandidates'),
     AllMuonsSrc = cms.InputTag('hltGlbTrkMuonCands'),
@@ -24,6 +24,7 @@ def HLTTriMuonIsolation(**kwargs):
     EnableAbsIso = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFClusterMatchedToPhotonsSelector(**kwargs):
+def PFClusterMatchedToPhotonsSelector(*args, **kwargs):
   mod = cms.EDProducer('PFClusterMatchedToPhotonsSelector',
     pfClustersTag = cms.InputTag('particleFlowClusterECAL'),
     trackingParticleTag = cms.InputTag('mix', 'MergedTrackTruth'),
@@ -14,6 +14,7 @@ def PFClusterMatchedToPhotonsSelector(**kwargs):
     volumeZ_EE = cms.double(317),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

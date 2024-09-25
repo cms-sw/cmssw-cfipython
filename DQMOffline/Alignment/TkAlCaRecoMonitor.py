@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TkAlCaRecoMonitor(**kwargs):
+def TkAlCaRecoMonitor(*args, **kwargs):
   mod = cms.EDProducer('TkAlCaRecoMonitor',
     TrackProducer = cms.InputTag('generalTracks'),
     ReferenceTrackProducer = cms.InputTag('generalTrakcs'),
@@ -43,6 +43,7 @@ def TkAlCaRecoMonitor(**kwargs):
     HitMapRMax = cms.double(120),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

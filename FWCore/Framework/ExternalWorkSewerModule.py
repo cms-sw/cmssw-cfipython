@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ExternalWorkSewerModule(**kwargs):
+def ExternalWorkSewerModule(*args, **kwargs):
   mod = cms.OutputModule('ExternalWorkSewerModule',
     name = cms.required.string,
     shouldPass = cms.required.int32,
@@ -9,6 +9,7 @@ def ExternalWorkSewerModule(**kwargs):
       SelectEvents = cms.optional.vstring
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

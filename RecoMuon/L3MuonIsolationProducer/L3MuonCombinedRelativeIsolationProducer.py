@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L3MuonCombinedRelativeIsolationProducer(**kwargs):
+def L3MuonCombinedRelativeIsolationProducer(*args, **kwargs):
   mod = cms.EDProducer('L3MuonCombinedRelativeIsolationProducer',
     UseRhoCorrectedCaloDeposits = cms.bool(False),
     UseCaloIso = cms.bool(True),
@@ -53,6 +53,7 @@ def L3MuonCombinedRelativeIsolationProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

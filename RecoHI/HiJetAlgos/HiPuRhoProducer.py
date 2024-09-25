@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HiPuRhoProducer(**kwargs):
+def HiPuRhoProducer(*args, **kwargs):
   mod = cms.EDProducer('HiPuRhoProducer',
     src = cms.InputTag('PFTowers'),
     medianWindowWidth = cms.int32(2),
@@ -13,6 +13,7 @@ def HiPuRhoProducer(**kwargs):
     dropZeroTowers = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

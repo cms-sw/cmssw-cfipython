@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HORecHitFlatTableProducer(**kwargs):
+def HORecHitFlatTableProducer(*args, **kwargs):
   mod = cms.EDProducer('HORecHitFlatTableProducer',
     name = cms.required.string,
     doc = cms.string(''),
@@ -22,6 +22,7 @@ def HORecHitFlatTableProducer(**kwargs):
     externalVariables = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

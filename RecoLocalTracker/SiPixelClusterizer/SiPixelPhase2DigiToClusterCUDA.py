@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelPhase2DigiToClusterCUDA(**kwargs):
+def SiPixelPhase2DigiToClusterCUDA(*args, **kwargs):
   mod = cms.EDProducer('SiPixelPhase2DigiToClusterCUDA',
     IncludeErrors = cms.bool(True),
     clusterThreshold_layer1 = cms.int32(4000),
@@ -12,6 +12,7 @@ def SiPixelPhase2DigiToClusterCUDA(**kwargs):
     InputDigis = cms.InputTag('simSiPixelDigis', 'Pixel'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

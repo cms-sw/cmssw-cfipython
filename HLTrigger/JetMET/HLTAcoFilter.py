@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTAcoFilter(**kwargs):
+def HLTAcoFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTAcoFilter',
     saveTags = cms.bool(True),
     inputJetTag = cms.InputTag('IterativeCone5CaloJets'),
@@ -12,6 +12,7 @@ def HLTAcoFilter(**kwargs):
     Acoplanar = cms.string('Jet1Jet2'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

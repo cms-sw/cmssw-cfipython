@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalNoiseRatesClient(**kwargs):
+def HcalNoiseRatesClient(*args, **kwargs):
   mod = cms.EDProducer('HcalNoiseRatesClient',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonL1RegionalFilter(**kwargs):
+def HLTMuonL1RegionalFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonL1RegionalFilter',
     saveTags = cms.bool(True),
     CandTag = cms.InputTag('hltL1extraParticles'),
@@ -40,6 +40,7 @@ def HLTMuonL1RegionalFilter(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TPPFTausOnPFJetsDeltaR(**kwargs):
+def TPPFTausOnPFJetsDeltaR(*args, **kwargs):
   mod = cms.EDProducer('TPPFTausOnPFJetsDeltaR',
     enable = cms.required.bool,
     deltaR = cms.required.double,
@@ -9,6 +9,7 @@ def TPPFTausOnPFJetsDeltaR(**kwargs):
     bottomCollection = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

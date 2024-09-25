@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPixlMBForAlignmentFilter(**kwargs):
+def HLTPixlMBForAlignmentFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPixlMBForAlignmentFilter',
     saveTags = cms.bool(True),
     pixlTag = cms.InputTag('hltPixelCands'),
@@ -10,6 +10,7 @@ def HLTPixlMBForAlignmentFilter(**kwargs):
     MinIsol = cms.double(0.05),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

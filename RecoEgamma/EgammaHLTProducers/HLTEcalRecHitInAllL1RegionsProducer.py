@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEcalRecHitInAllL1RegionsProducer(**kwargs):
+def HLTEcalRecHitInAllL1RegionsProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTEcalRecHitInAllL1RegionsProducer',
     productLabels = cms.vstring(
       'EcalRegionalRecHitsEB',
@@ -47,6 +47,7 @@ def HLTEcalRecHitInAllL1RegionsProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalBHValidation(**kwargs):
+def HGCalBHValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalBHValidation',
     ModuleLabel = cms.string('g4SimHits'),
     HitCollection = cms.string('HGCHitsHEback'),
@@ -9,6 +9,7 @@ def HGCalBHValidation(**kwargs):
     Threshold = cms.double(15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

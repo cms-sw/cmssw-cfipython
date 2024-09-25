@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFClusterParamsESProducer_alpaka(**kwargs):
+def PFClusterParamsESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('PFClusterParamsESProducer@alpaka',
     seedFinder = cms.PSet(
       nNeighbours = cms.int32(4),
@@ -113,6 +113,7 @@ def PFClusterParamsESProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

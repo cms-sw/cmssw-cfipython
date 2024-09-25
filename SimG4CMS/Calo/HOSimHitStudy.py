@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HOSimHitStudy(**kwargs):
+def HOSimHitStudy(*args, **kwargs):
   mod = cms.EDAnalyzer('HOSimHitStudy',
     SourceLabel = cms.untracked.string('generatorSmeared'),
     ModuleLabel = cms.untracked.string('g4SimHits'),
@@ -17,6 +17,7 @@ def HOSimHitStudy(**kwargs):
     TestNumbering = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

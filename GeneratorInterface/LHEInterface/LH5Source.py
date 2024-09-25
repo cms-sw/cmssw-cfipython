@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def LH5Source(**kwargs):
+def LH5Source(*args, **kwargs):
   mod = cms.Source('LH5Source',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -17,6 +17,7 @@ def LH5Source(**kwargs):
     overrideCatalog = cms.untracked.string(''),
     skipEvents = cms.untracked.uint32(0)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_rocm_async_PFRecHitECALTopologyESProducer(**kwargs):
+def alpaka_rocm_async_PFRecHitECALTopologyESProducer(*args, **kwargs):
   mod = cms.ESProducer('alpaka_rocm_async::PFRecHitECALTopologyESProducer',
     usePFThresholdsFromDB = cms.bool(False),
     appendToDataLabel = cms.string(''),
@@ -8,6 +8,7 @@ def alpaka_rocm_async_PFRecHitECALTopologyESProducer(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

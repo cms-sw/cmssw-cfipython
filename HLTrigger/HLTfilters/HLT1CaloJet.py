@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLT1CaloJet(**kwargs):
+def HLT1CaloJet(*args, **kwargs):
   mod = cms.EDFilter('HLT1CaloJet',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltCollection'),
@@ -14,6 +14,7 @@ def HLT1CaloJet(**kwargs):
     MinN = cms.int32(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

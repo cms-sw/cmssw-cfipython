@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GEMPadDigiClusterProducer(**kwargs):
+def GEMPadDigiClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('GEMPadDigiClusterProducer',
     InputCollection = cms.InputTag('simMuonGEMPadDigis'),
     nPartitionsGE11 = cms.uint32(4),
@@ -15,6 +15,7 @@ def GEMPadDigiClusterProducer(**kwargs):
     sendOverflowClusters = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

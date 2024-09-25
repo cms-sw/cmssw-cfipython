@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(**kwargs):
+def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::CAHitNtupletAlpakaPhase1',
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
     CPE = cms.string('PixelCPEFastParams'),
@@ -68,6 +68,7 @@ def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

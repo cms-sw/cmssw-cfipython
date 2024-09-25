@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTScoutingEgammaProducer(**kwargs):
+def HLTScoutingEgammaProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTScoutingEgammaProducer',
     EgammaCandidates = cms.InputTag('hltEgammaCandidates'),
     EgammaGsfTracks = cms.InputTag('hltEgammaGsfTracks'),
@@ -34,6 +34,7 @@ def HLTScoutingEgammaProducer(**kwargs):
     ecalRechitEE = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEE'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EmptyIOVSource(**kwargs):
+def EmptyIOVSource(*args, **kwargs):
   mod = cms.Source('EmptyIOVSource',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -18,6 +18,7 @@ def EmptyIOVSource(**kwargs):
     lastValue = cms.required.uint64,
     interval = cms.required.uint64
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

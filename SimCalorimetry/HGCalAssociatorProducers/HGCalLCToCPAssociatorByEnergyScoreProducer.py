@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalLCToCPAssociatorByEnergyScoreProducer(**kwargs):
+def HGCalLCToCPAssociatorByEnergyScoreProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalLCToCPAssociatorByEnergyScoreProducer',
     hardScatterOnly = cms.bool(True),
     hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
@@ -11,6 +11,7 @@ def HGCalLCToCPAssociatorByEnergyScoreProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripBaselineComparator(**kwargs):
+def SiStripBaselineComparator(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripBaselineComparator',
     srcClusters = cms.InputTag('siStripClusters'),
     srcClusters2 = cms.InputTag('moddedsiStripClusters'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

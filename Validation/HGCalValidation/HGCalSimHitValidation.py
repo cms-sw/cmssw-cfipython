@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalSimHitValidation(**kwargs):
+def HGCalSimHitValidation(*args, **kwargs):
   mod = cms.EDProducer('HGCalSimHitValidation',
     DetectorName = cms.string('HGCalEESensitive'),
     CaloHitSource = cms.string('HGCHitsEE'),
@@ -12,6 +12,7 @@ def HGCalSimHitValidation(**kwargs):
     TestNumber = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

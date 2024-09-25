@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSPixelTopologyESSource(**kwargs):
+def PPSPixelTopologyESSource(*args, **kwargs):
   mod = cms.ESSource('PPSPixelTopologyESSource',
     RunType = cms.string('Run3'),
     PitchSimY = cms.double(0.15),
@@ -16,6 +16,7 @@ def PPSPixelTopologyESSource(**kwargs):
     physActiveEdgeDist = cms.double(0.15),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

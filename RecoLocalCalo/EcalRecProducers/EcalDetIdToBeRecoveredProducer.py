@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalDetIdToBeRecoveredProducer(**kwargs):
+def EcalDetIdToBeRecoveredProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalDetIdToBeRecoveredProducer',
     ebIntegrityChIdErrors = cms.InputTag('ecalDigis', 'EcalIntegrityChIdErrors'),
     ebDetIdToBeRecovered = cms.string('ebDetId'),
@@ -18,6 +18,7 @@ def EcalDetIdToBeRecoveredProducer(**kwargs):
     eeSrFlagCollection = cms.InputTag('ecalDigis'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

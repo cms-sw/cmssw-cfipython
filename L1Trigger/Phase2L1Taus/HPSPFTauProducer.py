@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HPSPFTauProducer(**kwargs):
+def HPSPFTauProducer(*args, **kwargs):
   mod = cms.EDProducer('HPSPFTauProducer',
     useJetSeeds = cms.bool(True),
     minPFTauPt = cms.double(20),
@@ -71,6 +71,7 @@ def HPSPFTauProducer(**kwargs):
     maxSignalConeSize = cms.double(0.1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

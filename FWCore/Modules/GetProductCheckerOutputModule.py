@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GetProductCheckerOutputModule(**kwargs):
+def GetProductCheckerOutputModule(*args, **kwargs):
   mod = cms.OutputModule('GetProductCheckerOutputModule',
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
@@ -9,6 +9,7 @@ def GetProductCheckerOutputModule(**kwargs):
     crosscheck = cms.untracked.vstring(),
     verbose = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

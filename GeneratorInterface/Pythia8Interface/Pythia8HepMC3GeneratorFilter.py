@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def Pythia8HepMC3GeneratorFilter(**kwargs):
+def Pythia8HepMC3GeneratorFilter(*args, **kwargs):
   mod = cms.EDFilter('Pythia8HepMC3GeneratorFilter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

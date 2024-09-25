@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1O2OTestAnalyzer(**kwargs):
+def L1O2OTestAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('L1O2OTestAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

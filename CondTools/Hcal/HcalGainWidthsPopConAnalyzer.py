@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalGainWidthsPopConAnalyzer(**kwargs):
+def HcalGainWidthsPopConAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalGainWidthsPopConAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

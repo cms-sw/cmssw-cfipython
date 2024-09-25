@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalLaserTest(**kwargs):
+def HcalLaserTest(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalLaserTest',
     InputHBHE = cms.InputTag('source'),
     InputHF = cms.InputTag('source'),
@@ -12,6 +12,7 @@ def HcalLaserTest(**kwargs):
     testMode = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

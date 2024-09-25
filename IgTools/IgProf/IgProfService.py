@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IgProfService(**kwargs):
+def IgProfService(*args, **kwargs):
   mod = cms.Service('IgProfService',
     reportEventInterval = cms.untracked.int32(1),
     reportFirstEvent = cms.untracked.int32(1),
@@ -23,6 +23,7 @@ def IgProfService(**kwargs):
     reportToFileAtPostOpenFile = cms.untracked.string(''),
     reportToFileAtPostCloseFile = cms.untracked.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_cuda_async_TestAlpakaStreamProducer(**kwargs):
+def alpaka_cuda_async_TestAlpakaStreamProducer(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::TestAlpakaStreamProducer',
     source = cms.required.InputTag,
     eventSetupSource = cms.ESInputTag('', ''),
@@ -15,6 +15,7 @@ def alpaka_cuda_async_TestAlpakaStreamProducer(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

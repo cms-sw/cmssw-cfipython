@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripPositionCorrectionsTableProducer(**kwargs):
+def SiStripPositionCorrectionsTableProducer(*args, **kwargs):
   mod = cms.EDProducer('SiStripPositionCorrectionsTableProducer',
     name = cms.string('cluster'),
     doc = cms.string('On-track cluster properties for Lorentz angle and backplane correction measurement'),
@@ -8,6 +8,7 @@ def SiStripPositionCorrectionsTableProducer(**kwargs):
     Tracks = cms.InputTag('generalTracks'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

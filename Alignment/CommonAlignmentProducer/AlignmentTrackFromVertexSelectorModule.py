@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlignmentTrackFromVertexSelectorModule(**kwargs):
+def AlignmentTrackFromVertexSelectorModule(*args, **kwargs):
   mod = cms.EDFilter('AlignmentTrackFromVertexSelectorModule',
     src = cms.InputTag('generalTracks'),
     filter = cms.bool(False),
@@ -10,6 +10,7 @@ def AlignmentTrackFromVertexSelectorModule(**kwargs):
     vertexIndex = cms.uint32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

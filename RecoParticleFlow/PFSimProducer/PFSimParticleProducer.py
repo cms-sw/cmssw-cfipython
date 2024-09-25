@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFSimParticleProducer(**kwargs):
+def PFSimParticleProducer(*args, **kwargs):
   mod = cms.EDProducer('PFSimParticleProducer',
     fastSimProducer = cms.untracked.InputTag('fastSimProducer', 'EcalHitsEB'),
     MCTruthMatchingInfo = cms.untracked.bool(False),
@@ -17,6 +17,7 @@ def PFSimParticleProducer(**kwargs):
     verbose = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

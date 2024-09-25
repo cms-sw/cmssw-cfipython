@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SkippingLayerCosmicNavigationSchoolESProducer(**kwargs):
+def SkippingLayerCosmicNavigationSchoolESProducer(*args, **kwargs):
   mod = cms.ESProducer('SkippingLayerCosmicNavigationSchoolESProducer',
     ComponentName = cms.required.string,
     noPXB = cms.required.bool,
@@ -13,6 +13,7 @@ def SkippingLayerCosmicNavigationSchoolESProducer(**kwargs):
     allSelf = cms.required.bool,
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

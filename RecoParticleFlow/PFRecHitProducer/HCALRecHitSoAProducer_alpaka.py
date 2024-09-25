@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HCALRecHitSoAProducer_alpaka(**kwargs):
+def HCALRecHitSoAProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('HCALRecHitSoAProducer@alpaka',
     src = cms.InputTag(''),
     synchronise = cms.untracked.bool(False),
@@ -9,6 +9,7 @@ def HCALRecHitSoAProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

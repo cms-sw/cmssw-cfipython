@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalDigiValidation(**kwargs):
+def HGCalDigiValidation(*args, **kwargs):
   mod = cms.EDProducer('HGCalDigiValidation',
     DetectorName = cms.string('HGCalEESensitive'),
     DigiSource = cms.InputTag('hgcalDigis', 'EE'),
@@ -9,6 +9,7 @@ def HGCalDigiValidation(**kwargs):
     SampleIndx = cms.untracked.int32(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

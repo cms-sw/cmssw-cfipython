@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CaloTowersCreator(**kwargs):
+def CaloTowersCreator(*args, **kwargs):
   mod = cms.EDProducer('CaloTowersCreator',
     EBSumThreshold = cms.double(0.2),
     HF2Weight = cms.double(1),
@@ -179,6 +179,7 @@ def CaloTowersCreator(**kwargs):
     EcalRecHitThresh = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

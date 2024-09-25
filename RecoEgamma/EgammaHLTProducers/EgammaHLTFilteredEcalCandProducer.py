@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTFilteredEcalCandProducer(**kwargs):
+def EgammaHLTFilteredEcalCandProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTFilteredEcalCandProducer',
     cands = cms.InputTag('hltEgammaCandidates'),
     minEtCutEB = cms.double(0),
@@ -22,6 +22,7 @@ def EgammaHLTFilteredEcalCandProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

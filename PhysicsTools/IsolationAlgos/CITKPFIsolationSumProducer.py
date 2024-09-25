@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CITKPFIsolationSumProducer(**kwargs):
+def CITKPFIsolationSumProducer(*args, **kwargs):
   mod = cms.EDProducer('CITKPFIsolationSumProducer',
     srcToIsolate = cms.InputTag('no default'),
     srcForIsolationCone = cms.InputTag('no default'),
@@ -11,6 +11,7 @@ def CITKPFIsolationSumProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

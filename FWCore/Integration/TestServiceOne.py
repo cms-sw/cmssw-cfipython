@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestServiceOne(**kwargs):
+def TestServiceOne(*args, **kwargs):
   mod = cms.Service('TestServiceOne',
     verbose = cms.untracked.bool(False),
     printTimestamps = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

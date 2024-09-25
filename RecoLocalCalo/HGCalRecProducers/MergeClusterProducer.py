@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MergeClusterProducer(**kwargs):
+def MergeClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('MergeClusterProducer',
     layerClustersEE = cms.InputTag('hgcalLayerClustersEE'),
     layerClustersHSi = cms.InputTag('hgcalLayerClustersHSi'),
@@ -11,6 +11,7 @@ def MergeClusterProducer(**kwargs):
     timeClname = cms.string('timeLayerCluster'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

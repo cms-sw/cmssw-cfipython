@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPMMassFilter(**kwargs):
+def HLTPMMassFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPMMassFilter',
     saveTags = cms.bool(True),
     candTag = cms.InputTag('hltL1NonIsoDoublePhotonEt5UpsHcalIsolFilter'),
@@ -14,6 +14,7 @@ def HLTPMMassFilter(**kwargs):
     l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TCaloParamsObjectKeysOnlineProd(**kwargs):
+def L1TCaloParamsObjectKeysOnlineProd(*args, **kwargs):
   mod = cms.ESProducer('L1TCaloParamsObjectKeysOnlineProd',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

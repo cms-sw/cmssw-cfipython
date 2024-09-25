@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripBadChannelPatcher(**kwargs):
+def SiStripBadChannelPatcher(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripBadChannelPatcher',
     Record = cms.string('SiStripBadStrip'),
     printDebug = cms.bool(False),
@@ -10,6 +10,7 @@ def SiStripBadChannelPatcher(**kwargs):
     FEDsToInclude = cms.vuint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

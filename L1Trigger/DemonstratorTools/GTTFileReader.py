@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GTTFileReader(**kwargs):
+def GTTFileReader(*args, **kwargs):
   mod = cms.EDProducer('GTTFileReader',
     processOutputToCorrelator = cms.required.bool,
     processInputTracks = cms.required.bool,
@@ -16,6 +16,7 @@ def GTTFileReader(**kwargs):
     l1TrackCollectionName = cms.string('Level1TTTracks'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

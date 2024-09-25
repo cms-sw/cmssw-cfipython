@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestLimitedOutput(**kwargs):
+def TestLimitedOutput(*args, **kwargs):
   mod = cms.OutputModule('TestLimitedOutput',
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
@@ -11,6 +11,7 @@ def TestLimitedOutput(**kwargs):
     expectedProcessesWithProcessBlockProducts = cms.untracked.vstring(),
     expectedWriteProcessBlockTransitions = cms.untracked.int32(-1)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

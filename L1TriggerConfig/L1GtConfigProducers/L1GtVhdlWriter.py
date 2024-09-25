@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1GtVhdlWriter(**kwargs):
+def L1GtVhdlWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('L1GtVhdlWriter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

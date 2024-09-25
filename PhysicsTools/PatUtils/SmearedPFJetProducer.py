@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SmearedPFJetProducer(**kwargs):
+def SmearedPFJetProducer(*args, **kwargs):
   mod = cms.EDProducer('SmearedPFJetProducer',
     src = cms.required.InputTag,
     enabled = cms.required.bool,
@@ -18,6 +18,7 @@ def SmearedPFJetProducer(**kwargs):
     dPtMaxFactor = cms.required.double,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

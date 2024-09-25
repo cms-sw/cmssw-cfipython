@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalIsoTrackStudy(**kwargs):
+def HcalIsoTrackStudy(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalIsoTrackStudy',
     triggers = cms.vstring(
       'HLT_PFJet40',
@@ -76,6 +76,7 @@ def HcalIsoTrackStudy(**kwargs):
     usePFThreshold = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

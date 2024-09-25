@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCaloJetTag(**kwargs):
+def HLTCaloJetTag(*args, **kwargs):
   mod = cms.EDFilter('HLTCaloJetTag',
     saveTags = cms.bool(True),
     Jets = cms.InputTag('hltJetCollection'),
@@ -13,6 +13,7 @@ def HLTCaloJetTag(**kwargs):
     TriggerType = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

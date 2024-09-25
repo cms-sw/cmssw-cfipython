@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DQMHcalIterativePhiSymAlCaReco(**kwargs):
+def DQMHcalIterativePhiSymAlCaReco(*args, **kwargs):
   mod = cms.EDProducer('DQMHcalIterativePhiSymAlCaReco',
     folderName = cms.string('ALCAStreamHcalIterativePhiSym'),
     hbheInput = cms.InputTag('hbhereco'),
@@ -14,6 +14,7 @@ def DQMHcalIterativePhiSymAlCaReco(**kwargs):
     hiDistr_x_max = cms.untracked.double(41.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

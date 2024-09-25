@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTRFilter(**kwargs):
+def HLTRFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTRFilter',
     saveTags = cms.bool(True),
     inputTag = cms.InputTag('hltRHemisphere'),
@@ -15,6 +15,7 @@ def HLTRFilter(**kwargs):
     RMRCut = cms.double(-999999),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

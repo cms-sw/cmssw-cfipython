@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DTSegmentFlatTableProducer(**kwargs):
+def DTSegmentFlatTableProducer(*args, **kwargs):
   mod = cms.EDProducer('DTSegmentFlatTableProducer',
     name = cms.required.string,
     doc = cms.string(''),
@@ -39,6 +39,7 @@ def DTSegmentFlatTableProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

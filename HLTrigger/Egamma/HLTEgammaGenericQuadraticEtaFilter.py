@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTEgammaGenericQuadraticEtaFilter(**kwargs):
+def HLTEgammaGenericQuadraticEtaFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTEgammaGenericQuadraticEtaFilter',
     saveTags = cms.bool(True),
     candTag = cms.InputTag('hltEGIsolFilter'),
@@ -39,6 +39,7 @@ def HLTEgammaGenericQuadraticEtaFilter(**kwargs):
     l1EGCand = cms.InputTag('hltL1IsoRecoEcalCandidate'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

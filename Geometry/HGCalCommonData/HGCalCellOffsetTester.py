@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalCellOffsetTester(**kwargs):
+def HGCalCellOffsetTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalCellOffsetTester',
     waferSize = cms.double(167.4408),
     waferType = cms.int32(0),
@@ -11,6 +11,7 @@ def HGCalCellOffsetTester(**kwargs):
     sizeOffset = cms.double(0.435),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

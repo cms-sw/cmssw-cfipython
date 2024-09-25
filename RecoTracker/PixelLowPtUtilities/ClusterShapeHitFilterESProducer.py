@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ClusterShapeHitFilterESProducer(**kwargs):
+def ClusterShapeHitFilterESProducer(*args, **kwargs):
   mod = cms.ESProducer('ClusterShapeHitFilterESProducer',
     PixelShapeFile = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
     PixelShapeFileL1 = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
@@ -13,6 +13,7 @@ def ClusterShapeHitFilterESProducer(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

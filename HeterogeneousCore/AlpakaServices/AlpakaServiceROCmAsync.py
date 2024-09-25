@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlpakaServiceROCmAsync(**kwargs):
+def AlpakaServiceROCmAsync(*args, **kwargs):
   mod = cms.Service('AlpakaServiceROCmAsync',
     enabled = cms.untracked.bool(True),
     verbose = cms.untracked.bool(False),
@@ -35,6 +35,7 @@ def AlpakaServiceROCmAsync(**kwargs):
       fillCacheValue = cms.untracked.uint32(150)
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

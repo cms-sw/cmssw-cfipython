@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripLorentzAngleDepESProducer(**kwargs):
+def SiStripLorentzAngleDepESProducer(*args, **kwargs):
   mod = cms.ESProducer('SiStripLorentzAngleDepESProducer',
     LatencyRecord = cms.PSet(
       record = cms.string('SiStripLatencyRcd'),
@@ -16,6 +16,7 @@ def SiStripLorentzAngleDepESProducer(**kwargs):
     ),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

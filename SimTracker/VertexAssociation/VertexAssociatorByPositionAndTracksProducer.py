@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def VertexAssociatorByPositionAndTracksProducer(**kwargs):
+def VertexAssociatorByPositionAndTracksProducer(*args, **kwargs):
   mod = cms.EDProducer('VertexAssociatorByPositionAndTracksProducer',
     absZ = cms.double(0.1),
     sigmaZ = cms.double(3),
@@ -12,6 +12,7 @@ def VertexAssociatorByPositionAndTracksProducer(**kwargs):
     trackAssociation = cms.InputTag('trackingParticleRecoTrackAsssociation'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

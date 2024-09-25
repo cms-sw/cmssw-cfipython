@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCTPPSLocalTrackFilter(**kwargs):
+def HLTCTPPSLocalTrackFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTCTPPSLocalTrackFilter',
     pixelLocalTrackInputTag = cms.InputTag('ctppsPixelLocalTracks'),
     stripLocalTrackInputTag = cms.InputTag('totemRPLocalTrackFitter'),
@@ -16,6 +16,7 @@ def HLTCTPPSLocalTrackFilter(**kwargs):
     triggerType = cms.int32(91),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

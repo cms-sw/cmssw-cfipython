@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLLHCEvtVtxGenerator(**kwargs):
+def HLLHCEvtVtxGenerator(*args, **kwargs):
   mod = cms.EDProducer('HLLHCEvtVtxGenerator',
     MeanXIncm = cms.double(0),
     MeanYIncm = cms.double(0),
@@ -21,6 +21,7 @@ def HLLHCEvtVtxGenerator(**kwargs):
     readDB = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

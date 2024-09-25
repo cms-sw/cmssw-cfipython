@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def BetafuncEvtVtxGenerator(**kwargs):
+def BetafuncEvtVtxGenerator(*args, **kwargs):
   mod = cms.EDProducer('BetafuncEvtVtxGenerator',
     X0 = cms.double(0),
     Y0 = cms.double(0),
@@ -15,6 +15,7 @@ def BetafuncEvtVtxGenerator(**kwargs):
     readDB = cms.required.bool,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

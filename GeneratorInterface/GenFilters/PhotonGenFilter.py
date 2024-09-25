@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PhotonGenFilter(**kwargs):
+def PhotonGenFilter(*args, **kwargs):
   mod = cms.EDFilter('PhotonGenFilter',
     MaxEta = cms.untracked.double(2.4),
     MinEta = cms.untracked.double(-2.4),
@@ -9,6 +9,7 @@ def PhotonGenFilter(**kwargs):
     ptThreshold = cms.untracked.double(2),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

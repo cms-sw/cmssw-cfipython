@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalLayerClusterProducer(**kwargs):
+def HGCalLayerClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalLayerClusterProducer',
     plugin = cms.PSet(
       thresholdW0 = cms.vdouble(
@@ -48,6 +48,7 @@ def HGCalLayerClusterProducer(**kwargs):
     calculatePositionInAlgo = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

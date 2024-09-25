@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalSoALayerClustersProducer_alpaka(**kwargs):
+def HGCalSoALayerClustersProducer_alpaka(*args, **kwargs):
   mod = cms.EDProducer('HGCalSoALayerClustersProducer@alpaka',
     hgcalRecHitsLayerClustersSoA = cms.InputTag('TO BE DEFINED'),
     hgcalRecHitsSoA = cms.InputTag('TO BE DEFINED'),
@@ -11,6 +11,7 @@ def HGCalSoALayerClustersProducer_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

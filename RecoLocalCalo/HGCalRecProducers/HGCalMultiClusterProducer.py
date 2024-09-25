@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalMultiClusterProducer(**kwargs):
+def HGCalMultiClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalMultiClusterProducer',
     HGCLayerClusters = cms.InputTag('hgcalMergeLayerClusters'),
     verbosity = cms.untracked.uint32(3),
@@ -17,6 +17,7 @@ def HGCalMultiClusterProducer(**kwargs):
     minClusters = cms.uint32(3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

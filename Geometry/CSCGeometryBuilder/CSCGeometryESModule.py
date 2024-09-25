@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CSCGeometryESModule(**kwargs):
+def CSCGeometryESModule(*args, **kwargs):
   mod = cms.ESProducer('CSCGeometryESModule',
     fromDDD = cms.bool(True),
     fromDD4hep = cms.bool(False),
@@ -13,6 +13,7 @@ def CSCGeometryESModule(**kwargs):
     applyAlignment = cms.bool(True),
     debugV = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

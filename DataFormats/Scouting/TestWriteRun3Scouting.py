@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestWriteRun3Scouting(**kwargs):
+def TestWriteRun3Scouting(*args, **kwargs):
   mod = cms.EDProducer('TestWriteRun3Scouting',
     caloJetsValues = cms.required.vdouble,
     electronsFloatingPointValues = cms.required.vdouble,
@@ -19,6 +19,7 @@ def TestWriteRun3Scouting(**kwargs):
     vertexesIntegralValues = cms.required.vint32,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

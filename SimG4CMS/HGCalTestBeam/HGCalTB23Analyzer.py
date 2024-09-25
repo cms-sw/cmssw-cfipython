@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTB23Analyzer(**kwargs):
+def HGCalTB23Analyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalTB23Analyzer',
     detectorEE = cms.string('HGCalEESensitive'),
     useEE = cms.bool(True),
@@ -63,6 +63,7 @@ def HGCalTB23Analyzer(**kwargs):
     zFirst = cms.untracked.double(17.6),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

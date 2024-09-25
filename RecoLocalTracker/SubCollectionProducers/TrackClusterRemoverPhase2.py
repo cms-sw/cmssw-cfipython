@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackClusterRemoverPhase2(**kwargs):
+def TrackClusterRemoverPhase2(*args, **kwargs):
   mod = cms.EDProducer('TrackClusterRemoverPhase2',
     trajectories = cms.InputTag(''),
     trackClassifier = cms.InputTag('', 'QualityMasks'),
@@ -13,6 +13,7 @@ def TrackClusterRemoverPhase2(**kwargs):
     overrideTrkQuals = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

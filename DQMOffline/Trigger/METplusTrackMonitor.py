@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def METplusTrackMonitor(**kwargs):
+def METplusTrackMonitor(*args, **kwargs):
   mod = cms.EDProducer('METplusTrackMonitor',
     FolderName = cms.string('HLT/MET'),
     requireValidHLTPaths = cms.bool(True),
@@ -152,6 +152,7 @@ def METplusTrackMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

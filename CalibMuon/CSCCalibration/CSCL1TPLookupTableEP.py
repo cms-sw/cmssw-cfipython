@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def CSCL1TPLookupTableEP(**kwargs):
+def CSCL1TPLookupTableEP(*args, **kwargs):
   mod = cms.ESSource('CSCL1TPLookupTableEP',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

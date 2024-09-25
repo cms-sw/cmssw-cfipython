@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1PrefiringWeightProducer(**kwargs):
+def L1PrefiringWeightProducer(*args, **kwargs):
   mod = cms.EDProducer('L1PrefiringWeightProducer',
     TheMuons = cms.InputTag('slimmedMuons'),
     ThePhotons = cms.InputTag('slimmedPhotons'),
@@ -15,6 +15,7 @@ def L1PrefiringWeightProducer(**kwargs):
     JetMaxMuonFraction = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

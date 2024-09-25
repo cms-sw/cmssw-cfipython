@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalDigiStudy(**kwargs):
+def HGCalDigiStudy(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalDigiStudy',
     detectorName = cms.string('HGCalEESensitive'),
     digiSource = cms.InputTag('simHGCalUnsuppressedDigis', 'EE'),
@@ -20,6 +20,7 @@ def HGCalDigiStudy(**kwargs):
     layers = cms.untracked.int32(28),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MahiDebugger(**kwargs):
+def MahiDebugger(*args, **kwargs):
   mod = cms.EDAnalyzer('MahiDebugger',
     recoLabel = cms.required.InputTag,
     dynamicPed = cms.required.bool,
@@ -20,6 +20,7 @@ def MahiDebugger(**kwargs):
     nnlsThresh = cms.required.double,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

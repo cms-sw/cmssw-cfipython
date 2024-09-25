@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def HFPMTHitAnalyzer(**kwargs):
+def HFPMTHitAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('HFPMTHitAnalyzer',
     SourceLabel = cms.untracked.string('generatorSmeared'),
     ModuleLabel = cms.untracked.string('g4SimHits'),
     HitCollection = cms.untracked.string('HcalHits'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

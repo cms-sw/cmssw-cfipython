@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2L1TGMTStubProducer(**kwargs):
+def Phase2L1TGMTStubProducer(*args, **kwargs):
   mod = cms.EDProducer('Phase2L1TGMTStubProducer',
     verbose = cms.int32(0),
     srcCSC = cms.InputTag('simCscTriggerPrimitiveDigis'),
@@ -170,6 +170,7 @@ def Phase2L1TGMTStubProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

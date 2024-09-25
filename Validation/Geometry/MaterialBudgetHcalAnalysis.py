@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MaterialBudgetHcalAnalysis(**kwargs):
+def MaterialBudgetHcalAnalysis(*args, **kwargs):
   mod = cms.EDAnalyzer('MaterialBudgetHcalAnalysis',
     nBinEta = cms.int32(260),
     nBinPhi = cms.int32(180),
@@ -18,6 +18,7 @@ def MaterialBudgetHcalAnalysis(**kwargs):
     labelMBCaloLabel = cms.InputTag('g4SimHits', 'HcalMatBCalo'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

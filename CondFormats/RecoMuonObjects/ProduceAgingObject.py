@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ProduceAgingObject(**kwargs):
+def ProduceAgingObject(*args, **kwargs):
   mod = cms.EDAnalyzer('ProduceAgingObject',
     dtRegEx = cms.vstring(),
     rpcRegEx = cms.vstring(),
@@ -9,6 +9,7 @@ def ProduceAgingObject(**kwargs):
     maskedME0IDs = cms.vint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

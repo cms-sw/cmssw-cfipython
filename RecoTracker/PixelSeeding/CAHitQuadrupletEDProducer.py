@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CAHitQuadrupletEDProducer(**kwargs):
+def CAHitQuadrupletEDProducer(*args, **kwargs):
   mod = cms.EDProducer('CAHitQuadrupletEDProducer',
     doublets = cms.InputTag('hitPairEDProducer'),
     extraHitRPhitolerance = cms.double(0.1),
@@ -35,6 +35,7 @@ def CAHitQuadrupletEDProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

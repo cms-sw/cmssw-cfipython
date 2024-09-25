@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def GenJetBCEnergyRatio(**kwargs):
+def GenJetBCEnergyRatio(*args, **kwargs):
   mod = cms.EDProducer('GenJetBCEnergyRatio',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

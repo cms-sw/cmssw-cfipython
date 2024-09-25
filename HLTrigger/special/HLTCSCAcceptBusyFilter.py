@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCSCAcceptBusyFilter(**kwargs):
+def HLTCSCAcceptBusyFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTCSCAcceptBusyFilter',
     saveTags = cms.bool(True),
     cscrechitsTag = cms.InputTag('hltCsc2DRecHits'),
@@ -8,6 +8,7 @@ def HLTCSCAcceptBusyFilter(**kwargs):
     maxRecHitsPerChamber = cms.uint32(200),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

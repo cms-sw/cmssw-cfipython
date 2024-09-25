@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EopElecTreeWriter(**kwargs):
+def EopElecTreeWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('EopElecTreeWriter',
     src = cms.InputTag('electronGsfTracks'),
     triggerPath = cms.string('HLT_Ele'),
@@ -8,6 +8,7 @@ def EopElecTreeWriter(**kwargs):
     debugTriggerSelection = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

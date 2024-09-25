@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TritonService(**kwargs):
+def TritonService(*args, **kwargs):
   mod = cms.Service('TritonService',
     verbose = cms.untracked.bool(False),
     servers = cms.untracked.VPSet(
@@ -20,6 +20,7 @@ def TritonService(**kwargs):
       sandboxName = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

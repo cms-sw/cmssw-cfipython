@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ThinningDSVThingProducer(**kwargs):
+def ThinningDSVThingProducer(*args, **kwargs):
   mod = cms.EDProducer('ThinningDSVThingProducer',
     inputTag = cms.required.InputTag,
     trackTag = cms.required.InputTag,
@@ -11,6 +11,7 @@ def ThinningDSVThingProducer(**kwargs):
     thinnedRefSetIgnoreInvalidParentRef = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

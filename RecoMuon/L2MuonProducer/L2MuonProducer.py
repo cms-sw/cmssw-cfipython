@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L2MuonProducer(**kwargs):
+def L2MuonProducer(*args, **kwargs):
   mod = cms.EDProducer('L2MuonProducer',
     ServiceParameters = cms.PSet(
       Propagators = cms.untracked.vstring('hltESPFastSteppingHelixPropagatorAnyhltESPFastSteppingHelixPropagatorOpposite'),
@@ -106,6 +106,7 @@ def L2MuonProducer(**kwargs):
     MuonTrajectoryBuilder = cms.string('Exhaustive'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

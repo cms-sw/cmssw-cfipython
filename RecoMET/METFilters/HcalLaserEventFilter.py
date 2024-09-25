@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalLaserEventFilter(**kwargs):
+def HcalLaserEventFilter(*args, **kwargs):
   mod = cms.EDFilter('HcalLaserEventFilter',
     vetoByRunEventNumber = cms.bool(False),
     vetoByHBHEOccupancy = cms.bool(True),
@@ -15,6 +15,7 @@ def HcalLaserEventFilter(**kwargs):
     BadRunEventNumbers = cms.vuint32(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

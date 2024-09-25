@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelTrackProducerFromSoAAlpakaPhase1(**kwargs):
+def PixelTrackProducerFromSoAAlpakaPhase1(*args, **kwargs):
   mod = cms.EDProducer('PixelTrackProducerFromSoAAlpakaPhase1',
     beamSpot = cms.InputTag('offlineBeamSpot'),
     trackSrc = cms.InputTag('pixelTracksAlpaka'),
@@ -9,6 +9,7 @@ def PixelTrackProducerFromSoAAlpakaPhase1(**kwargs):
     minQuality = cms.string('loose'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

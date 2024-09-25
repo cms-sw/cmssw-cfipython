@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HIBestVertexProducer(**kwargs):
+def HIBestVertexProducer(*args, **kwargs):
   mod = cms.EDProducer('HIBestVertexProducer',
     beamSpotLabel = cms.InputTag('offlineBeamSpot'),
     adaptiveVertexCollection = cms.InputTag('hiBestAdaptiveVertex'),
@@ -9,6 +9,7 @@ def HIBestVertexProducer(**kwargs):
     finalAdaptiveVertexCollection = cms.InputTag('hiBestOfflinePrimaryVertex'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

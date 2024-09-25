@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuDTSegmentExtTableProducer(**kwargs):
+def MuDTSegmentExtTableProducer(*args, **kwargs):
   mod = cms.EDProducer('MuDTSegmentExtTableProducer',
     name = cms.string('dtSegment'),
     src = cms.InputTag('dt4DSegments'),
@@ -20,6 +20,7 @@ def MuDTSegmentExtTableProducer(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

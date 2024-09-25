@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelRecHitFromCUDAPhase1(**kwargs):
+def SiPixelRecHitFromCUDAPhase1(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRecHitFromCUDAPhase1',
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingCUDA'),
     src = cms.InputTag('siPixelClustersPreSplitting'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

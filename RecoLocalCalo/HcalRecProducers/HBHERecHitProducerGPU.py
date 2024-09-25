@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HBHERecHitProducerGPU(**kwargs):
+def HBHERecHitProducerGPU(*args, **kwargs):
   mod = cms.EDProducer('HBHERecHitProducerGPU',
     maxTimeSamples = cms.uint32(10),
     kprep1dChannelsPerBlock = cms.uint32(32),
@@ -39,6 +39,7 @@ def HBHERecHitProducerGPU(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

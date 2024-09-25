@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HcalTestThreshold(**kwargs):
+def HcalTestThreshold(*args, **kwargs):
   mod = cms.EDAnalyzer('HcalTestThreshold',
     etaMin = cms.int32(-85),
     etaMax = cms.int32(85),
@@ -27,6 +27,7 @@ def HcalTestThreshold(**kwargs):
     EEHitEnergyThresholdHigh = cms.double(0.3),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

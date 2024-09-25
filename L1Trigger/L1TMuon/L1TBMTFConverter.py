@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TBMTFConverter(**kwargs):
+def L1TBMTFConverter(*args, **kwargs):
   mod = cms.EDProducer('L1TBMTFConverter',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

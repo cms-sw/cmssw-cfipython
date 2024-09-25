@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZtoMMMuonTrackProducer(**kwargs):
+def ZtoMMMuonTrackProducer(*args, **kwargs):
   mod = cms.EDProducer('ZtoMMMuonTrackProducer',
     muonInputTag = cms.untracked.InputTag('muons'),
     offlineBeamSpot = cms.untracked.InputTag('offlineBeamSpot'),
@@ -20,6 +20,7 @@ def ZtoMMMuonTrackProducer(**kwargs):
     maxInvMass = cms.untracked.double(105),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

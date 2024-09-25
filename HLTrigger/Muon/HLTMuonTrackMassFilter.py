@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMuonTrackMassFilter(**kwargs):
+def HLTMuonTrackMassFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTMuonTrackMassFilter',
     saveTags = cms.bool(True),
     BeamSpotTag = cms.InputTag('hltOfflineBeamSpot'),
@@ -21,6 +21,7 @@ def HLTMuonTrackMassFilter(**kwargs):
     CutCowboys = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

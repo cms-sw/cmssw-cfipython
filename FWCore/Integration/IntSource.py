@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def IntSource(**kwargs):
+def IntSource(*args, **kwargs):
   mod = cms.Source('IntSource',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -14,6 +14,7 @@ def IntSource(**kwargs):
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False)
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

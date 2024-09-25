@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def OmtfPacker(**kwargs):
+def OmtfPacker(*args, **kwargs):
   mod = cms.EDProducer('OmtfPacker',
     rpcInputLabel = cms.InputTag(''),
     cscInputLabel = cms.InputTag(''),
@@ -14,6 +14,7 @@ def OmtfPacker(**kwargs):
     outputTag = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

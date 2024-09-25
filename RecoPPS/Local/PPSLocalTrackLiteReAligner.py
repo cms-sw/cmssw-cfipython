@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSLocalTrackLiteReAligner(**kwargs):
+def PPSLocalTrackLiteReAligner(*args, **kwargs):
   mod = cms.EDProducer('PPSLocalTrackLiteReAligner',
     inputTrackTag = cms.InputTag('ctppsLocalTrackLiteProducer'),
     alignmentTag = cms.ESInputTag('', ''),
     outputTrackTag = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

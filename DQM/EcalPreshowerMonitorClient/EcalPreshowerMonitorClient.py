@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalPreshowerMonitorClient(**kwargs):
+def EcalPreshowerMonitorClient(*args, **kwargs):
   mod = cms.EDProducer('EcalPreshowerMonitorClient',
     enabledClients = cms.untracked.vstring(
       'Integrity',
@@ -15,6 +15,7 @@ def EcalPreshowerMonitorClient(**kwargs):
     debug = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

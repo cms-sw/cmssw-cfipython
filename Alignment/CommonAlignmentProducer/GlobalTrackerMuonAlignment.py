@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GlobalTrackerMuonAlignment(**kwargs):
+def GlobalTrackerMuonAlignment(*args, **kwargs):
   mod = cms.EDAnalyzer('GlobalTrackerMuonAlignment',
     propagator = cms.string('SteppingHelixPropagator'),
     tracks = cms.InputTag('ALCARECOMuAlGlobalCosmics', 'TrackerOnly'),
@@ -17,6 +17,7 @@ def GlobalTrackerMuonAlignment(**kwargs):
     debug = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

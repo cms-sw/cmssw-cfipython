@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestCUDAAnalyzerGPU(**kwargs):
+def TestCUDAAnalyzerGPU(*args, **kwargs):
   mod = cms.EDAnalyzer('TestCUDAAnalyzerGPU',
     src = cms.InputTag(''),
     minValue = cms.double(-1e+308),
     maxValue = cms.double(1e+308),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

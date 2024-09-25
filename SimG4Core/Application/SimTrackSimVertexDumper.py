@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimTrackSimVertexDumper(**kwargs):
+def SimTrackSimVertexDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('SimTrackSimVertexDumper',
     moduleLabelHepMC = cms.InputTag('generatorSmeared'),
     moduleLabelTk = cms.InputTag('g4SimHits'),
@@ -8,6 +8,7 @@ def SimTrackSimVertexDumper(**kwargs):
     dumpHepMC = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

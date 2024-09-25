@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalWaferInFileOrientation(**kwargs):
+def HGCalWaferInFileOrientation(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalWaferInFileOrientation',
     detectorName = cms.string('HGCalHESiliconSensitive'),
     layers = cms.vint32(
@@ -37,6 +37,7 @@ def HGCalWaferInFileOrientation(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

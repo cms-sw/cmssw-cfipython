@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFElectronTranslator(**kwargs):
+def PFElectronTranslator(*args, **kwargs):
   mod = cms.EDProducer('PFElectronTranslator',
     PFCandidate = cms.InputTag('pfSelectedElectrons'),
     PFCandidateElectron = cms.InputTag('particleFlowTmp', 'electrons'),
@@ -24,6 +24,7 @@ def PFElectronTranslator(**kwargs):
     emptyIsOk = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

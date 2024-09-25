@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def IsolationProducerForTracks(**kwargs):
+def IsolationProducerForTracks(*args, **kwargs):
   mod = cms.EDProducer('IsolationProducerForTracks',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

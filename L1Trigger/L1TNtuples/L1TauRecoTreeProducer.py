@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TauRecoTreeProducer(**kwargs):
+def L1TauRecoTreeProducer(*args, **kwargs):
   mod = cms.EDAnalyzer('L1TauRecoTreeProducer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

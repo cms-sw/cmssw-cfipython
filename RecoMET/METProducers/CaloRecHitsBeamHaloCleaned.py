@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CaloRecHitsBeamHaloCleaned(**kwargs):
+def CaloRecHitsBeamHaloCleaned(*args, **kwargs):
   mod = cms.EDProducer('CaloRecHitsBeamHaloCleaned',
     EBRecHitsLabel = cms.InputTag('EcalRecHit', 'EcalRecHitsEB'),
     EERecHitsLabel = cms.InputTag('EcalRecHit', 'EcalRecHitsEE'),
@@ -9,6 +9,7 @@ def CaloRecHitsBeamHaloCleaned(**kwargs):
     IsHLT = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

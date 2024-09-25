@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestReadL1Scouting(**kwargs):
+def TestReadL1Scouting(*args, **kwargs):
   mod = cms.EDAnalyzer('TestReadL1Scouting',
     bxValues = cms.required.vuint32,
     expectedMuonValues = cms.required.vint32,
@@ -18,6 +18,7 @@ def TestReadL1Scouting(**kwargs):
     bmtfStubTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

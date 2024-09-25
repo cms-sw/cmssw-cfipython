@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MuDTMuonExtTableProducer(**kwargs):
+def MuDTMuonExtTableProducer(*args, **kwargs):
   mod = cms.EDProducer('MuDTMuonExtTableProducer',
     name = cms.string('muon'),
     src = cms.InputTag('patMuons'),
@@ -12,6 +12,7 @@ def MuDTMuonExtTableProducer(**kwargs):
     isoTrigName = cms.string('HLT_IsoMu2*'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HGCalTopologyTester(**kwargs):
+def HGCalTopologyTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalTopologyTester',
     detectorName = cms.string('HGCalEESensitive'),
     types = cms.vint32(
@@ -125,6 +125,7 @@ def HGCalTopologyTester(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TObjectsTiming(**kwargs):
+def L1TObjectsTiming(*args, **kwargs):
   mod = cms.EDProducer('L1TObjectsTiming',
     muonProducer = cms.required.InputTag,
     stage2CaloLayer2JetProducer = cms.required.InputTag,
@@ -26,6 +26,7 @@ def L1TObjectsTiming(**kwargs):
     muonQualCut = cms.untracked.int32(12),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ThingExtSource(**kwargs):
+def ThingExtSource(*args, **kwargs):
   mod = cms.Source('ThingExtSource',
     numberEventsInRun = cms.optional.untracked.uint32,
     numberEventsInLuminosityBlock = cms.optional.untracked.uint32,
@@ -16,6 +16,7 @@ def ThingExtSource(**kwargs):
     fileNames = cms.untracked.vstring(),
     overrideCatalog = cms.untracked.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

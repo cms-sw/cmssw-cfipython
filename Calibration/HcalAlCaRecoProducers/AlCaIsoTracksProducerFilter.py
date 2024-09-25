@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlCaIsoTracksProducerFilter(**kwargs):
+def AlCaIsoTracksProducerFilter(*args, **kwargs):
   mod = cms.EDFilter('AlCaIsoTracksProducerFilter',
     triggerResultLabel = cms.InputTag('TriggerResults', '', 'HLT'),
     triggers = cms.vstring(
@@ -10,6 +10,7 @@ def AlCaIsoTracksProducerFilter(**kwargs):
     processName = cms.string('HLT'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TriggerBxVsOrbitMonitor(**kwargs):
+def TriggerBxVsOrbitMonitor(*args, **kwargs):
   mod = cms.EDProducer('TriggerBxVsOrbitMonitor',
     l1tResults = cms.untracked.InputTag('gtStage2Digis'),
     hltResults = cms.untracked.InputTag('TriggerResults'),
@@ -11,6 +11,7 @@ def TriggerBxVsOrbitMonitor(**kwargs):
     maxBX = cms.untracked.int32(912),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

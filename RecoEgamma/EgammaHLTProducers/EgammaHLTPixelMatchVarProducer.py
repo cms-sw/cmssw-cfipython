@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EgammaHLTPixelMatchVarProducer(**kwargs):
+def EgammaHLTPixelMatchVarProducer(*args, **kwargs):
   mod = cms.EDProducer('EgammaHLTPixelMatchVarProducer',
     recoEcalCandidateProducer = cms.InputTag('hltL1SeededRecoEcalCandidate'),
     pixelSeedsProducer = cms.InputTag('electronPixelSeeds'),
@@ -16,6 +16,7 @@ def EgammaHLTPixelMatchVarProducer(**kwargs):
     productsToWrite = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalRawToDigiPortable_alpaka(**kwargs):
+def EcalRawToDigiPortable_alpaka(*args, **kwargs):
   mod = cms.EDProducer('EcalRawToDigiPortable@alpaka',
     InputLabel = cms.InputTag('rawDataCollector'),
     FEDs = cms.vint32(
@@ -68,6 +68,7 @@ def EcalRawToDigiPortable_alpaka(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

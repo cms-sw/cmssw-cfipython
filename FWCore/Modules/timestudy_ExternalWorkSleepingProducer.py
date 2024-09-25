@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def timestudy_ExternalWorkSleepingProducer(**kwargs):
+def timestudy_ExternalWorkSleepingProducer(*args, **kwargs):
   mod = cms.EDProducer('timestudy::ExternalWorkSleepingProducer',
     ivalue = cms.required.int32,
     serviceInitTimes = cms.required.vdouble,
@@ -10,6 +10,7 @@ def timestudy_ExternalWorkSleepingProducer(**kwargs):
     eventTimes = cms.required.vdouble,
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CTPPSProtonProducer(**kwargs):
+def CTPPSProtonProducer(*args, **kwargs):
   mod = cms.EDProducer('CTPPSProtonProducer',
     tagLocalTrackLite = cms.InputTag('ctppsLocalTrackLiteProducer'),
     pixelDiscardBXShiftedTracks = cms.bool(False),
@@ -26,6 +26,7 @@ def CTPPSProtonProducer(**kwargs):
     multiRPAlgorithm = cms.string('chi2'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

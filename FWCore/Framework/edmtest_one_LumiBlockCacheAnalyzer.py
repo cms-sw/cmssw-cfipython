@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_one_LumiBlockCacheAnalyzer(**kwargs):
+def edmtest_one_LumiBlockCacheAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('edmtest::one::LumiBlockCacheAnalyzer',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

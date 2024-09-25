@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HIMuonTrackingRegionEDProducer(**kwargs):
+def HIMuonTrackingRegionEDProducer(*args, **kwargs):
   mod = cms.EDProducer('HIMuonTrackingRegionEDProducer',
     MuonSrc = cms.InputTag(''),
     MuonTrackingRegionBuilder = cms.PSet(
@@ -34,6 +34,7 @@ def HIMuonTrackingRegionEDProducer(**kwargs):
     ServiceParameters = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

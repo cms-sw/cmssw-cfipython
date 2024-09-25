@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripFEDCheckPlugin(**kwargs):
+def SiStripFEDCheckPlugin(*args, **kwargs):
   mod = cms.EDProducer('SiStripFEDCheckPlugin',
     DirName = cms.untracked.string('SiStrip/FEDIntegrity/'),
     RawDataTag = cms.InputTag('source'),
@@ -22,6 +22,7 @@ def SiStripFEDCheckPlugin(**kwargs):
     LSMax = cms.double(5000.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

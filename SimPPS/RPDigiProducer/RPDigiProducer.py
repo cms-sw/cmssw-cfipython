@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RPDigiProducer(**kwargs):
+def RPDigiProducer(*args, **kwargs):
   mod = cms.EDProducer('RPDigiProducer',
     RPLandauFluctuations = cms.bool(True),
     RPDisplacementOn = cms.bool(False),
@@ -30,6 +30,7 @@ def RPDigiProducer(**kwargs):
     RPChargeDivisionsPerStrip = cms.int32(15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

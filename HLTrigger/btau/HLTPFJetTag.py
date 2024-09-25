@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFJetTag(**kwargs):
+def HLTPFJetTag(*args, **kwargs):
   mod = cms.EDFilter('HLTPFJetTag',
     saveTags = cms.bool(True),
     Jets = cms.InputTag('hltJetCollection'),
@@ -13,6 +13,7 @@ def HLTPFJetTag(**kwargs):
     TriggerType = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

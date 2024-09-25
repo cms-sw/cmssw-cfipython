@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCaloJetCollForElePlusJets(**kwargs):
+def HLTCaloJetCollForElePlusJets(*args, **kwargs):
   mod = cms.EDProducer('HLTCaloJetCollForElePlusJets',
     HltElectronTag = cms.InputTag('triggerFilterObjectWithRefs'),
     SourceJetTag = cms.InputTag('jetCollection'),
@@ -12,6 +12,7 @@ def HLTCaloJetCollForElePlusJets(**kwargs):
     MinDeltaEta = cms.double(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

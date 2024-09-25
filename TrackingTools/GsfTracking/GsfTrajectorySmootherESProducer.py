@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GsfTrajectorySmootherESProducer(**kwargs):
+def GsfTrajectorySmootherESProducer(*args, **kwargs):
   mod = cms.ESProducer('GsfTrajectorySmootherESProducer',
     ComponentName = cms.required.string,
     MaterialEffectsUpdator = cms.required.string,
@@ -10,6 +10,7 @@ def GsfTrajectorySmootherESProducer(**kwargs):
     ErrorRescaling = cms.required.double,
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

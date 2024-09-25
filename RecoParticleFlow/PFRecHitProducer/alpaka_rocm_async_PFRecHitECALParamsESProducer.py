@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_rocm_async_PFRecHitECALParamsESProducer(**kwargs):
+def alpaka_rocm_async_PFRecHitECALParamsESProducer(*args, **kwargs):
   mod = cms.ESProducer('alpaka_rocm_async::PFRecHitECALParamsESProducer',
     cleaningThreshold = cms.double(2),
     appendToDataLabel = cms.string(''),
@@ -8,6 +8,7 @@ def alpaka_rocm_async_PFRecHitECALParamsESProducer(**kwargs):
       backend = cms.untracked.string('')
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

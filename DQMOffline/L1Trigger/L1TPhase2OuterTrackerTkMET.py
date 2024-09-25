@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TPhase2OuterTrackerTkMET(**kwargs):
+def L1TPhase2OuterTrackerTkMET(*args, **kwargs):
   mod = cms.EDProducer('L1TPhase2OuterTrackerTkMET',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

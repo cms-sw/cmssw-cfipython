@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPFJetTimingFilter(**kwargs):
+def HLTPFJetTimingFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPFJetTimingFilter',
     saveTags = cms.bool(True),
     jets = cms.InputTag('hltDisplacedHLTCaloJetCollectionProducerMidPt'),
@@ -15,6 +15,7 @@ def HLTPFJetTimingFilter(**kwargs):
     minJetPt = cms.double(40),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTGsfElectronPFMTFilter(**kwargs):
+def HLTGsfElectronPFMTFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTGsfElectronPFMTFilter',
     saveTags = cms.bool(True),
     inputMetTag = cms.InputTag('hltPFMHT'),
@@ -12,6 +12,7 @@ def HLTGsfElectronPFMTFilter(**kwargs):
     upperMTCut = cms.double(9999),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

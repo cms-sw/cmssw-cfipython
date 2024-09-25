@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PixelJetPuId(**kwargs):
+def PixelJetPuId(*args, **kwargs):
   mod = cms.EDProducer('PixelJetPuId',
     jets = cms.InputTag('hltCaloJetL1FastJetCorrected'),
     tracks = cms.InputTag('hltPixelTracksNoPU'),
@@ -15,6 +15,7 @@ def PixelJetPuId(**kwargs):
     MinEtForwardJets = cms.double(40),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

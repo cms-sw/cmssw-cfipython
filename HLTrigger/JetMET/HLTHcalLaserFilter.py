@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHcalLaserFilter(**kwargs):
+def HLTHcalLaserFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTHcalLaserFilter',
     hcalDigiCollection = cms.InputTag('hltHcalDigis'),
     maxTotalCalibCharge = cms.double(-1),
@@ -11,6 +11,7 @@ def HLTHcalLaserFilter(**kwargs):
     maxAllowedHFcalib = cms.int32(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

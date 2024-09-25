@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ShortenedTrackValidation(**kwargs):
+def ShortenedTrackValidation(*args, **kwargs):
   mod = cms.EDAnalyzer('ShortenedTrackValidation',
     folderName = cms.untracked.string('TrackRefitting'),
     hitsRemainInput = cms.untracked.vstring(),
@@ -15,6 +15,7 @@ def ShortenedTrackValidation(**kwargs):
     VerticesTag = cms.untracked.InputTag('offlinePrimaryVertices'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

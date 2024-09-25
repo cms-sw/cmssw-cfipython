@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTHtMhtProducer(**kwargs):
+def HLTHtMhtProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTHtMhtProducer',
     usePt = cms.bool(False),
     excludePFMuons = cms.bool(False),
@@ -14,6 +14,7 @@ def HLTHtMhtProducer(**kwargs):
     pfCandidatesLabel = cms.InputTag('hltParticleFlow'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

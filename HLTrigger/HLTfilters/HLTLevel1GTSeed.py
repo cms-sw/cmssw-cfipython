@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTLevel1GTSeed(**kwargs):
+def HLTLevel1GTSeed(*args, **kwargs):
   mod = cms.EDFilter('HLTLevel1GTSeed',
     saveTags = cms.bool(True),
     L1UseL1TriggerObjectMaps = cms.bool(True),
@@ -14,6 +14,7 @@ def HLTLevel1GTSeed(**kwargs):
     L1MuonCollectionTag = cms.InputTag('l1extraParticles'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

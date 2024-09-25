@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def KFTrajectorySmootherESProducer(**kwargs):
+def KFTrajectorySmootherESProducer(*args, **kwargs):
   mod = cms.ESProducer('KFTrajectorySmootherESProducer',
     ComponentName = cms.string('KFSmoother'),
     Propagator = cms.string('PropagatorWithMaterial'),
@@ -11,6 +11,7 @@ def KFTrajectorySmootherESProducer(**kwargs):
     minHits = cms.int32(3),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

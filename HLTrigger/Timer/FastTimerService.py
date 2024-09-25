@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def FastTimerService(**kwargs):
+def FastTimerService(*args, **kwargs):
   mod = cms.Service('FastTimerService',
     printEventSummary = cms.untracked.bool(False),
     printRunSummary = cms.untracked.bool(True),
@@ -30,6 +30,7 @@ def FastTimerService(**kwargs):
     highlightModules = cms.untracked.VPSet(
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

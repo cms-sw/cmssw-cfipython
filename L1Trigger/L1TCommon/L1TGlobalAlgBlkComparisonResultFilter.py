@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TGlobalAlgBlkComparisonResultFilter(**kwargs):
+def L1TGlobalAlgBlkComparisonResultFilter(*args, **kwargs):
   mod = cms.EDFilter('L1TGlobalAlgBlkComparisonResultFilter',
     objComparisonColl = cms.InputTag('objComparisonColl'),
     maxBxRangeDiff = cms.int32(-1),
@@ -9,6 +9,7 @@ def L1TGlobalAlgBlkComparisonResultFilter(**kwargs):
     invert = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

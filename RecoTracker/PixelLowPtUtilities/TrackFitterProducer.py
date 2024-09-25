@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackFitterProducer(**kwargs):
+def TrackFitterProducer(*args, **kwargs):
   mod = cms.EDProducer('TrackFitterProducer',
     TTRHBuilder = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

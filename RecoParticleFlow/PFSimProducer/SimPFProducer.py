@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SimPFProducer(**kwargs):
+def SimPFProducer(*args, **kwargs):
   mod = cms.EDProducer('SimPFProducer',
     simClustersSrc = cms.InputTag('particleFlowClusterHGCalFromSimCl'),
     trackSrc = cms.InputTag('generalTracks'),
@@ -25,6 +25,7 @@ def SimPFProducer(**kwargs):
     gsfTrackTimeQualityMap = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

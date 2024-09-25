@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PPSAlignmentConfigurationESSource(**kwargs):
+def PPSAlignmentConfigurationESSource(*args, **kwargs):
   mod = cms.ESSource('PPSAlignmentConfigurationESSource',
     debug = cms.bool(False),
     label = cms.string(''),
@@ -182,6 +182,7 @@ def PPSAlignmentConfigurationESSource(**kwargs):
     extra_params = cms.vdouble(),
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

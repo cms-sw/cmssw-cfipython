@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CheckBPHWriteDecay(**kwargs):
+def CheckBPHWriteDecay(*args, **kwargs):
   mod = cms.EDAnalyzer('CheckBPHWriteDecay',
     candsLabel = cms.vstring(),
     runNumber = cms.uint32(0),
@@ -9,6 +9,7 @@ def CheckBPHWriteDecay(**kwargs):
     writePtr = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PtMinTrackCountFilter(**kwargs):
+def PtMinTrackCountFilter(*args, **kwargs):
   mod = cms.EDFilter('PtMinTrackCountFilter',
     src = cms.InputTag('tracks'),
     minNumber = cms.uint32(1),
@@ -8,6 +8,7 @@ def PtMinTrackCountFilter(**kwargs):
     cut = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

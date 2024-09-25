@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def AlCaHcalNoiseProducer(**kwargs):
+def AlCaHcalNoiseProducer(*args, **kwargs):
   mod = cms.EDProducer('AlCaHcalNoiseProducer',
     JetSource = cms.InputTag('iterativeCone5CaloJets'),
     MetSource = cms.InputTag('met'),
@@ -21,6 +21,7 @@ def AlCaHcalNoiseProducer(**kwargs):
     rawInput = cms.InputTag('rawDataCollector'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

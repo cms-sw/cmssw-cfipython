@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTValidateTrackingParticles(**kwargs):
+def Phase2OTValidateTrackingParticles(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTValidateTrackingParticles',
     TH1TrackParts_Eta = cms.PSet(
       Nbinsx = cms.int32(45),
@@ -91,6 +91,7 @@ def Phase2OTValidateTrackingParticles(**kwargs):
     TP_maxVtxZ = cms.double(15),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

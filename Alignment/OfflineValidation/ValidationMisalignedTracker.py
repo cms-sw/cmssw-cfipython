@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ValidationMisalignedTracker(**kwargs):
+def ValidationMisalignedTracker(*args, **kwargs):
   mod = cms.EDAnalyzer('ValidationMisalignedTracker',
     label = cms.VInputTag(),
     label_tp_effic = cms.InputTag('FinalTrackRefitter'),
@@ -14,6 +14,7 @@ def ValidationMisalignedTracker(**kwargs):
     rootfile = cms.untracked.string('myroot.root'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

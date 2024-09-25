@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTPhi2METFilter(**kwargs):
+def HLTPhi2METFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTPhi2METFilter',
     saveTags = cms.bool(True),
     inputJetTag = cms.InputTag('iterativeCone5CaloJets'),
@@ -9,6 +9,7 @@ def HLTPhi2METFilter(**kwargs):
     minEtJet2 = cms.double(60),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

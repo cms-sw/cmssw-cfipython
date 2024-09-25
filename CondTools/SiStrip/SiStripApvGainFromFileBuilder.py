@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripApvGainFromFileBuilder(**kwargs):
+def SiStripApvGainFromFileBuilder(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripApvGainFromFileBuilder',
     tickFile = cms.FileInPath('CondTools/SiStrip/data/tickheight.txt'),
     gainThreshold = cms.double(0),
@@ -14,6 +14,7 @@ def SiStripApvGainFromFileBuilder(**kwargs):
     outputSummary = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTElectronMuonInvMassFilter(**kwargs):
+def HLTElectronMuonInvMassFilter(*args, **kwargs):
   mod = cms.EDFilter('HLTElectronMuonInvMassFilter',
     saveTags = cms.bool(True),
     elePrevCandTag = cms.InputTag('hltL1NonIsoHLTCaloIdTTrkIdVLSingleElectronEt8NoCandDphiFilter'),
@@ -14,6 +14,7 @@ def HLTElectronMuonInvMassFilter(**kwargs):
     MuonCand = cms.InputTag('hltL3MuonCandidates'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

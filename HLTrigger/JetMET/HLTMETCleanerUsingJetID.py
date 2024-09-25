@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTMETCleanerUsingJetID(**kwargs):
+def HLTMETCleanerUsingJetID(*args, **kwargs):
   mod = cms.EDProducer('HLTMETCleanerUsingJetID',
     minPt = cms.double(20),
     maxEta = cms.double(5),
@@ -9,6 +9,7 @@ def HLTMETCleanerUsingJetID(**kwargs):
     goodJetsLabel = cms.InputTag('hltCaloJetIDPassed'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

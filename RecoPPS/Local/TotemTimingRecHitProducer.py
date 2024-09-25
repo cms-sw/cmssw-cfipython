@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TotemTimingRecHitProducer(**kwargs):
+def TotemTimingRecHitProducer(*args, **kwargs):
   mod = cms.EDProducer('TotemTimingRecHitProducer',
     applyCalibration = cms.bool(False),
     timeSliceNs = cms.double(0),
@@ -17,6 +17,7 @@ def TotemTimingRecHitProducer(**kwargs):
     sampicSamplingPeriodNs = cms.double(0.12995451591942819),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

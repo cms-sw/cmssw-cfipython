@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HotlineDQM(**kwargs):
+def HotlineDQM(*args, **kwargs):
   mod = cms.EDProducer('HotlineDQM',
     photonCollection = cms.InputTag('photons'),
     muonCollection = cms.InputTag('muons'),
@@ -18,6 +18,7 @@ def HotlineDQM(**kwargs):
     useHT = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

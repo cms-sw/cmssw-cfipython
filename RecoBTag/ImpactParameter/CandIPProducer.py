@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def CandIPProducer(**kwargs):
+def CandIPProducer(*args, **kwargs):
   mod = cms.EDProducer('CandIPProducer',
     maximumTransverseImpactParameter = cms.double(0.2),
     minimumNumberOfHits = cms.int32(8),
@@ -21,6 +21,7 @@ def CandIPProducer(**kwargs):
     explicitJTA = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

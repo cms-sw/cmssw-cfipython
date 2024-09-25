@@ -1,12 +1,13 @@
 import FWCore.ParameterSet.Config as cms
 
-def LumiProducerFromBrilcalc(**kwargs):
+def LumiProducerFromBrilcalc(*args, **kwargs):
   mod = cms.EDProducer('LumiProducerFromBrilcalc',
     lumiFile = cms.required.string,
     throwIfNotFound = cms.bool(False),
     doBunchByBunch = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

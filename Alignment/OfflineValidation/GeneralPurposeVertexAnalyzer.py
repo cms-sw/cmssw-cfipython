@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GeneralPurposeVertexAnalyzer(**kwargs):
+def GeneralPurposeVertexAnalyzer(*args, **kwargs):
   mod = cms.EDAnalyzer('GeneralPurposeVertexAnalyzer',
     ndof = cms.int32(4),
     vertexLabel = cms.InputTag('offlinePrimaryVertices'),
@@ -26,6 +26,7 @@ def GeneralPurposeVertexAnalyzer(**kwargs):
     EtaMax = cms.double(2.7),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

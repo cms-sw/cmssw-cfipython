@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def JsonWritingTimeoutPoolOutputModule(**kwargs):
+def JsonWritingTimeoutPoolOutputModule(*args, **kwargs):
   mod = cms.OutputModule('JsonWritingTimeoutPoolOutputModule',
     fileName = cms.required.untracked.string,
     logicalFileName = cms.untracked.string(''),
@@ -32,6 +32,7 @@ def JsonWritingTimeoutPoolOutputModule(**kwargs):
     outputPath = cms.untracked.string('./'),
     streamLabel = cms.untracked.string('streamEvDOutput')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

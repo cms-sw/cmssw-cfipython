@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DMRChecker(**kwargs):
+def DMRChecker(*args, **kwargs):
   mod = cms.EDAnalyzer('DMRChecker',
     TkTag = cms.InputTag('generalTracks'),
     TriggerResultsTag = cms.InputTag('TriggerResults', '', 'HLT'),
@@ -10,6 +10,7 @@ def DMRChecker(**kwargs):
     doLatencyAnalysis = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

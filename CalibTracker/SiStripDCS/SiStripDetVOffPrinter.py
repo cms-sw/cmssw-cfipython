@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripDetVOffPrinter(**kwargs):
+def SiStripDetVOffPrinter(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripDetVOffPrinter',
     conditionDatabase = cms.string('frontier://FrontierProd/CMS_CONDITIONS'),
     tagName = cms.string('SiStripDetVOff_1hourDelay_v1_Validation'),
@@ -16,6 +16,7 @@ def SiStripDetVOffPrinter(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

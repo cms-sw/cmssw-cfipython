@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SUSY_HLT_Razor(**kwargs):
+def SUSY_HLT_Razor(*args, **kwargs):
   mod = cms.EDProducer('SUSY_HLT_Razor',
     jetCollection = cms.InputTag('ak4PFJetsCHS'),
     CaloFilter = cms.InputTag('hltRsqMR200Rsq0p01MR100Calo', '', 'HLT'),
@@ -12,6 +12,7 @@ def SUSY_HLT_Razor(**kwargs):
     trigSummary = cms.InputTag('hltTriggerSummaryAOD'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

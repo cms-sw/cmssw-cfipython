@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def MtdEleIsoValidation(**kwargs):
+def MtdEleIsoValidation(*args, **kwargs):
   mod = cms.EDProducer('MtdEleIsoValidation',
     folder = cms.string('MTD/ElectronIso'),
     inputTagG = cms.InputTag('generalTracks'),
@@ -30,6 +30,7 @@ def MtdEleIsoValidation(**kwargs):
     min_track_mtd_mva_cut = cms.double(0.5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

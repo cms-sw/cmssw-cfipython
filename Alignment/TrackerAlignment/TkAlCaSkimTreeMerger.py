@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TkAlCaSkimTreeMerger(**kwargs):
+def TkAlCaSkimTreeMerger(*args, **kwargs):
   mod = cms.EDAnalyzer('TkAlCaSkimTreeMerger',
     FileList = cms.string('DQMHitMapsList.txt'),
     TreeName = cms.string('AlignmentHitMaps'),
@@ -18,6 +18,7 @@ def TkAlCaSkimTreeMerger(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

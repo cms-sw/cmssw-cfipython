@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def edmtest_global_InputProcessBlockIntAnalyzerNoRegistration(**kwargs):
+def edmtest_global_InputProcessBlockIntAnalyzerNoRegistration(*args, **kwargs):
   mod = cms.EDAnalyzer('edmtest::global::InputProcessBlockIntAnalyzerNoRegistration',
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

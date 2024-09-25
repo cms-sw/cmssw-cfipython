@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def PFClusterProducer(**kwargs):
+def PFClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('PFClusterProducer',
     recHitsSource = cms.InputTag(''),
     usePFThresholdsFromDB = cms.bool(False),
@@ -156,6 +156,7 @@ def PFClusterProducer(**kwargs):
     energyCorrector = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

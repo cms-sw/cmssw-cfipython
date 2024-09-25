@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def Primary4DVertexHarvester(**kwargs):
+def Primary4DVertexHarvester(*args, **kwargs):
   mod = cms.EDProducer('Primary4DVertexHarvester',
     folder = cms.string('MTD/Vertices/'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

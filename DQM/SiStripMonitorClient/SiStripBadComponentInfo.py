@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripBadComponentInfo(**kwargs):
+def SiStripBadComponentInfo(*args, **kwargs):
   mod = cms.EDProducer('SiStripBadComponentInfo',
     StripQualityLabel = cms.string(''),
     BadComponentsFromFedErrors = cms.PSet(
@@ -11,6 +11,7 @@ def SiStripBadComponentInfo(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HitPairEDProducer(**kwargs):
+def HitPairEDProducer(*args, **kwargs):
   mod = cms.EDProducer('HitPairEDProducer',
     seedingLayers = cms.InputTag('seedingLayersEDProducer'),
     trackingRegions = cms.InputTag('globalTrackingRegionFromBeamSpot'),
@@ -14,6 +14,7 @@ def HitPairEDProducer(**kwargs):
     layerPairs = cms.vuint32(0),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

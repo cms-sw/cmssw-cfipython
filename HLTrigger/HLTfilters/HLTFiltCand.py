@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTFiltCand(**kwargs):
+def HLTFiltCand(*args, **kwargs):
   mod = cms.EDFilter('HLTFiltCand',
     saveTags = cms.bool(True),
     photTag = cms.InputTag('photCollection'),
@@ -15,6 +15,7 @@ def HLTFiltCand(**kwargs):
     MinPt = cms.double(-1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

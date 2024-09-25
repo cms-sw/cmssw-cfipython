@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def RecoChargedRefCandidatePrimaryVertexSorter(**kwargs):
+def RecoChargedRefCandidatePrimaryVertexSorter(*args, **kwargs):
   mod = cms.EDProducer('RecoChargedRefCandidatePrimaryVertexSorter',
     sorting = cms.PSet(),
     assignment = cms.PSet(
@@ -37,6 +37,7 @@ def RecoChargedRefCandidatePrimaryVertexSorter(**kwargs):
     produceNoPileUpCollection = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

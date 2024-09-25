@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ZGammaplusJetsMonitor(**kwargs):
+def ZGammaplusJetsMonitor(*args, **kwargs):
   mod = cms.EDProducer('ZGammaplusJetsMonitor',
     FolderName = cms.string('HLT/JME/ZGammaPlusJets'),
     processName = cms.string('HLT'),
@@ -576,6 +576,7 @@ def ZGammaplusJetsMonitor(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

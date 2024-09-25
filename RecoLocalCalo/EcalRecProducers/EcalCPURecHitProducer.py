@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def EcalCPURecHitProducer(**kwargs):
+def EcalCPURecHitProducer(*args, **kwargs):
   mod = cms.EDProducer('EcalCPURecHitProducer',
     recHitsInLabelEB = cms.InputTag('ecalRecHitProducerGPU', 'EcalRecHitsEB'),
     recHitsInLabelEE = cms.InputTag('ecalRecHitProducerGPU', 'EcalRecHitsEE'),
@@ -9,6 +9,7 @@ def EcalCPURecHitProducer(**kwargs):
     containsTimingInformation = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,10 +1,11 @@
 import FWCore.ParameterSet.Config as cms
 
-def APVCyclePhaseDebuggerFromL1TS(**kwargs):
+def APVCyclePhaseDebuggerFromL1TS(*args, **kwargs):
   mod = cms.EDAnalyzer('APVCyclePhaseDebuggerFromL1TS',
     l1TSCollection = cms.InputTag('scalersRawToDigi'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

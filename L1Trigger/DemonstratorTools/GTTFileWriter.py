@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def GTTFileWriter(**kwargs):
+def GTTFileWriter(*args, **kwargs):
   mod = cms.EDAnalyzer('GTTFileWriter',
     tracks = cms.untracked.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
     convertedTracks = cms.untracked.InputTag('l1tGTTInputProducer', 'Level1TTTracksConverted'),
@@ -22,6 +22,7 @@ def GTTFileWriter(**kwargs):
     fileExtension = cms.untracked.string('txt'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

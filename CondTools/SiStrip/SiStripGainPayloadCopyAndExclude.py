@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiStripGainPayloadCopyAndExclude(**kwargs):
+def SiStripGainPayloadCopyAndExclude(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripGainPayloadCopyAndExclude',
     excludedModules = cms.untracked.vuint32(),
     record = cms.untracked.string('SiStripApvGainRcd'),
@@ -8,6 +8,7 @@ def SiStripGainPayloadCopyAndExclude(**kwargs):
     reverseSelection = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

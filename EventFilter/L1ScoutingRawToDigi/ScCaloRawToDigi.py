@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ScCaloRawToDigi(**kwargs):
+def ScCaloRawToDigi(*args, **kwargs):
   mod = cms.EDProducer('ScCaloRawToDigi',
     srcInputTag = cms.InputTag('rawDataCollector'),
     dataSource = cms.PSet(
@@ -15,6 +15,7 @@ def ScCaloRawToDigi(**kwargs):
     debug = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

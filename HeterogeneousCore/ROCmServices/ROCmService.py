@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def ROCmService(**kwargs):
+def ROCmService(*args, **kwargs):
   mod = cms.Service('ROCmService',
     enabled = cms.untracked.bool(True),
     verbose = cms.untracked.bool(False),
@@ -9,6 +9,7 @@ def ROCmService(**kwargs):
       hipLimitMallocHeapSize = cms.untracked.int32(-1)
     )
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

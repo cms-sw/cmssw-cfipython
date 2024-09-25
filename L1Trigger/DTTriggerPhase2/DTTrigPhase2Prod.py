@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def DTTrigPhase2Prod(**kwargs):
+def DTTrigPhase2Prod(*args, **kwargs):
   mod = cms.EDProducer('DTTrigPhase2Prod',
     digiTag = cms.InputTag('CalibratedDigis'),
     timeTolerance = cms.int32(999999),
@@ -87,6 +87,7 @@ def DTTrigPhase2Prod(**kwargs):
     ),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

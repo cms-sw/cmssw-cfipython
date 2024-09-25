@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackSplittingMonitor(**kwargs):
+def TrackSplittingMonitor(*args, **kwargs):
   mod = cms.EDProducer('TrackSplittingMonitor',
     FolderName = cms.string('TrackSplitMonitoring'),
     splitTrackCollection = cms.InputTag('splittedTracksP5'),
@@ -35,6 +35,7 @@ def TrackSplittingMonitor(**kwargs):
     normMax = cms.double(5),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

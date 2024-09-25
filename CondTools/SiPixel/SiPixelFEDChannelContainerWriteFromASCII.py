@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelFEDChannelContainerWriteFromASCII(**kwargs):
+def SiPixelFEDChannelContainerWriteFromASCII(*args, **kwargs):
   mod = cms.EDAnalyzer('SiPixelFEDChannelContainerWriteFromASCII',
     printDebug = cms.untracked.bool(True),
     addDefault = cms.untracked.bool(True),
@@ -8,6 +8,7 @@ def SiPixelFEDChannelContainerWriteFromASCII(**kwargs):
     record = cms.string('SiPixelStatusScenariosRcd'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

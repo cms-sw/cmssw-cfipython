@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def CandidateSimpleSecondaryVertexESProducer(**kwargs):
+def CandidateSimpleSecondaryVertexESProducer(*args, **kwargs):
   mod = cms.ESProducer('CandidateSimpleSecondaryVertexESProducer',
     appendToDataLabel = cms.string('')
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTLevel1Activity(**kwargs):
+def HLTLevel1Activity(*args, **kwargs):
   mod = cms.EDFilter('HLTLevel1Activity',
     L1GtReadoutRecordTag = cms.InputTag('hltGtDigis'),
     bunchCrossings = cms.vint32(
@@ -16,6 +16,7 @@ def HLTLevel1Activity(**kwargs):
     technicalBits = cms.uint64(1),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

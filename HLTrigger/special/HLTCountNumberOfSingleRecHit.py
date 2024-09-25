@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTCountNumberOfSingleRecHit(**kwargs):
+def HLTCountNumberOfSingleRecHit(*args, **kwargs):
   mod = cms.EDFilter('HLTCountNumberOfSingleRecHit',
     saveTags = cms.bool(True),
     src = cms.InputTag(''),
@@ -8,6 +8,7 @@ def HLTCountNumberOfSingleRecHit(**kwargs):
     MaxN = cms.int32(99999),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod

@@ -1,11 +1,12 @@
 import FWCore.ParameterSet.Config as cms
 
-def TrackExtraRekeyer(**kwargs):
+def TrackExtraRekeyer(*args, **kwargs):
   mod = cms.EDProducer('TrackExtraRekeyer',
     src = cms.InputTag('generalTracks'),
     association = cms.InputTag('muonReducedTrackExtras'),
     mightGet = cms.optional.untracked.vstring
   )
-  for k,v in kwargs.items():
-    setattr(mod, k, v)
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
   return mod
