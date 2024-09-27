@@ -31,6 +31,7 @@ def L1TDigiToRaw(*args, **kwargs):
     TauInputTag = cms.optional.InputTag,
     EtSumInputTag = cms.optional.InputTag,
     EtSumZDCInputTag = cms.optional.InputTag,
+    CICADAScoreInputTag = cms.optional.InputTag,
     BMTFInputLabel = cms.optional.InputTag,
     OMTFInputLabel = cms.optional.InputTag,
     EMTFInputLabel = cms.optional.InputTag,
