@@ -6,7 +6,6 @@ def alpaka_serial_sync_PFClusterSoAProducer(**kwargs):
     pfClusterParams = cms.ESInputTag('', ''),
     topology = cms.ESInputTag('', ''),
     synchronise = cms.bool(False),
-    pfRecHitFractionAllocation = cms.int32(120),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string('')
