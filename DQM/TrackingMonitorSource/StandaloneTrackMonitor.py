@@ -18,13 +18,10 @@ def StandaloneTrackMonitor(*args, **kwargs):
     haveAllHistograms = cms.untracked.bool(False),
     puScaleFactorFile = cms.untracked.string('PileupScaleFactor.root'),
     trackScaleFactorFile = cms.untracked.string('PileupScaleFactor.root'),
-    MVAProducers = cms.untracked.vstring(
-      'initialStepClassifier1',
-      'initialStepClassifier2'
-    ),
-    TrackProducerForMVA = cms.untracked.InputTag('initialStepTracks'),
-    TCProducer = cms.untracked.InputTag('initialStepTrackCandidates'),
-    AlgoName = cms.untracked.string('GenTk'),
+    MVAProducers = cms.required.untracked.vstring,
+    TrackProducerForMVA = cms.required.untracked.InputTag,
+    TCProducer = cms.required.untracked.InputTag,
+    AlgoName = cms.required.untracked.string,
     verbose = cms.untracked.bool(False),
     trackEtaH = cms.PSet(
       Xbins = cms.int32(60),

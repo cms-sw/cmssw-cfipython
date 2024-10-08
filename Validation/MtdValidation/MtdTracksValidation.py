@@ -27,10 +27,12 @@ def MtdTracksValidation(*args, **kwargs):
     sigmaTofP = cms.InputTag('trackExtenderWithMTD', 'generalTrackSigmaTofP'),
     trackMVAQual = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
     outermostHitPositionSrc = cms.InputTag('trackExtenderWithMTD', 'generalTrackOutermostHitPosition'),
+    trackMinimumPt = cms.double(0.7),
     trackMaximumPt = cms.double(12),
     trackMaximumBtlEta = cms.double(1.5),
     trackMinimumEtlEta = cms.double(1.6),
     trackMaximumEtlEta = cms.double(3),
+    optionalPlots = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
