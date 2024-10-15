@@ -13,6 +13,7 @@ def HGCalMultiClusterProducer(*args, **kwargs):
       5
     ),
     HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+    hgcalHitMap = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     HGCLayerClustersSharing = cms.InputTag('hgcalMergeLayerClusters', 'sharing'),
     minClusters = cms.uint32(3),
     mightGet = cms.optional.untracked.vstring

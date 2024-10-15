@@ -118,9 +118,9 @@ def TrackstersProducer(*args, **kwargs):
       type = cms.string('FastJet')
     
     ),
-    pluginPatternRecognitionByPassthrough = cms.PSet(
+    pluginPatternRecognitionByRecovery = cms.PSet(
       algo_verbosity = cms.int32(0),
-      type = cms.string('Passthrough')
+      type = cms.string('Recovery')
     
     ),
     pluginInferenceAlgoTracksterInferenceByDNN = cms.PSet(

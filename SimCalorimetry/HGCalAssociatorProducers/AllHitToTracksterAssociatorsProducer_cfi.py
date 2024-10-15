@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .AllHitToTracksterAssociatorsProducer import AllHitToTracksterAssociatorsProducer
+
+AllHitToTracksterAssociatorsProducer = AllHitToTracksterAssociatorsProducer()

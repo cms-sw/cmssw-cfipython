@@ -34,7 +34,8 @@ def ElectronSeedProducer(*args, **kwargs):
     HGCalConfig = cms.PSet(
       HGCEEInput = cms.InputTag('HGCalRecHit', 'HGCEERecHits'),
       HGCFHInput = cms.InputTag('HGCalRecHit', 'HGCHEFRecHits'),
-      HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits')
+      HGCBHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
+      hgcalHitMap = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap')
     ),
     nSigmasDeltaZ1 = cms.double(5),
     deltaZ1WithVertex = cms.double(25),
