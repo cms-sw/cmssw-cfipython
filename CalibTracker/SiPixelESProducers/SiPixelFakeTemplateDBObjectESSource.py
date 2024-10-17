@@ -2,6 +2,15 @@ import FWCore.ParameterSet.Config as cms
 
 def SiPixelFakeTemplateDBObjectESSource(*args, **kwargs):
   mod = cms.ESSource('SiPixelFakeTemplateDBObjectESSource',
+    siPixelTemplateCalibrations = cms.vstring(
+      'CalibTracker/SiPixelESProducers/data/SiPixelTemplateDBObject_0T_phase1_BoR3_v1/template_summary_zp0310.out',
+      'CalibTracker/SiPixelESProducers/data/SiPixelTemplateDBObject_0T_phase1_BoR3_v1/template_summary_zp0311.out',
+      'CalibTracker/SiPixelESProducers/data/SiPixelTemplateDBObject_0T_phase1_BoR3_v1/template_summary_zp0312.out',
+      'CalibTracker/SiPixelESProducers/data/SiPixelTemplateDBObject_0T_phase1_BoR3_v1/template_summary_zp0313.out',
+      'CalibTracker/SiPixelESProducers/data/SiPixelTemplateDBObject_0T_phase1_BoR3_v1/template_summary_zp0314.out',
+      'CalibTracker/SiPixelESProducers/data/SiPixelTemplateDBObject_0T_phase1_BoR3_v1/template_summary_zp0315.out'
+    ),
+    Version = cms.double(1),
     appendToDataLabel = cms.string('')
   )
   for a in args:

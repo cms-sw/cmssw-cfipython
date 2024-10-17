@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def SiPixelFakeGainForHLTESSource(*args, **kwargs):
   mod = cms.ESSource('SiPixelFakeGainForHLTESSource',
+    file = cms.FileInPath('CalibTracker/SiPixelESProducers/data/PixelSkimmedGeometry.txt'),
     appendToDataLabel = cms.string('')
   )
   for a in args:
