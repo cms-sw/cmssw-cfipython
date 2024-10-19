@@ -43,7 +43,7 @@ def ZdcHitReconstructor_Run3(**kwargs):
     forceSOI = cms.bool(False),
     signalSOI = cms.vuint32(2),
     noiseSOI = cms.vuint32(1),
-    setSaturationFlags = cms.bool(False),
+    setSaturationFlags = cms.bool(True),
     saturationParameters = cms.PSet(
       maxADCvalue = cms.int32(255)
     ),
