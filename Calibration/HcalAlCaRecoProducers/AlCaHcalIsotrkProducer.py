@@ -24,7 +24,7 @@ def AlCaHcalIsotrkProducer(*args, **kwargs):
     coneRadiusMIP3 = cms.double(20),
     coneRadiusMIP4 = cms.double(22),
     coneRadiusMIP5 = cms.double(24),
-    maximumEcalEnergy = cms.double(2),
+    maximumEcalEnergy = cms.double(10),
     maxTrackP = cms.double(8),
     slopeTrackP = cms.double(0.05090504066),
     isolationEnergyTight = cms.double(2),

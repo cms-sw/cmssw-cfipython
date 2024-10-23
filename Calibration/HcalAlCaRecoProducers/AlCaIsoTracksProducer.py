@@ -30,7 +30,7 @@ def AlCaIsoTracksProducer(*args, **kwargs):
     coneRadius = cms.double(34.98),
     minimumTrackP = cms.double(20),
     coneRadiusMIP = cms.double(14),
-    maximumEcalEnergy = cms.double(2),
+    maximumEcalEnergy = cms.double(10),
     maxTrackP = cms.double(8),
     slopeTrackP = cms.double(0.05090504066),
     isolationEnergy = cms.double(10),
