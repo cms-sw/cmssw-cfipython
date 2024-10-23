@@ -31,11 +31,6 @@ def Primary4DVertexValidation(*args, **kwargs):
     trackweightTh = cms.double(0.5),
     mvaTh = cms.double(0.8),
     minProbHeavy = cms.double(0.75),
-    lineDensityPar = cms.vdouble(
-      1.87,
-      0,
-      42.5
-    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
