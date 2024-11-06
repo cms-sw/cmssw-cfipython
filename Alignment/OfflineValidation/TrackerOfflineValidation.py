@@ -16,6 +16,7 @@ def TrackerOfflineValidation(*args, **kwargs):
     moduleDirectoryInOutput = cms.string(''),
     chargeCut = cms.int32(0),
     maxTracks = cms.uint64(0),
+    maxEntriesPerModuleForDmr = cms.uint32(0),
     TH1XResPixelModules = cms.PSet(
       Nbinx = cms.int32(100),
       xmin = cms.double(-5),
