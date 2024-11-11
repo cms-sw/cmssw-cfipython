@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TestAlpakaESProducerAMulti_alpaka import TestAlpakaESProducerAMulti_alpaka
+
+testAlpakaESProducerAMulti = TestAlpakaESProducerAMulti_alpaka()
