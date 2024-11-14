@@ -8,6 +8,7 @@ def ClusterCheckerEDProducer(*args, **kwargs):
     MaxNumberOfPixelClusters = cms.uint32(40000),
     PixelClusterCollectionLabel = cms.InputTag('siPixelClusters'),
     cut = cms.string('strip < 400000 && pixel < 40000 && (strip < 50000 + 10*pixel) && (pixel < 5000 + 0.1*strip)'),
+    DontCountDetsAboveNClusters = cms.uint32(0),
     silentClusterCheck = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )

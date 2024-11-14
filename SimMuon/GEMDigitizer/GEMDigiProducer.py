@@ -5,7 +5,7 @@ def GEMDigiProducer(*args, **kwargs):
     inputCollection = cms.string('g4SimHitsMuonGEMHits'),
     mixLabel = cms.string('mix'),
     signalPropagationSpeed = cms.double(0.66),
-    timeResolution = cms.double(18),
+    timeResolution = cms.double(10),
     timeJitter = cms.double(1),
     averageShapingTime = cms.double(50),
     averageEfficiency = cms.double(0.98),
