@@ -10,7 +10,7 @@ pfParticleTransformerAK4JetTags = cms.EDProducer('ParticleTransformerAK4ONNXJetT
     'input_5',
     'input_6'
   ),
-  model_path = cms.FileInPath('RecoBTag/Combined/data/RobustParTAK4/PUPPI/V00/RobustParTAK4.onnx'),
+  model_path = cms.FileInPath('RecoBTag/Combined/data/RobustParTAK4/PUPPI/V00/modelfile/model.onnx'),
   output_names = cms.vstring('softmax'),
   flav_names = cms.vstring(
     'probb',
