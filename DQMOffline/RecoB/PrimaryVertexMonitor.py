@@ -26,6 +26,9 @@ def PrimaryVertexMonitor(*args, **kwargs):
     EtaBin = cms.int32(26),
     EtaMin = cms.double(2.5),
     EtaMax = cms.double(-2.5),
+    PtBin = cms.int32(49),
+    PtMin = cms.double(1),
+    PtMax = cms.double(50),
     PhiBin2D = cms.int32(12),
     EtaBin2D = cms.int32(8),
     mightGet = cms.optional.untracked.vstring
