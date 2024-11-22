@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_PFClusterParamsESProducer import alpaka_serial_sync_PFClusterParamsESProducer
+
+alpaka_serial_syncPFClusterParamsESProducer = alpaka_serial_sync_PFClusterParamsESProducer()

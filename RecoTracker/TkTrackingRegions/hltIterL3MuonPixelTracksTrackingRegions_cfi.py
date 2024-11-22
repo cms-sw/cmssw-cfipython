@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1MuonSeededTrackingRegionsEDProducer import L1MuonSeededTrackingRegionsEDProducer
+
+hltIterL3MuonPixelTracksTrackingRegions = L1MuonSeededTrackingRegionsEDProducer()

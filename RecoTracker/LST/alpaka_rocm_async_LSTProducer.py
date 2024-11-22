@@ -1,0 +1,18 @@
+import FWCore.ParameterSet.Config as cms
+
+def alpaka_rocm_async_LSTProducer(*args, **kwargs):
+  mod = cms.EDProducer('alpaka_rocm_async::LSTProducer',
+    pixelSeedInput = cms.InputTag('lstPixelSeedInputProducer'),
+    phase2OTHitsInput = cms.InputTag('lstPhase2OTHitsInputProducer'),
+    verbose = cms.bool(False),
+    nopLSDupClean = cms.bool(False),
+    tcpLSTriplets = cms.bool(False),
+    mightGet = cms.optional.untracked.vstring,
+    alpaka = cms.untracked.PSet(
+      backend = cms.untracked.string('')
+    )
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

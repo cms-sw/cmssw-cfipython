@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleRun3ScoutingPFJetFlatTableProducer import SimpleRun3ScoutingPFJetFlatTableProducer
+
+simpleRun3ScoutingPFJetFlatTableProducer = SimpleRun3ScoutingPFJetFlatTableProducer()
