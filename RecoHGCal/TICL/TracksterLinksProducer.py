@@ -34,31 +34,49 @@ def TracksterLinksProducer(*args, **kwargs):
     
     ),
     linkingPSet = cms.PSet(
+      cylinder_radius_sqr_split = cms.double(9),
+      proj_distance_split = cms.double(5),
       track_time_quality_threshold = cms.double(0.5),
-      wind = cms.double(0.036),
       min_num_lcs = cms.uint32(7),
       min_trackster_energy = cms.double(10),
       pca_quality_th = cms.double(0.85),
       dot_prod_th = cms.double(0.97),
-      max_distance_projective_sqr = cms.vdouble(
-        60,
+      deltaRxy = cms.double(4),
+      lower_boundary = cms.vdouble(
+        10,
+        150
+      ),
+      upper_boundary = cms.vdouble(
+        3,
+        70
+      ),
+      upper_distance_projective_sqr = cms.vdouble(
+        40,
         60
       ),
-      min_distance_z = cms.vdouble(
-        30,
+      lower_distance_projective_sqr = cms.vdouble(
+        10,
         30
       ),
-      max_distance_projective_sqr_closest_points = cms.vdouble(
-        60,
-        60
+      min_distance_z = cms.vdouble(
+        35,
+        35
+      ),
+      upper_distance_projective_sqr_closest_points = cms.vdouble(
+        10,
+        30
+      ),
+      lower_distance_projective_sqr_closest_points = cms.vdouble(
+        10,
+        30
       ),
       max_z_distance_closest_points = cms.vdouble(
         35,
         35
       ),
       cylinder_radius_sqr = cms.vdouble(
-        9,
-        9
+        10,
+        20
       ),
       algo_verbosity = cms.int32(0),
       type = cms.string('Skeletons')
