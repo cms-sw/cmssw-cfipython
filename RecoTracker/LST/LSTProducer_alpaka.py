@@ -5,6 +5,8 @@ def LSTProducer_alpaka(*args, **kwargs):
     pixelSeedInput = cms.InputTag('lstPixelSeedInputProducer'),
     phase2OTHitsInput = cms.InputTag('lstPhase2OTHitsInputProducer'),
     verbose = cms.bool(False),
+    ptCut = cms.double(0.8),
+    ptCutLabel = cms.string('0.8'),
     nopLSDupClean = cms.bool(False),
     tcpLSTriplets = cms.bool(False),
     mightGet = cms.optional.untracked.vstring,
