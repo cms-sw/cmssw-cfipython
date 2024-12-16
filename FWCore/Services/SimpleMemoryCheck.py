@@ -6,6 +6,7 @@ def SimpleMemoryCheck(*args, **kwargs):
     sampleEveryNSeconds = cms.untracked.uint32(0),
     printEachSample = cms.untracked.bool(False),
     showMallocInfo = cms.untracked.bool(False),
+    showJemallocInfo = cms.untracked.bool(True),
     oncePerEventMode = cms.untracked.bool(False),
     jobReportOutputOnly = cms.untracked.bool(False),
     monitorPssAndPrivate = cms.untracked.bool(False),
