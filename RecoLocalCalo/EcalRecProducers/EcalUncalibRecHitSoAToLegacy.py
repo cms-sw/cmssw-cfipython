@@ -2,11 +2,11 @@ import FWCore.ParameterSet.Config as cms
 
 def EcalUncalibRecHitSoAToLegacy(*args, **kwargs):
   mod = cms.EDProducer('EcalUncalibRecHitSoAToLegacy',
-    uncalibRecHitsPortableEB = cms.InputTag('ecalMultiFitUncalibRecHitPortable', 'EcalUncalibRecHitsEB'),
-    recHitsLabelCPUEB = cms.string('EcalUncalibRecHitsEB'),
+    inputCollectionEB = cms.InputTag('ecalMultiFitUncalibRecHitPortable', 'EcalUncalibRecHitsEB'),
+    outputLabelEB = cms.string('EcalUncalibRecHitsEB'),
     isPhase2 = cms.bool(False),
-    uncalibRecHitsPortableEE = cms.InputTag('ecalMultiFitUncalibRecHitPortable', 'EcalUncalibRecHitsEE'),
-    recHitsLabelCPUEE = cms.string('EcalUncalibRecHitsEE'),
+    inputCollectionEE = cms.InputTag('ecalMultiFitUncalibRecHitPortable', 'EcalUncalibRecHitsEE'),
+    outputLabelEE = cms.string('EcalUncalibRecHitsEE'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
