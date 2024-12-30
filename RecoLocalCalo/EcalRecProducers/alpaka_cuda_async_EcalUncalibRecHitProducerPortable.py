@@ -32,7 +32,8 @@ def alpaka_cuda_async_EcalUncalibRecHitProducerPortable(*args, **kwargs):
     shouldRunTimingComputation = cms.bool(True),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

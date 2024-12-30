@@ -4,7 +4,8 @@ def alpaka_cuda_async_EcalElectronicsMappingHostESProducer(*args, **kwargs):
   mod = cms.ESProducer('alpaka_cuda_async::EcalElectronicsMappingHostESProducer',
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

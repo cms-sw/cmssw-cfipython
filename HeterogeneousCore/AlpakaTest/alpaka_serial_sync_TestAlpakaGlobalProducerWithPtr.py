@@ -5,7 +5,8 @@ def alpaka_serial_sync_TestAlpakaGlobalProducerWithPtr(*args, **kwargs):
     size = cms.required.int32,
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

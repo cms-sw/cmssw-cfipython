@@ -20,7 +20,8 @@ def alpaka_serial_sync_SiPixelRawToClusterPhase1(*args, **kwargs):
     CablingMapLabel = cms.string(''),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

@@ -8,7 +8,8 @@ def alpaka_rocm_async_PFClusterSoAProducer(*args, **kwargs):
     synchronise = cms.bool(False),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

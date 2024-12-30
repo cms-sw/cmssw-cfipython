@@ -4,7 +4,8 @@ def alpaka_serial_sync_TestAlpakaESProducerAMulti(*args, **kwargs):
   mod = cms.ESProducer('alpaka_serial_sync::TestAlpakaESProducerAMulti',
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

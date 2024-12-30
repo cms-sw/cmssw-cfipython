@@ -4,7 +4,8 @@ def alpaka_rocm_async_SiPixelGainCalibrationForHLTSoAESProducer(*args, **kwargs)
   mod = cms.ESProducer('alpaka_rocm_async::SiPixelGainCalibrationForHLTSoAESProducer',
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

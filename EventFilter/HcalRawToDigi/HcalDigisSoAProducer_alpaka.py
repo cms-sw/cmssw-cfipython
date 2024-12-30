@@ -12,7 +12,8 @@ def HcalDigisSoAProducer_alpaka(*args, **kwargs):
     maxChannelsF3HB = cms.uint32(10000),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

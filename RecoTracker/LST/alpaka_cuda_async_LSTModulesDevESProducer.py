@@ -5,7 +5,8 @@ def alpaka_cuda_async_LSTModulesDevESProducer(*args, **kwargs):
     ptCutLabel = cms.string('0.8'),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

@@ -6,7 +6,8 @@ def TestAlpakaGlobalProducerE_alpaka(*args, **kwargs):
     source = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

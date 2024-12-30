@@ -62,7 +62,8 @@ def alpaka_serial_sync_PixelCPEFastParamsESProducerAlpakaPhase1(*args, **kwargs)
     MagneticFieldRecord = cms.ESInputTag('', ''),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

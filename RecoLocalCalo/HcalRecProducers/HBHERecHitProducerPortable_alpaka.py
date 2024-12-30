@@ -40,7 +40,8 @@ def HBHERecHitProducerPortable_alpaka(*args, **kwargs):
     ),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

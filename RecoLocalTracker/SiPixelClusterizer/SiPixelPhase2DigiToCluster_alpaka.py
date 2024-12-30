@@ -12,7 +12,8 @@ def SiPixelPhase2DigiToCluster_alpaka(*args, **kwargs):
     InputDigis = cms.InputTag('simSiPixelDigis', 'Pixel'),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

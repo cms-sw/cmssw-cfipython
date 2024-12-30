@@ -5,7 +5,8 @@ def alpaka_rocm_async_TestAlpakaESProducerB(*args, **kwargs):
     explicitLabel = cms.string(''),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

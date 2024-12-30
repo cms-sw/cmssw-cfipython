@@ -4,7 +4,8 @@ def HcalMahiConditionsESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('HcalMahiConditionsESProducer@alpaka',
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

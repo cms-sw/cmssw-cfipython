@@ -5,7 +5,8 @@ def PFRecHitECALParamsESProducer_alpaka(*args, **kwargs):
     cleaningThreshold = cms.double(2),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

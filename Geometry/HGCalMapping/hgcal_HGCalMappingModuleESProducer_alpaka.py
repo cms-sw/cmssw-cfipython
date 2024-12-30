@@ -6,7 +6,8 @@ def hgcal_HGCalMappingModuleESProducer_alpaka(*args, **kwargs):
     moduleindexer = cms.ESInputTag('', ''),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:

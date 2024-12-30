@@ -14,7 +14,8 @@ def alpaka_serial_sync_HcalMahiPulseOffsetsESProducer(*args, **kwargs):
     ),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
-      backend = cms.untracked.string('')
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
     )
   )
   for a in args:
