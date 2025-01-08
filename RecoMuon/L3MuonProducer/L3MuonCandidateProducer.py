@@ -2,6 +2,9 @@ import FWCore.ParameterSet.Config as cms
 
 def L3MuonCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('L3MuonCandidateProducer',
+    InputObjects = cms.InputTag('L3Muons'),
+    InputLinksObjects = cms.InputTag('unused'),
+    MuonPtOption = cms.string('Global'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

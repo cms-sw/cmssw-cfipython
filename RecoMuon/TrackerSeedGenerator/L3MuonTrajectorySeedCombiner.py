@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def L3MuonTrajectorySeedCombiner(*args, **kwargs):
   mod = cms.EDProducer('L3MuonTrajectorySeedCombiner',
+    labels = cms.VInputTag(),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
