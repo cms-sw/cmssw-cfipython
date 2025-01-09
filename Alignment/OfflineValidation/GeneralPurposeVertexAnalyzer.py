@@ -24,6 +24,9 @@ def GeneralPurposeVertexAnalyzer(*args, **kwargs):
     EtaBin2D = cms.int32(8),
     EtaMin = cms.double(-2.7),
     EtaMax = cms.double(2.7),
+    PtBin = cms.int32(49),
+    PtMin = cms.double(1),
+    PtMax = cms.double(50),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
