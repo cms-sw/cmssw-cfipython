@@ -5,6 +5,7 @@ def RawStreamFileWriterForBU(*args, **kwargs):
     source = cms.InputTag('rawDataCollector'),
     numEventsPerFile = cms.uint32(100),
     frdVersion = cms.uint32(6),
+    sourceIdList = cms.untracked.vuint32(),
     microSleep = cms.int32(0),
     frdFileVersion = cms.uint32(0)
   )

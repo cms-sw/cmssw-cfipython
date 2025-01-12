@@ -4,6 +4,7 @@ def FedRawDataInputSource(*args, **kwargs):
   mod = cms.Source('FedRawDataInputSource',
     eventChunkSize = cms.untracked.uint32(32),
     eventChunkBlock = cms.untracked.uint32(32),
+    numConcurrentReads = cms.untracked.int32(-1),
     numBuffers = cms.untracked.uint32(2),
     maxBufferedFiles = cms.untracked.uint32(2),
     alwaysStartFromfirstLS = cms.untracked.uint32(0),

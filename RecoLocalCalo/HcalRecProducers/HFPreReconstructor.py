@@ -2,12 +2,12 @@ import FWCore.ParameterSet.Config as cms
 
 def HFPreReconstructor(*args, **kwargs):
   mod = cms.EDProducer('HFPreReconstructor',
-    digiLabel = cms.required.InputTag,
+    digiLabel = cms.InputTag('hcalDigis'),
     forceSOI = cms.int32(-1),
     soiShift = cms.int32(0),
-    dropZSmarkedPassed = cms.required.bool,
-    tsFromDB = cms.required.bool,
-    sumAllTimeSlices = cms.required.bool,
+    dropZSmarkedPassed = cms.bool(False),
+    tsFromDB = cms.bool(False),
+    sumAllTimeSlices = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
