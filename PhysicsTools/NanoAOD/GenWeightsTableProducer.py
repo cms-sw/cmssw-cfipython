@@ -15,6 +15,7 @@ def GenWeightsTableProducer(*args, **kwargs):
     lheWeightPrecision = cms.required.int32,
     maxPdfWeights = cms.required.uint32,
     keepAllPSWeights = cms.required.bool,
+    allowedNumScaleWeights = cms.required.vuint32,
     debug = cms.optional.untracked.bool,
     mightGet = cms.optional.untracked.vstring
   )
