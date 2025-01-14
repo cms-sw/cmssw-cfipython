@@ -2,7 +2,6 @@ import FWCore.ParameterSet.Config as cms
 
 def HBHERecHitProducerPortable_alpaka(*args, **kwargs):
   mod = cms.EDProducer('HBHERecHitProducerPortable@alpaka',
-    mahiPulseOffSets = cms.ESInputTag('', ''),
     maxTimeSamples = cms.uint32(10),
     kprep1dChannelsPerBlock = cms.uint32(32),
     digisLabelF01HE = cms.InputTag('hcalRawToDigiGPU', 'f01HEDigisGPU'),
@@ -37,6 +36,16 @@ def HBHERecHitProducerPortable_alpaka(*args, **kwargs):
       16,
       1,
       1
+    ),
+    pulseOffsets = cms.vint32(
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4
     ),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(

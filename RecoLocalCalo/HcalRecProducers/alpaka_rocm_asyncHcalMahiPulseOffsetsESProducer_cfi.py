@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_rocm_async_HcalMahiPulseOffsetsESProducer import alpaka_rocm_async_HcalMahiPulseOffsetsESProducer
-
-alpaka_rocm_asyncHcalMahiPulseOffsetsESProducer = alpaka_rocm_async_HcalMahiPulseOffsetsESProducer()

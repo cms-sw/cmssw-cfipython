@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_rocm_async_EcalRecHitParametersESProducer import alpaka_rocm_async_EcalRecHitParametersESProducer
-
-alpaka_rocm_asyncEcalRecHitParametersESProducer = alpaka_rocm_async_EcalRecHitParametersESProducer()

@@ -14,7 +14,9 @@ def TestReadGlobalObjectMapRecord(*args, **kwargs):
     expectedFirstElement = cms.required.int32,
     expectedElementDelta = cms.required.int32,
     expectedFinalValue = cms.required.int32,
+    expectedBxIndexModulus = cms.required.uint32,
     globalObjectMapRecordTag = cms.required.InputTag,
+    globalObjectMapClassVersion = cms.required.uint32,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

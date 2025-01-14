@@ -17,6 +17,7 @@ def TestWriteGlobalObjectMapRecord(*args, **kwargs):
     nElements3 = cms.required.uint32,
     firstElement = cms.required.int32,
     elementDelta = cms.required.int32,
+    bxIndexModulus = cms.required.uint32,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

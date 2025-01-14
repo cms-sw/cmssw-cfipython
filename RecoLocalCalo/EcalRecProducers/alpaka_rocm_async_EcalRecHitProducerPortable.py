@@ -18,6 +18,38 @@ def alpaka_rocm_async_EcalRecHitProducerPortable(*args, **kwargs):
     recoverEEFE = cms.bool(True),
     EELaserMIN = cms.double(0.5),
     EELaserMAX = cms.double(8),
+    ChannelStatusToBeExcluded = cms.vstring(
+      'kDAC',
+      'kNoisy',
+      'kNNoisy',
+      'kFixedG6',
+      'kFixedG1',
+      'kFixedG0',
+      'kNonRespondingIsolated',
+      'kDeadVFE',
+      'kDeadFE',
+      'kNoDataNoTP'
+    ),
+    flagsMapDBReco = cms.PSet(
+      kGood = cms.vstring(
+        'kOk',
+        'kDAC',
+        'kNoLaser',
+        'kNoisy'
+      ),
+      kNeighboursRecovered = cms.vstring(
+        'kFixedG0',
+        'kNonRespondingIsolated',
+        'kDeadVFE'
+      ),
+      kDead = cms.vstring('kNoDataNoTP'),
+      kNoisy = cms.vstring(
+        'kNNoisy',
+        'kFixedG6',
+        'kFixedG1'
+      ),
+      kTowerRecovered = cms.vstring('kDeadFE')
+    ),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
