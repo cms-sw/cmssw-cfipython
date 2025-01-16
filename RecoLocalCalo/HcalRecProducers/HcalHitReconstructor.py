@@ -15,17 +15,17 @@ def HcalHitReconstructor(*args, **kwargs):
     useLeakCorrection = cms.bool(False),
     recoParamsFromDB = cms.bool(True),
     setNegativeFlags = cms.bool(False),
-    setSaturationFlags = cms.bool(True),
     saturationParameters = cms.PSet(
       maxADCvalue = cms.int32(127)
     ),
+    setSaturationFlags = cms.bool(True),
     Subdetector = cms.string('HF'),
     digiTimeFromDB = cms.bool(False),
-    setTimingTrustFlags = cms.bool(True),
     hfTimingTrustParameters = cms.PSet(
       hfTimingTrustLevel1 = cms.int32(1),
       hfTimingTrustLevel2 = cms.int32(4)
     ),
+    setTimingTrustFlags = cms.bool(True),
     setNoiseFlags = cms.bool(True),
     digistat = cms.PSet(
       HFdigiflagFirstSample = cms.int32(1),
