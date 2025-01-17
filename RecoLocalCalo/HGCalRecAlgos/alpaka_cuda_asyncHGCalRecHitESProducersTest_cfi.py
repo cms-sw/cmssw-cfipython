@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_HGCalRecHitESProducersTest import alpaka_cuda_async_HGCalRecHitESProducersTest
+
+alpaka_cuda_asyncHGCalRecHitESProducersTest = alpaka_cuda_async_HGCalRecHitESProducersTest()

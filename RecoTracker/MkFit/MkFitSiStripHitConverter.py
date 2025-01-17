@@ -4,6 +4,7 @@ def MkFitSiStripHitConverter(*args, **kwargs):
   mod = cms.EDProducer('MkFitSiStripHitConverter',
     rphiHits = cms.InputTag('siStripMatchedRecHits', 'rphiRecHit'),
     stereoHits = cms.InputTag('siStripMatchedRecHits', 'stereoRecHit'),
+    clusters = cms.InputTag('siStripClusters'),
     ttrhBuilder = cms.ESInputTag('', 'WithTrackAngle'),
     minGoodStripCharge = cms.PSet(
       value = cms.required.double
