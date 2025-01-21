@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def KFUpdatorESProducer(*args, **kwargs):
   mod = cms.ESProducer('KFUpdatorESProducer',
-    ComponentName = cms.required.string,
+    ComponentName = cms.string('KFUpdator'),
     appendToDataLabel = cms.string('')
   )
   for a in args:

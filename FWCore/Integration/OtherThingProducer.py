@@ -5,6 +5,7 @@ def OtherThingProducer(*args, **kwargs):
     thingTag = cms.InputTag('Thing'),
     useRefs = cms.untracked.bool(True),
     transient = cms.untracked.bool(False),
+    thingMissing = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

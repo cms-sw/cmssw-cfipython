@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def MuonTransientTrackingRecHitBuilderESProducer(*args, **kwargs):
   mod = cms.ESProducer('MuonTransientTrackingRecHitBuilderESProducer',
-    ComponentName = cms.required.string,
+    ComponentName = cms.string('MuonRecHitBuilder'),
     appendToDataLabel = cms.string('')
   )
   for a in args:
