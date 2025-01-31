@@ -2,9 +2,9 @@ import FWCore.ParameterSet.Config as cms
 
 def CloseComponentsMergerESProducer5D(*args, **kwargs):
   mod = cms.ESProducer('CloseComponentsMergerESProducer5D',
-    ComponentName = cms.required.string,
-    MaxComponents = cms.required.int32,
-    DistanceMeasure = cms.required.string,
+    ComponentName = cms.string(''),
+    MaxComponents = cms.int32(1),
+    DistanceMeasure = cms.string(''),
     appendToDataLabel = cms.string('')
   )
   for a in args:

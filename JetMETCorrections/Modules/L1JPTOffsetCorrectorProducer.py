@@ -2,8 +2,8 @@ import FWCore.ParameterSet.Config as cms
 
 def L1JPTOffsetCorrectorProducer(*args, **kwargs):
   mod = cms.EDProducer('L1JPTOffsetCorrectorProducer',
-    level = cms.required.string,
-    algorithm = cms.required.string,
+    level = cms.string(''),
+    algorithm = cms.string(''),
     offsetService = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )

@@ -2,12 +2,12 @@ import FWCore.ParameterSet.Config as cms
 
 def GsfTrajectorySmootherESProducer(*args, **kwargs):
   mod = cms.ESProducer('GsfTrajectorySmootherESProducer',
-    ComponentName = cms.required.string,
-    MaterialEffectsUpdator = cms.required.string,
-    GeometricalPropagator = cms.required.string,
-    Merger = cms.required.string,
-    RecoGeometry = cms.required.string,
-    ErrorRescaling = cms.required.double,
+    ComponentName = cms.string('GsfTrajectorySmoother'),
+    MaterialEffectsUpdator = cms.string('ElectronMaterialEffects'),
+    GeometricalPropagator = cms.string('bwdAnalyticalPropagator'),
+    Merger = cms.string('CloseComponentsMerger5D'),
+    RecoGeometry = cms.string('GlobalDetLayerGeometry'),
+    ErrorRescaling = cms.double(100),
     appendToDataLabel = cms.string('')
   )
   for a in args:

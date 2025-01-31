@@ -2,4 +2,4 @@ import FWCore.ParameterSet.Config as cms
 
 from .BunchSpacingProducer import BunchSpacingProducer
 
-BunchSpacingProducer = BunchSpacingProducer()
+default_bunchSpacingProducer = BunchSpacingProducer()

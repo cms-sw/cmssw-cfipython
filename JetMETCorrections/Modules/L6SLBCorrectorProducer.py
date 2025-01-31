@@ -2,8 +2,8 @@ import FWCore.ParameterSet.Config as cms
 
 def L6SLBCorrectorProducer(*args, **kwargs):
   mod = cms.EDProducer('L6SLBCorrectorProducer',
-    level = cms.required.string,
-    algorithm = cms.required.string,
+    level = cms.string(''),
+    algorithm = cms.string(''),
     srcBTagInfoElectron = cms.required.InputTag,
     srcBTagInfoMuon = cms.required.InputTag,
     addMuonToJet = cms.required.bool,

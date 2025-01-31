@@ -2,9 +2,9 @@ import FWCore.ParameterSet.Config as cms
 
 def L1FastjetCorrectorProducer(*args, **kwargs):
   mod = cms.EDProducer('L1FastjetCorrectorProducer',
-    level = cms.required.string,
-    algorithm = cms.required.string,
-    srcRho = cms.required.InputTag,
+    level = cms.string(''),
+    algorithm = cms.string(''),
+    srcRho = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
