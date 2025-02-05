@@ -6,7 +6,7 @@ def UnifiedParticleTransformerAK4TagInfoProducer(*args, **kwargs):
     min_candidate_pt = cms.double(0.1),
     flip = cms.bool(False),
     sort_cand_by_pt = cms.bool(False),
-    fix_lt_sorting = cms.bool(False),
+    fix_lt_sorting = cms.bool(True),
     vertices = cms.InputTag('offlinePrimaryVertices'),
     losttracks = cms.InputTag('lostTracks'),
     puppi_value_map = cms.InputTag('puppi'),

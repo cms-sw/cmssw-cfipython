@@ -8,6 +8,7 @@ def SimpleGenJetConstituentTableProducer(*args, **kwargs):
     jets = cms.InputTag('finalJetsAK8'),
     candidates = cms.InputTag('packedPFCandidates'),
     jetCut = cms.string(''),
+    jetConstCut = cms.string(''),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

@@ -13,7 +13,7 @@ def UnifiedParticleTransformerAK4ONNXJetTagsProducer(*args, **kwargs):
       'input_7',
       'input_8'
     ),
-    model_path = cms.FileInPath('RecoBTag/Combined/data/UParTAK4/PUPPI/V00/UParTAK4.onnx'),
+    model_path = cms.FileInPath('RecoBTag/Combined/data/UParTAK4/PUPPI/V01/UParTAK4_v2.onnx'),
     output_names = cms.vstring('softmax'),
     flav_names = cms.vstring(
       'probb',
