@@ -2,6 +2,10 @@ import FWCore.ParameterSet.Config as cms
 
 def PATPackedGenParticlePtrSelector(*args, **kwargs):
   mod = cms.EDFilter('PATPackedGenParticlePtrSelector',
+    src = cms.InputTag(''),
+    cut = cms.string(''),
+    filter = cms.bool(False),
+    throwOnMissing = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
