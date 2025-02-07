@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L3MuonCombinedRelativeIsolationProducer import L3MuonCombinedRelativeIsolationProducer
+
+hltL3MuonIsolations = L3MuonCombinedRelativeIsolationProducer()

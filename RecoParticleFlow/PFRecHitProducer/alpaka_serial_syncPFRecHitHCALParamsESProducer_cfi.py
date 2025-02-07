@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_PFRecHitHCALParamsESProducer import alpaka_serial_sync_PFRecHitHCALParamsESProducer
+
+alpaka_serial_syncPFRecHitHCALParamsESProducer = alpaka_serial_sync_PFRecHitHCALParamsESProducer()

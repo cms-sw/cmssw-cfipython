@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalRecHitConditionsESProducer_alpaka import EcalRecHitConditionsESProducer_alpaka
+
+ecalRecHitConditionsESProducer = EcalRecHitConditionsESProducer_alpaka()

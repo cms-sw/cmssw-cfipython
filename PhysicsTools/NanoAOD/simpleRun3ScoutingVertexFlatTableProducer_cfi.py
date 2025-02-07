@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleRun3ScoutingVertexFlatTableProducer import SimpleRun3ScoutingVertexFlatTableProducer
+
+simpleRun3ScoutingVertexFlatTableProducer = SimpleRun3ScoutingVertexFlatTableProducer()

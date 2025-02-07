@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .BadPFCandidateJetsEEnoiseProducer import BadPFCandidateJetsEEnoiseProducer
+
+BadPFCandidateJetsEEnoiseProducer = BadPFCandidateJetsEEnoiseProducer()

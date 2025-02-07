@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_AlpakaTestWrapperAdditionModule import alpaka_serial_sync_AlpakaTestWrapperAdditionModule
+
+alpaka_serial_syncAlpakaTestWrapperAdditionModule = alpaka_serial_sync_AlpakaTestWrapperAdditionModule()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_hgcalrechit_HGCalConfigurationESProducer import alpaka_cuda_async_hgcalrechit_HGCalConfigurationESProducer
+
+alpaka_cuda_asynchgcalrechitHGCalConfigurationESProducer = alpaka_cuda_async_hgcalrechit_HGCalConfigurationESProducer()
