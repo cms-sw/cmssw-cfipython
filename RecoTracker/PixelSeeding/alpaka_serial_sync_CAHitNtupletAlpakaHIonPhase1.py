@@ -42,6 +42,8 @@ def alpaka_serial_sync_CAHitNtupletAlpakaHIonPhase1(*args, **kwargs):
       quadrupletMaxTip = cms.double(0.5),
       quadrupletMaxZip = cms.double(6)
     ),
+    minYsizeB1 = cms.int32(36),
+    minYsizeB2 = cms.int32(28),
     phiCuts = cms.vint32(
       522,
       730,

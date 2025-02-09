@@ -28,6 +28,8 @@ def CAHitNtupletCUDAHIonPhase1(*args, **kwargs):
     includeJumpingForwardDoublets = cms.bool(False),
     z0Cut = cms.double(10),
     ptCut = cms.double(0),
+    minYsizeB1 = cms.int32(36),
+    minYsizeB2 = cms.int32(28),
     phiCuts = cms.vint32(
       522,
       730,
