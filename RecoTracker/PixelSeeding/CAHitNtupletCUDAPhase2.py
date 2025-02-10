@@ -29,6 +29,8 @@ def CAHitNtupletCUDAPhase2(*args, **kwargs):
     includeJumpingForwardDoublets = cms.bool(True),
     z0Cut = cms.double(7.5),
     ptCut = cms.double(0.85),
+    minYsizeB1 = cms.int32(25),
+    minYsizeB2 = cms.int32(15),
     phiCuts = cms.vint32(
       522,
       522,

@@ -35,6 +35,8 @@ def alpaka_cuda_async_CAHitNtupletAlpakaPhase2(*args, **kwargs):
       maxTip = cms.double(0.3),
       maxZip = cms.double(12)
     ),
+    minYsizeB1 = cms.int32(25),
+    minYsizeB2 = cms.int32(15),
     phiCuts = cms.vint32(
       522,
       522,
