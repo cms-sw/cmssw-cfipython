@@ -6,15 +6,20 @@ def HLTGenValSource(*args, **kwargs):
     hltPathsToCheck = cms.required.vstring,
     dqmDirName = cms.string('HLTGenVal'),
     hltProcessName = cms.string('HLT'),
+    sampleLabel = cms.string(''),
     dR2limit = cms.double(0.1),
     doOnlyLastFilter = cms.bool(False),
-    inputCollections = cms.PSet(
+    genConfig = cms.PSet(
       genParticles = cms.InputTag('genParticles'),
       genMET = cms.InputTag('genMetTrue'),
-      ak4GenJets = cms.InputTag('ak4GenJets'),
-      ak8GenJets = cms.InputTag('ak8GenJets'),
-      TrigEvent = cms.InputTag('hltTriggerSummaryAOD')
+      ak4GenJets = cms.InputTag('ak4GenJetsNoNu'),
+      ak8GenJets = cms.InputTag('ak8GenJetsNoNu'),
+      tauGenJets = cms.InputTag('tauGenJets'),
+      maxPromptGenJetFrac = cms.double(0.1),
+      minPtForGenHT = cms.double(30),
+      maxAbsEtaForGenHT = cms.double(2.5)
     ),
+    trigEvent = cms.InputTag('hltTriggerSummaryAOD'),
     histConfigs = cms.VPSet(
       cms.PSet(
         binLowEdges = cms.vdouble(
