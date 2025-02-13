@@ -24,6 +24,8 @@ def PoolOutputModule(*args, **kwargs):
     dataset = cms.untracked.PSet(),
     overrideBranchesSplitLevel = cms.untracked.VPSet(
     ),
+    branchAliases = cms.untracked.VPSet(
+    ),
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
       SelectEvents = cms.optional.vstring
