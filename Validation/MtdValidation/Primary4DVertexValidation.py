@@ -4,6 +4,7 @@ def Primary4DVertexValidation(*args, **kwargs):
   mod = cms.EDProducer('Primary4DVertexValidation',
     folder = cms.string('MTD/Vertices'),
     TPtoRecoTrackAssoc = cms.InputTag('trackingParticleRecoTrackAsssociation'),
+    TrackLabel = cms.InputTag('generalTracks'),
     mtdTracks = cms.InputTag('trackExtenderWithMTD'),
     SimTag = cms.InputTag('mix', 'MergedTrackTruth'),
     offlineBS = cms.InputTag('offlineBeamSpot'),
@@ -31,6 +32,22 @@ def Primary4DVertexValidation(*args, **kwargs):
     trackweightTh = cms.double(0.5),
     mvaTh = cms.double(0.8),
     minProbHeavy = cms.double(0.75),
+    TkFilterParameters = cms.PSet(
+      maxNormalizedChi2 = cms.double(10),
+      minPt = cms.double(0),
+      algorithm = cms.string('filter'),
+      maxEta = cms.double(2.4),
+      maxD0Significance = cms.double(4),
+      maxD0Error = cms.double(1),
+      maxDzError = cms.double(1),
+      trackQuality = cms.string('any'),
+      minPixelLayersWithHits = cms.int32(2),
+      minSiliconLayersWithHits = cms.int32(5),
+      minValidStripHits = cms.int32(0),
+      numTracksThreshold = cms.int32(0),
+      maxNumTracksThreshold = cms.int32(2147483647),
+      minPtTight = cms.double(0)
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
