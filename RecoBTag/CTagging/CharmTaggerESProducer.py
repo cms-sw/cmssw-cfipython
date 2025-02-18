@@ -11,6 +11,12 @@ def CharmTaggerESProducer(*args, **kwargs):
     weightFile = cms.FileInPath(''),
     slComputerCfg = cms.PSet(),
     variables = cms.VPSet(
+      template = cms.PSetTemplate(
+        idx = cms.int32(0),
+        default = cms.double(1),
+        name = cms.string(''),
+        taggingVarName = cms.string('')
+      )
     ),
     appendToDataLabel = cms.string('')
   )

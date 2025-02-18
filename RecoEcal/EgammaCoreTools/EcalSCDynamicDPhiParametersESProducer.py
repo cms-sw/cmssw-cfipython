@@ -12,6 +12,16 @@ def EcalSCDynamicDPhiParametersESProducer(*args, **kwargs):
         width = cms.double(0.432767),
         xoffset = cms.double(-0.101172),
         yoffset = cms.double(0.0280506)
+      ),
+      template = cms.PSetTemplate(
+        eMin = cms.required.double,
+        etaMin = cms.required.double,
+        yoffset = cms.required.double,
+        scale = cms.required.double,
+        xoffset = cms.required.double,
+        width = cms.required.double,
+        saturation = cms.required.double,
+        cutoff = cms.required.double
       )
     ),
     appendToDataLabel = cms.string('')

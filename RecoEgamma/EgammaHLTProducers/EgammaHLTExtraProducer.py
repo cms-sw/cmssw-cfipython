@@ -18,6 +18,12 @@ def EgammaHLTExtraProducer(*args, **kwargs):
         gsfTracks = cms.InputTag('hltEgammaGsfTracks'),
         label = cms.string(''),
         pixelSeeds = cms.InputTag('hltEgammaElectronPixelSeeds')
+      ),
+      template = cms.PSetTemplate(
+        ecalCands = cms.InputTag(''),
+        pixelSeeds = cms.InputTag(''),
+        gsfTracks = cms.InputTag(''),
+        label = cms.string('')
       )
     ),
     ecal = cms.VPSet(
@@ -28,18 +34,30 @@ def EgammaHLTExtraProducer(*args, **kwargs):
       cms.PSet(
         label = cms.string('EcalRecHitsEE'),
         src = cms.InputTag('hltEcalRecHit', 'EcalRecHitsEE')
+      ),
+      template = cms.PSetTemplate(
+        src = cms.InputTag(''),
+        label = cms.string('')
       )
     ),
     hcal = cms.VPSet(
       cms.PSet(
         label = cms.string(''),
         src = cms.InputTag('hltHbhereco')
+      ),
+      template = cms.PSetTemplate(
+        src = cms.InputTag(''),
+        label = cms.string('')
       )
     ),
     trks = cms.VPSet(
       cms.PSet(
         label = cms.string(''),
         src = cms.InputTag('generalTracks')
+      ),
+      template = cms.PSetTemplate(
+        src = cms.InputTag(''),
+        label = cms.string('')
       )
     ),
     pfClusIso = cms.VPSet(
@@ -54,6 +72,10 @@ def EgammaHLTExtraProducer(*args, **kwargs):
       cms.PSet(
         label = cms.string('Hcal'),
         src = cms.InputTag('hltParticleFlowClusterHCAL')
+      ),
+      template = cms.PSetTemplate(
+        src = cms.InputTag(''),
+        label = cms.string('')
       )
     ),
     mightGet = cms.optional.untracked.vstring

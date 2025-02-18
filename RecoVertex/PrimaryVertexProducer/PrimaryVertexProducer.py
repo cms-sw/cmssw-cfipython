@@ -28,6 +28,38 @@ def PrimaryVertexProducer(*args, **kwargs):
         vertexTimeParameters = cms.PSet(
           algorithm = cms.string('')
         )
+      ),
+      template = cms.PSetTemplate(
+        maxDistanceToBeam = cms.double(1),
+        algorithm = cms.string('AdaptiveVertexFitter'),
+        useBeamConstraint = cms.bool(False),
+        label = cms.string(''),
+        chi2cutoff = cms.double(2.5),
+        zcutoff = cms.double(1),
+        mintrkweight = cms.double(0),
+        minNdof = cms.double(0),
+        vertexTimeParameters = cms.PSet(
+          fromTracksPID = cms.PSet(
+            trackMTDTimeVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTracktmtd'),
+            trackMTDTimeErrorVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTracksigmatmtd'),
+            trackMTDTimeQualityVMapTag = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
+            trackMTDTofPiVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTrackTofPi'),
+            trackMTDTofKVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTrackTofK'),
+            trackMTDTofPVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTrackTofP'),
+            trackMTDSigmaTofPiVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTrackSigmaTofPi'),
+            trackMTDSigmaTofKVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTrackSigmaTofK'),
+            trackMTDSigmaTofPVMapTag = cms.InputTag('trackExtenderWithMTD', 'generalTrackSigmaTofP'),
+            minTrackVtxWeight = cms.double(0.5),
+            minTrackTimeQuality = cms.double(0.8),
+            probPion = cms.double(0.7),
+            probKaon = cms.double(0.2),
+            probProton = cms.double(0.1),
+            Tstart = cms.double(256),
+            coolingFactor = cms.double(0.5)
+          ),
+          legacy4D = cms.PSet(),
+          algorithm = cms.string('')
+        )
       )
     ),
     verbose = cms.untracked.bool(False),

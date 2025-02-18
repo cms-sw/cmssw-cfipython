@@ -10,6 +10,12 @@ def HeavyIonCSVESProducer(*args, **kwargs):
     weightFile = cms.FileInPath(''),
     sv_cfg = cms.PSet(),
     variables = cms.VPSet(
+      template = cms.PSetTemplate(
+        idx = cms.int32(0),
+        default = cms.double(1),
+        name = cms.string(''),
+        taggingVarName = cms.string('')
+      )
     ),
     appendToDataLabel = cms.string('')
   )

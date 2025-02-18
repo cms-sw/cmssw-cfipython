@@ -15,6 +15,22 @@ def PFRecoTauDiscriminationByHPSSelection(*args, **kwargs):
         minPi0Mass = cms.double(-1000),
         nChargedPFCandsMin = cms.uint32(0),
         nTracksMin = cms.uint32(0)
+      ),
+      template = cms.PSetTemplate(
+        minPi0Mass = cms.double(-1000),
+        maxMass = cms.required.string,
+        maxPi0Mass = cms.double(1000000000),
+        nPiZeros = cms.required.uint32,
+        minMass = cms.required.double,
+        nChargedPFCandsMin = cms.uint32(0),
+        nTracksMin = cms.uint32(0),
+        nCharged = cms.required.uint32,
+        applyBendCorrection = cms.PSet(
+          phi = cms.required.bool,
+          eta = cms.required.bool,
+          mass = cms.required.bool
+        ),
+        assumeStripMass = cms.double(-1)
       )
     ),
     matchingCone = cms.double(0.5),

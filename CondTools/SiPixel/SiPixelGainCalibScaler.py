@@ -18,6 +18,13 @@ def SiPixelGainCalibScaler(*args, **kwargs):
         offset = cms.double(-60),
         offsetL1 = cms.double(-670),
         phase = cms.uint32(1)
+      ),
+      template = cms.PSetTemplate(
+        phase = cms.required.uint32,
+        conversionFactor = cms.required.double,
+        conversionFactorL1 = cms.required.double,
+        offset = cms.required.double,
+        offsetL1 = cms.required.double
       )
     ),
     verbose = cms.untracked.bool(False),

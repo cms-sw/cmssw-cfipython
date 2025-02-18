@@ -33,6 +33,16 @@ def EcalMustacheSCParametersESProducer(*args, **kwargs):
           0.000699995,
           -0.00554331
         )
+      ),
+      template = cms.PSetTemplate(
+        log10EMin = cms.required.double,
+        etaMin = cms.required.double,
+        pUp = cms.required.vdouble,
+        pLow = cms.required.vdouble,
+        w0Up = cms.required.vdouble,
+        w1Up = cms.required.vdouble,
+        w0Low = cms.required.vdouble,
+        w1Low = cms.required.vdouble
       )
     ),
     appendToDataLabel = cms.string('')

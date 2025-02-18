@@ -20,6 +20,11 @@ def SiStripCondVisualizer(*args, **kwargs):
           '0x1e0c0000-0x1c040000',
           '0x1e0c0000-0x1c080000'
         )
+      ),
+      template = cms.PSetTemplate(
+        detSelection = cms.required.uint32,
+        detLabel = cms.required.string,
+        selection = cms.required.untracked.vstring
       )
     ),
     mightGet = cms.optional.untracked.vstring

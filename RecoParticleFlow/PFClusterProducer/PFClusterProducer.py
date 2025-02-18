@@ -5,18 +5,35 @@ def PFClusterProducer(*args, **kwargs):
     recHitsSource = cms.InputTag(''),
     usePFThresholdsFromDB = cms.bool(False),
     recHitCleaners = cms.VPSet(
+      template = cms.PSetTemplate(
+        algoName = cms.string('')
+      )
     ),
     seedCleaners = cms.VPSet(
+      template = cms.PSetTemplate(
+        algoName = cms.string(''),
+        RecHitFlagsToBeExcluded = cms.vstring()
+      )
     ),
     seedFinder = cms.PSet(
       algoName = cms.string(''),
       nNeighbours = cms.int32(0),
       thresholdsByDetector = cms.VPSet(
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          seedingThreshold = cms.double(0),
+          seedingThresholdPt = cms.double(0)
+        )
       )
     ),
     initialClusteringStep = cms.PSet(
       algoName = cms.string(''),
       thresholdsByDetector = cms.VPSet(
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          gatheringThreshold = cms.double(0),
+          gatheringThresholdPt = cms.double(0)
+        )
       ),
       useCornerCells = cms.bool(False),
       clusterSrc = cms.InputTag(''),
@@ -47,6 +64,11 @@ def PFClusterProducer(*args, **kwargs):
         minFractionInCalc = cms.double(0),
         posCalcNCrystals = cms.int32(-1),
         logWeightDenominatorByDetector = cms.VPSet(
+          template = cms.PSetTemplate(
+            detector = cms.string(''),
+            depths = cms.vint32(),
+            logWeightDenominator = cms.vdouble()
+          )
         ),
         logWeightDenominator = cms.double(0),
         minAllowedNormalization = cms.double(0),
@@ -74,6 +96,11 @@ def PFClusterProducer(*args, **kwargs):
         minFractionInCalc = cms.double(0),
         posCalcNCrystals = cms.int32(-1),
         logWeightDenominatorByDetector = cms.VPSet(
+          template = cms.PSetTemplate(
+            detector = cms.string(''),
+            depths = cms.vint32(),
+            logWeightDenominator = cms.vdouble()
+          )
         ),
         logWeightDenominator = cms.double(0),
         minAllowedNormalization = cms.double(0),
@@ -114,6 +141,10 @@ def PFClusterProducer(*args, **kwargs):
         timeResolutionCalc = cms.PSet()
       ),
       recHitEnergyNorms = cms.VPSet(
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          recHitEnergyNorm = cms.double(0)
+        )
       ),
       showerSigma = cms.double(1.5),
       stoppingTolerance = cms.double(1e-08),

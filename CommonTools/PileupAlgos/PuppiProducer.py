@@ -56,6 +56,36 @@ def PuppiProducer(*args, **kwargs):
             useCharged = cms.bool(False)
           )
         )
+      ),
+      template = cms.PSetTemplate(
+        puppiAlgos = cms.VPSet(
+          cms.PSet(
+            algoId = cms.int32(5),
+            applyLowPUCorr = cms.bool(False),
+            combOpt = cms.int32(5),
+            cone = cms.double(0.4),
+            rmsPtMin = cms.double(0.1),
+            rmsScaleFactor = cms.double(1),
+            useCharged = cms.bool(False)
+          ),
+          template = cms.PSetTemplate(
+            algoId = cms.int32(5),
+            useCharged = cms.bool(False),
+            applyLowPUCorr = cms.bool(False),
+            combOpt = cms.int32(5),
+            cone = cms.double(0.4),
+            rmsPtMin = cms.double(0.1),
+            rmsScaleFactor = cms.double(1)
+          )
+        ),
+        etaMin = cms.vdouble(0),
+        etaMax = cms.vdouble(2.5),
+        ptMin = cms.vdouble(0),
+        MinNeutralPt = cms.vdouble(0.2),
+        MinNeutralPtSlope = cms.vdouble(0.015),
+        RMSEtaSF = cms.vdouble(1),
+        MedEtaSF = cms.vdouble(1),
+        EtaMaxExtrap = cms.double(2)
       )
     ),
     mightGet = cms.optional.untracked.vstring

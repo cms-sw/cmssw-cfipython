@@ -19,6 +19,15 @@ def PFRecoTauDiscriminationAgainstMuonSimple(*args, **kwargs):
         maxNumberOfMatches = cms.int32(1),
         maxNumberOfRPCMuons = cms.int32(-1),
         maxNumberOfSTAMuons = cms.int32(-1)
+      ),
+      template = cms.PSetTemplate(
+        IDname = cms.required.string,
+        HoPMin = cms.required.double,
+        maxNumberOfMatches = cms.required.int32,
+        doCaloMuonVeto = cms.required.bool,
+        maxNumberOfHitsLast2Stations = cms.required.int32,
+        maxNumberOfSTAMuons = cms.required.int32,
+        maxNumberOfRPCMuons = cms.required.int32
       )
     ),
     IDdefinitions = cms.VPSet(

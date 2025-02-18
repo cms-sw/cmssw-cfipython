@@ -6,6 +6,9 @@ def EcalBarrelClusterFastTimer(*args, **kwargs):
     resolutionModels = cms.VPSet(
       cms.PSet(
         modelName = cms.string('PerfectResolutionModel')
+      ),
+      template = cms.PSetTemplate(
+        modelName = cms.string('PerfectResolutionModel')
       )
     ),
     timedVertices = cms.InputTag('offlinePrimaryVertices4D'),

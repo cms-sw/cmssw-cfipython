@@ -5,6 +5,12 @@ def Phase1L1TJetCalibrator(*args, **kwargs):
     inputCollectionTag = cms.InputTag('l1tPhase1JetProducer', 'UncalibratedPhase1L1TJetFromPfCandidates'),
     absEtaBinning = cms.required.vdouble,
     calibration = cms.VPSet(
+      template = cms.PSetTemplate(
+        etaMax = cms.required.double,
+        etaMin = cms.required.double,
+        l1tCalibrationFactors = cms.required.vdouble,
+        l1tPtBins = cms.required.vdouble
+      )
     ),
     outputCollectionName = cms.string('Phase1L1TJetFromPfCandidates'),
     mightGet = cms.optional.untracked.vstring

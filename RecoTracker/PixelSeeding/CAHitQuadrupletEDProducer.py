@@ -13,12 +13,20 @@ def CAHitQuadrupletEDProducer(*args, **kwargs):
       cms.PSet(
         cut = cms.double(-1),
         seedingLayers = cms.string('')
+      ),
+      template = cms.PSetTemplate(
+        seedingLayers = cms.string('BPix1+BPix2+BPix3'),
+        cut = cms.double(0.00125)
       )
     ),
     CAPhiCut_byTriplets = cms.VPSet(
       cms.PSet(
         cut = cms.double(-1),
         seedingLayers = cms.string('')
+      ),
+      template = cms.PSetTemplate(
+        seedingLayers = cms.string('BPix1+BPix2+BPix3'),
+        cut = cms.double(0.00125)
       )
     ),
     CAHardPtCut = cms.double(0),

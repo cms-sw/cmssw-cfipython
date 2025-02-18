@@ -26,6 +26,13 @@ def Phase2L1CaloJetEmulator(*args, **kwargs):
           165.706,
           0.153
         )
+      ),
+      template = cms.PSetTemplate(
+        fit = cms.string('type'),
+        nHits_params = cms.vdouble(
+          1,
+          1
+        )
       )
     ),
     nvtx_to_PU_sub_params = cms.VPSet(
@@ -131,6 +138,14 @@ def Phase2L1CaloJetEmulator(*args, **kwargs):
         nvtx_params = cms.vdouble(
           -0.229562,
           0.05056
+        )
+      ),
+      template = cms.PSetTemplate(
+        calo = cms.string('type'),
+        iEta = cms.string('etaregion'),
+        nvtx_params = cms.vdouble(
+          1,
+          1
         )
       )
     ),

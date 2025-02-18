@@ -265,7 +265,14 @@ def HcalHardcodeCalibrations(*args, **kwargs):
       seedThreshold = cms.double(0.1)
     ),
     SiPMCharacteristics = cms.VPSet(
-      cms.PSet()
+      cms.PSet(),
+      template = cms.PSetTemplate(
+        pixels = cms.int32(1),
+        crosstalk = cms.double(0),
+        nonlin1 = cms.double(1),
+        nonlin2 = cms.double(0),
+        nonlin3 = cms.double(0)
+      )
     ),
     appendToDataLabel = cms.string('')
   )

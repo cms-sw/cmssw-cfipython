@@ -25,11 +25,26 @@ def HLTPPSPerPotTrackFilter(*args, **kwargs):
         detid = cms.uint32(2040004608),
         maxTracks = cms.int32(-1),
         minTracks = cms.int32(2)
+      ),
+      template = cms.PSetTemplate(
+        detid = cms.uint32(0),
+        minTracks = cms.int32(-1),
+        maxTracks = cms.int32(-1)
       )
     ),
     stripFilter = cms.VPSet(
+      template = cms.PSetTemplate(
+        detid = cms.uint32(0),
+        minTracks = cms.int32(-1),
+        maxTracks = cms.int32(-1)
+      )
     ),
     diamondFilter = cms.VPSet(
+      template = cms.PSetTemplate(
+        detid = cms.uint32(0),
+        minTracks = cms.int32(-1),
+        maxTracks = cms.int32(-1)
+      )
     ),
     triggerType = cms.int32(91),
     mightGet = cms.optional.untracked.vstring

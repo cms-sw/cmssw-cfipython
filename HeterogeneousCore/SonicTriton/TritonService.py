@@ -4,6 +4,15 @@ def TritonService(*args, **kwargs):
   mod = cms.Service('TritonService',
     verbose = cms.untracked.bool(False),
     servers = cms.untracked.VPSet(
+      template = cms.PSetTemplate(
+        name = cms.required.untracked.string,
+        address = cms.required.untracked.string,
+        port = cms.required.untracked.uint32,
+        useSsl = cms.untracked.bool(False),
+        rootCertificates = cms.untracked.string(''),
+        privateKey = cms.untracked.string(''),
+        certificateChain = cms.untracked.string('')
+      )
     ),
     fallback = cms.PSet(
       enable = cms.untracked.bool(False),

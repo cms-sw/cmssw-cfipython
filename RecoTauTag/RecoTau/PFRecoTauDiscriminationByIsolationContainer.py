@@ -50,6 +50,10 @@ def PFRecoTauDiscriminationByIsolationContainer(*args, **kwargs):
     rhoConeSize = cms.double(0.5),
     rhoProducer = cms.InputTag('fixedGridRhoFastjetAll'),
     footprintCorrections = cms.VPSet(
+      template = cms.PSetTemplate(
+        selection = cms.required.string,
+        offset = cms.required.string
+      )
     ),
     deltaBetaFactor = cms.string('0.38'),
     applyFootprintCorrection = cms.bool(False),
@@ -78,8 +82,28 @@ def PFRecoTauDiscriminationByIsolationContainer(*args, **kwargs):
     customOuterCone = cms.double(-1),
     particleFlowSrc = cms.InputTag('particleFlow'),
     IDdefinitions = cms.VPSet(
+      template = cms.PSetTemplate(
+        IDname = cms.required.string,
+        storeRawSumPt = cms.bool(False),
+        storeRawPUsumPt = cms.bool(False),
+        storeRawOccupancy = cms.bool(False),
+        storeRawFootprintCorrection = cms.bool(False),
+        storeRawPhotonSumPt_outsideSignalCone = cms.bool(False),
+        ApplyDiscriminationByECALIsolation = cms.bool(False),
+        ApplyDiscriminationByWeightedECALIsolation = cms.bool(False),
+        ApplyDiscriminationByTrackerIsolation = cms.bool(False),
+        applyDeltaBetaCorrection = cms.bool(False),
+        UseAllPFCandsForWeights = cms.bool(False)
+      )
     ),
     IDWPdefinitions = cms.VPSet(
+      template = cms.PSetTemplate(
+        IDname = cms.required.string,
+        referenceRawIDNames = cms.required.vstring,
+        maximumAbsoluteValues = cms.vdouble(),
+        maximumRelativeValues = cms.vdouble(),
+        relativeValueOffsets = cms.vdouble()
+      )
     ),
     mightGet = cms.optional.untracked.vstring
   )

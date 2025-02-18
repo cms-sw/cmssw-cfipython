@@ -9,6 +9,11 @@ def PFMultiDepthClusterProducer(*args, **kwargs):
       allCellsPositionCalc = cms.PSet(
         algoName = cms.string('Basic2DGenericPFlowPositionCalc'),
         logWeightDenominatorByDetector = cms.VPSet(
+          template = cms.PSetTemplate(
+            depths = cms.vint32(),
+            detector = cms.string(''),
+            logWeightDenominator = cms.vdouble()
+          )
         ),
         minAllowedNormalization = cms.double(1e-09),
         minFractionInCalc = cms.double(1e-09),

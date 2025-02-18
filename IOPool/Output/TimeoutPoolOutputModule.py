@@ -23,8 +23,16 @@ def TimeoutPoolOutputModule(*args, **kwargs):
     overrideGUID = cms.untracked.string(''),
     dataset = cms.untracked.PSet(),
     overrideBranchesSplitLevel = cms.untracked.VPSet(
+      template = cms.PSetTemplate(
+        branch = cms.required.untracked.string,
+        splitLevel = cms.required.untracked.int32
+      )
     ),
     branchAliases = cms.untracked.VPSet(
+      template = cms.PSetTemplate(
+        branch = cms.required.untracked.string,
+        alias = cms.required.untracked.string
+      )
     ),
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(

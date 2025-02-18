@@ -23,6 +23,10 @@ def TrackListMerger(*args, **kwargs):
     ),
     newQuality = cms.string('confirmed'),
     setsToMerge = cms.VPSet(
+      template = cms.PSetTemplate(
+        tLists = cms.vint32(),
+        pQual = cms.bool(False)
+      )
     ),
     hasSelector = cms.vint32(
       0,

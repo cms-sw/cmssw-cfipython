@@ -4,6 +4,14 @@ def AreaSeededTrackingRegionsEDProducer(*args, **kwargs):
   mod = cms.EDProducer('AreaSeededTrackingRegionsEDProducer',
     RegionPSet = cms.PSet(
       areas = cms.VPSet(
+        template = cms.PSetTemplate(
+          rmin = cms.double(0),
+          rmax = cms.double(0),
+          zmin = cms.double(0),
+          zmax = cms.double(0),
+          phimin = cms.double(0),
+          phimax = cms.double(0)
+        )
       ),
       operationMode = cms.string('BeamSpotFixed'),
       beamSpot = cms.InputTag('offlineBeamSpot'),

@@ -18,6 +18,23 @@ def EgammaHLTFilteredEcalCandProducer(*args, **kwargs):
           doAnd = cms.double(0),
           useEt = cms.double(0)
         )
+      ),
+      template = cms.PSetTemplate(
+        barrelCut = cms.PSet(
+          cut = cms.double(-1),
+          cutOverE = cms.double(-1),
+          cutOverE2 = cms.double(-1),
+          useEt = cms.bool(False),
+          doAnd = cms.bool(False)
+        ),
+        endcapCut = cms.PSet(
+          cut = cms.double(-1),
+          cutOverE = cms.double(-1),
+          cutOverE2 = cms.double(-1),
+          useEt = cms.bool(False),
+          doAnd = cms.bool(False)
+        ),
+        var = cms.InputTag('hltEgammaHoverE')
       )
     ),
     mightGet = cms.optional.untracked.vstring

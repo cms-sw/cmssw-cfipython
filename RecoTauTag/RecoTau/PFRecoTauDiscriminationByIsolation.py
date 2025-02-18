@@ -58,6 +58,10 @@ def PFRecoTauDiscriminationByIsolation(*args, **kwargs):
     rhoProducer = cms.InputTag('fixedGridRhoFastjetAll'),
     enableHGCalWorkaround = cms.bool(False),
     footprintCorrections = cms.VPSet(
+      template = cms.PSetTemplate(
+        selection = cms.required.string,
+        offset = cms.required.string
+      )
     ),
     deltaBetaFactor = cms.string('0.38'),
     applyFootprintCorrection = cms.bool(False),

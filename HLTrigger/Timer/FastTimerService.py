@@ -28,6 +28,10 @@ def FastTimerService(*args, **kwargs):
     dqmLumiSectionsRange = cms.untracked.uint32(2500),
     dqmPath = cms.untracked.string('HLT/TimerService'),
     highlightModules = cms.untracked.VPSet(
+      template = cms.PSetTemplate(
+        modules = cms.untracked.vstring(),
+        label = cms.untracked.string('producers')
+      )
     )
   )
   for a in args:

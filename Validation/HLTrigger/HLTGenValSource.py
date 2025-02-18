@@ -70,6 +70,16 @@ def HLTGenValSource(*args, **kwargs):
           10
         ),
         vsVar = cms.string('eta')
+      ),
+      template = cms.PSetTemplate(
+        vsVar = cms.required.string,
+        binLowEdges = cms.required.vdouble,
+        rangeCuts = cms.VPSet(
+          template = cms.PSetTemplate(
+            rangeVar = cms.string(''),
+            allowedRanges = cms.vstring()
+          )
+        )
       )
     ),
     histConfigs2D = cms.VPSet(
@@ -120,9 +130,26 @@ def HLTGenValSource(*args, **kwargs):
         ),
         vsVarX = cms.string('pt'),
         vsVarY = cms.string('eta')
+      ),
+      template = cms.PSetTemplate(
+        vsVarX = cms.required.string,
+        vsVarY = cms.required.string,
+        binLowEdgesX = cms.required.vdouble,
+        binLowEdgesY = cms.required.vdouble,
+        rangeCuts = cms.VPSet(
+          template = cms.PSetTemplate(
+            rangeVar = cms.string(''),
+            allowedRanges = cms.vstring()
+          )
+        )
       )
     ),
     binnings = cms.VPSet(
+      template = cms.PSetTemplate(
+        name = cms.required.string,
+        vsVar = cms.required.string,
+        binLowEdges = cms.required.vdouble
+      )
     ),
     mightGet = cms.optional.untracked.vstring
   )

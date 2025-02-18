@@ -89,6 +89,41 @@ def PFBlockProducer(*args, **kwargs):
       cms.PSet(
         importerName = cms.string('GenericClusterImporter'),
         source = cms.InputTag('particleFlowClusterPS')
+      ),
+      template = cms.PSetTemplate(
+        importerName = cms.string(''),
+        source = cms.InputTag(''),
+        gsfsAreSecondary = cms.bool(False),
+        superClustersArePF = cms.bool(False),
+        source_eb = cms.InputTag(''),
+        source_ee = cms.InputTag(''),
+        maximumHoverE = cms.double(0),
+        minSuperClusterPt = cms.double(0),
+        minPTforBypass = cms.double(0),
+        hbheRecHitsTag = cms.InputTag(''),
+        maxSeverityHB = cms.int32(0),
+        maxSeverityHE = cms.int32(0),
+        usePFThresholdsFromDB = cms.bool(False),
+        vetoEndcap = cms.bool(False),
+        muonSrc = cms.InputTag(''),
+        trackQuality = cms.string(''),
+        cleanBadConvertedBrems = cms.bool(False),
+        useIterativeTracking = cms.bool(False),
+        DPtOverPtCuts_byTrackAlgo = cms.vdouble(),
+        NHitCuts_byTrackAlgo = cms.vuint32(),
+        muonMaxDPtOPt = cms.double(0),
+        BCtoPFCMap = cms.InputTag(''),
+        maxDPtOPt = cms.double(0),
+        vetoMode = cms.uint32(0),
+        vetoSrc = cms.InputTag(''),
+        timeValueMap = cms.InputTag(''),
+        timeErrorMap = cms.InputTag(''),
+        timeQualityMap = cms.InputTag(''),
+        timeQualityThreshold = cms.double(0),
+        timeValueMapGsf = cms.InputTag(''),
+        timeErrorMapGsf = cms.InputTag(''),
+        timeQualityMapGsf = cms.InputTag(''),
+        useTimeQuality = cms.bool(False)
       )
     ),
     linkDefinitions = cms.VPSet(
@@ -187,6 +222,17 @@ def PFBlockProducer(*args, **kwargs):
         linkType = cms.string('SC:ECAL'),
         linkerName = cms.string('SCAndECALLinker'),
         useKDTree = cms.bool(False)
+      ),
+      template = cms.PSetTemplate(
+        linkerName = cms.string(''),
+        linkType = cms.string(''),
+        useKDTree = cms.bool(False),
+        trajectoryLayerEntrance = cms.string(''),
+        trajectoryLayerExit = cms.string(''),
+        nMaxHcalLinksPerTrack = cms.int32(0),
+        minAbsEtaEcal = cms.double(0),
+        useConvertedBrems = cms.bool(False),
+        SuperClusterMatchByRef = cms.bool(False)
       )
     ),
     mightGet = cms.optional.untracked.vstring

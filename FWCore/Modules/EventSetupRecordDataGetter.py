@@ -4,6 +4,10 @@ def EventSetupRecordDataGetter(*args, **kwargs):
   mod = cms.EDAnalyzer('EventSetupRecordDataGetter',
     verbose = cms.untracked.bool(False),
     toGet = cms.VPSet(
+      template = cms.PSetTemplate(
+        record = cms.required.string,
+        data = cms.required.vstring
+      )
     ),
     mightGet = cms.optional.untracked.vstring
   )

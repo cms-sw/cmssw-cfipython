@@ -7,6 +7,10 @@ def L2TauNNProducer(*args, **kwargs):
       cms.PSet(
         L1CollectionName = cms.string('DoubleTau'),
         L1TauTrigger = cms.InputTag('hltL1sDoubleTauBigOR')
+      ),
+      template = cms.PSetTemplate(
+        L1CollectionName = cms.string('DoubleTau'),
+        L1TauTrigger = cms.InputTag('hltL1sDoubleTauBigOR')
       )
     ),
     hbheInput = cms.InputTag('hltHbhereco'),

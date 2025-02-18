@@ -13,6 +13,15 @@ def HLTEcalEEDigisInRegionsProducer(*args, **kwargs):
         maxEt = cms.double(-1),
         minEt = cms.double(-1),
         type = cms.string('RecoEcalCandidate')
+      ),
+      template = cms.PSetTemplate(
+        type = cms.required.string,
+        minEt = cms.required.double,
+        maxEt = cms.required.double,
+        maxDeltaR = cms.required.double,
+        maxDEta = cms.required.double,
+        maxDPhi = cms.required.double,
+        inputColl = cms.required.InputTag
       )
     ),
     mightGet = cms.optional.untracked.vstring

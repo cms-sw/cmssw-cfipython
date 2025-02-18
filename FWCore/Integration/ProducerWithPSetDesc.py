@@ -188,9 +188,25 @@ def ProducerWithPSetDesc(*args, **kwargs):
       ouDrinks = cms.untracked.uint32(5)
     ),
     test104 = cms.untracked.VPSet(
-      cms.PSet()
+      cms.PSet(),
+      template = cms.PSetTemplate(
+        Drinks = cms.uint32(5),
+        uDrinks = cms.untracked.uint32(5),
+        oDrinks = cms.uint32(5),
+        ouDrinks = cms.untracked.uint32(5),
+        ndoDrinks = cms.optional.uint32,
+        ndouDrinks = cms.optional.untracked.uint32
+      )
     ),
     test105 = cms.untracked.VPSet(
+      template = cms.PSetTemplate(
+        Drinks = cms.uint32(5),
+        uDrinks = cms.untracked.uint32(5),
+        oDrinks = cms.uint32(5),
+        ouDrinks = cms.untracked.uint32(5),
+        ndoDrinks = cms.optional.uint32,
+        ndouDrinks = cms.optional.untracked.uint32
+      )
     ),
     test1 = cms.double(0.1),
     test2 = cms.double(0.2),
@@ -227,6 +243,35 @@ def ProducerWithPSetDesc(*args, **kwargs):
           cms.PSet(),
           cms.PSet(
             xvalue = cms.int32(17)
+          )
+        )
+      ),
+      template = cms.PSetTemplate(
+        Drinks = cms.uint32(5),
+        uDrinks = cms.untracked.uint32(5),
+        oDrinks = cms.uint32(5),
+        ouDrinks = cms.untracked.uint32(5),
+        ndoDrinks = cms.optional.uint32,
+        ndouDrinks = cms.optional.untracked.uint32,
+        testDeeplyNested = cms.PSet(
+          bswitch = cms.bool(False),
+          bvalue1 = cms.double(101),
+          bvalue2 = cms.double(101),
+          iswitch = cms.int32(1),
+          ivalue1 = cms.double(101),
+          ivalue2 = cms.untracked.double(101),
+          sswitch = cms.string('1'),
+          svalue1 = cms.double(101),
+          svalue2 = cms.double(101),
+          testint = cms.int32(1000)
+        ),
+        anotherVPSet = cms.VPSet(
+          cms.PSet(),
+          cms.PSet(
+            xvalue = cms.int32(100)
+          ),
+          template = cms.PSetTemplate(
+            xvalue = cms.int32(7)
           )
         )
       )
@@ -347,6 +392,7 @@ def ProducerWithPSetDesc(*args, **kwargs):
     ),
     plugin1 = cms.PSet(),
     plugin2 = cms.VPSet(
+      template = cms.PSetTemplate()
     ),
     plugin3 = cms.VPSet(
       cms.PSet(
@@ -355,7 +401,8 @@ def ProducerWithPSetDesc(*args, **kwargs):
       cms.PSet(
         type = cms.string('edmtestAnotherValueMaker'),
         value = cms.int32(11)
-      )
+      ),
+      template = cms.PSetTemplate()
     ),
     plugin4 = cms.PSet(
       value = cms.int32(5),
@@ -370,6 +417,12 @@ def ProducerWithPSetDesc(*args, **kwargs):
       cms.PSet(
         type = cms.string('edmtestAnotherMakerWithRecursivePlugin'),
         value = cms.int32(11)
+      ),
+      template = cms.PSetTemplate(
+        value = cms.int32(5),
+        pluginRecursive = cms.PSet(),
+        type = cms.string('edmtestAnotherMakerWithRecursivePlugin')
+      
       )
     ),
     mightGet = cms.optional.untracked.vstring

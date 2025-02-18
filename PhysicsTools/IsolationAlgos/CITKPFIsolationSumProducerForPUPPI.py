@@ -8,7 +8,22 @@ def CITKPFIsolationSumProducerForPUPPI(*args, **kwargs):
     isolationConeDefinitions = cms.VPSet(
       cms.PSet(),
       cms.PSet(),
-      cms.PSet()
+      cms.PSet(),
+      template = cms.PSetTemplate(
+        isolationAlgo = cms.string('no default'),
+        coneSize = cms.double(0.3),
+        isolateAgainst = cms.string('no default'),
+        miniAODVertexCodes = cms.vuint32(
+          2,
+          3
+        ),
+        VetoConeSizeBarrel = cms.double(0),
+        VetoConeSizeEndcaps = cms.double(0),
+        VetoThreshold = cms.double(0),
+        VetoConeSize = cms.double(0),
+        vertexIndex = cms.int32(0),
+        particleBasedIsolation = cms.InputTag('no default')
+      )
     ),
     usePUPPINoLepton = cms.bool(False),
     mightGet = cms.optional.untracked.vstring

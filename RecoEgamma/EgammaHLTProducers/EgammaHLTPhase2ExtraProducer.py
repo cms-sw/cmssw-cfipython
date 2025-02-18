@@ -30,6 +30,10 @@ def EgammaHLTPhase2ExtraProducer(*args, **kwargs):
       cms.PSet(
         label = cms.string('HGCHEBRecHits'),
         src = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits')
+      ),
+      template = cms.PSetTemplate(
+        src = cms.InputTag(''),
+        label = cms.string('')
       )
     ),
     mightGet = cms.optional.untracked.vstring

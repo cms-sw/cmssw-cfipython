@@ -36,6 +36,17 @@ def HLTMuonL1RegionalFilter(*args, **kwargs):
           6,
           7
         )
+      ),
+      template = cms.PSetTemplate(
+        EtaRange = cms.vdouble(
+          -2.5,
+          2.5
+        ),
+        MinPt = cms.double(20),
+        QualityBits = cms.vuint32(
+          6,
+          7
+        )
       )
     ),
     mightGet = cms.optional.untracked.vstring

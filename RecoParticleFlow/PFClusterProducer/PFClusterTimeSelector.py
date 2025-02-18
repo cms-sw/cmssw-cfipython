@@ -83,6 +83,14 @@ def PFClusterTimeSelector(*args, **kwargs):
         maxTime = cms.double(5),
         minEnergy = cms.double(20),
         minTime = cms.double(-5)
+      ),
+      template = cms.PSetTemplate(
+        depth = cms.double(1),
+        minEnergy = cms.double(0),
+        maxEnergy = cms.double(1e+24),
+        endcap = cms.bool(False),
+        minTime = cms.double(-50),
+        maxTime = cms.double(50)
       )
     ),
     mightGet = cms.optional.untracked.vstring

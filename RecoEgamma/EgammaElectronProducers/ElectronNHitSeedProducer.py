@@ -65,6 +65,21 @@ def ElectronNHitSeedProducer(*args, **kwargs):
           ),
           dRZMaxLowEtThres = cms.double(0.09),
           version = cms.int32(1)
+        ),
+        template = cms.PSetTemplate(
+          version = cms.int32(1),
+          dPhiMax = cms.double(0.04),
+          dRZMax = cms.double(0.09),
+          dRZMaxLowEtThres = cms.double(20),
+          dRZMaxLowEtEtaBins = cms.vdouble(
+            1,
+            1.5
+          ),
+          dRZMaxLowEt = cms.vdouble(
+            0.09,
+            0.15,
+            0.09
+          )
         )
       )
     ),

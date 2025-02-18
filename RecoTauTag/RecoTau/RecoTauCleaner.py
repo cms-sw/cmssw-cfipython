@@ -55,6 +55,18 @@ def RecoTauCleaner(*args, **kwargs):
         selectionFailValue = cms.double(1000),
         selectionPassFunction = cms.string('isolationPFChargedHadrCandsPtSum() + isolationPFGammaCandsEtSum()'),
         tolerance = cms.double(0)
+      ),
+      template = cms.PSetTemplate(
+        plugin = cms.required.string,
+        tolerance = cms.double(0),
+        name = cms.required.string,
+        passForCharge = cms.optional.int32,
+        selectionFailValue = cms.optional.double,
+        nprongs = cms.optional.vuint32,
+        src = cms.optional.InputTag,
+        minTrackPt = cms.optional.double,
+        selection = cms.optional.string,
+        selectionPassFunction = cms.optional.string
       )
     ),
     verbosity = cms.int32(0),

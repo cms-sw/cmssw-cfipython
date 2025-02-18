@@ -29,6 +29,11 @@ def alpaka_cuda_async_PFClusterSoAProducer(*args, **kwargs):
             0.275
           ),
           seedingThresholdPt = cms.double(0)
+        ),
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          seedingThreshold = cms.vdouble(),
+          seedingThresholdPt = cms.double(0)
         )
       )
     ),
@@ -54,6 +59,10 @@ def alpaka_cuda_async_PFClusterSoAProducer(*args, **kwargs):
             0.2,
             0.2
           )
+        ),
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          gatheringThreshold = cms.vdouble()
         )
       )
     ),
@@ -85,6 +94,10 @@ def alpaka_cuda_async_PFClusterSoAProducer(*args, **kwargs):
             0.2,
             0.2
           )
+        ),
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          recHitEnergyNorm = cms.vdouble()
         )
       ),
       positionCalc = cms.PSet(

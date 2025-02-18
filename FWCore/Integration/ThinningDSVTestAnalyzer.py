@@ -11,8 +11,16 @@ def ThinningDSVTestAnalyzer(*args, **kwargs):
     thinnedIsAlias = cms.bool(False),
     refToParentIsAvailable = cms.bool(True),
     expectedParentContent = cms.VPSet(
+      template = cms.PSetTemplate(
+        id = cms.required.uint32,
+        values = cms.vint32()
+      )
     ),
     expectedThinnedContent = cms.VPSet(
+      template = cms.PSetTemplate(
+        id = cms.required.uint32,
+        values = cms.vint32()
+      )
     ),
     expectedIndexesIntoParent = cms.vuint32(),
     associationShouldBeDropped = cms.bool(False),

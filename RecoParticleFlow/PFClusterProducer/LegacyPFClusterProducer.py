@@ -56,6 +56,11 @@ def LegacyPFClusterProducer(*args, **kwargs):
             0.2,
             0.2
           )
+        ),
+        template = cms.PSetTemplate(
+          detector = cms.string(''),
+          depths = cms.vint32(),
+          recHitEnergyNorm = cms.vdouble()
         )
       ),
       positionCalc = cms.PSet(
@@ -98,6 +103,11 @@ def LegacyPFClusterProducer(*args, **kwargs):
               0.2,
               0.2
             )
+          ),
+          template = cms.PSetTemplate(
+            detector = cms.string(''),
+            depths = cms.vint32(),
+            logWeightDenominator = cms.vdouble()
           )
         ),
         minAllowedNormalization = cms.double(1e-09),
@@ -144,6 +154,11 @@ def LegacyPFClusterProducer(*args, **kwargs):
               0.2,
               0.2
             )
+          ),
+          template = cms.PSetTemplate(
+            detector = cms.string(''),
+            depths = cms.vint32(),
+            logWeightDenominator = cms.vdouble()
           )
         ),
         minAllowedNormalization = cms.double(1e-09),

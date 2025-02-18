@@ -8,6 +8,11 @@ def RecoTauDiscriminantCutMultiplexer(*args, **kwargs):
       cms.PSet(
         category = cms.uint32(0),
         cut = cms.string('fixme')
+      ),
+      template = cms.PSetTemplate(
+        category = cms.uint32(0),
+        cut = cms.required.string,
+        variable = cms.optional.string
       )
     ),
     rawValues = cms.vstring('discriminator'),

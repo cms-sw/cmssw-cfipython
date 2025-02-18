@@ -59,6 +59,14 @@ def PFRecoTauDiscriminationAgainstMuon2Container(*args, **kwargs):
         doCaloMuonVeto = cms.bool(False),
         maxNumberOfHitsLast2Stations = cms.int32(0),
         maxNumberOfMatches = cms.int32(0)
+      ),
+      template = cms.PSetTemplate(
+        IDname = cms.required.string,
+        discriminatorOption = cms.required.string,
+        HoPMin = cms.required.double,
+        maxNumberOfMatches = cms.required.int32,
+        doCaloMuonVeto = cms.required.bool,
+        maxNumberOfHitsLast2Stations = cms.required.int32
       )
     ),
     IDdefinitions = cms.VPSet(

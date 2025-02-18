@@ -9,6 +9,10 @@ def GenWeightsTableProducer(*args, **kwargs):
       'source'
     ),
     preferredPDFs = cms.VPSet(
+      template = cms.PSetTemplate(
+        name = cms.required.string,
+        lhaid = cms.required.uint32
+      )
     ),
     namedWeightIDs = cms.required.vstring,
     namedWeightLabels = cms.required.vstring,

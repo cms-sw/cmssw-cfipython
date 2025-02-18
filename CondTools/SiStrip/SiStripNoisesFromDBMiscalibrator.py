@@ -3,7 +3,14 @@ import FWCore.ParameterSet.Config as cms
 def SiStripNoisesFromDBMiscalibrator(*args, **kwargs):
   mod = cms.EDAnalyzer('SiStripNoisesFromDBMiscalibrator',
     params = cms.VPSet(
-      cms.PSet()
+      cms.PSet(),
+      template = cms.PSetTemplate(
+        partition = cms.string('Tracker'),
+        doScale = cms.bool(True),
+        doSmear = cms.bool(True),
+        scaleFactor = cms.double(1),
+        smearFactor = cms.double(1)
+      )
     ),
     printDebug = cms.untracked.uint32(10),
     perDetIDdebug = cms.untracked.bool(False),

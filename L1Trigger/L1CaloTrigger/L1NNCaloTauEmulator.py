@@ -30,6 +30,10 @@ def L1NNCaloTauEmulator(*args, **kwargs):
         cms.PSet(
           name = cms.string('triggerCells90percent'),
           value = cms.string('triggerCells90percent()')
+        ),
+        template = cms.PSetTemplate(
+          name = cms.required.string,
+          value = cms.required.string
         )
       ),
       weightsFile = cms.string('L1Trigger/Phase2L1ParticleFlow/data/hgcal_egID/Photon_Pion_vs_Neutrino_BDTweights_1116.xml.gz'),

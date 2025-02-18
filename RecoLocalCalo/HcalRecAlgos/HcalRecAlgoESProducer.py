@@ -77,6 +77,11 @@ def HcalRecAlgoESProducer(*args, **kwargs):
         ),
         Level = cms.int32(20),
         RecHitFlags = cms.vstring('')
+      ),
+      template = cms.PSetTemplate(
+        RecHitFlags = cms.vstring(''),
+        ChannelStatus = cms.vstring(''),
+        Level = cms.int32(0)
       )
     ),
     DropChannelStatusBits = cms.vstring(

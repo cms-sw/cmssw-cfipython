@@ -13,6 +13,13 @@ def TotemRPUVPatternFinder(*args, **kwargs):
     allowAmbiguousCombination = cms.bool(False),
     max_a_toFit = cms.double(10),
     exceptionalSettings = cms.VPSet(
+      template = cms.PSetTemplate(
+        rpId = cms.required.uint32,
+        minPlanesPerProjectionToFit_U = cms.required.uint32,
+        minPlanesPerProjectionToFit_V = cms.required.uint32,
+        threshold_U = cms.required.double,
+        threshold_V = cms.required.double
+      )
     ),
     mightGet = cms.optional.untracked.vstring
   )

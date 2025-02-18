@@ -11,6 +11,10 @@ def SiPixelQualityESProducer(*args, **kwargs):
       cms.PSet(
         record = cms.string('SiPixelDetVOffRcd'),
         tag = cms.string('')
+      ),
+      template = cms.PSetTemplate(
+        record = cms.string('SiPixelQualityFromDbRcd'),
+        tag = cms.string('')
       )
     ),
     appendToDataLabel = cms.string('')

@@ -43,6 +43,14 @@ def HLTEcalUncalibratedRecHitInAllL1RegionsProducer(*args, **kwargs):
         regionEtaMargin = cms.double(0.4),
         regionPhiMargin = cms.double(0.5),
         type = cms.string('EGamma')
+      ),
+      template = cms.PSetTemplate(
+        type = cms.required.string,
+        minEt = cms.required.double,
+        maxEt = cms.required.double,
+        regionEtaMargin = cms.required.double,
+        regionPhiMargin = cms.required.double,
+        inputColl = cms.required.InputTag
       )
     ),
     mightGet = cms.optional.untracked.vstring

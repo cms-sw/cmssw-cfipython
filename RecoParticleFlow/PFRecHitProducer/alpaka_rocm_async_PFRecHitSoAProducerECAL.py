@@ -6,6 +6,10 @@ def alpaka_rocm_async_PFRecHitSoAProducerECAL(*args, **kwargs):
       cms.PSet(
         params = cms.ESInputTag('', ''),
         src = cms.InputTag('')
+      ),
+      template = cms.PSetTemplate(
+        src = cms.InputTag(''),
+        params = cms.ESInputTag('', '')
       )
     ),
     topology = cms.ESInputTag('', ''),

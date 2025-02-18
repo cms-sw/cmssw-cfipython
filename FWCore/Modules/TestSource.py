@@ -14,7 +14,11 @@ def TestSource(*args, **kwargs):
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False),
     transitions = cms.untracked.VPSet(
-      cms.PSet()
+      cms.PSet(),
+      template = cms.PSetTemplate(
+        type = cms.required.untracked.string,
+        id = cms.required.untracked.EventID
+      )
     )
   )
   for a in args:

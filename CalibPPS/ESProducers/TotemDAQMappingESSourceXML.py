@@ -11,6 +11,11 @@ def TotemDAQMappingESSourceXML(*args, **kwargs):
         mappingFileNames = cms.vstring(),
         maskFileNames = cms.vstring(),
         validityRange = cms.EventRange('1:1-1:18446744073709551615')
+      ),
+      template = cms.PSetTemplate(
+        validityRange = cms.EventRange('1:1-1:18446744073709551615'),
+        mappingFileNames = cms.vstring(),
+        maskFileNames = cms.vstring()
       )
     ),
     appendToDataLabel = cms.string('')

@@ -64,6 +64,10 @@ def TrackingNtuple(*args, **kwargs):
       cms.PSet(
         index = cms.untracked.uint32(10),
         src = cms.untracked.InputTag('tobTecStepClusters')
+      ),
+      template = cms.PSetTemplate(
+        index = cms.required.untracked.uint32,
+        src = cms.required.untracked.InputTag
       )
     ),
     trackingParticles = cms.untracked.InputTag('mix', 'MergedTrackTruth'),

@@ -7,6 +7,10 @@ def PrescaleService(*args, **kwargs):
       cms.PSet(
         pathName = cms.string('HLTPath'),
         prescales = cms.vuint32(1)
+      ),
+      template = cms.PSetTemplate(
+        pathName = cms.required.string,
+        prescales = cms.required.vuint32
       )
     ),
     lvl1DefaultLabel = cms.string('default'),
