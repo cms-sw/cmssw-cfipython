@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .Phase2OTHarvestTrackingParticles import Phase2OTHarvestTrackingParticles
-
-Phase2OTHarvestTrackingParticles = Phase2OTHarvestTrackingParticles()

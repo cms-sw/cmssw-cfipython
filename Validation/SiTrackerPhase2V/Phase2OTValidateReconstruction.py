@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTValidateTrackingParticles(*args, **kwargs):
-  mod = cms.EDProducer('Phase2OTValidateTrackingParticles',
+def Phase2OTValidateReconstruction(*args, **kwargs):
+  mod = cms.EDProducer('Phase2OTValidateReconstruction',
     TH1TrackParts_Eta = cms.PSet(
       Nbinsx = cms.int32(45),
       xmax = cms.double(3),
@@ -81,12 +81,12 @@ def Phase2OTValidateTrackingParticles(*args, **kwargs):
     trackingParticleToken = cms.InputTag('mix', 'MergedTrackTruth'),
     MCTruthStubInputTag = cms.InputTag('TTStubAssociatorFromPixelDigis', 'StubAccepted'),
     MCTruthTrackInputTag = cms.InputTag('TTTrackAssociatorFromPixelDigis', 'Level1TTTracks'),
-    MCTruthClusterInputTag = cms.InputTag('TTClusterAssociatorFromPixelDigis', 'ClusterAccepted'),
+    MCTruthClusterInputTag = cms.InputTag('TTClusterAssociatorFromPixelDigis', 'ClusterInclusive'),
     L1Tk_minNStub = cms.int32(4),
     L1Tk_maxChi2dof = cms.double(25),
     TP_minNStub = cms.int32(4),
     TP_minNLayersStub = cms.int32(4),
-    TP_minPt = cms.double(2),
+    TP_minPt = cms.double(1.5),
     TP_maxEta = cms.double(2.4),
     TP_maxVtxZ = cms.double(15),
     mightGet = cms.optional.untracked.vstring
