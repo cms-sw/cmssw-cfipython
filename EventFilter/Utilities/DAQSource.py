@@ -14,6 +14,7 @@ def DAQSource(*args, **kwargs):
     useL1EventID = cms.untracked.bool(False),
     testTCDSFEDRange = cms.untracked.vuint32(),
     fileListMode = cms.untracked.bool(False),
+    fileDiscoveryMode = cms.untracked.bool(False),
     fileNames = cms.untracked.vstring()
   )
   for a in args:

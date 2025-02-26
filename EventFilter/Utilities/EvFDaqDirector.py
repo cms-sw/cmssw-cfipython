@@ -6,6 +6,8 @@ def EvFDaqDirector(*args, **kwargs):
     buBaseDir = cms.untracked.string('.'),
     buBaseDirsAll = cms.untracked.vstring(),
     buBaseDirsNumStreams = cms.untracked.vint32(),
+    buBaseDirsStreamIDs = cms.untracked.vint32(),
+    sourceIdentifier = cms.untracked.string(''),
     runNumber = cms.untracked.uint32(0),
     useFileBroker = cms.untracked.bool(False),
     fileBrokerHostFromCfg = cms.untracked.bool(True),
