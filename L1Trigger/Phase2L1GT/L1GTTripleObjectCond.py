@@ -180,6 +180,8 @@ def L1GTTripleObjectCond(*args, **kwargs):
     maxInvMass = cms.optional.double,
     minTransMass = cms.optional.double,
     maxTransMass = cms.optional.double,
+    minQualityScoreSum = cms.optional.uint32,
+    maxQualityScoreSum = cms.optional.uint32,
     cosh_eta_lut = cms.PSet(
       lut = cms.required.vint32,
       output_scale_factor = cms.required.double,

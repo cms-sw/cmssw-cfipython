@@ -105,6 +105,8 @@ def L1GTDoubleObjectCond(*args, **kwargs):
       unused_lsbs = cms.required.uint32,
       max_error = cms.required.double
     ),
+    minQualityScoreSum = cms.optional.uint32,
+    maxQualityScoreSum = cms.optional.uint32,
     scales = cms.PSet(
       pT_lsb = cms.required.double,
       phi_lsb = cms.required.double,
