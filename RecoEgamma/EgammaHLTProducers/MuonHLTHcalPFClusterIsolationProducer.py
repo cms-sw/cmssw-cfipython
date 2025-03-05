@@ -27,6 +27,15 @@ def MuonHLTHcalPFClusterIsolationProducer(*args, **kwargs):
       0,
       1.479
     ),
+    doEffAreaCorrection = cms.bool(False),
+    effectiveAreasCorr = cms.vdouble(
+      0,
+      0
+    ),
+    effectiveAreasThres = cms.vdouble(
+      0,
+      0
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
