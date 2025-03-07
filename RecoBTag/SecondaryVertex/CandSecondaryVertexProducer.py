@@ -78,6 +78,7 @@ def CandSecondaryVertexProducer(*args, **kwargs):
     useSVMomentum = cms.bool(False),
     ghostRescaling = cms.double(1e-18),
     relPtTolerance = cms.double(0.001),
+    pvErrorScaling = cms.double(1),
     fatJets = cms.optional.InputTag,
     groomedFatJets = cms.optional.InputTag,
     weights = cms.InputTag(''),

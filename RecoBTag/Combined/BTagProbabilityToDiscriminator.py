@@ -27,14 +27,6 @@ def BTagProbabilityToDiscriminator(*args, **kwargs):
         ),
         name = cms.string('CvsL'),
         numerator = cms.VInputTag('pfDeepCSVJetTags:probc')
-      ),
-      template = cms.PSetTemplate(
-        denominator = cms.VInputTag(),
-        numerator = cms.VInputTag(
-          'pfDeepCSVJetTags:probb',
-          'pfDeepCSVJetTags:probbb'
-        ),
-        name = cms.string('BvsAll')
       )
     ),
     mightGet = cms.optional.untracked.vstring
