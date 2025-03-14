@@ -12,7 +12,7 @@ def TrackstersProducer(*args, **kwargs):
     seeding_regions = cms.InputTag('ticlSeedingRegionProducer'),
     patternRecognitionBy = cms.string('CA'),
     itername = cms.string('unknown'),
-    inferenceAlgo = cms.string('TracksterInferenceByDNN'),
+    inferenceAlgo = cms.string('TracksterInferenceByPFN'),
     pluginPatternRecognitionByCA = cms.PSet(
       algo_verbosity = cms.int32(0),
       oneTracksterPerTrackSeed = cms.bool(False),
@@ -125,8 +125,8 @@ def TrackstersProducer(*args, **kwargs):
     ),
     pluginInferenceAlgoTracksterInferenceByDNN = cms.PSet(
       algo_verbosity = cms.int32(0),
-      onnxPIDModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/patternrecognition/id_v0.onnx'),
-      onnxEnergyModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/patternrecognition/energy_v0.onnx'),
+      onnxPIDModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/DNN/patternrecognition/id_v0.onnx'),
+      onnxEnergyModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/DNN/patternrecognition/energy_v0.onnx'),
       inputNames = cms.vstring('input'),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
@@ -136,6 +136,24 @@ def TrackstersProducer(*args, **kwargs):
       doPID = cms.int32(1),
       doRegression = cms.int32(1),
       type = cms.string('TracksterInferenceByDNN')
+    
+    ),
+    pluginInferenceAlgoTracksterInferenceByPFN = cms.PSet(
+      algo_verbosity = cms.int32(0),
+      onnxPIDModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/PFN/patternrecognition/id_v0.onnx'),
+      onnxEnergyModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/PFN/patternrecognition/energy_v0.onnx'),
+      inputNames = cms.vstring(
+        'input',
+        'input_tr_features'
+      ),
+      output_en = cms.vstring('enreg_output'),
+      output_id = cms.vstring('pid_output'),
+      eid_min_cluster_energy = cms.double(1),
+      eid_n_layers = cms.int32(50),
+      eid_n_clusters = cms.int32(10),
+      doPID = cms.int32(1),
+      doRegression = cms.int32(1),
+      type = cms.string('TracksterInferenceByPFN')
     
     ),
     pluginInferenceAlgoTracksterInferenceByANN = cms.PSet(

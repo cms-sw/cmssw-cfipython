@@ -4,6 +4,7 @@ def AsciiOutputModule(*args, **kwargs):
   mod = cms.OutputModule('AsciiOutputModule',
     prescale = cms.untracked.uint32(1),
     verbosity = cms.untracked.uint32(1),
+    allProvenance = cms.untracked.bool(False),
     outputCommands = cms.untracked.vstring('keep *'),
     SelectEvents = cms.untracked.PSet(
       SelectEvents = cms.optional.vstring

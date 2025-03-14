@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def ESTestAnalyzerK(*args, **kwargs):
-  mod = cms.EDAnalyzer('ESTestAnalyzerK',
+def edmtest_PrintProcessInformation(*args, **kwargs):
+  mod = cms.EDAnalyzer('edmtest::PrintProcessInformation',
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

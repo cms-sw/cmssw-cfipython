@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1CandidateFlatTableProducer import SimpleTriggerL1CandidateFlatTableProducer
+
+simpleTriggerL1CandidateFlatTableProducer = SimpleTriggerL1CandidateFlatTableProducer()

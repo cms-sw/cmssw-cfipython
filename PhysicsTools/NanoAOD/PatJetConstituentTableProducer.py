@@ -12,6 +12,8 @@ def PatJetConstituentTableProducer(*args, **kwargs):
     vertices = cms.InputTag('offlineSlimmedPrimaryVertices'),
     candidates = cms.InputTag('packedPFCandidates'),
     secondary_vertices = cms.InputTag('slimmedSecondaryVertices'),
+    sv_sort = cms.untracked.string('IP'),
+    pf_sort = cms.untracked.string(''),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
