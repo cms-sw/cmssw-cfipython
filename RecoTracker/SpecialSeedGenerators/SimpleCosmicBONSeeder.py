@@ -5,7 +5,7 @@ def SimpleCosmicBONSeeder(*args, **kwargs):
     TTRHBuilder = cms.string('WithTrackAngle'),
     ClusterCheckPSet = cms.PSet(
       doClusterCheck = cms.bool(True),
-      MaxNumberOfStripClusters = cms.uint32(300),
+      MaxNumberOfStripClusters = cms.uint32(1000),
       ClusterCollectionLabel = cms.InputTag('siStripClusters'),
       DontCountDetsAboveNClusters = cms.uint32(20),
       MaxNumberOfPixelClusters = cms.uint32(1000),
