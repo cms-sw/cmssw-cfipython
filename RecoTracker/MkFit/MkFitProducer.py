@@ -8,14 +8,14 @@ def MkFitProducer(*args, **kwargs):
     seeds = cms.InputTag('mkFitSeedConverter'),
     clustersToSkip = cms.InputTag(''),
     buildingRoutine = cms.string('cloneEngine'),
-    config = cms.required.ESInputTag,
+    config = cms.ESInputTag('', ''),
     seedCleaning = cms.bool(True),
     removeDuplicates = cms.bool(True),
     backwardFitInCMSSW = cms.bool(False),
     mkFitSilent = cms.untracked.bool(True),
     limitConcurrency = cms.untracked.bool(False),
     minGoodStripCharge = cms.PSet(
-      value = cms.required.double
+      value = cms.double(-999)
     ),
     mightGet = cms.optional.untracked.vstring
   )

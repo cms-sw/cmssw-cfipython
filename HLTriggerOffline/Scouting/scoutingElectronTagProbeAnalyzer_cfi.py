@@ -2,4 +2,4 @@ import FWCore.ParameterSet.Config as cms
 
 from .ScoutingElectronTagProbeAnalyzer import ScoutingElectronTagProbeAnalyzer
 
-ScoutingElectronTagProbeAnalyzer = ScoutingElectronTagProbeAnalyzer()
+scoutingElectronTagProbeAnalyzer = ScoutingElectronTagProbeAnalyzer()
