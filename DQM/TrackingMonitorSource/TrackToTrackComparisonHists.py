@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def TrackToTrackComparisonHists(*args, **kwargs):
   mod = cms.EDProducer('TrackToTrackComparisonHists',
     requireValidHLTPaths = cms.bool(True),
+    isCosmics = cms.bool(False),
     monitoredTrack = cms.InputTag('hltMergedTracks'),
     monitoredBeamSpot = cms.InputTag('hltOnlineBeamSpot'),
     monitoredPrimaryVertices = cms.InputTag('hltVerticesPFSelector'),
