@@ -14,7 +14,6 @@ def PoolDBESSource(*args, **kwargs):
     snapshotTime = cms.string(''),
     frontierKey = cms.untracked.string(''),
     toGet = cms.VPSet(
-      cms.PSet(),
       template = cms.PSetTemplate(
         record = cms.string(''),
         tag = cms.string(''),
