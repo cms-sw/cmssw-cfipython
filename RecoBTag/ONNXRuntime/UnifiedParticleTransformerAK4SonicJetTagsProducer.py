@@ -1,7 +1,21 @@
 import FWCore.ParameterSet.Config as cms
 
-def UnifiedParticleTransformerAK4ONNXJetTagsProducer(*args, **kwargs):
-  mod = cms.EDProducer('UnifiedParticleTransformerAK4ONNXJetTagsProducer',
+def UnifiedParticleTransformerAK4SonicJetTagsProducer(*args, **kwargs):
+  mod = cms.EDProducer('UnifiedParticleTransformerAK4SonicJetTagsProducer',
+    Client = cms.PSet(
+      mode = cms.string('PseudoAsync'),
+      allowedTries = cms.untracked.uint32(0),
+      verbose = cms.untracked.bool(False),
+      modelName = cms.required.string,
+      modelVersion = cms.string(''),
+      modelConfigPath = cms.required.FileInPath,
+      preferredServer = cms.untracked.string(''),
+      timeout = cms.required.untracked.uint32,
+      timeoutUnit = cms.untracked.string('seconds'),
+      useSharedMemory = cms.untracked.bool(True),
+      compression = cms.untracked.string(''),
+      outputs = cms.untracked.vstring()
+    ),
     src = cms.InputTag('pfUnifiedParticleTransformerAK4TagInfos'),
     input_names = cms.vstring(
       'input_1',
@@ -13,7 +27,6 @@ def UnifiedParticleTransformerAK4ONNXJetTagsProducer(*args, **kwargs):
       'input_7',
       'input_8'
     ),
-    model_path = cms.FileInPath('RecoBTag/Combined/data/UParTAK4/PUPPI/V01/modelfile/model.onnx'),
     output_names = cms.vstring('softmax'),
     flav_names = cms.vstring(
       'probb',
