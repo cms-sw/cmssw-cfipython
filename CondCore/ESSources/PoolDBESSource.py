@@ -23,6 +23,7 @@ def PoolDBESSource(*args, **kwargs):
     RefreshOpenIOVs = cms.untracked.bool(False),
     pfnPostfix = cms.untracked.string(''),
     pfnPrefix = cms.untracked.string(''),
+    recordsToDebug = cms.untracked.vstring(),
     appendToDataLabel = cms.string('')
   )
   for a in args:
