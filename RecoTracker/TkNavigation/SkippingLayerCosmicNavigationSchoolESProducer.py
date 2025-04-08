@@ -2,15 +2,15 @@ import FWCore.ParameterSet.Config as cms
 
 def SkippingLayerCosmicNavigationSchoolESProducer(*args, **kwargs):
   mod = cms.ESProducer('SkippingLayerCosmicNavigationSchoolESProducer',
-    ComponentName = cms.required.string,
-    noPXB = cms.required.bool,
-    noPXF = cms.required.bool,
-    noTIB = cms.required.bool,
-    noTID = cms.required.bool,
-    noTOB = cms.required.bool,
-    noTEC = cms.required.bool,
-    selfSearch = cms.required.bool,
-    allSelf = cms.required.bool,
+    ComponentName = cms.string('CosmicNavigationSchool'),
+    noPXB = cms.bool(False),
+    noPXF = cms.bool(False),
+    noTIB = cms.bool(False),
+    noTID = cms.bool(False),
+    noTOB = cms.bool(False),
+    noTEC = cms.bool(False),
+    selfSearch = cms.bool(True),
+    allSelf = cms.bool(True),
     appendToDataLabel = cms.string('')
   )
   for a in args:
