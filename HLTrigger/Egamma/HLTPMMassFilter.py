@@ -7,6 +7,8 @@ def HLTPMMassFilter(*args, **kwargs):
     beamSpot = cms.InputTag('hltOfflineBeamSpot'),
     lowerMassCut = cms.double(8),
     upperMassCut = cms.double(11),
+    lowerdRCut = cms.double(0),
+    upperdRCut = cms.double(9999),
     nZcandcut = cms.int32(1),
     reqOppCharge = cms.untracked.bool(True),
     isElectron1 = cms.untracked.bool(False),
