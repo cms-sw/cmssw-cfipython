@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalPhase2DigiToPortableProducer_alpaka import EcalPhase2DigiToPortableProducer_alpaka
+
+ecalPhase2DigiToPortableProducer = EcalPhase2DigiToPortableProducer_alpaka()

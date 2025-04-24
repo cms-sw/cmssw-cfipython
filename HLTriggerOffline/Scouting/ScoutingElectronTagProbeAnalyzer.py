@@ -3,8 +3,10 @@ import FWCore.ParameterSet.Config as cms
 def ScoutingElectronTagProbeAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('ScoutingElectronTagProbeAnalyzer',
     OutputInternalPath = cms.string('MY_FOLDER'),
+    BaseTriggerSelection = cms.vstring(),
+    triggerSelection = cms.vstring(),
+    finalfilterSelection = cms.vstring(),
     TriggerResultTag = cms.InputTag('TriggerResults', '', 'HLT'),
-    FilterToMatch = cms.vstring('hltPreDSTHLTMuonRun3PFScoutingPixelTracking'),
     TriggerObjects = cms.InputTag('slimmedPatTrigger'),
     ElectronCollection = cms.InputTag('slimmedElectrons'),
     ScoutingElectronCollection = cms.InputTag('Run3ScoutingElectrons'),
