@@ -10,6 +10,7 @@ def ScoutingMuonTriggerAnalyzer(*args, **kwargs):
     l1tAlgBlkInputTag = cms.InputTag('gtStage2Digis'),
     l1tExtBlkInputTag = cms.InputTag('gtStage2Digis'),
     ReadPrescalesFromFile = cms.bool(False),
+    muonSelection = cms.required.string,
     triggerConfiguration = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
