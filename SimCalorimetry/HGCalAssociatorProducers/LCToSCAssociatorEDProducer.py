@@ -2,6 +2,9 @@ import FWCore.ParameterSet.Config as cms
 
 def LCToSCAssociatorEDProducer(*args, **kwargs):
   mod = cms.EDProducer('LCToSCAssociatorEDProducer',
+    label_scl = cms.InputTag('scAssocByEnergyScoreProducer'),
+    label_lcl = cms.InputTag('mix', 'MergedCaloTruth'),
+    associator = cms.InputTag('hgcalMergeLayerClusters'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

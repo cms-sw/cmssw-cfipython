@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def AllTracksterToSimTracksterAssociatorsByHitsProducer(*args, **kwargs):
   mod = cms.EDProducer('AllTracksterToSimTracksterAssociatorsByHitsProducer',
+    allHitToTSAccoc = cms.string('allHitToTracksterAssociations'),
     tracksterCollections = cms.VInputTag(
       'ticlTrackstersCLUE3DHigh',
       'ticlTrackstersLinks'

@@ -208,6 +208,8 @@ def HGCalValidator(*args, **kwargs):
     label_cp_fake = cms.InputTag('mix', 'MergedCaloTruth'),
     label_scl = cms.InputTag('mix', 'MergedCaloTruth'),
     simVertices = cms.InputTag('g4SimHits'),
+    simTrackstersMap = cms.InputTag('ticlSimTracksters'),
+    hitMap = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     LayerClustersInputMask = cms.VInputTag(
       'ticlTrackstersCLUE3DHigh',
       'ticlSimTracksters:fromCPs',
