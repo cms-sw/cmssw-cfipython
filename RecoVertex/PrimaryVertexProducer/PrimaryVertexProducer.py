@@ -55,7 +55,8 @@ def PrimaryVertexProducer(*args, **kwargs):
             probKaon = cms.double(0.2),
             probProton = cms.double(0.1),
             Tstart = cms.double(256),
-            coolingFactor = cms.double(0.5)
+            coolingFactor = cms.double(0.5),
+            useMVAVtxTime = cms.bool(True)
           ),
           legacy4D = cms.PSet(),
           algorithm = cms.string('')
