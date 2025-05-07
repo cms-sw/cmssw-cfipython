@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleL2MuonTrajectorySeedFlatTableProducer import SimpleL2MuonTrajectorySeedFlatTableProducer
+
+simpleL2MuonTrajectorySeedFlatTableProducer = SimpleL2MuonTrajectorySeedFlatTableProducer()
