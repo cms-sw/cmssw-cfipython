@@ -5,6 +5,7 @@ def L1SeedConePFJetProducer(*args, **kwargs):
     L1PFObjects = cms.InputTag('l1tLayer1', 'Puppi'),
     nJets = cms.uint32(16),
     coneSize = cms.double(0.4),
+    wideConeJet = cms.bool(False),
     HW = cms.bool(False),
     debug = cms.bool(False),
     doCorrections = cms.bool(False),
