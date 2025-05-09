@@ -6,6 +6,7 @@ def timestudy_OneSleepingProducer(*args, **kwargs):
     resource = cms.string(''),
     consumes = cms.VInputTag(),
     eventTimes = cms.required.vdouble,
+    useCacheID = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

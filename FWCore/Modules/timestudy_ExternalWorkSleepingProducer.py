@@ -8,6 +8,7 @@ def timestudy_ExternalWorkSleepingProducer(*args, **kwargs):
     serviceFinishTimes = cms.required.vdouble,
     consumes = cms.VInputTag(),
     eventTimes = cms.required.vdouble,
+    useCacheID = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

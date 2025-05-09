@@ -3,8 +3,8 @@ import FWCore.ParameterSet.Config as cms
 def LSTOutputConverter(*args, **kwargs):
   mod = cms.EDProducer('LSTOutputConverter',
     lstOutput = cms.InputTag('lstProducer'),
-    phase2OTHits = cms.InputTag('lstPhase2OTHitsInputProducer'),
-    lstPixelSeeds = cms.InputTag('lstPixelSeedInputProducer'),
+    lstInput = cms.InputTag('lstInputProducer'),
+    lstPixelSeeds = cms.InputTag('lstInputProducer'),
     includeT5s = cms.bool(True),
     includeNonpLSTSs = cms.bool(False),
     propagatorAlong = cms.ESInputTag('', 'PropagatorWithMaterial'),

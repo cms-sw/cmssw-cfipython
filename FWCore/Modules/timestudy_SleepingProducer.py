@@ -5,6 +5,7 @@ def timestudy_SleepingProducer(*args, **kwargs):
     ivalue = cms.required.int32,
     consumes = cms.VInputTag(),
     eventTimes = cms.required.vdouble,
+    useCacheID = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

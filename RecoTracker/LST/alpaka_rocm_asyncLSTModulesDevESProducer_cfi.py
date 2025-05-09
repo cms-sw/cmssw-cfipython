@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_rocm_async_LSTModulesDevESProducer import alpaka_rocm_async_LSTModulesDevESProducer
-
-alpaka_rocm_asyncLSTModulesDevESProducer = alpaka_rocm_async_LSTModulesDevESProducer()
