@@ -11,6 +11,7 @@ def DAQSource(*args, **kwargs):
     maxBufferedFiles = cms.untracked.uint32(2),
     alwaysStartFromfirstLS = cms.untracked.uint32(0),
     verifyChecksum = cms.untracked.bool(True),
+    inputConsistencyChecks = cms.untracked.bool(True),
     useL1EventID = cms.untracked.bool(False),
     testTCDSFEDRange = cms.untracked.vuint32(),
     fileListMode = cms.untracked.bool(False),

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleRun3ScoutingMuonCollectionFlatTableProducer import SimpleRun3ScoutingMuonCollectionFlatTableProducer
+
+simpleRun3ScoutingMuonCollectionFlatTableProducer = SimpleRun3ScoutingMuonCollectionFlatTableProducer()

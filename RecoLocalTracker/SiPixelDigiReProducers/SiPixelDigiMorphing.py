@@ -3,6 +3,13 @@ import FWCore.ParameterSet.Config as cms
 def SiPixelDigiMorphing(*args, **kwargs):
   mod = cms.EDProducer('SiPixelDigiMorphing',
     src = cms.InputTag('siPixelDigis'),
+    barrelRegions = cms.vstring(
+      '1,1-12,1-2',
+      '1,1-12,7-8',
+      '2,1-28,1',
+      '1,1-28,8'
+    ),
+    endcapRegions = cms.vstring(),
     nrows = cms.int32(160),
     ncols = cms.int32(416),
     nrocs = cms.int32(8),

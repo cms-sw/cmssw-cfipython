@@ -8,6 +8,7 @@ def ElectronEfficiencyPlotter(*args, **kwargs):
     sctElectronID = cms.string(''),
     folder = cms.string(''),
     srcFolder = cms.string(''),
+    triggerSelection = cms.vstring(),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

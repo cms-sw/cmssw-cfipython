@@ -8,6 +8,16 @@ def DaqFakeReader(*args, **kwargs):
     width = cms.untracked.uint32(1024),
     injectErrPpm = cms.untracked.uint32(1024),
     tcdsFEDID = cms.untracked.uint32(1024),
+    subsystems = cms.untracked.vstring(
+      'TCDS',
+      'SiPixel',
+      'SiStrip',
+      'ECAL',
+      'HCAL',
+      'DT',
+      'CSC',
+      'RPC'
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
