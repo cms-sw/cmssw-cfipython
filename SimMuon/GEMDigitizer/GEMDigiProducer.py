@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def GEMDigiProducer(*args, **kwargs):
   mod = cms.EDProducer('GEMDigiProducer',
     inputCollection = cms.string('g4SimHitsMuonGEMHits'),
+    inputCollectionPU = cms.string('g4SimHitsMuonGEMHits'),
     mixLabel = cms.string('mix'),
     signalPropagationSpeed = cms.double(0.66),
     timeResolution = cms.double(10),
