@@ -2,16 +2,13 @@ import FWCore.ParameterSet.Config as cms
 
 def AdaptorConfig(*args, **kwargs):
   mod = cms.Service('AdaptorConfig',
-    enable = cms.untracked.bool(True),
-    stats = cms.untracked.bool(True),
-    cacheHint = cms.untracked.string('auto-detect'),
-    readHint = cms.untracked.string('auto-detect'),
-    tempDir = cms.untracked.string('.:$TMPDIR'),
-    tempMinFree = cms.untracked.double(4),
-    native = cms.untracked.vstring(),
-    storageProxies = cms.untracked.VPSet(
-      template = cms.PSetTemplate()
-    )
+    enable = cms.optional.untracked.bool,
+    stats = cms.optional.untracked.bool,
+    cacheHint = cms.optional.untracked.string,
+    readHint = cms.optional.untracked.string,
+    tempDir = cms.optional.untracked.string,
+    tempMinFree = cms.optional.untracked.double,
+    native = cms.optional.untracked.vstring
   )
   for a in args:
     mod.update_(a)
