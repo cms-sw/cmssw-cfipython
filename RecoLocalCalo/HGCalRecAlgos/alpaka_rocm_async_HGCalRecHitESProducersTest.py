@@ -4,8 +4,10 @@ def alpaka_rocm_async_HGCalRecHitESProducersTest(*args, **kwargs):
   mod = cms.EDProducer('alpaka_rocm_async::HGCalRecHitESProducersTest',
     indexSource = cms.ESInputTag('', ''),
     configSource = cms.ESInputTag('', ''),
-    configParamSource = cms.ESInputTag('', ''),
     calibParamSource = cms.ESInputTag('', ''),
+    maxchans = cms.int32(200),
+    maxfeds = cms.int32(25),
+    fedjson = cms.string(''),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),

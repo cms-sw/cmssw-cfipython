@@ -4,7 +4,6 @@ def alpaka_serial_sync_HGCalRecHitsProducer(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::HGCalRecHitsProducer',
     digis = cms.InputTag('hgcalDigis', 'DIGI', 'TEST'),
     calibSource = cms.ESInputTag('', ''),
-    configSource = cms.ESInputTag('', ''),
     mappingSource = cms.ESInputTag('', ''),
     indexingSource = cms.ESInputTag('', ''),
     n_blocks = cms.int32(-1),

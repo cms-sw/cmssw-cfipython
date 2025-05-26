@@ -6,12 +6,10 @@ def HGCalConfigurationESProducer(*args, **kwargs):
     fedjson = cms.string(''),
     modjson = cms.string(''),
     bePassthroughMode = cms.int32(-1),
-    econPassthroughMode = cms.int32(-1),
     cbHeaderMarker = cms.int32(-1),
     slinkHeaderMarker = cms.int32(-1),
     econdHeaderMarker = cms.int32(-1),
     charMode = cms.int32(-1),
-    gain = cms.int32(-1),
     appendToDataLabel = cms.string('')
   )
   for a in args:

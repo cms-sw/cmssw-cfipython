@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_rocm_async_hgcalrechit_HGCalConfigurationESProducer import alpaka_rocm_async_hgcalrechit_HGCalConfigurationESProducer
-
-alpaka_rocm_asynchgcalrechitHGCalConfigurationESProducer = alpaka_rocm_async_hgcalrechit_HGCalConfigurationESProducer()

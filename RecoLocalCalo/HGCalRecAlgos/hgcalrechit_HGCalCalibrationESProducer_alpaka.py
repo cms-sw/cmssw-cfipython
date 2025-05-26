@@ -4,7 +4,6 @@ def hgcalrechit_HGCalCalibrationESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('hgcalrechit::HGCalCalibrationESProducer@alpaka',
     filename = cms.required.FileInPath,
     indexSource = cms.ESInputTag('', ''),
-    configSource = cms.ESInputTag('', ''),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),

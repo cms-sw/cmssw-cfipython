@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .hgcalrechit_HGCalConfigurationESProducer_alpaka import hgcalrechit_HGCalConfigurationESProducer_alpaka
-
-hgcalrechitHGCalConfigurationESProducer = hgcalrechit_HGCalConfigurationESProducer_alpaka()
