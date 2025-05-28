@@ -2,8 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def ScoutingCollectionMonitor(*args, **kwargs):
   mod = cms.EDProducer('ScoutingCollectionMonitor',
-    OutputInternalPath = cms.string('MY_FOLDER'),
-    triggerresults = cms.InputTag('TriggerResults', '', 'HLT'),
+    onlyScouting = cms.bool(False),
     electrons = cms.InputTag('hltScoutingEgammaPacker'),
     muons = cms.InputTag('hltScoutingMuonPackerNoVtx'),
     pfcands = cms.InputTag('hltScoutingPFPacker'),
@@ -15,6 +14,8 @@ def ScoutingCollectionMonitor(*args, **kwargs):
     pfMetPt = cms.InputTag('hltScoutingPFPacker', 'pfMetPt'),
     pfMetPhi = cms.InputTag('hltScoutingPFPacker', 'pfMetPhi'),
     rho = cms.InputTag('hltScoutingPFPacker', 'rho'),
+    onlineMetaDataDigis = cms.InputTag('onlineMetaDataDigis'),
+    topfoldername = cms.string('HLT/ScoutingOffline/Miscellaneous'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

@@ -5,8 +5,8 @@ def BeamSpotCompatibilityChecker(*args, **kwargs):
     warningThr = cms.double(1),
     errorThr = cms.double(3),
     verbose = cms.untracked.bool(False),
-    bsFromEvent = cms.InputTag(''),
-    dbFromEvent = cms.bool(False),
+    bsFromFile = cms.InputTag(''),
+    dbFromEvent = cms.bool(True),
     bsFromDB = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
