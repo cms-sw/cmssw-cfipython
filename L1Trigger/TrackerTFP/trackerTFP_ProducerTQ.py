@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def trackerTFP_ProducerKFin(*args, **kwargs):
-  mod = cms.EDProducer('trackerTFP::ProducerKFin',
+def trackerTFP_ProducerTQ(*args, **kwargs):
+  mod = cms.EDProducer('trackerTFP::ProducerTQ',
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

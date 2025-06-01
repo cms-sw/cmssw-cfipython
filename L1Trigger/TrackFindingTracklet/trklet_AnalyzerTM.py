@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def trackerTFP_ProducerZHTout(*args, **kwargs):
-  mod = cms.EDProducer('trackerTFP::ProducerZHTout',
+def trklet_AnalyzerTM(*args, **kwargs):
+  mod = cms.EDAnalyzer('trklet::AnalyzerTM',
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
