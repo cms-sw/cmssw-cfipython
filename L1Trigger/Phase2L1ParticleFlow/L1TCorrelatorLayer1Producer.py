@@ -54,6 +54,14 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
       ptMax = cms.required.double,
       absEtaCuts = cms.required.vdouble,
       ptCut = cms.required.vdouble,
+      useMLAssociation = cms.required.bool,
+      NNVtxAssociation = cms.PSet(
+        associationThreshold = cms.required.double,
+        associationGraph = cms.required.string,
+        associationNetworkZ0binning = cms.required.vdouble,
+        associationNetworkEtaBounds = cms.required.vdouble,
+        associationNetworkZ0ResBins = cms.required.vdouble
+      ),
       ptSlopes = cms.required.vdouble,
       ptSlopesPhoton = cms.required.vdouble,
       ptZeros = cms.required.vdouble,
