@@ -6,8 +6,6 @@ def TrackExtenderWithMTD(*args, **kwargs):
     trjtrkAssSrc = cms.InputTag('generalTracks'),
     hitsSrc = cms.InputTag('mtdTrackingRecHits'),
     beamSpotSrc = cms.InputTag('offlineBeamSpot'),
-    genVtxPositionSrc = cms.InputTag('genParticles', 'xyz0'),
-    genVtxTimeSrc = cms.InputTag('genParticles', 't0'),
     vtxSrc = cms.InputTag('offlinePrimaryVertices4D'),
     updateTrackTrajectory = cms.bool(True),
     updateTrackExtra = cms.bool(True),
@@ -33,7 +31,6 @@ def TrackExtenderWithMTD(*args, **kwargs):
     etlChi2Cut = cms.double(50),
     etlTimeChi2Cut = cms.double(10),
     useVertex = cms.bool(False),
-    useSimVertex = cms.bool(False),
     dZCut = cms.double(0.1),
     bsTimeSpread = cms.double(0.2),
     mightGet = cms.optional.untracked.vstring
