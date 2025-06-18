@@ -7,8 +7,7 @@ def PoolDBESSource(*args, **kwargs):
       authenticationSystem = cms.untracked.int32(0),
       security = cms.untracked.string(''),
       messageLevel = cms.untracked.int32(0),
-      connectionTimeout = cms.untracked.int32(0),
-      transactionId = cms.obsolete.untracked.string
+      connectionTimeout = cms.untracked.int32(0)
     ),
     connect = cms.string('frontier://FrontierProd/CMS_CONDITIONS'),
     globaltag = cms.string(''),
