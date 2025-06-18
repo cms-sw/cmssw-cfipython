@@ -4,8 +4,8 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
   mod = cms.EDProducer('L1TCorrelatorLayer1Producer',
     tracks = cms.InputTag(''),
     muons = cms.InputTag('l1tSAMuonsGmt', 'prompt'),
-    emClusters = cms.VInputTag(),
-    hadClusters = cms.VInputTag(),
+    emClusters = cms.InputTag(''),
+    hadClusters = cms.InputTag(''),
     vtxCollection = cms.InputTag('l1tVertexFinderEmulator', 'L1VerticesEmulation'),
     vtxCollectionEmulation = cms.bool(True),
     emPtCut = cms.double(0),
@@ -14,7 +14,9 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
     nVtx = cms.required.int32,
     trackInputConversionAlgo = cms.string('Ideal'),
     muonInputConversionAlgo = cms.string('Ideal'),
-    hgcalInputConversionAlgo = cms.string('Ideal'),
+    hgcalInputConversionAlgo = cms.string('None'),
+    gctEmInputConversionAlgo = cms.string('None'),
+    gctHadInputConversionAlgo = cms.string('None'),
     regionizerAlgo = cms.string('Ideal'),
     regionizerAlgoParameters = cms.PSet(
       useAlsoVtxCoords = cms.bool(True),
@@ -77,6 +79,7 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
       debug = cms.untracked.bool(False)
     ),
     tkEgAlgoParameters = cms.PSet(
+      debug = cms.untracked.uint32(0),
       nTRACK = cms.required.uint32,
       nTRACK_EGIN = cms.required.uint32,
       nEMCALO_EGIN = cms.required.uint32,
@@ -134,13 +137,9 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
       doPfIso = cms.bool(True),
       hwIsoTypeTkEle = cms.uint32(0),
       hwIsoTypeTkEm = cms.uint32(2),
-      doCompositeTkEle = cms.bool(False),
+      algorithm = cms.uint32(0),
       nCompCandPerCluster = cms.uint32(3),
-      compositeParametersTkEle = cms.PSet(
-        loose_wp = cms.double(-0.732422),
-        tight_wp = cms.double(0.214844),
-        model = cms.string('L1Trigger/Phase2L1ParticleFlow/data/compositeID.json')
-      )
+      compositeParametersTkEle = cms.required.VPSet
     ),
     tkEgSorterAlgo = cms.string('Barrel'),
     tkEgSorterParameters = cms.PSet(
@@ -151,7 +150,6 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
     regions = cms.required.VPSet,
     boards = cms.required.VPSet,
     dumpFileName = cms.untracked.string(''),
-    writeRawHgcalCluster = cms.untracked.bool(False),
     patternWriters = cms.untracked.VPSet(
       template = cms.PSetTemplate(
         inputFileName = cms.string(''),
@@ -165,11 +163,23 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
         tmuxFactor = cms.uint32(6),
         eventsPerFile = cms.uint32(12),
         fileFormat = cms.required.string,
+        debugFileName = cms.string(''),
+        debugFileExtension = cms.string('txt.gz'),
+        nPFInTrack = cms.uint32(0),
+        nPFInEmCalo = cms.uint32(0),
+        nPFInHadCalo = cms.uint32(0),
+        nPFInMuon = cms.uint32(0),
+        nPFOutCharged = cms.uint32(0),
+        nPFOutPhoton = cms.uint32(0),
+        nPFOutNeutral = cms.uint32(0),
+        nPFOutMuon = cms.uint32(0),
         partition = cms.string('Barrel'),
         tfTimeSlices = cms.required.VPSet,
-        gctSectors = cms.required.VPSet,
-        gctNLinksEcal = cms.uint32(1),
-        gctNLinksHad = cms.uint32(2),
+        tfNumberOfTracks = cms.uint32(108),
+        gctEmTimeSlices = cms.required.VPSet,
+        gctNumberOfEMs = cms.uint32(32),
+        gctHadTimeSlices = cms.required.VPSet,
+        gctNumberOfHads = cms.uint32(48),
         gttTimeSlices = cms.required.VPSet,
         gttLatency = cms.uint32(162),
         gttNumberOfPVs = cms.uint32(10),
