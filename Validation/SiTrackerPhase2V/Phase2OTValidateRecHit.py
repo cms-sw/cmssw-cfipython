@@ -18,6 +18,22 @@ def Phase2OTValidateRecHit(*args, **kwargs):
       xmax = cms.double(1500),
       NxBins = cms.int32(100)
     ),
+    err_X_Pixel = cms.PSet(
+      name = cms.string('err_X_Pixel'),
+      title = cms.string('error X macro-pixel sensor;Cluster error X coordinate [#mum]'),
+      switch = cms.bool(True),
+      xmax = cms.double(0),
+      xmin = cms.double(100),
+      NxBins = cms.int32(100)
+    ),
+    err_Y_Pixel = cms.PSet(
+      name = cms.string('err_Y_Pixel'),
+      title = cms.string('error Y macro-pixel sensor;Cluster error Y coordinate [#mum]'),
+      switch = cms.bool(True),
+      xmin = cms.double(0),
+      xmax = cms.double(500),
+      NxBins = cms.int32(100)
+    ),
     Delta_X_Pixel_Primary = cms.PSet(
       name = cms.string('Delta_X_Pixel_Primary'),
       title = cms.string('#Delta X macro-pixel sensor;cluster resolution X coordinate [#mum]'),
@@ -78,9 +94,53 @@ def Phase2OTValidateRecHit(*args, **kwargs):
       xmax = cms.double(3.1415926535897931),
       xmin = cms.double(-3.1415926535897931)
     ),
+    err_X_vs_eta_Pixel = cms.PSet(
+      name = cms.string('err_X_vs_Eta_Pixel'),
+      title = cms.string(';|#eta|;local error x [#mum]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(100),
+      NxBins = cms.int32(41),
+      switch = cms.bool(True),
+      xmax = cms.double(4.1),
+      xmin = cms.double(0)
+    ),
+    err_Y_vs_eta_Pixel = cms.PSet(
+      name = cms.string('err_Y_vs_Eta_Pixel'),
+      title = cms.string(';|#eta|;local error y [#mum]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(500),
+      NxBins = cms.int32(41),
+      switch = cms.bool(True),
+      xmax = cms.double(4.1),
+      xmin = cms.double(0)
+    ),
+    err_X_vs_phi_Pixel = cms.PSet(
+      name = cms.string('err_X_vs_Phi_Pixel'),
+      title = cms.string(';#phi;local error x [#mum]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(100),
+      NxBins = cms.int32(36),
+      switch = cms.bool(True),
+      xmax = cms.double(3.1415926535897931),
+      xmin = cms.double(-3.1415926535897931)
+    ),
+    err_Y_vs_phi_Pixel = cms.PSet(
+      name = cms.string('err_Y_vs_Phi_Pixel'),
+      title = cms.string(';#phi;local error y [#mum]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(500),
+      NxBins = cms.int32(35),
+      switch = cms.bool(True),
+      xmax = cms.double(3.1415926535897931),
+      xmin = cms.double(-3.1415926535897931)
+    ),
     Pull_X_Pixel = cms.PSet(
       name = cms.string('Pull_X_Pixel'),
-      title = cms.string(';pull x;'),
+      title = cms.string('Pull X macro-pixel sensor;pull x;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -88,7 +148,7 @@ def Phase2OTValidateRecHit(*args, **kwargs):
     ),
     Pull_Y_Pixel = cms.PSet(
       name = cms.string('Pull_Y_Pixel'),
-      title = cms.string(';pull y;'),
+      title = cms.string('Pull Y macro-pixel sensor;pull y;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -96,7 +156,7 @@ def Phase2OTValidateRecHit(*args, **kwargs):
     ),
     Pull_X_Pixel_Primary = cms.PSet(
       name = cms.string('Pull_X_Pixel_Primary'),
-      title = cms.string(';pull x;'),
+      title = cms.string('Pull X macro-pixel sensor;pull x;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -104,7 +164,7 @@ def Phase2OTValidateRecHit(*args, **kwargs):
     ),
     Pull_Y_Pixel_Primary = cms.PSet(
       name = cms.string('Pull_Y_Pixel_Primary'),
-      title = cms.string(';pull y;'),
+      title = cms.string('Pull Y macro-pixel sensor;pull y;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -152,6 +212,22 @@ def Phase2OTValidateRecHit(*args, **kwargs):
       xmin = cms.double(-5),
       switch = cms.bool(True),
       xmax = cms.double(5),
+      NxBins = cms.int32(100)
+    ),
+    err_X_Strip = cms.PSet(
+      name = cms.string('err_X_Strip'),
+      title = cms.string('local error X strip sensor;Cluster error X coordinate [#mum]'),
+      switch = cms.bool(True),
+      xmin = cms.double(0),
+      xmax = cms.double(100),
+      NxBins = cms.int32(100)
+    ),
+    err_Y_Strip = cms.PSet(
+      name = cms.string('err_Y_Strip'),
+      title = cms.string('local error Y strip sensor;Cluster error Y coordinate [cm]'),
+      xmin = cms.double(0),
+      switch = cms.bool(True),
+      xmax = cms.double(10),
       NxBins = cms.int32(100)
     ),
     Delta_X_Strip_Primary = cms.PSet(
@@ -214,9 +290,53 @@ def Phase2OTValidateRecHit(*args, **kwargs):
       xmax = cms.double(3.1415926535897931),
       xmin = cms.double(-3.1415926535897931)
     ),
+    err_X_vs_eta_Strip = cms.PSet(
+      name = cms.string('err_X_vs_Eta_Strip'),
+      title = cms.string(';|#eta|;local error x [#mum]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(100),
+      NxBins = cms.int32(41),
+      switch = cms.bool(True),
+      xmax = cms.double(4.1),
+      xmin = cms.double(0)
+    ),
+    err_Y_vs_eta_Strip = cms.PSet(
+      name = cms.string('err_Y_vs_Eta_Strip'),
+      title = cms.string(';|#eta|;local error y [cm]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(10),
+      NxBins = cms.int32(41),
+      switch = cms.bool(True),
+      xmax = cms.double(4.1),
+      xmin = cms.double(0)
+    ),
+    err_X_vs_phi_Strip = cms.PSet(
+      name = cms.string('err_X_vs_Phi_Strip'),
+      title = cms.string(';#phi;local error x [#mum]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(100),
+      NxBins = cms.int32(36),
+      switch = cms.bool(True),
+      xmax = cms.double(3.1415926535897931),
+      xmin = cms.double(-3.1415926535897931)
+    ),
+    err_Y_vs_phi_Strip = cms.PSet(
+      name = cms.string('err_Y_vs_Phi_Strip'),
+      title = cms.string(';#phi;local error y [cm]'),
+      NyBins = cms.int32(100),
+      ymin = cms.double(0),
+      ymax = cms.double(10),
+      NxBins = cms.int32(36),
+      switch = cms.bool(True),
+      xmax = cms.double(3.1415926535897931),
+      xmin = cms.double(-3.1415926535897931)
+    ),
     Pull_X_Strip = cms.PSet(
       name = cms.string('Pull_X_Strip'),
-      title = cms.string(';pull x;'),
+      title = cms.string('Pull X strip sensor;pull x;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -224,7 +344,7 @@ def Phase2OTValidateRecHit(*args, **kwargs):
     ),
     Pull_Y_Strip = cms.PSet(
       name = cms.string('Pull_Y_Strip'),
-      title = cms.string(';pull y;'),
+      title = cms.string('Pull Y strip sensor;pull y;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -232,7 +352,7 @@ def Phase2OTValidateRecHit(*args, **kwargs):
     ),
     Pull_X_Strip_Primary = cms.PSet(
       name = cms.string('Pull_X_Strip_Primary'),
-      title = cms.string(';pull x;'),
+      title = cms.string('Pull X strip sensor;pull x;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
@@ -240,7 +360,7 @@ def Phase2OTValidateRecHit(*args, **kwargs):
     ),
     Pull_Y_Strip_Primary = cms.PSet(
       name = cms.string('Pull_Y_Strip_Primary'),
-      title = cms.string(';pull y;'),
+      title = cms.string('Pull Y strip sensor;pull y;'),
       xmin = cms.double(-4),
       switch = cms.bool(True),
       xmax = cms.double(4),
