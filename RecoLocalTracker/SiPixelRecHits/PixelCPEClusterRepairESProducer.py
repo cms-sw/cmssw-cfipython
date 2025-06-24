@@ -16,6 +16,7 @@ def PixelCPEClusterRepairESProducer(*args, **kwargs):
     forwardTemplateID = cms.int32(0),
     directoryWithTemplates = cms.int32(0),
     speed = cms.int32(-2),
+    GoodEdgeAlgo = cms.bool(False),
     UseClusterSplitter = cms.bool(False),
     MaxSizeMismatchInY = cms.double(0.3),
     MinChargeRatio = cms.double(0.8),
