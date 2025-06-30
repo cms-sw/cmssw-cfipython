@@ -16,6 +16,7 @@ def PixelCPETemplateRecoESProducer(*args, **kwargs):
     directoryWithTemplates = cms.int32(0),
     speed = cms.int32(-2),
     UseClusterSplitter = cms.bool(False),
+    GoodEdgeAlgo = cms.bool(False),
     ComponentName = cms.string('PixelCPETemplateReco'),
     appendToDataLabel = cms.string('')
   )
