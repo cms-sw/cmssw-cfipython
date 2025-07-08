@@ -6,8 +6,7 @@ def BarrelLCToCPAssociatorByEnergyScoreProducer(*args, **kwargs):
     hitMapTag = cms.InputTag('recHitMapProducer', 'barrelRecHitMap'),
     hits = cms.VInputTag(
       'particleFlowRecHitECAL',
-      'particleFlowRecHitHBHE',
-      'particleFlowRecHitHO'
+      'particleFlowRecHitHBHE'
     ),
     mightGet = cms.optional.untracked.vstring
   )

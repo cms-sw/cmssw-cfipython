@@ -7,7 +7,6 @@ def RecHitMapProducer(*args, **kwargs):
     BHInput = cms.InputTag('HGCalRecHit', 'HGCHEBRecHits'),
     EBInput = cms.InputTag('particleFlowRecHitECAL'),
     HBInput = cms.InputTag('particleFlowRecHitHBHE'),
-    HOInput = cms.InputTag('particleFlowRecHitHO'),
     hgcalOnly = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
