@@ -4,7 +4,6 @@ def alpaka_serial_sync_SiPixelRawToClusterPhase1(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::SiPixelRawToClusterPhase1',
     IncludeErrors = cms.bool(True),
     UseQualityInfo = cms.bool(False),
-    verbose = cms.bool(False),
     clusterThreshold_layer1 = cms.int32(2000),
     clusterThreshold_otherLayers = cms.int32(4000),
     VCaltoElectronGain = cms.double(47),
