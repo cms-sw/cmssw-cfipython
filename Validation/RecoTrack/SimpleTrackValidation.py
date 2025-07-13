@@ -7,8 +7,8 @@ def SimpleTrackValidation(*args, **kwargs):
     trackAssociator = cms.InputTag('trackingParticleRecoTrackAsssociation'),
     ptMinTP = cms.double(0.9),
     ptMaxTP = cms.double(1e+100),
-    minRapidityTP = cms.double(-2.4),
-    maxRapidityTP = cms.double(2.4),
+    minRapidityTP = cms.double(-4),
+    maxRapidityTP = cms.double(4),
     tipTP = cms.double(3.5),
     lipTP = cms.double(30),
     minHitTP = cms.int32(0),
@@ -20,6 +20,18 @@ def SimpleTrackValidation(*args, **kwargs):
     invertRapidityCutTP = cms.bool(False),
     minPhiTP = cms.double(-3.2),
     maxPhiTP = cms.double(3.2),
+    etaBins = cms.vdouble(
+      -4,
+      -1.5,
+      1.5,
+      4
+    ),
+    ptBins = cms.vdouble(
+      0,
+      3,
+      10,
+      1000
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
