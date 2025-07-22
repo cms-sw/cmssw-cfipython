@@ -7,7 +7,7 @@ def SiPixelDigiMorphing(*args, **kwargs):
       '1,1-12,1-2',
       '1,1-12,7-8',
       '2,1-28,1',
-      '1,1-28,8'
+      '2,1-28,8'
     ),
     endcapRegions = cms.vstring(),
     nrows = cms.int32(160),

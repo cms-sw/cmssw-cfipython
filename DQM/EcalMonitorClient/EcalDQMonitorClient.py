@@ -2,6 +2,9 @@ import FWCore.ParameterSet.Config as cms
 
 def EcalDQMonitorClient(*args, **kwargs):
   mod = cms.EDProducer('EcalDQMonitorClient',
+    inputGeneration = cms.untracked.string('DQMGenerationReco'),
+    outputGeneration = cms.untracked.string('DQMGenerationHarvesting'),
+    inputMEs = cms.untracked.VInputTag(),
     moduleName = cms.untracked.string('Ecal Monitor Module'),
     workers = cms.required.untracked.vstring,
     verbosity = cms.untracked.int32(0),
