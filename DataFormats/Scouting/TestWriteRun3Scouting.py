@@ -17,6 +17,12 @@ def TestWriteRun3Scouting(*args, **kwargs):
     tracksIntegralValues = cms.required.vint32,
     vertexesFloatingPointValues = cms.required.vdouble,
     vertexesIntegralValues = cms.required.vint32,
+    ebRecHitsFloatingPointValues = cms.required.vdouble,
+    ebRecHitsIntegralValues = cms.required.vint32,
+    eeRecHitsFloatingPointValues = cms.required.vdouble,
+    eeRecHitsIntegralValues = cms.required.vint32,
+    hbheRecHitsFloatingPointValues = cms.required.vdouble,
+    hbheRecHitsIntegralValues = cms.required.vint32,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
