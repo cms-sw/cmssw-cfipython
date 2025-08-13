@@ -17,6 +17,11 @@ def ScoutingCollectionMonitor(*args, **kwargs):
     pfMetPhi = cms.InputTag('hltScoutingPFPacker', 'pfMetPhi'),
     rho = cms.InputTag('hltScoutingPFPacker', 'rho'),
     onlineMetaDataDigis = cms.InputTag('onlineMetaDataDigis'),
+    pfRecHitsEB = cms.InputTag('hltScoutingRecHitPacker', 'EB'),
+    pfRecHitsEE = cms.InputTag('hltScoutingRecHitPacker', 'EE'),
+    pfRecHitsHBHE = cms.InputTag('hltScoutingRecHitPacker', 'HBHE'),
+    pfCleanedRecHitsEB = cms.InputTag('hltScoutingRecHitPacker', 'EBCleaned'),
+    pfCleanedRecHitsEE = cms.InputTag('hltScoutingRecHitPacker', 'EECleaned'),
     topfoldername = cms.string('HLT/ScoutingOffline/Miscellaneous'),
     mightGet = cms.optional.untracked.vstring
   )
