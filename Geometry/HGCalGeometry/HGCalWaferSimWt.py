@@ -6,6 +6,7 @@ def HGCalWaferSimWt(*args, **kwargs):
       'HGCalEESensitive',
       'HGCalHESiliconSensitive'
     ),
+    debug = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
