@@ -3,7 +3,9 @@ import FWCore.ParameterSet.Config as cms
 def alpaka_rocm_async_hgcalrechit_HGCalCalibrationESProducer(*args, **kwargs):
   mod = cms.ESProducer('alpaka_rocm_async::hgcalrechit::HGCalCalibrationESProducer',
     filename = cms.required.FileInPath,
+    filenameEnergyLoss = cms.required.FileInPath,
     indexSource = cms.ESInputTag('', ''),
+    mapSource = cms.ESInputTag('', ''),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
