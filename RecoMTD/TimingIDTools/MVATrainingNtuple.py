@@ -41,8 +41,8 @@ def MVATrainingNtuple(*args, **kwargs):
     npixEndcapSrc = cms.InputTag('trackExtenderWithMTD', 'npixEndcap'),
     outermostHitPositionSrc = cms.InputTag('trackExtenderWithMTD', 'generalTrackOutermostHitPosition'),
     fileName = cms.untracked.string('file.root'),
-    ntupleforBDT = cms.bool(True),
-    ntupleforGNN = cms.bool(False),
+    ntupleforBDT = cms.bool(False),
+    ntupleforGNN = cms.bool(True),
     TkFilterParameters = cms.PSet(
       maxNormalizedChi2 = cms.double(10),
       minPt = cms.double(0),

@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def PathStateCapture(*args, **kwargs):
-  mod = cms.EDProducer('PathStateCapture',
+def PlottingDevice(*args, **kwargs):
+  mod = cms.EDAnalyzer('PlottingDevice',
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

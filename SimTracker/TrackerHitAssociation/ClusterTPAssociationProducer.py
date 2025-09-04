@@ -8,7 +8,6 @@ def ClusterTPAssociationProducer(*args, **kwargs):
     phase2OTSimLinkSrc = cms.InputTag('simSiPixelDigis', 'Tracker'),
     pixelClusterSrc = cms.InputTag('siPixelClusters'),
     stripClusterSrc = cms.InputTag('siStripClusters'),
-    stripClusterOtherSrc = cms.InputTag(''),
     phase2OTClusterSrc = cms.InputTag('siPhase2Clusters'),
     trackingParticleSrc = cms.InputTag('mix', 'MergedTrackTruth'),
     throwOnMissingCollections = cms.bool(True),

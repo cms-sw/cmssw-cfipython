@@ -2,7 +2,6 @@ import FWCore.ParameterSet.Config as cms
 
 def SiPixelRecHitFromSoAAlpakaHIonPhase1(*args, **kwargs):
   mod = cms.EDProducer('SiPixelRecHitFromSoAAlpakaHIonPhase1',
-    maxHitsInModules = cms.uint32(1024),
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
     src = cms.InputTag('siPixelClustersPreSplitting'),
     mightGet = cms.optional.untracked.vstring

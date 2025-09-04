@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .L1ScoutingJetPhysicalValueMapProducer import L1ScoutingJetPhysicalValueMapProducer
-
-l1ScoutingJetPhysicalValueMapProducer = L1ScoutingJetPhysicalValueMapProducer()

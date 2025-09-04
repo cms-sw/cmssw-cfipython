@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .SimpleL1ScoutingEGammaOrbitFlatTableProducer import SimpleL1ScoutingEGammaOrbitFlatTableProducer
-
-simpleL1ScoutingEGammaOrbitFlatTableProducer = SimpleL1ScoutingEGammaOrbitFlatTableProducer()

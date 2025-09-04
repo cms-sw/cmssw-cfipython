@@ -4,8 +4,6 @@ def ScoutingMuonTriggerAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('ScoutingMuonTriggerAnalyzer',
     OutputInternalPath = cms.string('MY_FOLDER'),
     triggerSelection = cms.vstring(),
-    hltProcessName = cms.string('HLT'),
-    special_HLT_Menus = cms.vstring(),
     ScoutingMuonCollection = cms.InputTag('hltScoutingMuonPackerVtx'),
     AlgInputTag = cms.InputTag('gtStage2Digis'),
     l1Seeds = cms.vstring(),

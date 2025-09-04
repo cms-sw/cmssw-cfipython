@@ -3,8 +3,8 @@ import FWCore.ParameterSet.Config as cms
 def DeDxEstimatorRekeyer(*args, **kwargs):
   mod = cms.EDProducer('DeDxEstimatorRekeyer',
     tracks = cms.InputTag('generalTracks'),
-    dedxHits = cms.InputTag(''),
-    dedxMomentum = cms.InputTag(''),
+    dedxHits = cms.InputTag('dedxHitInfo'),
+    dedxMomentum = cms.InputTag('dedxHitInfo', 'momentumAtHit'),
     packedCandidates = cms.VInputTag(
       'packedPFCandidates',
       'lostTracks',

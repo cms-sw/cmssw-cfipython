@@ -2,7 +2,6 @@ import FWCore.ParameterSet.Config as cms
 
 def LHEPtFilter(*args, **kwargs):
   mod = cms.EDFilter('LHEPtFilter',
-    isScalar = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

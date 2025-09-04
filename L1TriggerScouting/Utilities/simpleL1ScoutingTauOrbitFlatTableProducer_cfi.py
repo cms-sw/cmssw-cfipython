@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .SimpleL1ScoutingTauOrbitFlatTableProducer import SimpleL1ScoutingTauOrbitFlatTableProducer
-
-simpleL1ScoutingTauOrbitFlatTableProducer = SimpleL1ScoutingTauOrbitFlatTableProducer()

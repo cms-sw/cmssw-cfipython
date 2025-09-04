@@ -28,18 +28,6 @@ def TestReadRun3Scouting(*args, **kwargs):
     expectedVertexFloatingPointValues = cms.required.vdouble,
     expectedVertexIntegralValues = cms.required.vint32,
     vertexesTag = cms.required.InputTag,
-    ebRecHitClassVersion = cms.required.int32,
-    expectedEBRecHitFloatingPointValues = cms.required.vdouble,
-    expectedEBRecHitIntegralValues = cms.required.vint32,
-    ebRecHitsTag = cms.required.InputTag,
-    eeRecHitClassVersion = cms.required.int32,
-    expectedEERecHitFloatingPointValues = cms.required.vdouble,
-    expectedEERecHitIntegralValues = cms.required.vint32,
-    eeRecHitsTag = cms.required.InputTag,
-    hbheRecHitClassVersion = cms.required.int32,
-    expectedHBHERecHitFloatingPointValues = cms.required.vdouble,
-    expectedHBHERecHitIntegralValues = cms.required.vint32,
-    hbheRecHitsTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

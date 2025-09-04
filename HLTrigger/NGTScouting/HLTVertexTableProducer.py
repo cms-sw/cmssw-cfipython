@@ -2,7 +2,6 @@ import FWCore.ParameterSet.Config as cms
 
 def HLTVertexTableProducer(*args, **kwargs):
   mod = cms.EDProducer('HLTVertexTableProducer',
-    skipNonExistingSrc = cms.bool(False),
     pvName = cms.required.string,
     pvSrc = cms.required.InputTag,
     pfSrc = cms.required.InputTag,
