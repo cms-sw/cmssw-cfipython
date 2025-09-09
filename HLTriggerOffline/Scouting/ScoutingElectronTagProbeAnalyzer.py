@@ -8,8 +8,8 @@ def ScoutingElectronTagProbeAnalyzer(*args, **kwargs):
     finalfilterSelection = cms.vstring(),
     TriggerResultTag = cms.InputTag('TriggerResults', '', 'HLT'),
     TriggerObjects = cms.InputTag('slimmedPatTrigger'),
-    ElectronCollection = cms.InputTag('slimmedElectrons'),
     ScoutingElectronCollection = cms.InputTag('Run3ScoutingElectrons'),
+    useOfflineObject = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
