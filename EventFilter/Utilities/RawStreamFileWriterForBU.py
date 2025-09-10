@@ -7,10 +7,8 @@ def RawStreamFileWriterForBU(*args, **kwargs):
     frdVersion = cms.uint32(6),
     rawProductName = cms.untracked.string('FEDRawDataCollection'),
     sourceIdList = cms.untracked.vuint32(),
-    writeToOpen = cms.untracked.bool(False),
     microSleep = cms.int32(0),
-    frdFileVersion = cms.uint32(0),
-    writeEoR = cms.untracked.bool(True)
+    frdFileVersion = cms.uint32(0)
   )
   for a in args:
     mod.update_(a)

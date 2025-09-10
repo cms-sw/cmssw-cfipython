@@ -13,7 +13,6 @@ def ScoutingEGammaCollectionMonitoring(*args, **kwargs):
     ElectronCollection = cms.InputTag('slimmedElectrons'),
     ScoutingElectronCollection = cms.InputTag('hltScoutingEgammaPacker'),
     eleIdMapTight = cms.InputTag('egmGsfElectronIDs', 'cutBasedElectronID-RunIIIWinter22-V1-tight'),
-    useOfflineObject = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

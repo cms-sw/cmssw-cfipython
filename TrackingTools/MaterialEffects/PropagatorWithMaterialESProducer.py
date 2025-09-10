@@ -2,12 +2,12 @@ import FWCore.ParameterSet.Config as cms
 
 def PropagatorWithMaterialESProducer(*args, **kwargs):
   mod = cms.ESProducer('PropagatorWithMaterialESProducer',
-    PropagationDirection = cms.string('alongMomentum'),
+    PropagationDirection = cms.required.string,
     SimpleMagneticField = cms.string(''),
-    ComponentName = cms.string(''),
-    Mass = cms.double(0),
-    MaxDPhi = cms.double(0),
-    useRungeKutta = cms.bool(False),
+    ComponentName = cms.required.string,
+    Mass = cms.required.double,
+    MaxDPhi = cms.required.double,
+    useRungeKutta = cms.required.bool,
     useOldAnalPropLogic = cms.bool(True),
     ptMin = cms.double(-1),
     appendToDataLabel = cms.string('')
