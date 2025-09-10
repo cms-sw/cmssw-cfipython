@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1TkElectronFlatTableProducer import SimpleTriggerL1TkElectronFlatTableProducer
+
+simpleTriggerL1TkElectronFlatTableProducer = SimpleTriggerL1TkElectronFlatTableProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_EcalElectronicsMappingHostESProducer import alpaka_rocm_async_EcalElectronicsMappingHostESProducer
+
+alpaka_rocm_asyncEcalElectronicsMappingHostESProducer = alpaka_rocm_async_EcalElectronicsMappingHostESProducer()

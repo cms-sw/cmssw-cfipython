@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleRun3ScoutingElectronFlatTableProducer import SimpleRun3ScoutingElectronFlatTableProducer
+
+simpleRun3ScoutingElectronFlatTableProducer = SimpleRun3ScoutingElectronFlatTableProducer()

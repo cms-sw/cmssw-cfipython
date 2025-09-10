@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1TkMuonFlatTableProducer import SimpleTriggerL1TkMuonFlatTableProducer
+
+simpleTriggerL1TkMuonFlatTableProducer = SimpleTriggerL1TkMuonFlatTableProducer()

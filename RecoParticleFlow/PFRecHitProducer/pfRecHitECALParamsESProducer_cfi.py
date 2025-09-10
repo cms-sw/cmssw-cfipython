@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PFRecHitECALParamsESProducer_alpaka import PFRecHitECALParamsESProducer_alpaka
+
+pfRecHitECALParamsESProducer = PFRecHitECALParamsESProducer_alpaka()

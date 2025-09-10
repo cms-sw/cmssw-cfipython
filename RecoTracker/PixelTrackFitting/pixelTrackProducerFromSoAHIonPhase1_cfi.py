@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PixelTrackProducerFromSoAHIonPhase1 import PixelTrackProducerFromSoAHIonPhase1
+
+pixelTrackProducerFromSoAHIonPhase1 = PixelTrackProducerFromSoAHIonPhase1()

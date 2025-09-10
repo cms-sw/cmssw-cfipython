@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_HcalRecoParamWithPulseShapeESProducer import alpaka_rocm_async_HcalRecoParamWithPulseShapeESProducer
+
+alpaka_rocm_asyncHcalRecoParamWithPulseShapeESProducer = alpaka_rocm_async_HcalRecoParamWithPulseShapeESProducer()
