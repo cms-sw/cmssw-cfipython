@@ -4,6 +4,7 @@ def alpaka_cuda_async_SiPixelRawToClusterPhase1(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::SiPixelRawToClusterPhase1',
     IncludeErrors = cms.bool(True),
     UseQualityInfo = cms.bool(False),
+    verbose = cms.bool(False),
     clusterThreshold_layer1 = cms.int32(2000),
     clusterThreshold_otherLayers = cms.int32(4000),
     VCaltoElectronGain = cms.double(47),
