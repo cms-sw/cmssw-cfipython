@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def PFJetFwdPtrProducer(*args, **kwargs):
   mod = cms.EDProducer('PFJetFwdPtrProducer',
+    src = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
