@@ -5,7 +5,7 @@ def HLTL1NumberFilter(*args, **kwargs):
     rawInput = cms.InputTag('source'),
     period = cms.uint32(4096),
     invert = cms.bool(True),
-    fedId = cms.int32(812),
+    fedIds = cms.vint32(812),
     useTCDSEventNumber = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
