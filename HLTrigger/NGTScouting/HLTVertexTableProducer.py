@@ -5,6 +5,7 @@ def HLTVertexTableProducer(*args, **kwargs):
     skipNonExistingSrc = cms.bool(False),
     pvName = cms.required.string,
     pvSrc = cms.required.InputTag,
+    usePF = cms.bool(True),
     pfSrc = cms.required.InputTag,
     goodPvCut = cms.required.string,
     dlenMin = cms.required.double,
