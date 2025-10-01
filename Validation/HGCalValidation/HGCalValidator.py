@@ -223,6 +223,7 @@ def HGCalValidator(*args, **kwargs):
       -1
     ),
     dirName = cms.string('HGCAL/HGCalValidator/'),
+    cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
     isticlv5 = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
