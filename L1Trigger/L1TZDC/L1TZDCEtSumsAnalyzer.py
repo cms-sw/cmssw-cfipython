@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def L1TZDCAnalyzer(**kwargs):
-  mod = cms.EDAnalyzer('L1TZDCAnalyzer',
+def L1TZDCEtSumsAnalyzer(**kwargs):
+  mod = cms.EDAnalyzer('L1TZDCEtSumsAnalyzer',
     etSumTag = cms.InputTag('l1tZDCEtSums'),
     mightGet = cms.optional.untracked.vstring
   )
