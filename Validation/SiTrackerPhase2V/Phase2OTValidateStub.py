@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTValidateTTStub(*args, **kwargs):
-  mod = cms.EDProducer('Phase2OTValidateTTStub',
+def Phase2OTValidateStub(*args, **kwargs):
+  mod = cms.EDProducer('Phase2OTValidateStub',
     TH2TTStub_RZ = cms.PSet(
       Nbinsx = cms.int32(900),
       xmax = cms.double(300),
@@ -30,6 +30,16 @@ def Phase2OTValidateTTStub(*args, **kwargs):
       xmax = cms.double(5),
       xmin = cms.double(-5.5)
     ),
+    TH1Effic_pt = cms.PSet(
+      Nbinsx = cms.int32(50),
+      xmax = cms.double(100),
+      xmin = cms.double(0)
+    ),
+    TH1Effic_pt_zoom = cms.PSet(
+      Nbinsx = cms.int32(50),
+      xmax = cms.double(10),
+      xmin = cms.double(0)
+    ),
     TopFolderName = cms.string('TrackerPhase2OTStubV'),
     TTStubs = cms.InputTag('TTStubsFromPhase2TrackerDigis', 'StubAccepted'),
     trackingParticleToken = cms.InputTag('mix', 'MergedTrackTruth'),
@@ -37,11 +47,11 @@ def Phase2OTValidateTTStub(*args, **kwargs):
     MCTruthClusterInputTag = cms.InputTag('TTClusterAssociatorFromPixelDigis', 'ClusterInclusive'),
     TP_minNStub = cms.int32(4),
     TP_minNLayersStub = cms.int32(4),
-    TP_minPt = cms.double(2),
+    TP_minPt = cms.double(1.5),
     TP_maxEta = cms.double(2.4),
     TP_maxVtxZ = cms.double(15),
     TP_maxD0 = cms.double(1),
-    TP_maxDxy = cms.double(1),
+    TP_maxLxy = cms.double(1),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

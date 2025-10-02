@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def Phase2OTHarvestReconstruction(*args, **kwargs):
-  mod = cms.EDProducer('Phase2OTHarvestReconstruction',
+def Phase2OTHarvestTracks(*args, **kwargs):
+  mod = cms.EDProducer('Phase2OTHarvestTracks',
     TopFolderName = cms.string('TrackerPhase2OTL1TrackV'),
     mightGet = cms.optional.untracked.vstring
   )
