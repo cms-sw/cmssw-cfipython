@@ -12,7 +12,7 @@ def alpaka_rocm_async_SiPixelRawToClusterHIonPhase1(*args, **kwargs):
     VCaltoElectronOffset = cms.double(-60),
     VCaltoElectronOffset_L1 = cms.double(-670),
     DoDigiMorphing = cms.bool(False),
-    MaxFakesInModule = cms.uint32(4000),
+    MaxFakesInModule = cms.uint32(1000),
     InputLabel = cms.InputTag('rawDataCollector'),
     Regions = cms.PSet(
       inputs = cms.optional.VInputTag,
