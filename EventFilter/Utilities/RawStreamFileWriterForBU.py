@@ -10,6 +10,7 @@ def RawStreamFileWriterForBU(*args, **kwargs):
     writeToOpen = cms.untracked.bool(False),
     microSleep = cms.int32(0),
     frdFileVersion = cms.uint32(0),
+    dataType = cms.untracked.uint32(0),
     writeEoR = cms.untracked.bool(True)
   )
   for a in args:
