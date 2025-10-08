@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .LayerClustersCollectionTableProducer import LayerClustersCollectionTableProducer
+
+layerClustersCollectionTableProducer = LayerClustersCollectionTableProducer()
