@@ -4,7 +4,7 @@ def SuperclusteringSampleDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('SuperclusteringSampleDumper',
     tracksters = cms.InputTag('ticlTrackstersCLUE3DHigh'),
     recoToSimAssociatorCP = cms.InputTag('tracksterSimTracksterAssociationLinkingbyCLUE3D', 'recoToSim'),
-    dnnInputsVersion = cms.string('v2'),
+    dnnInputsVersion = cms.string('v3'),
     deltaEtaWindow = cms.double(0.2),
     deltaPhiWindow = cms.double(0.7),
     seedPtThreshold = cms.double(3),
