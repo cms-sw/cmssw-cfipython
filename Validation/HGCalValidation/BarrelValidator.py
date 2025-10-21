@@ -106,12 +106,7 @@ def BarrelValidator(*args, **kwargs):
       maxZ = cms.double(550),
       nintZ = cms.int32(1100)
     ),
-    hgcal_hits = cms.VInputTag(
-      'HGCalRecHit:HGCEERecHits',
-      'HGCalRecHit:HGCHEFRecHits',
-      'HGCalRecHit:HGCHEBRecHits'
-    ),
-    barrel_hits = cms.VInputTag(
+    hits = cms.VInputTag(
       'particleFlowRecHitECAL',
       'particleFlowRecHitHBHE'
     ),
@@ -130,11 +125,11 @@ def BarrelValidator(*args, **kwargs):
     doCaloParticlePlots = cms.untracked.bool(True),
     doCaloParticleSelection = cms.untracked.bool(True),
     doSimClustersPlots = cms.untracked.bool(True),
-    label_SimClusters = cms.InputTag('SimClusters'),
-    label_SimClustersLevel = cms.InputTag('ClusterLevel'),
+    label_SimClusters = cms.string('SimClusters'),
+    label_SimClustersLevel = cms.string('ClusterLevel'),
     doLayerClustersPlots = cms.untracked.bool(True),
-    label_layerClusterPlots = cms.InputTag('hgcalMergeLayerClusters'),
-    label_LCToCPLinking = cms.InputTag('LCToCP_association'),
+    label_layerClustersPlots = cms.string('LayerClusters'),
+    label_LCToCPLinking = cms.string('LCToCP_association'),
     simClustersToCaloParticlesMap = cms.InputTag('SimClusterToCaloParticleAssociation', 'simClusterToCaloParticleMap'),
     label_cp_effic = cms.InputTag('mix', 'MergedCaloTruth'),
     label_cp_fake = cms.InputTag('mix', 'MergedCaloTruth'),
