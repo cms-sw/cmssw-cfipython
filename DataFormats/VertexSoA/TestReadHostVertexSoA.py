@@ -1,10 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-def TestReadHostHitSoA(*args, **kwargs):
-  mod = cms.EDAnalyzer('TestReadHostHitSoA',
+def TestReadHostVertexSoA(*args, **kwargs):
+  mod = cms.EDAnalyzer('TestReadHostVertexSoA',
     input = cms.required.InputTag,
-    hitSize = cms.uint32(1000),
-    offsetBPIX2 = cms.uint32(50),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
