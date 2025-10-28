@@ -17,6 +17,7 @@ def ScoutingCollectionMonitor(*args, **kwargs):
     pfMetPhi = cms.InputTag('hltScoutingPFPacker', 'pfMetPhi'),
     rho = cms.InputTag('hltScoutingPFPacker', 'rho'),
     onlineMetaDataDigis = cms.InputTag('onlineMetaDataDigis'),
+    beamSpot = cms.InputTag('hltOnlineBeamSpot'),
     pfRecHitsEB = cms.InputTag('hltScoutingRecHitPacker', 'EB'),
     pfRecHitsEE = cms.InputTag('hltScoutingRecHitPacker', 'EE'),
     pfRecHitsHBHE = cms.InputTag('hltScoutingRecHitPacker', 'HBHE'),
