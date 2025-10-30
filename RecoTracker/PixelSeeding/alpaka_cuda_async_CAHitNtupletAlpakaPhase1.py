@@ -3,46 +3,13 @@ import FWCore.ParameterSet.Config as cms
 def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::CAHitNtupletAlpakaPhase1',
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
-    cellZ0Cut = cms.double(12),
-    cellPtCut = cms.double(0.5),
-    dzdrFact = cms.double(15.200000762939453),
+    cellZ0Cut = cms.double(12.5),
+    dzdrFact = cms.double(15.199999809265137),
     minYsizeB1 = cms.int32(1),
     minYsizeB2 = cms.int32(1),
     maxDYsize12 = cms.int32(28),
     maxDYsize = cms.int32(20),
     maxDYPred = cms.int32(20),
-    maxNumberOfDoublets = cms.string('524288'),
-    maxNumberOfTuples = cms.string('32768'),
-    avgHitsPerTrack = cms.double(5),
-    avgCellsPerHit = cms.double(25),
-    avgCellsPerCell = cms.double(2),
-    avgTracksPerCell = cms.double(1),
-    ptmin = cms.double(0.89999997615814209),
-    hardCurvCut = cms.double(0.032840722495894911),
-    earlyFishbone = cms.bool(True),
-    lateFishbone = cms.bool(False),
-    fillStatistics = cms.bool(False),
-    minHitsPerNtuplet = cms.uint32(4),
-    minHitsForSharingCut = cms.uint32(10),
-    fitNas4 = cms.bool(False),
-    useRiemannFit = cms.bool(False),
-    doSharedHitCut = cms.bool(True),
-    dupPassThrough = cms.bool(False),
-    useSimpleTripletCleaner = cms.bool(True),
-    trackQualityCuts = cms.PSet(
-      chi2MaxPt = cms.double(10),
-      chi2Coeff = cms.vdouble(
-        0.9,
-        1.8
-      ),
-      chi2Scale = cms.double(8),
-      tripletMinPt = cms.double(0.5),
-      tripletMaxTip = cms.double(0.3),
-      tripletMaxZip = cms.double(12),
-      quadrupletMinPt = cms.double(0.3),
-      quadrupletMaxTip = cms.double(0.5),
-      quadrupletMaxZip = cms.double(12)
-    ),
     geometry = cms.PSet(
       caDCACuts = cms.vdouble(
         0.15000000596046448,
@@ -116,7 +83,22 @@ def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
         522,
         522
       ),
-      minZ = cms.vdouble(
+      ptCuts = cms.vdouble(
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ),
+      minInner = cms.vdouble(
         -20,
         0,
         -30,
@@ -131,7 +113,7 @@ def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
         -70,
         -70
       ),
-      maxZ = cms.vdouble(
+      maxInner = cms.vdouble(
         20,
         30,
         0,
@@ -146,7 +128,37 @@ def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
         70,
         70
       ),
-      maxR = cms.vdouble(
+      minOuter = cms.vdouble(
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100
+      ),
+      maxOuter = cms.vdouble(
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ),
+      maxDR = cms.vdouble(
         20,
         9,
         9,
@@ -160,7 +172,69 @@ def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
         6,
         5,
         5
+      ),
+      minDZ = cms.vdouble(
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100,
+        -100
+      ),
+      maxDZ = cms.vdouble(
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
       )
+    ),
+    maxNumberOfDoublets = cms.string('524288'),
+    maxNumberOfTuples = cms.string('32768'),
+    avgHitsPerTrack = cms.double(5),
+    avgCellsPerHit = cms.double(25),
+    avgCellsPerCell = cms.double(2),
+    avgTracksPerCell = cms.double(1),
+    ptmin = cms.double(0.89999997615814209),
+    hardCurvCut = cms.double(0.032840721309185028),
+    earlyFishbone = cms.bool(True),
+    lateFishbone = cms.bool(False),
+    fillStatistics = cms.bool(False),
+    minHitsPerNtuplet = cms.uint32(4),
+    minHitsForSharingCut = cms.uint32(10),
+    fitNas4 = cms.bool(False),
+    useRiemannFit = cms.bool(False),
+    doSharedHitCut = cms.bool(True),
+    dupPassThrough = cms.bool(False),
+    useSimpleTripletCleaner = cms.bool(True),
+    trackQualityCuts = cms.PSet(
+      chi2MaxPt = cms.double(10),
+      chi2Coeff = cms.vdouble(
+        0.9,
+        1.8
+      ),
+      chi2Scale = cms.double(8),
+      tripletMinPt = cms.double(0.5),
+      tripletMaxTip = cms.double(0.3),
+      tripletMaxZip = cms.double(12),
+      quadrupletMinPt = cms.double(0.3),
+      quadrupletMaxTip = cms.double(0.5),
+      quadrupletMaxZip = cms.double(12)
     ),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(

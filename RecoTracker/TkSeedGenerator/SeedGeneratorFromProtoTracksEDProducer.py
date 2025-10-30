@@ -10,6 +10,7 @@ def SeedGeneratorFromProtoTracksEDProducer(*args, **kwargs):
     useEventsWithNoVertex = cms.bool(True),
     TTRHBuilder = cms.string('TTRHBuilderWithoutAngle4PixelTriplets'),
     usePV = cms.bool(False),
+    removeOTRechits = cms.bool(False),
     includeFourthHit = cms.bool(False),
     produceComplement = cms.bool(False),
     SeedCreatorPSet = cms.PSet(

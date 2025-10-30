@@ -5,8 +5,12 @@ def PixelTrackProducerFromSoAAlpakaPhase2(*args, **kwargs):
     beamSpot = cms.InputTag('offlineBeamSpot'),
     trackSrc = cms.InputTag('pixelTracksAlpaka'),
     pixelRecHitLegacySrc = cms.InputTag('siPixelRecHitsPreSplittingLegacy'),
+    outerTrackerRecHitSrc = cms.InputTag('hltSiPhase2RecHits'),
+    outerTrackerRecHitSoAConverterSrc = cms.InputTag('phase2OTRecHitsSoAConverter'),
     minNumberOfHits = cms.int32(0),
     minQuality = cms.string('loose'),
+    useOTExtension = cms.bool(False),
+    requireQuadsFromConsecutiveLayers = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
