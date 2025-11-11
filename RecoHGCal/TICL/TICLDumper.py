@@ -21,6 +21,17 @@ def TICLDumper(*args, **kwargs):
     recoSuperClusters_sourceTracksterCollection = cms.InputTag('ticlTrackstersMerge'),
     simtrackstersSC = cms.InputTag('ticlSimTracksters'),
     simTICLCandidates = cms.InputTag('ticlSimTracksters'),
+    label_rechits = cms.VInputTag(
+      'HGCalRecHit:HGCEERecHits',
+      'HGCalRecHit:HGCHEFRecHits',
+      'HGCalRecHit:HGCHEBRecHits'
+    ),
+    label_simhits = cms.VInputTag(
+      'g4SimHits:HGCHitsEE',
+      'g4SimHits:HGCHitsHEfront',
+      'g4SimHits:HGCHitsHEback'
+    ),
+    hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     associators = cms.required.VPSet,
     simclusters = cms.InputTag('mix', 'MergedCaloTruth'),
     caloparticles = cms.InputTag('mix', 'MergedCaloTruth'),
@@ -32,6 +43,7 @@ def TICLDumper(*args, **kwargs):
     saveTracks = cms.bool(True),
     saveSuperclustering = cms.bool(True),
     saveRecoSuperclusters = cms.bool(True),
+    saveHits = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
