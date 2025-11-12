@@ -11,11 +11,7 @@ def AllTracksterToSimTracksterAssociatorsByHitsProducer(*args, **kwargs):
       'ticlSimTracksters',
       'ticlSimTracksters:fromCPs'
     ),
-    hits = cms.VInputTag(
-      'HGCalRecHit:HGCEERecHits',
-      'HGCalRecHit:HGCHEFRecHits',
-      'HGCalRecHit:HGCHEBRecHits'
-    ),
+    hits = cms.InputTag('recHitMapProducer', 'RefProdVectorHGCRecHitCollection'),
     hitToSimClusterMap = cms.InputTag('hitToSimClusterCaloParticleAssociator', 'hitToSimClusterMap'),
     hitToCaloParticleMap = cms.InputTag('hitToSimClusterCaloParticleAssociator', 'hitToCaloParticleMap'),
     caloParticles = cms.InputTag('mix', 'MergedCaloTruth'),

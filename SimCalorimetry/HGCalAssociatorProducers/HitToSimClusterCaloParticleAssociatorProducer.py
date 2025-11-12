@@ -5,11 +5,7 @@ def HitToSimClusterCaloParticleAssociatorProducer(*args, **kwargs):
     caloParticles = cms.InputTag('mix', 'MergedCaloTruth'),
     simClusters = cms.InputTag('mix', 'MergedCaloTruth'),
     hitMap = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
-    hits = cms.VInputTag(
-      'HGCalRecHit:HGCEERecHits',
-      'HGCalRecHit:HGCHEFRecHits',
-      'HGCalRecHit:HGCHEBRecHits'
-    ),
+    hits = cms.InputTag('recHitMapProducer', 'RefProdVectorHGCRecHitCollection'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

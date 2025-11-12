@@ -4,10 +4,7 @@ def BarrelLCToSCAssociatorByEnergyScoreProducer(*args, **kwargs):
   mod = cms.EDProducer('BarrelLCToSCAssociatorByEnergyScoreProducer',
     hardScatterOnly = cms.bool(True),
     hitMapTag = cms.InputTag('recHitMapProducer', 'barrelRecHitMap'),
-    hits = cms.VInputTag(
-      'particleFlowRecHitECAL',
-      'particleFlowRecHitHBHE'
-    ),
+    hits = cms.InputTag('recHitMapProducer', 'RefProdVectorPFRecHitCollection'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

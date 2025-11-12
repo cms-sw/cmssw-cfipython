@@ -106,10 +106,7 @@ def BarrelValidator(*args, **kwargs):
       maxZ = cms.double(550),
       nintZ = cms.int32(1100)
     ),
-    hits = cms.VInputTag(
-      'particleFlowRecHitECAL',
-      'particleFlowRecHitHBHE'
-    ),
+    hits = cms.InputTag('recHitMapProducer', 'RefProdVectorPFRecHitCollection'),
     label_lcl = cms.InputTag('hgcalMergeLayerClusters'),
     label_tst = cms.VInputTag(
       'ticlTrackstersCLUE3DHigh',

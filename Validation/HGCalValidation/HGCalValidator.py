@@ -136,11 +136,7 @@ def HGCalValidator(*args, **kwargs):
       maxZ = cms.double(550),
       nintZ = cms.int32(1100)
     ),
-    hits = cms.VInputTag(
-      'HGCalRecHit:HGCEERecHits',
-      'HGCalRecHit:HGCHEFRecHits',
-      'HGCalRecHit:HGCHEBRecHits'
-    ),
+    hits = cms.InputTag('recHitMapProducer', 'RefProdVectorHGCRecHitCollection'),
     label_lcl = cms.InputTag('hgcalMergeLayerClusters'),
     label_tst = cms.VInputTag(
       'ticlTrackstersCLUE3DHigh',
