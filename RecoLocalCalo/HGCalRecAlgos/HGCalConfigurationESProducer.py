@@ -3,8 +3,8 @@ import FWCore.ParameterSet.Config as cms
 def HGCalConfigurationESProducer(*args, **kwargs):
   mod = cms.ESSource('HGCalConfigurationESProducer',
     indexSource = cms.ESInputTag('', ''),
-    fedjson = cms.string(''),
-    modjson = cms.string(''),
+    fedjson = cms.required.FileInPath,
+    modjson = cms.required.FileInPath,
     bePassthroughMode = cms.int32(-1),
     cbHeaderMarker = cms.int32(-1),
     slinkHeaderMarker = cms.int32(-1),

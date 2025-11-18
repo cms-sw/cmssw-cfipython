@@ -6,6 +6,7 @@ def alpaka_cuda_async_HGCalRecHitsProducer(*args, **kwargs):
     calibSource = cms.ESInputTag('', ''),
     mappingSource = cms.ESInputTag('', ''),
     indexingSource = cms.ESInputTag('', ''),
+    k_noise = cms.double(-100),
     n_blocks = cms.int32(-1),
     n_threads = cms.int32(-1),
     n_hits_scale = cms.int32(-1),
