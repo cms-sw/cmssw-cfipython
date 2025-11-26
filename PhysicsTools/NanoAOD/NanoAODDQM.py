@@ -10,6 +10,7 @@ def NanoAODDQM(*args, **kwargs):
         plots = cms.required.VPSet
       )
     ),
+    folder = cms.string('Physics/NanoAODDQM'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

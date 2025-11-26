@@ -132,7 +132,10 @@ def TrackCutClassifier(*args, **kwargs):
           3.4028234663852886e+38,
           3.4028234663852886e+38
         )
-      )
+      ),
+      passThroughForAll = cms.bool(False),
+      passThroughForDisplaced = cms.bool(False),
+      minLayersForDisplaced = cms.int32(4)
     ),
     mightGet = cms.optional.untracked.vstring
   )
