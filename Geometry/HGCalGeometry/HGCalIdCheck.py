@@ -2,10 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def HGCalIdCheck(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalIdCheck',
-    nameDetectors = cms.vstring(
-      'HGCalEESensitive',
-      'HGCalHESiliconSensitive'
-    ),
+    nameDetector = cms.string('HGCalHESiliconSensitive'),
     fileName = cms.string('D120E.txt'),
     mightGet = cms.optional.untracked.vstring
   )
