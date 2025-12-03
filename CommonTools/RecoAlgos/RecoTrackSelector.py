@@ -21,6 +21,7 @@ def RecoTrackSelector(*args, **kwargs):
     minHit = cms.int32(0),
     minLayer = cms.int32(3),
     minPixelHit = cms.int32(0),
+    maxPixelHit = cms.int32(99),
     algorithm = cms.vstring(),
     algorithmMaskContains = cms.vstring(),
     originalAlgorithm = cms.vstring(),

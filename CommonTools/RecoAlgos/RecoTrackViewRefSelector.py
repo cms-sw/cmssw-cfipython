@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def RecoTrackViewRefSelector(*args, **kwargs):
   mod = cms.EDProducer('RecoTrackViewRefSelector',
+    throwOnMissing = cms.bool(True),
     src = cms.InputTag(''),
     invertRapidityCut = cms.bool(False),
     usePV = cms.bool(False),
@@ -19,6 +20,7 @@ def RecoTrackViewRefSelector(*args, **kwargs):
     minHit = cms.int32(0),
     minLayer = cms.int32(3),
     minPixelHit = cms.int32(0),
+    maxPixelHit = cms.int32(99),
     algorithm = cms.vstring(),
     algorithmMaskContains = cms.vstring(),
     originalAlgorithm = cms.vstring(),

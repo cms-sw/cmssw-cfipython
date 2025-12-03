@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def TrackWithVertexRefSelector(*args, **kwargs):
   mod = cms.EDProducer('TrackWithVertexRefSelector',
+    throwOnMissing = cms.bool(True),
     src = cms.InputTag(''),
     numberOfValidHits = cms.uint32(0),
     numberOfValidPixelHits = cms.uint32(0),
