@@ -4,6 +4,7 @@ def SchemaEvolutionTestRead(*args, **kwargs):
   mod = cms.EDAnalyzer('SchemaEvolutionTestRead',
     expectedVectorVectorIntegralValues = cms.required.vint32,
     vectorVectorTag = cms.required.InputTag,
+    testAutoPtrToUniquePtr = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
