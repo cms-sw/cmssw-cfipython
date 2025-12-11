@@ -5,6 +5,7 @@ def EtlSimHitsValidation(*args, **kwargs):
     folder = cms.string('MTD/ETL/SimHits'),
     inputTag = cms.InputTag('mix', 'g4SimHitsFastTimerHitsEndcap'),
     hitMinimumEnergy2Dis = cms.double(0.001),
+    optionalPlots = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
