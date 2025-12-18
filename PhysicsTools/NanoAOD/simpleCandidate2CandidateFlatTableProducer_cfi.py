@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleCandidate2CandidateFlatTableProducer import SimpleCandidate2CandidateFlatTableProducer
+
+simpleCandidate2CandidateFlatTableProducer = SimpleCandidate2CandidateFlatTableProducer()

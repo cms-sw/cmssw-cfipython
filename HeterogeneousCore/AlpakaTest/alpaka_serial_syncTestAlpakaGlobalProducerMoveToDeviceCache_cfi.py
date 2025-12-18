@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TestAlpakaGlobalProducerMoveToDeviceCache import alpaka_serial_sync_TestAlpakaGlobalProducerMoveToDeviceCache
+
+alpaka_serial_syncTestAlpakaGlobalProducerMoveToDeviceCache = alpaka_serial_sync_TestAlpakaGlobalProducerMoveToDeviceCache()

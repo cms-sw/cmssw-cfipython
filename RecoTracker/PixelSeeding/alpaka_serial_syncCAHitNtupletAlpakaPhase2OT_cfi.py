@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_CAHitNtupletAlpakaPhase2OT import alpaka_serial_sync_CAHitNtupletAlpakaPhase2OT
+
+alpaka_serial_syncCAHitNtupletAlpakaPhase2OT = alpaka_serial_sync_CAHitNtupletAlpakaPhase2OT()

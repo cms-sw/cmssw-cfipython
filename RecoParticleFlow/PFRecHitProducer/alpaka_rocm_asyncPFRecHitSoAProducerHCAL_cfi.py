@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_PFRecHitSoAProducerHCAL import alpaka_rocm_async_PFRecHitSoAProducerHCAL
+
+alpaka_rocm_asyncPFRecHitSoAProducerHCAL = alpaka_rocm_async_PFRecHitSoAProducerHCAL()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTPFJetCollectionsForElePlusJets import HLTPFJetCollectionsForElePlusJets
+
+hltJetCollectionsForElePlusJetsRecoPFJet = HLTPFJetCollectionsForElePlusJets()

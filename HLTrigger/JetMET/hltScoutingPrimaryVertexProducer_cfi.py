@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTScoutingPrimaryVertexProducer import HLTScoutingPrimaryVertexProducer
+
+hltScoutingPrimaryVertexProducer = HLTScoutingPrimaryVertexProducer()
