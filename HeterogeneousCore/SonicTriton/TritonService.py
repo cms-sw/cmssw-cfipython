@@ -26,7 +26,7 @@ def TritonService(*args, **kwargs):
       instanceName = cms.untracked.string(''),
       tempDir = cms.untracked.string(''),
       imageName = cms.untracked.string(''),
-      sandboxName = cms.untracked.string('')
+      sandboxDir = cms.untracked.string('')
     )
   )
   for a in args:

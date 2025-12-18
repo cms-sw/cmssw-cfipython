@@ -6,6 +6,16 @@ def NanoAODRNTupleOutputModule(*args, **kwargs):
     logicalFileName = cms.untracked.string(''),
     compressionLevel = cms.untracked.int32(9),
     compressionAlgorithm = cms.untracked.string('ZLIB'),
+    noSplitFields = cms.untracked.vstring(),
+    rntupleWriteOptions = cms.untracked.PSet(
+      approxZippedClusterSize = cms.untracked.uint64(134217728),
+      maxUnzippedClusterSize = cms.untracked.uint64(1342177280),
+      initialUnzippedPageSize = cms.untracked.uint64(256),
+      maxUnzippedPageSize = cms.untracked.uint64(1048576),
+      pageBufferBudget = cms.untracked.uint64(0),
+      useBufferedWrite = cms.untracked.bool(True),
+      useDirectIO = cms.untracked.bool(False)
+    ),
     saveProvenance = cms.untracked.bool(True),
     outputCommands = cms.untracked.vstring(
       'drop *',
