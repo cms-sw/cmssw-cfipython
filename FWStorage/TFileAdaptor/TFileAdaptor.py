@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def AdaptorConfig(*args, **kwargs):
-  mod = cms.Service('AdaptorConfig',
+def TFileAdaptor(*args, **kwargs):
+  mod = cms.Service('TFileAdaptor',
     enable = cms.untracked.bool(True),
     stats = cms.untracked.bool(True),
     cacheHint = cms.untracked.string('auto-detect'),
