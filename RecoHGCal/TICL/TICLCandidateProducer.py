@@ -21,7 +21,6 @@ def TICLCandidateProducer(*args, **kwargs):
     
     ),
     interpretationDescPSet = cms.PSet(
-      cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
       delta_tk_ts_layer1 = cms.double(0.02),
       delta_tk_ts_interface = cms.double(0.03),
       timing_quality_threshold = cms.double(0.5),
