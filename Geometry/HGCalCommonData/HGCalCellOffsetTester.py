@@ -6,9 +6,9 @@ def HGCalCellOffsetTester(*args, **kwargs):
     waferType = cms.int32(0),
     cellPlacementIndex = cms.int32(11),
     cellType = cms.int32(0),
-    mouseBiteCut = cms.double(5),
-    guardRingOffset = cms.double(0.9),
-    sizeOffset = cms.double(0.435),
+    mouseBiteCut = cms.double(5.834),
+    guardRingOffset = cms.double(0.8985),
+    sizeOffset = cms.double(0.87),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
