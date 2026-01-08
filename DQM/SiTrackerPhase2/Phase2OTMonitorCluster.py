@@ -130,6 +130,28 @@ def Phase2OTMonitorCluster(*args, **kwargs):
       ymax = cms.double(10),
       switch = cms.bool(True)
     ),
+    PositionOfClusters_2S = cms.PSet(
+      name = cms.string('PositionOfClusters_2S'),
+      title = cms.string('PositionsOfClusters_2S;strip ;half-sensor	;'),
+      NxBins = cms.int32(1016),
+      xmin = cms.double(0.5),
+      xmax = cms.double(1016.5),
+      NyBins = cms.int32(5),
+      ymin = cms.double(-2.5),
+      ymax = cms.double(2.5),
+      switch = cms.bool(True)
+    ),
+    PositionOfClusters_2SLadder = cms.PSet(
+      name = cms.string('PositionOfClusters_2SLadder'),
+      title = cms.string('PositionsOfClusters_Ladder;module ;half-sensor ;'),
+      NxBins = cms.int32(25),
+      xmin = cms.double(-12.5),
+      xmax = cms.double(12.5),
+      NyBins = cms.int32(5),
+      ymin = cms.double(-2.5),
+      ymax = cms.double(2.5),
+      switch = cms.bool(True)
+    ),
     TopFolderName = cms.string('TrackerPhase2OTCluster'),
     clusterSrc = cms.InputTag('siPhase2Clusters'),
     mightGet = cms.optional.untracked.vstring

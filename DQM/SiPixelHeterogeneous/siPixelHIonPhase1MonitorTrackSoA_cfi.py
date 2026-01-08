@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .SiPixelHIonPhase1MonitorTrackSoA import SiPixelHIonPhase1MonitorTrackSoA
-
-siPixelHIonPhase1MonitorTrackSoA = SiPixelHIonPhase1MonitorTrackSoA()
