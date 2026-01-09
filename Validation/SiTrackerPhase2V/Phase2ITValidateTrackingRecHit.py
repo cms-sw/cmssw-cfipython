@@ -193,6 +193,30 @@ def Phase2ITValidateTrackingRecHit(*args, **kwargs):
       xmin = cms.double(-4.1),
       ymin = cms.double(-4)
     ),
+    Delta_Phi = cms.PSet(
+      name = cms.string('Delta_phi'),
+      title = cms.string('Delta Phi macro pixel sensor;phi;'),
+      NxBins = cms.int32(100),
+      switch = cms.bool(True),
+      xmax = cms.double(0.5),
+      xmin = cms.double(-0.5)
+    ),
+    Delta_Phi_barrel = cms.PSet(
+      name = cms.string('Delta_Phi_Pixel_Barrel'),
+      title = cms.string('Delta Phi macro pixel sensor barrel;phi;'),
+      NxBins = cms.int32(100),
+      switch = cms.bool(True),
+      xmax = cms.double(0.5),
+      xmin = cms.double(-0.5)
+    ),
+    Delta_Phi_endcaps = cms.PSet(
+      name = cms.string('Delta_Phi_Pixel_Endcaps'),
+      title = cms.string('Delta Phi macro pixel sensor endcaps;phi;'),
+      NxBins = cms.int32(100),
+      switch = cms.bool(True),
+      xmax = cms.double(0.5),
+      xmin = cms.double(-0.5)
+    ),
     associatePixel = cms.bool(True),
     associateStrip = cms.bool(False),
     usePhase2Tracker = cms.bool(True),
