@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def SCSimpleProducer(*args, **kwargs):
   mod = cms.EDProducer('SCSimpleProducer',
+    size = cms.required.int32,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
