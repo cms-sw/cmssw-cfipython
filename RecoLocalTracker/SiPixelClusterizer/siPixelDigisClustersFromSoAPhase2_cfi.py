@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .SiPixelDigisClustersFromSoAPhase2 import SiPixelDigisClustersFromSoAPhase2
-
-siPixelDigisClustersFromSoAPhase2 = SiPixelDigisClustersFromSoAPhase2()
