@@ -5,6 +5,7 @@ def HGCalIdCheck(*args, **kwargs):
     nameDetector = cms.string('HGCalHESiliconSensitive'),
     fileName = cms.string('D120E.txt'),
     outFileName = cms.string(''),
+    mode = cms.int32(0),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
