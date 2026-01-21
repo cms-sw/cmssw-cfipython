@@ -217,14 +217,14 @@ def GsfElectronProducer(*args, **kwargs):
     EleDNNPFid = cms.PSet(
       enabled = cms.bool(False),
       extetaboundary = cms.double(2.65),
-      inputTensorName = cms.string('FirstLayer_input'),
-      outputTensorName = cms.string('sequential/FinalLayer/Softmax'),
+      inputTensorName = cms.string('FirstLayer_input:0'),
+      outputTensorName = cms.string('sequential/FinalLayer/Softmax:0'),
       modelsFiles = cms.vstring(
-        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/lowpT/lowpT_modelDNN.pb',
-        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEB/highpTEB_modelDNN.pb',
-        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEE/highpTEE_modelDNN.pb',
-        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta1/modelDNN.pb',
-        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta2/modelDNN.pb'
+        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/lowpT/lowpT_modelDNN.onnx',
+        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEB/highpTEB_modelDNN.onnx',
+        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/highpTEE/highpTEE_modelDNN.onnx',
+        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta1/modelDNN.onnx',
+        'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Winter22_122X/exteta2/modelDNN.onnx'
       ),
       scalersFiles = cms.vstring(
         'RecoEgamma/ElectronIdentification/data/Ele_PFID_dnn/Run3Summer21_120X/lowpT/lowpT_scaler.txt',
