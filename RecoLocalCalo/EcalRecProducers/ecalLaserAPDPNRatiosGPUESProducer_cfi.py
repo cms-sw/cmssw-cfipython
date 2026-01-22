@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .EcalLaserAPDPNRatiosGPUESProducer import EcalLaserAPDPNRatiosGPUESProducer
-
-ecalLaserAPDPNRatiosGPUESProducer = EcalLaserAPDPNRatiosGPUESProducer()

@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .EcalUncalibRecHitPhase2WeightsProducerGPU import EcalUncalibRecHitPhase2WeightsProducerGPU
-
-ecalUncalibRecHitPhase2WeightsProducerGPU = EcalUncalibRecHitPhase2WeightsProducerGPU()
