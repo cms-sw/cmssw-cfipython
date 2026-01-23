@@ -268,6 +268,24 @@ def HLTEcalPhiSymFilter(*args, **kwargs):
     ),
     phiSymBarrelDigiCollection = cms.string('phiSymEcalDigisEB'),
     phiSymEndcapDigiCollection = cms.string('phiSymEcalDigisEE'),
+    cleanReco = cms.bool(False),
+    cleaningConfig = cms.PSet(
+      e6e2thresh = cms.double(0.04),
+      tightenCrack_e6e2_double = cms.double(3),
+      e4e1Threshold_endcap = cms.double(0.3),
+      tightenCrack_e4e1_single = cms.double(3),
+      tightenCrack_e1_double = cms.double(2),
+      cThreshold_barrel = cms.double(4),
+      e4e1Threshold_barrel = cms.double(0.08),
+      tightenCrack_e1_single = cms.double(2),
+      e4e1_b_barrel = cms.double(-0.024),
+      e4e1_a_barrel = cms.double(0.04),
+      ignoreOutOfTimeThresh = cms.double(1000000000),
+      cThreshold_endcap = cms.double(15),
+      e4e1_b_endcap = cms.double(-0.0125),
+      e4e1_a_endcap = cms.double(0.02),
+      cThreshold_double = cms.double(10)
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
