@@ -23,6 +23,7 @@ def TrackingAssocValueMapsProducer(*args, **kwargs):
       maxPhi = cms.double(3.2)
     ),
     storeTPKinematics = cms.bool(True),
+    useMuonAssociators = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

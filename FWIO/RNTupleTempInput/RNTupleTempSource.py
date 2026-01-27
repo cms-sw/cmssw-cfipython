@@ -10,7 +10,8 @@ def RNTupleTempSource(*args, **kwargs):
     bypassVersionCheck = cms.untracked.bool(False),
     treeMaxVirtualSize = cms.untracked.int32(-1),
     rntupleReadOptions = cms.untracked.PSet(
-      useClusterCache = cms.untracked.bool(True)
+      useClusterCache = cms.untracked.bool(True),
+      enableIMT = cms.untracked.bool(True)
     ),
     dropDescendantsOfDroppedBranches = cms.untracked.bool(True),
     labelRawDataLikeMC = cms.untracked.bool(True),
