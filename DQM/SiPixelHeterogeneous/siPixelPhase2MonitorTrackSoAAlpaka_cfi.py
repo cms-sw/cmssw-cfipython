@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .SiPixelPhase2MonitorTrackSoAAlpaka import SiPixelPhase2MonitorTrackSoAAlpaka
-
-siPixelPhase2MonitorTrackSoAAlpaka = SiPixelPhase2MonitorTrackSoAAlpaka()

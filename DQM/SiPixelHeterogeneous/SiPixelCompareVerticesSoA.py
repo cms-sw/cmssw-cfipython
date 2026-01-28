@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelCompareVertices(*args, **kwargs):
-  mod = cms.EDProducer('SiPixelCompareVertices',
+def SiPixelCompareVerticesSoA(*args, **kwargs):
+  mod = cms.EDProducer('SiPixelCompareVerticesSoA',
     pixelVertexReferenceSoA = cms.InputTag('pixelVerticesAlpakaSerial'),
     pixelVertexTargetSoA = cms.InputTag('pixelVerticesAlpaka'),
     beamSpotSrc = cms.InputTag('offlineBeamSpot'),

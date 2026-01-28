@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelPhase2CompareTracks(*args, **kwargs):
-  mod = cms.EDProducer('SiPixelPhase2CompareTracks',
+def SiPixelCompareTracksSoA(*args, **kwargs):
+  mod = cms.EDProducer('SiPixelCompareTracksSoA',
     pixelTrackReferenceSoA = cms.InputTag('pixelTracksAlpakaSerial'),
     pixelTrackTargetSoA = cms.InputTag('pixelTracksAlpaka'),
     topFolderName = cms.string('SiPixelHeterogeneous/PixelTrackCompareDeviceVSHost'),

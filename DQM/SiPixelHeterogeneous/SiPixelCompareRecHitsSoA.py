@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelPhase2CompareRecHits(*args, **kwargs):
-  mod = cms.EDProducer('SiPixelPhase2CompareRecHits',
+def SiPixelCompareRecHitsSoA(*args, **kwargs):
+  mod = cms.EDProducer('SiPixelCompareRecHitsSoA',
     pixelHitsReferenceSoA = cms.InputTag('siPixelRecHitsPreSplittingAlpakaSerial'),
     pixelHitsTargetSoA = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
     topFolderName = cms.string('SiPixelHeterogeneous/PixelRecHitsCompareDeviceVSHost'),

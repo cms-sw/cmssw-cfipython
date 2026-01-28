@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelPhase2MonitorTrackSoAAlpaka(*args, **kwargs):
-  mod = cms.EDProducer('SiPixelPhase2MonitorTrackSoAAlpaka',
+def SiPixelMonitorTrackSoA(*args, **kwargs):
+  mod = cms.EDProducer('SiPixelMonitorTrackSoA',
     pixelTrackSrc = cms.InputTag('pixelTracksAlpaka'),
     topFolderName = cms.string('SiPixelHeterogeneous/PixelTrackAlpaka'),
     useQualityCut = cms.bool(True),

@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def SiPixelMonitorVertexSoAAlpaka(*args, **kwargs):
-  mod = cms.EDProducer('SiPixelMonitorVertexSoAAlpaka',
+def SiPixelMonitorVertexSoA(*args, **kwargs):
+  mod = cms.EDProducer('SiPixelMonitorVertexSoA',
     pixelVertexSrc = cms.InputTag('pixelVerticesAlpaka'),
     beamSpotSrc = cms.InputTag('offlineBeamSpot'),
     topFolderName = cms.string('SiPixelHeterogeneous/PixelVertexAlpaka'),
