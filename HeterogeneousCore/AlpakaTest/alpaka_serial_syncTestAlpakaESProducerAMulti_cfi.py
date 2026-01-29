@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_serial_sync_TestAlpakaESProducerAMulti import alpaka_serial_sync_TestAlpakaESProducerAMulti
-
-alpaka_serial_syncTestAlpakaESProducerAMulti = alpaka_serial_sync_TestAlpakaESProducerAMulti()

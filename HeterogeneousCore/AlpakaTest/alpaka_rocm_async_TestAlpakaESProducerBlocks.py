@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def alpaka_serial_sync_TestAlpakaESProducerAMulti(*args, **kwargs):
-  mod = cms.ESProducer('alpaka_serial_sync::TestAlpakaESProducerAMulti',
+def alpaka_rocm_async_TestAlpakaESProducerBlocks(*args, **kwargs):
+  mod = cms.ESProducer('alpaka_rocm_async::TestAlpakaESProducerBlocks',
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
