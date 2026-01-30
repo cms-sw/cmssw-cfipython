@@ -87,6 +87,11 @@ def Phase2OTValidateTracks(*args, **kwargs):
       xmax = cms.double(2),
       xmin = cms.double(-2)
     ),
+    n_trackParticles = cms.PSet(
+      Nbinsx = cms.int32(100),
+      xmax = cms.double(600),
+      xmin = cms.double(0)
+    ),
     TopFolderName = cms.string('TrackerPhase2OTL1TrackV'),
     trackingParticleToken = cms.InputTag('mix', 'MergedTrackTruth'),
     MCTruthStubInputTag = cms.InputTag('TTStubAssociatorFromPixelDigis', 'StubAccepted'),

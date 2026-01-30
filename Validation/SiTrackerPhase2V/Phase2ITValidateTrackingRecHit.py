@@ -195,7 +195,7 @@ def Phase2ITValidateTrackingRecHit(*args, **kwargs):
     ),
     Delta_Phi = cms.PSet(
       name = cms.string('Delta_phi'),
-      title = cms.string('Delta Phi macro pixel sensor;phi;'),
+      title = cms.string('Delta Phi pixel;phi;'),
       NxBins = cms.int32(100),
       switch = cms.bool(True),
       xmax = cms.double(0.5),
@@ -203,7 +203,7 @@ def Phase2ITValidateTrackingRecHit(*args, **kwargs):
     ),
     Delta_Phi_barrel = cms.PSet(
       name = cms.string('Delta_Phi_Pixel_Barrel'),
-      title = cms.string('Delta Phi macro pixel sensor barrel;phi;'),
+      title = cms.string('Delta Phi pixel barrel;phi;'),
       NxBins = cms.int32(100),
       switch = cms.bool(True),
       xmax = cms.double(0.5),
@@ -211,7 +211,7 @@ def Phase2ITValidateTrackingRecHit(*args, **kwargs):
     ),
     Delta_Phi_endcaps = cms.PSet(
       name = cms.string('Delta_Phi_Pixel_Endcaps'),
-      title = cms.string('Delta Phi macro pixel sensor endcaps;phi;'),
+      title = cms.string('Delta Phi pixel endcaps;phi;'),
       NxBins = cms.int32(100),
       switch = cms.bool(True),
       xmax = cms.double(0.5),

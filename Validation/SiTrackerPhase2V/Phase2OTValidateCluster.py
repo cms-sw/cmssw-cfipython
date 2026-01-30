@@ -37,25 +37,25 @@ def Phase2OTValidateCluster(*args, **kwargs):
     Delta_Phi_Pixel = cms.PSet(
       name = cms.string('Delta_Phi_Pixel'),
       title = cms.string('#Delta Phi macro-pixel sensor;phi'),
-      xmin = cms.double(-0.1),
+      xmin = cms.double(-0.01),
       switch = cms.bool(True),
-      xmax = cms.double(0.1),
+      xmax = cms.double(0.01),
       NxBins = cms.int32(100)
     ),
     Delta_Phi_Pixel_Barrel = cms.PSet(
       name = cms.string('Delta_Phi_Pixel_Barrel'),
       title = cms.string('#Delta Phi macro-pixel sensor Barrel;phi'),
-      xmin = cms.double(-0.1),
+      xmin = cms.double(-0.01),
       switch = cms.bool(True),
-      xmax = cms.double(0.1),
+      xmax = cms.double(0.01),
       NxBins = cms.int32(100)
     ),
     Delta_Phi_Pixel_Endcap = cms.PSet(
       name = cms.string('Delta_Phi_Pixel_Endcaps'),
       title = cms.string('#Delta Phi macro-pixel sensor Endcaps;phi'),
-      xmin = cms.double(-0.1),
+      xmin = cms.double(-0.01),
       switch = cms.bool(True),
-      xmax = cms.double(0.1),
+      xmax = cms.double(0.01),
       NxBins = cms.int32(100)
     ),
     Delta_X_Strip = cms.PSet(
@@ -93,25 +93,25 @@ def Phase2OTValidateCluster(*args, **kwargs):
     Delta_Phi_Strip = cms.PSet(
       name = cms.string('Delta_Phi_Strip'),
       title = cms.string('#Delta Phi strip sensor;phi'),
-      xmin = cms.double(-0.1),
+      xmin = cms.double(-0.01),
       switch = cms.bool(True),
-      xmax = cms.double(0.1),
+      xmax = cms.double(0.01),
       NxBins = cms.int32(100)
     ),
     Delta_Phi_Strip_Barrel = cms.PSet(
       name = cms.string('Delta_Phi_Strip_Barrel'),
       title = cms.string('#Delta Phi strip sensor Barrel;phi'),
-      xmin = cms.double(-0.1),
+      xmin = cms.double(-0.01),
       switch = cms.bool(True),
-      xmax = cms.double(0.1),
+      xmax = cms.double(0.01),
       NxBins = cms.int32(100)
     ),
     Delta_Phi_Strip_Endcap = cms.PSet(
       name = cms.string('Delta_Phi_Strip_Endcaps'),
       title = cms.string('#Delta Phi strip sensor Endcaps;phi'),
-      xmin = cms.double(-0.1),
+      xmin = cms.double(-0.01),
       switch = cms.bool(True),
-      xmax = cms.double(0.1),
+      xmax = cms.double(0.01),
       NxBins = cms.int32(100)
     ),
     TopFolderName = cms.string('TrackerPhase2OTClusterV'),
