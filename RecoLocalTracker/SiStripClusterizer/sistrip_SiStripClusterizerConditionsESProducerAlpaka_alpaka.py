@@ -2,8 +2,8 @@ import FWCore.ParameterSet.Config as cms
 
 def sistrip_SiStripClusterizerConditionsESProducerAlpaka_alpaka(*args, **kwargs):
   mod = cms.ESProducer('sistrip::SiStripClusterizerConditionsESProducerAlpaka@alpaka',
-    QualityLabel = cms.required.ESInputTag,
-    Label = cms.required.ESInputTag,
+    QualityLabel = cms.ESInputTag('', ''),
+    Label = cms.ESInputTag('', ''),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
