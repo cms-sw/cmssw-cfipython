@@ -1,7 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
-mtdNumberingGeometry = cms.ESProducer('MTDGeometricTimingDetESModule',
-  fromDDD = cms.bool(True),
-  fromDD4hep = cms.bool(False),
-  appendToDataLabel = cms.string('')
+from .MTDGeometricTimingDetESModule import MTDGeometricTimingDetESModule
+
+mtdNumberingGeometry = MTDGeometricTimingDetESModule(
+  fromDDD = True,
+  fromDD4hep = False,
+  appendToDataLabel = ''
 )

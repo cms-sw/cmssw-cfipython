@@ -1,7 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
-trackerNumberingGeometry = cms.ESProducer('TrackerGeometricDetESModule',
-  fromDDD = cms.bool(True),
-  fromDD4hep = cms.bool(False),
-  appendToDataLabel = cms.string('')
+from .TrackerGeometricDetESModule import TrackerGeometricDetESModule
+
+trackerNumberingGeometry = TrackerGeometricDetESModule(
+  fromDDD = True,
+  fromDD4hep = False,
+  appendToDataLabel = ''
 )

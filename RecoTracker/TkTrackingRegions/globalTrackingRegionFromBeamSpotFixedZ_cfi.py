@@ -1,14 +1,15 @@
 import FWCore.ParameterSet.Config as cms
 
-globalTrackingRegionFromBeamSpotFixedZ = cms.EDProducer('GlobalTrackingRegionFromBeamSpotEDProducer',
-  RegionPSet = cms.PSet(
-    precise = cms.bool(True),
-    useMultipleScattering = cms.bool(False),
-    nSigmaZ = cms.double(0),
-    originHalfLength = cms.double(21.2),
-    originRadius = cms.double(0.2),
-    ptMin = cms.double(0.9),
-    beamSpot = cms.InputTag('offlineBeamSpot')
-  ),
-  mightGet = cms.optional.untracked.vstring
+from .GlobalTrackingRegionFromBeamSpotEDProducer import GlobalTrackingRegionFromBeamSpotEDProducer
+
+globalTrackingRegionFromBeamSpotFixedZ = GlobalTrackingRegionFromBeamSpotEDProducer(
+  RegionPSet = dict(
+    precise = True,
+    useMultipleScattering = False,
+    nSigmaZ = 0,
+    originHalfLength = 21.2,
+    originRadius = 0.2,
+    ptMin = 0.9,
+    beamSpot = ('offlineBeamSpot')
+  )
 )

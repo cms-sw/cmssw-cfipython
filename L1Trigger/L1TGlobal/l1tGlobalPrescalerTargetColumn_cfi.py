@@ -1,8 +1,9 @@
 import FWCore.ParameterSet.Config as cms
 
-l1tGlobalPrescalerTargetColumn = cms.EDFilter('L1TGlobalPrescaler',
-  l1tResults = cms.InputTag('gtStage2Digis'),
-  mode = cms.string('applyColumnRatios'),
-  l1tPrescaleColumn = cms.uint32(0),
-  mightGet = cms.optional.untracked.vstring
+from .L1TGlobalPrescaler import L1TGlobalPrescaler
+
+l1tGlobalPrescalerTargetColumn = L1TGlobalPrescaler(
+  l1tResults = ('gtStage2Digis'),
+  mode = 'applyColumnRatios',
+  l1tPrescaleColumn = cms.uint32(0)
 )

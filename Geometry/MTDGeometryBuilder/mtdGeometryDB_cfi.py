@@ -1,8 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-mtdGeometryDB = cms.ESProducer('MTDDigiGeometryESModule',
-  appendToDataLabel = cms.string(''),
-  fromDDD = cms.bool(False),
-  applyAlignment = cms.bool(True),
-  alignmentsLabel = cms.string('')
+from .MTDDigiGeometryESModule import MTDDigiGeometryESModule
+
+mtdGeometryDB = MTDDigiGeometryESModule(
+  appendToDataLabel = '',
+  fromDDD = False,
+  applyAlignment = True,
+  alignmentsLabel = ''
 )

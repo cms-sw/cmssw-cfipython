@@ -1,8 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-l1tGlobalPrescaler = cms.EDFilter('L1TGlobalPrescaler',
-  l1tResults = cms.InputTag('gtStage2Digis'),
-  mode = cms.string('applyPrescaleValues'),
+from .L1TGlobalPrescaler import L1TGlobalPrescaler
+
+l1tGlobalPrescaler = L1TGlobalPrescaler(
+  l1tResults = ('gtStage2Digis'),
+  mode = 'applyPrescaleValues',
   l1tPrescales = cms.vdouble( *(
     1,
     1,
@@ -516,6 +518,5 @@ l1tGlobalPrescaler = cms.EDFilter('L1TGlobalPrescaler',
     1,
     1,
     1
-  ) ),
-  mightGet = cms.optional.untracked.vstring
+  ) )
 )

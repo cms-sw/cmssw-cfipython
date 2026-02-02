@@ -1,18 +1,19 @@
 import FWCore.ParameterSet.Config as cms
 
-badParticleFilter = cms.EDFilter('BadParticleFilter',
-  innerTrackRelErr = cms.double(1),
-  minDzBestTrack = cms.double(-1),
-  PFCandidates = cms.InputTag('particleFlow'),
-  filterType = cms.string('BadPFMuon'),
-  segmentCompatibility = cms.double(0.3),
-  minMuonPt = cms.double(100),
-  algo = cms.int32(14),
-  taggingMode = cms.bool(False),
-  vtx = cms.InputTag('offlinePrimaryVertices'),
-  minMuonTrackRelErr = cms.double(2),
-  maxDR = cms.double(0.001),
-  muons = cms.InputTag('muons'),
-  minPtDiffRel = cms.double(0),
-  mightGet = cms.optional.untracked.vstring
+from .BadParticleFilter import BadParticleFilter
+
+badParticleFilter = BadParticleFilter(
+  innerTrackRelErr = 1,
+  minDzBestTrack = -1,
+  PFCandidates = ('particleFlow'),
+  filterType = 'BadPFMuon',
+  segmentCompatibility = 0.3,
+  minMuonPt = 100,
+  algo = 14,
+  taggingMode = False,
+  vtx = ('offlinePrimaryVertices'),
+  minMuonTrackRelErr = 2,
+  maxDR = 0.001,
+  muons = ('muons'),
+  minPtDiffRel = 0
 )
