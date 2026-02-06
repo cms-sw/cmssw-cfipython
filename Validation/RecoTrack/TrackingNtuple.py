@@ -104,6 +104,7 @@ def TrackingNtuple(*args, **kwargs):
     keepEleSimHits = cms.untracked.bool(False),
     saveSimHitsP3 = cms.untracked.bool(False),
     simHitBySignificance = cms.untracked.bool(False),
+    jetSource = cms.InputTag('ak4GenJets'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
