@@ -4,6 +4,7 @@ def ModuleEventAllocMonitor(*args, **kwargs):
   mod = cms.Service('ModuleEventAllocMonitor',
     fileName = cms.required.untracked.string,
     moduleNames = cms.untracked.vstring(),
+    skippedModuleNames = cms.untracked.vstring(),
     nEventsToSkip = cms.untracked.uint32(0)
   )
   for a in args:
