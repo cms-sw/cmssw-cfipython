@@ -7,6 +7,7 @@ def NanoAODOutputModule(*args, **kwargs):
     compressionLevel = cms.untracked.int32(9),
     compressionAlgorithm = cms.untracked.string('ZLIB'),
     saveProvenance = cms.untracked.bool(True),
+    saveTriggerResults = cms.untracked.bool(True),
     fakeNameForCrab = cms.untracked.bool(False),
     autoFlush = cms.untracked.int32(-10000000),
     outputCommands = cms.untracked.vstring(

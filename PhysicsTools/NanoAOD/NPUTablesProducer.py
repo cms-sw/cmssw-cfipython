@@ -5,6 +5,7 @@ def NPUTablesProducer(*args, **kwargs):
     src = cms.InputTag('slimmedAddPileupInfo'),
     pvsrc = cms.InputTag('offlineSlimmedPrimaryVertices'),
     zbins = cms.vdouble(),
+    savePUDensityVars = cms.bool(True),
     savePtHatMax = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
