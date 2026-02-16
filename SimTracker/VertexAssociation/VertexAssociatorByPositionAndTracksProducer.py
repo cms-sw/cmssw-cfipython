@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def VertexAssociatorByPositionAndTracksProducer(*args, **kwargs):
   mod = cms.EDProducer('VertexAssociatorByPositionAndTracksProducer',
     absZ = cms.double(0.1),
-    sigmaZ = cms.double(1.7976931348623157e+308),
+    sigmaZ = cms.double(3),
     maxRecoZ = cms.double(1000),
     absT = cms.double(-1),
     sigmaT = cms.double(-1),
