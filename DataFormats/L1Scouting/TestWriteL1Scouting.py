@@ -9,6 +9,9 @@ def TestWriteL1Scouting(*args, **kwargs):
     tauValues = cms.required.vint32,
     bxSumsValues = cms.required.vint32,
     bmtfStubValues = cms.required.vint32,
+    caloTowerValues = cms.required.vint32,
+    fastJetFloatingPointValues = cms.required.vdouble,
+    fastJetIntegralValues = cms.required.vint32,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

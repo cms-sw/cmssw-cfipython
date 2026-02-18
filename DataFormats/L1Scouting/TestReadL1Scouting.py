@@ -16,6 +16,13 @@ def TestReadL1Scouting(*args, **kwargs):
     bmtfStubClassVersion = cms.required.int32,
     expectedBmtfStubValues = cms.required.vint32,
     bmtfStubTag = cms.required.InputTag,
+    caloTowerClassVersion = cms.required.int32,
+    expectedCaloTowerValues = cms.required.vint32,
+    caloTowersTag = cms.required.InputTag,
+    fastJetClassVersion = cms.required.int32,
+    expectedFastJetFloatingPointValues = cms.required.vdouble,
+    expectedFastJetIntegralValues = cms.required.vint32,
+    fastJetsTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
