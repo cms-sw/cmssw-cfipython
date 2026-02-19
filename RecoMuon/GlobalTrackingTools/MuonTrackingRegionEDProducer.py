@@ -4,9 +4,7 @@ def MuonTrackingRegionEDProducer(*args, **kwargs):
   mod = cms.EDProducer('MuonTrackingRegionEDProducer',
     EtaR_UpperLimit_Par1 = cms.double(0.25),
     DeltaR = cms.double(0.2),
-    beamSpot = cms.InputTag(''),
     OnDemand = cms.int32(-1),
-    vertexCollection = cms.InputTag(''),
     Rescale_phi = cms.double(3),
     Eta_fixed = cms.bool(False),
     Rescale_eta = cms.double(3),
@@ -16,7 +14,6 @@ def MuonTrackingRegionEDProducer(*args, **kwargs):
     Phi_min = cms.double(0.05),
     PhiR_UpperLimit_Par1 = cms.double(0.6),
     EtaR_UpperLimit_Par2 = cms.double(0.15),
-    MeasurementTrackerName = cms.InputTag(''),
     UseVertex = cms.bool(False),
     Rescale_Dz = cms.double(3),
     Pt_fixed = cms.bool(False),
@@ -27,6 +24,9 @@ def MuonTrackingRegionEDProducer(*args, **kwargs):
     DeltaPhi = cms.double(0.2),
     maxRegions = cms.int32(1),
     precise = cms.bool(True),
+    beamSpot = cms.InputTag(''),
+    vertexCollection = cms.InputTag(''),
+    MeasurementTrackerName = cms.InputTag(''),
     input = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring
   )
