@@ -4,8 +4,10 @@ def SiPixelMonitorTrackSoA(*args, **kwargs):
   mod = cms.EDProducer('SiPixelMonitorTrackSoA',
     pixelTrackSrc = cms.InputTag('pixelTracksAlpaka'),
     topFolderName = cms.string('SiPixelHeterogeneous/PixelTrackAlpaka'),
-    useQualityCut = cms.bool(True),
-    minQuality = cms.string('loose'),
+    qualityDefinitions = cms.vstring(
+      'loose',
+      'highPurity'
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
