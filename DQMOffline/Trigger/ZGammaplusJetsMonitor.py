@@ -9,7 +9,8 @@ def ZGammaplusJetsMonitor(*args, **kwargs):
     PathName = cms.string(''),
     ModuleName = cms.string(''),
     jets = cms.InputTag('ak4PFJetsPuppi'),
-    corrector = cms.InputTag('ak4PFPuppiL1FastL2L3Corrector'),
+    corrector = cms.InputTag('ak4PFPuppiL1FastL2L3ResidualCorrector'),
+    dr2cut = cms.double(0.16),
     muonpt = cms.double(20),
     muoneta = cms.double(2.3),
     ptcut = cms.double(30),
@@ -18,6 +19,7 @@ def ZGammaplusJetsMonitor(*args, **kwargs):
     DeltaPhi = cms.double(2.7),
     OfflineCut = cms.double(20),
     isMuonPath = cms.bool(True),
+    doMatching = cms.bool(True),
     histoPSet = cms.PSet(
       directbalanceBinning = cms.vdouble( *(
         -3.99,
