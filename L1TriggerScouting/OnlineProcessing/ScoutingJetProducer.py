@@ -8,7 +8,6 @@ def ScoutingJetProducer(*args, **kwargs):
     towerMinHwEt = cms.int32(1),
     towerMaxHwEt = cms.int32(-1),
     mantissaPrecision = cms.int32(10),
-    debug = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

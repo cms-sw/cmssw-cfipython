@@ -18,6 +18,15 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       ymax = cms.double(120),
       ymin = cms.double(0)
     ),
+    CrackOverview = cms.PSet(
+      name = cms.string('Crack_Overview_Stubs'),
+      title = cms.string('Crack_Overview_stubs;Module;Layer'),
+      xmin = cms.double(0),
+      switch = cms.bool(False),
+      xmax = cms.double(13),
+      ymin = cms.double(0),
+      ymax = cms.double(7.5)
+    ),
     TH1TTStub_Eta = cms.PSet(
       Nbinsx = cms.int32(45),
       xmin = cms.double(-5),

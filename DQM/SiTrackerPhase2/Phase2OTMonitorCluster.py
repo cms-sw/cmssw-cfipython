@@ -4,11 +4,20 @@ def Phase2OTMonitorCluster(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorCluster',
     GlobalNClusters = cms.PSet(
       name = cms.string('NumberOfClusters'),
-      title = cms.string(';Number of clusters per event;'),
+      title = cms.string('Number_Of_Clusters;Number of clusters per event;'),
       xmin = cms.double(0),
       switch = cms.bool(True),
       xmax = cms.double(350000),
       NxBins = cms.int32(150)
+    ),
+    CrackOverview = cms.PSet(
+      name = cms.string('Crack_Overview'),
+      title = cms.string('Crack_Overview_clusters;Module;Layer'),
+      xmin = cms.double(0),
+      switch = cms.bool(False),
+      xmax = cms.double(13),
+      ymin = cms.double(0),
+      ymax = cms.double(7.5)
     ),
     GlobalPositionXY_P = cms.PSet(
       name = cms.string('Cluster_Position_XY_P'),
@@ -64,7 +73,7 @@ def Phase2OTMonitorCluster(*args, **kwargs):
     ),
     NClustersLayer_P = cms.PSet(
       name = cms.string('NumberOfClusters_Layer_P'),
-      title = cms.string(';Number of clusters per event (macro pixel sensor);'),
+      title = cms.string('Number_Of_Clusters_P_Layer;Number of clusters per event (macro pixel sensor);'),
       xmin = cms.double(0),
       xmax = cms.double(28000),
       NxBins = cms.int32(150),
@@ -72,7 +81,7 @@ def Phase2OTMonitorCluster(*args, **kwargs):
     ),
     NClustersLayer_S = cms.PSet(
       name = cms.string('NumberOfClusters_Layer_S'),
-      title = cms.string(';Number of clusters per event (strip sensor);'),
+      title = cms.string('Number_Of_Clusters_S_Layer;Number of clusters per event (strip sensor);'),
       xmin = cms.double(0),
       xmax = cms.double(28000),
       NxBins = cms.int32(150),
@@ -80,7 +89,7 @@ def Phase2OTMonitorCluster(*args, **kwargs):
     ),
     ClusterSize_P = cms.PSet(
       name = cms.string('Cluster_Size_P'),
-      title = cms.string(';Cluster size (macro pixel sensor);'),
+      title = cms.string('Cluster_Size_P;Cluster size (macro pixel sensor);'),
       xmin = cms.double(-0.5),
       xmax = cms.double(30.5),
       NxBins = cms.int32(31),
@@ -88,7 +97,7 @@ def Phase2OTMonitorCluster(*args, **kwargs):
     ),
     ClusterSize_S = cms.PSet(
       name = cms.string('Cluster_Size_S'),
-      title = cms.string(';Cluster size (strip sensor);'),
+      title = cms.string('Cluster_Size_S;Cluster size (strip sensor);'),
       xmin = cms.double(-0.5),
       xmax = cms.double(30.5),
       NxBins = cms.int32(31),
