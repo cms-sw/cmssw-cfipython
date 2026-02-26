@@ -4,8 +4,12 @@ def PatElectronTagProbeAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('PatElectronTagProbeAnalyzer',
     OutputInternalPath = cms.string('MY_FOLDER'),
     BaseTriggerSelection = cms.vstring(),
-    triggerSelection = cms.vstring(),
-    finalfilterSelection = cms.vstring(),
+    triggerConfigs = cms.VPSet(
+      template = cms.PSetTemplate(
+        pathName = cms.string(''),
+        filters = cms.vstring()
+      )
+    ),
     l1filterSelection = cms.vstring(),
     l1filterSelectionIndex = cms.vuint32(),
     AlgInputTag = cms.InputTag('gtStage2Digis'),
