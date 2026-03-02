@@ -3,10 +3,7 @@ import FWCore.ParameterSet.Config as cms
 from .EcalUncalibRecHitProducer import EcalUncalibRecHitProducer
 
 ecalFixedAlphaBetaFitUncalibRecHitProducer = EcalUncalibRecHitProducer(
-  EBdigiCollection = ('ecalDigis', 'ebDigis'),
-  EEhitCollection = 'EcalUncalibRecHitsEE',
-  EEdigiCollection = ('ecalDigis', 'eeDigis'),
-  EBhitCollection = 'EcalUncalibRecHitsEB',
+
   algo = 'EcalUncalibRecHitWorkerFixedAlphaBetaFit',
   algoPSet = cms.PSet(
     alphaEB = cms.double(1.138),

@@ -3,10 +3,7 @@ import FWCore.ParameterSet.Config as cms
 from .EcalUncalibRecHitProducer import EcalUncalibRecHitProducer
 
 ecalRatioUncalibRecHitProducer = EcalUncalibRecHitProducer(
-  EBdigiCollection = ('ecalDigis', 'ebDigis'),
-  EEhitCollection = 'EcalUncalibRecHitsEE',
-  EEdigiCollection = ('ecalDigis', 'eeDigis'),
-  EBhitCollection = 'EcalUncalibRecHitsEB',
+
   algo = 'EcalUncalibRecHitWorkerRatio',
   algoPSet = cms.PSet(
     EEtimeFitLimits_Upper = cms.double(1.4),
