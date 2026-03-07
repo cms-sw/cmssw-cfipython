@@ -5,6 +5,7 @@ def RepeatingCachedRootSource(*args, **kwargs):
     fileName = cms.required.untracked.string,
     repeatNEvents = cms.untracked.uint32(10),
     skipEvents = cms.untracked.uint32(0),
+    enablePrefetching = cms.untracked.bool(False),
     inputCommands = cms.untracked.vstring('keep *'),
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False)
