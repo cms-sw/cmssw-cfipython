@@ -6,7 +6,7 @@ def MahiDebugger(*args, **kwargs):
     dynamicPed = cms.required.bool,
     calculateArrivalTime = cms.required.bool,
     timeAlgo = cms.required.int32,
-    thEnergeticPulse = cms.required.double,
+    thEnergeticPulses = cms.required.double,
     ts4Thresh = cms.required.double,
     chiSqSwitch = cms.required.double,
     applyTimeSlew = cms.required.bool,

@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def MaskOrbitBxScoutingFastJet(*args, **kwargs):
-  mod = cms.EDProducer('MaskOrbitBxScoutingFastJet',
+def MaskOrbitBxScoutingCaloJet(*args, **kwargs):
+  mod = cms.EDProducer('MaskOrbitBxScoutingCaloJet',
     dataTag = cms.required.InputTag,
     selectBxs = cms.required.InputTag,
     productLabel = cms.required.string,
