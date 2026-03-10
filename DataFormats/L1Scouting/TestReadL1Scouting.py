@@ -19,10 +19,10 @@ def TestReadL1Scouting(*args, **kwargs):
     caloTowerClassVersion = cms.required.int32,
     expectedCaloTowerValues = cms.required.vint32,
     caloTowersTag = cms.required.InputTag,
-    fastJetClassVersion = cms.required.int32,
-    expectedFastJetFloatingPointValues = cms.required.vdouble,
-    expectedFastJetIntegralValues = cms.required.vint32,
-    fastJetsTag = cms.required.InputTag,
+    caloJetClassVersion = cms.required.int32,
+    expectedCaloJetFloatingPointValues = cms.required.vdouble,
+    expectedCaloJetIntegralValues = cms.required.vint32,
+    caloJetsTag = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

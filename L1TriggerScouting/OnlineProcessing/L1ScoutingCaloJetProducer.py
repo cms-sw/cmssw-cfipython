@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def ScoutingJetProducer(*args, **kwargs):
-  mod = cms.EDProducer('ScoutingJetProducer',
+def L1ScoutingCaloJetProducer(*args, **kwargs):
+  mod = cms.EDProducer('L1ScoutingCaloJetProducer',
     src = cms.required.InputTag,
     akR = cms.required.double,
     ptMin = cms.required.double,
