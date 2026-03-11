@@ -5,6 +5,7 @@ def MPISender(*args, **kwargs):
     upstream = cms.InputTag('source'),
     products = cms.vstring(),
     instance = cms.int32(0),
+    enableTrivialSerialisation = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
