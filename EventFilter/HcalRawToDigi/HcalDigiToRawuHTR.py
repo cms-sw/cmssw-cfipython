@@ -136,6 +136,7 @@ def HcalDigiToRawuHTR(*args, **kwargs):
       14
     ),
     packHBTDC = cms.bool(True),
+    useTDCfromDB = cms.bool(False),
     ElectronicsMap = cms.string(''),
     QIE10 = cms.InputTag('simHcalDigis', 'HFQIE10DigiCollection'),
     QIE11 = cms.InputTag('simHcalDigis', 'HBHEQIE11DigiCollection'),
