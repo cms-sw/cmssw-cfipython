@@ -22,6 +22,8 @@ def MkFitOutputConverter(*args, **kwargs):
     candCutSel = cms.bool(False),
     candMinPtCut = cms.double(0),
     candMinNHitsCut = cms.int32(0),
+    candMinPtRelaxedCut = cms.double(0),
+    candMinAbsEtaForRelaxedCut = cms.double(0),
     candMVASel = cms.bool(False),
     candWP = cms.double(0),
     batchSize = cms.int32(16),

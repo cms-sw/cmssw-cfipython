@@ -12,6 +12,8 @@ def MkFitFitProducer(*args, **kwargs):
     candCutSel = cms.bool(False),
     candMinPtCut = cms.double(0),
     candMinNHitsCut = cms.int32(0),
+    candMinPtRelaxedCut = cms.double(0),
+    candMinAbsEtaForRelaxedCut = cms.double(0),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
