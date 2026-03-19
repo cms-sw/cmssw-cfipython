@@ -23,6 +23,18 @@ def ScoutingCollectionMonitor(*args, **kwargs):
     pfRecHitsHBHE = cms.InputTag('hltScoutingRecHitPacker', 'HBHE'),
     pfCleanedRecHitsEB = cms.InputTag('hltScoutingRecHitPacker', 'EBCleaned'),
     pfCleanedRecHitsEE = cms.InputTag('hltScoutingRecHitPacker', 'EECleaned'),
+    vmBestTrackIndex = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronBestTrackIndex'),
+    vmTrkd0 = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackd0'),
+    vmTrkdz = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackdz'),
+    vmTrkpt = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackpt'),
+    vmTrketa = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTracketa'),
+    vmTrkphi = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackphi'),
+    vmTrkpMode = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackpMode'),
+    vmTrketaMode = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTracketaMode'),
+    vmTrkphiMode = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackphiMode'),
+    vmTrkqoverpModeError = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackqoverpModeError'),
+    vmTrkchi2overndf = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackchi2overndf'),
+    vmTrkcharge = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronTrackcharge'),
     topfoldername = cms.string('HLT/ScoutingOffline/Miscellaneous'),
     mightGet = cms.optional.untracked.vstring
   )
