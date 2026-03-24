@@ -6,6 +6,7 @@ def ScoutingDileptonMonitor(*args, **kwargs):
     muons = cms.InputTag('hltScoutingMuonPackerVtx'),
     muonsNoVtx = cms.InputTag('hltScoutingMuonPackerNoVtx'),
     electrons = cms.InputTag('hltScoutingEgammaPacker'),
+    vmBestTrackIndex = cms.InputTag('run3ScoutingElectronBestTrack', 'Run3ScoutingElectronBestTrackIndex'),
     doMuons = cms.bool(True),
     doMuonsNoVtx = cms.bool(True),
     doElectrons = cms.bool(True),

@@ -10,6 +10,8 @@ def MPIReceiver(*args, **kwargs):
       )
     ),
     instance = cms.int32(0),
+    activity = cms.bool(False),
+    enableTrivialSerialisation = cms.untracked.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
