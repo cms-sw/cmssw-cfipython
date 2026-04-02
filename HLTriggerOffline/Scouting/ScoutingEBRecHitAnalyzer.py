@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def ScoutingEBRecHitAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('ScoutingEBRecHitAnalyzer',
-    src = cms.required.InputTag,
+    src = cms.InputTag(''),
     topFolderName = cms.string('HLT/ScoutingOffline/CaloRecHits'),
     L1TriggerResults = cms.InputTag('l1bits'),
     HLTTriggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
