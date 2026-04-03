@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def FourVectorHLT(*args, **kwargs):
   mod = cms.EDProducer('FourVectorHLT',
     plotAll = cms.untracked.bool(False),
+    debug = cms.untracked.bool(False),
     Nbins = cms.untracked.uint32(50),
     ptMin = cms.untracked.double(0),
     ptMax = cms.untracked.double(200),
