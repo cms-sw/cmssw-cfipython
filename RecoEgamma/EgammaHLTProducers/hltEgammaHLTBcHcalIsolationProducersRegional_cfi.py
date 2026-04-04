@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EgammaHLTBcHcalIsolationProducersRegional import EgammaHLTBcHcalIsolationProducersRegional
+
+hltEgammaHLTBcHcalIsolationProducersRegional = EgammaHLTBcHcalIsolationProducersRegional()

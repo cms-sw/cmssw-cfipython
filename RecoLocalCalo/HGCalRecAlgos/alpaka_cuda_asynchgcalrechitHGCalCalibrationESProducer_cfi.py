@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_hgcalrechit_HGCalCalibrationESProducer import alpaka_cuda_async_hgcalrechit_HGCalCalibrationESProducer
+
+alpaka_cuda_asynchgcalrechitHGCalCalibrationESProducer = alpaka_cuda_async_hgcalrechit_HGCalCalibrationESProducer()

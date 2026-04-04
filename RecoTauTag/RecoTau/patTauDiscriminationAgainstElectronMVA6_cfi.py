@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PATTauDiscriminationAgainstElectronMVA6 import PATTauDiscriminationAgainstElectronMVA6
+
+patTauDiscriminationAgainstElectronMVA6 = PATTauDiscriminationAgainstElectronMVA6()

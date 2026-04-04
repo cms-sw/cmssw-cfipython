@@ -1,0 +1,28 @@
+import FWCore.ParameterSet.Config as cms
+
+def MuonHLTHGCalLayerClusterIsolationProducer(*args, **kwargs):
+  mod = cms.EDProducer('MuonHLTHGCalLayerClusterIsolationProducer',
+    recoCandidateProducer = cms.InputTag('hltL1SeededRecoEcalCandidatePF'),
+    layerClusterProducer = cms.InputTag('hltParticleFlowClusterECAL'),
+    rhoProducer = cms.InputTag('fixedGridRhoFastjetAllCalo'),
+    doRhoCorrection = cms.bool(False),
+    useEt = cms.bool(False),
+    rhoMax = cms.double(99999999),
+    rhoScale = cms.double(1),
+    drMax = cms.double(0.3),
+    drVetoEM = cms.double(0),
+    drVetoHad = cms.double(0),
+    minEnergyEM = cms.double(0),
+    minEnergyHad = cms.double(0),
+    minEtEM = cms.double(0),
+    minEtHad = cms.double(0),
+    effectiveAreas = cms.vdouble(
+      0,
+      0
+    ),
+    mightGet = cms.optional.untracked.vstring
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

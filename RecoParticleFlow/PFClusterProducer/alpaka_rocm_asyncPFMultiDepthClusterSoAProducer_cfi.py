@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_PFMultiDepthClusterSoAProducer import alpaka_rocm_async_PFMultiDepthClusterSoAProducer
+
+alpaka_rocm_asyncPFMultiDepthClusterSoAProducer = alpaka_rocm_async_PFMultiDepthClusterSoAProducer()

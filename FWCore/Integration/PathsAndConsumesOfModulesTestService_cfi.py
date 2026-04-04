@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PathsAndConsumesOfModulesTestService import PathsAndConsumesOfModulesTestService
+
+PathsAndConsumesOfModulesTestService = PathsAndConsumesOfModulesTestService()

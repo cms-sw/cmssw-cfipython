@@ -1,0 +1,22 @@
+import FWCore.ParameterSet.Config as cms
+
+def alpaka_serial_sync_HcalDigisSoAProducer(*args, **kwargs):
+  mod = cms.EDProducer('alpaka_serial_sync::HcalDigisSoAProducer',
+    hbheDigisLabel = cms.InputTag('hcalDigis'),
+    qie11DigiLabel = cms.InputTag('hcalDigis'),
+    digisLabelF01HE = cms.string('f01HEDigis'),
+    digisLabelF5HB = cms.string('f5HBDigis'),
+    digisLabelF3HB = cms.string('f3HBDigis'),
+    maxChannelsF01HE = cms.uint32(10000),
+    maxChannelsF5HB = cms.uint32(10000),
+    maxChannelsF3HB = cms.uint32(10000),
+    mightGet = cms.optional.untracked.vstring,
+    alpaka = cms.untracked.PSet(
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
+    )
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod
