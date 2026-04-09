@@ -4,6 +4,7 @@ def HLTFiltersDQMonitor(*args, **kwargs):
   mod = cms.EDProducer('HLTFiltersDQMonitor',
     folderName = cms.string('HLT/Filters'),
     efficPlotNamePrefix = cms.string('effic_'),
+    lightMonitor = cms.bool(False),
     triggerResults = cms.InputTag('TriggerResults', '', 'HLT'),
     triggerEvent = cms.InputTag('hltTriggerSummaryAOD', '', 'HLT'),
     triggerEventWithRefs = cms.InputTag('hltTriggerSummaryRAW', '', 'HLT'),
