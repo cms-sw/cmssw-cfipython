@@ -3,7 +3,10 @@ import FWCore.ParameterSet.Config as cms
 def L1TSC4NGJetProducer(*args, **kwargs):
   mod = cms.EDProducer('L1TSC4NGJetProducer',
     jets = cms.InputTag('l1tSC4PFL1PuppiExtendedEmulator'),
-    useRawPt = cms.bool(True),
+    doJEC = cms.bool(False),
+    returnRawPt = cms.bool(False),
+    correctorFile = cms.string(''),
+    correctorDir = cms.string(''),
     l1tSC4NGJetModelPath = cms.string('L1TSC4NGJetModel_v0'),
     maxJets = cms.int32(16),
     nParticles = cms.int32(16),

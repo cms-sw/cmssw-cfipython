@@ -7,8 +7,10 @@ def L1SeedConePFJetProducer(*args, **kwargs):
     coneSize = cms.double(0.4),
     wideConeJet = cms.bool(False),
     HW = cms.bool(False),
+    sortJets = cms.bool(False),
     debug = cms.bool(False),
     doCorrections = cms.bool(False),
+    doMass = cms.bool(False),
     correctorFile = cms.string(''),
     correctorDir = cms.string(''),
     mightGet = cms.optional.untracked.vstring

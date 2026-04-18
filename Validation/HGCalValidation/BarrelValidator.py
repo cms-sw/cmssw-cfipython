@@ -107,7 +107,8 @@ def BarrelValidator(*args, **kwargs):
       nintZ = cms.int32(1100)
     ),
     hits = cms.InputTag('recHitMapProducer', 'RefProdVectorPFRecHitCollection'),
-    label_lcl = cms.InputTag('hgcalMergeLayerClusters'),
+    lclTag = cms.InputTag('hgcalMergeLayerClusters'),
+    rechitmapTag = cms.InputTag('recHitMapProducer', 'barrelRecHitMap'),
     label_tst = cms.VInputTag(
       'ticlTrackstersCLUE3DHigh',
       'ticlTrackstersMerge',
@@ -128,9 +129,8 @@ def BarrelValidator(*args, **kwargs):
     label_layerClustersPlots = cms.string('LayerClusters'),
     label_LCToCPLinking = cms.string('LCToCP_association'),
     simClustersToCaloParticlesMap = cms.InputTag('SimClusterToCaloParticleAssociation', 'simClusterToCaloParticleMap'),
-    label_cp_effic = cms.InputTag('mix', 'MergedCaloTruth'),
-    label_cp_fake = cms.InputTag('mix', 'MergedCaloTruth'),
-    label_scl = cms.InputTag('mix', 'MergedCaloTruth'),
+    cpTag_ = cms.InputTag('mix', 'MergedCaloTruth'),
+    sclTag = cms.InputTag('mix', 'MergedCaloTruth'),
     simVertices = cms.InputTag('g4SimHits'),
     totallayers_to_monitor = cms.int32(5),
     dirName = cms.string('BarrelCalorimeters/BarrelValidator/'),
