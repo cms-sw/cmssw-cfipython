@@ -14,7 +14,7 @@ def MPISource(*args, **kwargs):
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False),
     mode = cms.untracked.string('CommWorld'),
-    controller = cms.untracked.int32(-1)
+    controllerProcessName = cms.string('')
   )
   for a in args:
     mod.update_(a)

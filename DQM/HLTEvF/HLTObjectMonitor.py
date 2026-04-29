@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def HLTObjectMonitor(*args, **kwargs):
   mod = cms.EDProducer('HLTObjectMonitor',
     processName = cms.string('HLT'),
+    topFolderName = cms.untracked.string('HLT/ObjectMonitor'),
     alphaT = cms.PSet(
       pathName = cms.string(''),
       moduleName = cms.string(''),
