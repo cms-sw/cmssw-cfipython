@@ -17,7 +17,6 @@ def NanoAODRNTupleOutputModule(*args, **kwargs):
       useDirectIO = cms.untracked.bool(False)
     ),
     saveProvenance = cms.untracked.bool(True),
-    saveTriggerResults = cms.untracked.bool(True),
     outputCommands = cms.untracked.vstring(
       'drop *',
       'keep nanoaodFlatTable_*Table_*_*',
