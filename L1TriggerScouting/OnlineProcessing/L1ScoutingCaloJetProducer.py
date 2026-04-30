@@ -7,6 +7,12 @@ def L1ScoutingCaloJetProducer(*args, **kwargs):
     ptMin = cms.required.double,
     towerMinHwEt = cms.int32(1),
     towerMaxHwEt = cms.int32(-1),
+    applyJECs = cms.bool(False),
+    jecFile = cms.required.FileInPath,
+    jecPUProxyTowerMinHwEt = cms.int32(1),
+    jecPUProxyTowerMaxHwEt = cms.int32(-1),
+    jecPUProxyTowerMinAbsHwEta = cms.int32(0),
+    jecPUProxyTowerMaxAbsHwEta = cms.int32(4),
     mantissaPrecision = cms.int32(10),
     mightGet = cms.optional.untracked.vstring
   )
