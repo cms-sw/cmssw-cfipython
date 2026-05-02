@@ -63,7 +63,7 @@ def Phase2L1TGMTStubProducer(*args, **kwargs):
         41,
         43,
         45,
-        1503
+        46
       ),
       eta_2 = cms.vint32(
         -41,
@@ -101,7 +101,7 @@ def Phase2L1TGMTStubProducer(*args, **kwargs):
         36,
         38,
         39,
-        1334
+        41
       ),
       eta_3 = cms.vint32(
         -35,
@@ -139,7 +139,7 @@ def Phase2L1TGMTStubProducer(*args, **kwargs):
         31,
         32,
         34,
-        1148
+        35
       ),
       coarseEta_1 = cms.vint32(
         0,
