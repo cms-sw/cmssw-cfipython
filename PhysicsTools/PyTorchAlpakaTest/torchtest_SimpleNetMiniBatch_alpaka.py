@@ -1,8 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-def torchtest_DataSource_alpaka(*args, **kwargs):
-  mod = cms.EDProducer('torchtest::DataSource@alpaka',
-    totalSize = cms.required.uint32,
+def torchtest_SimpleNetMiniBatch_alpaka(*args, **kwargs):
+  mod = cms.EDProducer('torchtest::SimpleNetMiniBatch@alpaka',
+    model = cms.required.FileInPath,
+    batchSize = cms.required.int32,
+    particles = cms.required.InputTag,
     environment = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(

@@ -5,10 +5,12 @@ def torchtest_InspectionSink(*args, **kwargs):
     environment = cms.untracked.int32(0),
     particles = cms.required.InputTag,
     simple_net = cms.required.InputTag,
+    simple_net_minibatch = cms.required.InputTag,
     masked_net = cms.required.InputTag,
     multi_head_net = cms.required.InputTag,
     images = cms.required.InputTag,
     resnet18 = cms.required.InputTag,
+    resnet18_minibatch = cms.required.InputTag,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

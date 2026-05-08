@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def alpaka_serial_sync_torchtest_DataSource(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::torchtest::DataSource',
-    batchSize = cms.required.uint32,
+    totalSize = cms.required.uint32,
     environment = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
