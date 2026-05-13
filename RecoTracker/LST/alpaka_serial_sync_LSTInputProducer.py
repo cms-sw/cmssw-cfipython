@@ -5,9 +5,9 @@ def alpaka_serial_sync_LSTInputProducer(*args, **kwargs):
     ptCut = cms.double(0.8),
     phase2OTRecHits = cms.InputTag('siPhase2RecHits'),
     beamSpot = cms.InputTag('offlineBeamSpot'),
-    seedTracks = cms.VInputTag(
-      'lstInitialStepSeedTracks',
-      'lstHighPtTripletStepSeedTracks'
+    pixelSeeds = cms.VInputTag(
+      'initialStepSeeds',
+      'highPtTripletStepSeeds'
     ),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
