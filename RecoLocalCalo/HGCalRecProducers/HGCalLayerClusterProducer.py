@@ -6,6 +6,7 @@ def HGCalLayerClusterProducer(*args, **kwargs):
       thresholdW0 = cms.vdouble(
         2.9,
         2.9,
+        2.9,
         2.9
       ),
       positionDeltaRho2 = cms.double(1.69),

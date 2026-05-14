@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def HGCalGeometryESProducer(*args, **kwargs):
   mod = cms.ESProducer('HGCalGeometryESProducer',
+    name = cms.string('HGCalEESensitive'),
     appendToDataLabel = cms.string('')
   )
   for a in args:
