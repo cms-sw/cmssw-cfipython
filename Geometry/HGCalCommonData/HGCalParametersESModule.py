@@ -9,6 +9,7 @@ def HGCalParametersESModule(*args, **kwargs):
     nameT = cms.string('HGCal'),
     nameX = cms.string('HGCalEESensitive'),
     fromDD4hep = cms.bool(False),
+    coldBoxMode = cms.bool(False),
     appendToDataLabel = cms.string('')
   )
   for a in args:

@@ -8,6 +8,7 @@ def PHGCalParametersDBBuilder(*args, **kwargs):
     nameC = cms.string('HGCalEECell'),
     nameT = cms.string('HGCal'),
     fromDD4hep = cms.bool(False),
+    coldBoxMode = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
