@@ -132,7 +132,7 @@ def BarrelValidator(*args, **kwargs):
     cpTag_ = cms.InputTag('mix', 'MergedCaloTruth'),
     sclTag = cms.InputTag('mix', 'MergedCaloTruth'),
     simVertices = cms.InputTag('g4SimHits'),
-    totallayers_to_monitor = cms.int32(5),
+    totallayers_to_monitor = cms.int32(6),
     dirName = cms.string('BarrelCalorimeters/BarrelValidator/'),
     mightGet = cms.optional.untracked.vstring
   )
