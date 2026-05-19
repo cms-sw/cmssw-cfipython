@@ -9,6 +9,7 @@ def LSTProducer_alpaka(*args, **kwargs):
     ptCutLabel = cms.string('0.8'),
     nopLSDupClean = cms.bool(False),
     tcpLSTriplets = cms.bool(False),
+    reduceMemByFullPrecompute = cms.bool(False),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),

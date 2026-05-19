@@ -111,7 +111,7 @@ def BarrelValidator(*args, **kwargs):
     rechitmapTag = cms.InputTag('recHitMapProducer', 'barrelRecHitMap'),
     label_tst = cms.VInputTag(
       'ticlTrackstersCLUE3DHigh',
-      'ticlTrackstersMerge',
+      'ticlCandidate',
       'ticlSimTracksters:fromCPs',
       'ticlSimTracksters'
     ),

@@ -71,7 +71,7 @@ def HGCalUncalibRecHitProducer(*args, **kwargs):
       )
     ),
     algo = cms.string('HGCalUncalibRecHitWorkerWeights'),
-    computeLocalTime = cms.bool(False),
+    computeLocalTime = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

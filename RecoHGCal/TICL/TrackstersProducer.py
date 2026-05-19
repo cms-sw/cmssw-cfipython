@@ -10,9 +10,9 @@ def TrackstersProducer(*args, **kwargs):
     layer_clusters_tiles = cms.InputTag('ticlLayerTileProducer'),
     layer_clusters_hfnose_tiles = cms.InputTag('ticlLayerTileHFNose'),
     seeding_regions = cms.InputTag('ticlSeedingRegionProducer'),
-    patternRecognitionBy = cms.string('CA'),
+    patternRecognitionBy = cms.string('CLUE3D'),
     itername = cms.string('unknown'),
-    inferenceAlgo = cms.string('TracksterInferenceByPFN'),
+    inferenceAlgo = cms.string(''),
     pluginPatternRecognitionByCA = cms.PSet(
       algo_verbosity = cms.int32(0),
       oneTracksterPerTrackSeed = cms.bool(False),
@@ -32,7 +32,7 @@ def TrackstersProducer(*args, **kwargs):
       energy_em_over_total_threshold = cms.double(-1),
       max_longitudinal_sigmaPCA = cms.double(9999),
       max_delta_time = cms.double(3),
-      computeLocalTime = cms.bool(False),
+      computeLocalTime = cms.bool(True),
       siblings_maxRSquared = cms.vdouble(
         0.0006,
         0.0006,
@@ -105,8 +105,8 @@ def TrackstersProducer(*args, **kwargs):
       ),
       doPidCut = cms.bool(False),
       cutHadProb = cms.double(0.5),
-      computeLocalTime = cms.bool(False),
-      usePCACleaning = cms.bool(False),
+      computeLocalTime = cms.bool(True),
+      usePCACleaning = cms.bool(True),
       type = cms.string('CLUE3D')
     
     ),
@@ -114,7 +114,7 @@ def TrackstersProducer(*args, **kwargs):
       algo_verbosity = cms.int32(0),
       antikt_radius = cms.double(0.09),
       minNumLayerCluster = cms.int32(5),
-      computeLocalTime = cms.bool(False),
+      computeLocalTime = cms.bool(True),
       type = cms.string('FastJet')
     
     ),
@@ -125,8 +125,8 @@ def TrackstersProducer(*args, **kwargs):
     ),
     pluginInferenceAlgoTracksterInferenceByDNN = cms.PSet(
       algo_verbosity = cms.int32(0),
-      onnxPIDModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/DNN/patternrecognition/id_v0.onnx'),
-      onnxEnergyModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/DNN/patternrecognition/energy_v0.onnx'),
+      onnxPIDModelPath = cms.string(''),
+      onnxEnergyModelPath = cms.string(''),
       inputNames = cms.vstring('input'),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
@@ -135,13 +135,27 @@ def TrackstersProducer(*args, **kwargs):
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
       doRegression = cms.int32(1),
+      miniBatchSize = cms.untracked.int32(64),
       type = cms.string('TracksterInferenceByDNN')
+    
+    ),
+    pluginInferenceAlgoTracksterInferenceByCNN = cms.PSet(
+      algo_verbosity = cms.int32(0),
+      onnxModelPath = cms.string('RecoHGCal/TICL/data/ticlv5/onnx_models/CNN/patternrecognition/id_v0.onnx'),
+      inputNames = cms.vstring('input'),
+      outputNames = cms.vstring('pid_output'),
+      eid_min_cluster_energy = cms.double(1),
+      eid_n_layers = cms.int32(50),
+      eid_n_clusters = cms.int32(10),
+      doPID = cms.int32(1),
+      miniBatchSize = cms.untracked.int32(64),
+      type = cms.string('TracksterInferenceByCNN')
     
     ),
     pluginInferenceAlgoTracksterInferenceByPFN = cms.PSet(
       algo_verbosity = cms.int32(0),
-      onnxPIDModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/PFN/patternrecognition/id_v0.onnx'),
-      onnxEnergyModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/PFN/patternrecognition/energy_v0.onnx'),
+      onnxPIDModelPath = cms.string(''),
+      onnxEnergyModelPath = cms.string(''),
       inputNames = cms.vstring(
         'input',
         'input_tr_features'
@@ -153,28 +167,8 @@ def TrackstersProducer(*args, **kwargs):
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
       doRegression = cms.int32(1),
+      miniBatchSize = cms.untracked.int32(64),
       type = cms.string('TracksterInferenceByPFN')
-    
-    ),
-    pluginInferenceAlgoTracksterInferenceByANN = cms.PSet(
-      algo_verbosity = cms.int32(0),
-      type = cms.string('TracksterInferenceByANN')
-    
-    ),
-    pluginInferenceAlgoTracksterInferenceByCNNv4 = cms.PSet(
-      algo_verbosity = cms.int32(0),
-      onnxModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv4/onnx_models/energy_id_v0.onnx'),
-      inputNames = cms.vstring('input:0'),
-      outputNames = cms.vstring(
-        'output/regressed_energy:0',
-        'output/id_probabilities:0'
-      ),
-      eid_min_cluster_energy = cms.double(1),
-      eid_n_layers = cms.int32(50),
-      eid_n_clusters = cms.int32(10),
-      doPID = cms.int32(1),
-      doRegression = cms.int32(0),
-      type = cms.string('TracksterInferenceByCNNv4')
     
     ),
     mightGet = cms.optional.untracked.vstring

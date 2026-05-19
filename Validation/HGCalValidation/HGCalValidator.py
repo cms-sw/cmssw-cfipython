@@ -194,11 +194,11 @@ def HGCalValidator(*args, **kwargs):
     ),
     doCandidatesPlots = cms.untracked.bool(True),
     ticlCandidates = cms.string('ticlCandidates'),
-    ticlTrackstersMerge = cms.InputTag('ticlTrackstersMerge'),
+    ticlTrackstersMerge = cms.InputTag('ticlCandidate'),
     simTiclCandidates = cms.InputTag('ticlSimTracksters'),
     recoTracks = cms.InputTag('generalTracks'),
-    mergeRecoToSimAssociator = cms.InputTag('allTrackstersToSimTrackstersAssociationsByLCs', 'ticlTrackstersMergeToticlSimTrackstersfromCPs'),
-    mergeSimToRecoAssociator = cms.InputTag('allTrackstersToSimTrackstersAssociationsByLCs', 'ticlSimTrackstersfromCPsToticlTrackstersMerge'),
+    mergeRecoToSimAssociator = cms.InputTag('allTrackstersToSimTrackstersAssociationsByLCs', 'ticlCandidateToticlSimTrackstersfromCPs'),
+    mergeSimToRecoAssociator = cms.InputTag('allTrackstersToSimTrackstersAssociationsByLCs', 'ticlSimTrackstersfromCPsToticlCandidate'),
     cummatbudinxo = cms.FileInPath('Validation/HGCalValidation/data/D41.cumulative.xo'),
     label_cp_effic = cms.InputTag('mix', 'MergedCaloTruth'),
     label_cp_fake = cms.InputTag('mix', 'MergedCaloTruth'),
@@ -220,7 +220,6 @@ def HGCalValidator(*args, **kwargs):
     ),
     dirName = cms.string('HGCAL/HGCalValidator/'),
     cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
-    isticlv5 = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

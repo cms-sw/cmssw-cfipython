@@ -6,7 +6,7 @@ def TICLDumper(*args, **kwargs):
     trackstersInCand = cms.InputTag('ticlTrackstersCLUE3DHigh'),
     layerClusters = cms.InputTag('hgcalMergeLayerClusters'),
     layer_clustersTime = cms.InputTag('hgcalMergeLayerClusters', 'timeLayerCluster'),
-    ticlcandidates = cms.InputTag('ticlTrackstersMerge'),
+    ticlcandidates = cms.InputTag('ticlCandidate'),
     tracks = cms.InputTag('generalTracks'),
     tracksTime = cms.InputTag('tofPID', 't0'),
     tracksTimeQual = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
@@ -18,7 +18,7 @@ def TICLDumper(*args, **kwargs):
     muons = cms.InputTag('muons1stStep'),
     superclustering = cms.InputTag('ticlTracksterLinksSuperclusteringDNN'),
     recoSuperClusters = cms.InputTag('particleFlowSuperClusterHGCal'),
-    recoSuperClusters_sourceTracksterCollection = cms.InputTag('ticlTrackstersMerge'),
+    recoSuperClusters_sourceTracksterCollection = cms.InputTag('ticlCandidate'),
     simtrackstersSC = cms.InputTag('ticlSimTracksters'),
     simTICLCandidates = cms.InputTag('ticlSimTracksters'),
     label_rechits = cms.VInputTag(

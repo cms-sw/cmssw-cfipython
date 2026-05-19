@@ -4,8 +4,8 @@ def TICLCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('TICLCandidateProducer',
     pluginInferenceAlgoTracksterInferenceByPFN = cms.PSet(
       algo_verbosity = cms.int32(0),
-      onnxPIDModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/PFN/patternrecognition/id_v0.onnx'),
-      onnxEnergyModelPath = cms.FileInPath('RecoHGCal/TICL/data/ticlv5/onnx_models/PFN/patternrecognition/energy_v0.onnx'),
+      onnxPIDModelPath = cms.string(''),
+      onnxEnergyModelPath = cms.string(''),
       inputNames = cms.vstring(
         'input',
         'input_tr_features'
@@ -17,6 +17,7 @@ def TICLCandidateProducer(*args, **kwargs):
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
       doRegression = cms.int32(1),
+      miniBatchSize = cms.untracked.int32(64),
       type = cms.string('TracksterInferenceByPFN')
     
     ),
