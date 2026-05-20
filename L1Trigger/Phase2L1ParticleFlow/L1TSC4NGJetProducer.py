@@ -7,7 +7,7 @@ def L1TSC4NGJetProducer(*args, **kwargs):
     returnRawPt = cms.bool(False),
     correctorFile = cms.string(''),
     correctorDir = cms.string(''),
-    l1tSC4NGJetModelPath = cms.string('L1TSC4NGJetModel_v0'),
+    l1tSC4NGJetModelPath = cms.string('L1TSC4NGJetModel_v1_0_1'),
     maxJets = cms.int32(16),
     nParticles = cms.int32(16),
     minPt = cms.double(10),
