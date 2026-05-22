@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def alpaka_serial_sync_torchtest_SimpleNet(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::torchtest::SimpleNet',
     model = cms.required.FileInPath,
+    convertToFP16 = cms.required.bool,
     particles = cms.required.InputTag,
     environment = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring,
