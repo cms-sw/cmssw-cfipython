@@ -3,9 +3,9 @@ import FWCore.ParameterSet.Config as cms
 def PoolSource(*args, **kwargs):
   mod = cms.Source('PoolSource',
     fileNames = cms.required.untracked.vstring,
+    overrideCatalog = cms.untracked.string(''),
     secondaryFileNames = cms.untracked.vstring(),
     needSecondaryFileNames = cms.untracked.bool(False),
-    overrideCatalog = cms.untracked.string(''),
     skipBadFiles = cms.untracked.bool(False),
     bypassVersionCheck = cms.untracked.bool(False),
     treeMaxVirtualSize = cms.untracked.int32(-1),

@@ -3,8 +3,8 @@ import FWCore.ParameterSet.Config as cms
 def NewEventStreamFileReader(*args, **kwargs):
   mod = cms.Source('NewEventStreamFileReader',
     fileNames = cms.required.untracked.vstring,
-    skipEvents = cms.untracked.uint32(0),
     overrideCatalog = cms.untracked.string(''),
+    skipEvents = cms.untracked.uint32(0),
     inputFileTransitionsEachEvent = cms.untracked.bool(False),
     prefetchMBytes = cms.untracked.uint32(0),
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
