@@ -14,6 +14,7 @@ def HBHEPhase1Reconstructor(*args, **kwargs):
     saveInfos = cms.bool(False),
     saveDroppedInfos = cms.bool(False),
     use8ts = cms.bool(True),
+    useChannelShapes = cms.bool(False),
     sipmQTSShift = cms.int32(0),
     sipmQNTStoSum = cms.int32(3),
     algorithm = cms.PSet(
@@ -72,9 +73,11 @@ def HBHEPhase1Reconstructor(*args, **kwargs):
       useM2 = cms.bool(False),
       useM3 = cms.bool(True),
       useMahi = cms.bool(True),
-      applyLegacyHBMCorrection = cms.bool(True)
+      applyLegacyHBMCorrection = cms.bool(True),
+      useChannelPulseShapesForMC = cms.bool(False)
     ),
     algoConfigClass = cms.string(''),
+    channelShapesLabel = cms.string('HcalDataShapes'),
     setNegativeFlagsQIE8 = cms.bool(True),
     setNegativeFlagsQIE11 = cms.bool(False),
     setNoiseFlagsQIE8 = cms.bool(True),

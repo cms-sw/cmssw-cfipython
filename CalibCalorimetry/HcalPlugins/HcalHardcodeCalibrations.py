@@ -48,7 +48,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
       noiseCorrelation = cms.vdouble(0),
       doRadiationDamage = cms.bool(False),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     hbUpgrade = cms.PSet(
       gain = cms.vdouble(0.00111111111111),
@@ -87,7 +88,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
         )
       ),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     he = cms.PSet(
       gain = cms.vdouble(0.23),
@@ -115,7 +117,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
       noiseCorrelation = cms.vdouble(0),
       doRadiationDamage = cms.bool(False),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     heUpgrade = cms.PSet(
       gain = cms.vdouble(0.00111111111111),
@@ -154,7 +157,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
         )
       ),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     hf = cms.PSet(
       gain = cms.vdouble(
@@ -188,7 +192,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
       noiseCorrelation = cms.vdouble(0),
       doRadiationDamage = cms.bool(False),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     hfUpgrade = cms.PSet(
       gain = cms.vdouble(
@@ -222,7 +227,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
       noiseCorrelation = cms.vdouble(0),
       doRadiationDamage = cms.bool(False),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     HFRecalParameterBlock = cms.PSet(
       HFdepthOneParameterA = cms.vdouble(),
@@ -262,7 +268,8 @@ def HcalHardcodeCalibrations(*args, **kwargs):
       noiseCorrelation = cms.vdouble(0),
       doRadiationDamage = cms.bool(False),
       noiseThreshold = cms.double(0),
-      seedThreshold = cms.double(0.1)
+      seedThreshold = cms.double(0.1),
+      pulseDelay = cms.double(0)
     ),
     SiPMCharacteristics = cms.VPSet(
       cms.PSet(),
