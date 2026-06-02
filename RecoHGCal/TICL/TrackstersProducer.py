@@ -8,6 +8,7 @@ def TrackstersProducer(*args, **kwargs):
     original_mask = cms.InputTag('hgcalMergeLayerClusters', 'InitialLayerClustersMask'),
     time_layerclusters = cms.InputTag('hgcalMergeLayerClusters', 'timeLayerCluster'),
     layer_clusters_tiles = cms.InputTag('ticlLayerTileProducer'),
+    layer_clusters_barrel_tiles = cms.InputTag('ticlLayerTileProducer', 'ticlLayerTilesBarrel'),
     layer_clusters_hfnose_tiles = cms.InputTag('ticlLayerTileHFNose'),
     seeding_regions = cms.InputTag('ticlSeedingRegionProducer'),
     patternRecognitionBy = cms.string('CLUE3D'),

@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def TSToSimTSHitLCAssociatorByEnergyScoreProducer(*args, **kwargs):
-  mod = cms.EDProducer('TSToSimTSHitLCAssociatorByEnergyScoreProducer',
+def HGCalTSToSimTSHitLCAssociatorByEnergyScoreProducer(*args, **kwargs):
+  mod = cms.EDProducer('HGCalTSToSimTSHitLCAssociatorByEnergyScoreProducer',
     hitMapTag = cms.InputTag('recHitMapProducer', 'hgcalRecHitMap'),
     hits = cms.VInputTag(
       'HGCalRecHit:HGCEERecHits',

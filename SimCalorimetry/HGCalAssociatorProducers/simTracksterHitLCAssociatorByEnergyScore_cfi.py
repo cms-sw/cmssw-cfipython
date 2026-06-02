@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .TSToSimTSHitLCAssociatorByEnergyScoreProducer import TSToSimTSHitLCAssociatorByEnergyScoreProducer
-
-simTracksterHitLCAssociatorByEnergyScore = TSToSimTSHitLCAssociatorByEnergyScoreProducer()
