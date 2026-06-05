@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_Phase2OTRecHitsSoAConverter import alpaka_serial_sync_Phase2OTRecHitsSoAConverter
+
+alpaka_serial_syncPhase2OTRecHitsSoAConverter = alpaka_serial_sync_Phase2OTRecHitsSoAConverter()

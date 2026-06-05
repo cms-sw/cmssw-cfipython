@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Phase2OTRecHitsSoAConverter_alpaka import Phase2OTRecHitsSoAConverter_alpaka
+
+phase2OTRecHitsSoAConverter = Phase2OTRecHitsSoAConverter_alpaka()

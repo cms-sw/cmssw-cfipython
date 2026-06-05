@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1HPSPFTauFlatTableProducer import SimpleTriggerL1HPSPFTauFlatTableProducer
+
+simpleTriggerL1HPSPFTauFlatTableProducer = SimpleTriggerL1HPSPFTauFlatTableProducer()

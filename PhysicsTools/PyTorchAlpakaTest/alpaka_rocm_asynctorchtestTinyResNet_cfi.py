@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_torchtest_TinyResNet import alpaka_rocm_async_torchtest_TinyResNet
+
+alpaka_rocm_asynctorchtestTinyResNet = alpaka_rocm_async_torchtest_TinyResNet()

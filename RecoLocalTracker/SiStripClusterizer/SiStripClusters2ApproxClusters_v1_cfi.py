@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiStripClusters2ApproxClusters_v1 import SiStripClusters2ApproxClusters_v1
+
+SiStripClusters2ApproxClusters_v1 = SiStripClusters2ApproxClusters_v1()

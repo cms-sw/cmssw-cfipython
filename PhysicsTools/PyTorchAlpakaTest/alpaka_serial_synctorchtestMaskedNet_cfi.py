@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_torchtest_MaskedNet import alpaka_serial_sync_torchtest_MaskedNet
+
+alpaka_serial_synctorchtestMaskedNet = alpaka_serial_sync_torchtest_MaskedNet()

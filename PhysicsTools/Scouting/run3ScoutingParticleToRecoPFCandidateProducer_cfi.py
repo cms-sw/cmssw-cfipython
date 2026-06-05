@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Run3ScoutingParticleToRecoPFCandidateProducer import Run3ScoutingParticleToRecoPFCandidateProducer
+
+run3ScoutingParticleToRecoPFCandidateProducer = Run3ScoutingParticleToRecoPFCandidateProducer()

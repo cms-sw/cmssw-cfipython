@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L3MuonCandidateProducerFromMuons import L3MuonCandidateProducerFromMuons
+
+l3MuonCandidateProducerFromMuons = L3MuonCandidateProducerFromMuons()
