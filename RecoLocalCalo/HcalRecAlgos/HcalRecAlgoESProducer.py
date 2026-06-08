@@ -28,7 +28,11 @@ def HcalRecAlgoESProducer(*args, **kwargs):
           'HSCP_ExpFit',
           'ADCSaturationBit',
           'HBHEIsolatedNoise',
-          'AddedSimHcalNoise'
+          'AddedSimHcalNoise',
+          'HBHERun3StuckADC',
+          'HBHERun3repeatedADCblock',
+          'HBHERun3BadCapId',
+          'HBHERun3NonrotatingCapId'
         )
       ),
       cms.PSet(

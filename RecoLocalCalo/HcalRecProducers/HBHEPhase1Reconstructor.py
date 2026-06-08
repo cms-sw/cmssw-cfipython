@@ -86,6 +86,7 @@ def HBHEPhase1Reconstructor(*args, **kwargs):
     setPulseShapeFlagsQIE11 = cms.bool(False),
     setLegacyFlagsQIE8 = cms.bool(True),
     setLegacyFlagsQIE11 = cms.bool(False),
+    setHBHERun3Flags = cms.bool(True),
     flagParametersQIE8 = cms.PSet(
       nominalPedestal = cms.double(3),
       hitEnergyMinimum = cms.double(1),
