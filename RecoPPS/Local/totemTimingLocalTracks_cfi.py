@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TotemTimingLocalTrackFitter_TotemTimingDetId_ import TotemTimingLocalTrackFitter_TotemTimingDetId_
+
+totemTimingLocalTracks = TotemTimingLocalTrackFitter_TotemTimingDetId_()

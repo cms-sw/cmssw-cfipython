@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TestAlpakaGlobalProducerOffset import alpaka_serial_sync_TestAlpakaGlobalProducerOffset
+
+alpaka_serial_syncTestAlpakaGlobalProducerOffset = alpaka_serial_sync_TestAlpakaGlobalProducerOffset()

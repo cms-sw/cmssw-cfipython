@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TracksterAssociationMaskProducer import TracksterAssociationMaskProducer
+
+tracksterAssociationMaskProducer = TracksterAssociationMaskProducer()

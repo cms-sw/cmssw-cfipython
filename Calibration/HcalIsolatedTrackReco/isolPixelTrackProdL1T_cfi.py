@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .IsolatedPixelTrackCandidateL1TProducer import IsolatedPixelTrackCandidateL1TProducer
+
+isolPixelTrackProdL1T = IsolatedPixelTrackCandidateL1TProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .AlpakaTestKernelAdditionModule_alpaka import AlpakaTestKernelAdditionModule_alpaka
+
+alpakaTestKernelAdditionModule = AlpakaTestKernelAdditionModule_alpaka()

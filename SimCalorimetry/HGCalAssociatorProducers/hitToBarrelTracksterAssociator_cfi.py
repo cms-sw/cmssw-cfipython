@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HitToBarrelTracksterAssociatorProducer import HitToBarrelTracksterAssociatorProducer
+
+hitToBarrelTracksterAssociator = HitToBarrelTracksterAssociatorProducer()

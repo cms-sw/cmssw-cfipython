@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .CandidateTrackCountingESProducer import CandidateTrackCountingESProducer
+
+candidateTrackCountingESProducer = CandidateTrackCountingESProducer()

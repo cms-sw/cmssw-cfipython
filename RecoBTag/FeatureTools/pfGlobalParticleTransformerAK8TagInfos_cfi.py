@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .GlobalParticleTransformerAK8TagInfoProducer import GlobalParticleTransformerAK8TagInfoProducer
+
+pfGlobalParticleTransformerAK8TagInfos = GlobalParticleTransformerAK8TagInfoProducer()
