@@ -5,9 +5,7 @@ def RunLumiEventAnalyzer(*args, **kwargs):
     verbose = cms.untracked.bool(False),
     dumpTriggerResults = cms.untracked.bool(False),
     expectedEndingIndex = cms.untracked.int32(-1),
-    expectedEndingIndex1 = cms.untracked.int32(-1),
     expectedRunLumiEvents = cms.untracked.vuint64(),
-    expectedRunLumiEvents1 = cms.untracked.vuint64(),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
