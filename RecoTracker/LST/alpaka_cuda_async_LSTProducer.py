@@ -6,7 +6,6 @@ def alpaka_cuda_async_LSTProducer(*args, **kwargs):
     verbose = cms.bool(False),
     ptCut = cms.double(0.8),
     clustSizeCut = cms.uint32(16),
-    ptCutLabel = cms.string('0.8'),
     nopLSDupClean = cms.bool(False),
     tcpLSTriplets = cms.bool(False),
     reduceMemByFullPrecompute = cms.bool(False),

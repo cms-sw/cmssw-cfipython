@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def LSTModulesDevESProducer_alpaka(*args, **kwargs):
   mod = cms.ESProducer('LSTModulesDevESProducer@alpaka',
-    ptCutLabel = cms.string('0.8'),
+    ptCut = cms.double(0.8),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),

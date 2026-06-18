@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def alpaka_rocm_async_LSTModulesDevESProducer(*args, **kwargs):
   mod = cms.ESProducer('alpaka_rocm_async::LSTModulesDevESProducer',
-    ptCutLabel = cms.string('0.8'),
+    ptCut = cms.double(0.8),
     appendToDataLabel = cms.string(''),
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
