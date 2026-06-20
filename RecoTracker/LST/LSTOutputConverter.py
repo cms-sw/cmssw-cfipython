@@ -7,6 +7,8 @@ def LSTOutputConverter(*args, **kwargs):
     lstPixelSeeds = cms.InputTag('lstInputProducer'),
     includeT5s = cms.bool(True),
     includeNonpLSTSs = cms.bool(False),
+    dropOTHitsPurePLS = cms.bool(False),
+    maxITHitsToDropOTHitsPurePLS = cms.int32(3),
     produceSeeds = cms.bool(True),
     produceTrackCandidates = cms.bool(True),
     propagatorAlong = cms.ESInputTag('', 'PropagatorWithMaterial'),

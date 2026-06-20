@@ -15,10 +15,10 @@ def EvFDaqDirector(*args, **kwargs):
     fileBrokerPort = cms.untracked.string('8080'),
     fileBrokerKeepAlive = cms.untracked.bool(True),
     fileBrokerUseLocalLock = cms.untracked.bool(True),
-    fuLockPollInterval = cms.untracked.uint32(2000),
     outputAdler32Recheck = cms.untracked.bool(False),
     directorIsBU = cms.untracked.bool(False),
     hltSourceDirectory = cms.untracked.string(''),
+    fuLockPollInterval = cms.untracked.uint32(2000),
     mergingPset = cms.untracked.string('')
   )
   for a in args:
