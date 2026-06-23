@@ -4,6 +4,7 @@ def MtdTracksValidation(*args, **kwargs):
   mod = cms.EDProducer('MtdTracksValidation',
     folder = cms.string('MTD/Tracks'),
     optionalPlots = cms.bool(False),
+    skipNonExistingSrc = cms.bool(False),
     inputTagG = cms.InputTag('generalTracks'),
     inputTagT = cms.InputTag('trackExtenderWithMTD'),
     inputTagV = cms.InputTag('offlinePrimaryVertices4D'),
