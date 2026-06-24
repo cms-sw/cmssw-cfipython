@@ -21,6 +21,7 @@ scEnergyCorrectorProducer = cms.EDProducer('SCEnergyCorrectorProducer',
     uncertaintyMinEE = cms.double(0.0002),
     uncertaintyMaxEE = cms.double(0.5),
     vertexCollection = cms.InputTag('offlinePrimaryVertices'),
+    rhoMaps = cms.VInputTag(),
     eRecHitThreshold = cms.double(1),
     hgcalRecHits = cms.InputTag(''),
     hgcalCylinderR = cms.double(2.7999999523162842)
