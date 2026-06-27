@@ -5,6 +5,7 @@ def MuonIdProducer(*args, **kwargs):
     arbitrateTrackerMuons = cms.bool(False),
     storeCrossedHcalRecHits = cms.bool(False),
     fillShowerDigis = cms.bool(False),
+    isPhase2 = cms.bool(False),
     selectHighPurity = cms.bool(False),
     pvInputTag = cms.InputTag(''),
     TrackAssociatorParameters = cms.PSet(
