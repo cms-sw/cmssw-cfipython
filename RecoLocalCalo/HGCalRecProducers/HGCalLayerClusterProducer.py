@@ -14,7 +14,19 @@ def HGCalLayerClusterProducer(*args, **kwargs):
         1.3,
         1.3,
         1.3,
-        0.0315
+        1.3
+      ),
+      deltas = cms.vdouble(
+        1.3,
+        1.3,
+        1.3,
+        1.3
+      ),
+      deltao = cms.vdouble(
+        2.6,
+        2.6,
+        2.6,
+        2.6
       ),
       dependSensor = cms.bool(True),
       ecut = cms.double(3),
