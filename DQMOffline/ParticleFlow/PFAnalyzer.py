@@ -2,6 +2,8 @@ import FWCore.ParameterSet.Config as cms
 
 def PFAnalyzer(*args, **kwargs):
   mod = cms.EDProducer('PFAnalyzer',
+    puppiWeight = cms.InputTag('puppi'),
+    runNumber = cms.uint32(0),
     isMiniAOD = cms.bool(True),
     pfCandidates = cms.InputTag('particleFlow'),
     pfJetCollection = cms.InputTag('ak4PFJets'),
@@ -10,6 +12,16 @@ def PFAnalyzer(*args, **kwargs):
     TriggerNames = cms.vstring(),
     PVCollection = cms.InputTag('offlinePrimaryVertices'),
     pfAnalysis = cms.PSet(
+      pfNames = cms.vstring(
+        'allPFC',
+        'neutralHadPFC',
+        'chargedHadPFC',
+        'electronPFC',
+        'muonPFC',
+        'gammaPFC',
+        'hadHFPFC',
+        'emHFPFC'
+      ),
       observables = cms.vstring(),
       eventObservables = cms.vstring(),
       pfInJetObservables = cms.vstring(),

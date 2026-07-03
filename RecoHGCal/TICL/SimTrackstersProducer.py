@@ -15,6 +15,8 @@ def SimTrackstersProducer(*args, **kwargs):
     recoTracks = cms.InputTag('generalTracks'),
     cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
     tpToTrack = cms.InputTag('trackingParticleRecoTrackAsssociation'),
+    gsfTracks = cms.InputTag('electronGsfTracks'),
+    tpToGsfTrack = cms.InputTag('trackingParticleGsfTrackAssociation'),
     trackingParticles = cms.InputTag('mix', 'MergedTrackTruth'),
     simTrackToTPMap = cms.InputTag('simHitTPAssocProducer', 'simTrackToTP'),
     fractionCut = cms.double(0),
