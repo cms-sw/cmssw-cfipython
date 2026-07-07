@@ -5,6 +5,7 @@ def RecoTrackSelector(*args, **kwargs):
     src = cms.InputTag('generalTracks'),
     copyExtras = cms.untracked.bool(False),
     copyTrajectories = cms.untracked.bool(False),
+    passThrough = cms.bool(False),
     invertRapidityCut = cms.bool(False),
     usePV = cms.bool(False),
     lip = cms.double(300),

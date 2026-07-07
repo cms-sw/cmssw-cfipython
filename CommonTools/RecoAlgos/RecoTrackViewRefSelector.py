@@ -4,6 +4,7 @@ def RecoTrackViewRefSelector(*args, **kwargs):
   mod = cms.EDProducer('RecoTrackViewRefSelector',
     throwOnMissing = cms.bool(True),
     src = cms.InputTag(''),
+    passThrough = cms.bool(False),
     invertRapidityCut = cms.bool(False),
     usePV = cms.bool(False),
     lip = cms.double(300),

@@ -15,6 +15,10 @@ def TICLCandidateExtraTableProducer(*args, **kwargs):
         type = cms.string('int')
       )
     ),
+    tracksters = cms.InputTag('ticlTrackstersCLUE3DHigh'),
+    tracks = cms.InputTag('generalTracks'),
+    detector = cms.string('HGCAL'),
+    propagator = cms.string('PropagatorWithMaterial'),
     collectionVariables = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
