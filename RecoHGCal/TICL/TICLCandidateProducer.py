@@ -2,6 +2,14 @@ import FWCore.ParameterSet.Config as cms
 
 def TICLCandidateProducer(*args, **kwargs):
   mod = cms.EDProducer('TICLCandidateProducer',
+    muonInterpretationDescPSet = cms.PSet(
+      delta_tk_ts = cms.double(0.1),
+      mip_energy_max = cms.double(10),
+      onnx_model_path = cms.string(''),
+      algo_verbosity = cms.int32(0),
+      type = cms.string('Muon')
+    
+    ),
     pluginInferenceAlgoTracksterInferenceByPFN = cms.PSet(
       algo_verbosity = cms.int32(0),
       onnxPIDModelPath = cms.string(''),
