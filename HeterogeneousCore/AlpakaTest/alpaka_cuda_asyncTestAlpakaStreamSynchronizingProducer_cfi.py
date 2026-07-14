@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_TestAlpakaStreamSynchronizingProducer import alpaka_cuda_async_TestAlpakaStreamSynchronizingProducer
-
-alpaka_cuda_asyncTestAlpakaStreamSynchronizingProducer = alpaka_cuda_async_TestAlpakaStreamSynchronizingProducer()

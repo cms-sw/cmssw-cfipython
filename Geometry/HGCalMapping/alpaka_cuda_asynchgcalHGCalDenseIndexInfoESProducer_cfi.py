@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_hgcal_HGCalDenseIndexInfoESProducer import alpaka_cuda_async_hgcal_HGCalDenseIndexInfoESProducer
-
-alpaka_cuda_asynchgcalHGCalDenseIndexInfoESProducer = alpaka_cuda_async_hgcal_HGCalDenseIndexInfoESProducer()

@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_LSTModulesDevESProducer import alpaka_cuda_async_LSTModulesDevESProducer
-
-alpaka_cuda_asyncLSTModulesDevESProducer = alpaka_cuda_async_LSTModulesDevESProducer()

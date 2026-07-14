@@ -10,9 +10,6 @@ def ElectronSeedFitter(*args, **kwargs):
     TTRHBuilder = cms.string('WithTrackAngle'),
     magneticField = cms.string('ParabolicMf'),
     beamSpot = cms.InputTag('hltOnlineBeamSpot'),
-    ptMin = cms.double(1.5),
-    originHalfLength = cms.double(12.5),
-    originRadius = cms.double(0.05),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

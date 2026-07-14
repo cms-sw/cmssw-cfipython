@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_TestAlpakaGlobalProducerCopyToDeviceCache import alpaka_cuda_async_TestAlpakaGlobalProducerCopyToDeviceCache
-
-alpaka_cuda_asyncTestAlpakaGlobalProducerCopyToDeviceCache = alpaka_cuda_async_TestAlpakaGlobalProducerCopyToDeviceCache()

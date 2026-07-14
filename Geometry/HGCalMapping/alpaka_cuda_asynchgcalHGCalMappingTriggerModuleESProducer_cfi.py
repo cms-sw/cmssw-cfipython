@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_hgcal_HGCalMappingTriggerModuleESProducer import alpaka_cuda_async_hgcal_HGCalMappingTriggerModuleESProducer
-
-alpaka_cuda_asynchgcalHGCalMappingTriggerModuleESProducer = alpaka_cuda_async_hgcal_HGCalMappingTriggerModuleESProducer()

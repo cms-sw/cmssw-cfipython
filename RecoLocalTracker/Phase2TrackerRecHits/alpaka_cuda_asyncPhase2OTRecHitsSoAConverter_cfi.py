@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_Phase2OTRecHitsSoAConverter import alpaka_cuda_async_Phase2OTRecHitsSoAConverter
-
-alpaka_cuda_asyncPhase2OTRecHitsSoAConverter = alpaka_cuda_async_Phase2OTRecHitsSoAConverter()
