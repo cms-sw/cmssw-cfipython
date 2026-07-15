@@ -22,6 +22,12 @@ def TauValidator(*args, **kwargs):
     minDeltaR = cms.double(0.3),
     outFolder = cms.string('HLT/Tau/TauValidation'),
     isPatTaus = cms.untracked.bool(False),
+    TauPreSelection = cms.PSet(
+      PtMinGenCut = cms.double(0),
+      EtaMaxGenCut = cms.double(3),
+      PtMinRecoCut = cms.double(20),
+      EtaMaxRecoCut = cms.double(3)
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
