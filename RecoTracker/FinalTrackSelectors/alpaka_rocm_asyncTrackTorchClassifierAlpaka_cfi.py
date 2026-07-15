@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TrackTorchClassifierAlpaka import alpaka_rocm_async_TrackTorchClassifierAlpaka
+
+alpaka_rocm_asyncTrackTorchClassifierAlpaka = alpaka_rocm_async_TrackTorchClassifierAlpaka()

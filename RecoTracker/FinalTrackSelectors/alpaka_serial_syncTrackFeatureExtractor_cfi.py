@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TrackFeatureExtractor import alpaka_serial_sync_TrackFeatureExtractor
+
+alpaka_serial_syncTrackFeatureExtractor = alpaka_serial_sync_TrackFeatureExtractor()

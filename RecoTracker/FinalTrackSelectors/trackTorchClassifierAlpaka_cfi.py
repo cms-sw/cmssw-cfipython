@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TrackTorchClassifierAlpaka_alpaka import TrackTorchClassifierAlpaka_alpaka
+
+trackTorchClassifierAlpaka = TrackTorchClassifierAlpaka_alpaka()

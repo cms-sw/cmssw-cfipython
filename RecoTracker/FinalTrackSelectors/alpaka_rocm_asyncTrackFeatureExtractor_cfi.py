@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TrackFeatureExtractor import alpaka_rocm_async_TrackFeatureExtractor
+
+alpaka_rocm_asyncTrackFeatureExtractor = alpaka_rocm_async_TrackFeatureExtractor()
