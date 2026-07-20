@@ -40,6 +40,54 @@ def alpaka_rocm_async_CAHitNtupletAlpakaHIonPhase1(*args, **kwargs):
         1,
         2
       ),
+      startMaxInnerR = cms.vdouble(
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ),
+      maxDCurv = cms.vdouble(
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ),
+      floorDCurv = cms.vdouble(
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ),
+      fishboneCuts = cms.vdouble(
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773,
+        0.99998998641967773
+      ),
       pairGraph = cms.vuint32(
         0,
         1,
@@ -67,6 +115,21 @@ def alpaka_rocm_async_CAHitNtupletAlpakaHIonPhase1(*args, **kwargs):
         6,
         8,
         9
+      ),
+      skipsLayers = cms.vuint32(
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ),
       phiCuts = cms.vint32(
         522,
@@ -214,6 +277,7 @@ def alpaka_rocm_async_CAHitNtupletAlpakaHIonPhase1(*args, **kwargs):
     hardCurvCut = cms.double(0.032840721309185028),
     earlyFishbone = cms.bool(True),
     lateFishbone = cms.bool(False),
+    onlySameLayersFishbone = cms.bool(False),
     fillStatistics = cms.bool(False),
     minHitsPerNtuplet = cms.uint32(4),
     minHitsForSharingCut = cms.uint32(10),
@@ -222,6 +286,9 @@ def alpaka_rocm_async_CAHitNtupletAlpakaHIonPhase1(*args, **kwargs):
     doSharedHitCut = cms.bool(True),
     dupPassThrough = cms.bool(False),
     useSimpleTripletCleaner = cms.bool(True),
+    doTripletCleaner = cms.bool(True),
+    doFastDuplicateRemover = cms.bool(True),
+    doEarlyDuplicateRemover = cms.bool(True),
     trackQualityCuts = cms.PSet(
       chi2MaxPt = cms.double(10),
       chi2Coeff = cms.vdouble(
