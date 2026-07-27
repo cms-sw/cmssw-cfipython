@@ -3,11 +3,17 @@ import FWCore.ParameterSet.Config as cms
 def Phase2ITRecHitHarvester(*args, **kwargs):
   mod = cms.EDProducer('Phase2ITRecHitHarvester',
     TopFolder = cms.string('TrackerPhase2ITRecHitV'),
+    ShellNames = cms.vstring(
+      'mI',
+      'mO',
+      'pI',
+      'pO'
+    ),
     NbarrelLayers = cms.uint32(4),
     NDisk1Rings = cms.uint32(5),
     NDisk2Rings = cms.uint32(4),
-    EcapDisk1Name = cms.string('EPix'),
-    EcapDisk2Name = cms.string('FPix'),
+    EcapDisk1Name = cms.string('EndcapPix'),
+    EcapDisk2Name = cms.string('ForwardPix'),
     ResidualXvsEta = cms.string('Delta_X_vs_Eta'),
     ResidualXvsPhi = cms.string('Delta_X_vs_Phi'),
     ResidualYvsEta = cms.string('Delta_Y_vs_Eta'),

@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def Phase2ITMonitorRecHit(*args, **kwargs):
   mod = cms.EDProducer('Phase2ITMonitorRecHit',
     GlobalNumberRecHits = cms.PSet(
-      name = cms.string('NumberRecHits'),
+      name = cms.string('Num_RecHits'),
       title = cms.string('NumberRecHits;Number of RecHits;'),
       xmin = cms.double(0),
       switch = cms.bool(True),
@@ -11,8 +11,8 @@ def Phase2ITMonitorRecHit(*args, **kwargs):
       NxBins = cms.int32(250)
     ),
     GlobalPositionRZ_PXB = cms.PSet(
-      name = cms.string('Global_Position_RZ_IT_barrel'),
-      title = cms.string('Global_Position_RZ_IT_barrel;z [mm];r [mm]'),
+      name = cms.string('RecHit_Global_Position_RZ_IT_barrel'),
+      title = cms.string('RecHit_Global_Position_RZ_IT_barrel;z [mm];r [mm]'),
       ymax = cms.double(300),
       NxBins = cms.int32(1500),
       NyBins = cms.int32(300),
@@ -22,8 +22,8 @@ def Phase2ITMonitorRecHit(*args, **kwargs):
       ymin = cms.double(0)
     ),
     GlobalPositionXY_PXB = cms.PSet(
-      name = cms.string('Global_Position_XY_IT_barrel'),
-      title = cms.string('Global_Position_XY_IT_barrel;x [mm];y [mm];'),
+      name = cms.string('RecHit_Global_Position_XY_IT_barrel'),
+      title = cms.string('RecHit_Global_Position_XY_IT_barrel;x [mm];y [mm];'),
       ymax = cms.double(300),
       NxBins = cms.int32(600),
       NyBins = cms.int32(600),
@@ -33,8 +33,8 @@ def Phase2ITMonitorRecHit(*args, **kwargs):
       ymin = cms.double(-300)
     ),
     GlobalPositionRZ_PXEC = cms.PSet(
-      name = cms.string('Global_Position_RZ_IT_endcap'),
-      title = cms.string('Global_Position_RZ_IT_endcap;z [mm];r [mm]'),
+      name = cms.string('RecHit_Global_Position_RZ_IT_endcap'),
+      title = cms.string('RecHit_Global_Position_RZ_IT_endcap;z [mm];r [mm]'),
       ymax = cms.double(300),
       NxBins = cms.int32(1500),
       NyBins = cms.int32(300),
@@ -44,8 +44,8 @@ def Phase2ITMonitorRecHit(*args, **kwargs):
       ymin = cms.double(0)
     ),
     GlobalPositionXY_PXEC = cms.PSet(
-      name = cms.string('Global_Position_XY_IT_endcap'),
-      title = cms.string('Global_Position_XY_IT_endcap; x [mm]; y [mm]'),
+      name = cms.string('RecHit_Global_Position_XY_IT_endcap'),
+      title = cms.string('RecHit_Global_Position_XY_IT_endcap; x [mm]; y [mm]'),
       ymax = cms.double(300),
       NxBins = cms.int32(600),
       NyBins = cms.int32(600),
@@ -55,57 +55,24 @@ def Phase2ITMonitorRecHit(*args, **kwargs):
       ymin = cms.double(-300)
     ),
     LocalNumberRecHits = cms.PSet(
-      name = cms.string('LocalNumberRecHits'),
+      name = cms.string('Num_RecHits_Per_Layer'),
       title = cms.string('NumberRecHits;Number of RecHits;'),
       xmin = cms.double(0),
       switch = cms.bool(True),
       xmax = cms.double(150000),
       NxBins = cms.int32(150)
     ),
-    GlobalPositionRZ_perlayer = cms.PSet(
-      name = cms.string('Global_Position_RZ'),
-      title = cms.string('Global_Position_RZ;z [mm];r [mm]'),
-      ymax = cms.double(300),
-      NxBins = cms.int32(1500),
-      NyBins = cms.int32(300),
-      switch = cms.bool(False),
-      xmax = cms.double(3000),
-      xmin = cms.double(-3000),
-      ymin = cms.double(0)
-    ),
-    GlobalPositionXY_perlayer = cms.PSet(
-      name = cms.string('Global_Position_XY'),
-      title = cms.string('Global_Position_XY;x [mm]; y[mm]'),
-      ymax = cms.double(300),
-      NxBins = cms.int32(600),
-      NyBins = cms.int32(600),
-      switch = cms.bool(False),
-      xmax = cms.double(300),
-      xmin = cms.double(-300),
-      ymin = cms.double(-300)
-    ),
-    LocalPositionXY = cms.PSet(
-      name = cms.string('Local_Position_XY'),
-      title = cms.string('Local_Position_XY; x; y'),
-      ymax = cms.double(0),
-      NxBins = cms.int32(500),
-      NyBins = cms.int32(500),
-      switch = cms.bool(True),
-      xmax = cms.double(0),
-      xmin = cms.double(0),
-      ymin = cms.double(0)
-    ),
     LocalClusterSizeX = cms.PSet(
-      name = cms.string('Cluster_SizeX'),
-      title = cms.string('Cluster_SizeX; cluster size x;'),
+      name = cms.string('RecHit_Size_X'),
+      title = cms.string('RecHit_SizeX; cluster size x;'),
       xmin = cms.double(-0.5),
       switch = cms.bool(True),
       xmax = cms.double(20.5),
       NxBins = cms.int32(21)
     ),
     LocalClusterSizeY = cms.PSet(
-      name = cms.string('Cluster_SizeY'),
-      title = cms.string('Cluster_SizeY;cluster size y;'),
+      name = cms.string('RecHit_Size_Y'),
+      title = cms.string('RecHit_SizeY;cluster size y;'),
       xmin = cms.double(-0.5),
       switch = cms.bool(True),
       xmax = cms.double(25.5),
@@ -147,7 +114,7 @@ def Phase2ITMonitorRecHit(*args, **kwargs):
       ymax = cms.double(10),
       ymin = cms.double(0)
     ),
-    TopFolderName = cms.string('TrackerPhase2ITRecHit'),
+    TopFolderName = cms.string('InnerTracker'),
     rechitsSrc = cms.InputTag('siPixelRecHits'),
     mightGet = cms.optional.untracked.vstring
   )

@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_torchtest_SimpleNet import alpaka_cuda_async_torchtest_SimpleNet
-
-alpaka_cuda_asynctorchtestSimpleNet = alpaka_cuda_async_torchtest_SimpleNet()

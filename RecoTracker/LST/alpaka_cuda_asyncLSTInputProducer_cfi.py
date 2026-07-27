@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_LSTInputProducer import alpaka_cuda_async_LSTInputProducer
-
-alpaka_cuda_asyncLSTInputProducer = alpaka_cuda_async_LSTInputProducer()

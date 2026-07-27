@@ -1,8 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def CUDATestOpaqueAdditionModule(*args, **kwargs):
-  mod = cms.EDAnalyzer('CUDATestOpaqueAdditionModule',
-    size = cms.uint32(1048576),
+def allocMonTest_ExternalWorkAllocProducer(*args, **kwargs):
+  mod = cms.EDProducer('allocMonTest::ExternalWorkAllocProducer',
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

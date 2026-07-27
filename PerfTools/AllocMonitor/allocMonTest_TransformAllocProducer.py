@@ -1,8 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def CUDATestWrapperAdditionModule(*args, **kwargs):
-  mod = cms.EDAnalyzer('CUDATestWrapperAdditionModule',
-    size = cms.uint32(1048576),
+def allocMonTest_TransformAllocProducer(*args, **kwargs):
+  mod = cms.EDProducer('allocMonTest::TransformAllocProducer',
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

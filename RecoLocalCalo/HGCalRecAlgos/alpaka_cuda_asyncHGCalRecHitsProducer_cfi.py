@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_HGCalRecHitsProducer import alpaka_cuda_async_HGCalRecHitsProducer
-
-alpaka_cuda_asyncHGCalRecHitsProducer = alpaka_cuda_async_HGCalRecHitsProducer()
