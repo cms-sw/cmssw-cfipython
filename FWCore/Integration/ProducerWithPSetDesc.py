@@ -9,6 +9,10 @@ def ProducerWithPSetDesc(*args, **kwargs):
     p_int_optuntracked = cms.untracked.int32(7),
     p_int_opt_nd = cms.optional.int32,
     p_int_optuntracked_nd = cms.optional.untracked.int32,
+    p_float_opt_nd = cms.optional.float,
+    p_float_optuntracked_nd = cms.optional.untracked.float,
+    p_vfloat_opt_nd = cms.optional.vfloat,
+    p_vfloat_optuntracked_nd = cms.optional.untracked.vfloat,
     vint1 = cms.vint32(),
     vint2 = cms.vint32(2147483647),
     vint3 = cms.vint32(
@@ -84,6 +88,26 @@ def ProducerWithPSetDesc(*args, **kwargs):
     ),
     vdoublev5 = cms.vdouble(
       1e+300,
+      0,
+      11,
+      0.3
+    ),
+    floatv1 = cms.float(1.17549435e-38),
+    floatv2 = cms.untracked.float(0),
+    floatv3 = cms.untracked.float(0.3),
+    vfloatv1 = cms.vfloat(),
+    vfloatv2 = cms.vfloat(1e+30),
+    vfloatv3 = cms.vfloat(
+      1e+30,
+      0
+    ),
+    vfloatv4 = cms.vfloat(
+      1e+30,
+      0,
+      11
+    ),
+    vfloatv5 = cms.vfloat(
+      1e+30,
       0,
       11,
       0.3
@@ -357,7 +381,9 @@ def ProducerWithPSetDesc(*args, **kwargs):
       noDefault21 = cms.optional.LuminosityBlockRange,
       noDefault22 = cms.optional.VLuminosityBlockRange,
       noDefault23 = cms.optional.EventRange,
-      noDefault24 = cms.optional.VEventRange
+      noDefault24 = cms.optional.VEventRange,
+      noDefault25 = cms.optional.float,
+      noDefault26 = cms.optional.vfloat
     ),
     noDefaultPset4 = cms.PSet(
       noDefault1 = cms.optional.untracked.int32,
@@ -383,7 +409,9 @@ def ProducerWithPSetDesc(*args, **kwargs):
       noDefault21 = cms.optional.untracked.LuminosityBlockRange,
       noDefault22 = cms.optional.untracked.VLuminosityBlockRange,
       noDefault23 = cms.optional.untracked.EventRange,
-      noDefault24 = cms.optional.untracked.VEventRange
+      noDefault24 = cms.optional.untracked.VEventRange,
+      noDefault25 = cms.optional.untracked.float,
+      noDefault26 = cms.optional.untracked.vfloat
     ),
     plugin = cms.PSet(
       value = cms.int32(5),
