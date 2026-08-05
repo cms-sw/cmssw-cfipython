@@ -97,12 +97,34 @@ def Phase2OTValidateTracks(*args, **kwargs):
       xmin = cms.double(-2),
       xmax = cms.double(2)
     ),
+    TH1Track_pt = cms.PSet(
+      Nbinsx = cms.int32(50),
+      xmin = cms.double(0),
+      xmax = cms.double(25)
+    ),
+    TH1NTracks_pt2 = cms.PSet(
+      Nbinsx = cms.int32(400),
+      xmin = cms.double(0),
+      xmax = cms.double(400)
+    ),
+    TH1NTracks_pt3 = cms.PSet(
+      Nbinsx = cms.int32(300),
+      xmin = cms.double(0),
+      xmax = cms.double(300)
+    ),
+    TH1NTracks_pt10 = cms.PSet(
+      Nbinsx = cms.int32(100),
+      xmin = cms.double(0),
+      xmax = cms.double(100)
+    ),
     TopFolderName = cms.string('TrackerPhase2OTL1TrackV'),
     trackingParticleToken = cms.InputTag('mix', 'MergedTrackTruth'),
     MCTruthStubInputTag = cms.InputTag('TTStubAssociatorFromPixelDigis', 'StubAccepted'),
     MCTruthTrackInputTag = cms.InputTag('TTTrackAssociatorFromPixelDigis', 'Level1TTTracks'),
     MCTruthTrackExtendedInputTag = cms.InputTag('TTTrackAssociatorFromPixelDigisExtended', 'Level1TTTracks'),
     MCTruthClusterInputTag = cms.InputTag('TTClusterAssociatorFromPixelDigis', 'ClusterInclusive'),
+    L1TrackInputTag = cms.InputTag('l1tTTTracksFromTrackletEmulation', 'Level1TTTracks'),
+    L1TrackExtendedInputTag = cms.InputTag('l1tTTTracksFromExtendedTrackletEmulation', 'Level1TTTracks'),
     L1Tk_minNStub = cms.int32(4),
     L1Tk_maxChi2dof = cms.double(25),
     TP_minNStub = cms.int32(4),

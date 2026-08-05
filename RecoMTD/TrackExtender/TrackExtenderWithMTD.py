@@ -11,7 +11,6 @@ def TrackExtenderWithMTD(*args, **kwargs):
     updateTrackExtra = cms.bool(True),
     updateTrackHitPattern = cms.bool(True),
     TransientTrackBuilder = cms.string('TransientTrackBuilder'),
-    MTDRecHitBuilder = cms.string('MTDRecHitBuilder'),
     Propagator = cms.string('PropagatorWithMaterialForMTD'),
     TrackTransformer = cms.PSet(
       DoPredictionsOnly = cms.bool(False),
@@ -24,15 +23,18 @@ def TrackExtenderWithMTD(*args, **kwargs):
       MuonRecHitBuilder = cms.string('MuonRecHitBuilder'),
       MTDRecHitBuilder = cms.string('MTDRecHitBuilder')
     ),
-    estimatorMaxChi2 = cms.double(500),
-    estimatorMaxNSigma = cms.double(10),
-    btlChi2Cut = cms.double(50),
-    btlTimeChi2Cut = cms.double(10),
-    etlChi2Cut = cms.double(50),
-    etlTimeChi2Cut = cms.double(10),
+    MTDHitMatcher = cms.PSet(
+      estimatorMaxChi2 = cms.double(500),
+      estimatorMaxNSigma = cms.double(10),
+      btlChi2Cut = cms.double(50),
+      btlTimeChi2Cut = cms.double(10),
+      etlChi2Cut = cms.double(50),
+      etlTimeChi2Cut = cms.double(10),
+      bsTimeSpread = cms.double(0.2),
+      MTDRecHitBuilder = cms.string('MTDRecHitBuilder')
+    ),
     useVertex = cms.bool(False),
     dZCut = cms.double(0.1),
-    bsTimeSpread = cms.double(0.2),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

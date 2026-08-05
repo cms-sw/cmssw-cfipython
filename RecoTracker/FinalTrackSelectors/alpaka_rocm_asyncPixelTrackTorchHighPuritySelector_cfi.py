@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_PixelTrackTorchHighPuritySelector import alpaka_rocm_async_PixelTrackTorchHighPuritySelector
+
+alpaka_rocm_asyncPixelTrackTorchHighPuritySelector = alpaka_rocm_async_PixelTrackTorchHighPuritySelector()
