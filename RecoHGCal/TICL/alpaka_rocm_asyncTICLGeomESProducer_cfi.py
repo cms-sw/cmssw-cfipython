@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TICLGeomESProducer import alpaka_rocm_async_TICLGeomESProducer
+
+alpaka_rocm_asyncTICLGeomESProducer = alpaka_rocm_async_TICLGeomESProducer()

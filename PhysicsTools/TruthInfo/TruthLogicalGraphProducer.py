@@ -29,6 +29,13 @@ def TruthLogicalGraphProducer(*args, **kwargs):
       'g4SimHits:TrackerHitsTECLowTof',
       'g4SimHits:TrackerHitsTECHighTof'
     ),
+    muonSimHitCollections = cms.VInputTag(
+      'g4SimHits:MuonDTHits',
+      'g4SimHits:MuonCSCHits',
+      'g4SimHits:MuonRPCHits',
+      'g4SimHits:MuonGEMHits',
+      'g4SimHits:MuonME0Hits'
+    ),
     postProcessing = cms.PSet(
       collapseIntermediateGenParticles = cms.bool(True),
       dropHitlessSimSubgraphs = cms.bool(True),

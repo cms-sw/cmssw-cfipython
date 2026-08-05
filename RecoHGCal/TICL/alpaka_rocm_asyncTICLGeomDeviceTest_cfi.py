@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TICLGeomDeviceTest import alpaka_rocm_async_TICLGeomDeviceTest
+
+alpaka_rocm_asyncTICLGeomDeviceTest = alpaka_rocm_async_TICLGeomDeviceTest()

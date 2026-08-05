@@ -7,6 +7,7 @@ def TruthGraphProducer(*args, **kwargs):
     simTracks = cms.InputTag('g4SimHits'),
     simVertices = cms.InputTag('g4SimHits'),
     addGenToSimEdges = cms.bool(True),
+    collapseGenShower = cms.bool(True),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

@@ -6,7 +6,7 @@ def TruthLogicalGraphHitIndexProducer(*args, **kwargs):
     rawSrc = cms.InputTag('truthGraphProducer'),
     recHitMap = cms.InputTag('detIdToRecHitMapProducer'),
     subdetectors = cms.vstring(
-      'HGCalCalo',
+      'Calo',
       'Tracker',
       'MTD',
       'Muon'
@@ -38,6 +38,8 @@ def TruthLogicalGraphHitIndexProducer(*args, **kwargs):
       'g4SimHits:MuonME0Hits'
     ),
     doHGCalRelabelling = cms.bool(True),
+    doHcalRelabelling = cms.bool(True),
+    sharedSubgraphStore = cms.bool(True),
     mtdSimLayerClusters = cms.InputTag('mix', 'MergedMtdTruthLC'),
     mtdRecoClusterAssociation = cms.InputTag('mtdRecoClusterToSimLayerClusterAssociation'),
     mtdBarrelClusters = cms.InputTag('mtdClusters', 'FTLBarrel'),
