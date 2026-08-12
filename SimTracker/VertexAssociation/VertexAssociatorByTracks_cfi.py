@@ -1,5 +1,5 @@
 import FWCore.ParameterSet.Config as cms
 
-from .VertexAssociatorByTracksProducer import VertexAssociatorByTracksProducer
+from .VertexAssociatorByTracksProducer_std_vector_reco_Vertex__ import VertexAssociatorByTracksProducer_std_vector_reco_Vertex__
 
-VertexAssociatorByTracks = VertexAssociatorByTracksProducer()
+VertexAssociatorByTracks = VertexAssociatorByTracksProducer_std_vector_reco_Vertex__()
