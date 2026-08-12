@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def VertexAssociatorByTracksProducer_std_vector_reco_Vertex__(*args, **kwargs):
-  mod = cms.EDProducer('VertexAssociatorByTracksProducer<std::vector<reco::Vertex>>',
+def VertexAssociatorByTracksProducer(*args, **kwargs):
+  mod = cms.EDProducer('VertexAssociatorByTracksProducer',
     R2SMatchedSimRatio = cms.double(0.3),
     R2SMatchedRecoRatio = cms.double(0),
     S2RMatchedSimRatio = cms.double(0),

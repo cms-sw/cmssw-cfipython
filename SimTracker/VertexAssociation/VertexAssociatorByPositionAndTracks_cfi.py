@@ -2,4 +2,4 @@ import FWCore.ParameterSet.Config as cms
 
 from .VertexAssociatorByPositionAndTracksProducer import VertexAssociatorByPositionAndTracksProducer
 
-vertexAssociatorByPositionAndTracksProducer = VertexAssociatorByPositionAndTracksProducer()
+VertexAssociatorByPositionAndTracks = VertexAssociatorByPositionAndTracksProducer()

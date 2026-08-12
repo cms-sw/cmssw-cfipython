@@ -6,6 +6,7 @@ def InitRootHandlers(*args, **kwargs):
     ResetRootErrHandler = cms.untracked.bool(True),
     AutoLibraryLoader = cms.untracked.bool(True),
     AutoClassParser = cms.untracked.bool(True),
+    PrintAutoParsed = cms.untracked.bool(False),
     LoadAllDictionaries = cms.untracked.bool(False),
     EnableIMT = cms.untracked.bool(True),
     AbortOnSignal = cms.untracked.bool(True),

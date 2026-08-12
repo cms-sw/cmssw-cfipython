@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .VertexAssociatorByPositionAndTracksProducerCPC import VertexAssociatorByPositionAndTracksProducerCPC
-
-vertexAssociatorByPositionAndTracksProducerCPC = VertexAssociatorByPositionAndTracksProducerCPC()

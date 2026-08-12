@@ -20,7 +20,6 @@ ecalMultiFitUncalibRecHitProducer = EcalUncalibRecHitProducer(
     ),
     ampErrorCalculation = cms.bool(True),
     useLumiInfoRunHeader = cms.bool(True),
-    bxSpacingProducer = cms.InputTag('bunchSpacingProducer'),
     bunchSpacing = cms.int32(0),
     doPrefitEB = cms.bool(False),
     doPrefitEE = cms.bool(False),
