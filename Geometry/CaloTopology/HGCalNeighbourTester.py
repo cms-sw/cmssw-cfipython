@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def HGCalNeighbourTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalNeighbourTester',
     nameDetector = cms.string('HGCalHESiliconSensitive'),
+    fileName = cms.string('D120NE.txt'),
     nSkip = cms.int32(1000),
     mightGet = cms.optional.untracked.vstring
   )
