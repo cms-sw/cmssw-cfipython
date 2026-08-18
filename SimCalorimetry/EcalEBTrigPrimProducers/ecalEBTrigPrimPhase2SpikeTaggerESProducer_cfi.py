@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalEBTrigPrimPhase2SpikeTaggerESProducer import EcalEBTrigPrimPhase2SpikeTaggerESProducer
+
+ecalEBTrigPrimPhase2SpikeTaggerESProducer = EcalEBTrigPrimPhase2SpikeTaggerESProducer()
