@@ -28,11 +28,7 @@ def HcalRecAlgoESProducer(*args, **kwargs):
           'HSCP_ExpFit',
           'ADCSaturationBit',
           'HBHEIsolatedNoise',
-          'AddedSimHcalNoise',
-          'HBHERun3StuckADC',
-          'HBHERun3repeatedADCblock',
-          'HBHERun3BadCapId',
-          'HBHERun3NonrotatingCapId'
+          'AddedSimHcalNoise'
         )
       ),
       cms.PSet(
@@ -72,7 +68,12 @@ def HcalRecAlgoESProducer(*args, **kwargs):
       cms.PSet(
         ChannelStatus = cms.vstring('HcalCellHot'),
         Level = cms.int32(15),
-        RecHitFlags = cms.vstring('')
+        RecHitFlags = cms.vstring(
+          'HBHERun3StuckADC',
+          'HBHERun3repeatedADCblock',
+          'HBHERun3BadCapId',
+          'HBHERun3NonrotatingCapId'
+        )
       ),
       cms.PSet(
         ChannelStatus = cms.vstring(
