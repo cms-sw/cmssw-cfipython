@@ -49,6 +49,8 @@ def MuonIdProducer(*args, **kwargs):
       MaxSeverityHB = cms.int32(9),
       MaxSeverityHE = cms.int32(9)
     ),
+    dxNorm = cms.double(0.45),
+    dDphiDzNorm = cms.double(3e-05),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
