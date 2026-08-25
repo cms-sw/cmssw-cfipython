@@ -8,6 +8,13 @@ def ClusterShapeHitFilterESProducer(*args, **kwargs):
     isPhase2 = cms.bool(False),
     doPixelShapeCut = cms.bool(True),
     doStripShapeCut = cms.bool(True),
+    noBPixShapeCutRegions = cms.VPSet(
+      template = cms.PSetTemplate(
+        layers = cms.required.vuint32,
+        ladders = cms.vuint32(),
+        modules = cms.vuint32()
+      )
+    ),
     clusterChargeCut = cms.PSet(
       value = cms.double(-1)
     ),
