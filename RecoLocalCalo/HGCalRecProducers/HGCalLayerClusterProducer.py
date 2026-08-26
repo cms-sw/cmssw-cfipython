@@ -3,43 +3,43 @@ import FWCore.ParameterSet.Config as cms
 def HGCalLayerClusterProducer(*args, **kwargs):
   mod = cms.EDProducer('HGCalLayerClusterProducer',
     plugin = cms.PSet(
-      thresholdW0 = cms.vdouble(
+      thresholdW0 = cms.vfloat(
         2.9,
         2.9,
         2.9,
         2.9
       ),
-      positionDeltaRho2 = cms.double(1.69),
-      deltac = cms.vdouble(
+      positionDeltaRho2 = cms.float(1.69),
+      deltac = cms.vfloat(
         1.3,
         1.3,
         1.3,
         1.3
       ),
-      deltas = cms.vdouble(
+      deltas = cms.vfloat(
         1.3,
         1.3,
         1.3,
         1.3
       ),
-      deltao = cms.vdouble(
+      deltao = cms.vfloat(
         2.6,
         2.6,
         2.6,
         2.6
       ),
       dependSensor = cms.bool(True),
-      ecut = cms.double(3),
-      kappa = cms.double(9),
+      ecut = cms.float(3),
+      kappa = cms.float(9),
       verbosity = cms.untracked.uint32(3),
-      dEdXweights = cms.vdouble(),
-      thicknessCorrection = cms.vdouble(),
-      sciThicknessCorrection = cms.double(0.9),
+      dEdXweights = cms.vfloat(),
+      thicknessCorrection = cms.vfloat(),
+      sciThicknessCorrection = cms.float(0.9),
       deltasi_index_regemfac = cms.int32(3),
       maxNumberOfThickIndices = cms.uint32(6),
-      fcPerMip = cms.vdouble(),
-      fcPerEle = cms.double(0),
-      noises = cms.vdouble(),
+      fcPerMip = cms.vfloat(),
+      fcPerEle = cms.float(0),
+      noises = cms.vfloat(),
       noiseMip = cms.PSet(
         scaleByDose = cms.bool(False),
         scaleByDoseAlgo = cms.uint32(0),

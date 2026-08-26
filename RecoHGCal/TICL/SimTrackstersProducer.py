@@ -19,8 +19,8 @@ def SimTrackstersProducer(*args, **kwargs):
     tpToGsfTrack = cms.InputTag('trackingParticleGsfTrackAssociation'),
     trackingParticles = cms.InputTag('mix', 'MergedTrackTruth'),
     simTrackToTPMap = cms.InputTag('simHitTPAssocProducer', 'simTrackToTP'),
-    fractionCut = cms.double(0),
-    qualityCutTrack = cms.double(0.75),
+    fractionCut = cms.float(0),
+    qualityCutTrack = cms.float(0.75),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

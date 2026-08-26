@@ -20,21 +20,21 @@ def TrackstersProducer(*args, **kwargs):
       promoteEmptyRegionToTrackster = cms.bool(False),
       out_in_dfs = cms.bool(True),
       max_out_in_hops = cms.int32(10),
-      min_cos_theta = cms.double(0.915),
-      min_cos_pointing = cms.double(-1),
-      root_doublet_max_distance_from_seed_squared = cms.double(9999),
-      etaLimitIncreaseWindow = cms.double(2.1),
+      min_cos_theta = cms.float(0.915),
+      min_cos_pointing = cms.float(-1),
+      root_doublet_max_distance_from_seed_squared = cms.float(9999),
+      etaLimitIncreaseWindow = cms.float(2.1),
       skip_layers = cms.int32(0),
       max_missing_layers_in_trackster = cms.int32(9999),
       shower_start_max_layer = cms.int32(9999),
       min_layers_per_trackster = cms.int32(10),
       filter_on_categories = cms.vint32(0),
-      pid_threshold = cms.double(0),
-      energy_em_over_total_threshold = cms.double(-1),
-      max_longitudinal_sigmaPCA = cms.double(9999),
-      max_delta_time = cms.double(3),
+      pid_threshold = cms.float(0),
+      energy_em_over_total_threshold = cms.float(-1),
+      max_longitudinal_sigmaPCA = cms.float(9999),
+      max_delta_time = cms.float(3),
       computeLocalTime = cms.bool(True),
-      siblings_maxRSquared = cms.vdouble(
+      siblings_maxRSquared = cms.vfloat(
         0.0006,
         0.0006,
         0.0006
@@ -44,12 +44,12 @@ def TrackstersProducer(*args, **kwargs):
     ),
     pluginPatternRecognitionByCLUE3D = cms.PSet(
       algo_verbosity = cms.int32(0),
-      criticalDensity = cms.vdouble(
+      criticalDensity = cms.vfloat(
         4,
         4,
         4
       ),
-      criticalSelfDensity = cms.vdouble(
+      criticalSelfDensity = cms.vfloat(
         0.15,
         0.15,
         0.15
@@ -59,17 +59,17 @@ def TrackstersProducer(*args, **kwargs):
         3,
         3
       ),
-      densityEtaPhiDistanceSqr = cms.vdouble(
+      densityEtaPhiDistanceSqr = cms.vfloat(
         0.0008,
         0.0008,
         0.0008
       ),
-      densityXYDistanceSqr = cms.vdouble(
+      densityXYDistanceSqr = cms.vfloat(
         3.24,
         3.24,
         3.24
       ),
-      kernelDensityFactor = cms.vdouble(
+      kernelDensityFactor = cms.vfloat(
         0.2,
         0.2,
         0.2
@@ -79,12 +79,12 @@ def TrackstersProducer(*args, **kwargs):
       useAbsoluteProjectiveScale = cms.bool(True),
       useClusterDimensionXY = cms.bool(False),
       rescaleDensityByZ = cms.bool(False),
-      criticalEtaPhiDistance = cms.vdouble(
+      criticalEtaPhiDistance = cms.vfloat(
         0.025,
         0.025,
         0.025
       ),
-      criticalXYDistance = cms.vdouble(
+      criticalXYDistance = cms.vfloat(
         1.8,
         1.8,
         1.8
@@ -94,7 +94,7 @@ def TrackstersProducer(*args, **kwargs):
         5,
         5
       ),
-      outlierMultiplier = cms.vdouble(
+      outlierMultiplier = cms.vfloat(
         2,
         2,
         2
@@ -105,7 +105,7 @@ def TrackstersProducer(*args, **kwargs):
         2
       ),
       doPidCut = cms.bool(False),
-      cutHadProb = cms.double(0.5),
+      cutHadProb = cms.float(0.5),
       computeLocalTime = cms.bool(True),
       usePCACleaning = cms.bool(True),
       type = cms.string('CLUE3D')
@@ -113,7 +113,7 @@ def TrackstersProducer(*args, **kwargs):
     ),
     pluginPatternRecognitionByFastJet = cms.PSet(
       algo_verbosity = cms.int32(0),
-      antikt_radius = cms.double(0.09),
+      antikt_radius = cms.float(0.09),
       minNumLayerCluster = cms.int32(5),
       computeLocalTime = cms.bool(True),
       type = cms.string('FastJet')
@@ -131,7 +131,7 @@ def TrackstersProducer(*args, **kwargs):
       inputNames = cms.vstring('input'),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
-      eid_min_cluster_energy = cms.double(1),
+      eid_min_cluster_energy = cms.float(1),
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
@@ -145,7 +145,7 @@ def TrackstersProducer(*args, **kwargs):
       onnxModelPath = cms.string('RecoHGCal/TICL/data/ticlv5/onnx_models/CNN/patternrecognition/id_v0.onnx'),
       inputNames = cms.vstring('input'),
       outputNames = cms.vstring('pid_output'),
-      eid_min_cluster_energy = cms.double(1),
+      eid_min_cluster_energy = cms.float(1),
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
@@ -163,7 +163,7 @@ def TrackstersProducer(*args, **kwargs):
       ),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
-      eid_min_cluster_energy = cms.double(1),
+      eid_min_cluster_energy = cms.float(1),
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),

@@ -9,7 +9,7 @@ def TracksterLinksProducer(*args, **kwargs):
       inputNames = cms.vstring('input'),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
-      eid_min_cluster_energy = cms.double(1),
+      eid_min_cluster_energy = cms.float(1),
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
@@ -28,7 +28,7 @@ def TracksterLinksProducer(*args, **kwargs):
       ),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
-      eid_min_cluster_energy = cms.double(1),
+      eid_min_cluster_energy = cms.float(1),
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
@@ -39,47 +39,47 @@ def TracksterLinksProducer(*args, **kwargs):
     ),
     linkingPSet = cms.PSet(
       onnxModelPath = cms.string(''),
-      cylinder_radius_sqr_split = cms.double(9),
-      proj_distance_split = cms.double(5),
-      track_time_quality_threshold = cms.double(0.5),
+      cylinder_radius_sqr_split = cms.float(9),
+      proj_distance_split = cms.float(5),
+      track_time_quality_threshold = cms.float(0.5),
       min_num_lcs = cms.uint32(7),
-      min_trackster_energy = cms.double(10),
-      pca_quality_th = cms.double(0.85),
-      dot_prod_th = cms.double(0.97),
-      deltaRxy = cms.double(4),
-      lower_boundary = cms.vdouble(
+      min_trackster_energy = cms.float(10),
+      pca_quality_th = cms.float(0.85),
+      dot_prod_th = cms.float(0.97),
+      deltaRxy = cms.float(4),
+      lower_boundary = cms.vfloat(
         10,
         150
       ),
-      upper_boundary = cms.vdouble(
+      upper_boundary = cms.vfloat(
         3,
         70
       ),
-      upper_distance_projective_sqr = cms.vdouble(
+      upper_distance_projective_sqr = cms.vfloat(
         40,
         60
       ),
-      lower_distance_projective_sqr = cms.vdouble(
+      lower_distance_projective_sqr = cms.vfloat(
         10,
         30
       ),
-      min_distance_z = cms.vdouble(
+      min_distance_z = cms.vfloat(
         35,
         35
       ),
-      upper_distance_projective_sqr_closest_points = cms.vdouble(
+      upper_distance_projective_sqr_closest_points = cms.vfloat(
         10,
         30
       ),
-      lower_distance_projective_sqr_closest_points = cms.vdouble(
+      lower_distance_projective_sqr_closest_points = cms.vfloat(
         10,
         30
       ),
-      max_z_distance_closest_points = cms.vdouble(
+      max_z_distance_closest_points = cms.vfloat(
         35,
         35
       ),
-      cylinder_radius_sqr = cms.vdouble(
+      cylinder_radius_sqr = cms.vfloat(
         10,
         20
       ),

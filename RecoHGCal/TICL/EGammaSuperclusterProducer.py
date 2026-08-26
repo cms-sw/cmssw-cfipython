@@ -5,7 +5,7 @@ def EGammaSuperclusterProducer(*args, **kwargs):
     ticlSuperClusters = cms.InputTag('ticlTracksterLinksSuperclusteringDNN'),
     ticlTrackstersEM = cms.InputTag('ticlTrackstersCLUE3DHigh'),
     layerClusters = cms.InputTag('hgcalMergeLayerClusters'),
-    superclusterEtThreshold = cms.double(4),
+    superclusterEtThreshold = cms.float(4),
     enableRegression = cms.bool(True),
     regressionModelPath = cms.FileInPath('RecoHGCal/TICL/data/superclustering/regression_v1.onnx'),
     mightGet = cms.optional.untracked.vstring

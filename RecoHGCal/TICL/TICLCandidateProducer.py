@@ -20,7 +20,7 @@ def TICLCandidateProducer(*args, **kwargs):
       ),
       output_en = cms.vstring('enreg_output'),
       output_id = cms.vstring('pid_output'),
-      eid_min_cluster_energy = cms.double(1),
+      eid_min_cluster_energy = cms.float(1),
       eid_n_layers = cms.int32(50),
       eid_n_clusters = cms.int32(10),
       doPID = cms.int32(1),
@@ -30,9 +30,9 @@ def TICLCandidateProducer(*args, **kwargs):
     
     ),
     interpretationDescPSet = cms.PSet(
-      delta_tk_ts_layer1 = cms.double(0.02),
-      delta_tk_ts_interface = cms.double(0.03),
-      timing_quality_threshold = cms.double(0.5),
+      delta_tk_ts_layer1 = cms.float(0.02),
+      delta_tk_ts_interface = cms.float(0.03),
+      timing_quality_threshold = cms.float(0.5),
       algo_verbosity = cms.int32(0),
       type = cms.string('General')
     
@@ -51,7 +51,7 @@ def TICLCandidateProducer(*args, **kwargs):
     propagator = cms.string('PropagatorWithMaterial'),
     useMTDTiming = cms.bool(True),
     useTimingAverage = cms.bool(True),
-    timingQualityThreshold = cms.double(0.5),
+    timingQualityThreshold = cms.float(0.5),
     cutTk = cms.string('1.48 < abs(eta) < 3.0 && pt > 1. && quality("highPurity") && hitPattern().numberOfLostHits("MISSING_OUTER_HITS") < 5'),
     regressionAndPid = cms.bool(True),
     inferenceAlgo = cms.string('TracksterInferenceByPFN'),

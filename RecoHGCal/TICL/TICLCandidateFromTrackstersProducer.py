@@ -8,7 +8,7 @@ def TICLCandidateFromTrackstersProducer(*args, **kwargs):
       'trackstersEM',
       'trackstersHAD'
     ),
-    minParticleProbability = cms.double(0),
+    minParticleProbability = cms.float(0),
     momentumPlugin = cms.PSet(
       plugin = cms.string('TracksterP4FromEnergySum'),
       energyFromRegression = cms.bool(False),
