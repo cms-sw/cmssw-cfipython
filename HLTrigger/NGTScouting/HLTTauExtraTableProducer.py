@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-def HLTTauTableProducer(*args, **kwargs):
-  mod = cms.EDProducer('HLTTauTableProducer',
+def HLTTauExtraTableProducer(*args, **kwargs):
+  mod = cms.EDProducer('HLTTauExtraTableProducer',
     tableName = cms.string('hltHpsPFTau'),
     skipNonExistingSrc = cms.bool(False),
     taus = cms.InputTag(''),
