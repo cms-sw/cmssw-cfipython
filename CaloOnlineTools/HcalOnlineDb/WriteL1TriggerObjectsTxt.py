@@ -2,6 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def WriteL1TriggerObjectsTxt(*args, **kwargs):
   mod = cms.EDAnalyzer('WriteL1TriggerObjectsTxt',
+    TagName = cms.string('NewLutTag'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
