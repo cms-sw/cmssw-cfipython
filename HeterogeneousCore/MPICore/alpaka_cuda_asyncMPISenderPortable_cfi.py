@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_MPISenderPortable import alpaka_cuda_async_MPISenderPortable
+
+alpaka_cuda_asyncMPISenderPortable = alpaka_cuda_async_MPISenderPortable()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_ngt_GenericClonerPortable import alpaka_cuda_async_ngt_GenericClonerPortable
+
+alpaka_cuda_asyncngtGenericClonerPortable = alpaka_cuda_async_ngt_GenericClonerPortable()

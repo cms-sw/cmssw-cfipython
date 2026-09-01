@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_ngt_GenericClonerPortable import alpaka_serial_sync_ngt_GenericClonerPortable
+
+alpaka_serial_syncngtGenericClonerPortable = alpaka_serial_sync_ngt_GenericClonerPortable()

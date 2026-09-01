@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_MPISenderPortable import alpaka_serial_sync_MPISenderPortable
+
+alpaka_serial_syncMPISenderPortable = alpaka_serial_sync_MPISenderPortable()

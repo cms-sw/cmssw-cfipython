@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_MPISenderPortable import alpaka_rocm_async_MPISenderPortable
+
+alpaka_rocm_asyncMPISenderPortable = alpaka_rocm_async_MPISenderPortable()

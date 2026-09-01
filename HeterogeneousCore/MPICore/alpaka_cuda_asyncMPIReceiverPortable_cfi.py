@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_MPIReceiverPortable import alpaka_cuda_async_MPIReceiverPortable
+
+alpaka_cuda_asyncMPIReceiverPortable = alpaka_cuda_async_MPIReceiverPortable()

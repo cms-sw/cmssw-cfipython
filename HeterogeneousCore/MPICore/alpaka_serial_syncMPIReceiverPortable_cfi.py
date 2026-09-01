@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_MPIReceiverPortable import alpaka_serial_sync_MPIReceiverPortable
+
+alpaka_serial_syncMPIReceiverPortable = alpaka_serial_sync_MPIReceiverPortable()

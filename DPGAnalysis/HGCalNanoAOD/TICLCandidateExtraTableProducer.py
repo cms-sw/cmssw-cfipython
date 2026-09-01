@@ -17,8 +17,12 @@ def TICLCandidateExtraTableProducer(*args, **kwargs):
     ),
     tracksters = cms.InputTag('ticlTrackstersCLUE3DHigh'),
     tracks = cms.InputTag('generalTracks'),
+    linkedTracksters = cms.optional.InputTag,
+    caloParticles = cms.optional.InputTag,
+    caloParticleToSimClustersMap = cms.optional.InputTag,
     detector = cms.string('HGCAL'),
     propagator = cms.string('PropagatorWithMaterial'),
+    produceGeneralTrackBoundary = cms.bool(False),
     collectionVariables = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
   )
