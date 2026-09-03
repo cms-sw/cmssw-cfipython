@@ -18,13 +18,7 @@ def TruthLogicalGraphDumper(*args, **kwargs):
     ),
     dotFile = cms.string('truthlogicalgraph.dot'),
     layout = cms.string('dot'),
-    maxParticles = cms.uint32(5000),
-    maxVertices = cms.uint32(5000),
-    maxEdgesPerNode = cms.uint32(200),
-    hideLargeSimSourceVertices = cms.bool(True),
     dumpSimHits = cms.bool(False),
-    largeSimSourceVertexMinOutgoing = cms.uint32(50),
-    hideZeroSimHitSubgraphs = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

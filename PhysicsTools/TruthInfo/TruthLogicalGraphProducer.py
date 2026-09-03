@@ -7,6 +7,7 @@ def TruthLogicalGraphProducer(*args, **kwargs):
     simVertices = cms.InputTag('g4SimHits'),
     genEventHepMC3 = cms.InputTag('generatorSmeared'),
     genEventHepMC = cms.InputTag('generatorSmeared'),
+    verbosity = cms.untracked.uint32(0),
     mergeGenSimVertices = cms.bool(True),
     simHitCollections = cms.VInputTag(
       'g4SimHits:HGCHitsEE',
@@ -39,6 +40,7 @@ def TruthLogicalGraphProducer(*args, **kwargs):
     postProcessing = cms.PSet(
       collapseIntermediateGenParticles = cms.bool(True),
       dropHitlessSimSubgraphs = cms.bool(True),
+      reconstructablePdgIds = cms.vint32(111),
       seedPdgIds = cms.vint32(),
       seedParentDepth = cms.uint32(0),
       seedHadronFlavors = cms.vint32(),
