@@ -1,8 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-def ME0StubProducer(*args, **kwargs):
-  mod = cms.EDProducer('ME0StubProducer',
-    InputCollection = cms.InputTag('gemPadDigis'),
+def ME0TriggerProducerV2(*args, **kwargs):
+  mod = cms.EDProducer('ME0TriggerProducerV2',
+    ME0PadDigis = cms.InputTag('me0PadDigis'),
     skipCentroids = cms.bool(False),
     layerThresholdPatternId = cms.vint32(
       7,
