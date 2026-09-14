@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def MuonIdProducer(*args, **kwargs):
   mod = cms.EDProducer('MuonIdProducer',
     arbitrateTrackerMuons = cms.bool(False),
+    mergeCrossingTrackLegs = cms.bool(True),
     storeCrossedHcalRecHits = cms.bool(False),
     fillShowerDigis = cms.bool(False),
     isPhase2 = cms.bool(False),

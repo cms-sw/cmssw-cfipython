@@ -42,6 +42,17 @@ def HLTBTagPerformanceAnalyzer(*args, **kwargs):
       )
     ),
     mcPartons = cms.InputTag('hltBtagJetsbyValAlgo'),
+    isPhase2 = cms.bool(False),
+    L1Seeds = cms.VPSet(
+      template = cms.PSetTemplate(
+        seeds = cms.vstring()
+      )
+    ),
+    PathFilters = cms.VPSet(
+      template = cms.PSetTemplate(
+        filters = cms.vstring()
+      )
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
