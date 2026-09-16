@@ -5,6 +5,7 @@ def HLTP2GTSingleObjectFilter(*args, **kwargs):
     saveTags = cms.bool(True),
     l1GTAlgoBlockTag = cms.InputTag('l1tGTAlgoBlockProducer'),
     minN = cms.uint32(1),
+    debugAccepts = cms.bool(False),
     l1GTAlgos = cms.VPSet(
       template = cms.PSetTemplate(
         name = cms.string(''),

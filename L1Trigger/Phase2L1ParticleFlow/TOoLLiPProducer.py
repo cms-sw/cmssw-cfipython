@@ -4,7 +4,7 @@ def TOoLLiPProducer(*args, **kwargs):
   mod = cms.EDProducer('TOoLLiPProducer',
     jets = cms.InputTag('scPFL1Puppi'),
     useRawPt = cms.bool(True),
-    TOoLLiPVersion = cms.string('TOoLLiP_v1'),
+    TOoLLiPVersion = cms.string('TOoLLiP_v3'),
     NNInput = cms.string('input:0'),
     NNOutput = cms.string('sequential/dense_2/Sigmoid'),
     maxJets = cms.int32(10),

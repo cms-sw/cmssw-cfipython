@@ -22,6 +22,7 @@ def TICLCandidateExtraTableProducer(*args, **kwargs):
     caloParticleToSimClustersMap = cms.optional.InputTag,
     detector = cms.string('HGCAL'),
     propagator = cms.string('PropagatorWithMaterial'),
+    trackTableToExtend = cms.string('GeneralTrack'),
     produceGeneralTrackBoundary = cms.bool(False),
     collectionVariables = cms.PSet(),
     mightGet = cms.optional.untracked.vstring
