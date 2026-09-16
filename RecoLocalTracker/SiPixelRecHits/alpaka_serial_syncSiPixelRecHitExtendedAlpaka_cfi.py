@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_serial_sync_SiPixelRecHitExtendedAlpaka import alpaka_serial_sync_SiPixelRecHitExtendedAlpaka
-
-alpaka_serial_syncSiPixelRecHitExtendedAlpaka = alpaka_serial_sync_SiPixelRecHitExtendedAlpaka()

@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def alpaka_cuda_async_CAHitNtupletAlpakaPhase1(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::CAHitNtupletAlpakaPhase1',
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
+    trackerRecHitsSoA = cms.InputTag(''),
     cellZ0Cut = cms.double(12.5),
     dzdrFact = cms.double(15.199999809265137),
     minYsizeB1 = cms.int32(1),
