@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTParticleTransformerAK4ONNXJetTagsProducer import HLTParticleTransformerAK4ONNXJetTagsProducer
+
+hltParticleTransformerAK4ONNXJetTagsProducer = HLTParticleTransformerAK4ONNXJetTagsProducer()

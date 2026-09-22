@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTParticleTransformerAK4TagInfoProducer import HLTParticleTransformerAK4TagInfoProducer
+
+hltParticleTransformerAK4TagInfoProducer = HLTParticleTransformerAK4TagInfoProducer()
