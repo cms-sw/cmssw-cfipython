@@ -7,7 +7,7 @@ def ScoutingTrackMonitor(*args, **kwargs):
     beamSpotLabel = cms.InputTag('hltOnlineBeamSpot'),
     topFolderName = cms.string('HLT/ScoutingOffline/Tracks'),
     Xpos = cms.double(0.1),
-    Ypos = cms.double(0),
+    Ypos = cms.double(-0.2),
     DxyBin = cms.int32(100),
     DxyMin = cms.double(-5000),
     DxyMax = cms.double(5000),

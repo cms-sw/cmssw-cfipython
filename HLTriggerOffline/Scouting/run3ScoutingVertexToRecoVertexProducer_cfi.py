@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Run3ScoutingVertexToRecoVertexProducer import Run3ScoutingVertexToRecoVertexProducer
+
+run3ScoutingVertexToRecoVertexProducer = Run3ScoutingVertexToRecoVertexProducer()
