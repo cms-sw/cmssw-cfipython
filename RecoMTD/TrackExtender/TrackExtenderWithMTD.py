@@ -19,6 +19,7 @@ def TrackExtenderWithMTD(*args, **kwargs):
       Propagator = cms.string('PropagatorWithMaterialForMTD'),
       RefitDirection = cms.string('alongMomentum'),
       RefitRPCHits = cms.bool(True),
+      RefitMuonHits = cms.bool(True),
       TrackerRecHitBuilder = cms.string('WithTrackAngle'),
       MuonRecHitBuilder = cms.string('MuonRecHitBuilder'),
       MTDRecHitBuilder = cms.string('MTDRecHitBuilder')

@@ -140,6 +140,7 @@ def L3MuonProducer(*args, **kwargs):
         Propagator = cms.string('hltESPSmartPropagatorAny'),
         RefitDirection = cms.string('insideOut'),
         RefitRPCHits = cms.bool(True),
+        RefitMuonHits = cms.bool(True),
         TrackerRecHitBuilder = cms.string('hltESPTTRHBWithTrackAngle'),
         MuonRecHitBuilder = cms.string('hltESPMuonTransientTrackingRecHitBuilder'),
         MTDRecHitBuilder = cms.string('MTDRecHitBuilder')
