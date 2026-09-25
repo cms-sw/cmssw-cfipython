@@ -33,7 +33,7 @@ def L1TrackVertexAssociationProducer(*args, **kwargs):
     fwNTrackSetsTVA = cms.uint32(94),
     useAssociationNetwork = cms.bool(False),
     associationThreshold = cms.double(0),
-    associationGraph = cms.optional.FileInPath,
+    associationModel = cms.optional.string,
     associationNetworkZ0binning = cms.vdouble(),
     associationNetworkEtaBounds = cms.vdouble(),
     associationNetworkZ0ResBins = cms.vdouble(),
