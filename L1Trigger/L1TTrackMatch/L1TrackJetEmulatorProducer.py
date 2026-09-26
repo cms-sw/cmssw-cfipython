@@ -7,6 +7,7 @@ def L1TrackJetEmulatorProducer(*args, **kwargs):
     trk_ptMax = cms.double(200),
     trk_etaMax = cms.double(2.4),
     minTrkJetpT = cms.double(-1),
+    minTrkJetTrackMultiplicity = cms.int32(1),
     etaBins = cms.int32(24),
     phiBins = cms.int32(27),
     zBins = cms.int32(1),
@@ -18,6 +19,7 @@ def L1TrackJetEmulatorProducer(*args, **kwargs):
     highpTJetThreshold = cms.double(100),
     displaced = cms.bool(False),
     nDisplacedTracks = cms.int32(2),
+    export_binmap = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
