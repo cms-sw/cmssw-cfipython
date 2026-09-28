@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .Run3ScoutingTrackToRecoTrackProducer import Run3ScoutingTrackToRecoTrackProducer
-
-run3ScoutingTrackToRecoTrackProducer = Run3ScoutingTrackToRecoTrackProducer()
