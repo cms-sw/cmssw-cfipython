@@ -6,10 +6,11 @@ def alpaka_serial_sync_MPISenderPortable(*args, **kwargs):
     products = cms.VPSet(
       template = cms.PSetTemplate(
         type = cms.required.string,
-        src = cms.required.InputTag
+        name = cms.required.InputTag
       )
     ),
     instance = cms.int32(0),
+    activity = cms.InputTag(''),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),

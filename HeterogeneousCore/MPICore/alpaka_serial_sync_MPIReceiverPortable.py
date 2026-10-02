@@ -6,10 +6,11 @@ def alpaka_serial_sync_MPIReceiverPortable(*args, **kwargs):
     products = cms.VPSet(
       template = cms.PSetTemplate(
         type = cms.required.string,
-        src = cms.InputTag('')
+        label = cms.string('')
       )
     ),
     instance = cms.int32(0),
+    activity = cms.bool(False),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
