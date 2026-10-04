@@ -31,7 +31,7 @@ def DiMuonVertexMonitor(*args, **kwargs):
     SVDistSigConfig = cms.PSet(
       name = cms.string('SVDistSig'),
       title = cms.string('PV-SV distance significance'),
-      yUnits = cms.string('[#mum]'),
+      yUnits = cms.string(''),
       NxBins = cms.int32(24),
       NyBins = cms.int32(100),
       ymin = cms.double(0),
@@ -51,7 +51,7 @@ def DiMuonVertexMonitor(*args, **kwargs):
     SVDist3DSigConfig = cms.PSet(
       name = cms.string('SVDist3DSig'),
       title = cms.string('PV-SV 3D distance significance'),
-      yUnits = cms.string('[#mum]'),
+      yUnits = cms.string(''),
       NxBins = cms.int32(24),
       NyBins = cms.int32(100),
       ymin = cms.double(0),

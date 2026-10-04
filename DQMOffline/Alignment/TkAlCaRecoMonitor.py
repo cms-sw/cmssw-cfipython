@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def TkAlCaRecoMonitor(*args, **kwargs):
   mod = cms.EDProducer('TkAlCaRecoMonitor',
     TrackProducer = cms.InputTag('generalTracks'),
-    ReferenceTrackProducer = cms.InputTag('generalTrakcs'),
+    ReferenceTrackProducer = cms.InputTag('generalTracks'),
     CaloJetCollection = cms.InputTag('ak4CaloJets'),
     AlgoName = cms.string('testTkAlCaReco'),
     FolderName = cms.string('TkAlCaRecoMonitor'),
