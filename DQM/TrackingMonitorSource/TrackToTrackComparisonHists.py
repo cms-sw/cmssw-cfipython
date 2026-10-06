@@ -15,6 +15,8 @@ def TrackToTrackComparisonHists(*args, **kwargs):
     onlineMetaDataDigis = cms.InputTag('onlineMetaDataDigis'),
     topDirName = cms.string('HLT/Tracking/ValidationWRTOffline'),
     dRmin = cms.double(0.002),
+    matchByHits = cms.bool(False),
+    minSharedHitFraction = cms.double(0.75),
     pTCutForPlateau = cms.double(0.9),
     dxyCutForPlateau = cms.double(2.5),
     dzWRTPvCut = cms.double(1000000),
