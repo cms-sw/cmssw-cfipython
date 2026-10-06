@@ -4,7 +4,7 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
   mod = cms.EDProducer('L1TCorrelatorLayer1Producer',
     tracks = cms.InputTag(''),
     muons = cms.InputTag('l1tSAMuonsGmt', 'prompt'),
-    emClusters = cms.InputTag(''),
+    gctClusters = cms.InputTag(''),
     hadClusters = cms.InputTag(''),
     vtxCollection = cms.InputTag('l1tVertexFinderEmulator', 'L1VerticesEmulation'),
     vtxCollectionEmulation = cms.bool(True),
@@ -59,7 +59,7 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
       useMLAssociation = cms.required.bool,
       NNVtxAssociation = cms.PSet(
         associationThreshold = cms.required.double,
-        associationGraph = cms.required.string,
+        associationNetworkPath = cms.required.string,
         associationNetworkZ0binning = cms.required.vdouble,
         associationNetworkEtaBounds = cms.required.vdouble,
         associationNetworkZ0ResBins = cms.required.vdouble
@@ -144,9 +144,17 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
     tkEgSorterAlgo = cms.string('Barrel'),
     tkEgSorterParameters = cms.PSet(
       nObjToSort = cms.required.uint32,
-      nObjSorted = cms.required.uint32
+      nObjSorted = cms.required.uint32,
+      debug = cms.untracked.bool(False)
     ),
     caloSectors = cms.required.VPSet,
+    rawGCTSectors = cms.VPSet(
+      template = cms.PSetTemplate(
+        etaBoundaries = cms.required.vdouble,
+        phiSlices = cms.uint32(3),
+        phiZero = cms.double(0)
+      )
+    ),
     regions = cms.required.VPSet,
     boards = cms.required.VPSet,
     dumpFileName = cms.untracked.string(''),
@@ -173,13 +181,13 @@ def L1TCorrelatorLayer1Producer(*args, **kwargs):
         nPFOutPhoton = cms.uint32(0),
         nPFOutNeutral = cms.uint32(0),
         nPFOutMuon = cms.uint32(0),
+        nEGElectron = cms.uint32(0),
+        nEGPhoton = cms.uint32(0),
         partition = cms.string('Barrel'),
         tfTimeSlices = cms.required.VPSet,
         tfNumberOfTracks = cms.uint32(108),
-        gctEmTimeSlices = cms.required.VPSet,
-        gctNumberOfEMs = cms.uint32(32),
-        gctHadTimeSlices = cms.required.VPSet,
-        gctNumberOfHads = cms.uint32(48),
+        gctTimeSlices = cms.required.VPSet,
+        gctNumberOfObjects = cms.uint32(162),
         gttTimeSlices = cms.required.VPSet,
         gttLatency = cms.uint32(162),
         gttNumberOfPVs = cms.uint32(10),
