@@ -5,10 +5,17 @@ def TrackTorchClassifierFromSoA(*args, **kwargs):
     src = cms.InputTag('hltInitialStepTracks'),
     scores = cms.InputTag('hltInitialStepTrackTorchClassifier'),
     features = cms.InputTag('hltInitialStepTrackTorchClassifier'),
-    copyTrajectories = cms.bool(False),
-    minScore = cms.double(0.5),
+    qualityCutsPrompt = cms.vdouble(
+      0.5,
+      0.5,
+      0.5
+    ),
     dxyThreshold = cms.double(0.5),
-    highDxyMinScore = cms.double(0.5),
+    qualityCutsDisplaced = cms.vdouble(
+      0.5,
+      0.5,
+      0.5
+    ),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
