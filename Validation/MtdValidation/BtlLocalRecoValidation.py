@@ -12,6 +12,7 @@ def BtlLocalRecoValidation(*args, **kwargs):
     HitMinimumEnergy = cms.double(1),
     optionalPlots = cms.bool(False),
     UncalibRecHitsPlots = cms.bool(False),
+    FillTimeWalkPlots = cms.bool(False),
     HitMinimumAmplitude = cms.double(1),
     mightGet = cms.optional.untracked.vstring
   )
