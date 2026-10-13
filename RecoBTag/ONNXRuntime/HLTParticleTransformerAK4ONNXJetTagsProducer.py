@@ -15,6 +15,8 @@ def HLTParticleTransformerAK4ONNXJetTagsProducer(*args, **kwargs):
       'probbb',
       'problepb'
     ),
+    jets = cms.InputTag('hltAK4PFPuppiJets'),
+    produceValueMap = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

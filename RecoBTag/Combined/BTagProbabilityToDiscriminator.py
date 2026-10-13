@@ -29,6 +29,8 @@ def BTagProbabilityToDiscriminator(*args, **kwargs):
         numerator = cms.VInputTag('pfDeepCSVJetTags:probc')
       )
     ),
+    jets = cms.InputTag('hltAK4PFPuppiJets'),
+    produceValueMap = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
