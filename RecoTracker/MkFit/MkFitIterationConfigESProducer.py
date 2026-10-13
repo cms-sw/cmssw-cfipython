@@ -6,6 +6,8 @@ def MkFitIterationConfigESProducer(*args, **kwargs):
     config = cms.FileInPath(''),
     minPt = cms.double(0),
     maxClusterSize = cms.uint32(8),
+    backwardSearchMinPixelLayers = cms.int32(0),
+    backwardSearchPromptMaxD0 = cms.double(0),
     appendToDataLabel = cms.string('')
   )
   for a in args:
