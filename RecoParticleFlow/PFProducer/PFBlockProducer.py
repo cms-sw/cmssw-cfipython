@@ -116,6 +116,7 @@ def PFBlockProducer(*args, **kwargs):
         maxDPtOPt = cms.double(0),
         vetoMode = cms.uint32(0),
         vetoSrc = cms.InputTag(''),
+        tracksSrc = cms.InputTag(''),
         timeValueMap = cms.InputTag(''),
         timeErrorMap = cms.InputTag(''),
         timeQualityMap = cms.InputTag(''),
