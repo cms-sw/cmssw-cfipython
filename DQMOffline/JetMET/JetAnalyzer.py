@@ -80,7 +80,6 @@ def JetAnalyzer(*args, **kwargs):
     InputJetIDValueMap = cms.InputTag('ak4JetID'),
     JetIDQuality = cms.string('LOOSE'),
     JetIDVersion = cms.string('PURE09'),
-    InputMVAPUIDDiscriminant = cms.InputTag('pileupJetIdEvaluatorDQM', 'fullDiscriminant'),
     InputCutPUIDDiscriminant = cms.InputTag('pileupJetIdEvaluatorDQM', 'cutbasedDiscriminant'),
     InputMVAPUIDValue = cms.InputTag('pileupJetIdEvaluatorDQM', 'fullId'),
     InputCutPUIDValue = cms.InputTag('pileupJetIdEvaluatorDQM', 'cutbasedId'),
