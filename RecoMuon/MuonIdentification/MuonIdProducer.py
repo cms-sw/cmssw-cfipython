@@ -9,6 +9,8 @@ def MuonIdProducer(*args, **kwargs):
     isPhase2 = cms.bool(False),
     selectHighPurity = cms.bool(False),
     pvInputTag = cms.InputTag(''),
+    rpcHitInputTag = cms.InputTag('rpcRecHits'),
+    gemHitInputTag = cms.InputTag('gemRecHits'),
     TrackAssociatorParameters = cms.PSet(
       GEMSegmentCollectionLabel = cms.InputTag('gemSegments'),
       ME0SegmentCollectionLabel = cms.InputTag('me0Segments'),

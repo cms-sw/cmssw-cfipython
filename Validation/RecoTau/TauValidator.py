@@ -3,6 +3,8 @@ import FWCore.ParameterSet.Config as cms
 def TauValidator(*args, **kwargs):
   mod = cms.EDProducer('TauValidator',
     genTauCollection = cms.InputTag('tauGenJets'),
+    genParticleCollection = cms.InputTag('prunedGenParticles'),
+    genJetCollection = cms.InputTag('ak4GenJets'),
     recoTauCollection = cms.InputTag('hltHpsPFTauProducer'),
     recoTauIDCollections = cms.VInputTag(
       'hltHpsPFTauDeepTauProducer:VSjet',
@@ -28,6 +30,7 @@ def TauValidator(*args, **kwargs):
       PtMinRecoCut = cms.double(20),
       EtaMaxRecoCut = cms.double(3)
     ),
+    decayModes = cms.required.vstring,
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
