@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def TICLDumper(*args, **kwargs):
   mod = cms.EDAnalyzer('TICLDumper',
     tracksterCollections = cms.required.VPSet,
-    trackstersInCand = cms.InputTag('ticlTrackstersCLUE3DHigh'),
+    trackstersInCand = cms.InputTag('ticlCandidate'),
     layerClusters = cms.InputTag('hgcalMergeLayerClusters'),
     layer_clustersTime = cms.InputTag('hgcalMergeLayerClusters', 'timeLayerCluster'),
     ticlcandidates = cms.InputTag('ticlCandidate'),
@@ -18,7 +18,7 @@ def TICLDumper(*args, **kwargs):
     muons = cms.InputTag('muons1stStep'),
     superclustering = cms.InputTag('ticlTracksterLinksSuperclusteringDNN'),
     recoSuperClusters = cms.InputTag('particleFlowSuperClusterHGCal'),
-    recoSuperClusters_sourceTracksterCollection = cms.InputTag('ticlCandidate'),
+    recoSuperClusters_sourceTracksterCollection = cms.InputTag('ticlTrackstersCLUE3DHigh'),
     simtrackstersSC = cms.InputTag('ticlSimTracksters'),
     simTICLCandidates = cms.InputTag('ticlSimTracksters'),
     label_rechits = cms.VInputTag(
