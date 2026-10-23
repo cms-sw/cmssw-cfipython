@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .hgcal_HGCalAlgoBasedAgeingCondProducer_alpaka import hgcal_HGCalAlgoBasedAgeingCondProducer_alpaka
+
+hgcalHGCalAlgoBasedAgeingCondProducer = hgcal_HGCalAlgoBasedAgeingCondProducer_alpaka()
