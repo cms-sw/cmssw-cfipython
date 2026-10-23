@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .UnifiedParticleTransformerAK4ONNXJetTagsProducer import UnifiedParticleTransformerAK4ONNXJetTagsProducer
+
+pfUnifiedParticleTransformerAK4JetTags = UnifiedParticleTransformerAK4ONNXJetTagsProducer()

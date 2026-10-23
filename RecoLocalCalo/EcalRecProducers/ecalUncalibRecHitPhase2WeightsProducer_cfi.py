@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalUncalibRecHitPhase2WeightsProducer import EcalUncalibRecHitPhase2WeightsProducer
+
+ecalUncalibRecHitPhase2WeightsProducer = EcalUncalibRecHitPhase2WeightsProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_BeamSpotDeviceProducer import alpaka_cuda_async_BeamSpotDeviceProducer
+
+alpaka_cuda_asyncBeamSpotDeviceProducer = alpaka_cuda_async_BeamSpotDeviceProducer()

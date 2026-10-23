@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1ScoutingTauPhysicalValueMapProducer import L1ScoutingTauPhysicalValueMapProducer
+
+l1ScoutingTauPhysicalValueMapProducer = L1ScoutingTauPhysicalValueMapProducer()

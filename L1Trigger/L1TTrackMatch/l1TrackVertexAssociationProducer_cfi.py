@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TrackVertexAssociationProducer import L1TrackVertexAssociationProducer
+
+l1TrackVertexAssociationProducer = L1TrackVertexAssociationProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_SiPixelCablingSoAESProducer import alpaka_serial_sync_SiPixelCablingSoAESProducer
+
+alpaka_serial_syncSiPixelCablingSoAESProducer = alpaka_serial_sync_SiPixelCablingSoAESProducer()

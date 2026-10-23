@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Run3ScoutingParticleToPackedCandidateProducer import Run3ScoutingParticleToPackedCandidateProducer
+
+run3ScoutingParticleToPackedCandidateProducer = Run3ScoutingParticleToPackedCandidateProducer()

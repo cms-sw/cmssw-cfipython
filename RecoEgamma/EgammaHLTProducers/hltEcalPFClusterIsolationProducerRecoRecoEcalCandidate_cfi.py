@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EgammaHLTEcalPFClusterIsolationProducer import EgammaHLTEcalPFClusterIsolationProducer
+
+hltEcalPFClusterIsolationProducerRecoRecoEcalCandidate = EgammaHLTEcalPFClusterIsolationProducer()

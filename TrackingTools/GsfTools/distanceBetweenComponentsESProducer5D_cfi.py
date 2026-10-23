@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .DistanceBetweenComponentsESProducer5D import DistanceBetweenComponentsESProducer5D
+
+distanceBetweenComponentsESProducer5D = DistanceBetweenComponentsESProducer5D()

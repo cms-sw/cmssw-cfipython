@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TStage2uGMTInputBxDistributions import L1TStage2uGMTInputBxDistributions
+
+l1tStage2uGMTInputBxDistributions = L1TStage2uGMTInputBxDistributions()

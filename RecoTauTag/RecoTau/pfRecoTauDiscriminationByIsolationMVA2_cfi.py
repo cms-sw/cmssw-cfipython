@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PFRecoTauDiscriminationByIsolationMVA2 import PFRecoTauDiscriminationByIsolationMVA2
+
+pfRecoTauDiscriminationByIsolationMVA2 = PFRecoTauDiscriminationByIsolationMVA2()

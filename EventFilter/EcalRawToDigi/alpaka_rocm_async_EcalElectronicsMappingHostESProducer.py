@@ -1,0 +1,14 @@
+import FWCore.ParameterSet.Config as cms
+
+def alpaka_rocm_async_EcalElectronicsMappingHostESProducer(*args, **kwargs):
+  mod = cms.ESProducer('alpaka_rocm_async::EcalElectronicsMappingHostESProducer',
+    appendToDataLabel = cms.string(''),
+    alpaka = cms.untracked.PSet(
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
+    )
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

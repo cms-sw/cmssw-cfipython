@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_torchtest_DataSource import alpaka_serial_sync_torchtest_DataSource
+
+alpaka_serial_synctorchtestDataSource = alpaka_serial_sync_torchtest_DataSource()

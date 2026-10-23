@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_HcalDigisSoAProducer import alpaka_cuda_async_HcalDigisSoAProducer
+
+alpaka_cuda_asyncHcalDigisSoAProducer = alpaka_cuda_async_HcalDigisSoAProducer()

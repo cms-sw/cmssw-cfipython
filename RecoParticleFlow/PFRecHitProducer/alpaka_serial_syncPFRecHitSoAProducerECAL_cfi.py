@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_PFRecHitSoAProducerECAL import alpaka_serial_sync_PFRecHitSoAProducerECAL
+
+alpaka_serial_syncPFRecHitSoAProducerECAL = alpaka_serial_sync_PFRecHitSoAProducerECAL()

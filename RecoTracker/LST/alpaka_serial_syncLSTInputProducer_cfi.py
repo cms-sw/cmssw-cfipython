@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_LSTInputProducer import alpaka_serial_sync_LSTInputProducer
+
+alpaka_serial_syncLSTInputProducer = alpaka_serial_sync_LSTInputProducer()

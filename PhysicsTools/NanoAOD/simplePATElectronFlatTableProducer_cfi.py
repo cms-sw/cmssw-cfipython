@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimplePATElectronFlatTableProducer import SimplePATElectronFlatTableProducer
+
+simplePATElectronFlatTableProducer = SimplePATElectronFlatTableProducer()

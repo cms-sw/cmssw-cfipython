@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .sistrip_SiStripRawToCluster_alpaka import sistrip_SiStripRawToCluster_alpaka
+
+sistripSiStripRawToCluster = sistrip_SiStripRawToCluster_alpaka()

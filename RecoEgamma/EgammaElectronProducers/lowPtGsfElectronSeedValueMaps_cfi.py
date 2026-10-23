@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .LowPtGsfElectronSeedValueMapsProducer import LowPtGsfElectronSeedValueMapsProducer
+
+lowPtGsfElectronSeedValueMaps = LowPtGsfElectronSeedValueMapsProducer()

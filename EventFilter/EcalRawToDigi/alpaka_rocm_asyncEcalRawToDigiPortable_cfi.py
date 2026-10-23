@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_EcalRawToDigiPortable import alpaka_rocm_async_EcalRawToDigiPortable
+
+alpaka_rocm_asyncEcalRawToDigiPortable = alpaka_rocm_async_EcalRawToDigiPortable()

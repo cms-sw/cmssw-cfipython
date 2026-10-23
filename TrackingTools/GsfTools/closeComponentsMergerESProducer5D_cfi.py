@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .CloseComponentsMergerESProducer5D import CloseComponentsMergerESProducer5D
+
+closeComponentsMergerESProducer5D = CloseComponentsMergerESProducer5D()

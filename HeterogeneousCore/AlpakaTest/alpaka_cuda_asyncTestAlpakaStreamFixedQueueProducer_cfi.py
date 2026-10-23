@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_TestAlpakaStreamFixedQueueProducer import alpaka_cuda_async_TestAlpakaStreamFixedQueueProducer
+
+alpaka_cuda_asyncTestAlpakaStreamFixedQueueProducer = alpaka_cuda_async_TestAlpakaStreamFixedQueueProducer()

@@ -1,0 +1,10 @@
+import FWCore.ParameterSet.Config as cms
+
+def ElectronTestAnalyzer(*args, **kwargs):
+  mod = cms.EDAnalyzer('ElectronTestAnalyzer',
+    mightGet = cms.optional.untracked.vstring
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

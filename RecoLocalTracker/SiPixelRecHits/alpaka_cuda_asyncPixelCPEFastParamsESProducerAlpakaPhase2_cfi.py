@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_PixelCPEFastParamsESProducerAlpakaPhase2 import alpaka_cuda_async_PixelCPEFastParamsESProducerAlpakaPhase2
+
+alpaka_cuda_asyncPixelCPEFastParamsESProducerAlpakaPhase2 = alpaka_cuda_async_PixelCPEFastParamsESProducerAlpakaPhase2()

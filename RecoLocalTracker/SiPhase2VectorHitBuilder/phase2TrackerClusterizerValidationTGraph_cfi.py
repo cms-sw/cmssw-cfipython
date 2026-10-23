@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Phase2TrackerClusterizerValidationTGraph import Phase2TrackerClusterizerValidationTGraph
+
+phase2TrackerClusterizerValidationTGraph = Phase2TrackerClusterizerValidationTGraph()

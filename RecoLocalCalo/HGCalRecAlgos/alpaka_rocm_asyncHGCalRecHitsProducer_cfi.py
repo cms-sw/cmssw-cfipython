@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_HGCalRecHitsProducer import alpaka_rocm_async_HGCalRecHitsProducer
+
+alpaka_rocm_asyncHGCalRecHitsProducer = alpaka_rocm_async_HGCalRecHitsProducer()

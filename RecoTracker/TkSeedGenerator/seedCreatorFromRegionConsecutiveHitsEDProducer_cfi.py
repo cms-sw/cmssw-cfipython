@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SeedCreatorFromRegionConsecutiveHitsEDProducer import SeedCreatorFromRegionConsecutiveHitsEDProducer
+
+seedCreatorFromRegionConsecutiveHitsEDProducer = SeedCreatorFromRegionConsecutiveHitsEDProducer()

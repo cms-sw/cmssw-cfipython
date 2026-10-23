@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_HGCalSoARecHitsLayerClustersProducer import alpaka_serial_sync_HGCalSoARecHitsLayerClustersProducer
+
+alpaka_serial_syncHGCalSoARecHitsLayerClustersProducer = alpaka_serial_sync_HGCalSoARecHitsLayerClustersProducer()

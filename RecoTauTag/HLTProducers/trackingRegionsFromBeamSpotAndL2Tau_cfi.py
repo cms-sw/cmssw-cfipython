@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TrackingRegionsFromBeamSpotAndL2TauEDProducer import TrackingRegionsFromBeamSpotAndL2TauEDProducer
+
+trackingRegionsFromBeamSpotAndL2Tau = TrackingRegionsFromBeamSpotAndL2TauEDProducer()

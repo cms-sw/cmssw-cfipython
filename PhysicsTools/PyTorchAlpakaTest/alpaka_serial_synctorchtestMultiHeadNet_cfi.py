@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_torchtest_MultiHeadNet import alpaka_serial_sync_torchtest_MultiHeadNet
+
+alpaka_serial_synctorchtestMultiHeadNet = alpaka_serial_sync_torchtest_MultiHeadNet()

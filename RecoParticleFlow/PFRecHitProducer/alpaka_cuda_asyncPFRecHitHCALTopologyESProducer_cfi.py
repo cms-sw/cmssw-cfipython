@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_PFRecHitHCALTopologyESProducer import alpaka_cuda_async_PFRecHitHCALTopologyESProducer
+
+alpaka_cuda_asyncPFRecHitHCALTopologyESProducer = alpaka_cuda_async_PFRecHitHCALTopologyESProducer()

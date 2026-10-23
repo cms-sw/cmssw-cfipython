@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_EcalUncalibRecHitPhase2WeightsProducerPortable import alpaka_serial_sync_EcalUncalibRecHitPhase2WeightsProducerPortable
+
+alpaka_serial_syncEcalUncalibRecHitPhase2WeightsProducerPortable = alpaka_serial_sync_EcalUncalibRecHitPhase2WeightsProducerPortable()

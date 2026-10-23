@@ -1,0 +1,11 @@
+import FWCore.ParameterSet.Config as cms
+
+def ToyDoubleProducer(*args, **kwargs):
+  mod = cms.EDProducer('ToyDoubleProducer',
+    dvalue = cms.required.double,
+    mightGet = cms.optional.untracked.vstring
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

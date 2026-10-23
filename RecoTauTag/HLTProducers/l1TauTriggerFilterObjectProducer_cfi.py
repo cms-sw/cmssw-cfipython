@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TauTriggerFilterObjectProducer import L1TauTriggerFilterObjectProducer
+
+l1TauTriggerFilterObjectProducer = L1TauTriggerFilterObjectProducer()

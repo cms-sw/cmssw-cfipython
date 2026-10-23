@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Run3ScoutingElectronBestTrackProducer import Run3ScoutingElectronBestTrackProducer
+
+Run3ScoutingElectronBestTrackProducer = Run3ScoutingElectronBestTrackProducer()

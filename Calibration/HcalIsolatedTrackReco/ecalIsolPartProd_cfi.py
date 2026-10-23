@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalIsolatedParticleCandidateProducer import EcalIsolatedParticleCandidateProducer
+
+ecalIsolPartProd = EcalIsolatedParticleCandidateProducer()

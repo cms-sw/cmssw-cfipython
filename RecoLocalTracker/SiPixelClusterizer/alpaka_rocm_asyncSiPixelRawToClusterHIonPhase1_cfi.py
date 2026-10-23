@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_SiPixelRawToClusterHIonPhase1 import alpaka_rocm_async_SiPixelRawToClusterHIonPhase1
+
+alpaka_rocm_asyncSiPixelRawToClusterHIonPhase1 = alpaka_rocm_async_SiPixelRawToClusterHIonPhase1()

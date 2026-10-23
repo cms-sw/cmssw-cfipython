@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TestAlpakaESProducerBlocks_alpaka import TestAlpakaESProducerBlocks_alpaka
+
+testAlpakaESProducerBlocks = TestAlpakaESProducerBlocks_alpaka()

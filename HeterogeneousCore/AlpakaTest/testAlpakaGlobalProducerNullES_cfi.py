@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TestAlpakaGlobalProducerNullES_alpaka import TestAlpakaGlobalProducerNullES_alpaka
+
+testAlpakaGlobalProducerNullES = TestAlpakaGlobalProducerNullES_alpaka()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_HcalSiPMCharacteristicsESProducer import alpaka_cuda_async_HcalSiPMCharacteristicsESProducer
+
+alpaka_cuda_asyncHcalSiPMCharacteristicsESProducer = alpaka_cuda_async_HcalSiPMCharacteristicsESProducer()

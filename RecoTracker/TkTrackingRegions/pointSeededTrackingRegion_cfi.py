@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PointSeededTrackingRegionsEDProducer import PointSeededTrackingRegionsEDProducer
+
+pointSeededTrackingRegion = PointSeededTrackingRegionsEDProducer()

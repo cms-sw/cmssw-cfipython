@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_EcalPhase2DigiToPortableProducer import alpaka_serial_sync_EcalPhase2DigiToPortableProducer
+
+alpaka_serial_syncEcalPhase2DigiToPortableProducer = alpaka_serial_sync_EcalPhase2DigiToPortableProducer()

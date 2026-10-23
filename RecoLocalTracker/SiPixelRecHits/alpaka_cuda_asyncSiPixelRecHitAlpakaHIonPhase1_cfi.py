@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_SiPixelRecHitAlpakaHIonPhase1 import alpaka_cuda_async_SiPixelRecHitAlpakaHIonPhase1
+
+alpaka_cuda_asyncSiPixelRecHitAlpakaHIonPhase1 = alpaka_cuda_async_SiPixelRecHitAlpakaHIonPhase1()

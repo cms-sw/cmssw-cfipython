@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_SiPixelRecHitExtendedAlpaka import alpaka_rocm_async_SiPixelRecHitExtendedAlpaka
+
+alpaka_rocm_asyncSiPixelRecHitExtendedAlpaka = alpaka_rocm_async_SiPixelRecHitExtendedAlpaka()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTSiPhase2TrackerClusterMultiplicityValueProducer import HLTSiPhase2TrackerClusterMultiplicityValueProducer
+
+hltSiPhase2TrackerClusterMultiplicityValueProducer = HLTSiPhase2TrackerClusterMultiplicityValueProducer()

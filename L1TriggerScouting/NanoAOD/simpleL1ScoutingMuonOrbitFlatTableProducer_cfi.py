@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleL1ScoutingMuonOrbitFlatTableProducer import SimpleL1ScoutingMuonOrbitFlatTableProducer
+
+simpleL1ScoutingMuonOrbitFlatTableProducer = SimpleL1ScoutingMuonOrbitFlatTableProducer()

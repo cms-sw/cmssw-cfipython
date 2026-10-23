@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .EcalUncalibRecHitPhase2WeightsProducerPortable_alpaka import EcalUncalibRecHitPhase2WeightsProducerPortable_alpaka
+
+ecalUncalibRecHitPhase2WeightsProducerPortable = EcalUncalibRecHitPhase2WeightsProducerPortable_alpaka()

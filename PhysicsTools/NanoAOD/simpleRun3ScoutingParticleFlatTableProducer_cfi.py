@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleRun3ScoutingParticleFlatTableProducer import SimpleRun3ScoutingParticleFlatTableProducer
+
+simpleRun3ScoutingParticleFlatTableProducer = SimpleRun3ScoutingParticleFlatTableProducer()

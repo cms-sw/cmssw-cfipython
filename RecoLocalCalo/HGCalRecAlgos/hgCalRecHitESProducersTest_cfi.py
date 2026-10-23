@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HGCalRecHitESProducersTest_alpaka import HGCalRecHitESProducersTest_alpaka
+
+hgCalRecHitESProducersTest = HGCalRecHitESProducersTest_alpaka()

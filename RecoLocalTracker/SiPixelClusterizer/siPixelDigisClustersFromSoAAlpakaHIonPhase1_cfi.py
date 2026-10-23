@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SiPixelDigisClustersFromSoAAlpakaHIonPhase1 import SiPixelDigisClustersFromSoAAlpakaHIonPhase1
+
+siPixelDigisClustersFromSoAAlpakaHIonPhase1 = SiPixelDigisClustersFromSoAAlpakaHIonPhase1()

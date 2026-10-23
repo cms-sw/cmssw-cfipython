@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleTriggerL1EGFlatTableProducer import SimpleTriggerL1EGFlatTableProducer
+
+simpleTriggerL1EGFlatTableProducer = SimpleTriggerL1EGFlatTableProducer()

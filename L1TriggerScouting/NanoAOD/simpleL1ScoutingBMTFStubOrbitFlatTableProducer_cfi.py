@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleL1ScoutingBMTFStubOrbitFlatTableProducer import SimpleL1ScoutingBMTFStubOrbitFlatTableProducer
+
+simpleL1ScoutingBMTFStubOrbitFlatTableProducer = SimpleL1ScoutingBMTFStubOrbitFlatTableProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .UnifiedParticleTransformerAK4TagInfoProducer import UnifiedParticleTransformerAK4TagInfoProducer
+
+pfUnifiedParticleTransformerAK4TagInfos = UnifiedParticleTransformerAK4TagInfoProducer()

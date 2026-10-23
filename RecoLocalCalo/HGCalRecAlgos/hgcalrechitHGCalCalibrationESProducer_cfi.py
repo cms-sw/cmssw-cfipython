@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .hgcalrechit_HGCalCalibrationESProducer_alpaka import hgcalrechit_HGCalCalibrationESProducer_alpaka
+
+hgcalrechitHGCalCalibrationESProducer = hgcalrechit_HGCalCalibrationESProducer_alpaka()

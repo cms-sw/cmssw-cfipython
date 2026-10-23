@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1ScoutingCaloTowerPhysicalValueMapProducer import L1ScoutingCaloTowerPhysicalValueMapProducer
+
+l1ScoutingCaloTowerPhysicalValueMapProducer = L1ScoutingCaloTowerPhysicalValueMapProducer()

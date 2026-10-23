@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TestAlpakaGlobalProducerNoOutput import alpaka_serial_sync_TestAlpakaGlobalProducerNoOutput
+
+alpaka_serial_syncTestAlpakaGlobalProducerNoOutput = alpaka_serial_sync_TestAlpakaGlobalProducerNoOutput()

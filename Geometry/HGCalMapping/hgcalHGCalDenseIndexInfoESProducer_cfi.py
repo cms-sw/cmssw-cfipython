@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .hgcal_HGCalDenseIndexInfoESProducer_alpaka import hgcal_HGCalDenseIndexInfoESProducer_alpaka
+
+hgcalHGCalDenseIndexInfoESProducer = hgcal_HGCalDenseIndexInfoESProducer_alpaka()

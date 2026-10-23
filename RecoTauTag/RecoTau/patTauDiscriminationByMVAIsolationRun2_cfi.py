@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PATTauDiscriminationByMVAIsolationRun2 import PATTauDiscriminationByMVAIsolationRun2
+
+patTauDiscriminationByMVAIsolationRun2 = PATTauDiscriminationByMVAIsolationRun2()

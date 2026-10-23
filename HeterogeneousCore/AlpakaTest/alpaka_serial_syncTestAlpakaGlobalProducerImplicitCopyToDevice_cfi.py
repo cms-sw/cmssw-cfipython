@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TestAlpakaGlobalProducerImplicitCopyToDevice import alpaka_serial_sync_TestAlpakaGlobalProducerImplicitCopyToDevice
+
+alpaka_serial_syncTestAlpakaGlobalProducerImplicitCopyToDevice = alpaka_serial_sync_TestAlpakaGlobalProducerImplicitCopyToDevice()

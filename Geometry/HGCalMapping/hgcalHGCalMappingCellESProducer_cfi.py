@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .hgcal_HGCalMappingCellESProducer_alpaka import hgcal_HGCalMappingCellESProducer_alpaka
+
+hgcalHGCalMappingCellESProducer = hgcal_HGCalMappingCellESProducer_alpaka()

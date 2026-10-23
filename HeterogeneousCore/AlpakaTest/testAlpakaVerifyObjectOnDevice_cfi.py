@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TestAlpakaVerifyObjectOnDevice_alpaka import TestAlpakaVerifyObjectOnDevice_alpaka
+
+testAlpakaVerifyObjectOnDevice = TestAlpakaVerifyObjectOnDevice_alpaka()

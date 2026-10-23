@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_SiPixelCablingSoAESProducer import alpaka_cuda_async_SiPixelCablingSoAESProducer
+
+alpaka_cuda_asyncSiPixelCablingSoAESProducer = alpaka_cuda_async_SiPixelCablingSoAESProducer()

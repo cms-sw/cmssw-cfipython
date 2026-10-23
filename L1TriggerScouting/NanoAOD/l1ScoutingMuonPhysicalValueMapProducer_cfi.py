@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1ScoutingMuonPhysicalValueMapProducer import L1ScoutingMuonPhysicalValueMapProducer
+
+l1ScoutingMuonPhysicalValueMapProducer = L1ScoutingMuonPhysicalValueMapProducer()

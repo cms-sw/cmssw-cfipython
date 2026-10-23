@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .CaloTowerFromL1TSeededCreatorForTauHLT import CaloTowerFromL1TSeededCreatorForTauHLT
+
+CaloTowerFromL1TSeededCreatorForTauHLT = CaloTowerFromL1TSeededCreatorForTauHLT()

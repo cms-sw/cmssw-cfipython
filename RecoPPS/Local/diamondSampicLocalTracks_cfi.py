@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .TotemTimingLocalTrackFitter_CTPPSDiamondDetId_ import TotemTimingLocalTrackFitter_CTPPSDiamondDetId_
+
+diamondSampicLocalTracks = TotemTimingLocalTrackFitter_CTPPSDiamondDetId_()

@@ -1,0 +1,40 @@
+import FWCore.ParameterSet.Config as cms
+
+def RecoTauDiscriminantCutMultiplexer(*args, **kwargs):
+  mod = cms.EDProducer('RecoTauDiscriminantCutMultiplexer',
+    toMultiplex = cms.InputTag('fixme'),
+    verbosity = cms.int32(0),
+    mapping = cms.VPSet(
+      cms.PSet(
+        category = cms.uint32(0),
+        cut = cms.string('fixme')
+      ),
+      template = cms.PSetTemplate(
+        category = cms.uint32(0),
+        cut = cms.required.string,
+        variable = cms.optional.string
+      )
+    ),
+    rawValues = cms.vstring('discriminator'),
+    workingPoints = cms.vdouble(0),
+    inputFileName = cms.FileInPath('RecoTauTag/RecoTau/data/emptyMVAinputFile'),
+    loadMVAfromDB = cms.bool(True),
+    PFTauProducer = cms.InputTag('fixme'),
+    Prediscriminants = cms.PSet(
+      BooleanOperator = cms.string('AND'),
+      leadTrack = cms.PSet(
+        cut = cms.double(0),
+        Producer = cms.InputTag('fixme')
+      ),
+      decayMode = cms.PSet(
+        cut = cms.double(0),
+        Producer = cms.InputTag('fixme')
+      )
+    ),
+    mvaOutput_normalization = cms.string(''),
+    mightGet = cms.optional.untracked.vstring
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

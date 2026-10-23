@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .sistrip_SiStripClusterizerConditionsESProducerAlpaka_alpaka import sistrip_SiStripClusterizerConditionsESProducerAlpaka_alpaka
+
+sistripSiStripClusterizerConditionsESProducerAlpaka = sistrip_SiStripClusterizerConditionsESProducerAlpaka_alpaka()

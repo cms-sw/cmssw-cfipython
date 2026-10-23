@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TestAlpakaStreamSynchronizingProducerToDevice import alpaka_rocm_async_TestAlpakaStreamSynchronizingProducerToDevice
+
+alpaka_rocm_asyncTestAlpakaStreamSynchronizingProducerToDevice = alpaka_rocm_async_TestAlpakaStreamSynchronizingProducerToDevice()

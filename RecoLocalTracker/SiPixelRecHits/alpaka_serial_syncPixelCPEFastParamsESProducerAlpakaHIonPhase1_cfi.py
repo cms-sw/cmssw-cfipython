@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_PixelCPEFastParamsESProducerAlpakaHIonPhase1 import alpaka_serial_sync_PixelCPEFastParamsESProducerAlpakaHIonPhase1
+
+alpaka_serial_syncPixelCPEFastParamsESProducerAlpakaHIonPhase1 = alpaka_serial_sync_PixelCPEFastParamsESProducerAlpakaHIonPhase1()

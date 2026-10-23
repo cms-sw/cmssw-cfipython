@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TEGammaFilteredCollectionProducer import L1TEGammaFilteredCollectionProducer
+
+L1TEGammaFilteredCollectionProducer = L1TEGammaFilteredCollectionProducer()

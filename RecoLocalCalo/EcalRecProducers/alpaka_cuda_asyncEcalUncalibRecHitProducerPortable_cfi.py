@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_EcalUncalibRecHitProducerPortable import alpaka_cuda_async_EcalUncalibRecHitProducerPortable
+
+alpaka_cuda_asyncEcalUncalibRecHitProducerPortable = alpaka_cuda_async_EcalUncalibRecHitProducerPortable()

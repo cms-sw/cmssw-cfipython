@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_LSTInputProducer import alpaka_rocm_async_LSTInputProducer
+
+alpaka_rocm_asyncLSTInputProducer = alpaka_rocm_async_LSTInputProducer()

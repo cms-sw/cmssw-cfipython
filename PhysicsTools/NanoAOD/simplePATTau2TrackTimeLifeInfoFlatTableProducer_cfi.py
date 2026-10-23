@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimplePATTau2TrackTimeLifeInfoFlatTableProducer import SimplePATTau2TrackTimeLifeInfoFlatTableProducer
+
+simplePATTau2TrackTimeLifeInfoFlatTableProducer = SimplePATTau2TrackTimeLifeInfoFlatTableProducer()

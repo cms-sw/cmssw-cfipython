@@ -1,0 +1,79 @@
+import FWCore.ParameterSet.Config as cms
+
+def RecoTauCleaner(*args, **kwargs):
+  mod = cms.EDProducer('RecoTauCleaner',
+    outputSelection = cms.string(''),
+    cleaners = cms.VPSet(
+      cms.PSet(
+        name = cms.string('Charge'),
+        nprongs = cms.vuint32(
+          1,
+          3
+        ),
+        passForCharge = cms.int32(1),
+        plugin = cms.string('RecoTauChargeCleanerPlugin'),
+        selectionFailValue = cms.double(0),
+        tolerance = cms.double(0)
+      ),
+      cms.PSet(
+        name = cms.string('HPS_Select'),
+        plugin = cms.string('RecoTauDiscriminantCleanerPlugin'),
+        src = cms.InputTag('hpsSelectionDiscriminator'),
+        tolerance = cms.double(0)
+      ),
+      cms.PSet(
+        minTrackPt = cms.double(5),
+        name = cms.string('killSoftTwoProngTaus'),
+        plugin = cms.string('RecoTauSoftTwoProngTausCleanerPlugin'),
+        tolerance = cms.double(0)
+      ),
+      cms.PSet(
+        name = cms.string('ChargedHadronMultiplicity'),
+        plugin = cms.string('RecoTauChargedHadronMultiplicityCleanerPlugin'),
+        tolerance = cms.double(0)
+      ),
+      cms.PSet(
+        name = cms.string('Pt'),
+        plugin = cms.string('RecoTauStringCleanerPlugin'),
+        selection = cms.string('leadPFCand().isNonnull()'),
+        selectionFailValue = cms.double(1000),
+        selectionPassFunction = cms.string('-pt()'),
+        tolerance = cms.double(0.01)
+      ),
+      cms.PSet(
+        name = cms.string('StripMultiplicity'),
+        plugin = cms.string('RecoTauStringCleanerPlugin'),
+        selection = cms.string('leadPFCand().isNonnull()'),
+        selectionFailValue = cms.double(1000),
+        selectionPassFunction = cms.string('-signalPiZeroCandidates().size()'),
+        tolerance = cms.double(0)
+      ),
+      cms.PSet(
+        name = cms.string('CombinedIsolation'),
+        plugin = cms.string('RecoTauStringCleanerPlugin'),
+        selection = cms.string('leadPFCand().isNonnull()'),
+        selectionFailValue = cms.double(1000),
+        selectionPassFunction = cms.string('isolationPFChargedHadrCandsPtSum() + isolationPFGammaCandsEtSum()'),
+        tolerance = cms.double(0)
+      ),
+      template = cms.PSetTemplate(
+        plugin = cms.required.string,
+        tolerance = cms.double(0),
+        name = cms.required.string,
+        passForCharge = cms.optional.int32,
+        selectionFailValue = cms.optional.double,
+        nprongs = cms.optional.vuint32,
+        src = cms.optional.InputTag,
+        minTrackPt = cms.optional.double,
+        selection = cms.optional.string,
+        selectionPassFunction = cms.optional.string
+      )
+    ),
+    verbosity = cms.int32(0),
+    src = cms.InputTag('combinatoricRecoTaus'),
+    mightGet = cms.optional.untracked.vstring
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

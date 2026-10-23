@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1ScoutingEGammaPhysicalValueMapProducer import L1ScoutingEGammaPhysicalValueMapProducer
+
+l1ScoutingEGammaPhysicalValueMapProducer = L1ScoutingEGammaPhysicalValueMapProducer()

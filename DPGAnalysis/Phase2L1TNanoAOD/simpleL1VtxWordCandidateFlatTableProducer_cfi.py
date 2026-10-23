@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .SimpleL1VtxWordCandidateFlatTableProducer import SimpleL1VtxWordCandidateFlatTableProducer
+
+simpleL1VtxWordCandidateFlatTableProducer = SimpleL1VtxWordCandidateFlatTableProducer()

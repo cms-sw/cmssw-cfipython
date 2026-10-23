@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .HLTCountNumberOfSingleRecHit import HLTCountNumberOfSingleRecHit
+
+hltCountNumberOfObjectEdmNewDetSetVectorSiStripRecHit2D = HLTCountNumberOfSingleRecHit()

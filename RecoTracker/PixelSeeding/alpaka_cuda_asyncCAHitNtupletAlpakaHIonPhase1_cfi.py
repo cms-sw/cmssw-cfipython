@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_CAHitNtupletAlpakaHIonPhase1 import alpaka_cuda_async_CAHitNtupletAlpakaHIonPhase1
+
+alpaka_cuda_asyncCAHitNtupletAlpakaHIonPhase1 = alpaka_cuda_async_CAHitNtupletAlpakaHIonPhase1()

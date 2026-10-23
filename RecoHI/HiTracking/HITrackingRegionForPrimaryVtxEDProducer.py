@@ -1,0 +1,29 @@
+import FWCore.ParameterSet.Config as cms
+
+def HITrackingRegionForPrimaryVtxEDProducer(*args, **kwargs):
+  mod = cms.EDProducer('HITrackingRegionForPrimaryVtxEDProducer',
+    RegionPSet = cms.PSet(
+      ptMin = cms.double(0.7),
+      doVariablePtMin = cms.bool(True),
+      originRadius = cms.double(0.2),
+      nSigmaZ = cms.double(3),
+      beamSpot = cms.InputTag('offlineBeamSpot'),
+      precise = cms.bool(True),
+      useMultipleScattering = cms.bool(False),
+      useFakeVertices = cms.bool(False),
+      siPixelRecHits = cms.InputTag('siPixelRecHits'),
+      directionXCoord = cms.double(1),
+      directionYCoord = cms.double(1),
+      directionZCoord = cms.double(0),
+      useFoundVertices = cms.bool(True),
+      VertexCollection = cms.InputTag('hiPixelClusterVertex'),
+      useFixedError = cms.bool(True),
+      fixedError = cms.double(3),
+      sigmaZVertex = cms.double(3)
+    ),
+    mightGet = cms.optional.untracked.vstring
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

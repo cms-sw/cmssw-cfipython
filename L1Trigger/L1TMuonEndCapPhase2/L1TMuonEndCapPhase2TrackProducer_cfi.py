@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .L1TMuonEndCapPhase2TrackProducer import L1TMuonEndCapPhase2TrackProducer
+
+L1TMuonEndCapPhase2TrackProducer = L1TMuonEndCapPhase2TrackProducer()

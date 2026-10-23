@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TestAlpakaESProducerNull import alpaka_rocm_async_TestAlpakaESProducerNull
+
+alpaka_rocm_asyncTestAlpakaESProducerNull = alpaka_rocm_async_TestAlpakaESProducerNull()
