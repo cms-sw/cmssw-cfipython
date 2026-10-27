@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def FastTimerService(*args, **kwargs):
   mod = cms.Service('FastTimerService',
     printEventSummary = cms.untracked.bool(False),
+    printLumiSummary = cms.untracked.bool(False),
     printRunSummary = cms.untracked.bool(True),
     printJobSummary = cms.untracked.bool(True),
     writeJSONSummary = cms.untracked.bool(False),
