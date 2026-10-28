@@ -7,6 +7,7 @@ def TruthLogicalGraphProducer(*args, **kwargs):
     simVertices = cms.InputTag('g4SimHits'),
     genEventHepMC3 = cms.InputTag('generatorSmeared'),
     genEventHepMC = cms.InputTag('generatorSmeared'),
+    rawGenPayload = cms.InputTag(''),
     verbosity = cms.untracked.uint32(0),
     mergeGenSimVertices = cms.bool(True),
     simHitCollections = cms.VInputTag(
@@ -20,15 +21,7 @@ def TruthLogicalGraphProducer(*args, **kwargs):
       'g4SimHits:TrackerHitsPixelBarrelLowTof',
       'g4SimHits:TrackerHitsPixelBarrelHighTof',
       'g4SimHits:TrackerHitsPixelEndcapLowTof',
-      'g4SimHits:TrackerHitsPixelEndcapHighTof',
-      'g4SimHits:TrackerHitsTIBLowTof',
-      'g4SimHits:TrackerHitsTIBHighTof',
-      'g4SimHits:TrackerHitsTIDLowTof',
-      'g4SimHits:TrackerHitsTIDHighTof',
-      'g4SimHits:TrackerHitsTOBLowTof',
-      'g4SimHits:TrackerHitsTOBHighTof',
-      'g4SimHits:TrackerHitsTECLowTof',
-      'g4SimHits:TrackerHitsTECHighTof'
+      'g4SimHits:TrackerHitsPixelEndcapHighTof'
     ),
     muonSimHitCollections = cms.VInputTag(
       'g4SimHits:MuonDTHits',

@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def BranchHGCalValidator(*args, **kwargs):
   mod = cms.EDProducer('BranchHGCalValidator',
     src = cms.InputTag('truthLogicalGraphProducer'),
-    rawSrc = cms.InputTag('truthGraphProducer'),
+    rawSrc = cms.InputTag('mix'),
     hitIndex = cms.InputTag('truthLogicalGraphHitIndexProducer'),
     caloParticles = cms.InputTag('mix', 'MergedCaloTruth'),
     simClusters = cms.InputTag('mix', 'MergedCaloTruth'),
@@ -16,10 +16,10 @@ def BranchHGCalValidator(*args, **kwargs):
       'HGCalRecHit:HGCHEBRecHits'
     ),
     pfRecHits = cms.VInputTag(
-      'particleFlowRecHitECAL:Cleaned',
-      'particleFlowRecHitHBHE:Cleaned',
-      'particleFlowRecHitHF:Cleaned',
-      'particleFlowRecHitHO:Cleaned'
+      'particleFlowRecHitECAL',
+      'particleFlowRecHitHBHE',
+      'particleFlowRecHitHF',
+      'particleFlowRecHitHO'
     ),
     mightGet = cms.optional.untracked.vstring
   )

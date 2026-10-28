@@ -8,7 +8,6 @@ def alpaka_rocm_async_LSTProducer(*args, **kwargs):
     clustSizeCut = cms.uint32(16),
     nopLSDupClean = cms.bool(False),
     tcpLSTriplets = cms.bool(False),
-    reduceMemByFullPrecompute = cms.bool(False),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),

@@ -5,210 +5,26 @@ def Phase2OTMonitorTTCluster(*args, **kwargs):
     Num_L1Clusters_IMem_Barrel = cms.PSet(
       switch = cms.bool(True),
       name = cms.string('Num_L1Clusters_IMem_Barrel'),
-      title = cms.string('Num_L1Clusters_IMem_Barrel;Barrel Layer;# L1 Clusters'),
-      NxBins = cms.int32(7),
+      title = cms.string('Number of L1Clusters in inner member of modules in the barrel by layer;Barrel Layer;# L1 Clusters'),
+      NxBins = cms.int32(6),
       xmin = cms.double(0.5),
-      xmax = cms.double(7.5)
+      xmax = cms.double(6.5)
     ),
     Num_L1Clusters_OMem_Barrel = cms.PSet(
       switch = cms.bool(True),
       name = cms.string('Num_L1Clusters_OMem_Barrel'),
-      title = cms.string('Num_L1Clusters_OMem_Barrel;Barrel Layer;# L1 Clusters'),
-      NxBins = cms.int32(7),
-      xmin = cms.double(0.5),
-      xmax = cms.double(7.5)
-    ),
-    Num_L1Clusters_IMem_Endcap_Disc = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Endcap_Disc'),
-      title = cms.string('Num_L1Clusters_IMem_Endcap_Disc;Endcap Disc;# L1 Clusters'),
+      title = cms.string('Number of L1Clusters in outer member of modules in the barrel by layer;Barrel Layer;# L1 Clusters'),
       NxBins = cms.int32(6),
       xmin = cms.double(0.5),
       xmax = cms.double(6.5)
     ),
-    Num_L1Clusters_OMem_Endcap_Disc = cms.PSet(
+    Num_L1Clusters_Barrel = cms.PSet(
       switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Endcap_Disc'),
-      title = cms.string('Num_L1Clusters_OMem_Endcap_Disc;Endcap Disc;# L1 Clusters'),
+      name = cms.string('Num_L1Clusters_Barrel'),
+      title = cms.string('Number of L1Clusters in the barrel by layer;Barrel Layer;# L1 Clusters'),
       NxBins = cms.int32(6),
       xmin = cms.double(0.5),
       xmax = cms.double(6.5)
-    ),
-    Num_L1Clusters_IMem_Endcap_Ring = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Endcap_Ring'),
-      title = cms.string('Num_L1Clusters_IMem_Endcap_Ring;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Endcap_Ring = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Endcap_Ring'),
-      title = cms.string('Num_L1Clusters_OMem_Endcap_Ring;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Fw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc+1'),
-      title = cms.string('Num_L1Clusters_IMem_Disc+1;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Bw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc-1'),
-      title = cms.string('Num_L1Clusters_IMem_Disc-1;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Fw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc+1'),
-      title = cms.string('Num_L1Clusters_OMem_Disc+1;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Bw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc-1'),
-      title = cms.string('Num_L1Clusters_OMem_Disc-1;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Fw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc+2'),
-      title = cms.string('Num_L1Clusters_IMem_Disc+2;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Bw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc-2'),
-      title = cms.string('Num_L1Clusters_IMem_Disc-2;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Fw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc+2'),
-      title = cms.string('Num_L1Clusters_OMem_Disc+2;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Bw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc-2'),
-      title = cms.string('Num_L1Clusters_OMem_Disc-2;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Fw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc+3'),
-      title = cms.string('Num_L1Clusters_IMem_Disc+3;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Bw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc-3'),
-      title = cms.string('Num_L1Clusters_IMem_Disc-3;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Fw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc+3'),
-      title = cms.string('Num_L1Clusters_OMem_Disc+3;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Bw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc-3'),
-      title = cms.string('Num_L1Clusters_OMem_Disc-3;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Fw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc+4'),
-      title = cms.string('Num_L1Clusters_IMem_Disc+4;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Bw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc-4'),
-      title = cms.string('Num_L1Clusters_IMem_Disc-4;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Fw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc+4'),
-      title = cms.string('Num_L1Clusters_OMem_Disc+4;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Bw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc-4'),
-      title = cms.string('Num_L1Clusters_OMem_Disc-4;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Fw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc+5'),
-      title = cms.string('Num_L1Clusters_IMem_Disc+5;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_IMem_Disc_Bw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_IMem_Disc-5'),
-      title = cms.string('Num_L1Clusters_IMem_Disc-5;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Fw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc+5'),
-      title = cms.string('Num_L1Clusters_OMem_Disc+5;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Clusters_OMem_Disc_Bw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Clusters_OMem_Disc-5'),
-      title = cms.string('Num_L1Clusters_OMem_Disc-5;Endcap Ring;# L1 Clusters'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
     ),
     L1Cluster_W = cms.PSet(
       switch = cms.bool(True),
@@ -288,6 +104,78 @@ def Phase2OTMonitorTTCluster(*args, **kwargs):
       NyBins = cms.int32(900),
       ymin = cms.double(0),
       ymax = cms.double(120)
+    ),
+    NClustersLayer = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Per_Event'),
+      title = cms.string('Number of L1Clusters in {} per event;Number of clusters;Number of events'),
+      NxBins = cms.int32(100),
+      xmin = cms.double(0),
+      xmax = cms.double(300000)
+    ),
+    NClustersIMemLayer = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_IMem'),
+      title = cms.string('Number of L1Clusters in inner member of modules in {} per event;Number of clusters;Number of events'),
+      NxBins = cms.int32(100),
+      xmin = cms.double(0),
+      xmax = cms.double(300000)
+    ),
+    NClustersOMemLayer = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_OMem'),
+      title = cms.string('Number of L1Clusters in outer member of modules in {} per event;Number of clusters;Number of events'),
+      NxBins = cms.int32(100),
+      xmin = cms.double(0),
+      xmax = cms.double(300000)
+    ),
+    NClustersByWheel = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Wheels'),
+      title = cms.string('Number of L1Clusters in {} by wheel;Wheel;Number of clusters'),
+      NxBins = cms.int32(6),
+      xmin = cms.double(0.5),
+      xmax = cms.double(6.5)
+    ),
+    NClustersIMemByWheel = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Wheels_IMem'),
+      title = cms.string('Number of L1Clusters in inner member of modules in {} by wheel;Wheel;Number of clusters'),
+      NxBins = cms.int32(6),
+      xmin = cms.double(0.5),
+      xmax = cms.double(6.5)
+    ),
+    NClustersOMemByWheel = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Wheels_OMem'),
+      title = cms.string('Number of L1Clusters in outer member of modules in {} by wheel;Wheel;Number of clusters'),
+      NxBins = cms.int32(6),
+      xmin = cms.double(0.5),
+      xmax = cms.double(6.5)
+    ),
+    NClustersByRing = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Rings'),
+      title = cms.string('Number of L1Clusters in {} by ring;Ring;Number of clusters'),
+      NxBins = cms.int32(16),
+      xmin = cms.double(0.5),
+      xmax = cms.double(16.5)
+    ),
+    NClustersIMemByRing = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Rings_IMem'),
+      title = cms.string('Number of L1Clusters in inner member of modules in {} by ring;Ring;Number of clusters'),
+      NxBins = cms.int32(16),
+      xmin = cms.double(0.5),
+      xmax = cms.double(16.5)
+    ),
+    NClustersOMemByRing = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Clusters_Rings_OMem'),
+      title = cms.string('Number of L1Clusters in outer member of modules in {} by ring;Ring;Number of clusters'),
+      NxBins = cms.int32(16),
+      xmin = cms.double(0.5),
+      xmax = cms.double(16.5)
     ),
     TopFolderName = cms.string('OuterTracker'),
     TTClusters = cms.InputTag('TTClustersFromPhase2TrackerDigis', 'ClusterInclusive'),

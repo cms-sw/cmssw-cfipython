@@ -2,6 +2,17 @@ import FWCore.ParameterSet.Config as cms
 
 def Phase2OTMonitorTTStub(*args, **kwargs):
   mod = cms.EDProducer('Phase2OTMonitorTTStub',
+    CrackOverview = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Crack_Overview_L1Stubs'),
+      title = cms.string('Crack_Overview_stubs;Module;Layer'),
+      NxBins = cms.int32(13),
+      xmin = cms.double(0),
+      xmax = cms.double(13),
+      NyBins = cms.int32(0),
+      ymin = cms.double(7.5),
+      ymax = cms.double(13)
+    ),
     L1Stub_Global_Position_Barrel_XY = cms.PSet(
       switch = cms.bool(True),
       name = cms.string('L1Stub_Global_Position_Barrel_XY'),
@@ -45,15 +56,6 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       NyBins = cms.int32(900),
       ymin = cms.double(0),
       ymax = cms.double(120)
-    ),
-    CrackOverview = cms.PSet(
-      name = cms.string('Crack_Overview_L1Stubs'),
-      title = cms.string('Crack_Overview_stubs;Module;Layer'),
-      xmin = cms.double(0),
-      switch = cms.bool(False),
-      xmax = cms.double(13),
-      ymin = cms.double(0),
-      ymax = cms.double(7.5)
     ),
     L1Stub_Eta = cms.PSet(
       switch = cms.bool(True),
@@ -107,41 +109,9 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       switch = cms.bool(True),
       name = cms.string('Num_L1Stubs_Barrel'),
       title = cms.string('Num_L1Stubs_Barrel;Barrel Layer;# L1 Stubs'),
-      NxBins = cms.int32(7),
-      xmin = cms.double(0.5),
-      xmax = cms.double(7.5)
-    ),
-    Num_L1Stubs_Endcap_Disc = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Endcap_Disc'),
-      title = cms.string('Num_L1Stubs_Endcap_Disc;Endcap Disc;# L1 Stubs'),
       NxBins = cms.int32(6),
       xmin = cms.double(0.5),
       xmax = cms.double(6.5)
-    ),
-    Num_L1Stubs_Endcap_Disc_Fw = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Endcap_Disc_Fw'),
-      title = cms.string('Num_L1Stubs_Endcap_Disc_Fw;Forward Endcap Disc;# L1 Stubs'),
-      NxBins = cms.int32(6),
-      xmin = cms.double(0.5),
-      xmax = cms.double(6.5)
-    ),
-    Num_L1Stubs_Endcap_Disc_Bw = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Endcap_Disc_Bw'),
-      title = cms.string('Num_L1Stubs_Endcap_Disc_Bw;Backward Endcap Disc;# L1 Stubs'),
-      NxBins = cms.int32(6),
-      xmin = cms.double(0.5),
-      xmax = cms.double(6.5)
-    ),
-    Num_L1Stubs_Endcap_Ring = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Endcap_Ring'),
-      title = cms.string('Num_L1Stubs_Endcap_Ring;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
     ),
     L1Stub_Width_Barrel = cms.PSet(
       switch = cms.bool(True),
@@ -150,28 +120,6 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       NxBins = cms.int32(6),
       xmin = cms.double(0.5),
       xmax = cms.double(6.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Endcap_Disc = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Endcap_Disc'),
-      title = cms.string('L1Stub_Width_Endcap_Disc;Endcap Disc;Displacement - Offset'),
-      NxBins = cms.int32(5),
-      xmin = cms.double(0.5),
-      xmax = cms.double(5.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Endcap_Ring = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Endcap_Ring'),
-      title = cms.string('L1Stub_Width_Endcap_Ring;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
       NyBins = cms.int32(43),
       ymin = cms.double(-10.75),
       ymax = cms.double(10.75)
@@ -187,10 +135,45 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       ymin = cms.double(-10.75),
       ymax = cms.double(10.75)
     ),
-    L1Stub_Offset_Endcap_Disc = cms.PSet(
+    NStubsLayer = cms.PSet(
       switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Endcap_Disc'),
-      title = cms.string('L1Stub_Offset_Endcap_Disc;Endcap Disc;Trigger Offset'),
+      name = cms.string('Num_L1Stubs_Per_Event'),
+      title = cms.string('Number of L1Stubs in {} per event;Number of stubs;Number of events'),
+      NxBins = cms.int32(100),
+      xmin = cms.double(0),
+      xmax = cms.double(50000)
+    ),
+    NStubsByWheel = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Stubs_Wheels'),
+      title = cms.string('Number of L1Stubs in {} by wheel;Wheel;Number of stubs'),
+      NxBins = cms.int32(6),
+      xmin = cms.double(0.5),
+      xmax = cms.double(6.5)
+    ),
+    NStubsByRing = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('Num_L1Stubs_Rings'),
+      title = cms.string('Number of L1Stubs in {} by ring;Ring;Number of stubs'),
+      NxBins = cms.int32(16),
+      xmin = cms.double(0.5),
+      xmax = cms.double(16.5)
+    ),
+    StubWidthByRing = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('L1Stub_Width_By_Ring'),
+      title = cms.string('L1Stub width in {} by ring;Ring;Displacement - Offset'),
+      NxBins = cms.int32(16),
+      xmin = cms.double(0.5),
+      xmax = cms.double(16.5),
+      NyBins = cms.int32(43),
+      ymin = cms.double(-10.75),
+      ymax = cms.double(10.75)
+    ),
+    StubWidthByWheel = cms.PSet(
+      switch = cms.bool(True),
+      name = cms.string('L1Stub_Width_By_Wheel'),
+      title = cms.string('L1Stub width in {} by wheel;Wheel;Displacement - Offset'),
       NxBins = cms.int32(5),
       xmin = cms.double(0.5),
       xmax = cms.double(5.5),
@@ -198,10 +181,10 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       ymin = cms.double(-10.75),
       ymax = cms.double(10.75)
     ),
-    L1Stub_Offset_Endcap_Ring = cms.PSet(
+    StubOffsetByRing = cms.PSet(
       switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Endcap_Ring'),
-      title = cms.string('L1Stub_Offset_Endcap_Ring;Endcap Ring;Trigger Offset'),
+      name = cms.string('L1Stub_Offset_By_Ring'),
+      title = cms.string('L1Stub offset in {} by ring;Ring;Trigger Offset'),
       NxBins = cms.int32(16),
       xmin = cms.double(0.5),
       xmax = cms.double(16.5),
@@ -209,302 +192,13 @@ def Phase2OTMonitorTTStub(*args, **kwargs):
       ymin = cms.double(-10.75),
       ymax = cms.double(10.75)
     ),
-    Num_L1Stubs_Disc_Fw_1 = cms.PSet(
+    StubOffsetByWheel = cms.PSet(
       switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc+1'),
-      title = cms.string('Num_L1Stubs_Disc+1;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
+      name = cms.string('L1Stub_Offset_By_Wheel'),
+      title = cms.string('L1Stub offset in {} by wheel;Wheel;Trigger Offset'),
+      NxBins = cms.int32(5),
       xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Stubs_Disc_Bw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc-1'),
-      title = cms.string('Num_L1Stubs_Disc-1;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    L1Stub_Width_Disc_Fw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc+1'),
-      title = cms.string('L1Stub_Width_Disc+1;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Disc_Bw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc-1'),
-      title = cms.string('L1Stub_Width_Disc-1;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Fw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc+1'),
-      title = cms.string('L1Stub_Offset_Disc+1;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Bw_1 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc-1'),
-      title = cms.string('L1Stub_Offset_Disc-1;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    Num_L1Stubs_Disc_Fw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc+2'),
-      title = cms.string('Num_L1Stubs_Disc+2;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Stubs_Disc_Bw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc-2'),
-      title = cms.string('Num_L1Stubs_Disc-2;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    L1Stub_Width_Disc_Fw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc+2'),
-      title = cms.string('L1Stub_Width_Disc+2;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Disc_Bw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc-2'),
-      title = cms.string('L1Stub_Width_Disc-2;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Fw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc+2'),
-      title = cms.string('L1Stub_Offset_Disc+2;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Bw_2 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc-2'),
-      title = cms.string('L1Stub_Offset_Disc-2;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    Num_L1Stubs_Disc_Fw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc+3'),
-      title = cms.string('Num_L1Stubs_Disc+3;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Stubs_Disc_Bw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc-3'),
-      title = cms.string('Num_L1Stubs_Disc-3;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    L1Stub_Width_Disc_Fw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc+3'),
-      title = cms.string('L1Stub_Width_Disc+3;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Disc_Bw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc-3'),
-      title = cms.string('L1Stub_Width_Disc-3;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Fw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc+3'),
-      title = cms.string('L1Stub_Offset_Disc+3;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Bw_3 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc-3'),
-      title = cms.string('L1Stub_Offset_Disc-3;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    Num_L1Stubs_Disc_Fw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc+4'),
-      title = cms.string('Num_L1Stubs_Disc+4;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Stubs_Disc_Bw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc-4'),
-      title = cms.string('Num_L1Stubs_Disc-4;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    L1Stub_Width_Disc_Fw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc+4'),
-      title = cms.string('L1Stub_Width_Disc+4;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Disc_Bw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc-4'),
-      title = cms.string('L1Stub_Width_Disc-4;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Fw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc+4'),
-      title = cms.string('L1Stub_Offset_Disc+4;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Bw_4 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc-4'),
-      title = cms.string('L1Stub_Offset_Disc-4;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    Num_L1Stubs_Disc_Fw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc+5'),
-      title = cms.string('Num_L1Stubs_Disc+5;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    Num_L1Stubs_Disc_Bw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('Num_L1Stubs_Disc-5'),
-      title = cms.string('Num_L1Stubs_Disc-5;Endcap Ring;# L1 Stubs'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5)
-    ),
-    L1Stub_Width_Disc_Fw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc+5'),
-      title = cms.string('L1Stub_Width_Disc+5;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Width_Disc_Bw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Width_Disc-5'),
-      title = cms.string('L1Stub_Width_Disc-5;Endcap Ring;Displacement - Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Fw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc+5'),
-      title = cms.string('L1Stub_Offset_Disc+5;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
-      NyBins = cms.int32(43),
-      ymin = cms.double(-10.75),
-      ymax = cms.double(10.75)
-    ),
-    L1Stub_Offset_Disc_Bw_5 = cms.PSet(
-      switch = cms.bool(True),
-      name = cms.string('L1Stub_Offset_Disc-5'),
-      title = cms.string('L1Stub_Offset_Disc-5;Endcap Ring;Trigger Offset'),
-      NxBins = cms.int32(16),
-      xmin = cms.double(0.5),
-      xmax = cms.double(16.5),
+      xmax = cms.double(5.5),
       NyBins = cms.int32(43),
       ymin = cms.double(-10.75),
       ymax = cms.double(10.75)

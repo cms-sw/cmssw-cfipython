@@ -4,7 +4,6 @@ def LSTOutputConverter(*args, **kwargs):
   mod = cms.EDProducer('LSTOutputConverter',
     lstOutput = cms.InputTag('lstProducer'),
     lstInput = cms.InputTag('lstInputProducer'),
-    lstPixelSeeds = cms.InputTag('lstInputProducer'),
     includeT5s = cms.bool(True),
     includeNonpLSTSs = cms.bool(False),
     dropOTHitsPurePLS = cms.bool(False),

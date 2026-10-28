@@ -11,12 +11,13 @@ def TruthLogicalGraphDumper(*args, **kwargs):
       'HGCalRecHit:HGCHEBRecHits'
     ),
     pfRecHits = cms.VInputTag(
-      'particleFlowRecHitECAL:Cleaned',
-      'particleFlowRecHitHBHE:Cleaned',
-      'particleFlowRecHitHF:Cleaned',
-      'particleFlowRecHitHO:Cleaned'
+      'particleFlowRecHitECAL',
+      'particleFlowRecHitHBHE',
+      'particleFlowRecHitHF',
+      'particleFlowRecHitHO'
     ),
     dotFile = cms.string('truthlogicalgraph.dot'),
+    jsonFile = cms.string(''),
     layout = cms.string('dot'),
     dumpSimHits = cms.bool(False),
     mightGet = cms.optional.untracked.vstring

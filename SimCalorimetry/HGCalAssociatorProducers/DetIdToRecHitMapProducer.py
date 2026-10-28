@@ -8,10 +8,10 @@ def DetIdToRecHitMapProducer(*args, **kwargs):
       'HGCalRecHit:HGCHEBRecHits'
     ),
     pfRecHits = cms.VInputTag(
-      'particleFlowRecHitECAL:Cleaned',
-      'particleFlowRecHitHBHE:Cleaned',
-      'particleFlowRecHitHF:Cleaned',
-      'particleFlowRecHitHO:Cleaned'
+      'particleFlowRecHitECAL',
+      'particleFlowRecHitHBHE',
+      'particleFlowRecHitHF',
+      'particleFlowRecHitHO'
     ),
     mightGet = cms.optional.untracked.vstring
   )

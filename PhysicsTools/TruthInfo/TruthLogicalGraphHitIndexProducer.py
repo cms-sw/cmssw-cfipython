@@ -14,21 +14,13 @@ def TruthLogicalGraphHitIndexProducer(*args, **kwargs):
     simHitCollections = cms.VInputTag(
       'g4SimHits:HGCHitsEE',
       'g4SimHits:HGCHitsHEfront',
-      'g4SimHits:HGCHitsHEback'
+      'g4SimHits:HGCHitsHEback',
+      'g4SimHits:EcalHitsEB',
+      'g4SimHits:HcalHits'
     ),
-    trackerSimHitCollections = cms.VInputTag(
-      'g4SimHits:TrackerHitsPixelBarrelLowTof',
-      'g4SimHits:TrackerHitsPixelBarrelHighTof',
-      'g4SimHits:TrackerHitsPixelEndcapLowTof',
-      'g4SimHits:TrackerHitsPixelEndcapHighTof',
-      'g4SimHits:TrackerHitsTIBLowTof',
-      'g4SimHits:TrackerHitsTIBHighTof',
-      'g4SimHits:TrackerHitsTIDLowTof',
-      'g4SimHits:TrackerHitsTIDHighTof',
-      'g4SimHits:TrackerHitsTOBLowTof',
-      'g4SimHits:TrackerHitsTOBHighTof',
-      'g4SimHits:TrackerHitsTECLowTof',
-      'g4SimHits:TrackerHitsTECHighTof'
+    trackerDigiSimLinks = cms.VInputTag(
+      'simSiPixelDigis:Pixel',
+      'simSiPixelDigis:Tracker'
     ),
     muonSimHitCollections = cms.VInputTag(
       'g4SimHits:MuonDTHits',
@@ -37,13 +29,9 @@ def TruthLogicalGraphHitIndexProducer(*args, **kwargs):
       'g4SimHits:MuonGEMHits',
       'g4SimHits:MuonME0Hits'
     ),
-    doHGCalRelabelling = cms.bool(True),
     doHcalRelabelling = cms.bool(True),
     sharedSubgraphStore = cms.bool(True),
     mtdSimLayerClusters = cms.InputTag('mix', 'MergedMtdTruthLC'),
-    mtdRecoClusterAssociation = cms.InputTag('mtdRecoClusterToSimLayerClusterAssociation'),
-    mtdBarrelClusters = cms.InputTag('mtdClusters', 'FTLBarrel'),
-    mtdEndcapClusters = cms.InputTag('mtdClusters', 'FTLEndcap'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
