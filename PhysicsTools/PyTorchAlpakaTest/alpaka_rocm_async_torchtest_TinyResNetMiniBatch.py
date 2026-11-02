@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def alpaka_rocm_async_torchtest_TinyResNetMiniBatch(*args, **kwargs):
   mod = cms.EDProducer('alpaka_rocm_async::torchtest::TinyResNetMiniBatch',
     model = cms.required.FileInPath,
-    batchSize = cms.required.int32,
+    batchSize = cms.required.uint32,
     images = cms.required.InputTag,
     environment = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring,

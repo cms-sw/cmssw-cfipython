@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 def alpaka_cuda_async_torchtest_SimpleNetMiniBatch(*args, **kwargs):
   mod = cms.EDProducer('alpaka_cuda_async::torchtest::SimpleNetMiniBatch',
     model = cms.required.FileInPath,
-    batchSize = cms.required.int32,
+    batchSize = cms.required.uint32,
     particles = cms.required.InputTag,
     environment = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring,

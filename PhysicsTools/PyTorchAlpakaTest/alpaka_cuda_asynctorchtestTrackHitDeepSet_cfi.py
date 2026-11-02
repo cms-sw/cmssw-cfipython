@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_torchtest_TrackHitDeepSet import alpaka_cuda_async_torchtest_TrackHitDeepSet
+
+alpaka_cuda_asynctorchtestTrackHitDeepSet = alpaka_cuda_async_torchtest_TrackHitDeepSet()
