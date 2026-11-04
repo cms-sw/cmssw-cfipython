@@ -4,6 +4,8 @@ def ClusterShapeHitFilterESProducer(*args, **kwargs):
   mod = cms.ESProducer('ClusterShapeHitFilterESProducer',
     PixelShapeFile = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
     PixelShapeFileL1 = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
+    usePixelShapeLimitsFromDB = cms.bool(True),
+    pixelShapeLimitsLabel = cms.string(''),
     ComponentName = cms.string(''),
     isPhase2 = cms.bool(False),
     doPixelShapeCut = cms.bool(True),
