@@ -7,8 +7,6 @@ def torchtest_InspectionSink(*args, **kwargs):
     simple_net = cms.required.InputTag,
     simple_net_minibatch = cms.required.InputTag,
     simple_net_runtimeFP16 = cms.required.InputTag,
-    track_hit_deep_set_full = cms.required.InputTag,
-    track_hit_deep_set_batched = cms.required.InputTag,
     masked_net = cms.required.InputTag,
     multi_head_net = cms.required.InputTag,
     images = cms.required.InputTag,

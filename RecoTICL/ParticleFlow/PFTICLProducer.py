@@ -3,7 +3,13 @@ import FWCore.ParameterSet.Config as cms
 def PFTICLProducer(*args, **kwargs):
   mod = cms.EDProducer('PFTICLProducer',
     ticlCandidateSrc = cms.InputTag('ticlCandidate'),
+    trackTimeValueMap = cms.InputTag('tofPID', 't0'),
+    trackTimeErrorMap = cms.InputTag('tofPID', 'sigmat0'),
+    trackTimeQualityMap = cms.InputTag('mtdTrackQualityMVA', 'mtdQualMVA'),
     energyFromRegression = cms.bool(True),
+    timingQualityThreshold = cms.float(0.5),
+    useMTDTiming = cms.bool(True),
+    useTimingAverage = cms.bool(False),
     muonSrc = cms.InputTag('muons1stStep'),
     pfMuonAlgoParameters = cms.PSet(
       maxDPtOPt = cms.double(1),

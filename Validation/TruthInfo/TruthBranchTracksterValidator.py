@@ -9,8 +9,6 @@ def TruthBranchTracksterValidator(*args, **kwargs):
     targetsProducer = cms.string('truthBranchTargets'),
     recoCollections = cms.VInputTag(),
     workingPoints = cms.vstring('Fixed'),
-    requireHits = cms.bool(False),
-    denominatorDetectors = cms.vstring(),
     minLeadingTruthShare = cms.double(0.5),
     dominanceLevel = cms.string('caloBoundary'),
     truthLevels = cms.vstring('caloBoundary'),

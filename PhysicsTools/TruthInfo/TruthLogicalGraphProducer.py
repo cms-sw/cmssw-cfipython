@@ -30,15 +30,10 @@ def TruthLogicalGraphProducer(*args, **kwargs):
       'g4SimHits:MuonGEMHits',
       'g4SimHits:MuonME0Hits'
     ),
-    mtdSimHitCollections = cms.VInputTag(
-      'g4SimHits:FastTimerHitsBarrel',
-      'g4SimHits:FastTimerHitsEndcap'
-    ),
     postProcessing = cms.PSet(
       collapseIntermediateGenParticles = cms.bool(True),
       dropHitlessSimSubgraphs = cms.bool(True),
       reconstructablePdgIds = cms.vint32(111),
-      presetName = cms.string(''),
       seedPdgIds = cms.vint32(),
       seedParentDepth = cms.uint32(0),
       seedHadronFlavors = cms.vint32(),

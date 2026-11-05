@@ -3,8 +3,6 @@ import FWCore.ParameterSet.Config as cms
 def torchtest_DataSource_alpaka(*args, **kwargs):
   mod = cms.EDProducer('torchtest::DataSource@alpaka',
     totalSize = cms.required.uint32,
-    hitsPerTrack = cms.required.uint32,
-    hitScale = cms.float(5),
     environment = cms.untracked.int32(0),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
