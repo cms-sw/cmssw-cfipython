@@ -9,11 +9,11 @@ def BtlLocalRecoValidation(*args, **kwargs):
     recCluTag = cms.InputTag('mtdClusters', 'FTLBarrel'),
     trkHitTag = cms.InputTag('mtdTrackingRecHits'),
     r2sAssociationMapTag = cms.InputTag('mtdRecoClusterToSimLayerClusterAssociation'),
-    HitMinimumEnergy = cms.double(1),
+    HitMinimumEnergy = cms.double(0.001),
     optionalPlots = cms.bool(False),
     UncalibRecHitsPlots = cms.bool(False),
     FillTimeWalkPlots = cms.bool(False),
-    HitMinimumAmplitude = cms.double(1),
+    HitMinimumAmplitude = cms.double(0.001),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

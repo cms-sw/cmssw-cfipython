@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .etlrechit_ETLBaseRecHitSoAProducer_alpaka import etlrechit_ETLBaseRecHitSoAProducer_alpaka
+
+etlrechitETLBaseRecHitSoAProducer = etlrechit_ETLBaseRecHitSoAProducer_alpaka()

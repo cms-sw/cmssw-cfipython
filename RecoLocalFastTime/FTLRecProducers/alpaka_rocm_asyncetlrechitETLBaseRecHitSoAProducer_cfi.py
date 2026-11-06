@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_etlrechit_ETLBaseRecHitSoAProducer import alpaka_rocm_async_etlrechit_ETLBaseRecHitSoAProducer
+
+alpaka_rocm_asyncetlrechitETLBaseRecHitSoAProducer = alpaka_rocm_async_etlrechit_ETLBaseRecHitSoAProducer()

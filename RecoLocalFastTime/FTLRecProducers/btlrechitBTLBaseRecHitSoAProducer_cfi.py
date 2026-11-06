@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .btlrechit_BTLBaseRecHitSoAProducer_alpaka import btlrechit_BTLBaseRecHitSoAProducer_alpaka
+
+btlrechitBTLBaseRecHitSoAProducer = btlrechit_BTLBaseRecHitSoAProducer_alpaka()

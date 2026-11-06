@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_btlrechit_BTLRecHitSoAProducer import alpaka_rocm_async_btlrechit_BTLRecHitSoAProducer
+
+alpaka_rocm_asyncbtlrechitBTLRecHitSoAProducer = alpaka_rocm_async_btlrechit_BTLRecHitSoAProducer()
