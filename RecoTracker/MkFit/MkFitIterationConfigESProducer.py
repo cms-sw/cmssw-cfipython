@@ -8,6 +8,15 @@ def MkFitIterationConfigESProducer(*args, **kwargs):
     maxClusterSize = cms.uint32(8),
     backwardSearchMinPixelLayers = cms.int32(0),
     backwardSearchPromptMaxD0 = cms.double(0),
+    duplicateCleaningLowPtFraction = cms.double(0.1),
+    duplicateCleaningLowPtRampStart = cms.double(5),
+    duplicateCleaningLowPtRampEnd = cms.double(10),
+    duplicateCleaningLowPtMaxRelDiffInvPt = cms.double(0.1),
+    duplicateCleaningLowPtRequireSameCharge = cms.bool(True),
+    duplicateCleaningLowPtMaxD0 = cms.double(2),
+    duplicateCleaningLowPtMaxDRTimesPt = cms.double(0.1),
+    duplicateCleaningMinUniqueHitsToKeep = cms.int32(9),
+    duplicateCleaningMinPtUniqueHitsToKeep = cms.double(10),
     appendToDataLabel = cms.string('')
   )
   for a in args:
