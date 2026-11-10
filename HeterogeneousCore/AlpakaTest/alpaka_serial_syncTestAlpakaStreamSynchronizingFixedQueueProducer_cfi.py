@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TestAlpakaStreamSynchronizingFixedQueueProducer import alpaka_serial_sync_TestAlpakaStreamSynchronizingFixedQueueProducer
+
+alpaka_serial_syncTestAlpakaStreamSynchronizingFixedQueueProducer = alpaka_serial_sync_TestAlpakaStreamSynchronizingFixedQueueProducer()
