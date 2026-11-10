@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_PixelTrackForestHighPuritySelector import alpaka_rocm_async_PixelTrackForestHighPuritySelector
+
+alpaka_rocm_asyncPixelTrackForestHighPuritySelector = alpaka_rocm_async_PixelTrackForestHighPuritySelector()

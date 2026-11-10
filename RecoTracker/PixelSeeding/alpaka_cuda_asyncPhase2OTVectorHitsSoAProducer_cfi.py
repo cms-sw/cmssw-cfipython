@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_Phase2OTVectorHitsSoAProducer import alpaka_cuda_async_Phase2OTVectorHitsSoAProducer
+
+alpaka_cuda_asyncPhase2OTVectorHitsSoAProducer = alpaka_cuda_async_Phase2OTVectorHitsSoAProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_StackedModuleGeometryESProducer import alpaka_cuda_async_StackedModuleGeometryESProducer
+
+alpaka_cuda_asyncStackedModuleGeometryESProducer = alpaka_cuda_async_StackedModuleGeometryESProducer()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .CAHitNtupletAlpakaPhase2OTVectorHits_alpaka import CAHitNtupletAlpakaPhase2OTVectorHits_alpaka
+
+caHitNtupletAlpakaPhase2OTVectorHits = CAHitNtupletAlpakaPhase2OTVectorHits_alpaka()

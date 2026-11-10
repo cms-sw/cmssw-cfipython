@@ -7,9 +7,12 @@ def PixelTrackProducerFromSoAAlpaka(*args, **kwargs):
     pixelRecHitLegacySrc = cms.InputTag('siPixelRecHitsPreSplittingLegacy'),
     outerTrackerRecHitSrc = cms.InputTag('hltSiPhase2RecHits'),
     outerTrackerRecHitSoAConverterSrc = cms.InputTag('phase2OTRecHitsSoAConverter'),
+    otRecHitsSoASrc = cms.InputTag('caOTRecHitsSoA'),
+    vectorHitsSoASrc = cms.InputTag('phase2OTVectorHitsSoA'),
     minNumberOfHits = cms.int32(0),
     minQuality = cms.string('loose'),
     useOTExtension = cms.bool(False),
+    expandVectorHits = cms.bool(False),
     requireQuadsFromConsecutiveLayers = cms.bool(False),
     mightGet = cms.optional.untracked.vstring
   )

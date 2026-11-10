@@ -4,6 +4,7 @@ def alpaka_serial_sync_CAHitNtupletAlpakaPhase2(*args, **kwargs):
   mod = cms.EDProducer('alpaka_serial_sync::CAHitNtupletAlpakaPhase2',
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
     trackerRecHitsSoA = cms.InputTag(''),
+    vectorHitsSrc = cms.InputTag('phase2OTVectorHitsSoA'),
     cellZ0Cut = cms.double(12.5),
     dzdrFact = cms.double(15.199999809265137),
     minYsizeB1 = cms.int32(20),
@@ -11,6 +12,11 @@ def alpaka_serial_sync_CAHitNtupletAlpakaPhase2(*args, **kwargs):
     maxDYsize12 = cms.int32(12),
     maxDYsize = cms.int32(10),
     maxDYPred = cms.int32(24),
+    ptmin = cms.double(0.89999997615814209),
+    hardCurvCut = cms.double(0.014250000007450581),
+    maxPhiResid = cms.double(-1),
+    maxVectorHitTip = cms.double(0.1),
+    sameDPhiSign = cms.bool(False),
     geometry = cms.PSet(
       caDCACuts = cms.vdouble(
         0.15000000596046448,
@@ -923,16 +929,23 @@ def alpaka_serial_sync_CAHitNtupletAlpakaPhase2(*args, **kwargs):
         10000,
         10000,
         10000
-      )
+      ),
+      caDCACutsPerPair = cms.optional.vdouble,
+      caThetaCutsPerPair = cms.optional.vdouble,
+      cellZ0CutPerPair = cms.optional.vdouble,
+      floorDCACuts = cms.optional.vdouble,
+      maxVectorHitCurvSigma = cms.optional.vdouble,
+      maxVectorHitGeomCurvSigma = cms.optional.vdouble,
+      maxVectorHitInnerDoubletDCurv = cms.optional.vdouble
     ),
     maxNumberOfDoublets = cms.string('3145728'),
     maxNumberOfTuples = cms.string('61440'),
+    minNumberOfDoublets = cms.uint32(0),
+    minNumberOfTuples = cms.uint32(0),
     avgHitsPerTrack = cms.double(7),
     avgCellsPerHit = cms.double(12),
     avgCellsPerCell = cms.double(0.15099999308586121),
     avgTracksPerCell = cms.double(0.039999999105930328),
-    ptmin = cms.double(0.89999997615814209),
-    hardCurvCut = cms.double(0.014250000007450581),
     earlyFishbone = cms.bool(True),
     lateFishbone = cms.bool(False),
     onlySameLayersFishbone = cms.bool(False),
@@ -947,13 +960,20 @@ def alpaka_serial_sync_CAHitNtupletAlpakaPhase2(*args, **kwargs):
     doTripletCleaner = cms.bool(True),
     doFastDuplicateRemover = cms.bool(True),
     doEarlyDuplicateRemover = cms.bool(True),
+    useTripletDNN = cms.bool(False),
+    tripletDNNThreshold = cms.double(-1),
+    useTrackDNN = cms.bool(False),
+    trackDNNThreshold = cms.double(-1),
+    useExactAllocations = cms.bool(False),
+    fastDupNSigma2 = cms.double(5),
     trackQualityCuts = cms.PSet(
       maxChi2 = cms.double(5),
       maxChi2TripletsOrQuadruplets = cms.double(5),
       maxChi2Quintuplets = cms.double(5),
       minPt = cms.double(0.5),
       maxTip = cms.double(0.3),
-      maxZip = cms.double(12)
+      maxZip = cms.double(12),
+      maxNtupletVectorHitChi2 = cms.double(-1)
     ),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(

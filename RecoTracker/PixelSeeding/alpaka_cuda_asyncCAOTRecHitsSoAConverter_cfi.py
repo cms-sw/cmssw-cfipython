@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_CAOTRecHitsSoAConverter import alpaka_cuda_async_CAOTRecHitsSoAConverter
+
+alpaka_cuda_asyncCAOTRecHitsSoAConverter = alpaka_cuda_async_CAOTRecHitsSoAConverter()

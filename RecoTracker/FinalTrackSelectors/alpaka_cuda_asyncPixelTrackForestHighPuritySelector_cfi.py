@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_PixelTrackForestHighPuritySelector import alpaka_cuda_async_PixelTrackForestHighPuritySelector
+
+alpaka_cuda_asyncPixelTrackForestHighPuritySelector = alpaka_cuda_async_PixelTrackForestHighPuritySelector()

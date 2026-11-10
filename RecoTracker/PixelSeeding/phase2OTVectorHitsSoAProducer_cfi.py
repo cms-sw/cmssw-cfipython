@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .Phase2OTVectorHitsSoAProducer_alpaka import Phase2OTVectorHitsSoAProducer_alpaka
+
+phase2OTVectorHitsSoAProducer = Phase2OTVectorHitsSoAProducer_alpaka()

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .PixelTrackForestHighPuritySelector_alpaka import PixelTrackForestHighPuritySelector_alpaka
+
+pixelTrackForestHighPuritySelector = PixelTrackForestHighPuritySelector_alpaka()

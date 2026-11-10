@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_CAHitNtupletAlpakaPhase2OTVectorHits import alpaka_rocm_async_CAHitNtupletAlpakaPhase2OTVectorHits
+
+alpaka_rocm_asyncCAHitNtupletAlpakaPhase2OTVectorHits = alpaka_rocm_async_CAHitNtupletAlpakaPhase2OTVectorHits()
