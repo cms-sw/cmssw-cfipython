@@ -5,6 +5,7 @@ def EcalDigisValidationPh2(*args, **kwargs):
     digiCollection = cms.InputTag('simEcalUnsuppressedDigis'),
     moduleLabelMC = cms.string('generatorSmeared'),
     moduleLabelG4 = cms.string('g4SimHits'),
+    taskName = cms.string('EcalDigiTask'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
