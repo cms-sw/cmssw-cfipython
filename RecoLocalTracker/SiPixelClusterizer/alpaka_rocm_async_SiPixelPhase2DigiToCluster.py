@@ -10,6 +10,10 @@ def alpaka_rocm_async_SiPixelPhase2DigiToCluster(*args, **kwargs):
     Phase2DigiBaseline = cms.uint32(1000),
     Phase2KinkADC = cms.uint32(8),
     InputDigis = cms.InputTag('simSiPixelDigis', 'Pixel'),
+    DoDigiMorphing = cms.bool(False),
+    MaxFakesInModule = cms.uint32(1000),
+    barrelRegions = cms.vstring('1,1-99,1-99'),
+    endcapRegions = cms.vstring(),
     mightGet = cms.optional.untracked.vstring,
     alpaka = cms.untracked.PSet(
       backend = cms.untracked.string(''),
