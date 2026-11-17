@@ -12,9 +12,7 @@ def ThingExtSource(*args, **kwargs):
     firstRun = cms.untracked.uint32(1),
     firstLuminosityBlockForEachRun = cms.untracked.VLuminosityBlockID(),
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
-    writeStatusFile = cms.untracked.bool(False),
-    fileNames = cms.untracked.vstring(),
-    overrideCatalog = cms.untracked.string('')
+    writeStatusFile = cms.untracked.bool(False)
   )
   for a in args:
     mod.update_(a)

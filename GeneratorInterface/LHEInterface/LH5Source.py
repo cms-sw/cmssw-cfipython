@@ -13,7 +13,7 @@ def LH5Source(*args, **kwargs):
     firstLuminosityBlockForEachRun = cms.untracked.VLuminosityBlockID(),
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False),
-    fileNames = cms.untracked.vstring(),
+    fileNames = cms.required.untracked.vstring,
     overrideCatalog = cms.untracked.string(''),
     skipEvents = cms.untracked.uint32(0)
   )
