@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_cuda_async_TICLGeomLayersESProducer import alpaka_cuda_async_TICLGeomLayersESProducer
-
-alpaka_cuda_asyncTICLGeomLayersESProducer = alpaka_cuda_async_TICLGeomLayersESProducer()

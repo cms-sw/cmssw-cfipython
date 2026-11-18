@@ -1,5 +1,0 @@
-import FWCore.ParameterSet.Config as cms
-
-from .alpaka_serial_sync_TICLGeomLookupESProducer import alpaka_serial_sync_TICLGeomLookupESProducer
-
-alpaka_serial_syncTICLGeomLookupESProducer = alpaka_serial_sync_TICLGeomLookupESProducer()

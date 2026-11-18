@@ -2,8 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def ClusterShapeHitFilterESProducer(*args, **kwargs):
   mod = cms.ESProducer('ClusterShapeHitFilterESProducer',
-    PixelShapeFile = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
-    PixelShapeFileL1 = cms.string('RecoTracker/PixelLowPtUtilities/data/pixelShapePhase0.par'),
+    pixelShapeLimitsLabel = cms.string(''),
     ComponentName = cms.string(''),
     isPhase2 = cms.bool(False),
     doPixelShapeCut = cms.bool(True),
