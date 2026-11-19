@@ -7,6 +7,7 @@ def NewEventStreamFileReader(*args, **kwargs):
     skipEvents = cms.untracked.uint32(0),
     inputFileTransitionsEachEvent = cms.untracked.bool(False),
     prefetchMBytes = cms.untracked.uint32(0),
+    numDecodeTasks = cms.untracked.uint32(0),
     processingMode = cms.untracked.string('RunsLumisAndEvents'),
     writeStatusFile = cms.untracked.bool(False),
     firstRun = cms.untracked.uint32(1),

@@ -14,6 +14,8 @@ def MkFitFitProducer(*args, **kwargs):
     candMinNHitsCut = cms.int32(0),
     candMinPtRelaxedCut = cms.double(0),
     candMinAbsEtaForRelaxedCut = cms.double(0),
+    storeHitStates = cms.bool(False),
+    validateHitStates = cms.untracked.bool(False),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
