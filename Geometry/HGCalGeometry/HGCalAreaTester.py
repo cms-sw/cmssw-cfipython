@@ -4,6 +4,7 @@ def HGCalAreaTester(*args, **kwargs):
   mod = cms.EDAnalyzer('HGCalAreaTester',
     nameDetector = cms.string('HGCalHEScintillatorSensitive'),
     fileName = cms.string('detID.txt'),
+    nSkip = cms.int32(1000),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:
