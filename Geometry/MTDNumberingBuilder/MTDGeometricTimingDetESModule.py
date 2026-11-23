@@ -4,6 +4,7 @@ def MTDGeometricTimingDetESModule(*args, **kwargs):
   mod = cms.ESProducer('MTDGeometricTimingDetESModule',
     fromDDD = cms.bool(False),
     fromDD4hep = cms.bool(False),
+    isTB = cms.bool(False),
     appendToDataLabel = cms.string('')
   )
   for a in args:
