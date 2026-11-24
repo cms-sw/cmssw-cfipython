@@ -1,0 +1,18 @@
+import FWCore.ParameterSet.Config as cms
+
+def onnxtest_MaskedNet_alpaka(*args, **kwargs):
+  mod = cms.EDProducer('onnxtest::MaskedNet@alpaka',
+    model = cms.required.FileInPath,
+    particles = cms.required.InputTag,
+    reverseOrder = cms.bool(False),
+    emptyMask = cms.bool(False),
+    mightGet = cms.optional.untracked.vstring,
+    alpaka = cms.untracked.PSet(
+      backend = cms.untracked.string(''),
+      synchronize = cms.optional.untracked.bool
+    )
+  )
+  for a in args:
+    mod.update_(a)
+  mod.update_(kwargs)
+  return mod

@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_onnxtest_TinyResNet import alpaka_serial_sync_onnxtest_TinyResNet
+
+alpaka_serial_synconnxtestTinyResNet = alpaka_serial_sync_onnxtest_TinyResNet()

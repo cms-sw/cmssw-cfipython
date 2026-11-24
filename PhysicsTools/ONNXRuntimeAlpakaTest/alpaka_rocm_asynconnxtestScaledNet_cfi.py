@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_onnxtest_ScaledNet import alpaka_rocm_async_onnxtest_ScaledNet
+
+alpaka_rocm_asynconnxtestScaledNet = alpaka_rocm_async_onnxtest_ScaledNet()

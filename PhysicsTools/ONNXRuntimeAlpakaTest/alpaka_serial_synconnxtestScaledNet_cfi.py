@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_onnxtest_ScaledNet import alpaka_serial_sync_onnxtest_ScaledNet
+
+alpaka_serial_synconnxtestScaledNet = alpaka_serial_sync_onnxtest_ScaledNet()

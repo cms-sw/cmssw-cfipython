@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_onnxtest_DataSource import alpaka_cuda_async_onnxtest_DataSource
+
+alpaka_cuda_asynconnxtestDataSource = alpaka_cuda_async_onnxtest_DataSource()

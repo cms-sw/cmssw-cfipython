@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_onnxtest_SimpleNet import alpaka_rocm_async_onnxtest_SimpleNet
+
+alpaka_rocm_asynconnxtestSimpleNet = alpaka_rocm_async_onnxtest_SimpleNet()

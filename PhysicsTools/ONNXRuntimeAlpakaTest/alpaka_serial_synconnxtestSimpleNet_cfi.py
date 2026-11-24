@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_onnxtest_SimpleNet import alpaka_serial_sync_onnxtest_SimpleNet
+
+alpaka_serial_synconnxtestSimpleNet = alpaka_serial_sync_onnxtest_SimpleNet()

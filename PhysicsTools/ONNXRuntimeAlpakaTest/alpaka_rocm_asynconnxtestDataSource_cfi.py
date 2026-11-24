@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_onnxtest_DataSource import alpaka_rocm_async_onnxtest_DataSource
+
+alpaka_rocm_asynconnxtestDataSource = alpaka_rocm_async_onnxtest_DataSource()

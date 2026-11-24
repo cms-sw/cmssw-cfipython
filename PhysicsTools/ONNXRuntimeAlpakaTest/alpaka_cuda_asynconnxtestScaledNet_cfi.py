@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_onnxtest_ScaledNet import alpaka_cuda_async_onnxtest_ScaledNet
+
+alpaka_cuda_asynconnxtestScaledNet = alpaka_cuda_async_onnxtest_ScaledNet()

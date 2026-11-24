@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_onnxtest_MultiHeadNet import alpaka_cuda_async_onnxtest_MultiHeadNet
+
+alpaka_cuda_asynconnxtestMultiHeadNet = alpaka_cuda_async_onnxtest_MultiHeadNet()

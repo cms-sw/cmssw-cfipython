@@ -2,7 +2,7 @@ import FWCore.ParameterSet.Config as cms
 
 def DumpProductNames(*args, **kwargs):
   mod = cms.EDAnalyzer('DumpProductNames',
-    outputFile = cms.string('print_cppnames.json'),
+    outputFile = cms.string('product_names.json'),
     mightGet = cms.optional.untracked.vstring
   )
   for a in args:

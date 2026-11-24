@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_onnxtest_MaskedNet import alpaka_rocm_async_onnxtest_MaskedNet
+
+alpaka_rocm_asynconnxtestMaskedNet = alpaka_rocm_async_onnxtest_MaskedNet()

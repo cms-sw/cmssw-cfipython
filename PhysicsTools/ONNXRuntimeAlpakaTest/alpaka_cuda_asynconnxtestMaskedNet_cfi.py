@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_onnxtest_MaskedNet import alpaka_cuda_async_onnxtest_MaskedNet
+
+alpaka_cuda_asynconnxtestMaskedNet = alpaka_cuda_async_onnxtest_MaskedNet()

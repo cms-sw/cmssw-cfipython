@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .onnxtest_SimpleNetMiniBatch_alpaka import onnxtest_SimpleNetMiniBatch_alpaka
+
+onnxtestSimpleNetMiniBatch = onnxtest_SimpleNetMiniBatch_alpaka()
