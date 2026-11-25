@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_rocm_async_TracksSoAMerger import alpaka_rocm_async_TracksSoAMerger
+
+alpaka_rocm_asyncTracksSoAMerger = alpaka_rocm_async_TracksSoAMerger()

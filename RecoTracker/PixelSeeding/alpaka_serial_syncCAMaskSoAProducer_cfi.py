@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_CAMaskSoAProducer import alpaka_serial_sync_CAMaskSoAProducer
+
+alpaka_serial_syncCAMaskSoAProducer = alpaka_serial_sync_CAMaskSoAProducer()

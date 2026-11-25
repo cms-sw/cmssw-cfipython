@@ -10,6 +10,7 @@ def PixelTrackProducerFromSoAAlpaka(*args, **kwargs):
     otRecHitsSoASrc = cms.InputTag('caOTRecHitsSoA'),
     vectorHitsSoASrc = cms.InputTag('phase2OTVectorHitsSoA'),
     minNumberOfHits = cms.int32(0),
+    minNumberOfPixelHits = cms.int32(0),
     minQuality = cms.string('loose'),
     useOTExtension = cms.bool(False),
     expandVectorHits = cms.bool(False),

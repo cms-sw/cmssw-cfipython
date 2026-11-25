@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_serial_sync_TracksSoAMerger import alpaka_serial_sync_TracksSoAMerger
+
+alpaka_serial_syncTracksSoAMerger = alpaka_serial_sync_TracksSoAMerger()

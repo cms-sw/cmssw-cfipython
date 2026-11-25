@@ -5,6 +5,7 @@ def alpaka_rocm_async_CAHitNtupletAlpakaPhase2OT(*args, **kwargs):
     pixelRecHitSrc = cms.InputTag('siPixelRecHitsPreSplittingAlpaka'),
     trackerRecHitsSoA = cms.InputTag(''),
     vectorHitsSrc = cms.InputTag('phase2OTVectorHitsSoA'),
+    hitMask = cms.InputTag(''),
     cellZ0Cut = cms.double(13),
     dzdrFact = cms.double(15.199999809265137),
     minYsizeB1 = cms.int32(15),
@@ -1175,6 +1176,7 @@ def alpaka_rocm_async_CAHitNtupletAlpakaPhase2OT(*args, **kwargs):
     trackDNNThreshold = cms.double(-1),
     useExactAllocations = cms.bool(False),
     fastDupNSigma2 = cms.double(5),
+    iterationName = cms.string('promptHighPt'),
     trackQualityCuts = cms.PSet(
       maxChi2 = cms.double(5),
       maxChi2TripletsOrQuadruplets = cms.double(1),

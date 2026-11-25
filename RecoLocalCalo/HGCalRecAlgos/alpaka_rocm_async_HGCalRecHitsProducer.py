@@ -2,10 +2,11 @@ import FWCore.ParameterSet.Config as cms
 
 def alpaka_rocm_async_HGCalRecHitsProducer(*args, **kwargs):
   mod = cms.EDProducer('alpaka_rocm_async::HGCalRecHitsProducer',
-    digis = cms.InputTag('hgcalDigis', 'DIGI', 'TEST'),
+    digis = cms.InputTag('hgcalDigis'),
     calibSource = cms.ESInputTag('', ''),
     mappingSource = cms.ESInputTag('', ''),
     indexingSource = cms.ESInputTag('', ''),
+    econd = cms.InputTag('hgcalDigis'),
     k_noise = cms.double(-100),
     n_blocks = cms.int32(-1),
     n_threads = cms.int32(-1),
