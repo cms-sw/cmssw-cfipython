@@ -1,0 +1,5 @@
+import FWCore.ParameterSet.Config as cms
+
+from .alpaka_cuda_async_ElectronNHitSeedAlpakaProducer import alpaka_cuda_async_ElectronNHitSeedAlpakaProducer
+
+alpaka_cuda_asyncElectronNHitSeedAlpakaProducer = alpaka_cuda_async_ElectronNHitSeedAlpakaProducer()
